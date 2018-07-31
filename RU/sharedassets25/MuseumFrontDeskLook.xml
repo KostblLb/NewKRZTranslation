@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-looked-at-front-desk" value="true"/>
+    <setGameVar name="museum-location" value="information-desk" />    
+    <line speaker="fred">I just assumed they were from the power company. You know how they're always coming by unanounced and messing with this or that. I just shut myself up in my room to wait it out. No sense getting involved.</line>
+    <option goto="get-in" speaker="museum staff">How did they get in?</option>
+    <option goto="power-company" speaker="museum staff">They definitely weren't from the power company.</option>
+  </scene>
+
+  <scene name="get-in" nextScene="end">
+    <line speaker="fred">Must have been one of the kids who left the front door unlocked. Something's got to be done, they run around like animals. You know that Flora left a can of soda on top of my shelter door and I almost killed myself slipping on that sticky mess the next morning?</line>
+    <line speaker="fred">Something's got to be done.</line>
+  </scene>
+
+  <scene name="power-company" nextScene="end">
+    <line speaker="fred">Well I wouldn't complain if they were, really, with that storm going on. I know they have to do their business. Doesn't affect me, I've got my generator, but you know some of these folks around here: unprepared.</line>
+    <line speaker="fred">Totally unprepared.</line>
+  </scene>
+
+</conversation>

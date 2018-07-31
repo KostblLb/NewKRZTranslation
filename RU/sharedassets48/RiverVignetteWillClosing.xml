@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="closing-narration-done,end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />
+    <goto condition="riverworld-reached-silo" sceneName="last-paragraph" />
+    <goto sceneName="start" />
+  </scene>
+
+  <scene name="start" nextScene="route-ending">
+    <line>I met a photographer once — I mean, one in particular. She even took my portrait, I can't imagine why. She said it would `immortalize` me. That was a metaphor, of course. She meant I'd never be forgotten.</line>
+  </scene>
+
+  <scene name="route-ending">
+    <goto condition="riverworld-reached-silo" sceneName="ready-for-end" />
+    <goto sceneName="cut-off-here" />
+  </scene>
+
+  <scene name="ready-for-end" nextScene="last-paragraph">
+    <line>As she was disembarking — not far from here, actually — the film fell out of her bag and was borne away by the current. I was working on deck at the time. She shot me a sad, apologetic glance, but I wasn't bothered. It's no shame, to be forgotten.</line>
+  </scene>
+
+  <scene name="cut-off-here" nextScene="end">
+    <line>As she was disembarking — not far from here, actually — the film fell out of her bag and was borne away by the current. I was working on deck at the time. She shot me a sad, apologetic glance, but I wasn't bothered. It's no shame, to be forgotten.</line>
+  </scene>
+  
+  <scene name="last-paragraph" nextScene="end">
+    <setGameVar name="riverworld-wills-last-line" value="true" />
+    <line>Our passengers, <if condition="exchange-hound-fate=with-conway">two<else>one</else></if> lighter, disembarked at the mail stop by the Silo. They couldn't seem to get that old truck started up again, but we managed to roll it off the barge with only a minor scrape or two. At the last minute, Clara decided to travel with them for a while.</line>
+    <line>Cate and I said goodbye to our friends — new and old — and `The Mucky Mammoth` rumbled on down the Echo.</line>
+  </scene>
+</conversation>

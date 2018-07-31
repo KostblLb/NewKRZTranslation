@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-cat-carrier" value="true"/>
+    <line>A pet carrier for a cat or small dog has been left by the path. A calcified rag wadded in the corner may once have been a blanket.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,266 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="ida">So, how was everything? `(To JUNEBUG.)` How was the `sweet cave snail`?</line>
+    <line speaker="junebug">Devastating. You're a killer, Ida.</line>
+    <line speaker="ida">Well, I can't take `all` the credit. Sam came across a whole cave snail colony down there, about a year back, and we've been leaving rock candy for them to gorge on since. We just started harvesting earlier this month.</line>
+    <line speaker="ida">Yes, it's all about `patience` down here. Everything grows more slowly in the dark. There's a fish in Lake Lethe that lives to two hundred years, and its flavor profile only develops at about seventy-five.</line>
+    <line speaker="ida">I've got a pot of bones in there that's been stewing for at least a week! I don't even remember why I put them on. Come to think of it, I don't even remember what kind of bones they are ...</line>
+    <line speaker="cate">Oh, we need one for the road. Clara said she wanted, um ...</line>
+    <line speaker="cate">"Something primordial," she said. What does that mean?</line>
+    <line>`(CATE reviews the menu.)`</line>
+    <option goto="clara-food-simple" speaker="shannon">She must have meant something simple.</option>
+    <option goto="clara-food-old-fashioned" speaker="shannon">Maybe she meant something old-fashioned?</option>
+    <option goto="clara-food-deep" speaker="shannon">I think she meant something from very deep in the lake.</option>
+  </scene>
+
+  <scene name="clara-food-simple" nextScene="shannon-will-decide">
+    <setGameVar name="restaurant-clara-request" value="simple" />
+  </scene>
+
+  <scene name="clara-food-old-fashioned" nextScene="shannon-will-decide">
+    <setGameVar name="restaurant-clara-request" value="simple" />    
+  </scene>
+
+  <scene name="clara-food-deep" nextScene="shannon-will-decide">
+    <setGameVar name="restaurant-clara-request" value="deep" />    
+  </scene>
+
+  <scene name="shannon-will-decide" nextScene="menu">
+    <line speaker="cate">Ah, could be ...</line>
+    <line speaker="cate">`(Hands SHANNON the menu.)` Here, you pick. I'm no good at this.</line>
+    <line>`(SHANNON inspects the menu.)`</line>
+  </scene>
+
+  <scene name="menu">
+    <line speaker="shannon"><randomText set="thinking-about-menu" /></line>
+    <option goto="order-done" insertedText="&quot;${temp:scramble-dish-1}&quot;" variableChange="restaurant-claras-dish-name=$temp:scramble-dish-1">"<template name="dishOrder" seed="restaurant-dish" seed-offset="restaurant-dish-count" capture="temp:scramble-dish-1" />"</option>
+    <option goto="order-done" insertedText="&quot;${temp:scramble-dish-2}&quot;" variableChange="restaurant-claras-dish-name=$temp:scramble-dish-2">"<template name="dishOrder" seed="restaurant-dish" seed-offset="restaurant-dish-count" capture="temp:scramble-dish-2" />"</option>
+    <option goto="order-done" insertedText="&quot;${temp:scramble-dish-3}&quot;" variableChange="restaurant-claras-dish-name=$temp:scramble-dish-3">"<template name="dishOrder" seed="restaurant-dish" seed-offset="restaurant-dish-count" capture="temp:scramble-dish-3" />"</option>
+    <option goto="menu">`(SHANNON turns the page.)`</option>    
+  </scene>
+  
+  <scene name="order-done" nextScene="end">
+    <line speaker="ida">Good choice. Your friend will love it. I'll have that right out, sweetie.</line>
+  </scene>
+  
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <dishOrder>
+      <common>
+        <template xml:space="preserve"><adjective filter="capitalize" /> <creature /> and <side />.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> cakes with <fruit />-butter sauce.</template>
+        <template xml:space="preserve"><creatureAdjective filter="capitalize" /> <creature /> with <side /> and <creature />.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> and <vegetable /> cakes with <region /> rémoulade.</template>
+        <template xml:space="preserve">Balsamic <vegetable />.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> spread.</template>
+        <template xml:space="preserve"><creaturePlural filter="capitalize" /> with pickled <vegetable /> mignonette sauce.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> log.</template>
+        <template xml:space="preserve">Ida's smoked <creature /> spread with <region /> toast.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> bisque.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> and <vegetable /> fritters with <fruit /> sauce.</template>
+        <template xml:space="preserve">Basic steamed <creaturePlural />.</template>
+        <template xml:space="preserve"><ingredient filter="capitalize" />-crusted <creature /> kabobs.</template>
+        <template xml:space="preserve">Grilled <creature /> wrap.</template>
+        <template xml:space="preserve">Cedar plank <creature /> with <ingredient /> <ingredient /> crust and butter sauce.</template>
+        <template xml:space="preserve"><meat filter="capitalize" /> and <creature /> gumbo.</template>
+        <template xml:space="preserve">Charred <creature /> with <fruit />-<vegetable /> relish.</template>
+        <template xml:space="preserve">Poached <creature />.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> hot pot.</template>
+        <template xml:space="preserve"><creature filter="capitalize" /> <vegetable /> soup.</template>
+        <template xml:space="preserve"><dotw filter="capitalize" /> night <creature />.</template>
+      </common>
+    </dishOrder>
+  </templates>
+
+  <templateValues>
+    <adjective>
+      <common>
+        <value>spicy</value>
+        <value>hot</value>
+        <value>cold</value>
+        <value>fresh</value>
+        <value>aged</value>                
+      </common>
+      <rare>
+        <value>young</value>
+      </rare>
+      <esoteric>
+        <value>friendly</value>
+        </esoteric>>
+    </adjective>
+
+    <creature>
+      <common>
+        <value>crayfish</value>
+        <value>salamander</value>
+        <value>cavefish</value>        
+        <value>mollusk</value>
+        <value>barnacle</value>
+        <value>shrimp</value>
+        <value>crab</value>
+        <value>mussel</value>
+        <value>eel</value>
+        <value>squid</value>
+      </common>
+
+      <rare>
+        <value>blind crayfish</value>
+        <value>blind salamander</value>
+        <value>blind cavefish</value>
+        <value>sweet-water cuttlefish</value>
+        <value>blind prawn</value>
+        <value>scallop</value>
+      </rare>
+    </creature>
+
+    <creaturePlural>
+      <common>
+        <value>crayfish</value>
+        <value>salamanders</value>
+        <value>cavefish</value>        
+        <value>mollusks</value>
+        <value>barnacles</value>
+        <value>shrimp</value>
+        <value>crabs</value>
+        <value>mussels</value>
+        <value>eels</value>
+        <value>squid</value>
+      </common>
+
+      <rare>
+        <value>blind crayfish</value>
+        <value>blind salamanders</value>
+        <value>blind cavefish</value>
+        <value>sweet-water cuttlefish</value>
+        <value>blind prawns</value>
+        <value>scallops</value>
+      </rare>
+    </creaturePlural>      
+    
+    <side>
+      <common>
+        <value>rice</value>
+        <value>bread</value>
+        <value>small salad</value>
+      </common>
+      <esoteric>
+        <value>unremarkable salad</value>
+      </esoteric>
+    </side>
+
+    <creatureAdjective>
+      <common>
+        <value>deep-water</value>
+        <value>slow-cooked</value>
+        <value>salted</value>
+        <value>old</value>
+        <value>young</value>
+      </common>
+    </creatureAdjective>
+
+    <region>
+      <common>
+        <value>Kentucky</value>
+        <value>Tennessee</value>
+        <value>Missouri</value>
+        <value>Indiana</value>
+        <value>New York</value>
+        <value>Cajun</value>        
+        <value>Mississippi</value>        
+      </common>
+    </region>
+
+    <vegetable>
+      <common>
+        <value>tomato</value>
+        <value>carrot</value>
+        <value>black bean</value>        
+        <value>spinach</value>
+        <value>cauliflower</value>
+        <value>shallot</value>        
+        <value>broccoli</value>        
+      </common>
+      <rare>
+        <value>white carrot</value>
+      </rare>
+      <esoteric>
+        <value>dandelion</value>
+      </esoteric>
+    </vegetable>
+
+    <fruit>
+      <common>
+        <value>mango</value>
+        <value>orange</value>
+        <value>banana</value>
+        <value>lemon</value>
+      </common>
+      <rare>
+        <value>cranberry</value>
+      </rare>
+    </fruit>
+
+    <ingredient>
+      <common>
+        <value>parmesan</value>
+        <value>herb</value>
+        <value>cheddar</value>
+        <value>red pepper</value>
+        <value>basil</value>
+        <value>black pepper</value>        
+      </common>
+
+      <rare>
+        <value>buttermilk</value>
+      </rare>
+    </ingredient>
+
+    <meat>
+      <common>
+        <value>beef</value>
+        <value>lamb</value>
+        <value>pork</value>
+      </common>
+
+      <rare>
+        <value>quail</value>
+        <value>tofu</value>        
+      </rare>
+    </meat>
+    
+    <dotw>
+      <common>
+        <value>saturday</value>
+        <value>sunday</value>        
+      </common>
+
+      <rare>
+        <value>monday</value>
+        <value>tuesday</value>
+        <value>wednesday</value>
+        <value>thursday</value>
+        <value>friday</value>
+      </rare>
+    </dotw>
+    
+  </templateValues>
+
+  <randomTextSets>
+    <set name="thinking-about-menu">
+      <text xml:space="preserve">Um ...</text>
+      <text xml:space="preserve">Maybe ...</text>
+      <text xml:space="preserve">How about ...</text>
+      <text xml:space="preserve">She'll have ...</text>
+      <text xml:space="preserve">I think she'd like ...</text>
+      <text xml:space="preserve">So many choices ...</text>
+      <text xml:space="preserve">What about ...</text>
+      <text xml:space="preserve">Let's see ...</text>
+      <text xml:space="preserve">She'd probably like ...</text>
+      <text xml:space="preserve">Let's go with ...</text>        
+    </set>
+  </randomTextSets>
+  
+</conversation>

@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-examined-empty-table" value="true" />
+    <setGameVar name="tiki-johnny-tips-total" value="+1000" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>Someone left a twenty here ... is that for Patch or Cyrano? Maybe there's enough change in the jar to split it ... it's only fair ...</line>
+  </scene>
+</conversation>

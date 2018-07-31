@@ -1,0 +1,26 @@
+# -*- mode: blocking -*-
+
+@set Stop riverworld-floating-gas-station
+
+@func TaxidermistVignette
+
+  Tugboat Wait 3
+  Tugboat Message RiverworldManager EnableDialogThrottle
+  Tugboat Dialog RiverVignetteTaxidermist
+  Tugboat Message RiverworldManager DisableDialogThrottle
+
+@end
+
+@func FloatingGasStationRecap
+
+  Tugboat Message RiverworldManager EnableDialogThrottle
+  Tugboat Dialog RiverRecapFloatingGasStation
+  Tugboat Message RiverworldManager DisableDialogThrottle
+
+@end
+
+Tugboat Message RiverworldManager QueueState RumColony
+Tugboat Message RiverworldManager SetDestination RumColony
+
+Tugboat Exec TaxidermistVignette ? [Stop]=disembarked
+Tugboat Exec FloatingGasStationRecap ? [Stop]=aboard

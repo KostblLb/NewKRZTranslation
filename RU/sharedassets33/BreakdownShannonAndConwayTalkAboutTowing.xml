@@ -1,0 +1,46 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="shannon-goes-to-radio">
+  <scene name="intro">
+    <setGameVar name="breakdown-shannon-and-conway-talked-about-towing" value="true"/>
+    <line speaker="shannon">I think they're on their way. Guess we have some time to kill.</line>
+    <option goto="map" speaker="conway">We could look over the road map again.</option>
+    <option goto="grim" speaker="conway">Pretty grim place to be stuck.</option>
+  </scene>
+
+  <scene name="grim" nextScene="check-radio">
+    <setGameVar name="breakdown-shannon-talked-about-trees" value="true"/>
+    
+    <line speaker="shannon">I wonder what happened. To the tree, I mean.</line>
+    <line speaker="shannon">Maybe it was just old.</line>
+    <line speaker="shannon">You know what used to happen to old trees out in the forest? Wildfire would come through and clear them all out. It made room for the new trees.</line>
+    <line speaker="shannon">But then people built houses, and we can't have fires going all the time. So we keep putting them out. And now we have all these old trees choking out the saplings.</line>
+    <line speaker="shannon">Starving the young trees for resources, just clinging on to life until ... snap. And then some road crew comes by and blasts the stump with dynamite.</line>
+  </scene>
+
+  <scene name="map">
+    <line speaker="shannon">I've stared at that thing too long already. Where'd you get that old map, anyway?</line>
+    
+    <option goto="map-antique" speaker="conway">I found it at the shop.</option>
+    <option goto="map-in-truck" speaker="conway">It's always just been in the truck.</option>
+  </scene>
+
+  <scene name="map-antique" nextScene="shannon-map-memory">
+    <line speaker="shannon">Oh. It's an antique or something? Does it even match reality anymore? I bet there are some old roads on there that are all grown over by now.</line>
+  </scene>
+
+  <scene name="map-in-truck" nextScene="shannon-map-memory">
+    <line speaker="shannon">Huh. Someone must have grabbed it at a gas station somewhere along the line. Or maybe they threw it in the glovebox at the dealership.</line>
+  </scene>
+
+  <scene name="shannon-map-memory" nextScene="check-radio">
+    <setGameVar name="breakdown-shannon-talked-about-maps" value="true"/>
+    <line speaker="shannon">When my parents bought their first car here, it came with a map. I used to sit in the back and pore over it. Aunt Remedios saw me looking at it, I guess, and a few days later she gave me a map she'd brought from Colombia.</line>
+    <line speaker="shannon">It looked almost hand-painted — deep, vibrant colors and rough border lines like anxious brushstrokes. Really pretty.</line>
+    <line speaker="shannon">I'd slowly trace the coastline with my finger, like I was walking on the beach, and say, &quot;here we'll swim, here we'll start a fire, here we'll find a cave in the cliff face and go live among the bats for a while.&quot;</line>
+  </scene>
+
+  <scene name="check-radio" nextScene="end">
+    <line speaker="shannon">Um. I think I'll take a look at that radio of yours. Maybe I can get it going again. No point just standing around.</line>
+  </scene>
+
+</conversation>

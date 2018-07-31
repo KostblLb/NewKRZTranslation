@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="crater-heard-conversation-four" value="true"/>
+    <line speaker="Young man">Well, that's all very interesting, but my cousin works for a TV station and he says they drop about two, three satellites a week. They just fall out of the sky.</line>
+    <line speaker="Old man">More like `government` satellites!</line>
+    <line speaker="Young woman">All I know is it wasn't a bird. That's all I care to know ... let's go check the scanner.</line>    
+  </scene>
+</conversation>

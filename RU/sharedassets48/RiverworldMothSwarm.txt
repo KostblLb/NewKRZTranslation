@@ -1,0 +1,40 @@
+# -*- mode: blocking -*-
+
+@set Stop riverworld-rum-colony
+
+@func MothSwarmVignette
+
+  Tugboat Message RiverworldManager SetFeature MothSwarm
+
+  Tugboat Listen on-moth-swarm
+  Tugboat Message RiverworldManager SetBoatSpeed 0.1
+  Tugboat Message RiverworldManager SetDialogTrigger 10
+  Tugboat Message RiverworldManager QueueState PhoneRoom
+  Tugboat Message RiverworldManager SetDestination PhoneRoom
+  Tugboat Message RiverworldManager EnableDialogThrottle
+  Tugboat Dialog RiverVignetteMothSwarm
+  Tugboat Message RiverworldManager DisableDialogThrottle
+
+  Vignette Listen conversation-closing
+  Vignette Message RiverworldManager SetBoatSpeed 1
+
+@end
+
+@func RumColonyRecap
+
+  Tugboat Message RiverworldManager QueueState Generic
+  Tugboat Wait 3
+  Tugboat Dialog RiverRecapRumColony
+  Tugboat Wait 10
+  Tugboat Fork Vignette
+  Tugboat Message RiverworldManager SetDialogTrigger 20
+  Tugboat Dialog RiverRecapRumColonyPartTwo
+
+  Vignette Listen conversation-closing
+  Vignette Message RiverworldManager QueueState PhoneRoom
+  Vignette Message RiverworldManager SetDestination PhoneRoom
+
+@end
+
+Tugboat Exec MothSwarmVignette ? [Stop]=disembarked
+Tugboat Exec RumColonyRecap ? [Stop]=aboard

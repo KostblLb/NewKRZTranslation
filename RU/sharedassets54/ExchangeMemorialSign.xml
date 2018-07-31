@@ -1,0 +1,51 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="clear-dinghy-hint">
+  <scene name="intro" nextScene="sign-2">
+    <line speaker="sign" blocking="Memorial Message [DinghyFlashlight] SetScriptedTarget MemorialFlashlight1">WE CLAIM THESE HELMETS IN THE NAMES OF THE FOLKS WHO WORE THEM AND WE PLACE THEM HERE IN THEIR MEMORY BUT ALSO AS A SPIT IN THE GREEDY GREEN EYE OF THAT POWER COMPANY WHO BOUGHT UP OUR OLD MINE AND TRADED OUR BROTHERS' AND SISTERS' SAFETY FOR A LITTLE MORE YIELD BUT ONLY YIELDED TWENTY-EIGHT GOOD MEN AND WOMEN DEAD WHEN THE WALLS COLLAPSED AND THE TUNNELS FILLED WITH WATER</line>
+  </scene>
+
+  <scene name="sign-2">
+    <blocking>
+      Memorial Message [DinghyFlashlight] SetScriptedTarget MemorialFlashlight2;
+      
+      HelmetSound Wait 3;
+      HelmetSound Audio Play helmets-clear;
+    </blocking>
+    <line speaker="sign" event="clear-dinghy-hint">THEIR LUNGS WERE BLACK BUT NOW THEY'RE WASHED CLEAN AND FULL OF WATER TOO AND SWEPT THROUGH HIDDEN TUNNELS INTO SOME AWFUL CAVE WE NEVER WILL FIND AND SO WE GUESS THE WATER BURIED THEM FOR US SO LET THIS HERE BE THE MARKER FOR THEIR GRAVE</line>
+    <line speaker="sign" blocking="Memorial Message [DinghyFlashlight] SetScriptedTarget MemorialFlashlight3">AND IF ANY SON OF A BITCH FROM THAT POWER COMPANY WANTS TO TAKE BACK THESE HELMETS AS COMPANY PROPERTY JUST YOU TRY IT AND SEE WHAT WILL HAPPEN</line>
+
+    <line speaker="conway">Hey, "Elkhorn." That's the mine we met in. Where your folks, uh ... worked ...</line>
+    <line speaker="conway">Looks like it's been here a while. I sure as hell wouldn't mess with it ... you think whoever wrote it is still that angry?</line>
+    
+    <option goto="forget-anger" speaker="shannon">I don't think you ever forget anger like that.</option>
+    <option goto="showing-pain" speaker="shannon">Sure, angry. Mainly just hurt.</option>
+  </scene>
+
+  <scene name="forget-anger" nextScene="how-shannon-feels">
+    <line speaker="conway">No, I guess you probably don't.</line>
+  </scene>
+
+  <scene name="showing-pain" nextScene="how-shannon-feels">
+    <line speaker="conway">Hm. Yeah, everybody's got their own way, I guess.</line>
+  </scene>
+
+  <scene name="how-shannon-feels">
+    <line speaker="conway">This probably stirs up ... I mean ... how do you ... ?</line>
+    <option goto="people-should-remember" speaker="shannon">It's fine. I'm glad this is here. People should remember this happened.</option>
+    <option goto="brings-back-anger" speaker="shannon">It brings back some anger for me, too.</option>
+    <option goto="power-companys-fault" speaker="shannon">The other miners made this, but ... it should have been the power company. It's their fault.</option>
+  </scene>
+
+  <scene name="people-should-remember" nextScene="end">
+    <line speaker="conway">Well, here we are, remembering. And I didn't even know it the first time around, but here I am remembering it now ... that's a fine memorial, I guess.</line>
+  </scene>
+
+  <scene name="brings-back-anger" nextScene="end">
+    <line speaker="conway">Yeah, that's understandable. I guess that's what a memorial should do, huh? Help you hang on to your feelings. Otherwise, they fade away; that's just what time does.</line>
+  </scene>
+
+  <scene name="power-companys-fault" nextScene="end">
+    <line speaker="conway">Yeah, I see what you mean, there. A memorial should be a kind of apology: "sorry we didn't do better by you."</line>
+  </scene>
+
+</conversation>

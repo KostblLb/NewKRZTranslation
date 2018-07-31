@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-marge" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Evening, Marge! Marge is an avid collector of vinyl records. She borrowed some quick cash from a distillery employee for a rare King Tubby dubplate. Must have been quite a find!</line>
+  </scene>
+</conversation>

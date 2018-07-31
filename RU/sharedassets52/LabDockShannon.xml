@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="lab-dock-looked-at-shannon" value="true" />
+    <line speaker="mimi">Hm. No, definitely not ...</line>
+    <line speaker="jenn">Oh, she's traveling with one of those creepy distillery guys.</line>
+    <line speaker="mimi">Him? Naw, he just looks like some old drifter.</line>
+    <line speaker="jenn">Maybe you're right. It's hard to tell in this light.</line>
+  </scene>
+</conversation>

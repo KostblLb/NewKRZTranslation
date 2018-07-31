@@ -1,0 +1,41 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <goto condition="bureau-looking-for-document=requisition" sceneName="requisition-form"/>
+    <setGameVar name="bureau-runaround-counter" value="+1"/>
+    <line speaker="Clerk Metzstein">Hi, how are you. Fine, thanks. I just need your ingestion card and a list of your last five permanent addresses.</line>
+    <option goto="ingestion-card" speaker="conway">Ingestion card?</option>
+    <option goto="addresses" speaker="conway">I don't think I've had five permanent addresses.</option>
+    <option goto="lula" speaker="shannon">Let's just skip it. Which one of you is Lula Chamberlain?</option>
+  </scene>
+
+  <scene name="requisition-form">
+    <line speaker="Clerk Metzstein">Requisition form. No problem. I'll just need your ingestion card to mark it &quot;outgoing&quot; in my logbook.</line>
+    <option goto="ingestion-card" speaker="conway">I don't have an ingestion card yet.</option>
+    <option goto="lula" speaker="shannon">We're done here. Can you point us to Lula?</option>
+  </scene>
+
+  <scene name="ingestion-card" nextScene="talk-to-ed">
+    <setGameVar name="bureau-looking-for-document" value="ingestion"/>
+    
+    <line speaker="Clerk Metzstein">Oh, no ingestion card. OK. That's OK. Just go talk to Clerk Böhm first, and he'll get you set up with one.</line>
+  </scene>
+
+  <scene name="addresses" nextScene="talk-to-ed">
+    <setGameVar name="bureau-looking-for-document" value="transient"/>
+    
+    <line speaker="Clerk Metzstein">Oh ... my sheet has five address boxes, and it says to fill everything out ...</line>
+    <line speaker="Clerk Metzstein">Maybe if you fill out a &quot;transient&quot; sub-sheet, we can still get it processed. Go talk to Clerk Böhm and he'll get you set up with one.</line>
+  </scene>
+
+  <scene name="talk-to-ed" nextScene="end">
+    <triggerEvent name="bureau-runaround-ed"/>    
+    <line speaker="Clerk Metzstein">Clerk Böhm is just over there in the corner. Happy to help.</line>
+  </scene>
+
+  <scene name="lula" nextScene="end">
+    <triggerEvent name="bureau-runaround-lula"/>
+    <line speaker="Clerk Metzstein">Oh, sure. That's her in the cardigan.</line>
+  </scene>
+
+</conversation>

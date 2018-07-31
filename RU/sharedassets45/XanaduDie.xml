@@ -1,0 +1,17 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="0.5"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="hole-repeat"/>
+    <setGameVar name="xanadu-died-in-cave-entrance" value="true"/>
+    <setGameVar name="xanadu-death-count" value="+1"/>
+
+    <line speaker="xanadu" style="xanadu">Your score was 0 out of a possible 8192.</line>
+    <line condition="xanadu-death-count=1" speaker="shannon">What.</line>
+    <line speaker="xanadu" style="xanadu">You may *CONTINUE*, or *QUIT*.</line>
+    <line speaker="conway">`(Typing.)` ~Continue.~</line>
+  </scene>
+</conversation>

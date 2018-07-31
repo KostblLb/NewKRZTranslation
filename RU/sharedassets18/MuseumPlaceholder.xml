@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="cycle-crab-actor">
+  <scene name="intro" nextScene="end">
+    <line>Slice a visage to build a visage. A puzzle to it's owner.</line>
+  </scene>
+</conversation>

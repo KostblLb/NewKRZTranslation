@@ -1,0 +1,70 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape,tear-down-truck-tour,end-truck-tour">
+  <endingAudioEvents>
+    <audioFade clip="truck-engine" destroy="true" direction="out" speed="4" />
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="radio-start">
+    <triggerEvent name="truck-tour-zoom"/>
+    <triggerEvent name="truck-tour-move-radio" />
+    <setGameVar name="distillery-used-truck-radio-second-call" value="true" />
+    <triggerEvent name="start-tape"/>
+    <triggerEvent name="ensure-darken-lights"/>    
+    
+    <line>`(The truck's radio crackles back to life.)`</line>
+  </scene>
+
+  <scene name="radio-start">
+    <audioFade clip="cb-radio" direction="in" time="1" />
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-4">Driver, come back.</line>
+    <line speaker="doolittle" style="skeleton">Ah, there's dispatch.</line>
+    <line speaker="doolittle" style="skeleton">Now, tell them about your experience. Tell them the truck's in good shape. Tell them you'll start in the morning.</line>
+    <option goto="experience" speaker="conway">I've been driving for a number of years.</option>
+    <option goto="good-truck" speaker="conway">Truck looks good.</option>
+    <option goto="cant" speaker="conway">I really can't ...</option>
+  </scene>
+
+  <scene name="experience" nextScene="interview">
+    <triggerEvent name="stop-cb-radio" />
+    <line speaker="doolittle" style="skeleton">Decades, dispatch!</line>
+  </scene>
+
+  <scene name="good-truck" nextScene="interview">
+    <triggerEvent name="stop-cb-radio" />
+    <line speaker="doolittle" style="skeleton">We've been over every inch of it, dispatch — like it just came off the assembly line!</line>
+  </scene>
+
+  <scene name="cant" nextScene="interview">
+    <triggerEvent name="stop-cb-radio" />
+    <line speaker="shannon">Yeah, we've got to finish this delivery and a few —</line>
+  </scene>
+
+  <scene name="interview">
+    <line speaker="radio voice #2" style="skeleton" event="play-driver-2">10-33, dispatch, got two black eyes and a flock of crocodiles, come back.</line>
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-5">10-4, back it down and prick your eyelids, driver.</line>
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-6">Come back, Lem.</line>
+    <line speaker="doolittle" style="skeleton">10-4.</line>
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-7">Come back wheel-holder.</line>
+    
+    <option goto="quiz" speaker="conway">Um ... 10-4.</option>
+    <option goto="back-silence">`(CONWAY remains silent.)`</option>
+  </scene>
+
+  <scene name="back-silence" nextScene="quiz">
+    <line speaker="doolittle" style="skeleton">`(To CONWAY.)` Dispatch is addressing you ...</line>
+    <line speaker="doolittle" style="skeleton">`(Into radio.)` He's here, dispatch!</line>
+  </scene>
+
+  <scene name="quiz" nextScene="silence">
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-1">Got your ears on? Good. Listen to this:</line>
+  </scene>
+  
+  <scene name="silence" nextScene="end">
+    <triggerEvent name="stop-cb-radio" />    
+    <audioFade clip="cb-radio" direction="out" time="1" destroy="true" />
+    <line>`(Silence.)`</line>
+    <line speaker="doolittle" style="skeleton">So ...</line>
+    <line speaker="doolittle" style="skeleton">I think that went well.</line>
+    <line speaker="doolittle" style="skeleton">Let's head back up to logistics, and seal the deal, eh? And I've got one more thing to show you ...</line>
+  </scene>
+</conversation>

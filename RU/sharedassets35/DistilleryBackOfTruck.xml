@@ -1,0 +1,65 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">  
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <triggerEvent name="truck-tour-zoom"/>
+    <setGameVar name="distillery-truck-examined-back" value="true" />
+    
+    <line speaker="doolittle" style="skeleton">Looks like it's just about ready to go out. We have some good strong folks in shipping here, so you never need to worry about loading if you don't want to. Bit hard on the knees and back at our age, eh?</line>
+    <line speaker="doolittle" style="skeleton">Of course you'll have to unload at the destination, but that's the job. And some drivers like the extra shift stacking and loading here.</line>
+    <option goto="miguel" speaker="conway">Did Miguel load his own trucks?</option>
+    <option goto="lifting" speaker="conway">I shouldn't really do any lifting these days ...</option>
+  </scene>
+
+  <scene name="miguel" nextScene="pre-vignette-options">
+    <line speaker="doolittle" style="skeleton">He did — it was a jealously-guarded task for him. If I didn't know the man better — hear me now, I say `if I didn't know the man better` — I may have suspected he was skimming off the top.</line>
+  </scene>
+
+  <scene name="lifting" nextScene="pre-vignette-options">
+    <line speaker="doolittle" style="skeleton">I see. Well, surely we can spare a dolly and carrying strap. For your health and safety.</line>
+  </scene>
+
+  <scene name="pre-vignette-options">
+    <option goto="lot-of-work" speaker="conway">Sounds like a lot of work around here.</option>
+    <option goto="charlie-vignette">`Conway woke up on baled hay.`</option>
+  </scene>
+
+  <scene name="lot-of-work" nextScene="end">
+    <line speaker="doolittle" style="skeleton">It's in our interest, friend. After all, we must meet our financial obligations!</line>
+  </scene>
+
+  <scene name="charlie-vignette">
+    <triggerEvent name="dialog-darken-fast" />
+    <triggerEvent name="stop-tape" />
+    <triggerEvent name="vignette-darken" />
+
+    <audioFade clip="memory-morning" direction="in" time="3" />
+    <audioFade clip="truck-engine" direction="to" target="0.25" time="3" />
+    
+    <setGameVar name="distillery-truck-saw-charlie-vignette" value="true" />
+
+    <line>`Everything was too bright, his head hurt `—` the usual. Lysette and Ira argued loudly just outside the open barn door. She wanted Ira to take him inside and shower, have some coffee, get to the job.`</line>
+    <line>`Ira said there wasn't time. Conway was in no condition. It was an important job. They couldn't put it off. Ira said to let the deadbeat sleep it off and then send him packing.`</line>
+    <line>`He said Charlie could do the job.`</line>
+    <option goto="close-eyes">`Conway closed his eyes.`</option>
+    <option goto="leave-barn">`Conway stepped out of the barn, shielding his eyes.`</option>
+  </scene>
+
+  <scene name="close-eyes" nextScene="charlie-later">
+    <line>`They kept arguing. Lysette tried saying Charlie had schoolwork, that Conway could be roused. Ira said Charlie should earn his bed for the summer. Conway was a lost cause `—` couldn't show up to a job bleary-eyed and smelling like booze.`</line>
+  </scene>
+
+  <scene name="leave-barn" nextScene="charlie-later">
+    <line>`He tried to say something reassuring, but just sort of stumbled around it. Lysette looked away. Ira just spat, and went inside to wake Charlie.`</line>
+  </scene>
+
+  <scene name="charlie-later" nextScene="charlie-end">
+    <line>`Ira was a stubborn man. So Charlie went along, and Conway drifted out again, and he didn't hear about the accident until months later.`</line>
+  </scene>
+  
+  <scene name="charlie-end" nextScene="end">
+    <audioFade clip="memory-morning" direction="out" speed="2" destroy="true" />
+    <audioFade clip="truck-engine" direction="in" time="1" />    
+    <line speaker="doolittle" style="skeleton" event="start-tape,dialog-lighten-fast">So. What's next?</line>
+  </scene>
+</conversation>

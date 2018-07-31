@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="jenn">There she goes.</line>
+    <line speaker="mimi">Wait, do you think ... Did she follow them out?</line>
+    <line speaker="jenn">Oh. Well, here's the last extended monitoring tape, from the dock when they left.</line>
+  </scene>
+</conversation>

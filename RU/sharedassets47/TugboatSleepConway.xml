@@ -1,0 +1,24 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tugboat-ezra-talked-to-conway-about-trees" value="true" />
+    <line speaker="conway">Hey, kid. What do you think of these little trees?</line>
+    <option goto="trees-smell-good" speaker="ezra">They smell good.</option>
+    <option goto="trees-light" speaker="ezra">I think they need better light.</option>
+  </scene>
+
+  <scene name="trees-smell-good" nextScene="about-trees">
+    <line speaker="conway">Yeah, they do, don't they. She's got good taste in aromatic plants, that captain. Keeps the boat smelling fresh.</line>
+  </scene>
+
+  <scene name="trees-light" nextScene="about-trees">
+    <line speaker="conway">Yeah, good point. I wonder how they live down here. Maybe she's got a special light bulb in here she turns on in the daytime.</line>
+  </scene>
+
+  <scene name="about-trees" nextScene="end">
+    <line speaker="conway">When I was a kid — older than you, a teenager, I guess — we used to shoplift beer and go drink it in this one cemetery, they had a bunch of trees like this. Bigger, though. We used to call them "pencil pines."</line>
+    <line speaker="conway">I asked Cate about them, and she said these were probably the same species. A lot of people put them in cemeteries. If you cut a branch off one of these, it won't grow back, so I guess that reminds people of the permanence of death.</line>
+    <line speaker="conway">Anyway, we never knew about that when I was a kid. We used to snap the branches off and whip each other with them.</line>
+  </scene>
+
+</conversation>

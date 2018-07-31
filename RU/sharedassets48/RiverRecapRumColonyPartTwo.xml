@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-story" />    
+    <line>Oh, if we're talking about The Rum Colony, I should tell you about Patch.</line>
+    <line>He's the bartender, general manager, "creative director" — I guess that means he books the music ... He's pretty much run the place for the last seven years. A lot of folks assume he owns it, but that is not the case.</line>
+    <line>The Rum Colony is owned by a dead man named Vernon. Technically, it would be owned by the power company, who once bought a sizable interest from Vernon as part of a state-sponsored investment program, but a clause in that arrangement requires them to keep their hands off the day-to-day — and most the profits — so long as Vernon walks this earth. The upshot of all this is that nobody came forth to identify the body ...</line>
+    <line>Patch is a good guy, though: kind, trustworthy, and he mixes a strong Mai Tai, if that's your thing.</line>
+  </scene>
+
+</conversation>

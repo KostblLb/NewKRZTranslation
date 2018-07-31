@@ -1,0 +1,30 @@
+# -*- mode: blocking -*-
+
+@set Stop riverworld-phone-room
+
+@func GraveMarkerShopVignette
+
+  Tugboat Listen on-grave-marker-shop
+  Tugboat Message RiverworldManager SetBoatSpeed 0.1
+  Tugboat Message RiverworldManager SetDialogTrigger 10
+  Tugboat Dialog RiverVignetteGraveMarkerShop
+
+  Vignette Listen conversation-closing
+  Tugboat Message RiverworldManager QueueState ResearchLab
+  Vignette Message RiverworldManager SetDestination ResearchLab
+  Vignette Message RiverworldManager SetBoatSpeed 1
+
+@end
+
+@func PhoneRoomRecap
+
+  Tugboat Message RiverworldManager QueueState Generic
+  Tugboat Wait 3
+  Tugboat Dialog RiverRecapPhoneRoom
+  Tugboat Message RiverworldManager QueueState ResearchLab
+  Tugboat Message RiverworldManager SetDestination ResearchLab
+
+@end
+
+Tugboat Exec GraveMarkerShopVignette ? [Stop]=disembarked
+Tugboat Exec PhoneRoomRecap ? [Stop]=aboard

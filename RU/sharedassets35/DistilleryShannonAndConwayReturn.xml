@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-return-conversation">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-completed-graveyard" value="true"/>
+    <line speaker="junebug">There you are! What'd you find in there?</line>
+    <line speaker="shannon">It wasn't ...</line>
+    <line speaker="junebug">Hey, what's going on? You look flushed, old man.</line>
+    <line speaker="conway">It doesn't matter.</line>
+    <line speaker="shannon">Right, OK. We got what we need.</line>
+    <line speaker="shannon">Let's go.</line>
+  </scene>
+</conversation>

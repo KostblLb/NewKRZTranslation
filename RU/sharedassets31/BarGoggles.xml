@@ -1,0 +1,20 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="lower-depths-talked-about-goggles" value="true"/>
+    <line>`(A bulky set of black goggles sit on the edge of the table, next to an ashtray, a newspaper, and a few empty glasses.)`</line>
+    <line speaker="shannon">Huh.</line>
+    <option goto="what" speaker="conway">What is it?</option>
+    <option goto="who" speaker="conway">Who do you think that belongs to?</option>
+  </scene>
+
+  <scene name="what" nextScene="end">
+    <line speaker="shannon">I guess ... I don't know.</line>
+    <line speaker="shannon">Can I tell you a horrible secret? I never wear eye protection in the shop. It's dangerous, I know! But I'm always looking back and forth from my oscilloscope to whatever I'm working on, and the scope has this peculiar kind of hard-bordered glow that I just ...</line>
+    <line speaker="shannon">Well, I've never found a pair of goggles or glasses that doesn't smear out that glow. At best, the lens softens everything so you can't quite find the edges.</line>
+  </scene>
+
+  <scene name="who" nextScene="end">
+    <line speaker="shannon">Whoever they are, they're gone now. Must have been pretty tanked to leave it behind — this thing looks expensive!</line>
+  </scene>
+</conversation>

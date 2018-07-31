@@ -1,0 +1,32 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <triggerEvent name="quarter-turn"/>
+    <setGameVar name="breakdown-bike-talked-about-sky" value="true"/>
+    <line speaker="johnny">Where are we staying tonight?</line>
+    <option goto="closet" speaker="junebug">Some closet at the bar, I guess.</option>
+    <option goto="figure-it-out" speaker="junebug">I'll figure something out.</option>
+  </scene>
+
+  <scene name="closet" nextScene="outside">
+    <line speaker="johnny">Harry Esperanza's four-star broom closet experience.</line>
+  </scene>
+
+  <scene name="figure-it-out" nextScene="outside">
+    <line speaker="johnny">Yeah, I know you will.</line>
+  </scene>
+
+  <scene name="outside">
+    <line speaker="johnny">Maybe it'd be nice to stay outside one of these nights. Power down just enough to rest, but keep an eye on the stars. Be there when the birds wake up.</line>
+    <option goto="romantic" speaker="junebug">Sounds romantic.</option>
+    <option goto="dew" speaker="junebug">Short circuits, capacitors popping in the morning dew.</option>
+  </scene>
+
+  <scene name="romantic" nextScene="end">
+    <line speaker="johnny">I'm a real romantic. Lucky me.</line>
+  </scene>
+
+  <scene name="dew" nextScene="end">
+    <line speaker="johnny">Yeah. You're right.</line>
+  </scene>
+</conversation>

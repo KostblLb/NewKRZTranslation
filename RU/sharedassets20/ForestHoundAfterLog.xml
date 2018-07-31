@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="forest-hound-talked-by-log" value="true"/>
+    <option goto="dog-history" speaker="ezra">How'd you come to be with these people?</option>
+    <option goto="dog-important" speaker="ezra">What do you like to do?</option>
+  </scene>
+
+  <scene name="dog-history">
+    <option goto="younger" speaker="ezra">I bet you were pretty wild when you were younger.</option>
+    <option goto="farm" speaker="ezra">Nah, I know. You probably met on a farm or something.</option>
+  </scene>
+
+  <scene name="younger">
+    <option goto="end" speaker="ezra">When I'm old like you, I'll still be wild.</option>
+    <option goto="end" speaker="ezra">Well, I like you anyway.</option>
+  </scene>
+
+  <scene name="farm">
+    <option goto="end" speaker="ezra">I bet the old man herded sheep.</option>
+    <option goto="end" speaker="ezra">I bet the lady fixed tractors.</option>
+  </scene>
+
+  <scene name="dog-important">
+    <option goto="rabbits" speaker="ezra">Chase rabbits?</option>
+    <option goto="lay-around" speaker="ezra">Just lay around?</option>
+  </scene>
+
+  <scene name="rabbits">
+    <option goto="end" speaker="ezra">Sure, so do me and Julian. We always let them go, though.</option>
+    <option goto="end" speaker="ezra">Nah, you're too slow. I like you anyway.</option>
+  </scene>
+
+  <scene name="lay-around">
+    <option goto="end" speaker="ezra">Well, I bet you were pretty wild when you were younger.</option>
+    <option goto="end" speaker="ezra">Julian too. He sleeps all day.</option>
+  </scene>
+
+</conversation>

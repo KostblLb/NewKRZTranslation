@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="highway-airplane-looked-at-airplane" value="true"/>    
+
+    <line>
+      Two shirtless, shoeless men push a light aircraft along the highway. Occasionally, one or the other slips a bit on the sweating asphalt, or stops to pull back his hair.
+    </line>
+  </scene>
+</conversation>

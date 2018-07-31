@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-shannon-talked-to-dawn" value="true" />
+        
+    <line speaker="dawn">I'd say that's enough about `<variable name="tiki-sonny-rant-subject" />` to last an evening, huh?</line>
+
+    <option goto="never-stop" speaker="shannon">I thought he'd never stop.</option>
+    <option goto="harmless" speaker="shannon">He seems harmless enough.</option>
+    <option goto="heard-before" speaker="shannon">I'm sure you've heard it all before.</option>
+  </scene>
+
+  <scene name="never-stop" nextScene="dawn-personal-question">
+    <line speaker="dawn">Not as long as someone's listening.</line>
+  </scene>
+
+  <scene name="harmless" nextScene="dawn-personal-question">
+    <line speaker="dawn">Harmless is a good word for it.</line>
+  </scene>
+  
+  <scene name="heard-before" nextScene="dawn-personal-question">
+    <line speaker="dawn">That's his latest rant. But I'm not surprised by anything anymore. Before this it was bovine growth hormones and global warming ...</line>    
+  </scene>
+
+  <scene name="dawn-personal-question">
+    <line speaker="dawn">I come here just about every night, so I know `you` don't. What do you think of our adopted home?</line>
+
+    <option goto="beach" speaker="shannon">Nice. Right on the beach!</option>
+    <option goto="sleepy" speaker="shannon">Kind of sleepy. Or maybe it's just late.</option>
+    <option goto="drinks" speaker="shannon">Strong drinks, it looks like.</option>
+  </scene>
+
+  <scene name="beach" nextScene="goodbye">
+    <line speaker="dawn">Sometimes when I need to come down a little, I kick my shoes off and walk in the sand. You'd be amazed what your toes turn up!</line>
+    <line speaker="dawn">One time I found ... it was ... that's odd. I forgot what I was going to say.</line>
+  </scene>
+  
+  <scene name="sleepy" nextScene="goodbye">
+    <line speaker="dawn">I guess it is late. I don't sleep much anymore, and neither does Sonny. I forget when that started exactly ... We just started coming here instead of going to bed.</line>
+  </scene>
+  
+  <scene name="drinks" nextScene="goodbye">
+    <line speaker="dawn">It's all true, though you wouldn't know it to taste them. I always say it's the pineapple juice. You could hide the taste of motor oil with pineapple juice. Ha ha.</line>
+    <line speaker="dawn">All that sugar goes straight to your head and you forget the burning in your gut.</line>
+  </scene>
+
+  <scene name="goodbye" nextScene="end">
+    <line speaker="dawn">Have a nice night, hon.</line>
+  </scene>
+</conversation>

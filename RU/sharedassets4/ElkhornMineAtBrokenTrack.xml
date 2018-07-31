@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="elkhorn-mine-found-broken-track" value="true"/>
+    
+    <line speaker="shannon">The tracks are all messed up here. This tram isn't going any further. I wonder what's down that tunnel.</line>
+  </scene>
+
+</conversation>

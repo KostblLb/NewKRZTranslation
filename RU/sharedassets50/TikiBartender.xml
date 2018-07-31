@@ -1,0 +1,434 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-junebug-talked-to-patch" value="true" />
+    <line speaker="patch">Junebug! Hey, guess who I just saw, like an hour ago.</line>
+    <option goto="didi-or-gogo" speaker="junebug" condition="three:breakdown-bike-talked-about-radio+three:breakdown-bike-musician=didi">Didi.</option>
+    <option goto="didi-or-gogo" speaker="junebug" condition="three:breakdown-bike-talked-about-radio+three:breakdown-bike-musician=gogo">Gogo.</option>
+    <option goto="engine" speaker="junebug">That lady with the engine for sale.</option>
+    <option goto="about-patch" speaker="junebug">I don't even care — how are `you`, Patch?</option>    
+  </scene>
+
+  <scene name="didi-or-gogo">
+    <line speaker="patch">`Wasted`! I had to send him on his way. Why do you hang out with that guy?</line>
+    <option goto="didi-or-gogo-family" speaker="junebug">He's like family.</option>
+    <option goto="didi-or-gogo-over-it" speaker="junebug">Man, we're over it.</option>
+    <option goto="about-patch" speaker="junebug">How are you, Patch?</option>
+  </scene>
+
+  <scene name="didi-or-gogo-family" nextScene="junebug-questions">
+    <line speaker="patch">I hear you. Gotta draw some kind of line though, right?</line>
+  </scene>
+
+  <scene name="didi-or-gogo-over-it" nextScene="junebug-questions">
+    <line speaker="patch">Yeah, you should have seen him.</line>
+  </scene>
+
+  <scene name="engine">
+    <line speaker="patch">You just missed her! I tried to hold her back but she's all business.</line>
+    <option goto="engine-2" speaker="junebug">I got that impression.</option>
+    <option goto="engine-2" speaker="junebug">It's OK, we can't really afford it.</option>
+    <option goto="about-patch" speaker="junebug">How are you, Patch?</option>
+  </scene>
+
+  <scene name="engine-2" nextScene="junebug-questions">
+    <line speaker="patch">Hey, I'm sure another one will come on the market soon.</line>
+  </scene>
+
+  <scene name="about-patch" nextScene="junebug-questions">
+    <setGameVar name="tiki-bar-heard-about-carl" value="true" />
+    
+    <line speaker="patch">Aw, man ... you know. Carl had that gig for a minute at `<template name="failedBusiness" capture="tiki-bar-carl-failed-business" seed="tiki" />`, but they went out of business. If our numbers were better here, he could just work on his record and it'd be fine, but ... you know how it is.</line>
+    <line speaker="patch">For now, he's selling flowers on the river. Say "hi," if you pass him!</line>
+  </scene>
+
+  <scene name="junebug-questions">
+    <line speaker="patch">Hey, any of your friends want a drink? I've got time. Busy night, but everyone's deep in their straws by now. Ha ha.</line>
+    
+    <option goto="why-busy" speaker="junebug">Why so busy?</option>
+    <option goto="offer-drink" speaker="junebug">What have you been mixing up?</option>
+    <option goto="leave" speaker="junebug">We'll pass. Take it easy, Patch</option>
+  </scene>
+
+  <scene name="why-busy">
+    <line speaker="patch">It's these kooks from upriver — they all came in together. I think it's some kind of work thing.</line>
+    <line speaker="patch">They're nice enough, but, you know ... I've got to keep an eye out for lightweights trying to swim home or something. I don't have that kind of insurance!</line>
+    <line speaker="patch">Anyway, I don't mind them, but you know how territorial Dawn and Sonny get after a couple of Mai Tais.</line>
+    <line speaker="patch">Speaking of which ...</line>
+    
+    <option goto="offer-drink" speaker="junebug">What have you been mixing up?</option>
+    <option goto="leave" speaker="junebug">We'll pass. Take it easy, Patch</option>
+  </scene>
+  
+  <scene name="offer-drink" nextScene="generate-drink">
+    <line speaker="patch">Let's see, what's good tonight ...</line>
+  </scene>
+
+  <scene name="generate-drink">
+    <line speaker="patch">`<template name="drinkName" seed="tiki" seed-offset="tiki-drink-count" />`?</line>
+    
+    <option speaker="junebug" goto="describe-drink">What's that like?</option>
+    <option speaker="junebug" goto="generate-drink">What else you got?</option>
+    <option speaker="junebug" goto="leave">No drinks for us, thanks.</option>
+  </scene>
+
+  <scene name="describe-drink">
+    <line speaker="patch"><template name="drink" seed="tiki" seed-offset="tiki-drink-count" /></line>
+    
+    <option speaker="junebug" goto="generate-drink">What else you got?</option>
+    <option speaker="junebug" goto="leave">No drinks for us, thanks.</option>
+  </scene>
+  
+  <scene name="leave" nextScene="end">
+    <line speaker="patch">No problem. See you around!</line>
+  </scene>
+  
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <drinkName>
+      <common>
+        <template xml:space="preserve"><color filter="capitalize" /> Devil</template>
+        <template xml:space="preserve">The <color filter="capitalize" /> Death</template>
+        <template xml:space="preserve">My <color filter="capitalize" /> Heaven</template>
+        <template xml:space="preserve">The <liquor filter="capitalize" /> Noir</template>
+        <template xml:space="preserve"><adjective filter="capitalize" /> <bodyPart filter="capitalize" /></template>
+        <template xml:space="preserve"><adjective filter="capitalize" /> and <adjective filter="capitalize" /></template>
+        <template xml:space="preserve"><color filter="capitalize" /> <adjective filter="capitalize" /> Tiki</template>
+        <template xml:space="preserve"><adjective filter="capitalize" /> <noun filter="capitalize" /> on the <noun filter="capitalize" /></template>
+      </common>
+    </drinkName>
+    
+    <drink>
+      <common>
+        <template xml:space="preserve">One shot <liquor />, two shots of <liquor />. <ingredient filter="capitalize" />. <preparation filter="capitalize" />. Throw <garnish /> on top.</template>
+        <template xml:space="preserve">Chill a tall glass with a little <ingredient /> at the bottom, then just keep pouring in <liquor /> 'til it starts to turn <color />. Add <ingredient />, <ingredient />, and <ingredient /> — some folks like <ingredient />. I always include <garnish />.</template>
+        <template xml:space="preserve">Start with a short, broad glass, lightly rimmed with <ingredient />. Put <garnish /> in the bottom of the glass, flip it over and leave it for <number /> minutes, then slowly add <liquor />, <liquor />, <liquor />, and ... <liquor />. <preparation filter="capitalize" />.</template>
+        <template xml:space="preserve">I take a medium-sized glass bowl and fill it equal parts <ingredient /> and <liquor />. Cover it with a towel and let it stew until it gets a sort of `<adjective />` quality going. Add <liquor />, and <preparation />. Put <garnish /> on top, if you want to show off.</template>
+        <template xml:space="preserve">Just enough <liquor /> to make your <bodyPart /> <bodyPartEffect />, then add <ingredient /> and <ingredient /> to taste. <preparation filter="capitalize" /> — that's it!</template>
+      </common>
+
+      <rare>
+        <template xml:space="preserve"><ingredient filter="capitalize" />, <ingredient />, and <number /> slugs of <liquor />. Look out! That'll put hair on your <bodyPart />.</template>
+        <template xml:space="preserve">One part <ingredient />, <number /> parts <liquor />. I throw <garnish /> on there to soften the blow.</template>
+      </rare>
+      
+      <esoteric>
+        <template xml:space="preserve"><liquor filter="capitalize" /> and <garnish />. That's it! People can't get enough.</template>
+        <template xml:space="preserve"><liquor filter="capitalize" /> and <garnish />. That's it! People can't get enough. Drink too much and it'll make your <bodyPart /> <bodyPartEffect />, though — watch out!</template>        
+      </esoteric>
+    </drink>
+
+    <failedBusiness>
+      <common>
+        <template xml:space="preserve">The <product filter="capitalize" /> <venue filter="capitalize" /></template>
+        <template xml:space="preserve">We Love <productPlural filter="capitalize" /></template>
+        <template xml:space="preserve">AAA <productPlural filter="capitalize" /></template>
+        <template xml:space="preserve"><venue filter="capitalize" /> of <productPlural filter="capitalize" /></template>
+      </common>
+    </failedBusiness>
+  </templates>
+
+  <templateValues>
+    <liquor>
+      <common>
+        <value>white rum</value>
+        <value>light rum</value>
+        <value>dark rum</value>
+        <value>spiced rum</value>
+        <value>gold rum</value>
+        <value>151-proof rum</value>
+        <value>aged rum</value>        
+      </common>
+
+      <rare>
+        <value>demerara rum</value>
+        <value>black rum</value>
+        <value>blue rum</value>      
+      </rare>
+
+      <esoteric>
+        <value>old rum</value>
+        <value>young rum</value>
+        <value>bone rum</value>
+        <value>soft rum</value>
+        <value>ugly rum</value>
+      </esoteric>
+    </liquor>
+
+    <ingredient>
+      <ubiquitous>
+        <value condition="jerky-holdout">stale jerky</value>        
+      </ubiquitous>
+      
+      <common>
+        <value>grapefruit juice</value>
+        <value>pineapple juice</value>      
+        <value>lime juice</value>
+        <value>orgeat syrup</value>
+        <value>orange curacao</value>
+        <value>blue curacao</value>
+        <value>green curacao</value>
+        <value>simple syrup</value>
+        <value>sugar</value>
+      </common>
+
+      <rare>
+        <value>white grapefruit juice</value>
+        <value>yellow food coloring</value>
+        <value>gray curacao</value>
+        <value>fine sugar</value>
+        <value>sea salt</value>
+      </rare>
+
+      <esoteric>
+        <value>black grapefruit juice</value>
+        <value>black curacao</value>
+        <value>burnt sugar</value>
+      </esoteric>
+    </ingredient>
+
+    <garnish>
+      <common>
+        <value>a maraschino cherry</value>
+        <value>an orange peel</value>
+        <value>a little umbrella</value>
+      </common>
+      
+      <rare>
+        <value>a plastic skull</value>
+        <value>an apple peel</value>      
+        <value>a toothpick</value>
+        <value>a couple olives</value>      
+      </rare>
+      
+      <esoteric>
+        <value>a snake jaw</value>
+        <value>a banana peel</value>
+      </esoteric>
+    </garnish>
+
+    <color>
+      <common>
+        <value>dark</value>
+        <value>light</value>
+        <value>clear</value>
+        <value>brownish</value>
+        <value>blue</value>
+      </common>
+      
+      <rare>
+        <value>black</value>
+        <value>iridescent</value>
+      </rare>
+
+      <esoteric>
+        <value>invisible</value>
+      </esoteric>
+    </color>
+
+    <preparation>
+      <common>
+        <value>stir</value>
+        <value>shake</value>
+        <value>blend</value>        
+        <value>refrigerate</value>
+        <value>pour over ice</value>
+      </common>
+      
+      <rare>
+        <value>let it sit for a while</value>
+        <value>look at it for a minute</value>
+      </rare>
+
+      <esoteric>
+        <value condition="one:conway-fascination=wandering">think about something else for a bit</value>
+        <value condition="one:conway-fascination=destination">stare at it real close for a while</value>
+      </esoteric>
+    </preparation>
+
+    <adjective>
+      <common>
+        <value>salty</value>
+        <value>frozen</value>
+        <value>sweet</value>
+        <value>strong</value>
+        <value>fragrant</value>
+        <value>potent</value>        
+      </common>
+      
+      <rare>
+        <value>suffering</value>
+        <value>old</value>
+        <value>deadly</value>
+        <value>glowing</value>
+        <value>leisurely</value>
+      </rare>
+
+      <esoteric>
+        <value>poison</value>
+        <value>unpleasant</value>
+        <value>esoteric</value>        
+      </esoteric>
+    </adjective>
+
+    <noun>
+      <common>
+        <value>sling</value>
+        <value>grog</value>
+        <value>zombie</value>
+        <value>flamingo</value>        
+        <value>cocktail</value>
+        <value>captain</value>
+        <value>mai tai</value>
+        <value>beach</value>
+        <value>punch</value>        
+      </common>
+
+      <rare>
+        <value>navy</value>      
+        <value>dracula</value>
+        <value>memory</value>
+        <value>reminder</value>
+        <value>express</value>
+        <value>sweetness</value>
+        <value>dragon</value>
+      </rare>
+
+      <esoteric>
+        <value>zero</value>
+        <value>bone</value>      
+      </esoteric>
+    </noun>
+
+    <number>
+      <common>
+        <value>a few</value>
+        <value>one</value>
+        <value>two</value>
+        <value>three</value>
+        <value>four</value>
+        <value>five</value>      
+        <value>several</value>
+      </common>
+
+      <rare>
+        <value>twenty</value>
+      </rare>
+      
+      <esoteric>
+        <value>forty-five</value>
+      </esoteric>
+    </number>
+
+    <bodyPart>
+      <common>
+        <value condition="!one:shannon-will-drive">legs</value>
+        <value>arms</value>
+        <value>toes</value>
+        <value>nose</value>
+        <value>tongue</value>
+      </common>
+      <rare>
+        <value>inner ear</value>
+        <value>pupil</value>
+        <value>bottom</value>        
+      </rare>
+      <esoteric>
+        <value>ego</value>
+        <value>id</value>        
+        <value>superego</value>        
+      </esoteric>
+    </bodyPart>
+
+    <bodyPartEffect>
+      <common>
+        <value>tingle</value>
+        <value>sting</value>
+        <value>vibrate</value>
+        <value>glow</value>
+      </common>
+      <rare>
+        <value>writhe</value>
+        <value>tremble</value>
+        <value>ache</value>
+      </rare>
+      <esoteric>
+        <value>shimmer</value>
+      </esoteric>
+    </bodyPartEffect>
+    
+    <product>
+      <common>
+        <value>t-shirt</value>
+        <value>shoe</value>
+        <value>burger</value>
+        <value>avocado</value>
+        <value>beer</value>
+        <value>flower</value>
+        <value>camera</value>
+        <value>sweater</value>
+        <value>sock</value>
+      </common>
+      
+      <rare>
+        <value>souvenir</value>
+        <value>blanket</value>
+        <value>balloon</value>
+        <value>video</value>
+      </rare>
+      
+      <esoteric>
+        <value>crystal</value>
+        <value>memento</value>
+      </esoteric>
+    </product>
+
+    <productPlural>
+      <common>
+        <value>t-shirts</value>
+        <value>shoes</value>
+        <value>burgers</value>
+        <value>avocados</value>
+        <value>beer</value>
+        <value>flowers</value>
+        <value>cameras</value>
+        <value>sweaters</value>
+        <value>socks</value>
+      </common>
+      
+      <rare>
+        <value>blankets</value>
+        <value>balloons</value>
+        <value>videos</value>
+        <value>souvenirs</value>
+      </rare>
+      
+      <esoteric>
+        <value>crystals</value>
+        <value>mementos</value>
+      </esoteric>
+    </productPlural>
+
+    <venue>
+      <common>
+        <value>hut</value>
+        <value>house</value>
+        <value>shoppe</value>
+        <value>barn</value>
+        <value>corner</value>
+        <value>closet</value>
+      </common>
+      <rare>
+        <value>grotto</value>
+        <value>dungeon</value>
+        <value>planet</value>
+      </rare>
+      <esoteric>
+        <value>dimension</value>
+      </esoteric>
+    </venue>
+
+  </templateValues>
+</conversation>

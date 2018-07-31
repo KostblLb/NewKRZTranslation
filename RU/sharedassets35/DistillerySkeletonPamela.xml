@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-pamela" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">This is Pamela. On her dear friend's fortieth birthday, she purchased a quarter cask of Hard Times to celebrate. Unfortunately, her check was misplaced under the delivery driver's seat for a few months, and was cashed at an inopportune moment. Naturally, the "biggest check first" policy incurred significantly elevated overdraft fees and interest ...</line>
+    <line speaker="doolittle" style="skeleton">The distillery agreed to front Pam's bill in exchange for a promise of work.</line>
+  </scene>
+</conversation>

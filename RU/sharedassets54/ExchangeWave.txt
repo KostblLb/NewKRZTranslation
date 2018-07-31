@@ -1,0 +1,13 @@
+# -*- mode: blocking -*-
+
+@set Dinghy ExchangeDinghy/Root/Wobble
+@set Motorboat ExchangeMotorboat/Root/Wobble
+
+Wave Gesture* [Motorboat]/SkeletonCaptain Enter Wave
+Wave Wait 1
+Wave Gesture* [Dinghy]/Conway Enter Wave
+Wave Disable ExchangeMotorboat/Root/Wobble/FlashlightHint
+Wave Message ExchangeDinghy Stop
+Wave Wait 4
+Wave Interact ActorSkeletonPass Talk
+Wave Message ExchangeDinghy Go

@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-jermaine" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Jermaine was a bicycle courier, until quite recently. He sadly misplaced some money orders en route to a boiler maintenance company, and was held liable. When the distillery bought the company, his debt came along with it.</line>
+  </scene>
+</conversation>

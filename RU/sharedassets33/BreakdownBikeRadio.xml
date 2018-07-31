@@ -1,0 +1,69 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-first-bike-conversation">
+  <scene name="intro">
+    <setGameVar name="breakdown-bike-talked-about-radio" value="true"/>
+    
+    <line speaker="johnny">Hey, yeah! Didn't you play on this record?</line>
+    
+    <option goto="gogo" speaker="junebug">Gogo was on it.</option>
+    <option goto="didi" speaker="junebug">This is Didi's record.</option>
+  </scene>
+
+  <scene name="gogo" nextScene="musician">
+    <setGameVar name="breakdown-bike-musician" value="gogo"/>
+    <line speaker="johnny">Yeah, Gogo! Gogo. That guy is out of control. We should do a set with him.</line>
+  </scene>
+
+  <scene name="didi" nextScene="musician">
+    <setGameVar name="breakdown-bike-musician" value="didi"/>    
+    <line speaker="johnny">Yeah, Didi! Didi. That guy is out of control. We should do a set with him.</line>
+  </scene>
+
+  <scene name="musician">
+    <option goto="creep" speaker="junebug">He's a creep.</option>
+    <option goto="only-johnny" speaker="junebug">Only Johnny plays the notes I like.</option>
+  </scene>
+
+  <scene name="creep" nextScene="what-time">
+    <line speaker="johnny">Yeah. That creep can play, though!</line>
+  </scene>
+
+  <scene name="only-johnny" nextScene="what-time">
+    <line speaker="johnny">Aww.</line>
+  </scene>
+
+  <scene name="what-time">
+    <triggerEvent name="quarter-turn"/>
+    <line speaker="johnny">What time is it?</line>
+    <option goto="timing-circuit" speaker="junebug">You've got a timing circuit.</option>
+    <option goto="late" speaker="junebug">It's late.</option>
+  </scene>
+
+  <scene name="timing-circuit" nextScene="late">
+    <line speaker="johnny">Yeah. But yours is more accurate.</line>
+  </scene>
+
+  <scene name="late">
+    <line speaker="johnny">Harry's gonna flip out.</line>
+    <option goto="born-flipped" speaker="junebug">That old man was born flipped.</option>
+    <option goto="relax" speaker="junebug">Relax, cricket.</option>
+  </scene>
+
+  <scene name="born-flipped" nextScene="end-choices">
+    <line speaker="johnny">I just hope we can scrape up some tips. Hard enough when you get there on time.</line>
+  </scene>
+
+  <scene name="relax" nextScene="end-choices">
+    <line speaker="johnny">Yeah. You're right. Sorry, I'm being uptight.</line>
+  </scene>
+
+  <scene name="end-choices">
+    <option goto="i-know" speaker="junebug">Just play that keyboard; I'll figure out the rest.</option>
+    <option goto="i-know" speaker="junebug">I'll make sure Harry pays up. I have a way with him.</option>
+  </scene>
+
+  <scene name="i-know" nextScene="end">
+    <line speaker="johnny">I know.</line>
+  </scene>
+
+</conversation>

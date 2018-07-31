@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-cup" value="true" />
+    <line>A styrofoam cup is half buried in the sand, miraculously intact. It still has some coffee in it. Maybe it came from the bar. Or, maybe, someone dropped it here on their way to the bar. Maybe they weren't even headed to the bar originally, but drank their coffee too fast and needed a stiff counterbalance.</line>
+    <line>Shannon thinks about the war of liquids in the stomach — coffee to start a day, liquor to end it, apple cider vinegar to patch up the battlefield. Her mouth feels dry. She thinks about all the nervous casualties of the liquid war, clumsy alchemists transmuting day into night.</line>
+    <line>She thinks about a chalky, gray-pink liquid her mother kept for upset stomachs. That was stored in a coffee cup, too.</line>
+  </scene>
+</conversation>

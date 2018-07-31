@@ -1,0 +1,135 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tugboat-conway-and-shannon-talked" value="true" />
+    <blocking>@ConwaySwig</blocking>
+
+    <line speaker="conway">You know, it's the strangest thing: I can't remember why I came up here.</line>
+    <option goto="fresh-air" speaker="shannon">Fresh air?</option>
+    <option goto="shannon-forgets" speaker="shannon">Neither can I.</option>
+    <option goto="slow-down" speaker="shannon">Maybe you should slow down?</option>
+  </scene>
+
+  <scene name="fresh-air" nextScene="look-at-water">
+    <line speaker="conway">Maybe ... It's homey in that cabin, though. And warm.</line>
+  </scene>
+
+  <scene name="shannon-forgets" nextScene="look-at-water">
+    <line speaker="conway">Ha ha. Damned noisy river ...</line>
+  </scene>
+
+  <scene name="slow-down" nextScene="look-at-water">
+    <line speaker="conway">Naw, I'm good.</line>
+  </scene>
+
+  <scene name="look-at-water">
+    <blocking>@ConwaySwig</blocking>
+    <line speaker="conway">It's just that thing about ... what was it ... when you walk through a door?</line>
+    <line speaker="conway">When you go into the kitchen for something, and as soon as you pass from one room into another, you forget what you wanted.</line>
+    <line speaker="conway">You have to walk back out just to remember! Like you left a part of your brain behind. Hey, I wonder if I could follow that brain-crumb trail all the way back to the room I was born in ...</line>
+    <line>`(CONWAY cranes his neck over the railing.)`</line>
+    
+    <line speaker="conway" condition="one:shannon-will-drive">You were driving for hours. Get any sleep?</line>
+    <line speaker="conway" condition="!one:shannon-will-drive">Looks cold down there. And dark. You weren't in the cabin long — get any sleep?</line>
+
+    <option goto="rest-eyes" speaker="shannon">Just resting my eyes for a minute.</option>
+    <option goto="dream" speaker="shannon">I had a weird dream.</option>
+    <option goto="beer" speaker="shannon">You found beer.</option>
+  </scene>
+
+  <scene name="rest-eyes" nextScene="shannon-river-options">
+    <line speaker="conway">Every little bit helps, right?</line>
+  </scene>
+
+  <scene name="dream" nextScene="shannon-river-options">
+    <line speaker="conway">Yeah, that's when you get the strangest dreams — when you nod off, right? Just kind of dip your toes into sleep, and some weird image floats by and takes a nibble ...</line>
+  </scene>
+
+  <scene name="beer" nextScene="shannon-river-options">
+    <blocking>Shannon Unlook Shannon</blocking>
+
+    <line speaker="conway" condition="one:shannon-impression-of-conway=leather">There's a cooler-full down there. They say it just floated by, if you believe that. Got caught on some netting, and they hauled it aboard. A bounty.</line>
+    <line speaker="conway" condition="one:shannon-impression-of-conway=smell">There's a bunch; captain said it was flotsam.</line>
+    <line speaker="conway" condition="one:shannon-impression-of-conway=shaky">Yeah, I needed it.</line>
+    <line speaker="conway" condition="one:shannon-impression-of-conway=tired">What's another nail in the coffin, right?</line>
+    <line speaker="conway">Anyway, there's a sign by the cooler. "Take what you need and leave the rest."</line>
+  </scene>
+
+  <scene name="shannon-river-options">
+    <blocking>@ConwaySwig</blocking>
+    <blocking>@ShannonLean</blocking>
+    <line>`(SHANNON leans over the railing and looks at the river below.)`</line>
+    <option goto="trash" speaker="shannon">There's all kinds of trash down here ...</option>
+    <option goto="cold" speaker="shannon">It does look cold, doesn't it?</option>
+    <option goto="ezra" speaker="shannon">Did you see Ezra go in?</option>
+  </scene>
+
+  <scene name="trash" nextScene="ezra-status">
+    <line speaker="conway">Could have fallen off the haul back there. I think that kid was playing on the trash barge earlier.</line>
+  </scene>
+
+  <scene name="cold" nextScene="ezra-status">
+    <line speaker="conway">Yeah. Better keep that kid away from the edge — a person could easily fall in. He's been exploring.</line>
+  </scene>
+
+  <scene name="ezra" nextScene="ezra-status">
+    <line speaker="conway">Oh, yeah he's poking around with that tape recorder. Exploring.</line>
+  </scene>
+
+  <scene name="ezra-status">
+    <option goto="worry-about-ezra" speaker="shannon">Should I be worried?</option>
+    <option goto="ezra-self-sufficient" speaker="shannon">He seems to keep himself entertained.</option>
+  </scene>
+
+  <scene name="worry-about-ezra">
+    <line speaker="conway">I'm fine.</line>
+    <option goto="ezra-self-sufficient" speaker="shannon">I was talking about Ezra.</option>
+    <option goto="shannon-questions" speaker="shannon">Sure you are.</option>
+  </scene>
+
+  <scene name="ezra-self-sufficient" nextScene="shannon-questions">
+    <line speaker="conway">Hm.</line>
+    <line speaker="conway">It's good for him. It's important to know how to ... Hm. How to be alone.</line>
+  </scene>
+
+  <scene name="shannon-questions">
+    <line speaker="conway">What's up, huh? You look like there's something you want to ask.</line>
+    <line speaker="conway">Fine, you can ask it. One question.</line>
+    
+    <option goto="conway-drink" speaker="shannon">I thought you didn't drink.</option>
+    <option goto="hard-times" speaker="shannon">Do you really have to go work at Hard Times?</option>
+  </scene>
+
+  <scene name="conway-drink">
+    <line speaker="conway">Well, I "didn't" ...</line>
+    <line speaker="conway">I mean, I did, and then I didn't, and then I did again. That's how it always goes — I drift out, finally wind up back at Lysette's with my head between my legs, saying "never again" ...</line>
+    <line speaker="conway">Fifteen months, this last time. I think I hung on because I knew there wouldn't for much longer be anywhere to go back to. She went to live with her sister, now, and ... she probably won't remember me for long, anyway.</line>
+    <line speaker="conway">One time she picked me up out of a ditch by the road, blackout drunk at dawn. I came around later that night. She'd taken care of me. I told her I didn't deserve it, and she said I didn't have to deserve it.</line>
+    
+    <option goto="lysette-saint" speaker="shannon">She sounds like a saint. We should all have someone like that.</option>
+    <option goto="hard-times-debt" speaker="shannon">So you'll go to the distillery instead?</option>
+  </scene>
+
+  <scene name="lysette-saint" nextScene="hard-times-debt">
+    <line speaker="conway">Oh, you wouldn't say that if you knew her when she was younger. That girl was wild. Ha ha.</line>
+    <line speaker="conway">I guess she's got her own problems now. I wish I could help out. Hey, maybe I could make some money and send it to her sister?</line>
+    <line speaker="conway">Maybe they'll keep me on at the distillery, I mean. Oh, I shouldn't get ahead of myself.</line>
+  </scene>
+
+  <scene name="hard-times">
+    <line speaker="conway">Didn't seem so bad, did it?</line>
+    
+    <line speaker="conway" condition="one:shannon-impression-of-conway=shaky">It's a way to live, I mean — rent a bed, eat at the cafeteria, shift drink keeps the devil quiet. Ha ha. It's a way to live.</line>
+    <line speaker="conway" condition="one:shannon-impression-of-conway=tired">It's a way to live, I mean — rent a bed, eat at the cafeteria, drive all night. It's a way to live.</line>
+    <line speaker="conway" condition="one:shannon-impression-of-conway=smell">It's a way to live.</line>
+    <line speaker="conway" condition="one:shannon-impression-of-conway=leather">It's a way to live, I mean — rent a bed, eat at the cafeteria ...</line>
+
+    <line speaker="conway">Not like I have a choice.</line>
+    <option goto="hard-times-debt" speaker="shannon" variableChange="tugboat-shannon-says-conway-has-a-choice=true">I think you `do` have a choice.</option>
+    <option goto="hard-times-debt" speaker="shannon" variableChange="tugboat-shannon-says-conway-has-a-choice=false">I guess you owe them.</option>
+  </scene>
+
+  <scene name="hard-times-debt" nextScene="end">
+    <line speaker="conway">I've got to repay my debt. Hell, I should be grateful for the opportunity — if you want to die with any dignity, you've got to settle up. That's why it's such a damned shame when people go sudden.</line>
+  </scene>
+</conversation>

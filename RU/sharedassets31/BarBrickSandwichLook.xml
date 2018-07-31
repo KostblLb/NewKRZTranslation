@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="lower-depths-looked-at-sandwich" value="true"/>
+    <line>A rough brick between two pieces of stale bread sits in the center of the table, surrounded by a ring of undisturbed dust.</line>
+  </scene>
+</conversation>

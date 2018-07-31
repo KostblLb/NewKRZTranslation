@@ -1,0 +1,52 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-flora-conversation">
+  <scene name="intro">
+    <triggerEvent name="start-flora-conversation"/>
+    <setGameVar name="museum-parking-talked-to-flora" value="true"/>
+    
+    <line speaker="flora">Are those people like your new family?</line>
+    <option goto="friends" speaker="ezra">I think we're friends.</option>
+    <option goto="weird" speaker="ezra">They're actually kind of weird.</option>
+  </scene>
+
+  <scene name="friends" nextScene="rain">
+    <setGameVar name="museum-parking-ezra-companions" value="friends" />
+    <line speaker="flora">I don't have any friends, because I'm so busy.</line>
+  </scene>
+
+  <scene name="weird" nextScene="rain">
+    <setGameVar name="museum-parking-ezra-companions" value="weird" />    
+    <line speaker="flora">I know.</line>
+  </scene>
+
+  <scene name="rain">
+    <line speaker="flora">Too bad it's not raining anymore.</line>
+    <option goto="boat" speaker="ezra">Did you make that boat?</option>
+    <option goto="swim" speaker="ezra">You like the rain?</option>
+  </scene>
+
+  <scene name="boat">
+    <line speaker="flora">I folded it out of some paper from the front desk. How far do you think it will go?</line>
+    <line speaker="flora">We should stand here and watch it until it disappears over the horizon, with a far-off look in our eyes.</line>
+    <line speaker="flora">I'll lean my head on your shoulder and right when it's a tiny speck, just before it vanishes, you'll say something romantic.</line>
+    <option goto="boat-ok" speaker="ezra">OK.</option>
+    <option goto="boat-no" speaker="ezra">I have to go with my friends now.</option>
+  </scene>
+
+  <scene name="boat-ok" nextScene="end">
+    <setGameVar name="museum-parking-watched-boat-with-flora" value="true"/>
+    <line speaker="flora">Well, we'd better get started.</line>
+  </scene>
+
+  <scene name="boat-no" nextScene="end">
+    <setGameVar name="museum-parking-watched-boat-with-flora" value="false"/>
+    <line speaker="flora">OK.</line>
+  </scene>
+
+  <scene name="swim">
+    <line speaker="flora">I'm an excellent swimmer.</line>
+
+    <option goto="boat" speaker="ezra">So what's the boat for?</option>
+    <option goto="boat-no" speaker="ezra">I have to go now.</option>    
+  </scene>
+</conversation>

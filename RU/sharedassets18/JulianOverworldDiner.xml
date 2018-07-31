@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-diner" value="true"/>
+
+    <line>An all-night diner by the side of the road.</line>
+    <line condition="one:overworld-visited-diner">The lights are on.</line>
+    <line condition="!one:overworld-visited-diner">The lights are off.</line>    
+  </scene>
+</conversation>

@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-shannon-talked-to-dawn" value="true" />
+    <line speaker="dawn">`<filter name="capitalize"><variable name="tiki-sonny-rant-subject" /></filter>.` That's his latest rant. But I'm not surprised by anything anymore. Before this, it was bovine growth hormones and global warming ...</line>
+    <line speaker="dawn">Naw, he's harmless. I just don't know him anymore, that's all.</line>
+    <line speaker="dawn">He takes bits and pieces of things he reads, and synthesizes them all into some grand theory, and it's always the end of the world.</line>
+    <line speaker="dawn">But who could know that stuff, right? We can't even predict the weather. I mean: if you could take all these little pieces and predict how they're all going to interact ... well, you'd know everything!</line>
+    <line speaker="dawn">I'll tell you what I'd do with that kind of knowledge: when I first met a man, I'd look at his shoes, and the kind of books he reads, and what he eats for breakfast, and I'd make damn sure we weren't doomed to spend our twilight years greedily emptying Mai Tais and arguing about `<variable name="tiki-sonny-rant-subject" />.`</line>
+    <line speaker="dawn">Well, you know what they say about hindsight. Here's to a better yesterday. Ha ha.</line>
+  </scene>
+</conversation>

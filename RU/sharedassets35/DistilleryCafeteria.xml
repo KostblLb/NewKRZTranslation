@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="distillery-saw-cafeteria" value="true"/>
+    <line speaker="doolittle" style="skeleton">It may not be a draw on its own, but the food is certainly passable!</line>
+    <line speaker="doolittle" style="skeleton">Most of us never leave the premises, anyway.</line>
+    <option goto="why-not-leave" speaker="conway">Why not?</option>
+    <option goto="food" speaker="conway">What do they serve?</option>
+  </scene>
+
+  <scene name="why-not-leave" nextScene="come-and-go">
+    <line speaker="doolittle" style="skeleton">Well, we strive to avoid unnecessary downtime.</line>
+  </scene>
+
+  <scene name="food" nextScene="come-and-go">
+    <line speaker="doolittle" style="skeleton">Oh, mostly corn. One acquires a taste for the local dishes, as one does anywhere.</line>
+    <line speaker="doolittle" style="skeleton">It's become a matter of comfort. The food, and simply to eat here. To `be` here.</line>
+  </scene>
+
+  <scene name="come-and-go" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Besides, if we were all coming and going three times a day, we'd surely attract the wrong kind of attention! Can't tax what you can't see, now ...</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />    
+    <line>See that small, brick building? It used to be an upholstery shop. Now it's inhabited by a very skilled taxidermist, whose art is greatly in demand. When it was an upholstery shop, it didn't see nearly as much business.</line>
+    <line>The old shop's name has been lost to time and weather — this was decades ago — and the only trace of it now is the grayed frame of an old sign behind the new lettering, which now reads "Trapper, Stalker &amp; Sportsman," and then below, smaller, "no specimen is too exotic, no arrangement too fanciful."</line>
+    <line>Some of the upholstery equipment is still there, too, and still sees active use. Elise is the resident artist, though she's not the owner of the shop.</line>
+    <option goto="ida">It's owned by her aunt, Ida.</option>
+    <option goto="judah">It's owned by a reclusive ex-convict named Judah.</option>
+  </scene>
+
+  <scene name="ida" nextScene="end">
+    <setGameVar name="riverworld-ida-owns-taxidermist" value="true" />
+    <line>Ida has very little to do with the day-to-day — she's busy with other endeavors, mostly the restaurant she and her husband run on Lake Lethe.</line>
+  </scene>
+
+  <scene name="judah" nextScene="end">
+    <line>Very little is known about him. His crime is generally assumed to be violent or otherwise gruesome in some detail, though of course that's all speculation and probably comes from his association with the taxidermy business, even though he never so much as skins a squirrel. He's more like a "silent partner." I guess those are the ones you're supposed to keep an eye on ...</line>
+    <line>But Judah is old, and keeps to himself, and the consensus seems to be that he's paid his debt to society, whatever that debt may have been.</line>
+  </scene>
+
+</conversation>

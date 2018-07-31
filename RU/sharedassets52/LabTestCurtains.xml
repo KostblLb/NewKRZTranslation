@@ -1,0 +1,43 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="seating">
+    <line speaker="mimi">Is there any pie left in the break room?</line>
+    <line speaker="jenn">Darryl finished it off before he went home last night.</line>
+    <line speaker="mimi">Darryl is on thin ice.</line>
+    <line speaker="jenn">You're declaring enemies left and right.</line>
+    <line speaker="mimi">What? Who else?</line>
+    <line speaker="jenn">That other Márquez woman: "Weaver." Didn't you ... Maybe I misunderstood. I thought I detected some, uh, `animosity`.</line>
+    <line speaker="mimi">Oh, no, nothing like that. She wasn't the kind of person you could "like" or "dislike," really; she was just `there`, and all you could do was accept her. Like magnetism, or gravity.</line>
+  </scene>
+
+  <scene name="seating">
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">Please describe, from memory, the following objects:</line>
+
+    <line speaker="question" style="questionnaire">Seating, in the room behind you.</line>
+    <option goto="lighting" speaker="response" style="questionnaire">Strangely comfortable.</option>
+    <option goto="lighting" speaker="response" style="questionnaire">Predictably austere.</option>
+    <option goto="lighting" speaker="response" style="questionnaire">A couch and a chair.</option>
+  </scene>
+
+  <scene name="lighting">
+    <line speaker="question" style="questionnaire">Lighting, in the room behind you.</line>
+    <option goto="air-quality" speaker="response" style="questionnaire">Delicate.</option>
+    <option goto="air-quality" speaker="response" style="questionnaire">Dim.</option>
+    <option goto="air-quality" speaker="response" style="questionnaire">Buzzing fluorescents, and a standing lamp.</option>
+  </scene>
+
+  <scene name="air-quality">
+    <line speaker="question" style="questionnaire">Air quality, in the last room in which you fell asleep.</line>
+    <option goto="after-questions" speaker="response" style="questionnaire">My workshop is poorly ventilated. It smells like solder and burnt plastic.</option>
+    <option goto="after-questions" speaker="response" style="questionnaire">I think I fell asleep on the boat for a minute. The air was warm but refreshing.</option>
+    <option goto="after-questions" speaker="response" style="questionnaire">I don't remember where I last fell asleep.</option>
+  </scene>
+
+  <scene name="after-questions" nextScene="end">
+    <line speaker="jenn">Well, `this` Márquez is pretty normal, so far.</line>
+    <line speaker="mimi">Oh yeah, they're definitely different people. I just wonder if they're related or something. I never imagined Weaver having any family, but I guess everyone has `some` family, right?</line>
+    <line speaker="jenn">`(Reading, distracted.)` What? Oh, sure, probably.</line>
+    <line speaker="mimi">OK. Let's go on to the next test.</line>
+  </scene>
+
+</conversation>

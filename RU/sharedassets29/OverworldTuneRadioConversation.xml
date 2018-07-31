@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-magic-station-conversation">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="overworld-heard-zero-station" value="true"/>
+    <line speaker="shannon">What's this station? I've never heard this before. Sounds like ... horses ... horses running? A race?</line>
+    <option goto="lysettes-horses" speaker="conway">Lysette and Ira had some horses, years back.</option>
+    <option goto="races" speaker="conway">Charlie and I used to go to races sometimes.</option>
+  </scene>
+
+  <scene name="lysettes-horses" nextScene="uncanny">
+    <line speaker="shannon">Yeah? I've always been a little afraid of them. They're so big, and ... I don't know. You look in their eyes, and they're almost human.</line>
+    <line speaker="shannon">Like they're human and animal at the same time. Since they've been domesticated so long, I guess ...</line>
+  </scene>
+  
+  <scene name="races" nextScene="uncanny">
+    <line speaker="shannon">Charlie, he was your boss's kid, right? The one who, uh ... yeah, must be some memories there.</line>
+  </scene>
+
+  <scene name="uncanny" nextScene="end">
+    <line speaker="shannon">Well, that fits &quot;familiar but strange&quot; for me. Harry said we just drive until it cuts out?</line>
+  </scene>
+</conversation>

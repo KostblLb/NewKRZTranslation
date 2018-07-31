@@ -1,0 +1,33 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-talked-to-thomas" value="true"/>
+    <setGameVar name="museum-location" value="camper" />
+    
+    <line speaker="thomas">Yeah they came by and knocked on the window, and we had a bit of a talk through the glass. I would've come out, but, you know: shady characters.</line>
+    <option goto="talk-about" speaker="museum staff">What did you talk about?</option>
+    <option goto="shady" speaker="museum staff">They seemed suspicious?</option>
+    <option goto="poking-around" speaker="museum staff">Did you see them poking around anywhere else?</option>
+  </scene>
+
+  <scene name="talk-about">
+    <line speaker="thomas">They were asking about Dr. Truman, and I told them what all I know about that, which is not very much.</line>
+    <option goto="dr-truman" speaker="museum staff">What do you know about Dr. Truman?</option>
+    <option goto="poking-around" speaker="museum staff">Did you see them poking around anywhere else?</option>
+  </scene>
+
+  <scene name="dr-truman" nextScene="end">
+    <line speaker="thomas">I told them: he moved in here with the rest of us when you folks bought up the neighborhood, and then one day his house was gone. That's all I know about that. I don't want to talk about that anymore.</line>
+  </scene>
+
+  <scene name="poking-around" nextScene="end">
+    <line speaker="thomas">Oh sure, they were into everything. Walking around, looking at stuff, talking to people, talking to each other ... I guess that's just what it's gonna be like now. Living here.</line>
+  </scene>
+
+  <scene name="shady">
+    <line speaker="thomas">I already told you: weirdos. Walking around door-to-door asking about Dr. Truman? This late at night? I told them what I know, but ... in this weather?</line>
+    <option goto="dr-truman" speaker="museum staff">What do you know about Dr. Truman?</option>
+    <option goto="poking-around" speaker="museum staff">Did you see them poking around anywhere else?</option>
+  </scene>
+</conversation>

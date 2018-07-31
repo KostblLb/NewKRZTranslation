@@ -1,0 +1,28 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape,exit-greenhouse">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <triggerEvent name="enter-greenhouse"/>    
+    <setGameVar name="museum-looked-at-greenhouse" value="true"/>
+    <setGameVar name="museum-location" value="greenhouse"/>
+    
+    <line speaker="annie">Flora was playing down on the lower level, and we'd been having a glass of wine in the greenhouse. We ducked out of the way when he came in. After all, they were complete strangers.</line>
+    <line speaker="george">We didn't know them.</line>
+    <option goto="dangerous" speaker="museum staff">Did they seem dangerous?</option>
+    <option goto="talking" speaker="museum staff">Did you overhear them talking?</option>
+  </scene>
+
+  <scene name="dangerous" nextScene="talking">
+    <line speaker="george">No, nothing dangerous about them. But you just can't know, can you?</line>
+    <line speaker="annie">How could you?</line>
+  </scene>
+
+  <scene name="talking" nextScene="end">
+    <line speaker="annie">Well, I heard the young woman ask her friend about his job. He's some kind of furniture collector or dealer, I think. It didn't sound like things were going well. Maybe they were here looking for a buyer?</line>
+    <line speaker="george">Yes, definitely some kind of furniture collector or dealer. I heard him talking about antiques.</line>
+    
+    <line condition="!museum-umbrella-is-open" speaker="annie">Must have been looking for shelter; he was carrying an umbrella, but not using it.</line>
+    <line condition="!museum-umbrella-is-open" speaker="george">Odd that he wasn't using it.</line>        
+  </scene>
+
+</conversation>

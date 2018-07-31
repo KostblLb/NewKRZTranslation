@@ -1,0 +1,41 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="radio-start">
+    <triggerEvent name="truck-tour-zoom"/>
+    <setGameVar name="distillery-used-truck-radio" value="true"/>
+    <triggerEvent name="start-tape"/>
+    <audioFade clip="truck-engine" direction="in" speed="4" />
+    <line event="truck-tour-cab-lights-on,truck-tour-hazards-on,truck-tour-start-engine">`(DOOLITTLE starts the truck and switches on the CB radio. A deep, monotonous voice drones from the dashboard speaker.)`</line>
+  </scene>
+
+  <scene name="radio-start">
+    <audioFade clip="cb-radio" direction="in" speed="2" />
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-1">10-20 on that load, come back?</line>
+    <line speaker="radio voice #1" style="skeleton" event="play-driver-1">Up in the hummingbird cave, 10-12, city kitty.</line>
+    <line speaker="doolittle" style="skeleton">`(Into radio.)` This a good time, dispatch? We may have found Miguel's replacement — thought you might like to get acquainted.</line>
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-2">10-9 come again?</line>
+    <line speaker="doolittle" style="skeleton">`(To CONWAY.)` Introduce yourself.</line>
+    <option goto="conway-bad-introduction" speaker="conway">Hello ...?</option>
+    <option goto="conway-bad-introduction" speaker="conway">Pleased to meet you ...?</option>
+    <option goto="conway-bad-introduction" speaker="conway">I, uh ...?</option>
+  </scene>
+
+  <scene name="conway-bad-introduction">
+    <triggerEvent name="stop-cb-radio" />
+    <line speaker="doolittle" style="skeleton">Tell dispatch something impressive about yourself — they're very well regarded here!</line>
+    <option goto="dispatch-cutoff" speaker="conway" insertedText="*CONWAY*: I guess-">I guess I could drive a truck like this.</option>
+    <option goto="dispatch-cutoff" speaker="conway" insertedText="*CONWAY*: I'm not-">I'm not really here for a job ...</option>
+    <option goto="dispatch-cutoff" speaker="conway" insertedText="*CONWAY*: You folks-">You folks know anything about a moldy old computer?</option>
+  </scene>
+
+  <scene name="dispatch-cutoff" nextScene="radio-fade">
+    <line speaker="dispatcher" style="skeleton" event="play-dispatcher-3">99, wheel-holder, gotta pay the water bill.</line>
+  </scene>
+
+  <scene name="radio-fade" nextScene="end">
+    <triggerEvent name="stop-cb-radio" />
+    <audioFade clip="cb-radio" direction="out" speed="2" destroy="true" />
+    <line speaker="doolittle" style="skeleton">Ah. So.</line>
+    <line speaker="doolittle" style="skeleton">I'm certain they'll call back before long. Let's take a look around the truck, eh?</line>
+  </scene>
+</conversation>

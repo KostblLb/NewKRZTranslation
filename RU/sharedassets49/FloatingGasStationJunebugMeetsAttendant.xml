@@ -1,0 +1,126 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-junebug-talked-to-attendant" value="true" />
+    <line speaker="attendant">Looking for crystals?</line>
+    <option goto="coffee" speaker="junebug" condition="floating-gas-station-junebug-errand=coffee">Coffee.</option>
+    <option goto="snacks" speaker="junebug" condition="floating-gas-station-junebug-errand=snacks">Snacks.</option>
+    <option goto="assume-crystals" speaker="junebug">Why do you assume I'm looking for crystals?</option>
+    <option goto="scratch-ticket" speaker="junebug">I need a scratch ticket.</option>
+  </scene>
+
+  <scene name="scratch-ticket">
+    <line speaker="attendant">What kind?</line>
+    <line>`(JUNEBUG examines the lottery display case.)`</line>
+
+    <option speaker="junebug" goto="scratch-ticket-bats">The one with the bats on it.</option>
+    <option speaker="junebug" goto="scratch-ticket-sudoku">The one with the `Sudoku` puzzle on it.</option>
+    <option speaker="junebug" goto="scratch-ticket-minefield">The one with the grassy field on it.</option>    
+  </scene>
+
+  <scene name="scratch-ticket-bats" nextScene="scratch-ticket-done-options">
+    <setGameVar name="floating-gas-station-scratch-ticket-choice" value="bats" />
+    <line speaker="attendant">Sure, "Bat Bucks." Everybody buys that one; no idea why ...</line>
+  </scene>
+  
+  <scene name="scratch-ticket-sudoku" nextScene="scratch-ticket-done-options">
+    <setGameVar name="floating-gas-station-scratch-ticket-choice" value="sudoku" />    
+    <line speaker="attendant">"Sudokash." It's a little complicated, but I had a guy in here who won ten dollars off one, just last week.</line>
+  </scene>
+  
+  <scene name="scratch-ticket-minefield" nextScene="scratch-ticket-done-options">
+    <setGameVar name="floating-gas-station-scratch-ticket-choice" value="minefield" />
+    <line speaker="attendant">"Money Minefield." OK.</line>
+  </scene>
+  
+  <scene name="scratch-ticket-done-options">
+    <line speaker="attendant">Anything else?</line>
+
+    <option goto="coffee" speaker="junebug" condition="floating-gas-station-junebug-errand=coffee">Coffee.</option>
+    <option goto="snacks" speaker="junebug" condition="floating-gas-station-junebug-errand=snacks">Snacks.</option>
+    <option goto="assume-crystals" speaker="junebug">Did you say something about crystals?</option>
+  </scene>
+  
+  <scene name="assume-crystals" nextScene="boat">
+    <setGameVar name="floating-gas-station-junebug-errand" value="crystals" />
+    <line speaker="attendant">We've got them on sale. All kinds of folks come in here looking for crystals. There's a few over there with milky white shocks through the middle, like you caught a piece of a cloud. People seem to like those a lot.</line>
+    <line speaker="attendant">Yep ...</line>
+    <line speaker="attendant">Popular crystals.</line>
+  </scene>
+
+  <scene name="coffee" nextScene="boat">
+    <line speaker="attendant">It's back here, but I'm going to tell you something — it's been sitting on this burner for ... all night, I think. It was brewed by my predecessor.</line>
+    <line speaker="attendant">You've got to be a particular kind of self-loathing-thirsty to drink this coffee. Or maybe it comforts you just to hold the cup in your hand. It's hot, at least.</line>
+  </scene>
+
+  <scene name="snacks" nextScene="boat">
+    <line speaker="attendant">Sure, we have snacks. We have ... how about some jerky? It's "homemade." Not by me.</line>
+  </scene>
+
+  <scene name="boat">
+    <line speaker="attendant">You work on the `Mammoth`? I can add it to your tab.</line>
+    <option goto="passenger" speaker="junebug">I'm a passenger.</option>
+    <option goto="recognize-boat" speaker="junebug">Oh, you know the tugboat? The captain — Cate — said I'd have to remind you.</option>
+  </scene>
+
+  <scene name="recognize-boat">
+    <line speaker="attendant">Sure, they're here every night ...</line>
+    <line speaker="attendant">It's OK. I have one of those faces. `Forgettable`.</line>
+    <option goto="not-forgettable" speaker="junebug">I wouldn't say that ...</option>
+    <option goto="dignity" speaker="junebug">Does it bother you?</option>
+  </scene>
+
+  <scene name="not-forgettable" nextScene="dignity">
+    <line speaker="attendant">It's OK. I've learned to accept it. In fact ...</line>
+  </scene>
+
+  <scene name="passenger" nextScene="dignity">
+    <line speaker="attendant">Sure, I should have guessed. You have the posture of someone on their way to somewhere. I have it, too. I just stand here behind the counter, and nobody affords me any greater importance than a spiderweb brushed out of the way.</line>
+  </scene>
+
+  <scene name="dignity">
+    <line speaker="attendant">I've learned to cherish it. There's dignity in being forgotten, letting the crowd flow around you unspoiled.</line>
+    <line speaker="attendant">I used to live in a city — I mean a `real` city. Cleveland, Ohio. I had some family money then, and I didn't have to work. I lived in hotels. In daylight, I walked wherever the people were. My only duty was to the crowd — I was its observer, its historian, its detective, its poet.</line>
+    <line speaker="attendant">Well, the money ran out, and I dispersed with the rest of them. I took my duties with me here, to Lake Lethe and the Echo River. I live behind this counter, anonymous, invisible, but I live with dignity.</line>
+    <line speaker="attendant">And yourself?</line>
+    <option goto="junebug-flaneur" speaker="junebug">Sure, something like that.</option>
+    <option goto="junebug-different" speaker="junebug">No, I don't think so.</option>
+  </scene>
+
+  <scene name="junebug-flaneur">
+    <option goto="junebug-strangers" speaker="junebug">I enjoy the company of strangers.</option>
+    <option goto="junebug-keep-moving" speaker="junebug">I like to keep moving.</option>
+  </scene>
+
+  <scene name="junebug-strangers" nextScene="sendoff">
+    <setGameVar name="floating-gas-station-junebug-flaneur-characterization" value="enjoy-strangers" />
+    <line speaker="attendant">`They` enjoy the company too, as fleeting as it is, sufficient unto itself.</line>
+  </scene>
+
+  <scene name="junebug-keep-moving" nextScene="sendoff">
+    <setGameVar name="floating-gas-station-junebug-flaneur-characterization" value="keep-moving" />    
+    <line speaker="attendant">Yeah, that's the way to do it. I can't help it, myself — I travel at the pleasure of the current.</line>
+  </scene>
+
+  <scene name="junebug-different">
+    <option goto="junebug-dont-blend-in" speaker="junebug">I don't blend in.</option>
+    <option goto="junebug-not-alone" speaker="junebug">I'm not alone.</option>
+  </scene>
+
+  <scene name="junebug-dont-blend-in" nextScene="sendoff">
+    <setGameVar name="floating-gas-station-junebug-flaneur-characterization" value="dont-blend-in" />    
+    <line speaker="attendant">Hm. And not so easy to forget, I'd say — I see now that you're right. Well, that's yours to bear, then.</line>
+  </scene>
+
+  <scene name="junebug-not-alone" nextScene="sendoff">
+    <setGameVar name="floating-gas-station-junebug-flaneur-characterization" value="not-alone" />    
+    <line speaker="attendant">Sure, so you say. I say you can travel in company and still be alone ...</line>
+  </scene>
+
+  <scene name="sendoff" nextScene="end">
+    <line speaker="attendant" condition="floating-gas-station-junebug-errand=snacks">Snacks are in the back there.</line>
+    <line speaker="attendant" condition="floating-gas-station-junebug-errand=coffee">Coffee and sugar are just around the counter here.</line>
+    <line speaker="attendant" condition="floating-gas-station-junebug-errand=crystals">We keep all the crystals on that shelf over there. Buy one, get one free — of equal or lesser symmetry.</line>
+  </scene>
+
+</conversation>

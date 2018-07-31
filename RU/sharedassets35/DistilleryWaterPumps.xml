@@ -1,0 +1,24 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="distillery-saw-water-pumps" value="true"/>
+    <line speaker="doolittle" style="skeleton">Well, to make a bourbon you'll need some water, won't you? Here's where it all comes in. The mundanity of it. Ha!</line>
+    <line speaker="doolittle" style="skeleton">Quite an impressive chorus when they all get going like this, though.</line>
+    <option goto="river" speaker="conway">What river is this?</option>
+    <option goto="loud" speaker="conway">Awfully loud, aren't they?</option>
+  </scene>
+
+  <scene name="river" nextScene="lake-lethe">
+    <line speaker="doolittle" style="skeleton">It's an artery of the Echo River.</line>
+  </scene>
+
+  <scene name="loud" nextScene="lake-lethe">
+    <line speaker="doolittle" style="skeleton">Yes, it runs clean here, but forcefully. We have to use quite heavy equipment just to draw from it.</line>
+  </scene>
+
+  <scene name="lake-lethe" nextScene="end">
+    <line speaker="doolittle" style="skeleton">The Echo River is fed from Lake Lethe, but you wouldn't recognize a drop of it. Lethe is cold, dark, and so very deep. And still!</line>
+    <line speaker="doolittle" style="skeleton">Rumors of Lake Lethe's supernatural properties are, I'd say, just a bit exaggerated. But ... I wouldn't fish on it.</line>
+  </scene>
+</conversation>

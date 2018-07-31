@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="bureau-talked-to-greg" value="true"/>
+    
+    <line>`(GREG is hard at work examining some diagrams, measuring angles with a plastic protractor and occasionally scribbling numbers in a small leather notebook.)`</line>
+    <line speaker="greg">Can I help you? Don't answer that.</line>
+    <line speaker="greg">I'm extremely busy with these charts. Maybe one of the clerks on the first floor can help you. They're probably just looking at cat pictures.</line>
+  </scene>
+</conversation>

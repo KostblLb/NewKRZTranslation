@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="walk-enable-roberta">
+  <scene name="intro">
+    <triggerEvent name="walk-disable-roberta"/>
+    <setGameVar name="hotmk-talked-to-roberta" value="true"/>
+    
+    <line speaker="roberta">The kingdom is in peril!</line>
+    <line>`(ROBERTA laughs.)`</line>
+    <line speaker="roberta">Well. What else is new?</line>
+    <option condition="!distillery-completed-graveyard" goto="work" speaker="conway">Do you work here?</option>
+    <option condition="distillery-completed-graveyard" goto="work" speaker="shannon">Do you work here?</option>    
+    <option goto="kingdom" speaker="ezra">Where's the kingdom?</option>
+  </scene>
+
+  <scene name="kingdom">
+    <line speaker="roberta">You're in the throne room. There are three legendary treasures, hidden throughout the castle, that will restore these ruins to their former glory ...</line>
+    <option condition="distillery-completed-graveyard" goto="work" speaker="shannon">Do you work here?</option>
+    <option condition="!distillery-completed-graveyard" goto="work" speaker="conway">Do you work here?</option>    
+    <option goto="treasures" speaker="ezra">What do they look like?</option>
+  </scene>
+
+  <scene name="treasures" nextScene="magic">
+    <line speaker="shannon">She's messing with you, kid.</line>
+    <line>`(ROBERTA laughs.)`</line>
+  </scene>
+
+  <scene name="work" nextScene="magic">
+    <line speaker="roberta">Work ... you could call it that. I gather old circuit boards and throw them in the fire. Sometimes I fish out precious metals and let them cool into toxic gems. I put them in my hair.</line>
+  </scene>
+
+  <scene name="magic" nextScene="past">
+    <line speaker="roberta">Enchanted jewelry ... talismans ... a magic mirror that prevents the future. A magic shield that protects the bearer from age. A magic chest that's always filled with ...</line>
+  </scene>
+
+  <scene name="past" nextScene="end">
+    <line speaker="roberta">I never went to the university. I was an `independent scholar`. It means I took to the public libraries like a beachcomber. I studied fairy tales.</line>
+    <line speaker="roberta">And then I came to work for Donald. I paid the bills. Rubbed leathering elbows with academics. Scraped black mold from cave walls. Finally ... now I carry the &quot;firewood&quot; into senescence.</line>
+    <line speaker="roberta">The kingdom is in peril.</line>
+  </scene>
+</conversation>

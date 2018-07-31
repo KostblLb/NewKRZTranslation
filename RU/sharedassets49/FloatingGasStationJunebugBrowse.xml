@@ -1,0 +1,81 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-junebug-browsed" value="true" />
+    
+    <line condition="floating-gas-station-junebug-errand=coffee">Coffee tilts gently with the lake, burning the air into a film on the glass decanter. This isn't coffee for drinking; it's perfunctory, ornamental.</line>
+    <line condition="floating-gas-station-junebug-errand=snacks">Junebug surveys a row of chocolates, licorices, cheese crackers — dehydrated, bleached, reconstituted and colorized.</line>
+    <line condition="floating-gas-station-junebug-errand=crystals">The crystals are rough, dirty. Some are damp — they must have come out of the river.</line>
+    
+    <option goto="attendant-1">`That attendant is a trip.`</option>
+    <option goto="johnny-1">`Johnny seemed distant.`</option>
+  </scene>
+
+  <scene name="browse-2" nextScene="route-2">
+    <line condition="floating-gas-station-junebug-errand=coffee">Junebug selects a white styrofoam cup from a stack and grabs the coffee pot.</line>
+    <line condition="floating-gas-station-junebug-errand=snacks">A bag on the bottom shelf is decorated with cartoonish pictures of vegetables. Through a plastic window in the packaging, she can see puffed corn shaped and colored like carrots, tomatoes, and broccoli florets, and a few puffy white discs that might represent potatoes.</line>
+    <line condition="floating-gas-station-junebug-errand=crystals">Junebug tries to scrape some green algae off a larger specimen, examining it for the kind of cloudy inner formation the attendant said was so popular.</line>
+  </scene>
+
+  <scene name="route-2">
+    <goto condition="floating-gas-station-junebug-browse-subject=attendant"
+          scene="attendant-2" />
+    <goto condition="floating-gas-station-junebug-browse-subject=johnny"
+          scene="johnny-2" />
+  </scene>
+
+  <scene name="browse-3" nextScene="route-3">
+    <line condition="floating-gas-station-junebug-errand=coffee">She moves her foot quickly out of the way, cursing with a harsh chirp.</line>
+    <line condition="floating-gas-station-junebug-errand=snacks">Somewhere in there is surely a preservative, in case the rest of the process hasn't done enough to stop the flow of time. She turns the package over to examine the ingredients.</line>
+    <line condition="floating-gas-station-junebug-errand=crystals">"... ha k ... y u ... " and a few numbers are woven through the algae.</line>
+  </scene>
+
+  <scene name="route-3">
+    <goto condition="floating-gas-station-junebug-browse-subject=attendant"
+          scene="attendant-3" />
+    <goto condition="floating-gas-station-junebug-browse-subject=johnny"
+          scene="johnny-3" />
+  </scene>
+
+  <scene name="browse-4" nextScene="end">
+    <line condition="floating-gas-station-junebug-errand=coffee">The attendant frowns and pulls a mop and dustpan from behind the counter. Junebug shrugs apologetically and pushes some of the wet, broken glass into a pile with her foot.</line>
+    <line condition="floating-gas-station-junebug-errand=crystals">This isn't algae at all — it's a decayed plastic bag caught on the rock.</line>
+    <line condition="floating-gas-station-junebug-errand=snacks">She turns the bag over to look for the ingredients, but only finds a marketing blurb. "Inspired by real vegetables!"</line>
+  </scene>
+
+  <scene name="attendant-1">
+    <setGameVar name="floating-gas-station-junebug-browse-subject" value="attendant" />
+    <option goto="browse-2">`"Letting the crowd flow around you unspoiled," he said.`</option>
+    <option goto="browse-2">`"Anonymous, invisible, but I live with dignity," he said.`</option>
+  </scene>
+
+  <scene name="attendant-2">
+    <option goto="browse-3">`What a depressing outlook.`</option>
+    <option goto="browse-3">`Who knows? Maybe he's onto something.`</option>
+  </scene>
+
+  <scene name="attendant-3">
+    <option goto="browse-4">`But what has to happen to a person to make them think that way?`</option>
+    <option goto="browse-4">`Does Johnny ever feel like that?`</option>
+  </scene>
+
+  <scene name="johnny-1">
+    <setGameVar name="floating-gas-station-junebug-browse-subject" value="johnny" />
+    <option goto="browse-2">`He was excited about Cate's dog, too.`</option>
+    <option goto="browse-2">`He seems a little preoccupied with the kid, Ezra.`</option>
+    <option goto="browse-2">`Traveling with all these people might be like sensory overload for him.`</option>
+  </scene>
+
+  <scene name="johnny-2">
+    <option goto="browse-3">`What would it be like to travel with one more?`</option>
+    <option goto="browse-3">`It's always just been the two of us on the bike ...`</option>
+    <option goto="browse-3">`We're just along for the ride. Like that attendant.`</option>
+  </scene>
+
+  <scene name="johnny-3">
+    <option goto="browse-4">`Even supposing it `was` possible to take on another passenger, long term ...`</option>
+    <option goto="browse-4">`It may be best just to ask him what's on his mind.`</option>
+    <option goto="browse-4">`He just needs to cool down for a bit.`</option>
+  </scene>
+
+</conversation>

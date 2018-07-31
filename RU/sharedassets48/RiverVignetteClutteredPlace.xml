@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />    
+    <line>See that? Just looks like a swirling mess of garbage, doesn't it? Well ... that's what it is.</line>
+    <line>I don't know why trash seems to collect right there, of all the spots on the lake. It's always been that way. Everyone just navigates around it, like it was an island or something.</line>
+    <option goto="canoe">Look closely, you can see some wood scraps from the old canoe rental shop.</option>
+    <option goto="school">I think I see some desks and chairs, swirling around the edge there ...</option>
+  </scene>
+
+  <scene name="canoe" nextScene="history">
+    <line>"Gemini Canoe &amp; Firewood." The place was run by twin sisters — Cassie, and ... Paula, I think. This was years ago.</line>
+    <line>They used to rent out canoes to tourists, campers, pilgrims, folks like that. They must have had some kind of deal with the distillery; you'd always see a couple of Hard Times boys posted up on the dock, peddling small bottles to their customers.</line>
+    <line>Cassie and Paula worked those old canoes to death, wrung every penny out of them. They'd only take one out of commission when it was truly, demonstrably dangerous, and you couldn't get a refund unless your boat was visibly taking on water. The side business in firewood was a stroke of minor genius.</line>
+  </scene>
+
+  <scene name="school" nextScene="history">
+    <line>Those all-in-one desks, like they have in schools, if I remember right. It's been a few years since I saw the inside of one!</line>
+    <line>Those must have washed down from somewhere. I've never known there to be a school on the lake ... Oh, there was "Gemini School of Beauty." It was run by sisters, Cassie and Paula, indistinguishable except for their haircuts. But I wouldn't think they'd have used desks like `that`.</line>
+    <line>We used to stop there most every night to let someone off for a cheap haircut — student stylists, you know — they spared many a sailor the pain of a botched do-it-yourself do!</line>
+    <line>But I guess they got in deep to the power company; those blow dryers and curling irons burn a lot of coal. It's a shame they had to close down. The haircuts are gone, but the hair keeps growing!</line>
+  </scene>
+
+  <scene name="history" nextScene="end">
+    <line>Yeah, this cluttered place makes a decent local museum. It's as good a history as `I` could ever tell ...</line>
+    <line>We arrived at a small houseboat neighborhood that sometimes hosted concerts for the pleasure of its residents, where Clara was scheduled that night to perform.</line>
+  </scene>
+
+  
+</conversation>

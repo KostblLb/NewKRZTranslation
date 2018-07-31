@@ -1,0 +1,125 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-call-received-friend" value="true" />
+        
+    <option goto="hello" speaker="patch" variableChange="temp:tiki-call-friend-seed=8">Hello.</option>
+    <option goto="hello" speaker="patch" variableChange="temp:tiki-call-friend-seed=1">Hullo.</option>
+    <option goto="hello" speaker="patch" variableChange="temp:tiki-call-friend-seed=9">Yello.</option>
+    <option goto="hello" speaker="patch" variableChange="temp:tiki-call-friend-seed=2">Hi.</option>
+  </scene>
+
+  <scene name="hello">
+    <line speaker="caller">Yeah, let me talk to <template name="personName" seed="temp:tiki-call-friend-seed" capture="tiki-caller-friend-name" />, please.</line>
+    <option goto="dont-see" speaker="patch">Don't think I've seen anyone called <variable name="tiki-caller-friend-name" /> here tonight.</option>
+    <option goto="describe-person" speaker="patch">What does <variable name="tiki-caller-friend-name" /> look like?</option>
+    <option goto="wrong-number" speaker="patch">You sure you have the right number?</option>
+  </scene>
+
+  <scene name="describe-person">
+    <line speaker="caller"><template name="personDescription" seed="temp:tiki-call-friend-seed" /></line>
+    
+    <option goto="dont-see" speaker="patch">No, I don't see anyone like that.</option>
+    <option goto="wrong-number" speaker="patch">You got the wrong number, friend.</option>
+  </scene>
+
+  <scene name="wrong-number">
+    <line speaker="caller">No, I'm pretty sure I dialed it right. Did you check in the back? <variable name="tiki-caller-friend-name" /> usually hangs out in the back.</line>
+    <option goto="no-back" speaker="patch">We don't really have a 'back' here.</option>
+    <option goto="dont-see" speaker="patch">I don't see anyone called <variable name="tiki-caller-friend-name" />.</option>
+  </scene>
+
+  <scene name="dont-see">
+    <line speaker="caller">Did you check the stairwell though? <variable name="tiki-caller-friend-name" /> sometimes sits over by the stairwell.</line>
+    <option goto="no-stairs" speaker="patch">No stairs, no stairwell, my friend.</option>
+    <option goto="come-down" speaker="patch">Why don't you just come down?</option>    
+  </scene>
+
+  <scene name="no-back">
+    <line speaker="caller">What? Every place has got a back! You've got a front, right? Of course you do. So, the back is on the other side.</line>
+    <option goto="call-where" speaker="patch">What place are you trying to call?</option>
+    <option goto="come-down" speaker="patch">Why don't you just come down?</option>
+  </scene>
+
+  <scene name="no-stairs">
+    <line speaker="caller">Well that doesn't make any sense — how do you get up there then, huh?</line>
+    <option goto="up-where" speaker="patch">Up where?</option>
+    <option goto="ground" speaker="patch">We're right on the ground.</option>
+  </scene>
+
+  <scene name="ground" nextScene="final">
+    <line speaker="caller">I mean from the other ground. Why are you being so dense? I'm just looking for <variable name="tiki-caller-friend-name" />.</line>
+  </scene>
+
+  <scene name="up-where">
+    <line speaker="caller">Up to where you're at right now, damn it!</line>
+    <option goto="call-where" speaker="patch">What place are you trying to call?</option>
+    <option goto="come-down" speaker="patch">Why don't you just come down?</option>
+  </scene>
+
+  <scene name="call-where" nextScene="final">
+    <line speaker="caller">The place where <variable name="tiki-caller-friend-name" /> is at. Look, this doesn't have to be complicated.</line>
+  </scene>
+
+  <scene name="come-down" nextScene="final">
+    <line speaker="caller">No time.</line>
+  </scene>
+
+  <scene name="final" nextScene="end">
+    <line speaker="caller">Hey, man — I've got other things to do. When you see <variable name="tiki-caller-friend-name" />, just say I called. Alright?</line>
+  </scene>
+
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <personName>
+      <common>
+        <template>Melba</template>
+        <template>Bobby</template>
+        <template>Mr. Tipton</template>
+        <template>Ezequiel</template>
+        <template>Kevin</template>
+        <template>Drew</template>
+        <template>Dr. Vicente</template>
+        <template>Kathy</template>
+        <template>Ms. Russell</template>
+      </common>
+      <rare>
+        <template>K.</template>
+      </rare>
+    </personName>
+
+    <personDescription>
+      <common>
+        <template>Kind of <adjective />, but not obscenely so. A person of <quality />. You can tell immediately.</template>
+        <template>Just sort of `<adjective />`, I don't know! Hard to describe now that I'm pressed on it.</template>
+        <template>Oh, <adjective />, <adjective />, maybe a little too <adjective />, if I were pressed to judge.</template>
+      </common>
+    </personDescription>
+  </templates>
+
+  <templateValues>
+    <adjective>
+      <common>
+        <value>gangly</value>
+        <value>stiff</value>
+        <value>loose-jointed</value>
+        <value>talkative</value>
+        <value>sad</value>
+        <value>stooped</value>
+        <value>plump-cheeked</value>
+      </common>
+    </adjective>
+
+    <quality>
+      <common>
+        <value>distinction</value>
+        <value>great experience</value>
+        <value>good character</value>
+        <value>strict morals</value>
+        <value>many talents</value>
+      </common>
+    </quality>
+  </templateValues>
+</conversation>

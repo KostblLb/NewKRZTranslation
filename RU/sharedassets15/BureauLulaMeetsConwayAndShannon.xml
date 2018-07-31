@@ -1,0 +1,131 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="bureau-end-lula-conversation">
+  <scene name="intro">
+    <triggerEvent name="bureau-start-lula-conversation"/>
+    <setGameVar name="met-lula" value="true"/>
+    <setGameVar name="bureau-current-floor-goal" value="4"/>    
+    
+    <line speaker="lula">Having fun in the paperclip labyrinth? Well, you made it eventually.</line>
+    <line speaker="lula">You look exhausted. I'd offer you my seat, but my ankles are turning on me.</line>
+    <option goto="fine" speaker="conway">I'm fine.</option>
+    <option goto="arthritis" speaker="conway">Arthritis?</option>
+    <option goto="directions" speaker="shannon">The receptionist said you could point us in the right direction.</option>
+  </scene>
+
+  <scene name="fine">
+    <line speaker="shannon">No, you're not.</line>
+    <line speaker="lula">How stoic. Or is it romantic? Are you a suffering artist?</line>
+    <option goto="no-artist" speaker="conway">Oh ... I'm no artist.</option>
+    <option goto="directions" speaker="shannon">The receptionist said you could point us in the right direction.</option>
+  </scene>
+
+  <scene name="no-artist" nextScene="arthritis">
+    <line speaker="lula">Good for you. It's a tedious pursuit, rewarded by an arsenal of useless skills and a touch of arthritis.</line>
+  </scene>
+
+  <scene name="arthritis" nextScene="directions">
+    <line speaker="lula">Doctor Truman says my joints are eroding one another. They've been collaborating for decades; it's only natural they want to kill each other now.</line>
+    <line speaker="lula">Well, enough about my hateful wrists and ankles.</line>
+  </scene>
+
+  <scene name="directions">
+    <line speaker="lula">This concrete bunker of an office is just a waypoint for you, I'm sure. Where is it you're trying to go?</line>
+    <option goto="dogwood" speaker="conway">We're looking for &quot;5 Dogwood Drive.&quot;</option>
+    <option goto="zero" speaker="conway">We're having trouble navigating the |Zero|.</option>
+  </scene>
+
+  <scene name="zero" nextScene="dogwood">
+    <line speaker="lula">Just navigating, apropos of nothing? The |Zero| doesn't work like other roads. You can't just drive and expect to find yourself somewhere. You must be more deliberate than when driving on surface roads.</line>
+    <line speaker="lula">And, in a way, much less deliberate ...</line>
+    <line speaker="shannon">We're looking for Dogwood Drive.</line>
+  </scene>
+
+  <scene name="dogwood">
+    <line speaker="lula">Hmm ... &quot;Dogwood Drive&quot; ... That's funny, do you know I used to live on a Dogwood Drive? This was years ago. A grimy old house ... basement full of insects, attic full of birds. I had a few roommates. We all worked at the university. I had a dog. I drank whiskey and beer, and made sculptures.</line>
+    <line speaker="lula">But that Dogwood was a surface road. With a name like that, it would have to be. What are you doing on the |Zero|?</line>
+    <option goto="gas-station" speaker="conway">A gas station attendant told us we'd need to take the |Zero| to get there.</option>
+    <option goto="weaver" speaker="shannon">My cousin, Weaver, sent us this way.</option>
+  </scene>
+
+  <scene name="gas-station">
+    <setGameVar name="bureau-mentioned-joseph-to-lula" value="true"/>
+    <line speaker="lula">Gas station attendant? I see. Friendly blind man, about my age, hangs out with an old cat, likes to pretend he's a poet?</line>
+    <option goto="joseph" speaker="conway">His name is Joseph, do you know him?</option>
+    <option goto="old-cat" speaker="conway">Old cat?</option>
+    <option goto="pretend-poet" speaker="conway">Pretend?</option>
+  </scene>
+
+  <scene name="old-cat" nextScene="joseph">
+    <line speaker="lula">Oh. No cat anymore? Sorry to hear it.</line>
+  </scene>
+
+  <scene name="pretend-poet" nextScene="joseph">
+    <line speaker="lula">No, you're right. I shouldn't be so spiteful ...</line>
+  </scene>
+
+  <scene name="joseph" nextScene="misled">
+    <line speaker="lula">Joseph and I used to work together. And we lived together ... we were friends.</line>
+    <line speaker="lula">But that was a long time ago. We haven't spoken in years. Do you know why he's pointed you this way?</line>
+    <line speaker="lula">It's because he's still in love with me, of course. And now he's implicated you, quite inconsiderately. And in your condition ... it's appalling.</line>
+    <line speaker="lula">So, I'm very sorry for wasting your time, but I'm afraid you've been misled. Excuse me.</line>
+  </scene>
+
+  <scene name="weaver">
+    <setGameVar name="bureau-mentioned-weaver-to-lula" value="true"/>    
+    <line speaker="lula">Your cousin Weaver? Weaver Márquez? I hadn't expected to hear from her again.</line>
+    <option goto="lula-knows-weaver" speaker="shannon">Do you know her?</option>
+    <option goto="weaver-missing" speaker="shannon">What does that mean?</option>
+  </scene>
+
+  <scene name="lula-knows-weaver" nextScene="weaver-left">
+    <line speaker="lula">She came through here as an intern. One of my old colleagues must have referred her ... do you know, I never asked?</line>
+    <line speaker="lula">Anyway, there's not much challenging work here ... much less for a gifted mathematician. She helped translate some notes on architectural plans I picked up in Mexico. She was very bored. We used to sit on the steps by the river, on our lunch break, and talk about geometry.</line>
+  </scene>
+
+  <scene name="weaver-missing" nextScene="weaver-left">
+    <line speaker="lula">We used to exchange short emails, just these terse descriptions of things we saw throughout the day. It was sort of a joke between us ... but they stopped. I assumed she'd found something better to do with her time.</line>
+  </scene>
+
+  <scene name="weaver-left" nextScene="misled">
+    <line speaker="lula">I hope she wasn't in trouble. I lost touch with her so suddenly. I had recommended she go see some old friends of mine at the university about a new acoustic surveying venture. I often worry she became wrapped up in some tenured professor's quixotic research project. You know the type: gray-haired, intellectual, narcissistic ...</line>
+    <line speaker="lula">Well, that is ...</line>
+    <line speaker="lula">I guess she sent you here because she respected me — thought I could help. Weaver's a dear girl, but I'm afraid you've been misled. Excuse me.</line>
+  </scene>
+
+  <scene name="misled">
+    <option goto="same-dogwood" speaker="conway">But where's the Dogwood Drive you lived on? Maybe it's the same one?</option>
+    <option goto="get-over-yourself" speaker="shannon">Get over yourself.</option>
+  </scene>
+
+  <scene name="get-over-yourself" nextScene="streets-renamed">
+    <line>`(LULA pauses, taken aback.)`</line>
+    <line speaker="lula">Well. I guess that's fair. Alright, maybe I can help you. For {if}[bureau-mentioned-joseph-to-lula]Joseph{end}{if}[bureau-mentioned-weaver-to-lula]Weaver{end}.</line>
+  </scene>
+
+  <scene name="same-dogwood" nextScene="streets-renamed">
+    <line speaker="lula">No, it's not possible.</line>
+  </scene>
+
+  <scene name="streets-renamed">
+    <line speaker="lula">The &quot;Dogwood Drive&quot; I lived on is now called &quot;Pale Dogwood Drive.&quot; They've renamed all the streets, you see. Too many streets with the same names. It was never a problem before, but now we have these databases, and it's all too confusing for the computer.</line>
+    <line speaker="lula">The computer has no sense of ambiguity, so it proclaims an error. &quot;Name collisions,&quot; they call them.</line>
+    <line speaker="lula">So my &quot;Dogwood Drive,&quot; is &quot;Pale Dogwood Drive,&quot; and another might be &quot;Large-leafed Dogwood Drive,&quot; or &quot;Himalayan Flowering Dogwood Drive,&quot; and so on. But one of them is still just &quot;Dogwood Drive.&quot; Or so we might hope?</line>
+    <line speaker="lula">It's really a matter of consulting records, of which we have an abundance here ...</line>
+    <option goto="street-list" speaker="conway">Do you have a record of those streets?</option>
+    <option goto="street-computer" speaker="conway">Where's the computer?</option>
+  </scene>
+
+  <scene name="street-list" nextScene="fourth-floor">
+    <line speaker="lula">I expect we must. They'll be up in `archives and records`. Fourth floor.</line>
+  </scene>
+
+  <scene name="street-computer" nextScene="fourth-floor">
+    <line speaker="lula">Computer? Oh, that's all handled off-site. We write up a formal request for analysis, provide the necessary data, and then send the whole thing out by courier.</line>
+    <line speaker="lula">So, first you'll need the data. I expect you'll find the road name change log up in `archives and records`. Fourth floor.</line>
+  </scene>
+
+  <scene name="fourth-floor" nextScene="end">
+    <line speaker="lula">It'll be filed under &quot;O&quot; for &quot;odonyms,&quot; probably. Or &quot;G&quot; for &quot;generic,&quot; or maybe &quot;S&quot; for &quot;specific.&quot; Depending on which part of the street name was changed.</line>
+  </scene>
+
+</conversation>

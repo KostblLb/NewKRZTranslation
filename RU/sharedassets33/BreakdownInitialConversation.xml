@@ -1,0 +1,132 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="breakdown-had-initial-conversation" value="true"/>
+    <line speaker="shannon">Nothing to be done?</line>
+    <option goto="wont-start" speaker="conway">Just won't start up again.</option>
+    <option goto="shannon-look" speaker="conway">Can you take a look at it?</option>
+  </scene>
+
+  <scene name="wont-start">
+    <line speaker="shannon">Damn. You had this truck long?</line>
+    <option goto="ira" speaker="conway">Ira bought it used, a ways back.</option>
+    <option goto="always-running" speaker="conway" variableChange="breakdown-truck-wont-start-at-night=true">I can never seem to start it at night.</option>
+  </scene>
+
+  <scene name="shannon-look" nextScene="always-running">
+    <line speaker="shannon">I guess I could poke around in there, but I don't know a damn thing about engines.</line>
+  </scene>
+
+  <scene name="ira" nextScene="always-running">
+    <line speaker="shannon">I wonder how old it was then. Do you ...</line>
+  </scene>
+
+  <scene name="always-running">
+    <line speaker="shannon">Wait ... is this why you always leave your truck running?</line>
+    <option goto="hill" speaker="conway">Lysette's is up on a hill, so ...</option>
+    <option goto="first-time" speaker="conway">First time it's just died like this.</option>
+    <option goto="superstitious" speaker="conway">Just superstitious.</option>
+  </scene>
+
+  <scene name="first-time" nextScene="area">
+    <line speaker="shannon">Well. Where's the champagne?</line>
+  </scene>
+
+  <scene name="hill" nextScene="area">
+    <line speaker="shannon">I get the picture.</line>
+  </scene>
+
+  <scene name="superstitious">
+    <line speaker="shannon">Right. Any other quirks I should know about?</line>
+    <option goto="superstition-eat" speaker="conway">Never eat while walking.</option>
+    <option goto="superstition-dogs" speaker="conway">Don't name dogs after loved ones.</option>
+    <option goto="superstition-seatbelts" speaker="conway">Seat belts.</option>
+  </scene>
+
+  <scene name="superstition-eat" nextScene="area">
+    <setGameVar name="breakdown-conway-superstition" value="eating" />
+    <line speaker="shannon">Well, I guess at your age ...</line>
+  </scene>
+
+  <scene name="superstition-dogs" nextScene="area">
+    <setGameVar name="breakdown-conway-superstition" value="dogs" />    
+    <line condition="one:dog-name=Homer" speaker="shannon">Huh. No Uncle Homer, I guess?</line>
+    <line condition="one:dog-name=Blue" speaker="shannon">Huh. No Aunt Blue, I guess?</line>
+    <line condition="one:dog-nameless" speaker="shannon">Huh. This old dog remind you of someone you knew? Is that why you don't give him a name?</line>
+  </scene>
+
+  <scene name="superstition-seatbelts" nextScene="area">
+    <setGameVar name="breakdown-conway-superstition" value="seatbelts" />
+    <line speaker="shannon">I guess there's always two sides.</line>
+  </scene>
+
+  <scene name="area">
+    <line speaker="shannon">Um, anyway ... Do you know this area? Anyone around here that could give us a hand?</line>
+    <option goto="drove-past" speaker="conway">I drove past here yesterday.</option>
+    <option goto="call-someone" speaker="conway">Looks like a road crew's been out here.</option>
+  </scene>
+
+  <scene name="drove-past">
+    <setGameVar name="breakdown-conway-passed-tree" value="true" />
+    <line speaker="shannon">Oh? What were you doing out here yesterday?</line>
+    <option goto="yesterday" speaker="conway">What was I doing out here yesterday?</option>
+    <option goto="yesterday-tree" speaker="conway">That tree ... that bog ...</option>
+  </scene>
+
+  <scene name="yesterday">
+    <line speaker="shannon">That's what I asked you.</line>
+    <option goto="yesterday-strangers" speaker="conway">I saw two strangers by the road.</option>
+    <option goto="call-someone" speaker="conway">Maybe it was a dream. I dreamed that ....</option>
+  </scene>
+
+  <scene name="yesterday-tree">
+    <line speaker="shannon">Are you sure this is the tree? What kind of tree was it?</line>
+    <option goto="yesterday-tree-willow" speaker="conway">A willow.</option>
+    <option goto="yesterday-tree-shrub" speaker="conway">More of a shrub.</option>
+  </scene>
+
+  <scene name="yesterday-tree-willow" nextScene="call-someone">
+    <line speaker="shannon">I guess that could be a willow ... I don't know much about trees.</line>
+  </scene>
+
+  <scene name="yesterday-tree-shrub" nextScene="call-someone">
+    <line speaker="shannon">Looks like more than a shrub to me.</line>
+  </scene>
+
+  <scene name="yesterday-strangers">
+    <line speaker="shannon">Did you give them a ride or something?</line>
+    <option goto="ride-yes" speaker="conway">I offered to, but they wouldn't take it.</option>
+    <option goto="ride-no" speaker="conway">They wanted me to, but I was in a hurry.</option>
+  </scene>
+
+  <scene name="ride-yes" nextScene="call-someone">
+    <line speaker="shannon">That was thoughtful of you.</line>
+  </scene>
+
+  <scene name="ride-no" nextScene="call-someone">
+    <line speaker="shannon">Sure. You can't stop and pick up just anyone.</line>
+  </scene>
+
+  <scene name="call-someone">
+    <line speaker="shannon">Hey, we should call someone. Do you know a good towing company?</line>
+    <option goto="tow-lucky-boot" speaker="conway">Yep. Lucky Boot Collision &amp; Towing. Here's their card.</option>
+    <option goto="tow-mercadet" speaker="conway">I found this card for Mercadet Wreck Recovery on the dash.</option>
+    <option goto="tow-nameless" speaker="conway">I can't read the name or the number on this flyer, but it looks like a picture of a tow truck.</option>
+  </scene>
+
+  <scene name="tow-lucky-boot" nextScene="end">
+    <setGameVar name="breakdown-tow-company-name" value="lucky-boot"/>
+    <line speaker="shannon">Lucky Boot ... alright, I'll give them a call. I hope I can get a signal out here.</line>
+  </scene>
+
+  <scene name="tow-mercadet" nextScene="end">
+    <setGameVar name="breakdown-tow-company-name" value="mercadet"/>    
+    <line speaker="shannon">Mercadet ... alright, I'll give them a call. I hope I can get a signal out here.</line>
+  </scene>
+
+  <scene name="tow-nameless" nextScene="end">
+    <setGameVar name="breakdown-tow-company-name" value="nameless"/>
+    <line speaker="shannon">Worth a shot. I'll give them a call. I hope I can get a signal out here.</line>
+  </scene>
+
+</conversation>

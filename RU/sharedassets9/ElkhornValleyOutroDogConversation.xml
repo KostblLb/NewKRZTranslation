@@ -1,0 +1,84 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <option condition="!elkhorn-mine-outro-conway-talked-to-dog" goto="hows-it-going" speaker="conway">How's it going, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}?</option>
+    <option condition="shannon-companion+!elkhorn-mine-outro-shannon-talked-to-dog" goto="introduce-shannon" speaker="conway">{if}[dog-nameless]Old man{end}{if}[!dog-nameless]${dog-name}{end}, this is Shannon.</option>    
+  </scene>
+
+  <scene name="hows-it-going">
+    <setGameVar name="elkhorn-mine-outro-conway-talked-to-dog" value="true"/>
+    
+    <option goto="alone" speaker="conway">Sorry I left you alone so long.</option>
+    <option goto="leg" speaker="conway">Hurt my leg pretty bad down there.</option>
+  </scene>
+
+  <scene name="alone">
+    <option goto="hadnt-come-back" speaker="conway">What would you have done if I hadn't come back?</option>
+    <option goto="what-dog-did" speaker="conway">What did you get into up here?</option>
+  </scene>
+
+  <scene name="hadnt-come-back">
+    <option goto="end" speaker="conway">It'll be one of us, eventually. Oh well.</option>
+    <option goto="end" speaker="conway">Nah, I'll keep coming back.</option>
+  </scene>
+
+  <scene name="what-dog-did">
+    <option goto="end" speaker="conway">Did you take a nap?</option>
+    <option goto="end" speaker="conway">Did you find any rabbits?</option>
+  </scene>
+
+  <scene name="leg">
+    <option goto="shuffle" speaker="conway">I've got a shuffle like you now.</option>
+    <option goto="pretty-bad" speaker="conway">Seems pretty bad, if I'm honest.</option>
+  </scene>
+
+  <scene name="shuffle">
+    <option goto="end" speaker="conway">Yeah we've got a lot in common.</option>
+    <option goto="end" speaker="conway">Maybe we can still heal up.</option>
+  </scene>
+
+  <scene name="pretty-bad">
+    <option goto="end" speaker="conway">How much time do you think I have left getting around on two legs?</option>
+    <option goto="end" speaker="conway">Well, I'm not worried if you're not.</option>
+  </scene>
+
+  <!-- Introduce Shannon -->
+
+  <scene name="introduce-shannon">
+    <setGameVar name="elkhorn-mine-outro-shannon-talked-to-dog" value="true"/>
+
+    <option goto="nice-to-meet-dog" speaker="shannon">Nice to meet you{if}[!dog-nameless], ${dog-name}{end}.</option>
+    <option goto="never-had-a-dog" speaker="shannon">I never had a dog.</option>
+  </scene>
+
+  <scene name="nice-to-meet-dog">
+    <option goto="shannon-gave-treat" speaker="shannon">I've got some dried banana slices in my bag, would you like one?</option>
+    <option goto="help-with-driving" speaker="shannon">Do you help with the driving?</option>
+  </scene>
+
+  <scene name="shannon-gave-treat">
+    <option goto="end" speaker="shannon">I don't really like them anyway.</option>
+    <option goto="end" speaker="shannon">Take care of your friend here, and there's more where that came from.</option>
+  </scene>
+
+  <scene name="help-with-driving">
+    <option goto="end" speaker="shannon">Maybe you can help your friend here, too.</option>
+    <option goto="end" speaker="shannon">You help with the drooling, looks like.</option>    
+  </scene>
+
+  <scene name="never-had-a-dog">
+    <option goto="alternating-shifts" speaker="shannon">My folks worked alternating shifts for a while.</option>
+    <option goto="allergic" speaker="shannon">Dad was allergic.</option>
+  </scene>
+  
+  <scene name="alternating-shifts">
+    <option goto="end" speaker="shannon">No time to care for a dog.</option>
+    <option goto="end" speaker="shannon">And then they finally got their shifts in sync ...</option>
+  </scene>
+
+  <scene name="allergic">
+    <option goto="end" speaker="shannon">He needed to be able to breath clearly. At home, anyway.</option>
+    <option goto="end" speaker="shannon">I would have liked a dog, though.</option>
+  </scene>
+  
+</conversation>

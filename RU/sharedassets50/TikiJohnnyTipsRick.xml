@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-rick" value="true" />
+    <setGameVar name="tiki-johnny-tips-total" value="+200" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>This guy's barely here. He's, like, basically sugary-wet-sand until the morning.</line>
+    <line>He left a couple bucks by his shoes here, or dropped it. That's probably for the band, if it's "for" anything at all ...</line>
+  </scene>
+</conversation>

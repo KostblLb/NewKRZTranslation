@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line>(NOTE: Clara and Ezra perform on the deck of the tugboat.)</line>
+  </scene>
+</conversation>

@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <blocking debug="true">Phone Exec FocusOnWill</blocking>
+    <line speaker="jenn">It's your friend again. And Coconut!</line>
+    <line speaker="mimi">Oh!</line>
+    <line speaker="jenn">He seems relaxed.</line>
+    <line speaker="mimi">"Wise Will!" I can't believe it.</line>
+    <line speaker="jenn">What?</line>
+    <line speaker="mimi">That's what we called him ... God, it's been a million years. He `did` work at the university, when I was an undergrad. He hung around the music department, but he was sort of a general technician: he'd fix the PA, run the soundboard during student theater productions, stuff like that.</line>
+    <line speaker="jenn">Student theater productions? Is there something you want to tell me, Mimi?</line>
+    <line speaker="mimi">Oh, no, I was just in the audience. Ha ha. They did some interesting stuff back then ... in the `paleolithic`.</line>
+    <line speaker="jenn" blocking="Phone Exec ResetPhoneCamera" debug="true">So he would shake the rain-stick and crank the dry ice machine, huh? Why did you call him "Wise Will?"</line>
+    <line speaker="mimi">He was chatty. He'd tell you all about the school's architecture, local history, county politics, gossip, folk remedies ... like they were all part of the same thing. I always wondered what happened to him.</line>
+    <line speaker="jenn">Huh. Well, now you know: he's part of our data.</line>
+    <line speaker="mimi">Yeah. Just another data point floating down the Echo ...</line>
+  </scene>
+</conversation>

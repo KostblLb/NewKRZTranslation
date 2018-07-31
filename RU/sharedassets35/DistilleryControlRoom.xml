@@ -1,0 +1,46 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-control-room" value="true"/>
+
+    <line speaker="doolittle" style="skeleton">Please, don't touch a thing. Very sensitive devices. We're not even allowed to run The Formula through them.</line>
+    <option goto="describe-controls" speaker="shannon">What do they do?</option>
+    <option goto="computer-issues" speaker="shannon">We have some computer issues of our own.</option>
+    <option goto="formula" speaker="shannon" condition="!distillery-heard-about-formula">What's The Formula?</option>
+  </scene>
+
+  <scene name="describe-controls" nextScene="boring">
+    <line speaker="doolittle" style="skeleton">Temperatures, pressures, wear, tear, acidity, supply levels, any and all attending numbers in need of crunching ... `and so on`.</line>
+  </scene>
+
+  <scene name="computer-issues" nextScene="boring">
+    <line speaker="doolittle" style="skeleton">Computers, computers ... Personally, I am opposed. On `principle`.</line>
+  </scene>
+
+  <scene name="boring">
+    <line speaker="doolittle" style="skeleton">Am I boring you yet? Are you simply `dying` of boredom? I myself could discuss this matter past sunrise.</line>
+    <option goto="ready-to-go" speaker="shannon">Ready to go.</option>
+    <option goto="fix-computer" speaker="shannon">We're trying to fix this old computer in the caves.</option>
+  </scene>
+
+  <scene name="ready-to-go" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Of course. Let's move on.</line>
+  </scene>
+
+  <scene name="fix-computer" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Of course, I'm boring you. Let's move on.</line>
+  </scene>
+
+  <scene name="formula">
+    <setGameVar name="distillery-heard-about-formula" value="true" />
+    <line speaker="doolittle" style="skeleton">Eh? Oh, The Formula! Changed our lives.</line>
+    <line speaker="doolittle" style="skeleton">Once, years ago, we were as prisoners to the intricacies of our debts here. We'd have to account for everything on paper.</line>
+    <line speaker="doolittle" style="skeleton">Compounding interest by hand, reassessing amortization and leveraged asset distributions according to nightly merit decay ...</line>
+    <line speaker="doolittle" style="skeleton">Then, `she` stepped out of the dark caves, to show us the light of The Formula! She had a brilliant grasp of mathematics, and a saintlike way of speaking right `through` the numbers.</line>
+    <line speaker="doolittle" style="skeleton">Now, we just plug our daily numbers into The Formula, and run it all through the adding machine. We occasionally suffer some surplus drift, but she instructed us on all the necessary adjustments.</line>
+    <line speaker="doolittle" style="skeleton">It was devastating to see our revered mathematician go, but she was needed elsewhere. Her legacy abides.</line>
+
+    <option goto="describe-controls" speaker="shannon">What do these computers do?</option>
+    <option goto="computer-issues" speaker="shannon">We have some computer issues of our own.</option>
+  </scene>  
+</conversation>

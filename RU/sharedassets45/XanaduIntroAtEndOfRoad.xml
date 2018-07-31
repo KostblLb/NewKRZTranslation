@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="end-of-road" destroy="true" direction="out" speed="xanadu-scene-out"/>
+    <audioFade clip="xanadu-title" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <setGameVar name="xanadu-played-full" value="true"/>    
+    <line speaker="xanadu" style="xanadu">You are standing at the end of a road before a small brick building. Around you is a forest.</line>
+    
+    <option goto="building" speaker="shannon">Check out the building.</option>
+    <option goto="forest" speaker="ezra">Go into the forest!</option>
+  </scene>
+
+  <scene name="building" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="building"/>
+
+    <line speaker="conway">`(Typing.)` ~Enter building.~</line>    
+  </scene>
+  
+  <scene name="forest" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="forest"/>
+    
+    <line speaker="conway">`(Typing.)` ~Enter forest.~</line>
+    <line speaker="xanadu" style="xanadu">That's not something you can enter.</line>
+    <line speaker="shannon">Just type a direction.</line>
+    <line speaker="conway">`(Typing.)` ~North.~</line>
+  </scene>
+</conversation>

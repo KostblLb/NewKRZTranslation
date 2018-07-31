@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="bureau-looked-at-grotesque-3" value="true"/>    
+    <line>The television is playing an instructional video on elevator design. It is crucial to maintain proper lighting in an elevator. In the absence of sight, passengers' sense of motion is greatly enhanced. The passenger should never feel as though they are physically ascending or descending: the elevator should create the illusion that the building is flat. This is the mark of a successful elevator design.</line>
+  </scene>
+</conversation>

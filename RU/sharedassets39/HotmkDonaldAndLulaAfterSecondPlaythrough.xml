@@ -1,0 +1,56 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="unlock-gate,walk-enable-roberta,hotmk-ending-ended">
+  <scene name="intro">
+    <triggerEvent name="hotmk-ending-started" />
+    <setGameVar name="hotmk-talked-to-donald-and-lula-after-xanadu" value="true"/>
+    <setGameVar name="underworld-nap-hint" value="Bureau"/>
+    
+    <line speaker="lula" event="lula-speaking">`(To DONALD.)` You really did go deeper into the caves. Well, you were easy enough to find.</line>
+    <line speaker="lula">I've met a few of your former assistants. One can't help but hear things.</line>
+    <line speaker="lula">So, this is what became of our project.</line>
+    <line speaker="donald" event="donald-speaking">Oh ... I've made some additions. Joseph stole the data tapes for the first half, so I've had some blank spots to fill.</line>
+    <line speaker="lula" event="lula-speaking">Yes, I know. He published his version, actually. I'm sorry to report that it's a bit tediously sentimental ...</line>
+    
+    <option goto="looking" speaker="shannon">We've been looking for you.</option>
+    <option goto="doctor" speaker="shannon">We found your doctor.</option>
+  </scene>
+
+  <scene name="doctor">
+    <setGameVar name="hotmk-told-lula-about-doctor" value="true"/>
+    
+    <line speaker="lula" event="lula-speaking">Oh, good. Yes, you're looking ... not well, to be honest. You smell like a distillery; have you been drinking?</line>
+    
+    <option goto="avoidance" event="shannon-looks-conway">`(SHANNON looks uneasily at CONWAY.)`</option>
+    <option goto="avoidance" event="conway-looks-floor">`(CONWAY looks at the floor.)`</option>
+    <option goto="looking" speaker="shannon">We've been looking for you.</option>
+  </scene>
+
+  <scene name="avoidance" nextScene="looking">
+    <line speaker="lula" event="lula-speaking">Well, I wouldn't blame you if you had been. It's so dim here.</line>
+  </scene>
+
+  <scene name="looking">
+    <line speaker="lula" event="lula-speaking">So you've found the address data? Just pass it over to Donald here.</line>
+    <line speaker="lula" event="lula-speaking">Donald, will you be a dear and crunch these numbers? We're looking to sort out a street name collision. &quot;Dogwood Drive.&quot;</line>
+    
+    <option goto="bureau" speaker="shannon">Wasn't the Bureau going to process it?</option>
+    <option goto="how-long" speaker="shannon">How long does this take?</option>
+  </scene>
+
+  <scene name="bureau" nextScene="how-long">
+    <line speaker="donald" event="donald-speaking">I insist. I have cycles to spare. I'll just pack my pipe and get to it.</line>
+  </scene>
+
+  <scene name="how-long" nextScene="end">
+    <setGameVar name="hotmk-lula-gave-bureau-directions" value="true" />
+    <line speaker="donald" event="donald-speaking">I should only be an hour or so. Andrew will carry it over to ...</line>
+    <line speaker="lula" event="lula-speaking">I'll be at the Bureau for the rest of the night. Just mark it &quot;private materials for the attention of Senior Clerk Chamberlain.&quot;</line>
+    <line speaker="conway" event="party-speaking">How do we get to the Bureau from here?</line>
+    <line speaker="donald" event="donald-speaking">The bridge!</line>
+    <line speaker="lula" event="lula-speaking">Yes, the bridge. Through the gate over there.</line>
+    <line speaker="donald" event="donald-speaking">`(Sentimental.)` Now we, too, recede into history.</line>
+    <line speaker="lula" event="lula-speaking">Good to ... good night, Donald.</line>
+    <line speaker="lula">`(To SHANNON.)` Meet me at the Bureau, and we'll get you on your way. Head counter-clockwise to the cathode ray, then turn around. Then it's just clockwise until you find the Bureau.</line>
+    <line speaker="lula">`(Quietly.)` Between us, I think `you` should drive.</line>
+  </scene>
+</conversation>

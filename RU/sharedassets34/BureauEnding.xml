@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="tugboat-appears">
+  <scene name="intro" nextScene="end">
+    <line speaker="conway">So. I guess I start in the morning.</line>
+    <line speaker="shannon">I guess ...</line>
+    <line speaker="ezra">I'm confused.</line>
+    <line speaker="conway">It's just the way these things go, kid.</line>
+    <line speaker="junebug">Huh. Well, that still gives us a few hours to roam, right? Where's that ferry?</line>
+  </scene>
+</conversation>

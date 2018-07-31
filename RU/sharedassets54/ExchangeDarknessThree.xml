@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="conway">Lysette's sick.</line>
+    <line speaker="conway">I mean, she's old. We're both old. Hell, you're about the youngest person I know right now. Oh, and the kid ... Maybe <if condition="one:dog-nameless">that dog<else><variable name="one:dog-name" /></else></if>, by a people calendar, but in dog years I think <variable name="dog-pronoun" /> has us all beat ....</line>
+    <line speaker="conway">So I'm old, too; sure, and I forget stuff all the time, especially if I had a few and my brain is swimming. But I mean, she ... It's all going away. She's losing words you'd never think you'd lose. Not just like the street she grew up on, but the names of colors and types of furniture, or I mean even the word "furniture."</line>
+    <line speaker="conway">She'd say, "we've still got a few nice pieces in the, uh, what's that I call the shed, where we put the, um, the bigger pieces, the beds and couches and ..."</line>
+    <line speaker="conway">And I'd say, "aw, Lys, why do you keep teasing me about that time I fell asleep in the `furniture` shed, when it's so damned comfortable in there!" I tried to help her keep some dignity, you know.</line>
+    <line speaker="conway">That's all I had to offer, at the end. She has a sister in Nashville who'll take good care of her. And now that I'm not around the shop all the time, "uh, what was that old guy's name, used to make deliveries for the shop, <if condition="one:shannon-impression-of-conway=leather|one:shannon-impression-of-conway=smell">he smells like leather</if><if condition="one:shannon-impression-of-conway=shaky">his hands shake when he's not using them</if><if condition="one:shannon-impression-of-conway=tired">he always looks half-asleep</if>, Ira was always yelling at him, uh, too drunk to work on the one day he could have been in the right place the right time ..."</line>
+    <option goto="losing-lysette" speaker="shannon">She means a lot to you. Are you worried about losing her?</option>
+    <option goto="guilt-about-accident" speaker="shannon">You feel pretty badly about that accident. Do you think she blames you?</option>
+  </scene>
+
+  <scene name="losing-lysette" nextScene="bats-are-gone">
+    <line speaker="conway">You know, it's inevitable. At this age, people are going all the time. Friends, family, everyone. It's natural. I don't wish she'd live forever. Just that she keeps some dignity as she goes. I think that's the best we can wish for anyone we care about.</line>
+  </scene>
+
+  <scene name="guilt-about-accident">
+    <line speaker="conway">No, but ...</line>
+    <line speaker="conway">It's awful to say, but: sometimes I kind of wish she `would`. That way, at least she could eventually forgive me. You know what I mean, right?</line>
+
+    <option speaker="shannon" goto="bats-are-gone">I know exactly what you mean.</option>
+    <option speaker="shannon" goto="bats-are-gone">I'm sure she'd forgive you.</option>
+  </scene>
+
+  <scene name="bats-are-gone" nextScene="end">
+    <line speaker="conway">OK. I think the bats are clearing out.</line>
+  </scene>
+
+</conversation>

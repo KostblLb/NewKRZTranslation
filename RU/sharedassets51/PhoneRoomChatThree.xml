@@ -1,0 +1,64 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="doula-questions">
+    <line speaker="cate">Just checking in on a client. Did I mention I'm a birth doula?</line>
+  </scene>
+
+  <scene name="doula-questions">
+    <goto sceneName="ask-about-conway" condition="phone-room-doula-questions-count[gt]1" />
+    
+    <option goto="everything-ok" speaker="shannon" condition="!phone-room-doula-asked-ok">Is everything OK?</option>
+    <option goto="tugboat-captain" speaker="shannon" condition="!phone-room-doula-asked-tugboat">Wow, how does that fit with being a tugboat captain?</option>
+    <option goto="nurse" speaker="shannon" condition="!phone-room-doula-asked-nurse">That's like a nurse, right?</option>
+  </scene>
+
+  <scene name="everything-ok" nextScene="doula-questions">
+    <setGameVar name="phone-room-doula-questions-count" value="+1" />
+    <setGameVar name="phone-room-doula-asked-ok" value="true" />
+    <line speaker="cate">Everything's great. Sounds like she's ready! Some women just know. It's amazing. Others are caught totally by surprise.</line>
+  </scene>
+
+  <scene name="tugboat-captain" nextScene="doula-questions">
+    <setGameVar name="phone-room-doula-questions-count" value="+1" />
+    <setGameVar name="phone-room-doula-asked-tugboat" value="true" />    
+    <line speaker="cate">Some women choose to come labor on the boat, actually.</line>
+    <line speaker="cate">For the rest, I have a backup, just in case I can't get back to dry land in time. I've been lucky and only had to lean on her a handful of times, out of several hundred births. You'd never believe how many people are just `born`, all the time.</line>
+  </scene>
+
+  <scene name="nurse" nextScene="doula-questions">
+    <setGameVar name="phone-room-doula-questions-count" value="+1" />
+    <setGameVar name="phone-room-doula-asked-nurse" value="true" />        
+    <line speaker="cate">Well, no, I don't have any formal medical training or licensing. Just a lot of experience. I think most women who hire me mainly want someone in the delivery room who, uh ... doesn't treat childbirth like some kind of disease to be cured.</line>
+    <line speaker="cate">I mean — no hard feelings against doctors, but they have their own process, and it can be pretty alienating sometimes.</line>
+  </scene>
+
+  <scene name="ask-about-conway">
+    <line speaker="cate">Your friend went back aboard?</line>
+    <option goto="conway-leg" speaker="shannon" condition="phone-room-ezra-conway-explanation=medicine">His leg is bothering him.</option>
+    <option goto="conway-headache" speaker="shannon" condition="phone-room-ezra-conway-explanation=medicine">I think he has a headache.</option>
+    <option goto="conway-drinking" speaker="shannon" condition="phone-room-ezra-conway-explanation=good-stuff">He's been drinking a bit.</option>
+    <option goto="conway-stash" speaker="shannon" condition="phone-room-ezra-conway-explanation=good-stuff">Don't worry, he doesn't know about your soda stash.</option>
+  </scene>
+
+  <scene name="conway-leg" nextScene="end">
+    <setGameVar name="phone-room-shannon-conway-explanation" value="leg-pain" />
+    <line speaker="cate">Yeah, I thought he seemed a little `pained`, especially when he moved.</line>
+  </scene>
+
+  <scene name="conway-headache" nextScene="end">
+    <setGameVar name="phone-room-shannon-conway-explanation" value="headache" />
+    <line speaker="cate">Yeah, I noticed he was kind of holding his head to the side a bit — sort of drooping. `Wilting`. I thought he was tired.</line>
+  </scene>
+
+  <scene name="conway-drinking" nextScene="end">
+    <setGameVar name="phone-room-shannon-conway-explanation" value="bathroom" />    
+    <line speaker="cate">Oh, I should have pointed him toward the head.</line>
+  </scene>
+
+  <scene name="conway-stash" nextScene="end">
+    <setGameVar name="phone-room-shannon-conway-explanation" value="thirsty" />
+    <line speaker="will">You were sworn to secrecy!</line>
+    <line speaker="cate">Ha ha. It's OK, I got rid of all that junk food anyway. I'm on a star-thistle and grapefruit cleanse.</line>
+  </scene>
+
+</conversation>

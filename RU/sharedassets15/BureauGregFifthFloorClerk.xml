@@ -1,0 +1,28 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="bureau-talked-to-greg" value="true"/>    
+    <setGameVar name="bureau-current-floor-goal" value="1"/>
+    
+    <line>`(GREG is hard at work examining some diagrams, measuring angles with a plastic protractor and occasionally scribbling numbers in a small leather notebook.)`</line>
+    <line speaker="greg">Can I help you? Don't answer that.</line>
+    <option goto="lula" speaker="conway">Are you Lula Chamberlain?</option>
+    <option goto="ingestion" speaker="conway">Sorry, we're looking for an &quot;ingestion clerk&quot;.</option>
+  </scene>
+
+  <scene name="lula" nextScene="lula-downstairs">
+    <line speaker="greg">Um. No.</line>
+  </scene>
+
+  <scene name="ingestion" nextScene="lula-downstairs">
+    <line speaker="greg">Oh, no, I'm an interior spatial analyst. I can't help you with that.</line>
+    <line speaker="greg">I think the ingestion clerks have all gone home for the night. Lula might be able to help you; she's pretty senior.</line>
+  </scene>
+
+  <scene name="lula-downstairs" nextScene="end">
+    <line speaker="greg">You just missed her, actually, she was up here about an hour ago. She's probably back at her real desk now, on the first floor.</line>
+    <line speaker="greg">She barely made a dent in these diagrams. Must have been distracted.</line>
+    <line speaker="greg">Speaking of which ...</line>
+  </scene>
+
+</conversation>

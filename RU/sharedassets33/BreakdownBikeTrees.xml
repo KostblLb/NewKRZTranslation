@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <triggerEvent name="quarter-turn"/>    
+    <setGameVar name="breakdown-bike-talked-about-trees" value="true"/>    
+    
+    <line speaker="johnny">Is this the right way? I don't recognize these trees.</line>
+    <option goto="of-course" speaker="junebug">Of course it is.</option>
+    <option goto="trees" speaker="junebug">What's to recognize? Just a bunch of trees.</option>
+  </scene>
+
+  <scene name="of-course" nextScene="trees">
+    <line speaker="johnny">Yeah, I'm sure you're right ...</line>
+  </scene>
+
+  <scene name="trees">
+    <line speaker="johnny">Just ... the trees are so `quiet`, right? Usually you'd hear birds, wind, a squirrel or something.</line>
+    <option goto="quiet" speaker="junebug">Doesn't seem so quiet right now.</option>
+    <option goto="quiet" speaker="junebug">Turn your ears down and focus on the radio, cricket.</option>
+  </scene>
+
+  <scene name="quiet" nextScene="end">
+    <line speaker="johnny">Yeah, you're right. Maybe I'm a little bored. I'll work some chord progressions in my head for a while or something. Ha ha.</line>
+  </scene>
+</conversation>

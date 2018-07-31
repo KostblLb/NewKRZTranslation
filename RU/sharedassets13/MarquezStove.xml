@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <line>A disused wood-burning stove is set up in one ash-dusted corner of the room. It's cold to the touch.</line>
+  </scene>
+</conversation>

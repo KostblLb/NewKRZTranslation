@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-final-bike-conversation">
+  <scene name="intro">
+    <line speaker="johnny">You know my favorite thing about you, ma'am?</line>
+    
+    <option goto="voice" speaker="junebug">My angelic voice.</option>
+    <option goto="fashion" speaker="junebug">My otherworldly fashion sense.</option>
+    <option goto="resolve" speaker="junebug">My steely resolve.</option>
+  </scene>
+
+  <scene name="voice" nextScene="generosity">
+    <setGameVar name="breakdown-bike-johnny-admiration" value="voice"/>
+  </scene>
+  
+  <scene name="fashion" nextScene="generosity">
+    <setGameVar name="breakdown-bike-johnny-admiration" value="fashion"/>
+  </scene>
+  
+  <scene name="resolve" nextScene="generosity">
+    <setGameVar name="breakdown-bike-johnny-admiration" value="resolve"/>
+  </scene>
+  
+  <scene name="generosity">
+    <line speaker="johnny">Of course.</line>
+    <line speaker="johnny">But a close second is your boundless generosity ...</line>
+    <option goto="end-stop" speaker="junebug">Fine, we'll stop.</option>
+    <option goto="end-not-stop" speaker="junebug">You're not going to let this go, are you?</option>
+  </scene>
+
+  <scene name="end-stop" nextScene="end">
+    <setGameVar name="breakdown-agreed-to-stop" value="true"/>
+    <setGameVar name="breakdown-reason-for-stopping" value="worn-down"/>    
+    <line speaker="johnny">You're the best. And, hey, maybe if they're not busy they can fill some seats at the gig. You know if no one's there Harry'll try and bilk us on our fee.</line>
+  </scene>
+
+  <scene name="end-not-stop" nextScene="end">
+    <line speaker="johnny">Sorry, ma'am.</line>
+    <line speaker="johnny">Just ... maybe if they're not busy they can fill some seats at the gig. You know if no one's there Harry'll try and bilk us on our fee.</line>
+  </scene>
+</conversation>

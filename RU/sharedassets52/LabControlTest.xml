@@ -1,0 +1,52 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="bookshelf">
+    <line speaker="mimi">OK. How do we rank her from the control test?</line>
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">Without turning around to look, please describe the following objects:</line>
+  </scene>
+
+  <scene name="bookshelf">
+    <line speaker="question" style="questionnaire">Bookshelf.</line>
+    <option goto="bookshelf-2" speaker="response" style="questionnaire">It has three shelves.</option>
+    <option goto="bookshelf-2" speaker="response" style="questionnaire">It has four shelves.</option>
+    <option goto="bookshelf-2" speaker="response" style="questionnaire">It has five shelves.</option>
+  </scene>
+
+  <scene name="bookshelf-2">
+    <option goto="bookshelf-3" speaker="response" style="questionnaire">It is shaped like a snake.</option>
+    <option goto="bookshelf-3" speaker="response" style="questionnaire">It is shaped like a transformer coil.</option>
+    <option goto="bookshelf-3" speaker="response" style="questionnaire">It is nondescript.</option>
+  </scene>
+
+  <scene name="bookshelf-3">
+    <option goto="poster" speaker="response" style="questionnaire">It reminds me of a museum.</option>
+    <option goto="poster" speaker="response" style="questionnaire">It reminds me of a department store.</option>
+    <option goto="poster" speaker="response" style="questionnaire">It reminds me of a library.</option>
+  </scene>
+
+  <scene name="poster">
+    <line speaker="question" style="questionnaire">Poster.</line>
+    <option goto="poster-2" speaker="response" style="questionnaire">I remember circles.</option>
+    <option goto="poster-2" speaker="response" style="questionnaire">I remember it was scientific.</option>
+    <option goto="poster-2" speaker="response" style="questionnaire">I don't remember what was depicted in the poster.</option>
+  </scene>
+
+  <scene name="poster-2">
+    <option goto="lighting" speaker="response" style="questionnaire">I have a poster in my workshop, a vintage advertisement for vacuum tubes.</option>
+    <option goto="lighting" speaker="response" style="questionnaire">I have a poster in my workshop, a chart of resistor values.</option>
+    <option goto="lighting" speaker="response" style="questionnaire">I don't keep posters on my walls.</option>
+  </scene>
+
+  <scene name="lighting">
+    <line speaker="question" style="questionnaire">Lighting.</line>
+    <option goto="control-ranking" speaker="response" style="questionnaire">One lamp.</option>
+    <option goto="control-ranking" speaker="response" style="questionnaire">Just kind of dim.</option>
+    <option goto="control-ranking" speaker="response" style="questionnaire">I really can't remember.</option>
+  </scene>
+
+  <scene name="control-ranking" nextScene="end">
+    <line speaker="jenn">Um ... "Average," I guess.</line>
+    <line speaker="mimi">`(Typing.)` "Average." OK.</line>
+  </scene>
+
+</conversation>

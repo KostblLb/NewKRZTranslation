@@ -1,0 +1,60 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <!-- Init routing -->
+  <scene name="intro">
+    <goto sceneName="ready-to-leave"/>
+  </scene>
+
+  <scene name="ready-to-leave">
+    <line>`(CONWAY scratches behind {if}[dog-nameless]the dog{end}{if}[!dog-nameless]${dog-name}{end}'s right ear.)`</line>
+    
+    <option goto="hows-it-going" speaker="conway">How's it going, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}?</option>
+    <option goto="end" speaker="conway">Take it easy, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}.</option>
+  </scene>
+
+  <scene name="reroute">
+    <goto condition="!asked-dog-about-gas-station|!josephs-jerky-fed-to-dog" sceneName="hows-it-going"/>
+    <goto sceneName="end"/>
+  </scene>
+  
+  <!-- How's it going -->
+  <scene name="hows-it-going">
+    <setGameVar name="gas-station-talked-to-dog" value="true"/>
+    
+    <option condition="!asked-dog-about-gas-station" goto="about-equus" speaker="conway">What do you think of this place?</option>
+    <option condition="!gas-station-asked-dog-about-treat" goto="about-treat" speaker="conway">How about a treat?</option>
+    <option goto="end" speaker="conway">Take it easy, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}.</option>
+  </scene>
+
+  <scene name="about-equus">
+    <setGameVar name="asked-dog-about-gas-station" value="true"/>
+    
+    <option goto="reroute" speaker="conway">It's odd, I never noticed it driving by.</option>
+    <option goto="reroute" speaker="conway">Seems like they're really on the rocks.</option>
+  </scene>
+  
+  <scene name="about-treat">
+    <setGameVar name="gas-station-asked-dog-about-treat" value="true"/>
+    
+    <option goto="jerky-from-joseph" speaker="conway">Here's some jerky from the gas station attendant.</option>
+    <option goto="reroute" speaker="conway">Nah, let's save it for later.</option>
+  </scene>
+
+  <!-- Jerky from Joseph -->
+  <scene name="jerky-from-joseph">
+    <setGameVar name="josephs-jerky-fed-to-dog" value="true"/>
+    
+    <option goto="joseph-odd" speaker="conway">He's a bit odd, isn't he?</option>
+    <option goto="joseph-ira" speaker="conway">He reminds me a bit of your old man Ira.</option>
+  </scene>
+
+  <scene name="joseph-odd">
+    <option goto="reroute" speaker="conway">I guess the night shift will do that to you.</option>
+    <option goto="reroute" speaker="conway">Nah, he's alright.</option>
+  </scene>
+  
+  <scene name="joseph-ira">
+    <option goto="reroute" speaker="conway">Do you miss that guy?</option>
+    <option goto="reroute" speaker="conway">He was a good man. A good boss.</option>
+  </scene>
+</conversation>

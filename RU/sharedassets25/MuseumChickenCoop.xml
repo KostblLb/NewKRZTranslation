@@ -1,0 +1,17 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="museum-looked-at-chicken-coop" value="true"/>
+    <setGameVar name="museum-location" value="chicken-coop" />
+    
+    <line speaker="fred">We ought to get some real chickens in that coop. Do some homesteading. None of these folks know how to live off the land. You know what I mean?</line>
+
+    <option goto="dwelling" speaker="museum staff">It's just a display. Another kind of &quot;dwelling.&quot;</option>
+    <option goto="end" speaker="museum staff">Sure, we'll ... look into it.</option>
+  </scene>
+
+  <scene name="dwelling" nextScene="end">
+    <line speaker="fred">Yeah ... no offense against you guys, I mean. I appreciate what all you've done for us.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,92 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="temp:video" value="microwaves" debug="true" />
+
+    <line condition="!temp:browsed-videos-once"><setGameVar name="temp:browsed-videos-once" />The shelves are full of dusty tapes. Some have been re-labeled several times, the stickers piling up thick on their spines.</line>
+    <line condition="temp:browsed-videos-once+!tugboat-videos-watched-weaver">Shannon combs through the video archive.</line>
+    
+    
+    <option goto="birds-1" condition="!tugboat-videos-watched-birds-1">"Birds."</option>
+    <option goto="birds-2" condition="tugboat-videos-watched-birds-1+!tugboat-videos-watched-birds-2">"More birds."</option>
+    <option goto="birds-3" condition="tugboat-videos-watched-birds-2+!tugboat-videos-watched-birds-3">"Birds again."</option>
+    
+    <option goto="weaver" condition="tugboat-videos-count[gt]0+!tugboat-videos-watched-weaver">"???"</option>
+    
+    <option goto="in-memory-of" condition="!tugboat-videos-watched-in-memory-of">"Funeral thing."</option>
+    <option goto="microwaves" condition="tugboat-videos-watched-in-memory-of+!tugboat-videos-watched-microwaves">"Art thing."</option>    
+    <option goto="tip-of-your-tongue" condition="tugboat-videos-watched-microwaves+!tugboat-videos-watched-tip-of-your-tongue">"Trivia thing."</option>
+
+    <option goto="history-of-weather" condition="!tugboat-videos-watched-history-of-weather">"Weather."</option>
+    <option goto="i-believe-you" condition="tugboat-videos-watched-history-of-weather+!tugboat-videos-watched-i-believe-you">"Science."</option>
+    <option goto="swap-shop" condition="tugboat-videos-watched-i-believe-you+!tugboat-videos-watched-swap-shop">"Shopping."</option>
+    
+    <option goto="leave" condition="temp:video-browsing">She steps away from the tapes and wipes the dust from her hands.</option>
+  </scene>
+
+  <scene name="leave" nextScene="end">
+    <setGameVar name="temp:video" value="__none__" />
+  </scene>
+
+  <scene name="birds-1" nextScene="end">
+    <setGameVar name="temp:video" value="birds-1" />
+    <setGameVar name="temp:video-reaction" value="Not bad" />
+    <triggerEvent name="selected-video" />
+  </scene>
+  
+  <scene name="birds-2" nextScene="end">
+    <setGameVar name="temp:video" value="birds-2" />
+    <setGameVar name="temp:video-reaction" value="Hmm..." />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="weaver" nextScene="end">
+    <setGameVar name="temp:video" value="weaver" />
+    <setGameVar name="temp:video-browsing" value="true" />
+    <setGameVar name="temp:video-reaction" value="" />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="birds-3" nextScene="end">
+    <setGameVar name="temp:video" value="birds-3" />
+    <setGameVar name="temp:video-reaction" value="Enough" />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="history-of-weather" nextScene="end">
+    <setGameVar name="temp:video" value="history-of-weather" />
+    <setGameVar name="temp:video-reaction" value="Boring" />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="i-believe-you" nextScene="end">
+    <setGameVar name="temp:video" value="i-believe-you" />
+    <setGameVar name="temp:video-reaction" value="Will?" />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="in-memory-of" nextScene="end">
+    <setGameVar name="temp:video" value="in-memory-of" />
+    <setGameVar name="temp:video-reaction" value="Sad" />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="microwaves" nextScene="end">
+    <setGameVar name="temp:video" value="microwaves" />
+    <setGameVar name="temp:video-reaction" value="Ok..." />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="swap-shop" nextScene="end">
+    <setGameVar name="temp:video" value="swap-shop" />
+    <setGameVar name="temp:video-reaction" value="Fun" />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+  <scene name="tip-of-your-tongue" nextScene="end">
+    <setGameVar name="temp:video" value="tip-of-your-tongue" />
+    <setGameVar name="temp:video-reaction" value="Lordy" />
+    <triggerEvent name="selected-video" />
+  </scene>
+
+</conversation>

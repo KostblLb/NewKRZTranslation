@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-heather" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Heather comes to us from the field of psychotherapy! She used to hit the bars to blow off steam after emotionally-draining client sessions, but the remedy outpaced the disease and her tab went to the distillery.</line>
+  </scene>
+</conversation>

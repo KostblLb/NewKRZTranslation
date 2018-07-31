@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-fermentation" value="true"/>
+    <triggerEvent name="start-tape"/>
+    
+    <line speaker="doolittle" style="skeleton">Smell that? No mistaking it.</line>
+    <option goto="bread" speaker="shannon">Baking bread.</option>
+    <option goto="oil" speaker="conway">Smells kind of oily.</option>
+  </scene>
+
+  <scene name="bread" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Exactly. That's the work of our unique ingredient — the yeast. The story is that Mr. Bishop got it from a baker in Knoxville, in a little tin box.</line>
+    <line speaker="doolittle" style="skeleton">He was on the run, our Mr. Bishop, from the law. For a while he hid out in some muddy swamp, subsisting on live fish, but he always kept that little tin box dry, held above his head.</line>
+    <line speaker="doolittle" style="skeleton">Some among us have proposed that a bit of swamp water seeped in that little tin box, introducing a foreign element, and giving our yeast culture the eccentricity for which it's so widely known.</line>
+    <line speaker="doolittle" style="skeleton">I think it was that baker in Knoxville. They arrested him years later, for the possession of a controlled substance. Life in prison. Solitary confinement. No visitors, no windows, 'til the day he died.</line>
+    <line speaker="doolittle" style="skeleton">Must have been a hell of a substance, hey?</line>
+  </scene>
+
+  <scene name="oil" nextScene="end">
+    <line speaker="doolittle" style="skeleton">That sickly-sweet, hypnotic aroma, like twilight at an all-night filling station. It's the mash. We use a distinctive `accelerant` when cooking it.</line>
+    <line speaker="doolittle" style="skeleton">Don't ask me what it's called — it hasn't got a name. A dark, viscous fluid. It arrives monthly, in unlabeled barrels on a horse-drawn cart.</line>
+    <line speaker="doolittle" style="skeleton">A descendant of one of Mr. Bishop's `friends` delivers it. Silent, middle-aged woman. That family is still somehow in debt to us, I'm sure of that.</line>
+  </scene>
+</conversation>

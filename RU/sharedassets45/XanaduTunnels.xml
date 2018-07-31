@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <line speaker="xanadu" style="xanadu">You rush down the tunnel, with *JOSEPH* and *LULA* close behind.</line>
+    
+    <option goto="intense" speaker="shannon">That got kind of intense back there.</option>
+    <option goto="game" speaker="junebug">`(To EZRA.)` How do you like all this, kid?</option>
+  </scene>
+
+  <scene name="intense">
+    <option goto="tunnel-2" speaker="shannon">No wonder they're still thinking about it ...</option>
+    <option goto="tunnel-2" speaker="shannon">I hope they've moved on by now.</option>
+  </scene>
+
+  <scene name="game" nextScene="tunnel-2">
+    <option goto="tunnel-2" speaker="ezra">Kind of boring, but I like boring stuff sometimes.</option>
+    <option goto="tunnel-2" speaker="ezra">There's a lot of reading, but I'm really good at that anyway.</option>
+  </scene>
+
+  <scene name="tunnel-2" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="crystal"/>
+      
+    <line speaker="xanadu" style="xanadu">The tunnel narrows, and soon you find yourself crawling on your hands and knees. Navigating the tunnel gradually becomes more awkward, as smooth rock gives way to jagged, crystalline surfaces.</line>
+    <line speaker="xanadu" style="xanadu">Scratches and taps echo from the end of the tunnel — some short and piercing, some slower and groaning as if dampened by water.</line>
+    <line speaker="xanadu" style="xanadu">The tunnel opens into a large room.</line>
+  </scene>
+</conversation>

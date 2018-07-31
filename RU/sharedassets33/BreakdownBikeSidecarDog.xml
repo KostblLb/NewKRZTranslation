@@ -1,0 +1,32 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-second-bike-conversation">
+  <scene name="intro">
+    <setGameVar name="breakdown-bike-talked-about-sidecar" value="true"/>
+    
+    <line speaker="johnny">I think they had a dog ...</line>
+    <option goto="skeletal" speaker="junebug">I guess you could call it that.</option>
+    <option goto="animals" speaker="junebug">What is it with you and animals, lately?</option>
+  </scene>
+
+  <scene name="skeletal" nextScene="decision">
+    <line speaker="johnny">Just some old dog bones with some fur draped over it. Poor thing.</line>
+    <line pause="false" speaker="johnny">We still have all this useless bread from the bakery gig. It's stale, but ... a dog won't care.</line>
+  </scene>
+
+  <scene name="animals" nextScene="decision">
+    <line speaker="johnny">I don't know. They have a warmth ...</line>
+    <line pause="false" speaker="johnny">We still have all this useless bread from the bakery gig. It's stale, but ... a dog won't care.</line>
+  </scene>
+
+  <scene name="decision">
+    <option goto="end-stop" speaker="junebug">Fine. Just for a minute to share some bread..</option>
+    <option goto="end" speaker="junebug">Just throw that stuff out! We have somewhere to be.</option>
+  </scene>
+
+  <scene name="end-stop" nextScene="end">
+    <setGameVar name="breakdown-agreed-to-stop" value="true"/>
+    <setGameVar name="breakdown-reason-for-stopping" value="dog"/>
+    <line speaker="johnny">You're the best. And, hey, maybe if they're not busy they can fill some seats at the gig. You know if no one's there Harry'll try and bilk us on our fee.</line>
+  </scene>
+
+</conversation>

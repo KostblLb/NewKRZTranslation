@@ -1,0 +1,101 @@
+# -*- mode: blocking -*-
+
+@func TestSit
+
+  Shannon Walk Shannon ShannonSittingPosition
+  Shannon Gesture Shannon Enter Sit
+  Shannon Wait 3
+  Shannon Gesture Shannon Exit Sit
+  Shannon Walk Shannon ShannonBarPosition
+
+  Conway Marker Lock
+  Conway Cursor Hide
+  Conway Interact Off
+  Conway Wait 1
+  Conway Walk Conway ConwaySittingPosition
+  Conway Gesture Conway Enter Sit
+  Conway Wait 3
+  Conway Gesture Conway Exit Sit
+  Conway Wait 1
+  Conway Marker Unlock
+  Conway Cursor Show
+  Conway Interact On
+  
+@end
+
+@func PerformersWalkToStage
+
+  Band Walk* Junebug JunebugStagePosition
+  Band Wait 2
+  Band Walk Johnny JohnnyStagePosition
+  Band Wait 1
+  Band Set lower-depths-ready-for-performance true
+
+@end
+
+@func PartySits
+
+  Main Interact Off
+  Main Cursor Hide
+  Main Marker Lock
+  Main Message CameraRig BlendToStage
+
+  Conway Walk Conway ConwaySittingPosition
+  Conway Gesture Conway Enter Sit
+  
+  Shannon Wait 2
+  Shannon Walk Shannon ShannonSittingPosition
+  Shannon Gesture Shannon Enter Sit
+  Shannon Cursor Show  
+  Shannon Dialog BarStageBanter
+  Shannon Cursor Hide
+  Shannon Message JunebugMusicController/MusicController StartSong
+  Shannon Wait 6
+  Shannon Message BarCeilingController Elevate
+
+  Ezra Wait 4
+  Ezra Walk Ezra EzraPerformancePosition
+
+@end
+
+@func PartyStands
+
+  Main Message CameraRig BlendFromStage
+
+  Ezra Wait 3
+  Ezra Walk Ezra EzraJukeboxPosition
+
+  Conway Gesture Conway Exit Sit
+  Conway Interact On
+  Conway Marker Unlock
+  
+  Shannon Gesture Shannon Exit Sit
+
+@end
+
+@func BandMovesToBarInitial
+
+  Junebug Walk Junebug JunebugInitialHarryConversationPosition
+  Johnny Walk Johnny JohnnyInitialHarryConversationPosition
+
+@end
+
+@func BandMovesToBarAfterSet
+
+  Junebug Set temp:lower-depths-talked-to-harry-after-song true
+  Junebug Walk Junebug JunebugAfterSetPosition ? !temp:band-approached-bar-after-set
+  Johnny Walk Johnny JohnnyAfterSetPosition ? !temp:band-approached-bar-after-set
+
+@end
+
+@func ShannonWalksToGoggles
+
+  Shannon Walk Shannon ShannonGogglesPosition
+  
+@end
+
+@func ShannonWalksToBar
+
+  Shannon Walk Shannon ShannonBarPosition
+  
+@end

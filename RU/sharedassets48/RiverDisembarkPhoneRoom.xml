@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <option goto="aboard" center="true" dividerAfter="true">Valkyrie and <if condition="one:dog-nameless">the other dog<else><variable name="one:dog-name" /></else></if> lounged below deck.</option>
+    <option goto="end" center="true" variableChange="riverworld-phone-room=disembarked">Clara, Cate, and I stopped to do some business by telephone.</option>
+  </scene>
+
+  <scene name="aboard" nextScene="end">
+    <setGameVar name="riverworld-phone-room" value="aboard" />
+    <setGameVar name="tugboat-vignette" value="Dogs" />
+  </scene>
+</conversation>
+

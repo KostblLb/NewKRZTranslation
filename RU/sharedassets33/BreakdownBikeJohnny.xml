@@ -1,0 +1,57 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-first-bike-conversation">
+  <scene name="intro">
+    <setGameVar name="breakdown-bike-talked-about-johnny" value="true"/>
+    
+    <line speaker="johnny">`(Singing.)` More than the silver and gold of this earth ...</line>
+    <option goto="whats-that" speaker="junebug">What's that?</option>
+    <option goto="poet" speaker="junebug">You should have been a poet.</option>
+  </scene>
+
+  <scene name="whats-that" nextScene="johnny-questions">
+    <line speaker="johnny">I don't know. I think I heard it on the radio.</line>
+  </scene>
+
+  <scene name="poet" nextScene="johnny-questions">
+    <line speaker="johnny">I'll leave poetry to the professionals.</line>
+  </scene>
+
+  <scene name="johnny-questions">
+    <triggerEvent name="quarter-turn"/>
+    <option goto="whats-on-your-mind" speaker="junebug">What's on your mind, cricket?</option>
+    <option goto="nervous" speaker="junebug">Nervous about the set?</option>
+  </scene>
+
+  <scene name="whats-on-your-mind">
+    <line speaker="johnny">Oh, I don't know. Just looking at the stars. Hope we get there soon; never been this late.</line>
+    <option goto="dreaming" speaker="junebug">Keep on dreaming, and I'll keep on driving.</option>
+    <option goto="stars" speaker="junebug">Which star is your favorite?</option>
+  </scene>
+
+  <scene name="dreaming" nextScene="end">
+    <setGameVar name="breakdown-bike-johnny-dreaming" value="true"/>
+    <line speaker="johnny">OK. Thank you, ma'am.</line>
+  </scene>
+
+  <scene name="stars" nextScene="end">
+    <setGameVar name="breakdown-bike-johnny-star" value="true"/>    
+    <line speaker="johnny">That little one in the corner.</line>
+  </scene>
+
+  <scene name="nervous">
+    <line speaker="johnny">Yeah, I guess. No, we're good. We know how to play. Just ... then what?</line>
+    <option goto="road" speaker="junebug">Back on the road.</option>
+    <option goto="bar" speaker="junebug">Just hang out at the bar, I guess.</option>
+  </scene>
+
+  <scene name="road" nextScene="end">
+    <setGameVar name="breakdown-bike-johnny-road" value="true"/>
+    <line speaker="johnny">That's what I mean. Back on the road ... and then what?</line>
+  </scene>
+
+  <scene name="bar" nextScene="end">
+    <setGameVar name="breakdown-bike-johnny-bar" value="true"/>    
+    <line speaker="johnny">Oh yeah, Harry'll be great company. Carping about the late nights and his bottom line.</line>
+  </scene>
+
+</conversation>

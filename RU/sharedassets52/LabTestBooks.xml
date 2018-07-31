@@ -1,0 +1,73 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="jenn">Speaking of the TV station ... you were saying something earlier about that other Márquez girl.</line>
+    <line speaker="mimi">Oh, right, I was talking about Weaver.</line>
+    <line speaker="jenn">Yeah, what exactly happened with her? You said she left on "weird terms?"</line>
+    <line speaker="mimi">Yes. Well ... so, actually she just stopped showing up. That was pretty normal.</line>
+    <line speaker="jenn">It was all volunteers, right? "Community television."</line>
+    <line speaker="mimi">Yeah. People didn't really give much advance notice; they just got bored and drifted away. It was more like an art project than a job, for most people.</line>
+    <line speaker="mimi">Weaver Márquez helped manage the archives, like filing and sorting old tapes of broadcasts. I think she was pretty smart — she probably could have been more help fixing equipment or something — but she seemed content just to organize tapes.</line>
+    <line speaker="mimi">Nobody ever talked to her much, so when she left ... no big deal. But then, a couple months later, we started getting these bizarre ... `interventions`.</line>
+    
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">Please consider a particular moment earlier in the day or evening. Write down where you were, what you were doing, and who else was present.</line>
+    <option goto="instructions" speaker="response" style="questionnaire" variableChange="lab-books-episode=farmhouse">I was in my aunt and uncle's house with a friendly old man I'd just met. I fixed a TV set.</option>
+    <option goto="instructions" speaker="response" style="questionnaire" variableChange="lab-books-episode=workshop">I was in my shop, alone. I saw a strange broadcast. My cousin was on TV.</option>
+  </scene>
+
+  <scene name="instructions" nextScene="weaver-1">
+    <line speaker="question" style="questionnaire">For the remainder of this test, we will refer to that moment as "the episode."</line>
+  </scene>
+
+  <scene name="weaver-1" nextScene="first-passage">
+    <line speaker="mimi">Someone would be doing a show in their normal time slot, and then suddenly the feed would cut. We'd still be broadcasting, but our signal was totally jammed.</line>
+    <line speaker="jenn">Oh, like interference?</line>
+    <line speaker="mimi">I mean total blackout. Then this video would come on, clearly shot in our studio at some point, and it was her — Weaver Márquez. She'd be standing in the middle of the studio, facing the camera.</line>
+    <line speaker="mimi">It's a bit fuzzy in my memory, but I do remember the sound; this awful hum, like that was how she did it: she made a hum so sinister it drove our signal into hiding.</line>
+  </scene>
+
+  <scene name="first-passage">
+    <blocking>Books Exec FirstReadingPose</blocking>
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">As you read the first marked passage, an excerpt from "Doorjamb Design, Repair, and Cleaning" by R. Grosz, please take note of any new details you recall from the episode, and at what point in the text they are recalled to you.</line>
+    <option goto="weaver-2" speaker="response" style="questionnaire" condition="lab-books-episode=farmhouse">When he described the dust that accumulates on a doorjamb, I thought of how empty the house felt before we switched the TV on.</option>
+    <option goto="weaver-2" speaker="response" style="questionnaire" condition="lab-books-episode=farmhouse">The author used a metaphor I hadn't heard before — 'cleaner than a stopped clock' — it reminded me of this strange mold that had accumulated in the TV.</option>
+    <option goto="weaver-2" speaker="response" style="questionnaire" condition="lab-books-episode=workshop">When he described the dust that accumulates on a doorjamb, it reminded me of the static on the TV I was fixing. It was a strange consistency, somehow unfamiliar.</option>
+    <option goto="weaver-2" speaker="response" style="questionnaire" condition="lab-books-episode=workshop">The author used a metaphor I hadn't heard before — 'cleaner than a stopped clock' — I thought of how messy my shop was when I left it, and how I won't be able to go clean it up now.</option>
+  </scene>
+
+  <scene name="weaver-2" nextScene="second-passage">
+    <line speaker="mimi">Then there were these on-screen captions, exactly the same every time. I don't remember what they said. Something creepy.</line>
+    <line speaker="jenn">Wow.</line>
+    <line speaker="mimi">We had a titlemaker at the station, but it was a different font. I guess she recorded it at WEVP and then took it somewhere else to add the captions? I don't know. We all did a lot of speculating about how she made the video ... `why` she made the video.</line>
+    <line speaker="jenn">Yeah, why not just broadcast it normally? It was "community television," right? Couldn't be any worse than naked banjo guy.</line>
+    <line speaker="mimi">Yeah, exactly. Some people thought it was a protest or something, but I know she didn't have anything against the station. To me it felt kind of urgent, like she would have done her broadcast through the proper channels, but something came up ... a crisis or something.</line>
+  </scene>
+
+  <scene name="second-passage">
+    <blocking>Books Exec SecondReadingPose</blocking>
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">The second marked passage is a poem by N. Shield, called "Three Views Through a Door." As you read this passage, please again write down any new details you recall from the episode.</line>
+    <option goto="weaver-3" speaker="response" style="questionnaire" condition="lab-books-episode=farmhouse">When I read the stanza about watching the rain through the doorway, I remembered that the TV had a lot of water damage, which was strange, and even some moss growing in it.</option>
+    <option goto="weaver-3" speaker="response" style="questionnaire" condition="lab-books-episode=farmhouse">When I read the stanza about walking through the door into the house, I remembered how dead that farmhouse felt tonight, like nothing had ever lived there.</option>
+    <option goto="weaver-3" speaker="response" style="questionnaire" condition="lab-books-episode=workshop">When I read the stanza about watching the rain through the doorway, I remembered the sound of the strange broadcast. The hum took over everything, even the traffic and birds outside.</option>
+    <option goto="weaver-3" speaker="response" style="questionnaire" condition="lab-books-episode=workshop">When I read the stanza about walking through the door into the house, I remembered seeing school desks in the broadcast.</option>
+  </scene>
+
+  <scene name="weaver-3" nextScene="third-passage">
+    <line speaker="jenn">How often did it happen?</line>
+    <line speaker="mimi">A lot. Dozens of times. It went on for years. We even thought about asking the police to look into it, but it's so hard to locate a "pirate" signal. I mean, it could come from any direction, you know?</line>
+    <line speaker="jenn">It's all just %waves%.</line>
+    <line speaker="mimi">Exactly.</line>
+  </scene>
+
+  <scene name="third-passage">
+    <blocking>Books Exec ThirdReadingPose</blocking>
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">The third marked passage is a reproduction of "A Caller's Guide to the Etiquette of Closed Doors," a pamphlet published anonymously some time in the nineteenth century. Again, write down any new details of the episode that are recalled to you while reading this text.</line>
+    <option goto="weaver-4" speaker="response" style="questionnaire" variableChange="lab-books-shannon-resolve=goal">The text said something about how long to wait; not to wait too long at a closed door. I need to see this through.</option>
+    <option goto="weaver-4" speaker="response" style="questionnaire" variableChange="lab-books-shannon-resolve=home">The text said something about hitting your knuckles on the right part of the door to maximize resonance throughout the house. It made me think about the weird acoustics down here. They make me feel strangely ... at home.</option>
+  </scene>
+
+  <scene name="weaver-4" nextScene="end">
+    <line speaker="mimi">Weaver's video showed up again right before the flood. Actually, I think it might have been the last thing we ever broadcast.</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,33 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape,exit-houseboat">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <triggerEvent name="enter-houseboat"/>    
+    <setGameVar name="museum-talked-to-sadie" value="true"/>
+    <setGameVar name="museum-location" value="houseboat"/>
+    <line speaker="sadie">Do you know, at first I thought it might be Hudson walking up to visit? I'd heard him working on his boat just a bit earlier, before the storm started.</line>
+    <line speaker="sadie">But then I saw the stranger's limping gait, and the young woman with him, and I knew it couldn't be. I invited them in for a glass of bourbon, which they politely declined, so I just talked to them on the porch for a bit.</line>
+    <option goto="talk-about" speaker="museum staff">What did you talk about?</option>
+    <option goto="stranger" speaker="museum staff">What was the stranger like?</option>
+    <option goto="young-woman" speaker="museum staff">What was the young woman like?</option>
+  </scene>
+
+  <scene name="talk-about" nextScene="house">
+    <line speaker="sadie">Oh, we talked a bit about the neighborhood. I told them about Hudson and his sailboat, and the nice young couple in the greenhouse, and the charming Dr. Truman who used to live here. They were very interested in him, but of course ... well, I don't know where he went.</line>
+  </scene>
+
+  <scene name="stranger" nextScene="house">
+    <line speaker="sadie">He was in a bad way. He seemed confused. He was asking about a basketball game ... I thought he might be joking — after all, it's not the season. It made his friend uncomfortable, and she changed the subject. She asked about my house.</line>
+  </scene>
+
+  <scene name="young-woman" nextScene="house">
+    <line speaker="sadie">She was very sharp, and mechanically-minded. We talked a bit about the construction of my house. She was worried for her friend.</line>
+  </scene>
+
+  <scene name="house" nextScene="end">
+    <line speaker="sadie">Do you know, I don't believe either of them had ever set foot on a houseboat before? I don't know that the older man had ever seen an ocean, in fact.</line>
+    <line speaker="sadie">It has always been my fondest dream to retire on a houseboat. That's why I accepted your offer and moved in here. It isn't perfect, but what home ever is? I only wish the house would sway a bit — I find that it settles my nerves. Well, if we have another storm like that last one ...</line>
+    <line condition="museum-umbrella-is-open" speaker="sadie">In fact, he had his umbrella open indoors. It wasn't leaking `that` badly.</line>    
+  </scene>
+
+</conversation>

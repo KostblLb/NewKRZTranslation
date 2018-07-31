@@ -1,0 +1,125 @@
+<notes>
+  <act name="one">
+    <note name="Márquez Farm" condition="marquez-address-retrieved">
+      <text>(From Equus Oils) Head north-east on sixty-five, and turn left as soon as you see that ugly tree that's always on fire.</text>
+    </note>
+    
+    <note name="Kentucky Route Zero On-Ramp" condition="got-mines-directions+!overworld-discovered-mines">
+      <text>(From Márquez Farm) Get back on sixty-five heading north, then take the first right after the artificial limb factory.</text>
+    </note>
+    
+    <note name="Mines" condition="got-mines-directions+overworld-discovered-mines">
+      <text>(From Márquez Farm) Get back on sixty-five heading north, then take the first right after the artificial limb factory.</text>
+    </note>
+
+    <note name="Shannon Márquez's Workshop" condition="got-shannons-workshop-directions">
+      <text>(From Márquez Farm) Up north a ways, by the lake. Right where Peonia and Wax road meet. It's a big bait and tackle shop, and she fixes TVs in the back.</text>
+    </note>
+
+    <note name="Elkhorn Mine Turntable" condition="elkhorn-mine-found-turntable+!elkhorn-mine-complete">
+      <text>The turntable at the center of the mine is surrounded by strange objects.</text>
+      
+      <text condition="!elkhorn-mine-found-exit">Some animal bones and a rowboat frame the tracks that lead from the entrance.</text>
+      <text condition="elkhorn-mine-found-exit">Some animal bones and a rowboat frame the tracks between the entrance and exit.</text>
+      
+      <text condition="elkhorn-mine-found-highway+!elkhorn-mine-found-broken-track">A bat feeder and a scarecrow frame the tracks that lead to a dead end.</text>
+      <text condition="!elkhorn-mine-found-highway+elkhorn-mine-found-broken-track">A bat feeder and a scarecrow frame the tracks that lead to some broken tracks.</text>
+      <text condition="elkhorn-mine-found-highway+elkhorn-mine-found-broken-track">A bat feeder and a scarecrow frame the tracks that between a dead end and some broken tracks.</text>
+      
+      <text condition="elkhorn-mine-found-tape-player+!elkhorn-mine-found-recording-stage">A pendulum and a casket frame the tracks that lead to a tape player.</text>
+      <text condition="!elkhorn-mine-found-tape-player+elkhorn-mine-found-recording-stage">A pendulum and a casket frame the tracks that lead to a recording stage.</text>
+      <text condition="elkhorn-mine-found-tape-player+elkhorn-mine-found-recording-stage">A pendulum and a casket frame the tracks between a tape player and a recording stage.</text>
+    </note>
+  </act>
+
+  <act name="two">
+    <note name="Dr. Truman's House" condition="current-scene-name=OverworldActTwo">
+      <text>(From Márquez Farm) Get on sixty-five going southwest. Take a right just past the observatory, just before the river. If you continue north, you'll be there shortly.</text>
+    </note>
+    
+    <note name="Forest" condition="current-scene-name=JulianOverworld">
+      <text>You have to follow the Green river way out east, and then hop over Lake Cumberland!</text>
+    </note>
+    
+    <note name="Storage Facility" condition="bureau-got-storage-directions+!storage-conway-collapsed">
+      <text>Just go back the way you came. Find the crystal, and then turn around.</text>
+    </note>
+    
+    <note name="Bureau of Secret Tourism: River Tunnels" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive clockwise until you reach the feather. Pause for a moment to consider the cave walls. Reverse direction and drive counter-clockwise until you hit the bird house. Now turn around again, and you're almost upon it.</text>
+      <text>To return, simply find the feather again, and turn around.</text>
+    </note>
+
+    <note name="Bureau of Secret Tourism: Gallery" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive counter-clockwise toward the TV. When you reach the TV, drive clockwise to the antenna. Now turn around again and head just past the barn.</text>
+      <text>To return to the Bureau, find the TV again, and again turn around.</text>
+    </note>
+
+    <note name="Bureau of Secret Tourism: Mineral Springs" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive clockwise to the feather, then come back to the talon. Turn again, and there you are.</text>
+      <text>To return to the Bureau, find the feather, and again turn around.</text>
+    </note>
+
+    <note name="Bureau of Secret Tourism: Meditation Tunnels" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive clockwise to the scarecrow, then turn around and head counter-clockwise until you reach the pendulum. Reverse direction once more, keep driving clockwise, and you can't miss it.</text>
+      <text>To return, find the scarecrow again, turn around, and before long you'll be back at the Bureau.</text>      
+    </note>
+
+    <note name="Bureau of Secret Tourism: Valley" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive counter-clockwise to the bottle. Turn around. Drive clockwise to the still. Turn around. You're nearly on top of it.</text>
+      <text>To return, find the bottle again, turn around, and head back.</text>
+    </note>
+    
+  </act>
+
+  <act name="three">
+    <note name="The Lower Depths" condition="breakdown-completed+!lower-depths-met-harry+breakdown-bike-johnny-hobby=animals">
+      <text>Over by Charlie Moran Highway, just east off sixty-five.</text>
+      <text>Take a right off sixty-five around the petting zoo.</text>
+    </note>
+    
+    <note name="The Lower Depths" condition="breakdown-completed+!lower-depths-met-harry+breakdown-bike-johnny-hobby=recordings">
+      <text>Over by Charlie Moran Highway, just east off sixty-five.</text>
+      <text>Take a right off sixty-five around the arcade.</text>
+    </note>
+    
+    <note name="The Zero" condition="lower-depths-harry-gave-zero-directions+!underworld-visited">
+      <text>(From The Lower Depths) Tune the radio looking for a station that's "familiar, but strange."</text>
+      <text>Drive for a while, until the station cuts out, then turn around.</text>
+    </note>
+    
+    <note name="Shannon's Workshop" condition="museum-parking-made-plan+museum-parking-plan=workshop+!breakdown-completed">
+      <text>Up north, by the lake, where Peonia and Wax meet.</text>
+    </note>
+    
+    <note name="Convenience Store" condition="museum-parking-made-plan+museum-parking-plan=eat+!breakdown-completed+!overworld-saw-convenience-store">
+      <text>(From the museum) Take thirty-one heading east. It's just before sixty-five.</text>
+    </note>
+    
+    <note name="Bureau of Reclaimed Spaces" condition="hotmk-lula-gave-bureau-directions">
+      <text>(From The Hall of the Mountain King) Head counter-clockwise to the cathode ray, then turn around. Then it's just clockwise until you find the Bureau.</text>
+    </note>
+    
+    <note name="Consolidated Power Office" condition="gas-station-computer-read-consolidated-email">
+      <text>(From Bureau of Reclaimed Spaces) Head clockwise for quite some time, until you reach the scarecrow. Then turn around and go back to the bat feeder. Turn around, and it's a short clockwise drive, on your right.</text>
+    </note>
+    
+    <note name="Rust Archives" condition="gas-station-computer-read-rust-archives-email">
+      <text>(From Bureau of Reclaimed Spaces) Clockwise to the anchor, counter-clockwise to the whirlpool, then briefly clockwise.</text>
+    </note>
+
+    <note name="Carrington's Play" condition="one:met-carrington+carrington-play-location=gasstation">
+      <text>Carrington said to meet him at Equus Oils, just off sixty-five.</text>
+    </note>
+    
+    <note name="Carrington's Play" condition="one:met-carrington+carrington-play-location=mine">
+      <text>Carrington said to meet him at the Elkhorn Mine entrance.</text>
+      <text>(From Márquez Farm) Get back on sixty-five heading north, then take the first right after the artificial limb factory.</text>
+    </note>
+    
+    <note name="Carrington's Play" condition="one:met-carrington+carrington-play-location=storage">
+      <text>Carrington said to meet him at the storage facility.</text>
+      <text>(From the Bureau of Reclaimed Spaces) Find the crystal, and then turn around.</text>
+    </note>
+  </act>
+</notes>

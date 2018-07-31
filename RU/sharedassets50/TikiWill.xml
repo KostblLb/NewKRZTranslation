@@ -1,0 +1,71 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-shannon-talked-to-will" value="true" />
+    
+    <line speaker="will">Hello! Happy to be in the `here` and `now`? I heard a shuffling; are you dragging your feet, or just enjoying the sand between your toes?</line>
+    <option goto="slow-down" speaker="shannon">Yeah, it's nice to slow down for a minute.</option>
+    <option goto="thinking" speaker="shannon">Deep in thought, I guess. Ha ha.</option>
+    <option goto="will-doing" speaker="shannon">What are you doing?</option>
+  </scene>
+
+  <scene name="slow-down" nextScene="will-question">
+    <line speaker="will">We have time. Lots of glass here. Patch's boys load the empties on the barge. I told them: try to keep it separated in its own little pile. That way, when we get to disposing of it, any environmentally-minded folks present can easily set them aside for recycling.</line>
+    <line speaker="will">I love the river, but I don't care for the current — it's too relentless! Lake Lethe, though, is calm, cold and deep. At any opportunity, I'm ashore meditating. One day, I may be left behind!</line>
+  </scene>
+
+  <scene name="thinking" nextScene="will-question">
+    <line speaker="will">Hm. I think you have something weighing on you, and I respect that enough not to press the subject. We're always being pressured to talk about our problems — it's all over the radio and the `self-help` section of the bookstore — but my ethos is to just `sit` with it, alone inside of yourself.</line>
+    <line speaker="will">My spiritual adviser says, "if something is boring after two minutes, try it for four," and I think that applies to any other dissatisfaction just as well.</line>
+  </scene>
+
+  <scene name="will-doing" nextScene="will-question">
+    <line speaker="will">Just listening to the water and the walls. I like the wet slap of the tide on the ... ah ... Sorry, what was I saying? Never mind.</line>
+  </scene>
+
+  <scene name="will-question">
+    <line speaker="will">I wanted to ask you something ... I thought of it earlier but it didn't seem like the right time. I'm sure you know what I'm getting at.</line>
+    <option goto="destination" speaker="shannon">You want to know where we're going.</option>
+    <option goto="conway" speaker="shannon">You wanted to ask about my friend, the old man.</option>
+    <option goto="mammoth" speaker="shannon">You wanted some advice about that mechanical mammoth.</option>
+  </scene>
+
+  <scene name="destination" nextScene="actual-question">
+    <setGameVar name="tiki-wills-question" value="destination-optimism" />        
+    <line speaker="will">Oh, no, I don't really think about that kind of thing. But I see you have a purpose. Well, the Echo carries pilgrims as well as drifters. I think you'll get to wherever you're going.</line>
+  </scene>
+
+  <scene name="conway" nextScene="actual-question">
+    <setGameVar name="tiki-wills-question" value="inward-reflecting" />    
+    <line speaker="will">Oh, no, I think I read him pretty clearly. He's an `outwards-reflecting` kind of person — I mean he reflects the world back out, largely uncolored.</line>
+    <line speaker="will">You and I, we are `inward-reflecting`, I think. It means we prefer to nurture the best and worst of ourselves in quiet and interior spaces. And that's OK.</line>
+  </scene>
+
+  <scene name="mammoth" nextScene="actual-question">
+    <setGameVar name="tiki-wills-question" value="craftsmanship-calling" />
+    <line speaker="will">Oh, I'll figure that out eventually. I do appreciate your insight. I suspect you have a kind of intuition for electronics. You understand them like you understand ... not a person, but a cat or a dog maybe.</line>
+    <line speaker="will">It's your calling — not from society or authority, but an `inner` calling. I should have said it's in your `nature`.</line>
+  </scene>
+
+  <scene name="actual-question">
+    <line speaker="will">Wouldn't you agree?</line>
+    <option goto="agree-yes" speaker="shannon">I guess so.</option>
+    <option goto="agree-no" speaker="shannon">I'm not so sure, actually.</option>
+    <option goto="agree-what" speaker="shannon">Is that what you wanted to ask?</option>
+  </scene>
+
+  <scene name="agree-yes" nextScene="end">
+    <setGameVar name="tiki-wills-question-shannon-agrees" value="true" />
+    <line speaker="will">Yeah, I thought so.</line>
+  </scene>
+
+  <scene name="agree-no" nextScene="end">
+    <line speaker="will">Huh. I'll be damned.</line>
+  </scene>
+
+  <scene name="agree-what" nextScene="end">
+    <line speaker="will">No, no, it was ...</line>
+    <line speaker="will">Well, I forget it now. Typical.</line>
+  </scene>
+
+</conversation>

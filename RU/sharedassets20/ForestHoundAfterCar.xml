@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="forest-hound-talked-by-car" value="true"/>
+    <option goto="falling-behind" speaker="ezra">You have a way of falling behind, don't you?</option>
+    <option goto="family" speaker="ezra">I bet you come from a big family of dogs.</option>
+  </scene>
+
+  <scene name="falling-behind">
+    <option goto="ahead" speaker="ezra">Me, I'm always too far ahead.</option>
+    <option goto="sad" speaker="ezra">Don't be sad about it.</option>
+  </scene>
+
+  <scene name="ahead">
+    <option goto="end" speaker="ezra">It's just the way I am.</option>
+    <option goto="end" speaker="ezra">Maybe I should slow down a bit, like you.</option>
+  </scene>
+
+  <scene name="sad">
+    <option goto="end" speaker="ezra">They always wait for you.</option>
+    <option goto="end" speaker="ezra">Some folks just move slower.</option>
+  </scene>
+
+  <scene name="family">
+    <option goto="big-families" speaker="ezra">Yeah, dogs have big families. I like that.</option>
+    <option goto="ezra-family" speaker="ezra">Well, I have a pretty good-sized family too, I guess.</option>
+  </scene>
+
+  <scene name="big-families">
+    <option goto="end" speaker="ezra">You're always surrounded by family. Sounds nice.</option>
+    <option goto="end" speaker="ezra">Seems easier to keep track of them.</option>
+  </scene>
+
+  <scene name="ezra-family">
+    <option goto="end" speaker="ezra">But right now all I need is Julian.</option>
+    <option goto="end" speaker="ezra">I guess we'll see the rest of them pretty soon.</option>
+  </scene>
+
+</conversation>

@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-karla" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">You still here, Karla? I thought your shift was over hours ago ...</line>
+    <line speaker="doolittle" style="skeleton">Karla joined us as a contractor, upgrading the aging racks in the warehouse.</line>
+    <line speaker="doolittle" style="skeleton">Of course we can't just `empty` the warehouse to replace the wood all at once, so she's reconstructing the latticework lockstep with our aging schedule.</line>
+    <line speaker="doolittle" style="skeleton">She does a little extra carpentry for us here and there, just to cover the fees.</line>
+    <line speaker="doolittle" style="skeleton">Keeping ahead of your self-employment taxes at least, Karla? Sometimes it's all we can do.</line>
+  </scene>
+</conversation>

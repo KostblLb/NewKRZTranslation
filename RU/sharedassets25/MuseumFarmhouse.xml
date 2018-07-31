@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-looked-at-farmhouse" value="true"/>
+    <setGameVar name="museum-location" value="farmhouse"/>
+    
+    <line speaker="pearl">I heard a shout from downstairs. The old man had stumbled in the rain. I stayed inside with the lights off. There's no sense in my getting involved.</line>
+  </scene>
+</conversation>

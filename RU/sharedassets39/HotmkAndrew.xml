@@ -1,0 +1,102 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="walk-enable-andrew">
+  <scene name="intro">
+    <triggerEvent name="walk-disable-andrew"/>    
+    <setGameVar name="hotmk-talked-to-andrew" value="true"/>
+    
+    <line speaker="andrew">Do you know that when I first ... no, I mean: if this cave were larger, could it ... now I'm getting ahead of myself! Um ...</line>
+    <line speaker="andrew">Ah, I've got it. How would you characterize this space? The one we're standing in now.</line>
+
+    <option condition="!distillery-completed-graveyard" goto="endless" speaker="conway">It seems endless.</option>
+    <option condition="distillery-completed-graveyard" goto="endless" speaker="shannon">It seems endless.</option>    
+    <option goto="mess" speaker="junebug">It's a mess.</option>    
+    <option goto="spooky" speaker="ezra">Kinda spooky, but I'm not scared. Spooky for a baby.</option>
+  </scene>
+
+  <scene name="endless">
+    <line speaker="andrew">You have no idea how right you are! Decades of mapping and notating. But how can you tell? What formal quality makes it seem ... endless? You know?</line>
+
+    <option condition="distillery-completed-graveyard" goto="tunnels" speaker="shannon">There are tunnels everywhere.</option>
+    <option condition="distillery-completed-graveyard" goto="shadows" speaker="shannon">The shadows seem to stretch forever.</option>
+    <option condition="distillery-completed-graveyard" goto="fire" speaker="shannon">That huge fire, the smoke just disappears.</option>
+    
+    <option condition="!distillery-completed-graveyard" goto="tunnels" speaker="conway">There are tunnels everywhere.</option>
+    <option condition="!distillery-completed-graveyard" goto="shadows" speaker="conway">The shadows seem to stretch forever.</option>
+    <option condition="!distillery-completed-graveyard" goto="fire" speaker="conway">That huge fire, the smoke just disappears.</option>
+  </scene>
+
+  <scene name="mess">
+    <line speaker="andrew">
+      A catastrophe! Or the site of some ancient catastrophe, anyway. Sure, the evidence is all around us.
+    </line>
+
+    <option goto="tunnels" speaker="junebug">I bet those tunnels are full of junk.</option>
+    <option goto="shadows" speaker="junebug">The shadows make it hard to tell how big it is.</option>
+    <option goto="fire" speaker="junebug">What's burning on that fire?</option>
+  </scene>
+  
+  <scene name="spooky">
+    <line speaker="andrew">I think we'd all agree that's a fair assessment. How could ... wait. Let's unpack that for a moment. What makes it spooky? No: how do you know it's spooky — or would be spooky for a baby?</line>
+    <option goto="tunnels" speaker="ezra">The tunnels.</option>
+    <option goto="shadows" speaker="ezra">The shadows.</option>
+    <option goto="fire" speaker="ezra">The huge fire.</option>
+  </scene>
+
+  <scene name="tunnels" nextScene="ask-to-close-eyes">
+    <line speaker="andrew">We're surrounded by them. Look at that one! Up there. Do you know what — no. Let me explain to you what's in that tunnel. You won't be scared.</line>
+  </scene>
+
+  <scene name="shadows" nextScene="ask-to-close-eyes">
+    <line speaker="andrew">Sure, that's — but they're not just &quot;shadows,&quot; right? I mean they could be ... they're `projections`, or maybe they're ... `anatomies`. How's that? Can you tell where we are now? Surrounded by creeping anatomies?</line>
+  </scene>
+
+  <scene name="fire" nextScene="ask-to-close-eyes">
+    <line speaker="andrew">`Mysterium tremendum`! It sends the shadows scattering, momentarily lights the mouths of unseen tunnels! That fire is constantly reshaping my ...</line>
+  </scene>
+
+  <scene name="ask-to-close-eyes">
+    <line speaker="andrew">Close your eyes. Will you close your eyes?</line>
+    
+    <option goto="close-eyes" speaker="ezra">OK.</option>
+    <option goto="wont-close-eyes" speaker="shannon">Not happening.</option>
+    <option goto="both-close-eyes" speaker="junebug">Only if you close yours.</option>
+  </scene>
+
+  <scene name="wont-close-eyes" nextScene="after-eyes-closed-choices">
+    <line speaker="andrew">Oh ... how disappointing.</line>
+  </scene>
+
+  <scene name="both-close-eyes" nextScene="close-eyes">
+    <line speaker="andrew">OK, OK. I can do it from memory ...</line>
+  </scene>
+
+  <scene name="close-eyes" nextScene="after-eyes-closed-choices">
+    <triggerEvent name="dialog-darken-instant"/>
+    <line speaker="andrew">Good. Now.</line>
+    <line speaker="andrew">You are standing at the top of a rocky peak. A tongue of flame licks the —</line>
+    <line speaker="andrew">The ... shadowy anatomies of ...</line>
+    <line speaker="andrew">Where are we?</line>
+    <line event="dialog-lighten-fast" speaker="andrew">Oh. Here again. How disappointing.</line>
+  </scene>
+
+  <scene name="after-eyes-closed-choices">
+    <option goto="computers" speaker="junebug">What are all these computers for?</option>
+    <option goto="disappointed" speaker="shannon">Sorry to, uh, disappoint ...</option>
+  </scene>
+
+  <scene name="computers" nextScene="history">
+    <line speaker="andrew">Computers? Oh, now I remember. I was writing on them. I described a cave. That was my job: describe the cave. There's a great history of caves in the literature, don't you know? &quot;The walls are frozen rivers of orange stone.&quot; Isn't that `vivid`? I had a lot to live up to.</line>
+  </scene>
+
+  <scene name="disappointed" nextScene="history">
+    <line speaker="andrew">No, it's my fault ... I shouldn't be so attached to the future. It's always getting in the way of my work. Better to be in the moment, carefully observing and documenting, with no attachment. Let me give you an example:</line>
+  </scene>
+
+  <scene name="history" nextScene="end">
+    <line speaker="andrew">I was a grad student studying statistics when I started working with Donald on his project. He said we needed someone with a more analytical mind to do the descriptive writing. Someone who would appreciate the cave descriptions as real labor, instead of taking their authorial voice for granted.</line>
+    <line speaker="andrew">Donald warned me it would be long hours of typing painstakingly detailed descriptions into the computer. And I've put in the hours! Believe me. I've put in the hours ...</line>
+    <line speaker="andrew">I've described every facet of this cave in such detail that sometimes I don't know if I'm reading or looking, writing or exploring! Often, in the dark and lonely moments, I worry that in my sleep I've transcribed rooms from my dreams into the system.</line>
+    <line speaker="andrew">How would we know? They could only be entered with precise, faithful detail. That's all I know how to write! And all I dream about is caves!</line>
+    <line speaker="andrew">I only dream of caves ...</line>
+  </scene>
+</conversation>

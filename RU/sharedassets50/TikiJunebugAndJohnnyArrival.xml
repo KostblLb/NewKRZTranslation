@@ -1,0 +1,28 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-shannon-talked-to-junebug-arrival" value="true" />
+    <line speaker="johnny">Yep, sounds like him!</line>
+    <line speaker="junebug">`(To SHANNON.)` Our friend Cyrano is booked here tonight. He's pretty good.</line>
+    <line speaker="johnny">He's a wizard! A wizard of the lap steel guitar.</line>
+    <line speaker="junebug">Ha ha.</line>
+    <option goto="ashore" speaker="shannon">Are you two coming ashore?</option>
+    <option goto="time" speaker="shannon">How much time do you think we have here?</option>
+  </scene>
+
+  <scene name="ashore" nextScene="cate">
+    <line speaker="junebug">Oh, sure, we'll be up in a minute.</line>
+    <line speaker="johnny">You couldn't hold `me` back.</line>
+    <line speaker="junebug">Oh, I don't know ...</line>
+  </scene>
+
+  <scene name="time" nextScene="cate">
+    <line speaker="junebug">No rush, I don't think.</line>
+  </scene>
+
+  <scene name="cate" nextScene="end">
+    <line speaker="junebug">Cate says just to wander back "whenever" — this is a `take it easy` kind of stop. She doesn't even blow the foghorn to round up the crew here. No point! Something about this spot is like wax in the ear when it comes to timetables and responsibilities ...</line>
+    <line speaker="junebug">I was supposed to meet someone here earlier tonight about some bike parts ... hope she's still around.</line>
+    <line speaker="johnny">Oh I'm sure she is, ma'am. Half-sleeping into a fragrant mug, with all the other wayward sailors!</line>
+  </scene>
+</conversation>

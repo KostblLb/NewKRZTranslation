@@ -1,0 +1,120 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="will">Salutations, small man.</line>
+    <line speaker="will">Cate says you have an adjustment for our charts. Good timing; I'm just checking my copies.</line>
+    <line speaker="will">That's how we keep our charts up to date: as we pass through a section of the river or the lake, I draw a new copy of the map and make adjustments for anything we see that doesn't match.</line>
+
+    <line>`(WILL points to a small drawing on the map.)`</line>
+    <line speaker="will" blocking="@WillPoints">So, this is where we have Dinosaur Rock marked now. This little dinosaur drawing. I drew that.</line>
+
+    <option speaker="ezra" goto="cool-claws">Cool claws.</option>
+    <option speaker="ezra" goto="what-kind-of-dinosaur">What kind of dinosaur is it?</option>    
+  </scene>
+
+  <scene name="cool-claws" nextScene="other-drawing">
+    <line speaker="will">Thank you.</line>
+  </scene>
+  
+  <scene name="what-kind-of-dinosaur" nextScene="other-drawing">
+    <line speaker="will">Oh, you know, just a dinosaur.</line>
+  </scene>
+  
+  <scene name="other-drawing">
+    <line blocking="@WillPoints">`(WILL points to another small drawing on the map.)`</line>
+    <line speaker="will">And this here is where we thought <variable name="tugboat-ezra-landmark" /> was. But now I guess we've got to move it back a bit ...</line>
+    
+    <line speaker="will">But how far? I wonder ... Any ideas? Anything else you remember about when you saw <variable name="tugboat-ezra-landmark" />?</line>
+
+    <option speaker="ezra" goto="location-lake-dark">The water got really dark for a little bit.</option>
+    <option speaker="ezra" goto="location-other-boat">There was another boat we passed around <variable name="tugboat-ezra-landmark" /> — a sailboat with a painting of a fish on the sail.</option>
+    <option speaker="ezra" goto="location-clock">I saw the clock — we passed <variable name="tugboat-ezra-landmark" /> six minutes before Dinosaur Rock.</option>
+  </scene>
+
+  <scene name="location-lake-dark" nextScene="clutter">
+    <line speaker="will" blocking="@WillPoints">Aha! Well, that'd put <variable name="tugboat-ezra-landmark" /> somewhere in ... `here`. That's the only part of the chart before Dinosaur Rock where the lake "deepens" noticeably. Good work!</line>
+  </scene>
+  
+  <scene name="location-other-boat" nextScene="clutter">
+    <line speaker="will">Aha — that must have been Mary Kennedy out fishing. She usually anchors right around ... here. But you didn't hear that from me; she's `very` protective of her good fishing spots.</line>
+  </scene>
+  
+  <scene name="location-clock" nextScene="clutter">
+    <line speaker="will">That'll do just fine! So, let's see, at our current speed that would give us a distance of ... oh, about an eighth of a mile, let's say.</line>
+    <line>`(WILL measures along the charted lake with a divider.)`</line>
+    <line speaker="will">Somewhere around `here`. Good enough, eh?</line>
+  </scene>
+
+  <scene name="clutter">
+    <line speaker="will">That should do it for the new copy. Oh, I made some other corrections: tucked in the banks a little, made this section deeper, and left off a shipwreck that must have washed away or been scavenged into splinters.</line>
+    <line speaker="will">Of course, it means a lot of clutter; all these old copies.</line>
+    <line speaker="will">Say —</line>
+    <line>`(WILL gestures to a pile of old maps.)`</line>
+    <line speaker="will">I was just about to throw this stack out. Maybe you'd like to hang onto one? They're out of date, but they could be fun to look at. These are mostly river charts, I think. Take a look through and see if one of them catches your eye.</line>
+
+    <option goto="pick-map" blocking="@EzraLooksAtMapPile">`(EZRA digs through the pile of maps.)`</option>
+    <option goto="skip-maps" speaker="ezra">I don't have anywhere to put it.</option>
+  </scene>
+
+  <scene name="skip-maps" nextScene="next-stop">
+    <setGameVar name="tugboat-ezras-map-selection" value="skipped" />
+    <line speaker="will">Yep, I hear that. I like to travel light, myself.</line>
+  </scene>
+  
+  <scene name="pick-map">
+    <option goto="old-map" condition="!tugboat-ezra-examined-old-map">`(EZRA examines a faded, old map.)`</option>
+    <option goto="clean-map" condition="!tugboat-ezra-examined-clean-map">`(EZRA examines a crisp, clean map.)`</option>
+    <option goto="torn-map" condition="!tugboat-ezra-examined-torn-map">`(EZRA examines a rough, torn map.)`</option>
+    
+    <option goto="take-map" condition="tugboat-ezra-examined-old-map" speaker="ezra" variableChange="tugboat-ezras-map-selection=old">`(Takes the faded, old map.)` This one.</option>
+    <option goto="take-map" condition="tugboat-ezra-examined-clean-map" speaker="ezra" variableChange="tugboat-ezras-map-selection=clean">`(Takes the crisp, clean map.)` This one.</option>
+    <option goto="take-map" condition="tugboat-ezra-examined-torn-map" speaker="ezra" variableChange="tugboat-ezras-map-selection=torn">`(Takes the torn map.)` This one.</option>
+    
+    <option goto="skip-maps" condition="tugboat-ezra-examined-map-count[gt]0" speaker="ezra">I don't think I want one.</option>            
+  </scene>
+
+  <scene name="old-map" nextScene="pick-map">
+    <setGameVar name="tugboat-ezra-examined-old-map" value="true" />
+    <setGameVar name="tugboat-ezra-examined-map-count" value="+1" />
+    
+    <line speaker="will" condition="tugboat-ezra-examined-map-count=1"><fragment name="orientation" /></line>
+
+    <line>`(The river curves clockwise around a few small islands. A note is scribbled along the margin.)`</line>
+    <line speaker="note">ISLANDS JUST BELOW THE SURFACE ONLY VISIBLE UNDER BRIGHT LIGHT.</line>
+    <line speaker="will">They come and go! The islands, that is. I still mark 'em if I see 'em.</line>
+  </scene>
+  
+  <scene name="clean-map" nextScene="pick-map">
+    <setGameVar name="tugboat-ezra-examined-clean-map" value="true" />
+    <setGameVar name="tugboat-ezra-examined-map-count" value="+1" />
+
+    <line speaker="will">That one I found wrapped in plastic — quite well preserved! I wrapped it up like that so the chalk wouldn't smear ... must have lost my pencil that day. I don't remember.</line>
+    <line speaker="will" condition="tugboat-ezra-examined-map-count=1"><fragment name="orientation" /></line>    
+
+    <line>`(The river curves clockwise. There are no islands marked, but a few other landmarks are indicated with chalk circles.)`</line>
+    <line speaker="will">`(Pointing to a chalk circle.)` That one was <variable name="tugboat-ezra-landmark" />, I'm pretty sure.</line>
+  </scene>
+  
+  <scene name="torn-map" nextScene="pick-map">
+    <setGameVar name="tugboat-ezra-examined-torn-map" value="true" />
+    <setGameVar name="tugboat-ezra-examined-map-count" value="+1" />
+    <line speaker="will" condition="tugboat-ezra-examined-map-count=1"><fragment name="orientation" /></line>    
+    <line>`(The edges of the map are torn in gentle strips, probably by an idle hand and an absent mind.)`</line>
+    <line speaker="will">Oh, yeah, I remember that day. Slow currents. Boring. Not that I mind — it's healthy to get a little bored sometimes.</line>    
+    <line>`(A long tear runs in a clockwise curve along the paper, through the middle of the river. The two sides are held together by paper clips, woven into the paper like stitches.)`</line>
+  </scene>
+
+  <scene name="take-map" nextScene="next-stop">
+    <line speaker="will">Nice.</line>
+  </scene>
+
+  <scene name="next-stop" nextScene="end">
+    <blocking>@EzraBackAtWill</blocking>
+    <line speaker="will">Well, thanks for your help with the chart adjustments. Our next stop is a bar called The Rum Colony ... I guess you're not much of a bar-fly, but you might like to run around on the beach! And the decor is ... well, I'd be curious to hear what `you` think of it.</line>
+  </scene>
+  
+  <fragments>
+    <fragment name="orientation">Here, turn it around, like ... there you go. There's no real idea of "north" down here — magnetic or otherwise — so we just hold the maps with the current pointing down.</fragment>
+  </fragments>
+  
+</conversation>

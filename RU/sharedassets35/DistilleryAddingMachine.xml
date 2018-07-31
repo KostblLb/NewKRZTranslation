@@ -1,0 +1,15 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="ready-to-drink,stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-saw-adding-machine" value="true"/>
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Here it is. A beauty, wouldn't you say? It's an antique, you know.</line>
+    <line speaker="shannon">What is it?</line>
+    <line speaker="doolittle" style="skeleton">Why, it's an adding machine. This is where we come for our daily ritual: to calculate the day's interest and repayment according to The Formula. I usually do so at the beginning of my shift, so I know how many hours I need in order to keep up.</line>
+    <line event="ending-blocking" speaker="doolittle" style="skeleton">Yes, I believe you'll do well here, sir. Happy to have you. Congratulations! You're hired.</line>
+    <line speaker="shannon">Wait, we can't —</line>
+    <line speaker="doolittle" style="skeleton">It's customary here to start each day with a `shift drink`. Let's make it special. Mark the occasion. This is the top-shelf stuff, now! Single barrel!</line>
+    <line speaker="shannon">He doesn't —</line>
+    <line speaker="doolittle" style="skeleton">Down the hatch. `Vinum memoriae mors`!</line>
+  </scene>
+</conversation>

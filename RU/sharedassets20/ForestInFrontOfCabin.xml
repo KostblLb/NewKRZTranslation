@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="cabin-conversation-finished">
+  <scene name="intro">
+    <setGameVar name="forest-talked-by-cabin" value="true"/>
+    
+    <line speaker="shannon">Shouldn't be much farther now. I think I see where the settlement ends over there.</line>
+    <option goto="lovely" speaker="conway">These are some fine-looking trees.</option>
+    <option goto="dark" speaker="conway">This forest is full of shadows.</option>
+    <option goto="deep" speaker="conway">These woods go on forever.</option>
+  </scene>
+
+  <scene name="lovely">
+    <line speaker="shannon">Ha. Yeah, really nice. You a tree enthusiast?</line>
+    <option goto="birds" speaker="conway">I like birds. Birds like trees.</option>
+    <option goto="pain-question" speaker="conway">Just nice to have something to lean up on.</option>
+  </scene>
+
+  <scene name="birds" nextScene="pain-question">
+    <line speaker="shannon">OK ... I can follow that logic.</line>
+  </scene>
+
+  <scene name="pain-question">
+    <line speaker="shannon">You're in a lot of pain right now, aren't you?</line>
+    <option goto="work" speaker="conway">I'm just thinking about getting back to work.</option>
+    <option goto="rest" speaker="conway">I just need to rest.</option>
+  </scene>
+
+  <scene name="dark">
+    <line speaker="shannon">The moonlight helps. Closer to the cities, you don't get moonlight like this. It all gets washed out —  &quot;light pollution,&quot; you know? I guess it's still there, you just can't see it.</line>
+    <line speaker="shannon">How are you feeling?</line>
+    <option goto="work" speaker="conway">I'm just thinking about getting back to work.</option>
+    <option goto="rest" speaker="conway">I just need to rest.</option>
+  </scene>
+
+  <scene name="deep">
+    <line speaker="shannon">Well, no forest goes on `forever`. At some point there's always a road or something. A parking lot.</line>
+    <line speaker="shannon">Don't act so defeated, OK?</line>
+    <option goto="work" speaker="conway">I'm just thinking about getting back to work.</option>
+    <option goto="rest" speaker="conway">I just need to rest.</option>
+  </scene>
+
+  <scene name="work" nextScene="end">
+    <line speaker="shannon">We're almost there. We'll get you patched up and back in that truck. We can handle this.</line>
+  </scene>
+
+  <scene name="rest" nextScene="end">
+    <line speaker="shannon">We're almost there. Dr. Truman will have a nice couch or something you can rest on. And ... some medicine or something, I don't know.</line>
+  </scene>
+
+</conversation>

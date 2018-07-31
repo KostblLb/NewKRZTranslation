@@ -1,0 +1,48 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="dialog-lighten-fast">
+  <scene name="intro">
+    <setGameVar name="underworld-saw-cat-tunnels" value="true"/>
+    <triggerEvent name="dialog-darken-fast"/>
+    
+    <line>The tunnels are described as &quot;`a series of arterials, excavated by runoff from an underground river which long ago evaporated, now the tangled vessel of marooned echoes.`&quot;</line>
+    <line>They're surprisingly large. A distant scratching sound catches Conway's attention from a tunnel leading downwards. Another tunnel runs into darkness to the left.</line>
+    <option goto="left" insertedText="Conway and Shannon go left.">Go left.</option>
+    <option goto="down" insertedText="Conway and Shannon climb down.">Climb down.</option>
+  </scene>
+
+  <!-- left -->
+  <scene name="left">
+    <line>The tunnel widens a bit. The air is cooler here.</line>
+    <option goto="left-2" insertedText="Conway and Shannon go left.">Go left.</option>
+    <option goto="down-2" insertedText="Conway and Shannon climb down.">Climb down.</option>
+  </scene>
+
+  <scene name="left-2">
+    <line>A faint mewing reverberates through the tunnel.</line>
+    <option goto="left-3" insertedText="Conway and Shannon go left.">Go left.</option>
+    <option goto="down-3" insertedText="Conway and Shannon climb down.">Climb down.</option>
+  </scene>
+
+  <scene name="left-3" nextScene="end">
+    <line>A small, ragged cat sits on a ledge carved into the wall. Seeing Conway and Shannon, it darts into another tunnel.</line>
+  </scene>
+
+  <!-- down -->
+  
+  <scene name="down">
+    <line>The tunnel narrows a bit. The air is warmer here.</line>
+    <option goto="left-2" insertedText="Conway and Shannon go left.">Go left.</option>
+    <option goto="down-2" insertedText="Conway and Shannon climb down.">Climb down.</option>
+  </scene>
+
+  <scene name="down-2">
+    <line>Shannon has the sense that something is hiding just out of sight.</line>
+    <option goto="left-3" insertedText="Conway and Shannon go left.">Go left.</option>
+    <option goto="down-3" insertedText="Conway and Shannon climb down.">Climb down.</option>
+  </scene>
+
+  <scene name="down-3" nextScene="end">
+    <line>Three gray-furred cats sit on a piece of driftwood, tails coiled. They regard the intruders for a moment, and return to their indifferent leisure.</line>
+  </scene>
+
+</conversation>

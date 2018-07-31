@@ -1,0 +1,61 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="conway">I guess we're gonna be here for a minute. Looks like they have a few calls to make.</line>
+    <option goto="ezra-should-call" speaker="ezra">I should probably call someone too.</option>
+    <option goto="what-conway-will-do" speaker="ezra">What are you going to do?</option>
+  </scene>
+
+  <scene name="ezra-should-call">
+    <line speaker="conway">Oh yeah? Who are you calling?</line>
+    <option goto="call-julian" speaker="ezra">I should call Julian.</option>
+    <option goto="whoever-picks-up" speaker="ezra">I don't know. Just whoever picks up.</option>
+  </scene>
+
+  <scene name="call-julian">
+    <line speaker="conway">Oh, wow. He's got a phone up there? I bet they all share a phone, right? All the birds. `The Big Bird Phone Up In The Sky`.</line>
+    <option goto="julians-phone" speaker="ezra">Yep. That's what they call it.</option>
+    <option goto="julians-phone" speaker="ezra">That's ridiculous. He uses the one at the museum.</option>
+  </scene>
+
+  <scene name="julians-phone" nextScene="conway-leaves">
+    <line speaker="conway">Makes sense.</line>
+  </scene>
+
+  <scene name="whoever-picks-up">
+    <line speaker="conway">Oh, OK. Dialing blind ... you could ruffle some feathers like that, kid, especially this late at night! What would you say to a stranger you can't even see?</line>
+    <option goto="seen-my-folks" speaker="ezra">I ask them if they've seen my folks.</option>
+    <option goto="just-listen" speaker="ezra">I don't say anything, I just listen.</option>
+  </scene>
+
+  <scene name="seen-my-folks" nextScene="conway-leaves">
+    <line speaker="conway">Oh, OK. Good luck with that.</line>
+  </scene>
+
+  <scene name="just-listen" nextScene="conway-leaves">
+    <line speaker="conway">Huh, OK. I guess you mean well ...</line>
+  </scene>
+
+  <scene name="what-conway-will-do">
+    <line speaker="conway">Yeah, that's a good question. Ha ha. I just thought I'd stretch my legs — you know, on firm ground. I didn't realize this place would be floating on barrels ...</line>
+    <line speaker="conway">Back when I was driving long hauls — that's the `real big` trucks, now — I sometimes wouldn't leave the cab but to pump gas. I took my meals in there, I slept in there, I changed my socks in there — you know, the whole thing.</line>
+    <line speaker="conway">So, one time I was hauling a bunch of big spools — telephone wire I think, actually — up from California into Washington state. You know where that is? It's way out, uh ... on a map, it's kinda to the "left" of here ... more or less.</line>
+    <line speaker="conway">In between California and Washington, there's a place called Oregon, and you can't pump your own gas there! They have a guy who does it called a `gas jockey`, and you'd better not even open your door, or they get all suspicious.</line>
+    <line speaker="conway">I drove through California and into Washington, and I refueled in the middle, in Oregon. And so I didn't set foot out of my truck for a whole day. When I came out of that cab the ground rushed up like it missed me. Gave me a big old kiss right on the chin, right here.</line>
+    <line speaker="conway">What I'm saying is ... hell, I forget. Ha ha. What am I talking about?</line>
+    
+    <option goto="lesson" speaker="ezra" variableChange="phone-room-conway-ezra-lesson=breaks">It's important to take breaks.</option>
+    <option goto="lesson" speaker="ezra" variableChange="phone-room-conway-ezra-lesson=careful">Watch your step getting out of a truck.</option>
+    <option goto="lesson" speaker="ezra" variableChange="phone-room-conway-ezra-lesson=oregon">You can't pump your own gas in Oregon.</option>
+  </scene>
+
+  <scene name="lesson" nextScene="conway-leaves">
+    <line speaker="conway">Exactly. Don't forget that, and don't say I never taught you anything.</line>
+  </scene>
+
+  <scene name="conway-leaves" nextScene="end">
+    <line speaker="conway">Well. Guess I'll head back aboard. Might see if I can find any of the good stuff stashed in the ... maybe in the spice cabinet? Maybe in the medicine cabinet. Ha ha. That's where it belongs ...</line>
+    <line speaker="conway">Hell, who am I talking to — don't listen to me, kid! I'll see you in a few.</line>
+  </scene>
+
+</conversation>

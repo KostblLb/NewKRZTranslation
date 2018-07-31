@@ -1,0 +1,59 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <blocking>Sign Message [DinghyFlashlight] SetScriptedTarget ActorBatFacts2/FlashlightHint</blocking>
+    <line speaker="bat fact">The <variable name="exchange-bat-species" />'s natural diet mostly consists of moths and other small insects that breed along the river. Here at the artificial hibernaculum and sanctuary, we use a combination of chemical snares and ultrasonic wards to repel all potentially contaminant-bearing insects, and replace them with our own locally-bred and spawned hypoallergenic antiseptic pseudomoths, which we call the `Little Gray Nothing Moth`.</line>
+    <line speaker="bat fact">You may be thinking that the other moths and insects the <variable name="exchange-bat-species" /> would have been eating are very much relieved that their natural predator has found another food source. Not so! We've installed netting and highly effective moth traps along the river where the <variable name="exchange-bat-species" /> normally hunts, to balance their escape from the food chain.</line>
+    <line speaker="bat fact">But eating moths isn't the only systemic contribution these bats make. They also produce a potent fertilizer in the form of `guano` that helps plant life thrive along the Echo River the shore of Lake Lethe.</line>
+    <line speaker="bat fact">In order to minimize the sanctuary's impact on subterranean agriculture, we collect that precious guano here at the hibernaculum and manually distribute throughout the caves. It's a full-time job!</line>
+    <line speaker="conway">Sounds like a lot of work.</line>
+    
+    <option goto="moths" speaker="shannon">They eat fake moths?</option>
+    <option goto="guano" speaker="shannon">I wonder how the bats would feel about their guano being taken like that.</option>
+    <option goto="fake" speaker="shannon">It's all fake. Except for the bats.</option>
+  </scene>
+
+  <scene name="moths" nextScene="shannon-reaction">
+    <line speaker="conway">Yeah, um ... `(Reading.)` "Hypoallergenic antiseptic pseudomoths ... the `Little Gray Nothing Moth`."</line>
+    <line speaker="conway">Well, a lot of people eat fake food, right? Food taken apart and then put back together so it looks and tastes like something they remember eating before, even if they never really did.</line>
+  </scene>
+
+  <scene name="guano" nextScene="shannon-reaction">
+    <line speaker="conway">Ha ha. Maybe it's better they don't know. Like bat plumbing. I mean, I never think about where it goes, do you?</line>
+  </scene>
+
+  <scene name="fake" nextScene="shannon-reaction">
+    <line speaker="conway">Yeah, I guess so. Reminds me of that guy Donald and his crew down there with the computer ...</line>
+  </scene>
+
+  <scene name="shannon-reaction">
+    <option goto="cared-for" speaker="shannon">Right. It `is` reassuring to know someone's taking care of everything for these little bats.</option>
+    <option goto="trick" speaker="shannon">It kind of bothers me ... like they're tricking the bats?</option>
+  </scene>
+
+  <scene name="cared-for" nextScene="shannons-parents">
+    <line speaker="conway">Yeah. Who's gonna build the `people` hibernaculum? Maybe we'll build it ourselves. Maybe we already did.</line>
+  </scene>
+
+  <scene name="trick" nextScene="shannons-parents">
+    <line speaker="conway">Yeah ... In this case, I think it's about survival. I mean, if that's the bottom line, what's the difference?</line>
+  </scene>
+
+  <scene name="shannons-parents">
+    <line speaker="conway">Like the folks in the mine, you said they used to buy stuff: fans, canaries, all those little trinkets, to make it bearable. There's still a lot of `stuff` down there. It feels cluttered, but human.</line>
+    <line speaker="conway">I just mean: all people need is enough to `pretend` we're home, and we can make it anywhere.</line>
+
+    <option goto="what-about-bats" speaker="shannon">Sure, people can, but what about bats?</option>
+    <option goto="philosophical" speaker="shannon">You get kind of philosophical when you're drinking, did anyone ever tell you that?</option>    
+  </scene>
+
+  <scene name="what-about-bats" nextScene="end">
+    <line speaker="conway">Hm. Maybe we'll have to teach them. Hell, what am I saying? I know about a hundred percent more on the subject of bats now than I did when we came down here.</line>
+  </scene>
+  
+  <scene name="philosophical" nextScene="end">
+    <line speaker="conway">Yeah, I guess I do.</line>
+    <line speaker="conway">Naw, this is nothing. I used to have this drinking buddy who would get loaded and tell the weirdest damn riddles, like: "which is more musical, a truck passing by a factory or a truck passing by a music school?" Ha! Count your blessings ...</line>
+  </scene>
+  
+</conversation>

@@ -1,0 +1,41 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="dialog-lighten-fast">
+  <scene name="intro" nextScene="tunnel">
+    <triggerEvent name="dialog-darken-fast"/>    
+    <setGameVar name="underworld-saw-moss-tunnels" value="true"/>    
+    <line>The brochure for these mossy tunnels recommends taking them &quot;`as a site for meditation ... an introspective labyrinth through which to walk one's concerns, slowly, like a breathing exercise.`&quot;</line>
+  </scene>
+
+  <scene name="tunnel">
+    <setGameVar name="underworld-moss-tunnel-counter" value="+1"/>    
+    <line>A narrow tunnel extends to the right, and another to the left.</line>
+    <option goto="tunnel-2" insertedText="Conway and Shannon go left.">Left tunnel.</option>
+    <option goto="tunnel-3" insertedText="Conway and Shannon go right.">Right tunnel.</option>
+    <option condition="underworld-moss-tunnel-counter&gt;4" goto="end">Close eyes.</option>    
+  </scene>
+
+  <scene name="tunnel-2">
+    <setGameVar name="underworld-moss-tunnel-counter" value="+1"/>        
+    <line>Conway and Shannon enter a cramped passage. A narrow tunnel extends to the right, and another to the left. The moss begins to glow.</line>
+    <option goto="tunnel-3" insertedText="Conway and Shannon go left.">Left tunnel.</option>
+    <option goto="tunnel-4" insertedText="Conway and Shannon go right.">Right tunnel.</option>
+    <option condition="underworld-moss-tunnel-counter&gt;4" goto="end">Close eyes.</option>    
+  </scene>
+
+  <scene name="tunnel-3">
+    <setGameVar name="underworld-moss-tunnel-counter" value="+1"/>        
+    <line>Conway and Shannon crawl on hands and knees through a slick passageway. The moss is glowing more brightly now.</line>
+    <option goto="tunnel-4" insertedText="Conway and Shannon go left.">Left tunnel.</option>
+    <option goto="tunnel" insertedText="Conway and Shannon go right.">Right tunnel.</option>
+    <option condition="underworld-moss-tunnel-counter&gt;4" goto="end">Close eyes.</option>    
+  </scene>
+
+  <scene name="tunnel-4">
+    <setGameVar name="underworld-moss-tunnel-counter" value="+1"/>        
+    <line>Conway and Shannon step out into a large open room. The glow of the moss is almost blinding.</line>
+    <option goto="tunnel" insertedText="Conway and Shannon go left.">Left tunnel.</option>
+    <option goto="tunnel-2" insertedText="Conway and Shannon go right.">Right tunnel.</option>
+    <option condition="underworld-moss-tunnel-counter&gt;4" goto="end">Close eyes.</option>
+  </scene>
+  
+</conversation>

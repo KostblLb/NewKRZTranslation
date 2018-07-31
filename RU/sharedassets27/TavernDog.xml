@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="tavern-talked-to-dog" value="true"/>
+    
+    <option goto="past" speaker="conway">Been a while, eh?</option>
+    <option goto="not-sure" speaker="conway">Not sure about this place.</option>
+  </scene>
+
+  <scene name="past">
+    <option goto="inside" speaker="conway">I guess you never saw the inside of one of these places.</option>
+    <option goto="places-like-this" speaker="conway">I spent a lot of time in places like this.</option>
+  </scene>
+
+  <scene name="inside">
+    <option goto="end" speaker="conway">Yeah, you're more of a lay-in-the-shade type. Good for you.</option>
+    <option goto="end" speaker="conway">You might enjoy the jukeboxes.</option>
+  </scene>
+
+  <scene name="places-like-this">
+    <option goto="end" speaker="conway">Too much time.</option>
+    <option goto="end" speaker="conway">Still miss it, though.</option>
+  </scene>
+
+  <scene name="not-sure">
+    <option goto="never-seen" speaker="conway">Never seen it before.</option>
+    <option goto="trouble" speaker="conway">Looks like trouble.</option>
+  </scene>
+
+  <scene name="never-seen">
+    <option goto="end" speaker="conway">Thought I knew most of the bars up and down this road.</option>
+    <option goto="end" speaker="conway">Probably for the best.</option>
+  </scene>
+
+  <scene name="trouble">
+    <option goto="end" speaker="conway">Just has a dangerous look to it, I guess.</option>
+    <option goto="end" speaker="conway">Trouble for me, anyway. Ha.</option>
+  </scene>
+
+</conversation>

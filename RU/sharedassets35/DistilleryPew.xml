@@ -1,0 +1,71 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="pew-move-to-bottom">
+  <scene name="intro">
+    <line speaker="shannon">I don't know what I expected.</line>
+    <option goto="strangers" speaker="conway">The `strangers`, he kept saying.</option>
+    <option goto="dead-end" speaker="conway">Another dead end.</option>
+  </scene>
+
+  <scene name="strangers" nextScene="first-meeting">
+    <line speaker="shannon">Kind of vague already, isn't it? Donald's a stranger. Hell, you and I are practically strangers.</line>
+  </scene>
+
+  <scene name="dead-end" nextScene="first-meeting">
+    <line speaker="shannon">Yeah. I'm starting to think that's our song.</line>
+  </scene>
+
+  <scene name="first-meeting">
+    <line speaker="shannon">Listen ... earlier, in the mine, I didn't want to talk about it, but ...</line>
+    <option goto="dont-talk" speaker="conway">You don't have to talk about it.</option>
+    <option goto="what-shannon-saw" speaker="conway">What did you find down there?</option>
+  </scene>
+
+  <scene name="dont-talk" nextScene="what-shannon-saw">
+    <line speaker="shannon">No, it's OK. I want to.</line>
+  </scene>
+
+  <scene name="what-shannon-saw">
+    <line speaker="shannon">When I saw Weaver ... she was on TV. I was testing a pretty simple tube repair, flipping through channels to check the saturation, and she was just `there`.</line>
+    <line speaker="shannon">It was kind of horrible. I mean, I told you she disappeared? Suddenly? Ran away? But we thought ...</line>
+    <option goto="weaver-dead" speaker="conway">You thought she was dead.</option>
+    <option goto="weaver-on-tv" speaker="conway">What was she doing on TV?</option>
+  </scene>
+
+  <scene name="weaver-dead" nextScene="weaver-appearance">
+    <line speaker="shannon">Yeah. I guess I don't like to say it.</line>
+    <line speaker="shannon">Dead.</line>
+  </scene>
+
+  <scene name="weaver-on-tv" nextScene="weaver-appearance">
+    <line speaker="shannon">That's the part that I can't ... I'd flipped past that channel a dozen times before in my tests. It was one of those public access things. Some old lady reading poetry.</line>
+  </scene>
+
+  <scene name="weaver-appearance">
+    <line event="start-tv-hum" speaker="shannon">And then, the next time I flipped to channel two ... Weaver.</line>
+    <line speaker="shannon">It's burned in my vision, now. She's standing in a room. The walls are a blank kind of gray. There's tape on the walls, like markings. And desks ... a classroom, maybe?</line>
+    <line speaker="shannon">The camera is in the corner so it's this sort of forty-five degree angle into the room, and there's Weaver right in the center of the picture.</line>
+    <line speaker="shannon">I stopped turning the dial ... hell, I think I stopped `breathing`. Eventually, she spoke, but there was no real sound — just this awful hum. I read the closed captions.</line>
+    <line speaker="shannon">She said to go to the mine. I'd `find` something there. I can't remember her exact words. Whenever I try, I get ... distracted. Fuzzy. I —</line>
+    <line event="lower-tv-hum">`(SHANNON coughs into her sleeve.)`</line>
+    <line speaker="shannon">It's so dusty in here, right?</line>
+    <option goto="is-dusty" speaker="conway">Yeah, real dusty.</option>
+    <option goto="not-dusty" speaker="conway">I hadn't noticed.</option>
+  </scene>
+
+  <scene name="is-dusty" nextScene="loud-sound">
+    <line speaker="shannon">You'd think, with all these holes in the ceiling —</line>
+  </scene>
+
+  <scene name="not-dusty" nextScene="loud-sound">
+    <line speaker="shannon">Maybe it's me. I'm kind of allergic to —</line>
+  </scene>
+
+  <scene name="loud-sound">
+    <audioFade clip="elevator-rumble" direction="in" speed="16"/>
+    <triggerEvent name="elevator-rumble" />
+    <line event="elevator-rumble" speaker="shannon">What the hell was that? Did you hear that?</line>
+    
+    <option goto="end" insertedText="*CONWAY*: Must ha-" speaker="conway">Must have been the church settling.</option>
+    <option goto="end" insertedText="*CONWAY*: We sho-" speaker="conway">We should check outside.</option>
+  </scene>
+</conversation>

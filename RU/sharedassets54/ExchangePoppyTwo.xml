@@ -1,0 +1,92 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="poppy">Sounded pretty good to me.</line>
+    <option goto="where-was-i" speaker="shannon">Yeah, I'm impressed.</option>
+    <option goto="where-was-i" speaker="shannon">He's got the voltage too high, he'll burn out the relay.</option>
+  </scene>
+
+  <scene name="where-was-i">
+    <line speaker="poppy">So. Where was I?</line>
+    <option goto="medicine" speaker="shannon">Hot honey broth and warm salt water.</option>
+    <option goto="technique" speaker="shannon">Extended switchboard technique.</option>
+    <option goto="people" speaker="shannon">It was just Loretta, Angie, and you.</option>
+  </scene>
+
+  <scene name="medicine" nextScene="alone">
+    <line speaker="poppy">Right, and a healthy dose of "slippery elm." I got that one from Cate.</line>
+  </scene>
+
+  <scene name="technique" nextScene="alone">
+    <line speaker="poppy">It was all about timing your breath; some girls got light-headed doing too many calls in a row, with that upbeat dynamic inflection they made us use to keep everything intelligible. It was very physical.</line>
+  </scene>
+
+  <scene name="people" nextScene="alone">
+    <line speaker="poppy">They were the smart ones. It's how they held on so long. They went into voice work, recording canned phrases for IVR systems and `robo-call` polling ... I could never do that.</line>
+  </scene>
+
+  <scene name="alone">
+    <line speaker="poppy">So, after a few months, it was just me. A new automation strategy was announced, and this place was re-christened, "Consolidated Auxiliary Switch Number 30."</line>
+    <option goto="lonely" speaker="shannon">Are you lonely?</option>
+    <option goto="automation" speaker="shannon">If it's automated, what do you do here?</option>
+  </scene>
+
+  <scene name="lonely" nextScene="touch">
+    <line speaker="poppy">Sure. This place feels different when it's empty. Cold to the touch.</line>
+  </scene>
+
+  <scene name="automation" nextScene="touch">
+    <line speaker="poppy">It's not `fully` automated. There are still gaps in functionality that need a human touch ...</line>
+  </scene>
+
+  <scene name="touch">
+    <line speaker="poppy">And, you know, it really is all about `touch`, here. Sound is a vibration, a touch you feel in your ear, so my voice is my touch. When we're talking, we're touching, even on the phone — that's an electric touch, an intimate little shock that makes your tiny hairs tremble.</line>
+    <line speaker="poppy">But that's not even what I mean, when I say it's all about `touch` here.</line>
+    <line speaker="poppy">When the power company first tried automating this old exchange with fancy new transistor arrays, the switchboard caught fire. It was just too much, too fast. So, they tried using some clunky old mechanical relays, but then the calls were getting mismatched and out-of-sync. It was a nightmare.</line>
+    <line speaker="poppy">Their technicians determined that the phone system down here had been designed `ad hoc` over decades around the specific tempo of its human operators. So, short of replacing the whole thing, not to mention all the wiring, they'd have to work out the exact timing of every little human gesture that goes into routing a phone call.</line>
+    <line speaker="poppy">And that, officially, is my role here. I run the switchboard for the whole exchange — once the work of twelve, I'd like to remind you! They have some kind of machine somewhere that tracks how long it takes me to do each little thing. The caller never hears my voice now; they dial, my little indicator lights switch on, and I make the connection.</line>
+    <option goto="miss-talking" speaker="shannon">Do you miss talking to callers?</option>
+    <option goto="machine" speaker="shannon">Interesting. What's the machine like?</option>
+  </scene>
+
+  <scene name="miss-talking">
+    <line speaker="poppy">You know ... there's something that bothers me about the process, besides the fact that I'm training my replacement, who isn't even human ...</line>
+    <line speaker="poppy">Here's what I mean: how long do you think it should take to time my every move and recreate that timing in an automated switchboard? Rough estimate.</line>
+    <option goto="time-estimate" speaker="shannon">A couple days?</option>
+    <option goto="time-estimate" speaker="shannon">Maybe a week?</option>
+    <option goto="time-estimate" speaker="shannon">At least a month.</option>
+  </scene>
+
+  <scene name="time-estimate" nextScene="cheap-machine">
+    <line speaker="poppy">That's what `I` said, but this has been going on for over a year! And a very dark thought has started to nag at me ...</line>
+  </scene>
+
+  <scene name="machine" nextScene="cheap-machine">
+    <line speaker="poppy">Oh, it's ... funny, I've never actually `seen` it. They told me just to carry on patching while it collects and collates in the background, until it's ready to take over.</line>
+    <line speaker="poppy">Hm. There's a dark thought ...</line>
+  </scene>
+
+  <scene name="cheap-machine">
+    <line speaker="poppy">What if there is no cheap machine that's going to replace me? What if it's cheaper just to keep me here, filling in for the rhythm of the operators ... What if `I'm` the cheap machine?</line>
+    <option goto="just-quit" speaker="shannon">Why don't you just quit?</option>
+    <option goto="not-a-machine" speaker="shannon">You're not a machine.</option>
+  </scene>
+
+  <scene name="just-quit" nextScene="goodbye">
+    <line speaker="poppy">In `this` economy?</line>
+    <line speaker="poppy">No, you're probably right. Working in silence for peanut shells, waiting to be replaced by a robot ... It doesn't sound very dignified, does it? The reality is that I've been working here for my whole adult life. I came here as a girl, and I'll leave as a middle-aged woman ... I don't know if I'm ready to be her yet.</line>
+    <line speaker="poppy" condition="exchange-asked-poppy-about-dashiell">I sound like Dashiell. Ha ha.</line>
+  </scene>
+
+  <scene name="not-a-machine" nextScene="goodbye">
+    <line speaker="poppy">Nice of you to notice. Ha ha.</line>
+    <line speaker="poppy">I mourn the Echo River Central Exchange, and I'll carry a torch for the voice with a smile. But at least I'm keeping some part of it human, right? Even if it's not the best part.</line>
+  </scene>
+
+  <scene name="goodbye" nextScene="end">
+    <line speaker="poppy">Oh, the parcel. Right over there by the lamp is fine. Thanks for dropping that off.</line>
+    <line speaker="poppy" blocking="EndingBoatHumFadeIn Message ExchangeMotorboat/ExchangeSkeletonBoatHum EndingFadeIn">Take care. Think of me when you dial "|zero|!"</line>
+  </scene>
+
+</conversation>
+

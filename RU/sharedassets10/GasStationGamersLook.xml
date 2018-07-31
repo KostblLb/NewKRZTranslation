@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="looked-at-gamers" value="true"/>
+    
+    <line>Emily, Ben and Bob sit in folding chairs behind a worn card table. Papers, oddly-shaped dice, and highway maps cover the tabletop.</line>
+  </scene>
+</conversation>

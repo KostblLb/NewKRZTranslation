@@ -1,0 +1,42 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="clara">Thank you, Ezra.</line>
+    <option goto="evaluation" speaker="ezra">Was that OK?</option>
+    <option goto="subject" speaker="ezra">What do you think about when you're playing?</option>
+  </scene>
+
+  <scene name="evaluation">
+    <line speaker="clara">Oh, hm. I don't think I understand your question.</line>
+    <option goto="good-or-not" speaker="ezra">I just don't know how to tell if it was good or not.</option>
+    <option goto="theremin-scientist" speaker="ezra">I was just pressing buttons, but you're like a theremin scientist ...</option>
+  </scene>
+
+  <scene name="good-or-not" nextScene="outcomes">
+    <line speaker="clara">Oh, right. Evaluation. Good music and bad music.</line>
+    <line speaker="clara">I don't like to think about my work that way. Sometimes it's difficult not to; of course it's natural to want your art to be "good," even if you don't know what that means, but ...</line>
+  </scene>
+
+  <scene name="theremin-scientist" nextScene="outcomes">
+    <line speaker="clara">A scientist? Oh no. Ha ha.</line>
+    <line speaker="clara">But ... like a scientist, I experiment. `Unlike` a scientist, I have no hypothesis.</line>
+  </scene>
+
+  <scene name="outcomes" nextScene="goodbye">
+    <line speaker="clara">I try not to be attached to outcomes. Does that make sense? My violin teacher used to tell me to play like a tourist: "Act as though you've never been there before."</line>
+  </scene>
+
+  <scene name="subject" nextScene="goodbye">
+    <line speaker="clara">I try not to think about anything at all. My violin teacher used to say, "Why make art? To quiet the mind."</line>
+    <line speaker="clara">Still ... I'm not very good at it. Quieting my mind.</line>
+    <line speaker="clara">When I'm playing this piece, I'm usually thinking of my uncle, Andrius. I never knew him when I was a child, except in postcards, but we became very close over the last few years.</line>
+    <line speaker="clara">He was a collector of sounds. Like you! He traveled and recorded the songs of birds, of rivers, of city traffic, of crooked, moonlit highways. He sold his sounds by mail-order to movie studios and private collectors.</line>
+    <line speaker="clara">They ended up in films and television shows, mostly, dislocated and reattached to other images.</line>
+    <line speaker="clara">So. No quiet in this mind, I'm sorry to say.</line>
+  </scene>
+
+  <scene name="goodbye" nextScene="end">
+    <line speaker="clara">I hope you'll continue making tapes, Ezra. I'm sure there are many more people who would enjoy listening to them, on this river and elsewhere.</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-lantern" value="true"/>
+    <line>A sensible, modern electric lantern has been left here. The batteries have long since died.</line>
+  </scene>
+</conversation>

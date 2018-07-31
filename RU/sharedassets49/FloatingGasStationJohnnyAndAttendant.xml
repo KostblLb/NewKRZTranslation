@@ -1,0 +1,68 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-johnny-talked-to-attendant" value="true" />
+    <option goto="snack-question" speaker="johnny" condition="floating-gas-station-junebug-errand=snacks">Do you carry those little gummy pomegranate seeds?</option>
+    <option goto="coffee-question" speaker="johnny" condition="floating-gas-station-junebug-errand=coffee">Thinking about brewing any more coffee?</option>
+    <option goto="crystal-question" speaker="johnny" condition="floating-gas-station-junebug-errand=crystals">Where did these crystals come from?</option>
+    <option goto="hows-your-night" speaker="johnny">Hey man. How's your night?</option>
+  </scene>
+
+  <scene name="snack-question" nextScene="low-stock">
+    <line speaker="attendant">I had three boxes at the beginning of this week, and they're all gone. Can't keep them on the shelves.</line>
+  </scene>
+
+  <scene name="coffee-question" nextScene="low-stock">
+    <line speaker="attendant">I'm out. I figured that pot would last the rest of the night, at least.</line>
+  </scene>
+
+  <scene name="crystal-question" nextScene="low-stock">
+    <line speaker="attendant">There used to be a young man who came by here and traded them for gas. He's a diver; I guess he found them diving. Haven't seen him in a while, though. That right there could be the last of them.</line>
+  </scene>
+
+  <scene name="hows-your-night" nextScene="johnny-destination">
+    <line speaker="attendant">Quiet.</line>
+  </scene>
+
+  <scene name="low-stock" nextScene="johnny-destination">
+    <line speaker="attendant">To be honest, our whole inventory is pretty low right now. There's a delivery boat that usually swings by earlier in the night, but I guess something came up.</line>
+  </scene>
+
+  <scene name="johnny-destination">
+    <line speaker="attendant">Where are you headed?</line>
+    <option goto="delivery" speaker="johnny">Helping some new friends make a delivery. Or along for the ride, anyway.</option>
+    <option goto="junebug" speaker="johnny">Just following Junebug. She was in here a minute ago.</option>
+  </scene>
+
+  <scene name="delivery" nextScene="travelers">
+    <line speaker="attendant">Well, even if you're not doing the heavy lifting, or navigating, or whatever ... a passenger contributes to a journey, too.</line>
+  </scene>
+
+  <scene name="junebug" nextScene="travelers">
+    <line speaker="attendant">OK. Yeah, I had a feeling you two might be traveling together.</line>
+  </scene>
+
+  <scene name="travelers">
+    <line speaker="attendant">I never travel, but I do love travelers. That's what I like about this job — the travelers come to me.</line>
+    <option goto="get-lonely" speaker="johnny">Do you ever get lonely here?</option>
+    <option goto="live-nearby" speaker="johnny">Do you live nearby?</option>
+    <option goto="meet-people" speaker="johnny">Meet some interesting people?</option>
+  </scene>
+
+  <scene name="get-lonely" nextScene="bye">
+    <line speaker="attendant">Yes I do.</line>
+  </scene>
+
+  <scene name="live-nearby" nextScene="bye">
+    <line speaker="attendant">I live here. There's a cot in the back — nobody ever notices it. Not that I do much sleeping, really, but sometimes I lay on it anyway just to keep it in shape.</line>
+  </scene>
+
+  <scene name="meet-people" nextScene="bye">
+    <line speaker="attendant">I wouldn't say I meet them, but I do sell them gas.</line>
+  </scene>
+
+  <scene name="bye" nextScene="end">
+    <line speaker="attendant">Well, let me know if I can help you find anything.</line>
+  </scene>
+
+</conversation>

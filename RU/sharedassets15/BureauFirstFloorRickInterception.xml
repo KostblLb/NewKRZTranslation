@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="end-rick-interception-conversation">
+  <scene name="intro">
+    <setGameVar name="bureau-intercepted-by-rick" value="true"/>
+    <setGameVar name="bureau-current-floor-goal" value="1"/>    
+    
+    <line speaker="rick">Hello? Are you lost?</line>
+    <option goto="lost" speaker="conway">Very much so, yes.</option>
+    <option goto="lula" speaker="conway">We're looking for Lula Chamberlain.</option>
+  </scene>
+
+  <scene name="lost" nextScene="orientation">
+    <line speaker="rick">OK. Well, let's get you pointed in the right direction then ...</line>
+  </scene>
+
+  <scene name="lula" nextScene="orientation">
+    <line speaker="rick">Oh, no, she's much too busy. Let's get some of our junior clerks to sort your paperwork first, so we don't waste any of Ms. Chamberlain's time.</line>
+  </scene>
+
+  <scene name="orientation" nextScene="end">
+    <line speaker="rick">It's a pretty straightforward process. First, you'll need to get a case number assigned. Talk to Clerk Metzstein about that. She's just over there at the end of the room.</line>
+    <line speaker="rick">Happy to help!</line>
+  </scene>
+
+</conversation>

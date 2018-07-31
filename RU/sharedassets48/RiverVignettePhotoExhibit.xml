@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />    
+    <line>Look at those easels and tables, on the beach over there. They call it an "open-air gallery," or probably something more upscale like "al fresco galleria." They say it's a popular design in foreign cities, like Paris and New York. That may be true.</line>
+    <line>The appeal is clear enough, I guess. Anyone can wander in and out; there aren't any walls or doors. There's no roof either, just a kind of thin cloth membrane, not quite a sheet or a tarp but more like a drape of rolled-out spiderweb, looking like it might bunch up and dissolve if it ever got rained on.</line>
+    <line>No concern down here for rain! Everybody thinks they're `inside`, just because they can't see the sky — but it's a `microclimate` down here, and it surely does rain.</line>
+    <line>Right now, they're exhibiting some intimate photographs of small-town life.</line>
+    
+    <option goto="old-mans-face">The highlight of the show is a large print of an old man's face.</option>
+    <option goto="girl-puddle">There's one of a small girl playing in a puddle.</option>
+    <option goto="pictures-run-together">The pictures all sort of run together.</option>
+  </scene>
+
+  <scene name="old-mans-face" nextScene="exhibit-summary">
+    <line>The photo is titled "Walker." His eyes are kind of closing, or maybe opening ... probably closing. Because of the scale of the thing you can see all the crumbs in his beard. No, not food crumbs. Crumbs from sleeping outside.</line>
+  </scene>
+
+  <scene name="girl-puddle" nextScene="exhibit-summary">
+    <line>She's got her back to the camera and she's fussing with something, looking at her hands. Maybe she's stuffing a message in a bottle, or folding a paper boat.</line>
+  </scene>
+
+  <scene name="pictures-run-together" nextScene="exhibit-summary">
+    <line>After looking at them all in a row, it's hard to come away with any specific memories of people or faces. You just get a kind of fuzzy afterimage, the warm residue of a community, no individual meaningful except as a bit of contrast or shading.</line>
+  </scene>
+
+  <scene name="exhibit-summary" nextScene="end">
+    <line>Reviews have been good. It's a popular show, probably because of its relevance — the town depicted in these photos was very recently flattened to make way for a big museum project.</line>
+  </scene>
+
+</conversation>

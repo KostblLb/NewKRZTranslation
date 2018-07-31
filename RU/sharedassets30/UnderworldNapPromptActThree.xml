@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="nap-prompt-end">
+  <scene name="intro">
+    <line condition="underworld-nap-counter=1" speaker="junebug">Lost? It's no shame. I'll take over.</line>
+    <line condition="underworld-nap-counter=2" speaker="junebug">It's just a big puzzle, right? I've got it.</line>
+    <line condition="underworld-nap-counter=3" speaker="junebug">Hey, relax. I'll take the wheel.</line>
+    <line condition="underworld-nap-counter=0" speaker="junebug">Huh, weird. Want me to drive?</line>
+    
+    <option event="nap-cancel" goto="end" speaker="shannon">I'm fine.</option>
+    <option event="nap-proceed" goto="end" speaker="shannon">Yeah, maybe that's a good idea.</option>
+  </scene>
+</conversation>

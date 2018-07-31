@@ -1,0 +1,337 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="memory-start">
+    <goto sceneName="debug-end" condition="false" />
+    
+    <line speaker="johnny">Oh ...</line>
+    <line speaker="junebug">Hm?</line>
+    <line speaker="johnny">I remember this.</line>
+    <line speaker="junebug">I told you s —</line>
+    <line speaker="johnny">— yeah, you don't have to say it.</line>
+    <line speaker="junebug">Only because it's always true.</line>
+    <line speaker="johnny">Ha ha.</line>
+    <line speaker="johnny">She played at the flower shop. Cyrano opened. He was having trouble with his tape machine, so he just droned out on the lap steel. He got really into it, and he went on for, like, `forever`. Everyone was falling asleep.</line>
+    <line speaker="junebug">Not everyone.</line>
+  </scene>
+
+  <!-- Conversation -->
+  <scene name="conversation-intro" nextScene="memory-start-options">
+    <blocking>Theremin Exec MovementTwo</blocking>
+    <line speaker="johnny" condition="ezra-has-recordings-to-play">The tape stuff sounds good. That kid's doing a good job.</line>
+    <line speaker="junebug" condition="ezra-has-recordings-to-play">Yep, he's a natural-born tape-player.</line>
+
+    <line speaker="junebug" condition="!ezra-has-recordings-to-play">Wow, look at Ezra. He's rapt.</line>
+    <line speaker="johnny" condition="!ezra-has-recordings-to-play">Ha ha. Yeah, he's really into it.</line>
+    
+    <if condition="!(floating-gas-station-junebug-third-person-reaction=none)">
+      <line speaker="johnny">So ... we were talking about him earlier, at the gas station ...</line>
+      <line speaker="junebug">Sure, I haven't forgotten, cricket.</line>
+      <line speaker="johnny">Cool, yeah, I know.</line>
+      <line speaker="johnny">Any, um ... What do you think? About Ezra traveling with us for a while?</line>
+      
+      <else>
+        <line speaker="johnny">I was talking to him back at Sam &amp; Ida's.</line>
+        
+        <line speaker="johnny" condition="restaurant-ezra-plan=undecided">He seems a little lost.</line>
+        <line speaker="johnny" condition="restaurant-ezra-plan=musicians">He said he wouldn't mind tagging along with us ... for a ways.</line>
+        <line speaker="johnny" condition="restaurant-ezra-plan=julian">He said he was headed back to meet with his brother, look around for his folks some more, but ... I get the sense he doesn't really know where he's going.</line>
+        
+        <line speaker="junebug">Another lost soul ... Well, he's in good company.</line>
+        <line speaker="johnny" condition="!(restaurant-ezra-plan=musicians)">Maybe he could ... He could travel with `us` for a bit?</line>
+        <line speaker="junebug" condition="!(restaurant-ezra-plan=musicians)">Hm. I'm not sure that's a good idea.</line>
+      </else>
+    </if>
+  </scene>
+
+  <scene name="conversation-complication" nextScene="go-for-a-walk">
+    <blocking>Theremin Exec MovementThree</blocking>    
+    <line speaker="junebug">If I sound hesitant or something, it's just ...</line>
+    <line speaker="junebug">When I met you — when we met, we were nothing, just these little gray shadows. And we grew, and filled in, and ... but we did all that together. Ezra, sure he's just a kid, but he's already a `person`.</line>
+    <line speaker="junebug">What would that do to our `system`? Our `chemistry`?</line>
+  </scene>
+
+  <scene name="conversation-twist" nextScene="after-twist-route">
+    <line speaker="junebug">Hey, I got the masters for the new record back from Lazar. They're OK, but I —</line>
+    <line speaker="johnny">What?! You listened to them without me?</line>
+    <line speaker="junebug" condition="three:breakdown-bike-johnny-hobby=recordings">You were at the arcade; I didn't want to throw off your pinball game.</line>
+    <line speaker="junebug" condition="three:breakdown-bike-johnny-hobby=animals">You were at the pet shop; I didn't think I could tear you free.</line>
+    <line speaker="johnny">Oh. OK.</line>
+    <line speaker="junebug">Anyway, there are a few spots where the strings distorted a little, and the whole thing has `way` too much reverb, but overall it sounds pretty good. The new drum machine fits right into the mix.</line>
+    <line speaker="johnny">`Nice`.</line>
+    <line speaker="junebug">The only question is how to do it `live`.  I can't control the drum machine and sing and dance at the same time, and you've got your hands full of keytar ...</line>
+  </scene>
+
+  <scene name="after-twist-route">
+    <goto condition="temp:after-twist-destination=basement-lights" sceneName="basement-lights" />
+    <goto condition="temp:after-twist-destination=empty-street" sceneName="empty-street" />
+  </scene>
+  
+  <scene name="conversation-conclusion" nextScene="claras-piece-ends">
+    <if condition="junebug-wants-ezra-to-join">
+      <line speaker="junebug">I'm just saying ... Maybe we `could` use a third pair of hands up there.</line>
+      <line speaker="johnny">Oh ...</line>
+      <line speaker="johnny">Oh!</line>
+      <line speaker="junebug">Think you could teach that kid to play a drum machine?</line>
+      <line speaker="johnny">Ma'am, I could teach a `dog` to play a drum machine.</line>
+      <line speaker="junebug">Well, that'll be our backup plan.</line>
+    </if>
+
+    <if condition="!junebug-wants-ezra-to-join+ezra-wants-to-join-robots">
+      <line speaker="junebug">So, listen: if that kid `really` wants to tag along, and you `really` want to try making this a trio, then, I guess ...</line>
+      <line speaker="junebug">Think you could teach that kid to play a drum machine?</line>
+      <line speaker="johnny">Ma'am, I could teach a `dog` to play a drum machine</line>
+      <line speaker="junebug">Well, that'll be our backup plan.</line>
+    </if>
+    
+    <if condition="!junebug-wants-ezra-to-join+!ezra-wants-to-join-robots">
+      <line speaker="johnny">So how do you think we'll swing that? Playing the drum machine live.</line>
+      <line speaker="junebug">We'll figure something out. Maybe glue it to the back of your keytar.</line>
+      <line speaker="johnny">Oh, yeah ... Or swap the buttons out for footpedals.</line>
+      <line speaker="junebug">Or put the drums on tape beforehand, like Cyrano does.</line>
+      <line speaker="johnny">Oh yeah. I guess we have a lot of options.</line>
+      <line speaker="junebug">Life is full of possibilities, cricket.</line>
+      <line speaker="johnny">Yes, ma'am.</line>
+    </if>
+  </scene>
+
+  <!-- Memory -->
+  
+  <scene name="memory-start" nextScene="conversation-intro">
+    <line style="memory">I remember the air was warm, perfumed. You were playing with some petals you found on the floor, and I was looking at the ceiling.</line>
+    <line style="memory">I remember the ceiling was glass. During the week, that room was a greenhouse. I don't know where they put all the plants when they had bands in. Maybe outside, if the weather was nice. It was nice that night; warm, smelled like spring.</line>
+    <line style="memory">I remember the folding chairs — so uncomfortable, but I guess it was their only option. They had to pack everything up during the week so there'd be room to display the flowers.</line>
+  </scene>
+
+  <scene name="memory-start-options">
+    <line style="memory">We were in the back ...</line>
+    
+    <option style="memory" goto="look-at-audience">... kind of looking around, people watching.</option>
+    <option style="memory" goto="coded-message-format">... passing messages in code.</option>
+    <option style="memory" goto="watch-cyrano">... just watching Cyrano.</option>
+  </scene>
+
+  <scene name="look-at-audience">
+    <line style="memory">I remember ...</line>
+    <option style="memory" goto="sleeping-cat">... a cat sleeping on a chair.</option>
+    <option style="memory" goto="girl-with-game">... a girl playing a videogame.</option>
+    <option style="memory" goto="chili-beard-guy">... a bearded guy sleeping in a chair, with a bowl of chili in his lap.</option>
+  </scene>
+
+  <scene name="girl-with-game" nextScene="conversation-complication">
+    <line style="memory">She was really getting into it! The sound was leaking out of her cheap headphones a bit, mingling with Cyrano's drone, and you thought you recognized the music.</line>
+    <line style="memory">I remember it was a driving game. We couldn't see the screen directly, but it was reflected in her glasses. Also she was sharply rocking back-and-forth — hugging corners, I guess — and sometimes she'd sort of jut one of her shoulders forward like she was drifting.</line>
+    <line style="memory">I would have been content just to sit in that folding chair and drift on Cyrano's lap steel soundwaves, but you were feeling restless, so we went for a walk.</line>
+  </scene>
+
+  <scene name="chili-beard-guy" nextScene="conversation-complication">
+    <setGameVar name="dockyard-saw-chili-guy" value="true" />
+    <line style="memory">He seemed cool.</line>
+    <line style="memory">You were a little put off by the smell — of the chili, I mean. It was obviously spiked. Even in that fresh, fragrant greenhouse, the boozy fumes stung a little. I've heard of cooking chili with a little bit of vodka, but that guy must have made a chili cocktail. Like a "Bloody Mary" with beans.</line>
+    <line style="memory">I would have been content just to sit in that folding chair and drift on Cyrano's lap steel soundwaves, but you were feeling restless, so we went for a walk.</line>
+  </scene>
+
+  <scene name="sleeping-cat" nextScene="conversation-complication">
+    <line style="memory">She was a scrawny calico. We'd seen her there before. She must have lived there. I wonder if she preferred the peace and quiet of the daytime flower shop, or the buzz of activity and ear-scratching strangers that came with nighttime concerts.</line>
+    <line style="memory">Why do all the best music venues have live-in cats?</line>
+    <line style="memory">I would have been content just to sit in that folding chair and drift on Cyrano's lap steel soundwaves, but you were feeling restless, so we went for a walk.</line>
+  </scene>
+
+  <scene name="coded-message-format">
+    <line style="memory">We used a code of our own design, inscrutable to observers, transmitted by ...</line>
+    <option style="memory" goto="coded-messages">... movements of the eye.</option>
+    <option style="memory" goto="coded-messages">... taps on the wrist.</option>
+    <option style="memory" goto="coded-messages">... sub-sonic whistles.</option>
+  </scene>
+
+  <scene name="coded-messages">
+    <option style="memory" goto="discuss-travel-plans">We reviewed our travel plans.</option>
+    <option style="memory" goto="discuss-keytar-repair">We compared strategies for a broken keytar.</option>
+    <option style="memory" goto="joke-around">You told me a joke.</option>
+  </scene>
+
+  <scene name="discuss-travel-plans" nextScene="conversation-complication">
+    <line style="memory">You wanted to drive through the night, and try to get to a music festival in West Virginia in time to make some tips in the parking lot. I didn't think we'd earn the gas money back, but I was willing to be persuaded.</line>
+    <line style="memory">We abandoned the subject, and the folding chairs, and went for a little walk.</line>
+  </scene>
+
+  <scene name="discuss-keytar-repair" nextScene="conversation-complication">
+    <line style="memory">I'd been staring at it all day, cleaned the whole thing with a toothbrush, doused the battery compartment in WD-40, but it still did this weird chirp out of nowhere every once in a while.</line>
+    <line style="memory">I think it still does, actually? I guess we never found a solution. We went for a little walk to take our minds off it.</line>
+  </scene>
+
+  <scene name="joke-around" nextScene="conversation-complication">
+    <line style="memory">It was the one about the prisoners exchanging dirty moonshine recipes. I told you the one about the three bears and the outhouse. Then you told me the one about the dentist with the rude prosthetic. We had to leave the room.</line>
+  </scene>
+
+  <scene name="watch-cyrano">
+    <line style="memory">Cyrano was really getting into it.</line>
+    <option style="memory" goto="watch-his-technique">We studied his technique.</option>
+    <option style="memory" goto="watch-his-face">It's fun to watch his eyebrows when he plays.</option>
+    <option style="memory" goto="just-space-out">We just let it wash over us.</option>
+  </scene>
+
+  <scene name="watch-his-technique" nextScene="conversation-complication">
+    <line style="memory">He plays it with the back of a pocket knife; have you ever noticed that? I wonder why. I should have asked.</line>
+    <line style="memory">I watched for a while before I noticed you'd left to wander. Of course I followed.</line>
+  </scene>
+
+  <scene name="watch-his-face" nextScene="conversation-complication">
+    <line style="memory">They're very expressive, but they don't match the music at all — like he's channeling one feeling into his guitar, and diverting everything else out through his eyebrows.</line>
+    <line style="memory">I watched for a while before I noticed you'd left to wander. Of course I followed.</line>
+  </scene>
+
+  <scene name="just-space-out" nextScene="conversation-complication">
+    <line style="memory">I started nodding a little. You pinched my elbow, and we slipped quietly out of the room.</line>
+  </scene>
+
+  <!-- go for a walk -->
+  <scene name="go-for-a-walk">
+    <option style="memory" goto="go-outside">We stepped outside into the warm night air.</option>
+    <option style="memory" goto="go-downstairs">We took a wrong turn in the hallway, and ended up in the basement.</option>
+  </scene>
+  
+  <scene name="go-downstairs">
+    <setGameVar name="temp:went-downstairs" value="true" />
+    <line style="memory">I remember the air was cool and damp, like a cave ... I remember the lingering perfume of the greenhouse giving way to an earthy plant smell, like we were digging down, into the roots.</line>
+    <option style="memory" goto="grimy-door">A grimy door in the corner caught my eye.</option>
+    <option style="memory" goto="go-outside">It was a little spooky, though, so we went outside instead.</option>
+  </scene>
+
+  <scene name="go-outside">
+    <option style="memory" goto="horse-in-parking-lot">There was a horse tied up in the parking lot.</option>
+    <option style="memory" goto="alley">We turned left into an alley.</option>
+  </scene>
+
+  <scene name="horse-in-parking-lot">
+    <option style="memory" goto="alley">You wanted to go find him some food.</option>
+    <option style="memory" goto="whose-horse">Whose horse could that have been?</option>
+  </scene>
+
+  <scene name="alley" nextScene="conversation-twist">
+    <setGameVar name="temp:after-twist-destination" value="empty-street" />
+    <line style="memory">We wandered between some low houses and came out onto an empty street.</line>
+  </scene>
+
+  <scene name="empty-street">
+    <option style="memory" goto="playground">There was a playground across the street.</option>
+    <option style="memory" goto="convenience-store">We stepped into a 24-hour convenience store.</option>
+  </scene>
+
+  <scene name="whose-horse">
+    <line style="memory">Did somebody come to the show on horseback? Or maybe he belonged to someone in the neighborhood; it was a residential area.</line>
+    <option style="memory" goto="check-inside">We went back inside to see if we could identify the horse's owner.</option>
+    <option style="memory" goto="alley">We went looking around the neighborhood for clues.</option>
+  </scene>
+
+  <scene name="check-inside" nextScene="check-inside-route">
+    <line style="memory">Nobody in the greenhouse looked like they came in on a horse.<if condition="dockyard-saw-chili-guy"> Maybe the chili guy.</if></line>
+  </scene>
+
+  <scene name="check-inside-route">
+    <goto condition="!temp:went-downstairs" sceneName="check-inside-downstairs" />
+    <goto condition="temp:went-downstairs" sceneName="check-inside-back-to-street" />
+  </scene>
+
+  <scene name="check-inside-downstairs" nextScene="go-downstairs">
+    <line style="memory">We checked down in the basement, too.</line>
+  </scene>
+
+  <scene name="check-inside-back-to-street" nextScene="alley">
+    <line style="memory">You thought you heard a truck in the alley, loose and rattling like it might have had a trailer.</line>
+    <line style="memory">When we got outside, it had vanished.</line>
+  </scene>
+
+  <scene name="convenience-store">
+    <line style="memory">I remember the radio was playing some old Patsy Cline. Right? Or was it Connie Smith ...</line>
+    <line style="memory">The clerk was reading one of those conspiracy-slash-celebrity-gossip-slash-bigfoot-sighting newspapers.</line>
+    <option style="memory" goto="return-to-horse">You bought a small bag of carrots for the horse.</option>
+    <option style="memory" goto="leave-store">We bought some of those gummy pomegranate seeds.</option>
+    <option style="memory" goto="leave-store">We didn't buy anything.</option>
+  </scene>
+
+  <scene name="return-to-horse" nextScene="return-to-greenhouse">
+    <line style="memory">The horse ate the carrots, slowly and glumly. They're beautiful animals, horses; everyone seems to agree. I think it's because they always look so sad.</line>
+  </scene>
+
+  <scene name="leave-store" nextScene="return-to-greenhouse">
+    <line style="memory">We made our way back to the greenhouse. We must have taken a shortcut or something, because I don't remember the walk back at all.</line>
+  </scene>
+
+  <scene name="playground">
+    <option style="memory" goto="sit-on-bench">We sat on a bench.</option>
+    <option style="memory" goto="find-a-box">We found a shoebox by the swing set.</option>
+  </scene>
+
+  <scene name="sit-on-bench" nextScene="return-to-greenhouse">
+    <line style="memory">I put my head on your shoulder. We heard soft music from a car radio, but couldn't see the car; it must have been around the corner or down an alley or something. You tapped your foot and hummed. I made up lyrics but didn't say them out loud.</line>
+  </scene>
+
+  <scene name="find-a-box">
+    <line style="memory">You wanted to open it.</line>
+    <option style="memory" goto="open-shoebox">So did I.</option>
+    <option style="memory" goto="leave-shoebox">I thought it was probably just garbage.</option>
+  </scene>
+
+  <scene name="open-shoebox" nextScene="return-to-greenhouse">
+    <line style="memory">So you opened it, and there was that <if condition="floating-gas-station-pet-was-toad">toad<else>frog</else></if>. You put him in your pocket, and he traveled with us for ... six months? What a charmer.</line>
+  </scene>
+
+  <scene name="leave-shoebox" nextScene="return-to-greenhouse">
+    <line style="memory">So we left it there.</line>
+  </scene>
+
+  <scene name="grimy-door" nextScene="grimy-door-options">
+    <line style="memory">I remember the door was stuck. There was a large gap underneath it.</line>
+  </scene>
+
+  <scene name="grimy-door-options">
+    <option style="memory" goto="force-door">You forced the door.</option>
+    <option style="memory" goto="light-under-door" condition="!temp:door-shined-light" variableChange="temp:door-shined-light=true">I shined a light under the door.</option>
+    <option style="memory" goto="reach-under-door" condition="!temp:door-reached-under" variableChange="temp:door-reached-under=true">You reached your arm under the door.</option>
+    <option style="memory" goto="go-outside">Too spooky. We went outside instead.</option>
+  </scene>
+
+  <scene name="force-door" nextScene="conversation-twist">
+    <setGameVar name="temp:after-twist-destination" value="basement-lights" />
+    <line style="memory">It wasn't as stuck as we thought. The door burst open, and we fell through.</line>
+  </scene>
+
+  <scene name="basement-lights">
+    <option style="memory" goto="explore-room-lit">We switched on the lights.</option>
+    <option style="memory" goto="explore-room-dark">We left the lights off.</option>
+  </scene>
+
+  <scene name="light-under-door" nextScene="grimy-door-options">
+    <line style="memory">Through the gap, I could see brightly-colored paper.</line>
+  </scene>
+
+  <scene name="reach-under-door" nextScene="grimy-door-options">
+    <line style="memory">You came back with a handful of dirt and confetti.</line>
+  </scene>
+
+  <scene name="explore-room-lit" nextScene="return-to-greenhouse">
+    <line style="memory">The room was crowded with colorful wreaths for births, quinceañeras, weddings, funerals.</line>
+    <line style="memory">Celebratory wreaths. But there was something kind of sad about it.</line>
+  </scene>
+
+  <scene name="explore-room-dark" nextScene="return-to-greenhouse">
+    <line style="memory">We felt around in the dark, careful to keep one hand on a wall so we weren't totally adrift in the darkness. I remember tripping over something — I guess we'll never know what — and stumbling, and you caught me. After a few minutes we found ourselves back in the basement.</line>
+  </scene>
+
+  <scene name="return-to-greenhouse" nextScene="conversation-conclusion">
+    <blocking>Theremin Exec MovementFour</blocking>
+    <line style="memory">We got back to the greenhouse just as Clara was tuning up. She relaxed her shoulders, took a deep breath, raised both hands into their precise positions, and the room started shaking.</line>
+    <line style="memory">Clara hit a note that made the glass rattle in sympathy a perfect two octaves lower. She looked like a sorceress, tearing down the building with an effortless wave and incredible focus, coaxing the empty air into some kind of moaning, rattling demon. That's the thing about the theremin — it's the only instrument you never touch.</line>
+    <line style="memory">You could see a wave of concern propagating through the greenhouse. People looking up at the trembling glass ceiling, looking at each other to see if anyone else was worried, trying to catch Clara's eye and discern if she was doing it on purpose or not; if she were really trying to bury us all in glass.</line>
+  </scene>
+
+  <scene name="claras-piece-ends" nextScene="end">
+    <line style="memory">It was a tense five minutes. We, the audience, alternated between fearing for our lives and lamenting hers that could have given her the kind of emotional experience to play this devastating song.</line>
+    <line style="memory">Then slowly, gently, Clara's hands came to rest. The theremin went quiet, the glass stopped rattling, and the room relaxed, unharmed.</line>
+  </scene>
+
+  <scene name="debug-end" nextScene="end">
+    <setGameVar name="temp:theremin-done" value="true" debug="true" />
+  </scene>
+  
+</conversation>

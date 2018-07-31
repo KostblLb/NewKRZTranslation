@@ -1,0 +1,54 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-johnny-talked-to-al" value="true" />
+    <line speaker="al">GLORYITISGOODTOBEAMONGFRIENDS!</line>
+    <line speaker="attendant">Suit yourself.</line>
+    <option goto="why-excited" speaker="johnny">What are you so excited about?</option>
+    <option goto="johnny-impressed" speaker="johnny">Wow, I should take a page out of your book, man.</option>
+  </scene>
+
+  <scene name="why-excited" nextScene="repeat">
+    <setGameVar name="floating-gas-station-johnny-al-reaction" value="curious" />
+    <line speaker="al">I can't help it. Every time I step onto that boat alone, I think "this could be the very last time." And then every time I come ashore, back among people, I think ...</line>
+  </scene>
+
+  <scene name="johnny-impressed" nextScene="repeat">
+    <setGameVar name="floating-gas-station-johnny-al-reaction" value="impressed" />    
+    <line speaker="al">I'd give you any advice I could, little guy, but I think the most important thing I can say is —</line>
+  </scene>
+
+  <scene name="repeat">
+    <line speaker="al">`(Solemnly.)` "Glory, it is good to be among friends."</line>
+    <option goto="ritual" speaker="johnny" condition="floating-gas-station-johnny-al-reaction=curious">Why get on the boat in the first place?</option>
+    <option goto="ritual" speaker="johnny">Helps to keep things in perspective, I guess.</option>
+    <option goto="ritual" speaker="johnny" condition="floating-gas-station-johnny-al-reaction=impressed">OK, I'll see what I can do with that.</option>
+  </scene>
+
+  <scene name="ritual" nextScene="ritual-story">
+    <line speaker="al">It's a ritual of remembrance, for me. Tonight, particularly so. It's my birthday: I am five years old. Do you know why I say that? Well, I'm gonna tell you.</line>
+    <line speaker="al">Five years and some days ago, I set out on the Echo River, alone, or so I thought at the time ...</line>
+  </scene>
+
+  <scene name="ritual-story" nextScene="end" skimmingScene="ritual-bored">
+    <line speaker="al">I was looking for an ice floe — they are occasionally rumored to travel our humble artery on their way from who-knows-where to who-knows-where. Who knows why? It's a mystery.</line>
+    <line speaker="al">An hour into the journey, my lantern gave out. `Now`, I always carry three or four spares. You'll never catch me in the dark again. Lesson learned, buddy.</line>
+    <line speaker="al">But that night, when that lantern went out, I was stuck in the dark. I kept my arm extended, running my fingers along the cave wall, trying to keep my bearing as best I could and at least make sure I wasn't going in circles ... I just prayed I'd find another traveler who knew his way back to the lake or above ground, or even just a crack in the rock to get a glimpse of moonlight!</line>
+    <line speaker="al">I had a large bag of apples with me. After a long while — maybe a day — I was getting weak, so I took my hand down from the rock to tear the bag open. Well, when I reached back out, I couldn't find that cave wall anymore, or any other. I was totally `unmoored`, buddy. Totally adrift.</line>
+    <line speaker="al">And it was so dark.</line>
+    <line speaker="al">I started counting time in apples eaten. I drifted in despair for four apples. Then I schemed and planned and dreamed for two apples. Finally, I came to accept my fate — lost at sea — and this phase I think would have continued indefinitely had I not come down to that very last damn apple.</line>
+    <line speaker="al">Picture me: feeling around in the empty bag, certain that `somehow` there was another one of those fist-sized chunks of life-giving fruit, already softened by time and probably an unappetizing brown ... nope, that was it.</line>
+    <line speaker="al">Just as I was about to bite into my last meal, I felt a tickle on my upper lip. It hatched, right then, couldn't have been a moment later or I would have eaten it! My last apple was `infested` by a damn fruit fly maggot!</line>
+    <line speaker="al">Well, that should have been the end of it. I should have eaten that apple — and that fly while I was at it — and put an end to our little food chain suicide pact, but I waited ... out of mercy.</line>
+    <line speaker="al">After all, this fly was basically a newborn child, right? A gross insect child, but still a child, right? Born into darkness and famine, hungry and alone, I mean, can you imagine that? No other flies out there on the boat, and never would be. No other flies to welcome him into the world, I mean — no fly culture, no fly society, no fly history ... a true orphan.</line>
+    <line speaker="al">I started to get `depressed` just thinking about it all. Worked out a thick tear, I'm not ashamed to say. Well, that fly landed on my cheek, right under my left eye, right on that salty tear drop, and then — BLINDING GLORY, HIS ASS LIT UP LIKE A CANDLE! That wasn't a fly, buddy, that was a damn lightning bug!</line>
+    <line speaker="al">So, that's how come I'm here today with you folks — only because I found my way out of that strange river cave by the dim-lit rear of some orphan insect hatched out of my last rotten apple.</line>
+    <line speaker="al">GLORYITISGOODTOBEAMONGFRIENDS!</line>
+  </scene>
+
+  <scene name="ritual-bored" nextScene="end">
+    <line>`(JOHNNY looks out the window.)`</line>
+    <line speaker="al">Hello? Anybody listening? Aw, forget it.</line>
+  </scene>
+
+</conversation>

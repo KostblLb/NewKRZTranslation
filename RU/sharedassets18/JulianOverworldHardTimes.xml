@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-hard-times" value="true"/>
+    
+    <line>A chapel and graveyard, disconnected from any road, in the middle of a dark woods. Occasionally it seems that pale, glowing figures, difficult to track with the eye, appears. Sometimes they roll huge barrels in or out of the building. Sometimes they just loiter for a moment, then fade out of view.</line>
+  </scene>
+</conversation>

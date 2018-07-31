@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <option goto="aboard" center="true" dividerAfter="true">Shannon helped me fix up a mushroom stew in the kitchen.</option>
+    <option goto="end" center="true" variableChange="riverworld-exchange=disembarked">Shannon and her friend set out in the dinghy, to deliver a package at the telephone exchange.</option>
+  </scene>
+
+  <scene name="aboard" nextScene="end">
+    <setGameVar name="riverworld-exchange" value="aboard" />
+    <setGameVar name="tugboat-vignette" value="MushroomStew" />
+  </scene>
+</conversation>

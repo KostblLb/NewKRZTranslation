@@ -1,0 +1,49 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-johnny-talked-to-cyrano" value="true" />
+    
+    <line speaker="cyrano">I am `so` glad to see you. These kooks are bumming me out, man.</line>
+    <line speaker="cyrano">You see that guy in the sand over there? He rolled up — kind of off-center, you know — kind of leaning on the stage here, and he was like, "what kind of strings are those, steel or nylon?"</line>
+    <option goto="rude" speaker="johnny">So rude.</option>
+    <option goto="be-cool" speaker="johnny">I'm sure you were cool about it.</option>
+    <option goto="drunk" speaker="johnny">Aw, he's just drunk.</option>
+  </scene>
+
+  <scene name="rude">
+    <line speaker="cyrano">I mean — you know me, man. I'm all about breaking down the artificial barrier between audience and performer. But you can't just ...</line>
+    <option goto="more-drunk-story" speaker="johnny">Yeah, you're all about that.</option>
+    <option goto="new-tape" speaker="johnny">Hey, how's that new tape going?</option>
+  </scene>
+
+  <scene name="drunk" nextScene="more-drunk-story">
+    <line speaker="cyrano">Oh, believe me, I know.</line>
+  </scene>
+
+  <scene name="more-drunk-story">
+    <line speaker="cyrano">You've got to be cool about it. Or just get a drink and stay in your chair, man. If you're gonna drink like `that`, just drink! Ha ha. I mean, don't make it `my` problem ...</line>
+    <option goto="be-cool" speaker="johnny">You definitely have to be cool.</option>
+    <option goto="new-tape" speaker="johnny">Hey, how's that new tape going?</option>
+  </scene>
+
+  <scene name="be-cool" nextScene="request">
+    <setGameVar name="tiki-cyrano-detail" value="persona" />
+    <line speaker="cyrano">Oh yeah. It's mandatory around here, man. It's what the people want — I'm just a humble artist, you know?</line>
+    <line speaker="cyrano">Plus, it's better for tips. You can't look like you care about it, you know? Even if it's your livelihood. A crowd can smell economic precarity, and it turns them `off`.</line>
+    <line speaker="cyrano">I guess it's no fun to give someone money if they really need it. Too much responsibility. Ha ha.</line>
+  </scene>
+
+  <scene name="new-tape" nextScene="request">
+    <setGameVar name="tiki-cyrano-detail" value="tape" />    
+    <line speaker="cyrano">Oh yeah! It's good, man. I mean ... it's OK.</line>
+    <line speaker="cyrano">Everything's recorded, but I still want to do another pass on it, and maybe work on the mix. But it's no rush on that, because I don't have the cash for blank tapes right now anyway!</line>
+    <line speaker="cyrano">Patch threw me some bookings, so I'm trying to fund it with tips. But, you know, we're all paying a premium for blank media these days.</line>
+    <line speaker="cyrano">Everyone's afraid we're dubbing garbage off the radio, so they only sell blank tapes in pallets or overpriced three-packs. Totally cut out the small labels and self-publishers.</line>
+    <line speaker="cyrano">Crystal and Gordon are just recording over `old` tapes, for their new one — can you believe that? It saves some cash, I guess, but you're always going to have old frequencies bleeding through. It's just chemistry, man.</line>
+  </scene>
+
+  <scene name="request" nextScene="end">
+    <line speaker="cyrano">Hey, speaking of which — I'm about mid-set here. Can you take the can around while I play this next one? It's on the tape. I think you'll like it, man.</line>
+    <line speaker="cyrano">Thanks!</line>
+  </scene>
+</conversation>

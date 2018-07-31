@@ -1,0 +1,22 @@
+# -*- mode: blocking -*-
+
+@set Scene ResearchLab
+@set Stop riverworld-research-lab
+
+@func PostScene
+
+  Tugboat Message RiverworldManager QueueState PhotoExhibit
+
+@end
+
+@func PreScene
+
+  Tugboat Listen boat-stop
+  Tugboat Dialog RiverDisembark[Scene]
+  Tugboat Message RiverworldManager LoadScene Lab ? [Stop]=disembarked
+  Tugboat Message RiverworldManager LoadScene Tugboat ? [Stop]=aboard
+
+@end
+
+Tugboat Exec PreScene ? [Stop]=uncharted
+Tugboat Exec PostScene ? !([Stop]=uncharted)

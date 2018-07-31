@@ -1,0 +1,43 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="bike-passing-conversation-end">
+  <scene name="intro">
+    <setGameVar name="breakdown-after-passing-talked-to-someone" value="true"/>
+    <setGameVar name="breakdown-after-passing-talked-to-ezra" value="true"/>
+    
+    <line speaker="ezra">Was that him?</line>
+    
+    <option goto="who" speaker="conway">Who?</option>
+    <option condition="breakdown-tow-company-name=lucky-boot" goto="truck" speaker="conway">That was a motorcycle. Lucky Boot has a big truck.</option>
+    <option condition="breakdown-tow-company-name=mercadet" goto="truck" speaker="conway">That was a motorcycle. Mercadet has a big truck.</option>
+    <option condition="breakdown-tow-company-name=nameless" goto="truck" speaker="conway">That was a motorcycle. We're waiting on a tow truck.</option>
+    <option goto="fast" speaker="conway">Going pretty fast, whoever they were.</option>
+  </scene>
+
+  <scene name="who">
+    <line condition="breakdown-tow-company-name=lucky-boot" speaker="ezra">Um ... Lucky, uh ...</line>
+    <line condition="breakdown-tow-company-name=mercadet" speaker="ezra">Um ... Merca, uh ...</line>
+    <line condition="breakdown-tow-company-name=nameless" speaker="ezra">Um ...</line>
+    
+    <option goto="truck" speaker="conway">Oh, the tow company? No.</option>
+    <option goto="fast" speaker="conway">Probably on their way to or from a bar ...</option>
+  </scene>
+
+  <scene name="truck" nextScene="fast">
+    <line speaker="ezra">Yeah, they're too fast for a truck.</line>
+  </scene>
+
+  <scene name="fast">
+    <line speaker="ezra">I bet they're getting chased by something.</line>
+    
+    <option goto="important" speaker="conway">Maybe they just have somewhere important to be.</option>
+    <option goto="see" speaker="conway">Maybe they didn't see us.</option>
+  </scene>
+
+  <scene name="important" nextScene="end">
+    <line speaker="ezra">Definitely getting chased by something.</line>
+  </scene>
+
+  <scene name="see" nextScene="end">
+    <line speaker="ezra">Next time, we should yell.</line>
+  </scene>
+</conversation>

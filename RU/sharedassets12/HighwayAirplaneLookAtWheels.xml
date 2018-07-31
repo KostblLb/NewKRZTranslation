@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="highway-airplane-looked-at-wheels" value="true"/>
+    
+    <line>
+      The rubber is almost worn away. Soon, these men will be dragging this airplane.
+    </line>
+  </scene>
+</conversation>

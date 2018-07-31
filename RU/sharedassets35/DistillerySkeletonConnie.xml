@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-connie" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Connie! How's your rat?</line>
+    <line speaker="doolittle" style="skeleton">Connie is a great lover of animals — do you know she's adopted over a dozen pets in the as many of the last years? Of course, death comes to all things great and small ... the distillery found that the remains in her makeshift pet cemetery were trespassing on our subterranean property.</line>
+    <line speaker="doolittle" style="skeleton">Our hand was forced! In order to avoid the legal extinguishment of our easement, we were required to file a civil suit. Ever the level head, Connie agreed to a pre-court settlement to pay off her fines by working for us here.</line>
+  </scene>
+</conversation>

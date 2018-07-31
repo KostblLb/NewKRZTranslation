@@ -1,0 +1,56 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="storage-talked-to-mary-ann" value="true"/>
+    <line speaker="mary ann">Oh, hi. `(To EZRA.)` Hello, there, what's your name?</line>
+    <option goto="ezra-bold" speaker="ezra">Ezra. What are you doing?</option>
+    <option goto="ezra-shy">(EZRA looks at his shoes.)</option>
+  </scene>
+
+  <scene name="ezra-bold" nextScene="oils">
+    <line speaker="mary ann">Just clearing my head. Turpentine is good for that. Clears the sinuses, and the cobwebs.</line>
+  </scene>
+
+  <scene name="ezra-shy" nextScene="oils">
+    <line speaker="shannon">Ha. I guess he's feeling shy. Is that oil paint?</line>
+  </scene>
+
+  <scene name="oils">
+    <line speaker="mary ann">I can only do watercolors at home — my apartment is carpeted, and the landlord's paranoid it'll soak up the fumes.</line>
+    <line speaker="mary ann">But these storage spaces are pretty cheap, and the ventilation is good. So I can play with oil paints here. Cheaper than a studio.</line>
+    <option goto="subject" speaker="ezra">What are you painting?</option>
+    <option goto="fumes" speaker="ezra">It smells dangerous.</option>
+    <option goto="sculpture" speaker="ezra">Me and Julian built a rock sculpture by the lake.</option>
+  </scene>
+
+  <scene name="subject" nextScene="end">
+    <line speaker="mary ann">Sometimes landscapes. Sometimes color fields. I just like to use the whole canvas. Keep your eyes moving.</line>
+  </scene>
+
+  <scene name="fumes">
+    <line speaker="mary ann">It's kind of intoxicating, isn't it? Nah, the vents work pretty well in here. Totally safe.</line>
+    <option goto="subject" speaker="ezra">What are you painting?</option>
+    <option goto="sculpture" speaker="ezra">Me and Julian built a rock sculpture by the lake.</option>
+  </scene>
+
+  <scene name="sculpture">
+    <line speaker="mary ann">What was it?</line>
+    <option goto="sculpture-eagle" speaker="ezra">An eagle.</option>
+    <option goto="sculpture-boy" speaker="ezra">A boy.</option>
+    <option goto="sculpture-rocks" speaker="ezra">Just a big pile of rocks.</option>
+  </scene>
+
+  <scene name="sculpture-eagle" nextScene="end">
+    <line speaker="mary ann">Sounds impressive.</line>
+  </scene>
+
+  <scene name="sculpture-boy" nextScene="end">
+    <line speaker="mary ann">Self portrait in stone. Nice.</line>
+  </scene>
+
+  <scene name="sculpture-rocks" nextScene="end">
+    <line speaker="mary ann">You sound like my ex. She's a nihilist.</line>
+    <line speaker="mary ann">Ha ha.</line>
+  </scene>
+
+</conversation>

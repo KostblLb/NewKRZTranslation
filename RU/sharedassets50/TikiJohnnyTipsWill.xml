@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-will" value="true" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>Will never has any money. Good for him.</line>
+  </scene>
+</conversation>

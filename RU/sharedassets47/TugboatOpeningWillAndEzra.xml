@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="temp:ezra-talked-to-will-in-opening" value="true" />
+    <line speaker="will">You got your batteries, small man; go get you some tape!</line>
+  </scene>
+</conversation>

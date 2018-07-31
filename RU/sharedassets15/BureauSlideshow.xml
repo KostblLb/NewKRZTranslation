@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="bureau-watched-slideshow" value="true"/>
+    <line>A parade of disconnected images: obscure corners of nameless interiors, astronomical diagrams projecting the distances between celestial bodies, a painting by Giorgio de Chirico, a list of &quot;unpopular anagrams.&quot;</line>
+  </scene>
+</conversation>

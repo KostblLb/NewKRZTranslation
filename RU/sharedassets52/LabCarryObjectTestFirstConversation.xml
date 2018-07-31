@@ -1,0 +1,14 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="mimi">Jenn! Look who it is!</line>
+    <line speaker="jenn">Aw. I miss that kitty.</line>
+    <line speaker="mimi">I forget what became of the white one.</line>
+    <line speaker="jenn">Her name was "Coconut," and she disappeared without a trace.</line>
+    <line speaker="mimi">Easy come, easy go?</line>
+    <line speaker="jenn">I wouldn't say "easy" — I had to leave food on the dock for a week before she'd come inside!</line>
+    <line speaker="jenn">She only stuck around for a month or two. You probably saw quite a lot of her; I remember you were working nights then. She was a nocturnal creature.</line>
+    <line speaker="mimi">That's right. I remember.</line>
+  </scene>
+
+</conversation>

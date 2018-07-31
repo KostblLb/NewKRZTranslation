@@ -1,0 +1,387 @@
+# -*- mode: blocking -*-
+
+@set PhonePosition PhoneRoom/Root/Wobble/PhoneHint/Target
+@set DropLeft PhoneRoom/Root/Wobble/DropLeft
+@set Platform PhoneRoom/Root/Wobble
+
+@func PickupPhone [Character]
+
+  Phone Set temp:at-phone false
+  Phone Set temp:handset-ready false
+  
+  Phone Walk [Character] [PhonePosition]
+  Phone Set temp:at-phone true  
+  Phone Message [Character] PickupPhone
+  Phone Wait 1
+  Phone Message PhoneSound RoomPickup
+  Phone Wait 3
+  Phone Set temp:handset-ready true
+
+@end
+
+@func PickupPhoneAndDial [Character]
+
+  Phone Set temp:at-phone false
+  Phone Set temp:handset-ready false  
+
+  Phone Walk [Character] [PhonePosition]
+  Phone Set temp:at-phone true
+  Phone Message [Character] PickupPhone
+  Phone Wait 1  
+  Phone Message PhoneSound RoomPickup
+  Phone Wait 0.5
+  Phone Message PhoneSound DialQuiet 303  
+  Phone Wait 2.5
+  Phone Set temp:handset-ready true
+
+@end
+
+@func HangupPhone [Character]
+
+  Phone Set temp:handset-down false
+
+  Phone Message [Character] HangupPhone
+  Phone Wait 1
+  Phone Event "handset-down-sound"  
+  Phone Wait 2
+  Phone Set temp:handset-down true
+
+@end
+
+@func ConwayExits
+
+  Exit Walk Conway [DropLeft]
+  Exit Fork Splash
+  Exit Fork Leave
+  Exit Gesture Conway Enter Water
+
+  Leave Wait 2.50
+  Leave Message Conway LeavePlatform
+
+  Splash Wait 3.25
+  Splash Message Splash Splash [DropLeft]/Splash
+  Splash Audio* Play conway-splash
+  Splash Disable Conway
+  Splash Message ConwaySwimming SwimAway
+  Splash Event conway-swimming
+  Splash Wait 1
+  Splash Message ConwaySwimming/Target PlayClips
+
+@end
+
+@func ExitByWater [Character] [DropPosition]
+
+  Exit Walk [Character] [DropPosition]
+  Exit Fork Splash
+  Exit Fork Leave
+  Exit Gesture [Character] Enter Water
+
+  Leave Wait 2.50
+  Leave Message [Character] LeavePlatform
+
+  Splash Wait 3.25
+  Splash Message Splash Splash [DropPosition]/Splash
+
+@end
+
+@func Start
+
+  Main Exec PickupPhoneAndDial Brandon
+  Main Wait 4
+  Main Dialog PhoneRoomChatOne
+  Main Fork BrandonOne
+
+  Main Exec ConwayExits
+  Main Wait 2
+  Main Turn Ezra Conway
+  Main Fork PartyLooks
+  Main Listen conway-swimming
+  Main Fork PartyUnlooks
+  Main Wait 2
+  Main Gesture Shannon Enter Facepalm
+  Main Wait 1
+  
+  Main Fork WillPhone
+  Main Unlook Brandon
+  Main Walk Brandon [Platform]/BrandonLookConway
+  
+  WillPhone Wait 3
+  WillPhone Exec CallOne
+
+  BrandonOne Wait 2
+  BrandonOne Exec HangupPhone Brandon
+  BrandonOne Wait 1
+  BrandonOne Wait temp:handset-down
+  BrandonOne Look Brandon Conway
+
+  PartyLooks Look Shannon Conway
+  PartyLooks Wait 0.2
+  PartyLooks Look Will Conway
+  PartyLooks Wait 0.1
+  PartyLooks Look Cate Conway
+  PartyLooks Wait 0.3
+  PartyLooks Look Clara Conway
+
+  PartyUnlooks Wait 2
+  PartyUnlooks Unlook Shannon
+  PartyUnlooks Wait 5
+  PartyUnlooks Unlook Will Conway
+  PartyUnlooks Wait 0.1
+  PartyUnlooks Unlook Cate Conway
+  PartyUnlooks Wait 0.3
+  PartyUnlooks Unlook Clara Conway
+  PartyUnlooks Unlook Ezra
+
+@end
+
+@func CallOne
+
+  WillPhone Set phone-room-bookmark call-one
+  WillPhone Event save
+  WillPhone Message PhoneRoom SetRecipient Bureau
+  WillPhone Exec PickupPhone Will
+  WillPhone Wait 3
+  WillPhone Message PhoneSound DialTone
+  WillPhone Wait 0.25
+  WillPhone Message PhoneSound Dial 8192
+  WillPhone Wait 1.5
+  WillPhone Message PhoneSound LineRing
+  WillPhone Fork BrandonWait
+  WillPhone Wait 4
+  WillPhone Message PhoneRoomSplit Split
+  WillPhone Wait 2
+  WillPhone Message PhoneSound Pickup
+  WillPhone Dialog PhoneRoomWillCallsVoicemail
+  WillPhone Message PhoneRoomSplit Merge
+  WillPhone Exec HangupPhone Will
+  WillPhone Fork ChatTwo
+  WillPhone Wait 1
+  WillPhone Wait temp:handset-down
+  WillPhone Walk Will [Platform]/WillTalkPosition
+
+  BrandonWait Wait 5
+  BrandonWait Turn Brandon Will
+
+  ChatTwo Wait 4
+  ChatTwo Fork BrandonTwo
+  ChatTwo Dialog PhoneRoomChatTwo
+  ChatTwo Fork CatePhone
+
+  BrandonTwo Wait 1
+  BrandonTwo Exec PickupPhoneAndDial Brandon
+  BrandonTwo Wait 1
+  BrandonTwo Wait temp:handset-ready
+  BrandonTwo Wait 4
+  BrandonTwo Exec HangupPhone Brandon
+  BrandonTwo Wait 1  
+  BrandonTwo Wait temp:handset-down
+  BrandonTwo Set temp:brandon-two-done true
+  BrandonTwo Walk Brandon [Platform]/BrandonWaitPosition
+
+  CatePhone Wait temp:brandon-two-done
+  CatePhone Wait 2
+  CatePhone Exec CallTwo
+  
+@end
+
+@func CallTwo
+
+  CatePhone Set phone-room-bookmark call-two
+  CatePhone Event save
+  CatePhone Message PhoneRoom SetRecipient Summer
+  CatePhone Exec PickupPhone Cate
+  CatePhone Wait 2.75
+  CatePhone Message PhoneSound DialTone
+  CatePhone Wait 0.5
+  CatePhone Message PhoneSound Dial 23
+  CatePhone Wait 1
+  CatePhone Message PhoneSound LineRing  
+  CatePhone Wait 6
+  CatePhone Message PhoneRoomSplit Split
+  CatePhone Audio* FadeIn summer-tv 10
+  CatePhone Wait 2
+  CatePhone Message PhoneSound Pickup
+  CatePhone Dialog PhoneRoomCateCallsDoulaClient
+  CatePhone Audio* FadeOut summer-tv 4
+  CatePhone Message PhoneRoomSplit Merge
+  CatePhone Exec HangupPhone Cate
+  CatePhone Fork ChatThree
+  CatePhone Wait 1
+  CatePhone Wait temp:handset-down
+  CatePhone Walk Cate [Platform]/CateTalkPosition
+
+  ChatThree Wait 4
+  ChatThree Fork BrandonThree
+  ChatThree Dialog PhoneRoomChatThree
+  ChatThree Fork ClaraPhone
+
+  BrandonThree Wait 1
+  BrandonThree Exec PickupPhoneAndDial Brandon
+  BrandonThree Wait 1
+  BrandonThree Wait temp:handset-ready
+  BrandonThree Wait 4
+  BrandonThree Exec HangupPhone Brandon
+  BrandonThree Wait 1
+  BrandonThree Wait temp:handset-down
+  BrandonThree Set temp:brandon-three-done true
+  BrandonThree Walk Brandon [Platform]/BrandonWaitPosition
+
+  ClaraPhone Wait temp:brandon-three-done
+  ClaraPhone Wait 2
+  ClaraPhone Walk* Will [Platform]/WillExitPosition
+  ClaraPhone Wait 2
+  ClaraPhone Exec CallThree
+
+@end
+
+@func CallThree
+
+  ClaraPhone Set phone-room-bookmark call-three
+  ClaraPhone Event save
+  ClaraPhone Message PhoneRoom SetRecipient Nadia
+  ClaraPhone Exec PickupPhone Clara
+  ClaraPhone Wait 3.5
+  ClaraPhone Message PhoneSound DialTone
+  ClaraPhone Wait 0.5
+  ClaraPhone Message PhoneSound Dial 370
+  ClaraPhone Wait 1.5
+  ClaraPhone Message PhoneSound LineRing
+  ClaraPhone Wait 3
+  ClaraPhone Message PhoneRoomSplit Split
+  ClaraPhone Audio* FadeIn nadia-apartment 10  
+  ClaraPhone Walk* Shannon [Platform]/ShannonExitPosition
+  ClaraPhone Wait 2
+  ClaraPhone Message PhoneSound Pickup  
+  ClaraPhone Dialog PhoneRoomClaraCallsSister
+  ClaraPhone Audio* FadeOut nadia-apartment 4  
+  ClaraPhone Walk* Cate [Platform]/CateFinalPosition
+  ClaraPhone Message PhoneRoomSplit Merge
+  ClaraPhone Exec HangupPhone Clara
+  ClaraPhone Fork ChatFour
+  ClaraPhone Fork BrandonFour
+  ClaraPhone Wait 1
+  ClaraPhone Wait temp:handset-down
+  ClaraPhone Walk Clara [Platform]/ClaraFinalPosition
+
+  BrandonFour Wait 5
+  BrandonFour Exec PickupPhoneAndDial Brandon
+  BrandonFour Wait 1
+  BrandonFour Wait temp:handset-ready
+  BrandonFour Wait 4
+  BrandonFour Exec HangupPhone Brandon
+  BrandonFour Wait 1
+  BrandonFour Wait temp:handset-down
+  BrandonFour Look Brandon Cate
+  BrandonFour Set temp:brandon-four-done true
+  BrandonFour Walk Brandon [Platform]/BrandonFinalPosition
+
+  ChatFour Wait 4
+  ChatFour Dialog PhoneRoomChatFour
+  ChatFour Fork Carrington
+
+  Carrington Wait 2
+  Carrington Wait temp:brandon-four-done
+  Carrington Exec CallFour ? one:met-carrington
+  Carrington Exec Ending ? !one:met-carrington
+  
+@end
+
+@func CallFour
+
+  Carrington Set phone-room-bookmark call-four
+  Carrington Event save
+  Carrington Message PhoneSound RoomRing
+  Carrington Wait 4
+  Carrington Set temp:incoming-phone-call-active true
+  
+@end
+
+@func ShannonAnswersPhone
+
+  Carrington Exec PickupPhone Shannon
+  Carrington Set temp:incoming-phone-call-active false
+  Carrington Wait 1
+  Carrington Wait temp:at-phone
+  Carrington Wait 0.5
+  Carrington Message PhoneSound Pickup
+  Carrington Message PhoneRoom SetRecipient Carrington
+  Carrington Message PhoneRoomSplit Split
+  Carrington Audio* FadeIn carrington-street 10
+  Carrington Wait 3
+  Carrington Dialog PhoneRoomCarringtonCall
+  Carrington Audio* FadeOut carrington-street 4    
+  Carrington Message PhoneRoomSplit Merge
+  Carrington Exec HangupPhone Shannon
+  Carrington Wait 1
+  Carrington Wait temp:handset-down
+  Carrington Wait 2  
+  Carrington Exec Ending
+
+@end
+
+@func Ending
+  Main SceneChange Overworld
+@end
+
+# Bookmarks
+
+@func LoadBookmark
+
+  Main Exec StartBookmark ? phone-room-bookmark=start
+  Main Exec CallOneBookmark ? phone-room-bookmark=call-one
+  Main Exec CallTwoBookmark ? phone-room-bookmark=call-two
+  Main Exec CallThreeBookmark ? phone-room-bookmark=call-three
+  Main Exec CallFourBookmark ? phone-room-bookmark=call-four    
+
+@end
+
+@func StartBookmark
+
+  @Start
+  
+@end
+
+@func CallOneBookmark
+
+  Setup Warp Brandon [Platform]/BrandonLookConway
+  Setup Disable Conway
+  Setup Exec CallOne
+  
+@end
+
+@func CallTwoBookmark
+
+  Setup Disable Conway
+  Setup Warp Will [Platform]/WillTalkPosition  
+  Setup Warp Brandon [Platform]/BrandonWaitPosition  
+  Setup Exec CallTwo
+  
+@end
+
+@func CallThreeBookmark
+
+  Setup Disable Conway
+  Setup Warp Ezra [Platform]/EzraExitPosition
+  Setup Warp Cate [Platform]/CateTalkPosition
+  Setup Warp Brandon [Platform]/BrandonWaitPosition
+  Setup Warp Will [Platform]/WillExitPosition
+  Setup Exec CallThree
+
+@end
+
+@func CallFourBookmark
+
+  Setup Disable Conway
+  Setup Warp Ezra [Platform]/EzraExitPosition
+  Setup Warp Cate [Platform]/CateFinalPosition
+  Setup Warp Clara [Platform]/ClaraFinalPosition  
+  Setup Warp Brandon [Platform]/BrandonFinalPosition
+  Setup Warp Will [Platform]/WillExitPosition
+  Setup Warp Shannon [Platform]/ShannonExitPosition  
+  Setup Exec CallFour
+  
+@end
+
+# Init
+Main Marker Lock
+@LoadBookmark

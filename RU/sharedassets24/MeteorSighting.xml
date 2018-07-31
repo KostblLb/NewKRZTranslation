@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="pre-begin-meteor-event">
+  <scene name="intro">
+    <setGameVar name="overworld-saw-meteor-sighting" value="true"/>
+    <option goto="shannon-date" speaker="shannon">I came out here on a date once.</option>
+    <option goto="nice-night" speaker="conway">Nice night.</option>
+  </scene>
+
+  <!-- Shannon -->
+  <scene name="shannon-date">
+    <setGameVar name="meteor-shannon-talked-about-date" value="true"/>
+    <line speaker="conway">Oh. Ha. Good memories?</line>
+    
+    <option goto="shannon-not-really" speaker="shannon">Not really.</option>
+    <option goto="shannon-good-memories" speaker="shannon">Yeah, actually.</option>
+  </scene>
+
+  <scene name="shannon-not-really" nextScene="end">
+    <setGameVar name="meteor-shannon-good-date" value="true"/>
+    <line speaker="conway">Oh well. Next time you can say &quot;I came out here once, driving around with an old friend.&quot;</line>
+    <line speaker="conway">Maybe that'll be better.</line>
+  </scene>
+
+  <scene name="shannon-good-memories" nextScene="end">
+    <setGameVar name="meteor-shannon-bad-date" value="true"/>    
+    <line speaker="conway">Yeah, these nights ... it's mostly kind of a haze for me now. Just smells and sounds.</line>
+    <line speaker="conway">This is nice, though.</line>
+  </scene>
+
+  <!-- Conway -->  
+  <scene name="nice-night">
+    <setGameVar name="meteor-conway-talked-about-night" value="true"/>    
+    <line speaker="shannon">It's not bad.</line>
+
+    <option goto="better-nights" speaker="conway">You've seen better?</option>
+    <option goto="a-start" speaker="conway">That's a start.</option>
+  </scene>
+
+  <scene name="better-nights" nextScene="end">
+    <setGameVar name="meteor-conway-better-nights" value="true"/>
+    <line speaker="shannon">I think so ... not for a while, I guess.</line>
+    <line speaker="shannon">But this isn't so bad.</line>    
+  </scene>
+
+  <scene name="a-start" nextScene="end">
+    <setGameVar name="meteor-conway-thats-a-start" value="true"/>    
+    <line speaker="shannon">Yeah. Maybe it is.</line>
+    <line speaker="shannon">Thanks.</line>    
+  </scene>
+</conversation>

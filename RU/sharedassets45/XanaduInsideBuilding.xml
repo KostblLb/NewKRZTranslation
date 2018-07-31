@@ -1,0 +1,32 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <line speaker="xanadu" style="xanadu">You are inside a building, a storage shed for the national park service.</line>
+    <line speaker="xanadu" style="xanadu">There is a sensible, modern electric lantern nearby.</line>
+    <option goto="get-lamp" speaker="shannon">Get the lantern.</option>
+    <option goto="forest-from-building" speaker="ezra">That's boring. Go back to the forest!</option>
+  </scene>
+  
+  <scene name="get-lamp" nextScene="forest-from-building">
+    <setGameVar name="xanadu-has-lamp" value="true"/>
+    <line speaker="conway">`(Typing.)` ~Get lantern.~</line>
+    <line event="take-lantern" speaker="xanadu" style="xanadu">Taken.</line>
+  </scene>
+
+  <scene name="forest-from-building" nextScene="enter-forest">
+    <line speaker="conway">`(Typing.)` ~Exit building.~</line>
+  </scene>
+
+  <scene name="enter-forest" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="forest"/>
+    
+    <line speaker="conway">`(Typing.)` ~Enter forest.~</line>
+    <line speaker="xanadu" style="xanadu">That's not something you can enter.</line>
+    <line speaker="shannon">Just type a direction.</line>
+    <line speaker="conway">`(Typing.)` ~North.~</line>
+  </scene>
+</conversation>

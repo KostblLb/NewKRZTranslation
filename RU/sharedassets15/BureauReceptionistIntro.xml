@@ -1,0 +1,87 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="receptionist-goes-to-check-on-clerks">
+  
+  <scene name="intro">
+    <setGameVar name="bureau-intro-conversation-with-shannon-available" value="false"/>
+    <setGameVar name="bureau-intro-talked-to-receptionist" value="true"/>    
+    <line speaker="mary ann">Well, here you are. Better late than never, I guess. Just unload the whiskey over there by the elevator. I'll figure something out.</line>
+    <option goto="lost" speaker="conway">We're actually a bit lost, ma'am.</option>
+    <option condition="!bureau-intro-shannon-inside-outside-discussed" goto="lost" speaker="shannon">Is this place `inside` or `outside`?</option>
+    <option condition="bureau-intro-shannon-inside-outside-discussed" goto="shannon-bet" speaker="shannon">Wanna settle a bet?</option>
+  </scene>
+
+  <scene name="shannon-bet">
+    <line speaker="mary ann">I'm actually pretty busy, but ... sure, what's up?</line>
+    <option condition="bureau-intro-shannon-inside-outside=inside" goto="inside-outside" speaker="shannon">He says we're inside, but I think we're outside.</option>
+    <option condition="bureau-intro-shannon-inside-outside=outside" goto="inside-outside" speaker="shannon">He says we're outside, but I think we're inside.</option>
+    <option condition="bureau-intro-shannon-inside-outside=both" goto="inside-outside" speaker="shannon">Can you be both inside and outside at the same time?</option>
+    <option goto="joke" speaker="conway">Oh, it's nothing — just a joke we had on the road.</option>
+  </scene>
+
+  <scene name="inside-outside">
+    <line speaker="mary ann">Wow, OK. Um. Is that, like, a philosophy thing? Or are you just lost?</line>
+    <option goto="philosophy" speaker="shannon">Yeah, I guess it is a bit philosophical.</option>
+    <option goto="lost" speaker="conway">We're just lost.</option>
+  </scene>
+
+  <scene name="philosophy">
+    <line speaker="mary ann">Huh, OK. I wouldn't say you're dressed like a philosopher.</line>
+    <option goto="how-is-shannon-dressed" speaker="shannon">Oh, how am I dressed?</option>
+    <option goto="shannon-not-philosopher" speaker="shannon">I wouldn't say so either.</option>
+  </scene>
+
+  <scene name="how-is-shannon-dressed" nextScene="shipment-options">
+    <line speaker="mary ann">You work, like me. I take care of the heating and cooling, and watch the front desk. You know, at first I thought you were here delivering whiskey for our little celebration. But you don't look like one of the boys from the distillery, either.</line>
+  </scene>
+
+  <scene name="shannon-not-philosopher" nextScene="shipment">
+    <line speaker="mary ann">Just a hobby, then. I get it. I take care of the heating and cooling here, and watch the front desk, but at home I do watercolors.</line>
+  </scene>
+
+  <scene name="joke" nextScene="shipment">
+    <line speaker="mary ann">OK. Sure.</line>
+  </scene>
+
+  <scene name="lost" nextScene="shipment">
+    <line speaker="mary ann">You're lost. So you're not the ... sorry, honest mistake.</line>
+  </scene>
+
+  <scene name="shipment" nextScene="shipment-options">
+    <line speaker="mary ann">We're supposed to have a little celebration here at the office, but the whiskey never showed up. I saw your truck and thought ... but you don't really look like one of the boys from the distillery, anyway.</line>
+  </scene>
+
+  <scene name="shipment-options">
+    <option goto="celebration" speaker="conway">What are you celebrating?</option>
+    <option goto="distillery" speaker="conway">What do the boys from the distillery look like?</option>
+    <option goto="what-is-this-place" speaker="conway">What is this place?</option>
+  </scene>
+
+  <scene name="celebration" nextScene="what-is-this-place">
+    <line speaker="mary ann">Oh, the less I understand the better. When I'm here, I keep the fans turning and the furnace hot, and listen for the bell. When I get home, I'm a different person; I don't have to think about it. I just paint.</line>
+  </scene>
+
+  <scene name="distillery" nextScene="what-is-this-place">
+    <line speaker="mary ann">You've never seen the boys from `Hard Times`? Well, count your blessings. They cut a grim profile.</line>
+  </scene>
+
+  <scene name="what-is-this-place">
+    <line speaker="mary ann">Well, it's clear you're new to this territory. I expect you just mean to be passing through.</line>
+    <option goto="dogwood" speaker="conway">We're looking for Dogwood Drive, do you know where that is?</option>
+    <option goto="passing-through" speaker="shannon">That's the idea.</option>
+  </scene>
+
+  <scene name="dogwood" nextScene="clerk">
+    <line speaker="mary ann">Dogwood ... nope.</line>
+  </scene>
+
+  <scene name="passing-through" nextScene="clerk">
+    <line speaker="mary ann">It always is ...</line>
+  </scene>
+
+  <scene name="clerk" nextScene="end">
+    <line speaker="mary ann">You're going to need to talk to someone upstairs about that. One of the map clerks. But first we've got to get you in the system, so you'll need an appointment with one of the ingestion clerks. Now, let's see ...</line>
+    <line speaker="mary ann">Rick is booked proofreading drafts all afternoon, and Wanda's out on a site ... Hmm ... Let me go make some calls and see if we have anyone free. There are some books over there in the waiting area. Or just take a look around.</line>
+    <line speaker="mary ann">Have you seen our grotesques?</line>
+  </scene>
+
+</conversation>

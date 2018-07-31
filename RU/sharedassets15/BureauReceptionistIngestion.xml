@@ -1,0 +1,15 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="save">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="tv-off"/>
+    <triggerEvent name="tv-audio-off"/>
+    <triggerEvent name="activate-elevator"/>    
+    <setGameVar name="bureau-intro-given-ingestion-appointment" value="true"/>
+    <setGameVar name="bureau-elevator-active" value="true"/>
+    <setGameVar name="bureau-current-floor-goal" value="5"/>
+    
+    <line speaker="mary ann">Oh, good. I thought you'd left. People can be so impatient; you never know.</line>
+    <line speaker="mary ann">Well, I have you meeting with Lula Chamberlain. She's a senior clerk and doesn't usually handle the ingestion process, but she's the only one with room on her plate this evening. My schedule says she's on the fifth floor, reviewing some diagrams.</line>
+    <line speaker="mary ann">The elevator is just back to the left there. Fifth floor.</line>
+  </scene>
+</conversation>

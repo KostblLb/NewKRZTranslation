@@ -1,0 +1,52 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="complete-mine-collapse-intro-conversation">
+  <scene name="intro">
+    <setGameVar name="elkhorn-mine-collapse-happened" value="true"/>
+    
+    <line speaker="shannon">Jesus! Are you alright? What the hell.</line>
+    <option goto="intro-ok" speaker="conway">I'm OK.</option>
+    <option goto="stuck-leg" speaker="conway">My leg is stuck.</option>
+  </scene>
+
+  <scene name="intro-ok" nextScene="pull-out">
+    <line speaker="shannon">I've got you. You're alright. Shit. Your leg is pinned. I'm going to pull you out; we have to get you out of here.</line>
+  </scene>
+
+  <scene name="stuck-leg" nextScene="pull-out">
+    <line speaker="shannon">Shit. OK, I'm going to pull you out; we have to get you out of here.</line>
+  </scene>
+
+  <scene name="pull-out">
+    <line speaker="shannon">There you go. OK. Are you hurt? Can you put any weight on that leg?</line>
+    <option goto="broken-leg" speaker="conway">It's all messed up.</option>
+    <option goto="leg-ok" speaker="conway">It's fine.</option>
+  </scene>
+
+  <scene name="leg-ok" nextScene="broken-leg">
+    <line speaker="shannon">Just try to stand up. Careful. I'm right here.</line>
+    <line speaker="shannon">Damn! Don't worry, I've got you. That leg is in bad shape.</line>
+  </scene>
+
+  <scene name="broken-leg" nextScene="lights-on">
+    <line speaker="shannon">Here, let's get you onto the tram.</line>
+    <line speaker="shannon">There you go. Now, let's see if this thing has power.</line>
+  </scene>
+
+  <scene name="lights-on">
+    <triggerEvent name="activate-tram-power"/>
+    <line speaker="shannon">Well, OK. There's some luck, right? We should be able to ride this tram right out one of the auxiliary exits. If there are any. I think there are.</line>
+    <option goto="walk" speaker="conway">I can walk.</option>
+    <option goto="quest" speaker="conway">What about Weaver?</option>
+    <option goto="quest" speaker="conway">What about the on-ramp?</option>
+  </scene>
+
+  <scene name="walk" nextScene="quest">
+    <line speaker="shannon">No way. You need to stay off that leg, or you'll just do more damage.</line>
+  </scene>
+
+  <scene name="quest" nextScene="end">
+    <line speaker="shannon">We'll just find the exit, and then figure out what to do from there. That's our first priority.</line>
+    <line speaker="shannon">So. The controls are over on your side. Let's get moving.</line>
+  </scene>
+
+</conversation>

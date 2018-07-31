@@ -1,0 +1,128 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" formattingCharacters="*|`~^">
+  <scene name="intro" nextScene="intro-route">
+    <line>`(CONWAY taps a key, waking the computer from its reverie.)`</line>
+  </scene>
+
+  <scene name="intro-route">
+    <goto condition="!joseph-computer-logged-in" sceneName="user-prompt"/>
+    <goto sceneName="root-menu"/>
+  </scene>
+  
+  <scene name="user-prompt">
+    <line speaker="computer">~User.~</line>
+
+    <option goto="user-conway" speaker="conway">`(Typing.)` ~Conway.~</option>
+    <option goto="password-1" speaker="conway">`(Typing.)` ~Joseph.~</option>
+  </scene>
+
+  <scene name="user-conway" nextScene="user-prompt">
+    <line speaker="computer">~User &quot;Conway&quot; is not real.~</line>
+  </scene>
+
+  <scene name="password-1">
+    <line speaker="computer">~Password.~</line>
+
+    <option goto="password-2" speaker="conway">`(Typing.)` ~Wheels slide loose.~</option>
+    <option goto="password-2" speaker="conway">`(Typing.)` ~The stars drop away.~</option>
+    <option goto="password-2" speaker="conway">`(Typing.)` ~I talk and listen to him talking.~</option>
+  </scene>
+
+  <scene name="password-2">
+    <option goto="password-3" speaker="conway">`(Typing.)` ~Nobody saw the accident.~</option>
+    <option goto="password-3" speaker="conway">`(Typing.)` ~The moon throbs.~</option>
+    <option goto="password-3" speaker="conway">`(Typing.)` ~It's late.~</option>
+  </scene>
+
+  <scene name="password-3">
+    <option goto="password-complete" speaker="conway">`(Typing.)` ~You just breathe road.~</option>
+    <option goto="password-complete" speaker="conway">`(Typing.)` ~The lights whine.~</option>
+    <option goto="password-complete" speaker="conway">`(Typing.)` ~It will only get later.~</option>
+  </scene>
+
+  <scene name="password-complete" nextScene="root-menu">
+    <setGameVar name="joseph-computer-logged-in" value="true"/>
+    
+    <line speaker="computer">~Password accepted.~</line>
+
+    <line speaker="joseph">`(Shouting)` How's it going in there? Figuring it all out? Sure you are.</line>
+  </scene>
+
+  <scene name="root-menu">
+    <option goto="messages-root" speaker="conway">`(Typing.)` ~Messages.~</option>
+    <option condition="!marquez-address-retrieved" goto="address-book-root" speaker="conway">`(Typing.)` ~Address book.~</option>
+    <option goto="games-root" speaker="conway">`(Typing.)` ~Games.~</option>
+    <option goto="end" speaker="conway">`(Typing.)` ~Exit.~</option>
+  </scene>
+
+  <scene name="messages-root">
+    <line speaker="computer">~Message one is from &quot;donald@hotmk.mail&quot;.~</line>
+    <line speaker="computer">~Message two is from &quot;accounts@consolidated.mail&quot;.~</line>
+    
+    <option goto="message-one" speaker="conway">`(Typing.)` ~Read message one.~</option>
+    <option goto="message-two" speaker="conway">`(Typing.)` ~Read message two.~</option>
+    <option goto="root-menu" speaker="conway">`(Typing.)` ~Exit messages.~</option>
+  </scene>
+
+  <scene name="message-one" nextScene="messages-root">
+    <setGameVar name="read-josephs-message-from-donald" value="true"/>
+    <line speaker="computer">~From: donald@hotmk.mail~</line>
+
+    <line speaker="computer">~Subject: fragments dim of lovely forms~</line>
+
+    <line speaker="computer">~Message: Joseph, I know it's been a while, and I know you're still sore. But there's a whole world in here, and we need your help to unmask it. Yes, the caves are cold and damp, and we are old and lame ...~</line>
+
+    <line speaker="computer">~Never mind. I can't remember why I even started writing this. I miss those days in the lab, with you and our dear Lula. Maybe you've found your own &quot;Xanadu.&quot; Well, so have I!~</line>
+
+    <line speaker="computer">~End of message.~</line>
+  </scene>
+
+  <scene name="message-two" nextScene="messages-root">
+    <line speaker="computer">~From: accounts@consolidated.mail~</line>
+    
+    <line speaker="computer">~Subject: Account standing, urgent.~</line>
+
+    <line speaker="computer">~Message: Dear EQUUS OILS. This is an urgent automated message that your account is overdue by more than 14 days. In response, we have switched you to our &quot;Low-Reliability Dirty Power Plus&quot; plan.~</line>
+
+    <line speaker="computer">~Consider making a payment immediately to obviate the need for us to switch you to &quot;Sustained Brownout Select.&quot;~</line>
+
+    <line speaker="computer">~Sincerely, your friends at the Consolidated Power Co.~</line>
+
+    <line speaker="computer">~End of message.~</line>
+  </scene>
+
+  <scene name="address-book-root">
+    <line speaker="computer">~Address book.~</line>
+    <option goto="address-krz" speaker="conway">`(Typing.)` ~The ~|Zero|~.~</option>
+    <option goto="address-dogwood" speaker="conway">`(Typing.)` ~Dogwood Drive.~</option>
+    <option goto="address-marquez" speaker="conway">`(Typing.)` ~Márquez.~</option>
+    <option goto="root-menu" speaker="conway">`(Typing.)` ~Exit address book.~</option>
+  </scene>
+
+  <scene name="address-krz" nextScene="address-book-root">
+    <line speaker="computer">~Address &quot;The ~|Zero|~&quot; is not real.~</line>
+  </scene>
+
+  <scene name="address-dogwood" nextScene="address-book-root">
+    <line speaker="computer">~Address &quot;Dogwood Drive&quot; is not real.~</line>
+  </scene>
+
+  <scene name="address-marquez" nextScene="joseph-favor">
+    <setGameVar name="marquez-address-retrieved" value="true"/>
+    
+    <line speaker="computer">~Márquez Residence. 100 Macondo Lane. Head north-east on sixty-five, and turn left as soon as you see that ugly tree that's always on fire. Look for the barn at the base of the mountain there; can't miss it.~</line>
+  </scene>
+
+  <scene name="games-root" nextScene="root-menu">
+    <line speaker="computer">~&quot;Games&quot; is not real.~</line>
+  </scene>
+
+  <!-- Joseph asks a favor -->
+  <scene name="joseph-favor" nextScene="end">
+    <line speaker="joseph">`(Shouting.)` Got it? Out there on Macondo somewhere, right? Yeah, that's it.</line>
+
+    <line speaker="joseph">Hey, look, while you were down there I loaded that old TV of mine into your truck. I borrowed that thing from Weaver Márquez a number of years ago, and now that the power is all weird over here I can't pick up anything but static and public access anyway.</line>
+
+    <line speaker="joseph">She was always more of a reader, but maybe she'd want it back at home. It's a nice TV!</line>
+  </scene>
+</conversation>

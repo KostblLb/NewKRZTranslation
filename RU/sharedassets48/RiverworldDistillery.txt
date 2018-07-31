@@ -1,0 +1,18 @@
+# -*- mode: blocking -*-
+
+Dinghy Wait 5
+Dinghy Message RiverworldManager SetDialogTrigger 10
+Dinghy Dialog RiverVignetteShannonSolo
+
+Vignette Listen conversation-closing
+Vignette Set temp:done-convo true
+
+Lake Listen segment-change
+Lake Message RiverworldManager QueueState Restaurant
+Lake Listen on-lake
+Lake Set temp:left-lake true
+
+# need to make sure we've left the lake 
+# before setting another destination on the lake
+Restaurant Wait temp:done-convo+temp:left-lake
+Restaurant Message RiverworldManager SetDestination Restaurant

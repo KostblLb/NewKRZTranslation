@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" time="2"/>
+  </endingAudioEvents>
+
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    <audioFade clip="country-road" direction="to" target="0.5" time="2" />    
+    <setGameVar name="overworld-saw-pond" value="true"/>
+    <line>A few cows drink from a small pond by the intersection. There's no fence in sight. Ezra suggests they may be wild cows, but the possibility is dismissed. He runs down to the edge of the pond, to a pile of small rocks, and throws one in.</line>
+    <option goto="skip-stones" insertedText="Conway walks to the pile of stones.">Walk to stones.</option>
+    <option goto="watch-ezra" insertedText="Conway watches from the side of the road.">Watch Ezra.</option>
+  </scene>
+
+  <scene name="skip-stones">
+    <audioFade clip="skipping-stones" direction="in" time="2" />
+    
+    <line>He sifts through the pile until he finds two flat, smooth stones. Ezra watches with interest as Conway skips the stones across the pond.</line>
+    <option goto="wrist" insertedText="Ezra pays careful attention to Conway's wrist.">Watch Conway's wrist.</option>
+    <option goto="shoulder" insertedText="Ezra pays careful attention to Conway's shoulder.">Watch Conway's shoulder.</option>
+  </scene>
+
+  <scene name="wrist" nextScene="ezra-skips">
+    <line>It's stiff for the arc of the throw, then snaps forward almost accidentally, like an umbrella breaking in the wind. Good spin on it, but there's something disquieting about that snap, and the sound it should make.</line>
+  </scene>
+
+  <scene name="shoulder" nextScene="ezra-skips">
+    <line>He wouldn't have thought to throw his shoulder forward that late. It looks like a clumsy afterthought, there's something crude about it. Maybe that's where the strength comes from.</line>
+  </scene>
+
+  <scene name="ezra-skips" nextScene="end">
+    <line>Ezra takes a rock from the pile. He turns himself perpendicular to the edge of the pond, leans down, snaps his wrist and grunts distastefully as he throws his shoulder forward. Three skips. Not bad.</line>
+  </scene>
+
+  <scene name="watch-ezra">
+    <audioFade clip="skipping-stones" direction="to" target="0.5" time="2" />
+    
+    <line>Who left all these rocks here, anyway? Someone walked the edge of the pond looking for good skipping rocks, piled them up, and then ... maybe just ran out of time.</line>
+    <line>Ezra throws another rock in the pond.</line>
+    <option goto="skip-stones" insertedText="Conway demonstrates proper stone-skipping.">Show Ezra how to skip a stone.</option>
+    <option goto="watch-end" insertedText="Conway watches.">Watch Ezra.</option>
+  </scene>
+
+  <scene name="watch-end" nextScene="end">
+    <line>Ezra's picking it up by experimentation. He has the wrist movement nailed. Shoulder's a bit quick — the stones take a weird turn and sometimes miss the pond completely.</line>
+    <line>But he doesn't need an old man telling him how to do it. Anyway, it's hard to know when they're even listening.</line>
+  </scene>
+</conversation>

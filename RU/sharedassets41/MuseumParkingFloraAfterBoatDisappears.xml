@@ -1,0 +1,56 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-flora-watching-boat-conversation">
+  <scene name="intro">
+    <triggerEvent name="start-flora-conversation"/>    
+    <line speaker="flora">Can you still see it?</line>
+    <option goto="yes" speaker="ezra">Yeah, I have really powerful eyes.</option>
+    <option goto="romantic" speaker="ezra">Just barely, if I squint.</option>
+    <option goto="no" speaker="ezra">No.</option>
+  </scene>
+
+  <scene name="yes" nextScene="end">
+    <line speaker="flora">Me too. We should keep watching until it's about to disappear completely.</line>
+  </scene>
+
+  <scene name="no">
+    <line speaker="flora">I guess it's too late, then. To say something romantic.</line>
+    <option goto="romantic" speaker="ezra">It could be something about the boat being gone.</option>
+    <option goto="end" speaker="ezra">Yeah, too late.</option>
+  </scene>
+
+  <scene name="romantic">
+    <line speaker="flora">You'd better hurry up with a poem or something.</line>
+    <option goto="sunny-sky" insertedText="" speaker="ezra">A boat beneath a sunny sky ...</option>
+    <option goto="afternoon" insertedText="" speaker="ezra">All in the golden afternoon ...</option>
+    <option goto="no-poem" speaker="ezra">I don't know what to say.</option>
+  </scene>
+
+  <scene name="sunny-sky" nextScene="poem-end">
+    <setGameVar name="museum-parking-flora-poem" value="sunny"/>
+    <line speaker="ezra">`A boat beneath a sunny sky,
+    Lingering onward dreamily
+    In an evening of July` —</line>
+    <line speaker="flora">No, no. It's not even sunny.</line>
+  </scene>
+
+  <scene name="afternoon" nextScene="poem-end">
+    <setGameVar name="museum-parking-flora-poem" value="afternoon"/>
+    <line speaker="ezra">`All in the golden afternoon
+    Full leisurely we glide;
+    For both our oars, with little skill,
+    By little arms are plied` —</line>
+    <line speaker="flora">No, no. It's the middle of the night.</line>
+  </scene>
+
+  <scene name="no-poem" nextScene="end">
+    <setGameVar name="museum-parking-flora-poem" value="none"/>
+    <setGameVar name="museum-parking-completed-boat-watch" value="true"/>
+    <line speaker="flora">It's OK. I like you anyway.</line>
+  </scene>
+  
+  <scene name="poem-end" nextScene="end">
+    <setGameVar name="museum-parking-completed-boat-watch" value="true"/>
+    <line speaker="flora">It's OK. I like you anyway.</line>
+  </scene>
+
+</conversation>

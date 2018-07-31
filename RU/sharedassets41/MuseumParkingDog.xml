@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="museum-parking-talked-to-dog" value="true" />a
+    <option goto="rain" speaker="conway">Guess the rain stopped.</option>
+    <option goto="rest" speaker="conway">You get some rest back there?</option>
+  </scene>
+
+  <scene name="rain">
+    <option goto="worms" speaker="conway">It'll be earthworms all over this lot.</option>
+    <option goto="debris" speaker="conway">Hope there's nothing in the roads.</option>
+  </scene>
+
+  <scene name="worms">
+    <option goto="end" speaker="conway">Damn shame to be an earthworm in a rainstorm.</option>
+    <option goto="end" speaker="conway">Watch your step.</option>
+  </scene>
+
+  <scene name="debris">
+    <option goto="end" speaker="conway">We'll get around it, whatever it is.</option>
+    <option goto="end" speaker="conway">Could be dangerous. Better drive slowly.</option>
+  </scene>
+
+  <scene name="rest">
+    <option goto="conway-rested" speaker="conway">I don't feel much rested, myself.</option>
+    <option goto="doctor" speaker="conway">That doctor seemed nice enough.</option>
+  </scene>
+
+  <scene name="conway-rested">
+    <option goto="end" speaker="conway">But I'm tired most of the time, these days.</option>
+    <option goto="end" speaker="conway">We'll get a break. Maybe tomorrow, huh?</option>
+  </scene>
+
+  <scene name="doctor">
+    <option goto="end" speaker="conway">Yeah, I'm sure he does an OK job.</option>
+    <option goto="end" speaker="conway">Just got in over his head is all ...</option>
+  </scene>
+
+</conversation>
+

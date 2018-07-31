@@ -1,0 +1,44 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <blocking>Stew Player Shannon Player</blocking>
+    <line speaker="will">... and even `that` wasn't enough to convince her!</line>
+    <line speaker="will">So, I trained rigorously in the art of forgetting, studying for months under a master amnesiac. Finally, I learned to forget so quickly and accurately that I was able to convince Ida to share with me the most obscure secrets of her kitchen.</line>
+    <line speaker="will">As a demonstration of my trustworthiness, I forgot the names of my own parents, right there in front of her.</line>
+    <line speaker="will">Every time I wanted to cook this legendary stew, I'd call Ida up on the telephone and ask her for a quick — temporary — reminder. Here on the boat, we haven't got a phone line, so ... I have to seek out culinary wisdom on videotapes of cooking shows.</line>
+    <line speaker="will" blocking="@CateEnters">So, back to the matter at hand! Next, we —</line>
+    <option goto="crushed-tomatoes" speaker="shannon">Add some crushed tomatoes.</option>
+    <option goto="spice-blend" speaker="shannon">Did you already make the spice blend?</option>
+    <option goto="restaurant" speaker="shannon">Aren't we stopping at a restaurant soon?</option>
+  </scene>
+
+  <scene name="crushed-tomatoes" nextScene="cate-enters">
+    <line speaker="will" blocking="@WillLooksAtShannon">Oh, it's you. I thought ... never mind. Hello.</line>
+    <line speaker="will">I don't have any crushed tomatoes. I have some ketchup ...</line>
+  </scene>
+
+  <scene name="spice-blend" nextScene="cate-enters">
+    <line speaker="will" blocking="@WillLooksAtShannon">Oh, it's you. I thought ... never mind. Hello.</line>
+    <line speaker="will">Well, I don't know that it qualifies as a "spice blend," but I spilled the salt in some of Cate's herbal tea here.</line>
+  </scene>
+
+  <scene name="restaurant" nextScene="cate-enters">
+    <line speaker="will" blocking="@WillLooksAtShannon">Oh, it's you. I thought ... never mind. Hello.</line>
+    <line speaker="will">Right, we're stopping soon at `Sam &amp; Ida's`. This stew is for tomorrow.</line>
+  </scene>
+
+  <scene name="cate-enters" nextScene="end">
+    <line speaker="cate" condition="!(floating-gas-station-scratch-ticket-choice=none)">`(To WILL.)` Did you win anything?</line>
+    <line speaker="will" condition="!(floating-gas-station-scratch-ticket-choice=none)">`(Tragically.)` I have misplaced the damn ticket.</line>
+    <line speaker="cate" condition="!(floating-gas-station-scratch-ticket-choice=none)">I'm sure it'll turn up.</line>
+    
+    <line speaker="cate">`(To SHANNON.)` Hey there, could I ask you —</line>
+    <line speaker="cate">`(To WILL.)` Wait. Why are you cooking? We're stopping at `Sam &amp; Ida's` in twenty minutes.</line>
+    <line speaker="will">It's for tomorrow!</line>
+    <line speaker="cate">Oh. Well, just don't forget about it this time ... I'm not scrubbing up any more boiled-over sludge.</line>
+    <line speaker="cate">`(To SHANNON.)` Sorry. Listen, I have a favor to ask. There's a package for the telephone exchange, and I can't get the `Mammoth` back there. Could you deliver it for us?</line>
+    <line speaker="cate" condition="shannon-saw-weaver-video">That guy I mentioned from the TV station, Dashiell Morse, works there now. Thought you might like to chat with him anyway.</line>
+    <line speaker="cate">Thanks a lot. I've got the dinghy all ready to go. Maybe take your friend with you — one of you can man the outboard motor, and the other can aim the flashlight. It's dark!</line>
+  </scene>
+
+</conversation>

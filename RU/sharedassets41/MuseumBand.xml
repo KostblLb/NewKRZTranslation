@@ -1,0 +1,58 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="museum-parking-met-visitors" value="true"/>
+    <setGameVar name="museum-parking-looked-at-visitors" value="true"/>
+    <setGameVar name="museum-parking-spoke-to-visitors-times" value="+1"/>
+
+    <goto condition="museum-parking-spoke-to-visitors-times=0" sceneName="museum-goers-one"/>
+    <goto condition="museum-parking-spoke-to-visitors-times=1" sceneName="museum-goers-two"/>
+    <goto condition="museum-parking-spoke-to-visitors-times=2" sceneName="museum-goers-three"/>
+    <goto sceneName="museum-goers-last"/>
+  </scene>
+
+  <scene name="museum-goers-one">
+    <line speaker="emily">&quot;9am-5pm every day of the year, except Labor Day. Last admission is at 4pm daily.&quot;</line>
+    <line speaker="bob">Damn.</line>
+    <line speaker="emily">Try the door.</line>
+    <option goto="museum-goers-one-b" speaker="conway">You're a little late for the museum.</option>
+    <option goto="museum-goers-one-b" speaker="conway">Are you folks lost?</option>
+  </scene>
+
+  <scene name="museum-goers-one-b" nextScene="end">
+    <line speaker="ben">`(To EMILY.)` And then what?</line>
+    <line speaker="emily">Ben, you're being `very` uptight right now.</line>
+  </scene>
+
+  <scene name="museum-goers-two">
+    <line speaker="ben">`(To EMILY.)` You're right, it's unlocked.</line>
+    <line speaker="bob">I'm not sure it's `finished` in there, though.</line>
+    <line speaker="emily">What's `finished`? Would it be better if it were `finished`? Can we be sure of that?</line>
+    <option goto="museum-goers-two-b" speaker="conway">They're pretty friendly in there.</option>
+    <option goto="museum-goers-two-b" speaker="conway">This late, you'll wake someone up.</option>
+  </scene>
+
+  <scene name="museum-goers-two-b" nextScene="end">
+    <line speaker="emily">`(To BEN.)` Hush. I think I heard a voice — maybe a security guard?</line>
+    <line speaker="bob">I didn't hear anything.</line>
+    <line speaker="ben">We're just too late. Let's come back tomorrow.</line>
+  </scene>
+
+  <scene name="museum-goers-three">
+    <line speaker="ben">Alright. Let's go in.</line>
+    <line speaker="bob">If everything's shut down, it'll be pretty boring.</line>
+    <option goto="museum-goers-three-b" speaker="conway">It's definitely after hours.</option>
+    <option goto="museum-goers-three-b" speaker="conway">Any of you folks know a diner or something around here?</option>
+  </scene>
+
+  <scene name="museum-goers-three-b" nextScene="end">
+    <line speaker="ben">`(To BOB.)` What?</line>
+    <line speaker="bob">I said it'll be `boring`.</line>
+    <line speaker="ben">No, I ...</line>
+    <line speaker="emily">We have flashlights. Look: if we visit by day, we see what `they` want us to see. If we visit by night ... it's all up to us!</line>
+  </scene>
+
+  <scene name="museum-goers-last" nextScene="end">
+    <line>Emily, Ben and Bob argue about whether to enter the museum.</line>
+  </scene>
+</conversation>

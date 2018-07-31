@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <line condition="!hotmk-talked-to-donald-and-lula-after-xanadu">A massive gate constructed out of scavenged materials blocks passage down the far side of the spire.</line>
+    <line condition="hotmk-talked-to-donald-and-lula-after-xanadu">The gate is open.</line>
+  </scene>
+</conversation>

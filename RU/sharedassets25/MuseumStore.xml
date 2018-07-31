@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-looked-at-store" value="true"/>
+    <setGameVar name="museum-location" value="hardware-store"/>    
+    <line speaker="burt">I didn't see or hear a thing all night. I was in the back doing inventory when they came by. I got thirty cases of candles in, and each one of those has got to be individually labeled, you know?</line>
+    <line speaker="burt">But I heard from some of the other neighbors that they weren't up to any harm. Just passing through.</line>
+  </scene>
+
+</conversation>

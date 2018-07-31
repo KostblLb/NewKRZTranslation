@@ -1,0 +1,70 @@
+# -*- mode: blocking -*-
+
+Main Gesture DockyardTugboat/Root/Wobble/Clara Snap Pause
+Main Set temp:next-movement 1
+Main Event calculate-ezra-options
+Main Listen dialog-can-start
+Main Dialog DockyardPerformanceIntro
+
+# 1
+Main Wait 1
+Main Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 1
+Main Wait 5
+Main Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture
+Main Wait 1
+Main Message DockyardTugboat/Root/Wobble/Clara PlayMovement one
+Main Message MainCamera IncrementZoom
+Main Set temp:next-movement 2
+Main Event calculate-ezra-options
+Main Listen ready-for-ezra
+
+# 2
+Main Dialog DockyardPerformanceMovementTwo
+
+Main Wait temp:movement-one-done
+Main Wait 2
+Main Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture
+Main Wait 1
+Main Message DockyardTugboat/Root/Wobble/Clara PlayMovement two
+Main Wait 4
+Main Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 2
+Main Message MainCamera IncrementZoom
+Main Set temp:next-movement 3
+Main Event calculate-ezra-options
+Main Listen ready-for-ezra
+
+# 3
+Main Dialog DockyardPerformanceMovementThree
+
+Main Wait temp:movement-two-done
+Main Wait 2
+Main Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 3
+Main Wait 2
+Main Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture
+Main Wait 1
+Main Message DockyardTugboat/Root/Wobble/Clara PlayMovement three      
+Main Message MainCamera IncrementZoom
+Main Set temp:next-movement 4
+Main Event calculate-ezra-options
+Main Listen ready-for-ezra
+
+# 4
+Main Dialog DockyardPerformanceMovementFour
+
+Main Wait temp:movement-three-done
+Main Wait 2
+Main Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture
+Main Wait 1
+Main Message DockyardTugboat/Root/Wobble/Clara PlayMovement four
+Main Wait 4      
+Main Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 4
+Main Message MainCamera IncrementZoom
+Main Listen end-movement
+
+Main Wait 5
+
+Main Message MainCamera ResetZoom
+Main Dialog DockyardPerformanceEnd
+
+Main Wait 3
+Main SceneChange Overworld

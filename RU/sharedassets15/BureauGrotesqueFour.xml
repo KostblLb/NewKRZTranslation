@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="bureau-looked-at-grotesque-4" value="true"/>    
+    <line>The television is playing a closed-circuit security feed of a housing project. The feed switches mechanically between locations: a hallway, a disused plot of grass, a stairwell, a mailbox.</line>
+  </scene>
+</conversation>

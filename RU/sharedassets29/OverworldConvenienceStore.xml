@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" time="2"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+
+    <audioFade clip="dominoes" direction="to" target="0.5" time="4" />    
+    <audioFade clip="country-road" direction="in" time="2" />
+    <setGameVar name="overworld-saw-convenience-store" value="true" />
+    <line>The convenience store is just a tiny booth in the middle of a lot that must have once been an active gas station. Disused pumps chip red paint into dull brown and white stains.</line>
+    <line>The light in the booth is on.</line>
+    <option insertedText="Conway approaches a window." goto="window">Approach a window.</option>
+    <option insertedText="Conway's truck pulls away into the night." goto="end">Drive away.</option>
+  </scene>
+
+  <scene name="window">
+    <audioFade clip="dominoes" direction="to" target="1" time="4" />    
+    <line>The inside of the booth is big enough for a card table, two chairs, and a few plastic crates filled with snacks and warm coke. Two men shuffle plastic dominoes across the table.</line>
+    <option insertedText="Conway knocks on the window." goto="knock">Knock on the window.</option>
+    <option insertedText="Conway looks around for a door." goto="door">Look for a door.</option>
+    <option insertedText="Conway's truck pulls away into the night." goto="end">Drive away.</option>
+  </scene>
+
+  <scene name="knock">
+    <line>One of the men waves brusquely in Conway's general direction, and returns his focus to the game.</line>
+    <option insertedText="Conway looks around for a door." goto="door">Look for a door</option>
+    <option insertedText="Conway's truck pulls away into the night." goto="end">Drive away</option>
+  </scene>
+
+  <scene name="door">
+    <line>He finds a sliding service window on the far side of the booth. It's the kind of service window that can slide in and out of the booth without allowing anyone to reach in and make a grab for the cash register.</line>
+    <option insertedText="Conway puts a few dollars through the service window." goto="add-money">Pass in some money.</option>
+    <option insertedText="Conway raps his knuckles on the service window." goto="knock-service-window">Knock on the window.</option>
+  </scene>
+
+  <scene name="knock-service-window">
+    <line>One of the men sends his partner an exasperated glance, then returns his attention to the game.</line>
+    <option insertedText="Conway puts a few dollars through the service window." goto="add-money">Pass in some money.</option>
+    <option insertedText="Conway's truck pulls away into the night." goto="end">Drive away.</option>
+  </scene>
+
+  <scene name="add-money" nextScene="end">
+    <line>One of the men lets out a vexed sigh. Without standing, or turning his eyes away from the game, he reaches into a plastic crate and retrieves a small blue bag, distractedly pushing it through the service window.</line>
+    <line>Chips, or ... something? The bag is illustrated with a cartoon drawing of an avocado, but the nutritional data suggests it's pretty sugary. The expiration date has been worn away.</line>
+  </scene>
+</conversation>

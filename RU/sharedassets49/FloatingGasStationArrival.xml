@@ -1,0 +1,105 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-section" value="junebug-inside" />
+  
+    <line speaker="cate">We cut it close! I usually find this place up-river. `Everybody`'s on the lake tonight.</line>
+    <option goto="gas-station-moves" speaker="junebug">The gas station moves around?</option>
+    <option goto="on-fumes" speaker="junebug">Running on fumes?</option>
+  </scene>
+
+  <scene name="gas-station-moves" nextScene="ezra">
+    <line speaker="cate">Sure, it's not anchored or anything — could be anywhere up and down the Echo. You just kind of run into it when you need it, or hopefully a little `before` you need it.</line>
+    <line speaker="cate">I usually stop here once a night ... though, to be honest, I'm not sure it's even the same one. Doesn't have a name or anything, and I never really pay attention to who's behind the counter.</line>
+  </scene>
+
+  <scene name="on-fumes">
+    <line speaker="cate">Yeah, it's this little game I play: try to get the needle all the way down before I fill it back up ... like playing "chicken" with the fuel gauge.</line>
+    <line speaker="cate">Sounds ridiculous, right?</line>
+    <option goto="efficient" speaker="junebug">Sounds efficient.</option>
+    <option goto="fun" speaker="junebug">Sounds fun.</option>
+  </scene>
+
+  <scene name="efficient" nextScene="ezra">
+    <line speaker="cate">It may be. I never thought of that.</line>
+  </scene>
+
+  <scene name="fun" nextScene="ezra">
+    <line speaker="cate">Take it where you can get it, right?</line>
+  </scene>
+
+  <scene name="ezra">
+    <blocking>Ezra Exec EzraReturnsToTugboat</blocking>
+    <line speaker="cate">Anyway, it's nice to see you two! Most of my regular passengers must have gotten held up elsewhere in their journey tonight. It's that storm, I think.</line>
+    <line speaker="cate">`(Watching EZRA sprint past.)` Look at him go! That kid has a lot of energy ... it's got to be past his bedtime or something, right?</line>
+    <option goto="ezra-nocturnal" speaker="junebug">He's nocturnal.</option>
+    <option goto="ezra-free-will" speaker="junebug">I don't think he `has` a bedtime. He's a maverick.</option>
+  </scene>
+
+  <scene name="ezra-nocturnal" nextScene="junebug-children">
+    <line speaker="cate">He'd have to be, with the company he's keeping ...</line>
+  </scene>
+
+  <scene name="ezra-free-will" nextScene="junebug-children">
+    <line speaker="cate">Sounds familiar. Ha ha.</line>
+  </scene>
+
+  <scene name="junebug-children">
+    <line speaker="cate">You don't have any ... of your own, I mean ... No, I guess not. I just realized: you two come through here so often, we chat about all kinds of stuff, but I never thought to ask. About family.</line>
+    <option goto="family-sufficient" speaker="junebug">We're all the family we need.</option>
+    <option goto="family-other-priorities" speaker="junebug">Who has the time?</option>
+  </scene>
+
+  <scene name="family-sufficient" nextScene="storm">
+    <line speaker="cate">That's sweet.</line>
+  </scene>
+
+  <scene name="family-other-priorities" nextScene="storm">
+    <line speaker="cate">Yeah, sure. You've got to prioritize.</line>
+  </scene>
+
+  <scene name="storm">
+    <line speaker="cate">So ... how about that storm upstairs? Did you two get caught in it? I heard it kind of roamed around, uncertain. I'm sure we'll hear all about it tomorrow: flooding, property damage ... probably killed a few tomatoes. It's got the river churning and everyone headed to the lake here, where the water's calmer.</line>
+    <line speaker="cate">I myself don't mind navigating a choppy river. Not at all. I've got a good feel for it. Plus, it's better for fungal growth — high water consumes the cave moths, and their wet wings clump together into these little balls of nutrient-dense mushroom food, jammed by current here and there between the rocks. You have never seen a mushroom grow like on a soggy cave moth carcass.</line>
+    <line speaker="cate">Amazing. If I could get a day off, Val and I would be out there all day tomorrow to harvest. I mean it, they'll be ready by tomorrow. A mushroom will grow just as fast as you can pump water into it!</line>
+    <line speaker="cate">Hey, are you two headed out this way tomorrow? Maybe I could send Val ashore with you for a few hours. She's got a remarkable nose for mushrooms — you wouldn't even need to know what to look for. Put a bag around her neck, and she'll just bring them back to you.</line>
+    <line speaker="johnny">Yeah!</line>
+    <option goto="no-room-dog" speaker="junebug">No room on the bike for a dog, cricket.</option>
+    <option goto="dont-know-where" speaker="junebug">We don't know where we'll be tomorrow.</option>
+  </scene>
+
+  <scene name="no-room-dog" nextScene="change-subject">
+    <line speaker="johnny">She could curl up in the sidecar. I'll sit on my legs ...</line>
+  </scene>
+
+  <scene name="dont-know-where" nextScene="change-subject">
+    <line speaker="cate">Ah, I should have figured. Seems you two are always on the move.</line>
+    <line speaker="johnny">It does seem that way.</line>
+  </scene>
+
+  <scene name="change-subject">
+    <line>`(Silence.)`</line>
+    <line speaker="cate">So ...</line>
+    <line speaker="cate">I should get back aboard. No rush, I just want to brew some tea before we get underway.</line>
+    <line speaker="cate">Headed into the station?</line>
+    <option goto="johnny-snack" speaker="junebug">Yeah, picking out a snack for Johnny.</option>
+    <option goto="coffee" speaker="junebug">Thought I'd grab some black coffee for the old man. He's looking a bit waterlogged.</option>
+  </scene>
+
+  <scene name="johnny-snack" nextScene="cate-favor">
+    <line speaker="cate">`(To JOHNNY.)` She doesn't let you pick out your own snacks? Ha ha.</line>
+    <line speaker="johnny">`(To CATE.)` It's for the best. I get a little overwhelmed by all those shelves of candy.</line>
+    <line speaker="cate">Too much of a good thing.</line>
+  </scene>
+
+  <scene name="coffee" nextScene="cate-favor">
+    <line speaker="cate">Sure, don't want him falling asleep on you ... naw, he'll be alright. He seems like the type who can hold his liquor. Seems like he has a little experience, I mean.</line>
+  </scene>
+
+  <scene name="cate-favor" nextScene="end">
+    <line speaker="cate">Hey — while you're in there, could you remind the gas station attendant this fuel is on my tab? Charge to `The Mucky Mammoth`.</line>
+    <line speaker="cate">Oh, and Will wanted a scratch ticket ... Thanks.</line>
+    <line speaker="johnny">`(To JUNEBUG.)` I think I'll just watch the lake for a bit, ma'am.</line>
+  </scene>
+
+</conversation>

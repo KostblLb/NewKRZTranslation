@@ -1,0 +1,21 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="disable-cursor,hypnotize-camera,doctor-complete">
+  <scene name="intro" nextScene="countdown">
+    <line speaker="dr. truman">... but it's nothing we can't handle. You might have a few things to look out for in the future: be a bit gentler with the leg or the way you walk. But you'll be OK, I've dealt with similar cases before.</line>
+    <line speaker="dr. truman">So, the anaesthetic we'll use is called `Neurypnol TM`. It's pretty experimental, but it's more appropriate in cases like yours. The way it works is: I'll count backwards from ~FIVE~, to start the process, and then we'll just have a normal conversation as the `Neurypnol TM` takes effect. Then I'll get started.</line>
+    <line speaker="dr. truman">Here we go:</line>
+  </scene>
+
+  <scene name="countdown" nextScene="end">
+    <triggerEvent name="hypnotize"/>
+    <triggerEvent name="hypnosis-sounds"/>
+
+    <line event="hypnosis-light-advance" speaker="dr. truman">~FIVE~</line>
+    <line event="hypnosis-light-advance" speaker="dr. truman">~FOUR~</line>
+    <line event="hypnosis-light-advance" speaker="dr. truman">~THREE~</line>
+    <line event="hypnosis-light-advance" speaker="dr. truman">~TWO~</line>
+    <line event="hypnosis-light-advance" speaker="dr. truman">~ONE~</line>
+    
+    <line event="hypnosis-strong" speaker="dr. truman">~So, let's talk about billing for a moment. The pharmaceutical company I'm contracted with was recently acquired by an energy company that has some different standards for billing and revenue, so it's a bit complex now ...~</line>
+  </scene>
+</conversation>

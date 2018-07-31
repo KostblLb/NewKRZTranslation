@@ -1,0 +1,22 @@
+# -*- mode: blocking -*-
+
+@set Scene RumColony
+@set Stop riverworld-rum-colony
+
+@func PostScene
+
+  Tugboat Message RiverworldManager QueueState MothSwarm
+
+@end
+
+@func PreScene
+
+  Tugboat Listen boat-stop
+  Tugboat Dialog RiverDisembark[Scene]
+  Tugboat Message RiverworldManager LoadScene Tiki ? [Stop]=disembarked
+  Tugboat Message RiverworldManager LoadScene Tugboat ? [Stop]=aboard
+
+@end
+
+Tugboat Exec PreScene ? [Stop]=uncharted
+Tugboat Exec PostScene ? !([Stop]=uncharted)

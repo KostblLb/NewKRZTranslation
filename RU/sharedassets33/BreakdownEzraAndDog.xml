@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="breakdown-ezra-talked-to-dog" value="true" />
+    <option goto="wait" speaker="ezra">How long do you think we'll be waiting here?</option>
+    <option goto="julian" speaker="ezra">I wish Julian wasn't so busy right now.</option>
+  </scene>
+
+  <scene name="wait">
+    <option goto="think" speaker="ezra">I don't mind. I have a lot to think about.</option>
+    <option goto="bored" speaker="ezra">Do you get bored late at night?</option>
+  </scene>
+
+  <scene name="think">
+    <option goto="end" speaker="ezra">I guess I always do ... I'm a thinker, alright.</option>
+    <option goto="end" speaker="ezra">Weird night, huh?</option>
+  </scene>
+
+  <scene name="bored">
+    <option goto="end" speaker="ezra">I don't. I like it better when everyone else is asleep.</option>
+    <option goto="end" speaker="ezra">It's so quiet. I guess you don't mind.</option>
+  </scene>
+
+  <scene name="julian">
+    <option goto="houses" speaker="ezra">He's got a lot of houses to carry still.</option>
+    <option goto="without-julian" speaker="ezra">I guess it's not so bad.</option>
+  </scene>
+
+  <scene name="houses">
+    <option goto="end" speaker="ezra">He can handle it on his own.</option>
+    <option goto="end" speaker="ezra">I wish I could help more.</option>
+  </scene>
+
+  <scene name="without-julian">
+    <option goto="end" speaker="ezra">Julian's like you — he doesn't talk much.</option>
+    <option goto="end" speaker="ezra">I like hanging out with you folks, anyway.</option>
+  </scene>
+
+</conversation>
+

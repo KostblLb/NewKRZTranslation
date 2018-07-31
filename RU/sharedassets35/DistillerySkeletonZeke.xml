@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-zeke" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">How'd it go, Zeke?</line>
+    <line speaker="doolittle" style="skeleton">Zeke just did a bit of ... recruiting. Stopped at a tavern to collect payment, and returned with able bodies! Ha ha.</line>
+  </scene>
+</conversation>

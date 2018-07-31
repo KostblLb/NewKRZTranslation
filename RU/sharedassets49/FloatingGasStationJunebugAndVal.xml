@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-junebug-talked-to-val" value="true" />    
+    <option goto="johnny" speaker="junebug">Did my Johnny talk your ear off out here?</option>
+    <option goto="plans" speaker="junebug">Big plans for the night?</option>
+  </scene>
+
+  <scene name="johnny">
+    <option goto="only-say-to-animals" speaker="junebug">I suspect there are some things he can only say to animals.</option>
+    <option goto="got-me-talking-to-dogs" speaker="junebug">Damn, he's even got `me` talking to dogs now.</option>
+  </scene>
+
+  <scene name="only-say-to-animals">
+    <option goto="end" speaker="junebug">I guess that's just how people are — different thoughts for different listeners ...</option>
+    <option goto="end" speaker="junebug">I'd like to to think he could say `anything` to me ...</option>
+  </scene>
+
+  <scene name="got-me-talking-to-dogs">
+    <option goto="end" speaker="junebug">I think I can see why he does it. You're a good listener Val.</option>
+    <option goto="end" speaker="junebug">Don't think I'll make a habit of it. No offense.</option>
+  </scene>
+
+  <scene name="plans">
+    <option goto="where-the-river-goes" speaker="junebug">Us, I think we'll just see where the river goes. And at what pace.</option>
+    <option goto="recharge" speaker="junebug">Me and Johnny should probably start looking for a place to stop and recharge for the day.</option>
+  </scene>
+
+  <scene name="where-the-river-goes">
+    <option goto="end" speaker="junebug">No sense rushing it, right? You can't rush the river.</option>
+    <option goto="end" speaker="junebug">You look like you've got that figured out already, Val.</option>
+  </scene>
+
+  <scene name="recharge">
+    <option goto="end" speaker="junebug">Maybe that'll be the same place the rest of our little one-night crew ends up ...</option>
+    <option goto="end" speaker="junebug">Maybe we'll just follow you and Cate and the `Mammoth` for a while.</option>
+  </scene>
+
+</conversation>

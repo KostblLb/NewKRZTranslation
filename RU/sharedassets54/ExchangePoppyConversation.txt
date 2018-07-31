@@ -1,0 +1,34 @@
+# -*- mode: blocking -*-
+
+Poppy Marker Lock
+Poppy Interact Off
+Poppy Message Shannon SetSpeedFactor 0.25
+Poppy Walk Shannon ActorPoppy/StandPosition
+Poppy Look Shannon ActorPoppy/Poi
+Poppy Set temp:talked-to-poppy true
+
+# paranoiacally re-triggering this event, even tho it should have
+# already been triggered by now.
+Poppy Event hound-disembark
+
+Poppy Dialog ExchangePoppyOne
+Poppy Look Shannon Dasheill
+Poppy Look Poppy Dasheill
+Poppy Message Shannon SetBouncedRange 16
+Poppy Message ExchangeDinghy DisableDrift
+Poppy Cursor Hide
+Poppy Audio Play clear-ring
+Poppy Cursor Show
+Poppy Message ExchangeDinghy/ExchangeDinghySounds FadeOff
+Poppy Look Shannon ActorPoppy/Poi
+Poppy Unlook Poppy
+Poppy Dialog ExchangePoppyTwo
+Poppy Cursor Hide
+Poppy Wait 2
+Poppy Unlook Shannon
+Poppy Message ExchangeStaging PickupConway
+Poppy Fork EndingBoatHum
+Poppy Audio* FadeOut water-dripping 15
+
+EndingBoatHum Wait 20
+EndingBoatHum Message ExchangeMotorboat/ExchangeSkeletonBoatHum EndingFadeOut

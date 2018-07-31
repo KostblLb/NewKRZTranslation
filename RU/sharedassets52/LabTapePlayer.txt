@@ -1,0 +1,28 @@
+# -*- mode: blocking -*-
+
+@func TapePlayerSitDown
+
+  # This "Lift" prevents the MarkerHint on the table from overriding
+  # the "Walk" command later.
+  Chair Marker Lift
+  Chair Marker Lock
+  Chair Walk [PLAYER] LabTapePlayer/ChairSitPosition
+  Chair Gesture [PLAYER] Enter Sit
+  Chair Set temp:player-sitting true
+  Chair Event sat-down
+  Chair Message LabTapePlayer/CameraTransform/Camera SetFovOverlay -4.5
+  Chair Wait 1
+  Chair Audio* Play tape-start
+  Chair Audio FadeIn tape-loop 2
+
+@end
+
+@func TapePlayerStandUp
+
+  Chair Message LabTapePlayer/CameraTransform/Camera SetFovOverlay 0
+  Chair Gesture [PLAYER] Exit Sit
+  Chair Marker Unlock
+  Chair Set temp:player-sitting false
+  Chair Event stood-up
+
+@end

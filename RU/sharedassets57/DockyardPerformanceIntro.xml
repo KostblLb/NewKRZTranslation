@@ -1,0 +1,162 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="clara">That's a very special tape player you have there. It can play forwards or backwards, slow or fast. You may discover some completely new sounds tonight, Ezra.</line>
+    <line speaker="clara">So. Are you ready?</line>
+    <option goto="ezra-is-ready" speaker="ezra">Yes.</option>
+    <option goto="ezra-is-not-ready" speaker="ezra">No.</option>
+  </scene>
+
+  <scene name="ezra-is-ready" nextScene="questions">
+    <line speaker="clara">Excellent. I can tell you have a good intuition for sound, and that's very important in this piece.</line>
+  </scene>
+
+  <scene name="ezra-is-not-ready" nextScene="questions">
+    <line speaker="clara">Oh, that's OK. In fact, it's probably better; musicians often overprepare, and in this piece I prefer to capture a sense of spontaneity. That's why I'm touring alone, and not asking other musicians to accompany me.</line>
+  </scene>
+
+  <scene name="questions" nextScene="question-options">
+    <line speaker="clara">Any questions, before we begin?</line>
+  </scene>
+
+  <scene name="question-options">
+    <goto condition="dockyard-performance-question-count[gt]2" sceneName="end-of-questions" />
+    
+    <option goto="what-to-do" speaker="ezra" condition="!dockyard-performance-asked-what-to-do">How do I know what to do?</option>
+    <option goto="what-will-it-sound-like" speaker="ezra" condition="!dockyard-performance-asked-about-sound">What will it sound like?</option>
+    <option goto="title" speaker="ezra" condition="!dockyard-performance-asked-about-title">What's the name of your music?</option>
+    
+    <option goto="end-of-questions" speaker="ezra" condition="dockyard-performance-question-count=0">Nope.</option>
+    <option goto="end-of-questions" speaker="ezra" condition="dockyard-performance-question-count[gt]0">That's it.</option>
+  </scene>
+
+  <scene name="what-to-do" nextScene="question-options">
+    <setGameVar name="dockyard-performance-question-count" value="+1" />
+    <setGameVar name="dockyard-performance-asked-what-to-do" value="true" />    
+    
+    <line speaker="clara">Play your tape player. You may play any tape, at any speed and volume, even backwards. Just listen to the music and use your intuition. Or ... it may be better if you try `not` to listen to the music. This technique is called "indeterminacy."</line>
+  </scene>
+
+  <scene name="what-will-it-sound-like" nextScene="question-options">
+    <setGameVar name="dockyard-performance-question-count" value="+1" />
+    <setGameVar name="dockyard-performance-asked-about-sound" value="true" />    
+    
+    <line speaker="clara">There's only one way to find out.</line>
+  </scene>
+
+  <scene name="title">
+    <setGameVar name="dockyard-performance-question-count" value="+1" />
+    <setGameVar name="dockyard-performance-asked-about-title" value="true" />    
+    
+    <line speaker="clara">Hm. It doesn't have a name. Would you like to name it?</line>
+    <option goto="ezra-names-piece" speaker="ezra">OK.</option>
+    <option goto="better-without-name" speaker="ezra">It's better without a name.</option>
+  </scene>
+
+  <scene name="ezra-names-piece" nextScene="chose-name">
+    <option goto="chose-name" speaker="ezra" variableChange="dockyard-performance-title=$dockyard-performance-title-option-1" insertedText="`${dockyard-performance-title-option-1}`.">`<template name="title" capture="dockyard-performance-title-option-1" seed="ezra-tapes" seed-offset="dockyard-performance-title-offset" />`.</option>
+    <option goto="chose-name" speaker="ezra" variableChange="dockyard-performance-title=$dockyard-performance-title-option-2" insertedText="`${dockyard-performance-title-option-2}`.">`<template name="title" capture="dockyard-performance-title-option-2" seed="ezra-tapes" seed-offset="dockyard-performance-title-offset" />`.</option>
+    <option goto="chose-name" speaker="ezra" variableChange="dockyard-performance-title=$dockyard-performance-title-option-3" insertedText="`${dockyard-performance-title-option-3}`.">`<template name="title" capture="dockyard-performance-title-option-3" seed="ezra-tapes" seed-offset="dockyard-performance-title-offset" />`.</option>
+    <option goto="ezra-names-piece" speaker="ezra">Um ...</option>
+  </scene>
+
+  <scene name="chose-name" nextScene="question-options">
+    <line speaker="clara">"<variable name="dockyard-performance-title" />."</line>
+    <line speaker="clara">Perfect.</line>
+  </scene>
+
+  <scene name="better-without-name" nextScene="question-options">
+    <line speaker="clara">I agree.</line>
+  </scene>
+
+  <scene name="end-of-questions" nextScene="choose-tape-1">
+    <line speaker="clara">Alright. Let's begin.</line>
+  </scene>
+
+  <!-- movement 1 -->
+  <scene name="choose-tape-1" nextScene="choose-gesture-1">
+    <option condition="temp:tape-cat" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=cat">`(EZRA selects the tape labeled "cat.")`</option>
+    <option condition="temp:tape-kombucha" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=kombucha">`(EZRA selects the tape labeled "kykeon kombucha.")`</option>
+    <option condition="temp:tape-diesel-tank" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=diesel-tank">`(EZRA selects the tape labeled "diesel tank.")`</option>
+    <option condition="temp:tape-stew" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=stew">`(EZRA selects the tape labeled "stew.")`</option>
+    <option condition="temp:tape-pots" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=pots">`(EZRA selects the tape labeled "pots and pans.")`</option>
+    <option condition="temp:tape-tv" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=tv">`(EZRA selects the tape labeled "cooking show.")`</option>
+    <option condition="temp:tape-river" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=river">`(EZRA selects the tape labeled "river.")`</option>
+    <option condition="temp:tape-mammoth" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=mammoth">`(EZRA selects the tape labeled "mammoth.")`</option>
+    <option condition="temp:tape-tape" goto="choose-gesture-1" variableChange="dockyard-ezra-tape-1=tape">`(EZRA selects the tape labeled "sleeping.")`</option>
+  </scene>
+
+  <scene name="choose-gesture-1">
+    <option goto="end" variableChange="dockyard-ezra-gesture-1=just-play">`(He lets the tape play without interference.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-1=slow-speed-up">`(He plays the tape slowly at first, but gradually speeds up.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-1=restless-volume">`(He fiddles restlessly with the volume knob.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-1=slow-backwards">`(He plays the tape backwards, very slowly.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-1=rhythmic-volume">`(He flicks the volume knob on and off, rhythmically.)`</option>
+  </scene>
+
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <title>
+      <common>
+        <template xml:space="preserve">Music for <pluralNoun filter="title" /></template>                
+        <template xml:space="preserve">A Song About <pluralNoun filter="title" /></template>
+        <template xml:space="preserve"><number filter="title" /> <pluralNoun filter="title" /></template>
+        <template xml:space="preserve">The <adjective filter="title" /> <pluralNoun filter="title" /></template>        
+      </common>
+      <rare>
+        <template xml:space="preserve">Clara's <adjective filter="title" /> Theremin</template>
+      </rare>
+    </title>
+    
+  </templates>
+
+  <templateValues>
+    <number>
+      <common>
+        <value>five</value>
+      </common>
+
+      <rare>
+        <value>two</value>        
+      </rare>
+
+      <esoteric>
+        <value>too many</value>
+        <value>several</value>
+        <value>a few</value>        
+      </esoteric>
+    </number>
+
+    <pluralNoun>
+      <common>
+        <value>fish</value>
+        <value>rivers</value>
+        <value>theremins</value>
+        <value>tapes</value>        
+      </common>
+
+      <rare>
+        <value>musicians</value>
+        <value>night journeys</value>
+        <value>people who live on the water</value>        
+      </rare>
+    </pluralNoun>
+
+    <adjective>
+      <common>
+        <value>unusual</value>
+        <value>beautiful</value>
+        <value>noisy</value>
+      </common>
+
+      <esoteric>
+        <value>mysterious</value>
+      </esoteric>        
+    </adjective>
+    
+  </templateValues>
+  
+</conversation>
+

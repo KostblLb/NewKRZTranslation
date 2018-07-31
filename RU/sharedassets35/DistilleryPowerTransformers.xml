@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-saw-transformers" value="true"/>
+    <triggerEvent name="start-tape"/>
+    <triggerEvent name="look-at-power-transformers"/>    
+    
+    <line speaker="doolittle" style="skeleton">I suppose it all starts here, in a cruel fashion. We had special power transformers installed by Consolidated. I believe we're their biggest subterranean industrial customer in the region.</line>
+    <line speaker="doolittle" style="skeleton">To say nothing of heating the aging warehouse, just think of what it must take to run the lights down here! We work long hours and haven't exactly any `windows`.</line>
+  </scene>
+</conversation>

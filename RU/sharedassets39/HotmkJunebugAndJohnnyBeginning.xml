@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-junebug-johnny-conversation">
+  <scene name="intro">
+    <triggerEvent name="junebug-walk-to-johnny-beginning" />    
+    <setGameVar name="hotmk-junebug-and-johnny-talked-beginning" value="true" />
+    <line speaker="johnny">Time to cut 'em loose, ma'am?</line>
+    <option goto="fun" speaker="junebug">Well now I'm having fun.</option>
+    <option goto="bored" speaker="junebug">You bored?</option>
+  </scene>
+
+  <scene name="fun" nextScene="end">
+    <line speaker="johnny">Ha. OK. Slow night anyway.</line>
+  </scene>
+
+  <scene name="bored" nextScene="end">
+    <line speaker="johnny">Nah, it's a slow night anyway. I'm happy just tagging along.</line>
+  </scene>
+</conversation>

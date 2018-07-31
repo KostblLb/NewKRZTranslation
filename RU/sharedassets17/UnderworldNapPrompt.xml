@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="nap-prompt-end">
+  <scene name="intro">
+
+    <line condition="underworld-nap-counter=1" speaker="shannon">Hey. You're looking kinda tired there, old man. Want me to take the wheel for a bit?</line>
+    <line condition="underworld-nap-counter=2" speaker="shannon">You almost went off the road for a second there. Can I take over?</line>
+    <line condition="underworld-nap-counter=3" speaker="shannon">Yeah, I saw you yawning. Here, let me drive.</line>
+    <line condition="underworld-nap-counter=0" speaker="shannon">We can probably get some coffee around ... never mind. I'll take over if you want?</line>
+    
+    <option event="nap-cancel" goto="end">I'm fine.</option>
+    <option event="nap-proceed" goto="end">Yeah, maybe that's a good idea.</option>
+  </scene>
+</conversation>

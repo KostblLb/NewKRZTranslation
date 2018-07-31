@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <line>A creek runs alongside the highway and then turns toward a dirty brick building. A grinding drone from within the building is faintly audible from the interstate. Floodlights on the lawn illuminate smokestacks.</line>
+    <line>At the edge of the building's parking lot, a large sign, partly obscured by trees, reads: &quot;Amer ... tificial Limb Factory&quot;</line>
+  </scene>
+</conversation>

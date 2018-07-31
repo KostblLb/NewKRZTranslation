@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <option goto="aboard" center="true" dividerAfter="true">Ezra taught us a card game.</option>
+    <option goto="end" center="true" variableChange="riverworld-research-lab=disembarked">Shannon, Ezra, the old man, and I stopped at the Radvansky Center, to make some quick cash.</option>
+  </scene>
+
+  <scene name="aboard" nextScene="end">
+    <setGameVar name="riverworld-research-lab" value="aboard" />
+    <setGameVar name="tugboat-vignette" value="MemoryGame" />
+  </scene>
+</conversation>
+

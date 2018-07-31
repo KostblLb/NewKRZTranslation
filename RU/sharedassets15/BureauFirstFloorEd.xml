@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="bureau-runaround-counter" value="+1"/>
+    
+    <line speaker="clerk böhm">Howdy. Here for {if}[bureau-looking-for-document=ingestion]an ingestion card{end}{if}[bureau-looking-for-document=transient]a transient sheet{end}? No problem.</line>
+    <line>`(He rummages through some papers on his desk.)`</line>
+    <line speaker="clerk böhm">... happy to help.</line>
+    <line>`(He opens a few folders and quickly closes them.)`</line>
+    <line speaker="clerk böhm">Um. Looks like I'm out, but I know there are some back in the archive. You'll have to put in a special request with Clerk MacMillan. She's the documents czar.</line>
+    <line speaker="clerk böhm">Straight back at the end of the office there, by the file cabinets.</line>
+    
+    <option event="bureau-runaround-ellen" goto="end" speaker="conway">OK.</option>
+    <option goto="lula" speaker="shannon">This is just a run-around. Where's Lula Chamberlain?</option>
+  </scene>
+
+  <scene name="lula" nextScene="end">
+    <triggerEvent name="bureau-runaround-lula"/>
+    <line speaker="clerk böhm">Oh, no, it's ... I mean ... that's her right there. In the cardigan.</line>
+  </scene>
+
+</conversation>

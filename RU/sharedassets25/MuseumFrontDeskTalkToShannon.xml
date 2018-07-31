@@ -1,0 +1,28 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-front-desk-talked-to-shannon" value="true"/>
+    <setGameVar name="museum-location" value="information-desk" />
+    
+    <line speaker="flora">I heard the man and the lady talking when they first came in, but they didn't see me.</line>
+    <line condition="museum-umbrella-is-open" speaker="flora">He had his umbrella open `inside`!</line>    
+    <option goto="up-late" speaker="museum staff">What were you doing up that late?</option>
+    <option goto="talking-about" speaker="museum staff">What were they talking about?</option>
+  </scene>
+
+  <scene name="up-late">
+    <line speaker="flora">Mom lets me stay up late all the time, she said it's OK. I was just looking for frogs.</line>
+    <option goto="warts" speaker="museum staff">You should be careful with frogs; they'll give you warts.</option>
+    <option goto="talking-about" speaker="museum staff">What were the man and the lady talking about?</option>
+  </scene>
+
+  <scene name="warts" nextScene="end">
+    <line speaker="flora">I don't care, I want warts: I think they're beautiful. Besides, that's not true anyway.</line>
+  </scene>
+
+  <scene name="talking-about" nextScene="end">
+    <line speaker="flora">The man said his leg was hurting him. They were looking for Dr. Truman, but he was already gone. But they didn't know so they kept looking around.</line>
+  </scene>
+
+</conversation>

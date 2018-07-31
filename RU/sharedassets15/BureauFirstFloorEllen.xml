@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="bureau-runaround-counter" value="+1"/>
+    
+    <line speaker="Clerk MacMillan">Documents request?</line>
+    
+    <option condition="bureau-looking-for-document=ingestion" goto="doc-request" speaker="conway">One &quot;ingestion card,&quot; please.</option>
+    <option condition="bureau-looking-for-document=transient" goto="doc-request" speaker="conway">One &quot;transient sub-sheet,&quot; please.</option>
+    <option goto="lula" speaker="shannon">This is absurd. Where's Lula?</option>
+  </scene>
+
+  <scene name="doc-request">
+    <line speaker="Clerk MacMillan">Happy to help. Please just put your requisition form in the inbox and I'll get to it as soon as possible.</line>
+    <option goto="requisition-form" speaker="conway">Requisition form?</option>
+    <option goto="lula" speaker="shannon">This is absurd. Where's Lula?</option>
+  </scene>
+
+  <scene name="lula" nextScene="end">
+    <triggerEvent name="bureau-runaround-lula"/>
+    <line speaker="Clerk MacMillan">Lula? Right there in the middle. The woman with cardigan.</line>
+  </scene>
+
+  <scene name="requisition-form" nextScene="end">
+    <setGameVar name="bureau-looking-for-document" value="requisition"/>
+    <triggerEvent name="bureau-runaround-rebecca"/>
+    <line speaker="Clerk MacMillan">Yes. You don't have one? Shouldn't be a problem: they're quite easy to fill out. Just ask Clerk Metzstein and she'll get you sorted.</line>
+  </scene>
+
+</conversation>

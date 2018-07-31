@@ -1,0 +1,130 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="janitor-conversation-end">
+  <scene name="intro">
+    <setGameVar name="storage-met-brandon" value="true"/>
+    
+    <line speaker="brandon">Oh! Here for the night mass?</line>
+    <option goto="what-kind-of-service" speaker="conway">What kind of mass is it?</option>
+    <option goto="congregation" speaker="conway">Where's the congregation?</option>
+  </scene>
+  
+  <scene name="what-kind-of-service">
+    <line speaker="brandon">Tonight, it's a homily on ... &quot;work and need.&quot;</line>
+    <line speaker="brandon">Huh, I haven't heard this one before.</line>
+    
+    <option goto="preacher" speaker="conway">Are you the preacher?</option>
+    <option goto="congregation" speaker="conway">Where's the congregation?</option>
+  </scene>
+
+  <scene name="preacher" nextScene="congregation">
+    <line speaker="brandon">Oh. I'm the janitor ...</line>
+  </scene>
+
+  <scene name="congregation">
+    <line speaker="brandon">I guess this must look pretty strange: a church without a congregation. When they first moved in here, man, this place was packed. They had a mass every night, two on Sunday.</line>
+    <line speaker="brandon">But it got a bit awkward to fit everyone in, and the numbers quickly dwindled. Once folks started to see it as a thing that was falling apart, they lost their center of gravity, and just started ... wobbling.</line>
+    <line speaker="brandon">Then the preacher stopped coming too, but he left his old tapes. Same with the organist. And I found some old acetates in the Bureau archives, photos of people in churches. So I keep it running.</line>
+    <line speaker="brandon">You do what you have to, right?</line>
+    
+    <option goto="job" speaker="conway">We've all got a job.</option>
+    <option goto="documents" speaker="shannon">Right now we have to find some Bureau documents.</option>
+  </scene>
+
+  <scene name="job" nextScene="shannon-leaves">
+    <line speaker="brandon">&quot;Work is play for mortal stakes.&quot; That's the title of the evening's homily, in fact.</line>
+    <line speaker="brandon">So I guess if you folks aren't here for the mass you must be looking for the old Bureau records. I moved them down to unit C315, to make room for the mass. It's down at the other end of the building. Same floor. I need to get the night mass started, but you can borrow my keys.</line>
+  </scene>
+
+  <scene name="documents" nextScene="shannon-leaves">
+    <line speaker="brandon">Oh, you're from the Bureau. I moved all those documents to unit C315, to make room for the mass. It's down at the other end of the building. Same floor. I need to get the night mass started, but you can borrow my keys.</line>
+  </scene>
+
+  <scene name="shannon-leaves" nextScene="shannon-actually-leaves">
+    <line speaker="shannon">I'll go. You wait here. Rest your leg, you're looking kind of pale.</line>
+  </scene>
+  
+  <scene name="shannon-actually-leaves" nextScene="homily-1-options">
+    <triggerEvent name="shannon-go-to-records"/>
+    <triggerEvent name="dialog-darken-slow"/>
+    
+    <line speaker="brandon">Nice lady.</line>
+    <line speaker="brandon">Well, I'd better get this running.</line>
+    <line>`(BRANDON presses &quot;play&quot; on an old tape machine.)`</line>
+  </scene>
+
+  <scene name="homily-1-options">
+    <triggerEvent name="play-organ"/>
+    <option goto="listen-homily-1">`(CONWAY listens to the homily.)`</option>
+    <option goto="is-brandons-family-catholic" speaker="conway">Is your whole family Catholic?</option>
+  </scene>
+
+  <scene name="homily-2-options">
+    <option goto="listen-homily-2">`(CONWAY listens to the homily.)`</option>
+    <option goto="brandon-working-here" speaker="conway">How do you like working here?</option>
+  </scene>
+
+  <scene name="homily-3-options">
+    <option goto="listen-homily-3">`(CONWAY listens to the homily.)`</option>
+    <option goto="leg" speaker="conway">My leg is killing me.</option>
+  </scene>
+
+  <scene name="homily-4-options">
+    <option goto="listen-homily-4">`(CONWAY listens to the homily.)`</option>
+    <option goto="hobby" speaker="conway">So, this is like a ... hobby?</option>
+  </scene>
+
+  <scene name="listen-homily-1" nextScene="homily-2-options">
+    <setGameVar name="storage-listened-to-homily" value="true"/>
+    <line speaker="preacher">~There are many days on which we proclaim the value of labor, and celebrate the piety of the hard-working, through feast or abstinence, recognizing St. Joseph the worker, who was foster father to our lord Jesus, and who trained him in carpentry and in the merit of sweat. And this is one such day.~</line>
+  </scene>
+
+  <scene name="listen-homily-2" nextScene="homily-3-options">
+    <setGameVar name="storage-listened-to-homily" value="true"/>    
+    <line speaker="preacher">~On this day, we celebrate with the feast of St. Joseph the worker, and, on this day, other workers are also celebrating, workers who do not attend mass, or even one like it, even workers who do not attend a Church at all, but who toil with clarity, with dedication, with perspicacity, who do as we do here in our Church, inasmuch as they reflect the activity of God. As we do, they cultivate the earth, and, at sundown, they call the fruit of their labor &quot;very good.&quot;~</line>
+  </scene>
+
+  <scene name="listen-homily-3" nextScene="homily-4-options">
+    <setGameVar name="storage-listened-to-homily" value="true"/>    
+    <line speaker="preacher">~Beyond the Church, this day is celebrated in remembrance of a violent protest in Chicago, and to honor the four martyrs who were unjustly persecuted in its wake, having not only pursued their vocation in their daily labor, but also having pursued their avocation in the form of protest, activism, community-building, radicalization, scholarship, and finally martyrdom. Their, and our, avocation being, as it should be for us all, as members of the Church or otherwise, to secure for our fellow workers the right to labor with dignity.~</line>
+  </scene>
+
+  <scene name="listen-homily-4" nextScene="homily-end">
+    <triggerEvent name="shannnon-come-back"/>    
+    <line speaker="preacher">~So, just as there is no dignity without sacrifice, there is no vocation without avocation, just as the left eye perceives that which is to the left, and the right eye perceives that which is to the right, and these images are summed, differentiated, and incorporated, and we find in our minds eye an after-image of divine light, only where love and need are one, and the work is play for mortal stakes, is the deed ever really done, for Heaven, and the future's sakes.~</line>
+  </scene>
+
+  <scene name="is-brandons-family-catholic" nextScene="homily-2-options">
+    <line speaker="brandon">Oh, no. We're not religious. I just watched and listened while the congregation did all this stuff, and ... I probably don't understand as much of it as you might think. Anyway, I know how to run the overhead projector and the tape player. At least I know enough to keep it going, right?</line>
+  </scene>
+
+  <scene name="brandon-working-here" nextScene="homily-3-options">
+    <line speaker="brandon">It's OK. I don't really know what else I would do. I used to play a lot of card games, you know, in high school. Some of my friends went to college, but most of them just got jobs. Maybe in a few years we'll be hanging out in bars, playing darts or something. You're not allowed to play cards in the bar, because it looks like gambling.</line>
+  </scene>
+
+  <scene name="leg" nextScene="homily-4-options">
+    <line speaker="brandon">I bet everyone's telling you to go see a doctor. Hey, I get it: too expensive. My dad cut his arm pretty bad on a job, but he stitched himself back up because we didn't have health insurance. But then his hand didn't work very well, and he got pretty depressed, and eventually he just sort of ...</line>
+    <line speaker="brandon">Well, I guess I don't know what he should have done. Who knows, right?</line>
+  </scene>
+
+  <scene name="hobby" nextScene="homily-end">
+    
+    <line speaker="brandon">If you asked me what my hobbies were, I'd say &quot;card games, science fiction, and perspective geometry.&quot; But I run the slide show, and I play the tapes, and I don't get paid for it. I take it pretty seriously, but nobody's telling me I should. Is that a hobby? Seems like there ought to be a more serious word for it.</line>
+  </scene>
+
+  <scene name="homily-end">
+    <triggerEvent name="shannon-come-back"/>
+    <triggerEvent name="dialog-lighten-fast"/>    
+    
+   <line speaker="brandon">OK, that's it. Next, there are some rituals that you and I aren't allowed to participate in, I don't think. And I don't remember them anyway.</line>
+    <line speaker="shannon">Hi. Got it.</line>
+    <option goto="conway-confused" speaker="conway">Got what?</option>
+    <option goto="conway-confused" speaker="conway">We were just talking about work and hobbies.</option>
+    <option goto="conway-confused" speaker="conway">We were just listening to the sermon.</option>
+  </scene>
+
+  <scene name="conway-confused" nextScene="end">
+    <line speaker="shannon">What? I found what we came here to get. The file on street name changes.</line>
+    <line speaker="shannon">You don't look ... good.</line>
+    <line speaker="shannon">Let's head back to the Bureau and get this straightened out. And then maybe we should go see that doctor the clerk recommended.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <goto condition="ezra-has-recordings-to-play" sceneName="choose" />
+    <goto condition="!ezra-has-recordings-to-play" sceneName="force-disembark" />
+  </scene>
+  
+  <scene name="choose">
+    <option goto="end" center="true" dividerAfter="true" variableChange="riverworld-dockyard=aboard">Ezra stayed on the tugboat to help Clara with her performance.</option>
+    <option goto="end" center="true" variableChange="riverworld-dockyard=disembarked">Junebug and Johnny watched the show from the dockyard with the others.</option>
+  </scene>
+  
+  <scene name="force-disembark" nextScene="end">
+    <setGameVar name="riverworld-dockyard" value="disembarked" />
+    <line>Junebug and Johnny watched the show from the dockyard with the others.</line>
+  </scene>
+</conversation>
+

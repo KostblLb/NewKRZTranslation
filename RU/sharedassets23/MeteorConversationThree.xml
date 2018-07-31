@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="crater-heard-conversation-three" value="true"/>
+    <line speaker="Old woman">Not one of you know a `thing` about weird lights in the sky. But I'm gonna tell you anyway.</line>
+    <line speaker="Old woman">About nine months back, I was out sorting the cans and bottles, and I saw three flashes that took up half the sky. They flashed in order, a few seconds apart: Red. Green. Blue. </line>
+    <line speaker="Old woman">Then about a few months later, I was fixing my lawnmower and I saw them again, but faster: Red, Green, Blue. Now just a week ago, I was microwaving some steam-in-the-bag broccoli, and I looked up, and there it was out the window: RedGreenBlue.</line>
+    <line speaker="Old woman">So don't tell `me` about burning birds, lights in the sky, flying saucers. I know already.</line>
+  </scene>
+</conversation>

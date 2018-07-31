@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="overworld-visited-dragonfly-one" value="true"/>
+    
+    <line>
+      The truck jerks toward the shoulder, nearly run off the road by a swarm of dragonflies. Their wings beat briefly in the headlights, and disappear into the night.
+    </line>
+  </scene>
+</conversation>

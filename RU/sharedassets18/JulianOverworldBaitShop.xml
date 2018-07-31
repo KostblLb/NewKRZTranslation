@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-bait-shop" value="true"/>
+
+    <line>A large dirt parking lot surrounds the bait shop. A sign is vaulted above the road on a thin steel bar.</line>
+    <line condition="one:overworld-visited-shannons-workshop">Bright but unsteady lights throb from the windows the shop's back room.</line>
+  </scene>
+</conversation>

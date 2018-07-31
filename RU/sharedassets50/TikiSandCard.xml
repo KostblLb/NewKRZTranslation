@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-card" value="true" />
+    <line>At first, Shannon mistakes the iridescent glimmer for a seashell washed up from the lake, maybe some freshwater relative of the abalone, or even a pearl. But it's only a trading card. It must have been valuable to someone, or it wouldn't be printed on this lustrous material. Whatever was on it has mostly worn away -- all that's left is the shiny backing and the words "GLEANERS ... FORWARD."</line>
+  </scene>
+</conversation>

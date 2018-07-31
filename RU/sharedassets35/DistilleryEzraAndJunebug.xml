@@ -1,0 +1,85 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="conway-and-shannon-return">
+  <scene name="intro">
+    <setGameVar name="distillery-ezra-and-junebug-talked" value="true"/>
+    <line speaker="junebug">Find any lizards?</line>
+    <option goto="one-lizard" speaker="ezra">One, but it went under a rock.</option>
+    <option goto="no-lizards" speaker="ezra">I wasn't really looking.</option>
+  </scene>
+
+  <scene name="one-lizard" nextScene="questions">
+    <line speaker="junebug">That's lizards for you.</line>
+  </scene>
+
+  <scene name="no-lizards" nextScene="questions">
+    <line speaker="junebug">Nice cover story, kid.</line>
+  </scene>
+
+  <scene name="questions">
+    <option goto="dress" speaker="ezra">Why do you dress like a punk?</option>
+    <option goto="family" speaker="ezra">Do you have a family?</option>
+    <option goto="boyfriend" speaker="ezra">Is that guy your boyfriend?</option>
+  </scene>
+
+  <scene name="dress" nextScene="specific">
+    <setGameVar name="distillery-ezra-question" value="dress"/>
+    <line speaker="junebug">A punk! Ha ha. Now what's a `punk` dress like, kid? Can you tell me?</line>
+    <line speaker="junebug">I dress like `Junebug`, specifically.</line>
+  </scene>
+
+  <scene name="family" nextScene="specific">
+    <setGameVar name="distillery-ezra-question" value="family"/>    
+    <line speaker="junebug">Well, I've got Johnny. `The <variable name="motorcycle-name"/>`. I've got you folks right now. Is that a family?</line>
+    <line speaker="junebug">Let's call it what it is. Junebug and the people she surrounds herself with. See? It means something. It makes a claim. It's specific.</line>
+  </scene>
+
+  <scene name="boyfriend" nextScene="specific">
+    <setGameVar name="distillery-ezra-question" value="boyfriend"/>    
+    <line speaker="junebug">Naw — what's a `boyfriend`, anyway? It's a word people use because everyone else does. Doesn't mean anything to me. He's my cricket.</line>
+    <line speaker="junebug">See? It means something. It's specific.</line>
+  </scene>
+
+  <scene name="specific">
+    <option goto="be-specific" speaker="ezra">I want to be ... `specific`.</option>
+    <option goto="lonely" speaker="ezra">It sounds lonely.</option>
+  </scene>
+
+  <scene name="be-specific" nextScene="junebug-bio">
+    <line speaker="junebug">I think you are. It's the middle of the night, and here you are in a graveyard. Any other kid your age would be in bed.</line>
+  </scene>
+
+  <scene name="lonely" nextScene="junebug-bio">
+    <line speaker="junebug">Not for us.</line>
+  </scene>
+
+  <scene name="junebug-bio">
+    <line speaker="junebug">You've just got to make choices and own them. You think I was born this foxy? I came off the assembly line about a half-foot shorter, and all gray. No eyes.</line>
+    <line speaker="junebug">They were going to have us clearing out the old mine. Doesn't matter what you look like under all that rock and water: a bunch of gray shadows shoveling and hammering invisibly at the walls, draining the tunnels.</line>
+    <line speaker="junebug">Johnny found some gear — an old tape player. We hid away in an underwater cave and listened to it over and over, and we knew we weren't miners ...</line>
+    <line speaker="junebug">We slipped out onto the road, just these two featureless shadows, and ever since that night we've been detailing. Coloring in. Specifying.</line>
+    <line speaker="junebug">I feel more like myself every day.</line>
+    
+    <option goto="ezra-miss-family" speaker="ezra">I feel less like myself, without my folks.</option>
+    <option goto="ezra-julian" speaker="ezra">I feel more like myself when it's just me and Julian.</option>
+    <option goto="ezra-musician" speaker="ezra">I think I should be a musician, too.</option>
+  </scene>
+
+  <scene name="ezra-miss-family" nextScene="end">
+    <setGameVar name="distillery-ezra-self" value="family"/>
+    
+    <line speaker="junebug">Sure. Some people are born into a family. Nothing wrong with that.</line>
+  </scene>
+
+  <scene name="ezra-julian" nextScene="end">
+    <setGameVar name="distillery-ezra-self" value="julian"/>
+    
+    <line speaker="junebug">Well, there — now you're getting specific.</line>
+  </scene>
+
+  <scene name="ezra-musician" nextScene="end">
+    <setGameVar name="distillery-ezra-self" value="musician"/>
+    
+    <line speaker="junebug">Is that right? I'll have to keep an eye on you.</line>
+  </scene>
+
+</conversation>

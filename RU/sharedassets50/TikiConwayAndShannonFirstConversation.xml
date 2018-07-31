@@ -1,0 +1,102 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="start-ending-hint-timer">
+  <scene name="intro">
+    <setGameVar name="tiki-shannon-talked-to-conway" value="true" />
+    <line speaker="conway">There she is! You have to try one of these flower drinks.</line>
+    <line speaker="conway">I feel like I could drink a hundred of them. Not too sweet, not too strong, you know? A real `session` drink.</line>
+    <option goto="scraping-off-sand" speaker="shannon">We'll be scraping you off the beach!</option>
+    <option goto="drink-name" speaker="shannon">What's it called?</option>
+  </scene>
+
+  <scene name="scraping-off-sand" nextScene="conway-flower-story">
+    <line speaker="conway">Naw, it's not one of those ... not one of those really strong drinks. Just sort of ...</line>
+  </scene>
+
+  <scene name="drink-name" nextScene="conway-flower-story">
+    <line speaker="conway">I think he said it was a ... well ... how do you like that? I'll just show him the flower. "Another one of these!" I'll say. And then I'll point to the flower. Maybe I'll wear it in my hair! Ha ha.</line>
+  </scene>
+
+  <scene name="conway-flower-story" nextScene="flower-story-route">
+    <line speaker="conway">It doesn't `taste` like a flower. I mean, not like a flower smells. You know: perfumed, sickly-sweet. Like a ... like a `star-thistle` flower.</line>
+  </scene>
+
+  <scene name="flower-story-route">
+    <goto sceneName="flower-story-father" condition="one:conway-family-illness=father" />
+    <goto sceneName="flower-story-mother" condition="one:conway-family-illness=mother" />
+    <goto sceneName="flower-story-conway" />
+  </scene>
+
+  <scene name="flower-story-father" nextScene="after-story">
+    <line speaker="conway">You know, my dad was obsessed with those awful weeds. We had a small house just about leaned up against a hill, and every spring that hill would `explode` with yellow star-thistle.</line>
+    <line speaker="conway">... and he'd tear into them. Angry — I mean, really offended by it. He said they were an `invasive species`! Like foreign squatters on his land or something ... I used to think he was such a stupid old man to take it so personal.</line>
+    <line speaker="conway">After he died, I mean a few years after, I came by the house again. It was spring, but I didn't see a single yellow flower on that hill. He must have finally got them. Or maybe they followed him home. Ha ha.</line>
+  </scene>
+
+  <scene name="flower-story-mother" nextScene="after-story">
+    <line speaker="conway">You know, my mother was obsessed with those awful weeds. We had a small house just about leaned up against a hill, and every spring that hill would explode with yellow star-thistle.</line>
+    <line speaker="conway">... and she'd tear into them. Wild — I mean, really enraged by it. She said they were an `invasive species`! Like foreign squatters on her land or something ... I used to think she was such a wicked old lady to get so violent about it.</line>
+    <line speaker="conway">After she died, I mean a few years after, I came by the house again. It was spring, but I didn't see a single yellow flower on that hill. She must have finally got them. Or maybe they followed her home. Ha ha.</line>
+  </scene>
+
+  <scene name="flower-story-conway" nextScene="after-story">
+    <line speaker="conway">One of my first long haul gigs ended in a crash; did I tell you about that?</line>
+    <line speaker="conway">It wasn't so bad, actually. I swerved to dodge some stray cattle, hit a stump on the side of the road, and flipped the trailer.</line>
+    <line speaker="conway">The whole rig went twisting down into a muddy ditch — it was spring — and I blacked out. I don't think I hit anything, it was just the shock of it, or maybe my brain bounced against the inside of my skull or something.</line>
+    <line speaker="conway">Anyway, I woke up and I'd been thrown clear. Never worn a seatbelt since.</line>
+    <line speaker="conway">Oh, why'd I bring that up ... star-thistle! I woke up in a field of star-thistle. The first thing I thought was: "what are all these damn ugly flowers?" Ha ha.</line>
+  </scene>
+  
+  <scene name="after-story">
+    <line speaker="conway">More old stuff ... I'm `drowning` in old stuff tonight. Feels like I've got it piled up all around me, like one of those old guys you hear about who never threw anything away — you know what I mean?</line>
+
+    <option goto="slow-down" speaker="shannon">Hey, maybe you should slow down ...</option>
+    <option goto="stay-in-the-present" speaker="shannon">Don't worry about all that stuff, just try to, uh ... stay in the "here and now."</option>
+  </scene>
+
+  <scene name="slow-down" nextScene="clutter">
+    <line speaker="conway">Oh, no, I don't think so ...</line>
+    <line speaker="conway">In fact, I could use a few more of these `(indicating his drink)`. Just take a book of matches to the room - that should clear everything right up! Know what I mean?</line>    
+  </scene>
+
+  <scene name="stay-in-the-present" nextScene="clutter">
+    <line speaker="conway">Yeah, it's a nice idea. But I'll tell you what I'm learning tonight — I don't `belong` in the "here and now." That check's been cashed.</line>
+  </scene>
+  
+  <scene name="clutter">
+    <line speaker="conway">Sorry, I'm not making sense, am I? Ha ha.</line>
+    <line speaker="conway">I just mean to say I'm ... I can't look at anything without remembering something else, and then that reminds me of something `else`, and — I'm buried in it. I just need to get my head clear for a minute, get a clear view of the day, get oriented ...</line>
+    <line speaker="conway">There was a time, when I felt this way, I'd bite the bullet — try to sober up and get a job ...</line>
+    
+    <option goto="distillery" speaker="shannon">Is that why you're going to work for the distillery?</option>
+    <option goto="new-kind-of-work" speaker="shannon">I think I feel the same way ... maybe I'll have to find a new kind of work now.</option>
+    <option goto="cant-just-work" speaker="shannon">Work is therapeutic for me, too.</option>
+  </scene>
+
+  <scene name="distillery" nextScene="look-at-water">
+    <line speaker="conway">Hm. Maybe it is. Seems like a pretty simple answer, right? Just follow the work as long as you can ...</line>
+    <line speaker="conway">Ha ha. You've got me all figured out ...</line>
+  </scene>
+
+  <scene name="new-kind-of-work">
+    <line speaker="conway">There you go — that's the entrepreneurial spirit!</line>
+
+    <option goto="not-new-business" speaker="shannon">I don't really mean starting another business.</option>
+    <option goto="computers-are-ugly" speaker="shannon">Maybe I'll get into computers or something. They're just so damn ugly ...</option>
+  </scene>
+
+  <scene name="not-new-business" nextScene="look-at-water">
+    <line speaker="conway">Hm. I don't think I follow your meaning ... but I guess that's not really my role to play. For me, it's more like: "get out of the way and let the younger, stronger, smarter folks get to work." Ha ha.</line>
+  </scene>
+  
+  <scene name="computers-are-ugly" nextScene="look-at-water">
+    <line speaker="conway">Well, I guess I've got something in common with a computer after all! Ha ha.</line>
+  </scene>
+  
+  <scene name="cant-just-work" nextScene="look-at-water">
+    <line speaker="conway">"Work is play for mortal stakes." Or so they say in church ...</line>
+  </scene>
+  
+  <scene name="look-at-water" nextScene="end">
+    <line speaker="conway">Hey, I'm going to sit and look at the water for a minute. I'll talk to you later. Don't be a stranger.</line>
+  </scene>
+</conversation>

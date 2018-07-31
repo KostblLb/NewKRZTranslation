@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />
+    <line>See that rough circle of rocky protrusions, near the shore? It's more intricate than it looks; more than two-thirds of it is actually underwater. I haven't seen it myself, but listen to this:</line>
+    <line>It's man-made, and the rocks weren't placed according to their size, so what's visible is a more or less uniformly random selection of the overall shape. It looks like it might be a spiral, all told, or maybe some kind of meditative labyrinth.</line>
+    <line>At the head of it is a petrified oak stump. That was moved here from above ground, of course, decades ago. That's where the ceremony took place.</line>
+    <line>The Locke-Lucks were married here. Many frail-tongued observers said they should just go with "Locke" or "Luck," or split the difference with "Look," or even "Lick," or really anything else, but it was never going to happen.</line>
+    <option goto="prison">Marge Luck and Errol Locke met in prison.</option>
+    <option goto="high-school">Greta Luck and Norm Locke were high-school sweethearts.</option>
+    <option goto="dmv">Billy Luck and W.H. Locke met in line at the DMV.</option>
+  </scene>
+
+  <scene name="prison" nextScene="families">
+    <line>She was a volunteer teaching conflict mediation skills to guards, and he was employed at the side gate accepting deliveries and greeting visitors. Neither of them once saw a prisoner.</line>
+  </scene>
+
+  <scene name="high-school" nextScene="families">
+    <line>They took a chemistry class together where she challenged him to "shoot the moon" — learning formulae and compounds well enough to answer every test question exactly wrong, and achieve a perfect failing grade.</line>
+  </scene>
+
+  <scene name="dmv" nextScene="families">
+    <line>Their driver's license photographs were mixed up by the clerk, a mistake they discovered immediately but never corrected.</line>
+  </scene>
+
+  <scene name="families">
+    <line>Their engagement was welcome news for the family businesses, who had been looking for some opportunity to merge interests.</line>
+    <option goto="newspaper">The Lockes ran a busy printing press, and the Lucks managed a fleet of bicycle couriers.</option>
+    <option goto="elephants">These were the Lockes of 'Locke Large Animal Storage,' and the Lucks of the 'Luck Family Nut Company.'</option>
+  </scene>
+
+  <scene name="newspaper" nextScene="wedding">
+    <line>The natural next step was to start a local paper, what would become `The Echo River Evening Record`.</line>
+  </scene>
+
+  <scene name="elephants" nextScene="wedding">
+    <line>Surely someone in some branch of those two great trees had elephant husbandry on the brain. This is all speculation.</line>
+  </scene>
+
+  <scene name="wedding">
+    <line>The ceremony itself was humble and perfunctory, and it must have somehow involved these rocks.</line>
+    <option goto="closing">Maybe they walked around them in a spiral, like a symbol of their ever-tightening bond.</option>
+    <option goto="closing">Probably the rocks marked the boundaries between the two families, Lucks on the inner loop and Lockes on the outer, or the other way around.</option>
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line>And it must have also involved that petrified stump. Neither family is particularly religious, but rumors persist that the officiant wore a robe.</line>
+[  </scene>
+
+</conversation>

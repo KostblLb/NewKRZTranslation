@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-bookshelf" value="true"/>
+    <line>A bookshelf was carried only partway up the path here, before the project was abandoned. It's still useful. The peak of the spire is crowded, anyway.</line>
+  </scene>
+</conversation>

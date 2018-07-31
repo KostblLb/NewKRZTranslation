@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="crater-looked-at-crater" value="true"/>
+    <line>A smoking hole is carved impressively into the ground. Whatever caused it must have burned up.</line>
+  </scene>
+</conversation>

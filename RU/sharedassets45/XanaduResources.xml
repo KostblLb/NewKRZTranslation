@@ -1,0 +1,339 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="day">
+    <setGameVar name="xanadu-next-scene" value="end"/>
+  </scene>
+  
+  <scene name="day" nextScene="day-options">
+    <audioFade clip="skeleton-alarm" direction="out" speed="2"/>
+    <audioFade clip="computers" direction="in" speed="0.5"/>
+    <audioFade clip="resources" direction="to" speed="0.5" target="0.25"/>
+    <line speaker="xanadu" style="xanadu">Now is the time to continue your work.</line>
+
+    <line condition="xanadu-resources-time=3" speaker="shannon">I'm not convinced this is getting us any closer to the |Zero|.</line>
+    <line condition="xanadu-resources-time=5" speaker="shannon">Maybe we should try to start over or something? This doesn't seem to be helping.</line>
+    
+    <line event="xanadu-reset-day,display-resources" speaker="xanadu" style="xanadu">Research assistants: ... <variable name="xanadu-resources-assistants"/>
+    Realism index: ......... <variable name="xanadu-resources-realism"/>%
+    Romance index: ......... <variable name="xanadu-resources-romance"/>%
+    Mold coverage: ......... <variable name="xanadu-resources-mold"/>%</line>
+    
+    <line speaker="xanadu" style="xanadu">You may *HIRE* a new research assistant, *ASSIGN* assistants to a task, or *SLEEP* until tomorrow.</line>
+  </scene>
+  
+  <scene name="day-options">
+    <triggerEvent name="camera-close"/>
+    <option condition="!xanadu-resources-hired-today+xanadu-resources-assistants-hireable[gt]0" goto="hire" speaker="shannon">Hire a new research assistant.</option>
+    <option condition="xanadu-resources-hired-today+xanadu-resources-assistants-hireable[gt]0" goto="already-hired" speaker="shannon">Hire a new research assistant.</option>
+    <option condition="xanadu-resources-assistants-hireable=0" goto="hired-all" speaker="shannon">Hire a new research assistant.</option>
+    <option goto="assign" speaker="shannon">Assign assistants to a task.</option>
+    <option goto="advance-day" speaker="shannon">Sleep.</option>
+    <option condition="xanadu-resources-time[gt]2+!xanadu-resources-tried-to-quit" goto="quit-confirm" speaker="shannon">Try to quit and start over.</option>
+    <option condition="xanadu-resources-tried-to-quit" goto="quit-wait" speaker="shannon">Maybe we have to wait it out.</option>
+  </scene>
+
+  <!-- Hire assistants -->
+  <scene name="already-hired" nextScene="day-options">
+    <line speaker="conway">`(Typing.)` ~Hire.~</line>
+    <line speaker="xanadu" style="xanadu">Uploading job advertisement to university message boards ...</line>
+    <line speaker="xanadu" style="xanadu">No new applicants. Try again later.</line>
+  </scene>
+  
+  <scene name="hired-all" nextScene="day-options">
+    <line speaker="conway">`(Typing.)` ~Hire.~</line>
+    <line speaker="xanadu" style="xanadu">Uploading job advertisement to university message boards ...</line>
+    <line speaker="xanadu" style="xanadu">Connection failed. University message boards have been discontinued.</line>
+  </scene>
+  
+  <scene name="hire" nextScene="hire-result">
+    <line speaker="conway">`(Typing.)` ~Hire.~</line>
+    <line event="xanadu-new-hire" speaker="xanadu" style="xanadu">Uploading job advertisement to University message boards ...</line>
+  </scene>
+
+  <scene name="hire-result" nextScene="day-options">
+    <line condition="xanadu-resources-last-hire=mary_ann" speaker="xanadu" style="xanadu">You have hired Mary Ann, who studies fine art.</line>
+    <line condition="xanadu-resources-last-hire=rick" speaker="xanadu" style="xanadu">You have hired Rick, who studies library sciences.</line>
+    <line condition="xanadu-resources-last-hire=greg" speaker="xanadu" style="xanadu">You have hired Greg, who studies architecture.</line>
+    <line condition="xanadu-resources-last-hire=weaver" speaker="xanadu" style="xanadu">You have hired Weaver, who studies mathematics.</line>
+    
+    <line condition="xanadu-resources-last-hire=andrew" speaker="xanadu" style="xanadu">You have hired Andrew, who studies statistics.</line>
+    <line condition="xanadu-resources-last-hire=amy" speaker="xanadu" style="xanadu">You have hired Amy, who studies human-computer interaction.</line>
+    <line condition="xanadu-resources-last-hire=roberta" speaker="xanadu" style="xanadu">You have hired Roberta, who studies fairy tales.</line>
+  </scene>
+
+  <!-- Assign research -->
+  <scene name="assign" nextScene="day-options">
+    <line speaker="conway">`(Typing.)` ~Assign.~</line>
+    <line condition="xanadu-resources-today-available-assistants=0" speaker="xanadu" style="xanadu">You currently have no available research assistants to assign.</line>
+    <line condition="xanadu-resources-today-available-assistants[gt]0" speaker="xanadu" style="xanadu">You may assign research assistants to *DEBUGGING*, *TRANSCRIPTION*, or *SPECULATION*.</line>
+
+    <option condition="xanadu-resources-today-available-assistants[gt]1" goto="assign-debugging" speaker="shannon">Debugging.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]1" goto="assign-transcription" speaker="shannon">Transcription.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]1" goto="assign-speculation" speaker="shannon">Speculation.</option>
+
+    <option condition="xanadu-resources-today-available-assistants=1" goto="assign-debugging-1-only" speaker="shannon">Debugging.</option>
+    <option condition="xanadu-resources-today-available-assistants=1" goto="assign-transcription-1-only" speaker="shannon">Transcription.</option>
+    <option condition="xanadu-resources-today-available-assistants=1" goto="assign-speculation-1-only" speaker="shannon">Speculation.</option>
+  </scene>
+
+  <scene name="assign-debugging">
+    <line speaker="xanadu" style="xanadu">You have <variable name="xanadu-resources-today-available-assistants"/> research assistants available today. Assign how many to *DEBUGGING*?</line>
+
+    <option condition="xanadu-resources-today-available-assistants[gt]0" event="xanadu-assign-debugging-1" goto="complete-assignment-one" speaker="shannon">One.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]1" event="xanadu-assign-debugging-2" goto="complete-assignment-two" speaker="shannon">Two.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]2" event="xanadu-assign-debugging-3" goto="complete-assignment-three" speaker="shannon">Three.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]3" event="xanadu-assign-debugging-4" goto="complete-assignment-four" speaker="shannon">Four.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]4" event="xanadu-assign-debugging-5" goto="complete-assignment-five" speaker="shannon">Five.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]5" event="xanadu-assign-debugging-6" goto="complete-assignment-six" speaker="shannon">Six.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]6" event="xanadu-assign-debugging-7" goto="complete-assignment-seven" speaker="shannon">Seven.</option>    
+  </scene>
+
+  <scene name="assign-transcription">
+    <line speaker="xanadu" style="xanadu">You have <variable name="xanadu-resources-today-available-assistants"/> research assistants available today. Assign how many to *TRANSCRIPTION*?</line>
+
+    <option condition="xanadu-resources-today-available-assistants[gt]0" event="xanadu-assign-transcription-1" goto="complete-assignment-one" speaker="shannon">One.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]1" event="xanadu-assign-transcription-2" goto="complete-assignment-two" speaker="shannon">Two.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]2" event="xanadu-assign-transcription-3" goto="complete-assignment-three" speaker="shannon">Three.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]3" event="xanadu-assign-transcription-4" goto="complete-assignment-four" speaker="shannon">Four.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]4" event="xanadu-assign-transcription-5" goto="complete-assignment-five" speaker="shannon">Five.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]5" event="xanadu-assign-transcription-6" goto="complete-assignment-six" speaker="shannon">Six.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]6" event="xanadu-assign-transcription-7" goto="complete-assignment-seven" speaker="shannon">Seven.</option>    
+  </scene>
+
+  <scene name="assign-speculation">
+    <line speaker="xanadu" style="xanadu">You have <variable name="xanadu-resources-today-available-assistants"/> research assistants available today. Assign how many to *SPECULATION*?</line>
+
+    <option condition="xanadu-resources-today-available-assistants[gt]0" event="xanadu-assign-speculation-1" goto="complete-assignment-one" speaker="shannon">One.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]1" event="xanadu-assign-speculation-2" goto="complete-assignment-two" speaker="shannon">Two.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]2" event="xanadu-assign-speculation-3" goto="complete-assignment-three" speaker="shannon">Three.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]3" event="xanadu-assign-speculation-4" goto="complete-assignment-four" speaker="shannon">Four.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]4" event="xanadu-assign-speculation-5" goto="complete-assignment-five" speaker="shannon">Five.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]5" event="xanadu-assign-speculation-6" goto="complete-assignment-six" speaker="shannon">Six.</option>
+    <option condition="xanadu-resources-today-available-assistants[gt]6" event="xanadu-assign-speculation-7" goto="complete-assignment-seven" speaker="shannon">Seven.</option>    
+  </scene>
+
+  <scene name="assign-debugging-1-only" nextScene="day-options">
+    <line event="xanadu-assign-debugging-1" speaker="xanadu" style="xanadu">Assigning available research assistant to *DEBUGGING*.</line>    
+  </scene>
+  
+  <scene name="assign-transcription-1-only" nextScene="day-options">
+    <line event="xanadu-assign-transcription-1" speaker="xanadu" style="xanadu">Assigning available research assistant to *TRANSCRIPTION*.</line>    
+  </scene>
+  
+  <scene name="assign-speculation-1-only" nextScene="day-options">
+    <line event="xanadu-assign-speculation-1" speaker="xanadu" style="xanadu">Assigning available research assistant to *SPECULATION*.</line>    
+  </scene>
+
+  <scene name="complete-assignment-one" nextScene="day-options">
+    <line event="xanadu-assign-research" speaker="conway">`(Typing.)` ~One.~</line>
+  </scene>
+  
+  <scene name="complete-assignment-two" nextScene="day-options">
+    <line event="xanadu-assign-research" speaker="conway">`(Typing.)` ~Two.~</line>
+  </scene>
+  
+  <scene name="complete-assignment-three" nextScene="day-options">
+    <line event="xanadu-assign-research" speaker="conway">`(Typing.)` ~Three.~</line>
+  </scene>
+  
+  <scene name="complete-assignment-four" nextScene="day-options">
+    <line event="xanadu-assign-research" speaker="conway">`(Typing.)` ~Four.~</line>
+  </scene>
+  
+  <scene name="complete-assignment-five" nextScene="day-options">
+    <line event="xanadu-assign-research" speaker="conway">`(Typing.)` ~Five.~</line>
+  </scene>
+  
+  <scene name="complete-assignment-six" nextScene="day-options">
+    <line event="xanadu-assign-research" speaker="conway">`(Typing.)` ~Six.~</line>
+  </scene>
+  
+  <scene name="complete-assignment-seven" nextScene="day-options">
+    <line event="xanadu-assign-research" speaker="conway">`(Typing.)` ~Seven.~</line>
+  </scene>
+  
+  <!-- Advance day -->
+  <scene name="advance-day" nextScene="progress-update">
+    <audioFade clip="computers" destroy="false" direction="out" speed="0.5"/>
+    <audioFade clip="resources" direction="to" speed="0.5" target="1"/>
+    
+    <line speaker="conway">`(Typing.)` ~Sleep.~</line>    
+    <line event="xanadu-advance-day" pause="false" speaker="xanadu" style="xanadu">Time passes.</line>
+  </scene>
+
+  <scene name="progress-update" nextScene="special-events">
+    <line condition="xanadu-resources-message-count[gt]0" speaker="xanadu" style="xanadu"><variable name="xanadu-resources-message-1"/></line>
+    <line condition="xanadu-resources-message-count[gt]1" speaker="xanadu" style="xanadu"><variable name="xanadu-resources-message-2"/></line>
+    <line condition="xanadu-resources-message-count[gt]2" speaker="xanadu" style="xanadu"><variable name="xanadu-resources-message-3"/></line>
+    <line condition="xanadu-resources-message-count[gt]3" speaker="xanadu" style="xanadu"><variable name="xanadu-resources-message-4"/></line>
+    <line condition="xanadu-resources-message-count[gt]4" speaker="xanadu" style="xanadu"><variable name="xanadu-resources-message-5"/></line>
+    <line condition="xanadu-resources-message-count[gt]5" speaker="xanadu" style="xanadu"><variable name="xanadu-resources-message-6"/></line>
+    <line condition="xanadu-resources-message-count[gt]6" speaker="xanadu" style="xanadu"><variable name="xanadu-resources-message-7"/></line>
+  </scene>
+
+  <!-- Special events -->
+  <scene name="special-events" nextScene="day">
+    <goto condition="xanadu-resources-time=2" sceneName="event-mold"/>
+    <goto condition="xanadu-resources-time=3" sceneName="event-stranger-appearance"/>
+    <goto condition="xanadu-resources-time=4+xanadu-resources-assistants[gt]0+!xanadu-resources-hired-weaver" sceneName="event-assistant-follows-strangers"/>
+    <goto condition="xanadu-resources-time=4+xanadu-resources-assistants[gt]0+xanadu-resources-hired-weaver+!xanadu-resources-weaver-followed-strangers" sceneName="event-weaver-follows-strangers"/>    
+    <goto condition="xanadu-resources-time=5" sceneName="event-mold"/>
+    <goto condition="xanadu-resources-time=7" sceneName="event-stranger-appearance"/>
+    <goto condition="xanadu-resources-time=8+xanadu-resources-assistants[gt]0+!xanadu-resources-hired-weaver" sceneName="event-assistant-follows-strangers"/>
+    <goto condition="xanadu-resources-time=8+xanadu-resources-assistants[gt]0+xanadu-resources-hired-weaver+!xanadu-resources-weaver-followed-strangers" sceneName="event-weaver-follows-strangers"/>    
+    <goto condition="xanadu-resources-time=9" sceneName="event-mold"/>
+    <goto condition="xanadu-resources-time=12" sceneName="event-stranger-appearance-short"/>
+    <goto condition="xanadu-resources-time=13+xanadu-resources-assistants[gt]0+!xanadu-resources-hired-weaver" sceneName="event-assistant-follows-strangers"/>
+    <goto condition="xanadu-resources-time=13+xanadu-resources-assistants[gt]0+xanadu-resources-hired-weaver+!xanadu-resources-weaver-followed-strangers" sceneName="event-weaver-follows-strangers"/>    
+    <goto condition="xanadu-resources-time=16" sceneName="event-stranger-appearance-short"/>
+    <goto condition="xanadu-resources-time=17+xanadu-resources-assistants[gt]0+!xanadu-resources-hired-weaver" sceneName="event-assistant-follows-strangers"/>
+    <goto condition="xanadu-resources-time=17+xanadu-resources-assistants[gt]0+xanadu-resources-hired-weaver+!xanadu-resources-weaver-followed-strangers" sceneName="event-weaver-follows-strangers"/>    
+    <goto condition="xanadu-resources-time[gt]17" sceneName="party-appears"/>
+    
+    <goto condition="xanadu-resources-realism[gt]70+!xanadu-resources-saw-event-power-bill" sceneName="event-power-bill"/>
+    <goto condition="xanadu-resources-realism[gt]90+!xanadu-resources-saw-event-nutritional-meal" sceneName="event-nutritional-meal"/>
+    <goto condition="xanadu-resources-romance[gt]60+!xanadu-resources-saw-event-donald-dream" sceneName="event-donald-dream"/>
+    <goto condition="xanadu-resources-romance[gt]90+!xanadu-resources-saw-event-crystal-garden" sceneName="event-crystal-garden"/>    
+  </scene>
+
+  <scene name="event-power-bill" nextScene="day">
+    <setGameVar name="xanadu-resources-saw-event-power-bill" value="true"/>    
+    <line speaker="xanadu" style="xanadu">A mail carrier on bicycle brings you a sizable bill from the power company.</line>
+  </scene>
+  
+  <scene name="event-nutritional-meal" nextScene="day">
+    <setGameVar name="xanadu-resources-saw-event-nutritional-meal" value="true"/>
+    <line speaker="xanadu" style="xanadu">You prepare a nutritional meal of boiled cave moss, seasoned with a salty, translucent paste you've harvested (at great personal risk) from stalactites.</line>
+  </scene>
+  
+  <scene name="event-donald-dream" nextScene="day">
+    <setGameVar name="xanadu-resources-saw-event-donald-dream" value="true"/>
+    <line speaker="xanadu" style="xanadu">You dream fitfully.</line>
+    <line speaker="xanadu" style="xanadu">You, *LULA*, and *JOSEPH* stand in a hallway. The walls are blank beige. It's just after winter quarter, but before spring, so there are no students around.</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* says something clever, and *LULA* leans on his shoulder.</line>
+    <line speaker="xanadu" style="xanadu">You wish that, instead, she had taken your hand, or that there were any other option.</line>
+  </scene>
+  
+  <scene name="event-crystal-garden" nextScene="day">
+    <setGameVar name="xanadu-resources-saw-event-crystal-garden" value="true"/>
+    <line speaker="xanadu" style="xanadu">Your habit of absentmindedly chipping away at cave crystals and sprinkling their dust in the air behind you has paid off.</line>
+    <line speaker="xanadu" style="xanadu">Just a few feet down one of the tunnels blooms a small but kaleidoscopic garden of crystals.</line>
+  </scene>
+  
+  <scene name="event-mold" nextScene="day">
+    <line speaker="xanadu" style="xanadu">Greasy, black mold is collecting on the computer equipment.</line>
+  </scene>
+
+  <scene name="event-stranger-appearance" nextScene="day">
+    <audioFade clip="skeleton-alarm" direction="in" speed="1"/>
+    <audioFade clip="resources" direction="to" speed="1" target="0.25"/>
+    
+    <triggerEvent name="pdp-skeletons-appear"/>
+    <setGameVar name="xanadu-resources-stranger-appearances" value="+1"/>
+    
+    <line speaker="xanadu" style="xanadu">Intruders!</line>
+    <line speaker="xanadu" style="xanadu">The strangers are doing something to the equipment, but you can't make out what.</line>
+    <line speaker="xanadu" style="xanadu">You hide behind a rock until they leave.</line>
+    <line event="pdp-skeletons-disappear" speaker="xanadu" style="xanadu">With trepidation, you emerge from your hiding place, hours later.</line>
+  </scene>
+
+  <scene name="event-stranger-appearance-short" nextScene="day">
+    <triggerEvent name="pdp-skeletons-appear"/>
+    <setGameVar name="xanadu-resources-stranger-appearances" value="+1"/>
+    
+    <line speaker="xanadu" style="xanadu">Intruders!</line>
+    <line event="pdp-skeletons-disappear" speaker="xanadu" style="xanadu">Finally, they leave.</line>
+  </scene>
+
+  <scene name="event-assistant-follows-strangers" nextScene="day">
+    <triggerEvent name="assistant-follows-strangers"/>
+    <line speaker="xanadu" style="xanadu"><variable name="xanadu-resources-assistant-who-followed-strangers"/> follows the strangers down a tunnel to investigate, and is never seen again.</line>
+  </scene>
+
+  <scene name="event-weaver-follows-strangers" nextScene="day">
+    <triggerEvent name="weaver-follows-strangers"/>
+    <setGameVar name="xanadu-resources-weaver-followed-strangers" value="true"/>
+    <line speaker="xanadu" style="xanadu">Weaver follows the strangers into the tunnels. She doesn't return, but neither do they.</line>
+  </scene>
+
+  <!-- Quit -->
+  <scene name="quit-confirm">
+    <line speaker="ezra">I want to keep playing.</line>
+
+    <option goto="day-options" speaker="shannon">OK. Sure, we can keep playing.</option>
+    <option goto="quit" speaker="shannon">Come on, kid, we've got stuff to do.</option>
+  </scene>
+
+  <scene name="quit">
+    <audioFade clip="resources" direction="to" speed="0.5" target="0.8"/>
+    <audioFade clip="computers" direction="out" speed="0.5"/>
+    <triggerEvent name="camera-full"/>
+    <triggerEvent name="display-pdp"/>    
+    
+    <setGameVar name="xanadu-resources-tried-to-quit" value="true"/>
+    <line speaker="conway">`(Typing.)` ~Quit.~</line>
+    <line speaker="xanadu" style="xanadu">Are you sure you want to quit?</line>
+    <line speaker="conway">`(Typing.)` ~Yes.~</line>
+    <line speaker="xanadu" style="xanadu">That was a rhetorical question.</line>
+
+    <option goto="quit-game" speaker="shannon">Hm. &quot;Quit game&quot;?</option>
+    <option goto="exit" speaker="shannon">Hm. &quot;Exit&quot;?</option>
+  </scene>
+
+  <scene name="quit-game" nextScene="quit-other-ideas">
+    <line speaker="conway">`(Typing.)` ~Quit game.~</line>
+    <line speaker="xanadu" style="xanadu">I only understood you as far as wanting to quit.</line>
+  </scene>
+
+  <scene name="exit" nextScene="quit-other-ideas">
+    <line speaker="conway">`(Typing.)` ~Exit.~</line>
+    <line speaker="xanadu" style="xanadu">But you aren't in anything at the moment.</line>
+  </scene>
+
+  <scene name="quit-other-ideas">
+    <line speaker="shannon">Maybe we have to lose or die somehow in order to start over?</line>
+
+    <option goto="quit-eat-lamp" speaker="ezra">Eat the lamp!</option>
+    <option goto="quit-smash-computer" speaker="junebug">Smash the computer!</option>
+  </scene>
+
+  <scene name="quit-eat-lamp" nextScene="quit-final">
+    <line speaker="conway">`(Typing.)` ~Eat lamp.~</line>
+    <line speaker="xanadu" style="xanadu">Don't be ridiculous.</line>
+  </scene>
+
+  <scene name="quit-smash-computer" nextScene="quit-final">
+    <line speaker="conway">`(Typing.)` ~Smash computer.~</line>
+    <line speaker="xanadu" style="xanadu">Violence isn't the answer to this one.</line>
+  </scene>
+
+  <scene name="quit-final">
+    <option goto="quit-wait" speaker="shannon">Maybe we have to wait it out.</option>
+    <option goto="day" speaker="shannon">I guess we can keep playing.</option>
+  </scene>
+
+  <scene name="quit-wait" nextScene="party-appears">
+    <line speaker="conway">`(Typing.)` ~Wait indefinitely.~</line>
+    <line speaker="xanadu" style="xanadu">Time passes.</line>
+  </scene>
+
+  <scene name="party-appears" nextScene="end">
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+    <audioFade clip="end" direction="in" speed="0.25"/>
+
+    <triggerEvent name="back-to-hotmk"/>
+    
+    <line condition="!xanadu-resources-weaver-followed-strangers" speaker="xanadu" style="xanadu">Research assistants come and go. One of them, the mathematician named Weaver, follows the strangers into the tunnels. She doesn't return, but neither do they.</line>
+    <line condition="xanadu-resources-weaver-followed-strangers" speaker="xanadu" style="xanadu">Research assistants come and go. You don't encounter the strangers again, but sometimes you can hear the uncanny echoes of their voices, off in the tunnels.</line>
+    <line speaker="xanadu" style="xanadu">Years pass. Mold accumulates. You and the remaining research assistants take to burning disused equipment in the center of the room. The black mold is intensely flammable and makes an excellent catalyst. It leaves behind a sweet, narcotic perfume.</line>
+    <line speaker="xanadu" style="xanadu">One night, you have visitors. Outsiders. Different ones. Then, later that night, an old friend.</line>
+    <line speaker="lula" style="xanadu">You really did go deeper into the caves.</line>
+    <line event="camera-full" speaker="xanadu" style="xanadu">Premature end of file. Press any key to quit.</line>
+    
+    <line speaker="shannon">Huh.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,74 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="end-collapse-conversation">
+  <scene name="intro">
+    <setGameVar name="storage-conway-collapsed" value="true"/>
+    <setGameVar name="underworld-nap-hint" value="Bureau"/>
+    
+    <line speaker="shannon">Jesus! Are you alright? What the hell.</line>
+    <option goto="intro-ok" speaker="conway">I'm OK.</option>
+    <option goto="stuck-leg" speaker="conway">My leg is stuck.</option>
+  </scene>
+
+  <scene name="intro-ok" nextScene="pull-out">
+    <line speaker="shannon">I've got you. You're alright. Shit. Your leg is pinned. I'm going to pull you out; we have to get you out of here.</line>
+  </scene>
+
+  <scene name="stuck-leg" nextScene="pull-out">
+    <line speaker="shannon">Shit. OK, I'm going to pull you out; we have to get you out of here.</line>
+  </scene>
+
+  <scene name="pull-out">
+    <line speaker="shannon">There you go. OK. Are you hurt? Can you put any weight on that leg?</line>
+    <option goto="broken-leg" speaker="conway">It's all messed up.</option>
+    <option goto="leg-ok" speaker="conway">It's fine.</option>
+  </scene>
+
+  <scene name="leg-ok" nextScene="broken-leg">
+    <line speaker="shannon">Just try to stand up. Careful. I'm right here.</line>
+    <line speaker="shannon">Damn! Don't worry, I've got you. That leg is in bad shape.</line>
+  </scene>
+
+  <scene name="broken-leg" nextScene="end-flashback">
+    <line speaker="shannon">Here, let's get you onto the tram.</line>
+    <line speaker="shannon">There you go. Now, let's see if this thing has power.</line>
+  </scene>
+
+  <scene name="end-flashback">
+    <triggerEvent name="end-flashback"/>
+    <line speaker="shannon">Hey. Old man. Look at me. Can you hear me?</line>
+    <line speaker="brandon">What happened?</line>
+    <line speaker="shannon">I don't know. He collapsed. I think he blacked out — he was mumbling about the old mine for a minute. The old mine where we met.</line>
+    <option goto="conway-ok" speaker="conway">I'm OK.</option>
+    <option condition="storage-listened-to-homily" goto="conway-sermon" speaker="conway">Can we listen to another one of those sermons?</option>
+    <option goto="conway-sermon" speaker="conway">Don't let me keep you, you have work to do.</option>
+    <option goto="conway-doctor" speaker="conway">I think I need to see that doctor.</option>
+  </scene>
+
+  <scene name="conway-ok" nextScene="to-bowling-green">
+    <line speaker="shannon">Bullshit. We're going to see that doctor.</line>
+  </scene>
+
+  <scene name="conway-doctor" nextScene="to-bowling-green">
+    <line speaker="shannon">Yes, you do.</line>
+  </scene>
+
+  <scene name="conway-sermon" nextScene="to-bowling-green">
+    <line speaker="shannon">What the hell are you talking about? We're going to see that doctor the clerk recommended.</line>
+  </scene>
+
+  <!--
+  <scene name="to-bowling-green" nextScene="end">
+    <line speaker="shannon">`(Hands BRANDON the doctor's card)` How do we get to this address from here?</line>
+    <line speaker="brandon">Oh. OK. Yeah, just get back on the |Zero| and drive until you hit the jawbone, then turn around and head back.</line>
+    <line speaker="brandon">This is over by Bowling Green. So once you hit the surface you'll want to just head southwest on sixty-five. Straight shot.</line>
+    <line speaker="brandon">Easy.</line>
+  </scene>
+  -->
+  
+  <scene name="to-bowling-green" nextScene="end">
+    <line speaker="shannon">`(She hands BRANDON the doctor's card.)` How do we get to this address from here?</line>
+    <line speaker="brandon">Um. I don't know. It's pretty tricky going back and forth between ... you know: `here` and `there`.</line>
+    <line speaker="brandon">The Bureau's the only way I know. Some of those folks do it all the time. &quot;Commuters.&quot;</line>
+    <line speaker="brandon">Just go back the way you came. Find the crystal, and then turn around.</line>
+  </scene>
+</conversation>

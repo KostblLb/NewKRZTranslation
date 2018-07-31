@@ -1,0 +1,88 @@
+# -*- mode: blocking -*-
+
+@set Root VignetteIntro
+@ref Manual [Root]/Manual
+
+@SetCameraZoom -4.5
+@SetCameraOffsetY 7
+@SnapStaging
+
+@SetCameraSpeedFactor 0.1
+@SetCameraZoom -3
+
+Main Enable [Root]
+Main Cursor Hide
+Main Marker Lock
+Main Player Will Player
+Main Message TugboatCameraRig SetPlayer [Root]/WillCamera
+
+Main Message Will DisableNavigation
+Main Transform Will [Root]/WillStand
+Main Message Will MarkForRender
+Main Gesture* Will Enter ManualIdle
+Main Gesture* Will Enter ManualReading
+
+Main Parent Manual* Will/*/ManualOffset
+Main Transform Manual* $Local 0,0,0
+Main Message Manual* Open
+
+Main Message Junebug/JunebugBody SetMeshConfig Dim
+Main Warp Junebug [Root]/JunebugStart
+
+Main Message TugboatStaging IntroStart
+
+Mammoth Message TugboatMammothSounds/Turning Mute
+Mammoth Message TugboatMammothSounds/Hydraulics Mute
+
+Mammoth Message TugboatMammoth GoManual
+Mammoth Message TugboatMammoth SetAngle 0.75
+Mammoth Gesture TugboatMammoth Enter Roar
+Mammoth Message TugboatMammoth SetAngle .9
+
+Mammoth Message TugboatMammothSounds/Turning Unmute
+Mammoth Message TugboatMammothSounds/Hydraulics Unmute
+
+Will Wait 4
+Will Message TugboatStaging IntroFadeIn
+Will Exec SetCameraOffsetY 0.5
+Will Sync Mammoth
+Will Gesture* Will Enter ManualScratch
+Will Wait 10
+Will Cursor Show
+Will Dialog TugboatColdOpen Arrow
+Will Cursor Hide
+Will Interact Off
+Will Marker Lock
+Will Wait 2
+Will Set tugboat-vignette Opening
+Will Set act-four-started true
+Will SceneChange Tugboat NoIncrementSceneNumber
+
+Junebug Listen enter-junebug
+Junebug Message TugboatCameraRig SetSpeedFactor 1
+Junebug Message TugboatCameraRig SetZoom 0
+Junebug Walk Junebug [Root]/JunebugAtWill
+Junebug Look Junebug Will
+
+BackgroundSound Message TugboatEnvironmentSounds SnapOutside
+BackgroundSound Audio* FadeIn engine 25
+BackgroundSound Audio* FadeIn water-ambience 5
+BackgroundSound Audio* Play mammoth-intro
+
+@func TossManual
+  Manual Gesture* Will Exit ManualIdle
+  Manual Gesture* Will Exit ManualReading
+  Manual Message Manual* Partial
+  Manual Fork Toss
+  Manual Gesture Will Enter ManualToss
+  Manual Audio Play manual-splash
+
+  Toss Wait 1.15
+  Toss Parent Manual* [Root]/ManualTrajectory/Target/Spin
+  Toss Message Manual* PlayTrajectory
+@end
+
+@func StopReading
+  Manual Gesture* Will Exit ManualReading
+  Manual Message Manual* Close
+@end

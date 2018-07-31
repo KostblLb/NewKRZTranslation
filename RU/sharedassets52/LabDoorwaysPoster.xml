@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="lab-looked-at-poster" value="true" />
+    <line speaker="jenn">Wow, I haven't seen that poster in a while! I think that was mine from college ... yeah, definitely.</line>
+    <line speaker="mimi">Oh, right, Darryl swapped it out in the redesign. Now it's ...</line>
+    <line speaker="mimi">What's there now?</line>
+    <line speaker="jenn">Yeah, it's ... that's weird, I can't picture it. I mean I can picture the wall, and there's definitely `something` hung there.</line>
+    <line speaker="mimi">That's gonna bug me.</line>
+    <line speaker="jenn">Want me to go look? It's just down the hall. Ha ha.</line>
+    <line speaker="mimi">No, it's OK ...</line>
+  </scene>
+</conversation>

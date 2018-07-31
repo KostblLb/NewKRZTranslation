@@ -1,0 +1,47 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="boat-building" destroy="true" direction="out" time="2" />
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    
+    <audioFade clip="boat-building" direction="in" time="4" />
+    
+    <setGameVar name="underworld-saw-boat" value="true"/>
+    <line>Two figures crouch over a pile of wood a few yards from the creek, occasionally hammering or making adjustments.</line>
+    <option goto="approach" insertedText="Junebug pulls the bike closer to the creek.">Approach the creek.</option>
+    <option goto="end" insertedText="Junebug stays on the highway, following the truck.">Drive on.</option>
+  </scene>
+
+  <scene name="approach">
+    <line>What looked from the road like a haphazard pile of wood is actually a worn boat. It's in poor repair. Perhaps it was abandoned, and only recently salvaged.</line>
+    <option goto="greeting" insertedText="Johnny shouts a greeting.">Shout a greeting.</option>
+    <option goto="rock" insertedText="Johnny sits on a nearby rock.">Sit down.</option>
+  </scene>
+
+  <scene name="greeting">
+    <line>There is too much work to be done. Rotten planks need to be pulled and replaced. Nails need to be driven. Gaps caulked.</line>
+    <option goto="record" insertedText="Johnny switches on the field recorder.">Turn on the field recorder.</option>
+    <option goto="rock" insertedText="Johnny sits on a nearby rock.">Sit down.</option>
+  </scene>
+
+  <scene name="rock">
+    <line>The creek is low this time of year, and the rock is only a little wet from condensation. He weighs the field recorder in his hand, listens to bending boards and hammering.</line>
+    <option goto="record" insertedText="Johnny switches on the field recorder.">Turn on the field recorder.</option>
+    <option goto="end" insertedText="Johnny walks away without recording.">Walk away.</option>
+  </scene>
+
+  <scene name="record" nextScene="stop-working">
+    <line>The recorder's red light flips on with a thrum, the take-up reel rolls forward silently for a moment before catching tape and beginning the recording.</line>
+  </scene>
+
+  <scene name="stop-working" nextScene="end">
+    <audioFade clip="boat-building" direction="out" speed="4" />
+    <line>One of the figures stops working, sets down a caulk gun, and looks over at Johnny. The other finishes tearing at a bit of rotten wood stuck to the hull, then turns.</line>
+    <line>After a minute or two, Johnny stops the recorder. File that one under &quot;water sounds.&quot;</line>
+  </scene>
+</conversation>

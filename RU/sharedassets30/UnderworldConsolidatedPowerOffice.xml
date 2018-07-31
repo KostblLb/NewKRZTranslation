@@ -1,0 +1,43 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="pulley" destroy="true" direction="out" time="2" />
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <setGameVar name="underworld-saw-power-company-office" value="true"/>
+    <triggerEvent name="fade-out-radio"/>
+    <triggerEvent name="fade-out-road-sounds"/>
+    <line>The account resolution center is several hundred feet above the ground, precariously supported by a dozen metal pipes. The wires of a pulley system run down from a hole in the floor. A thin rope dangles next to them.</line>
+    <option goto="pull-rope" insertedText="Shannon tugs on the rope a few times.">Tug on the rope.</option>
+    <option goto="end" insertedText="The truck pulls away.">Drive away.</option>
+  </scene>
+
+  <scene name="pull-rope">
+    <audioFade clip="pulley" direction="in" time="8" />
+    <line>After a few still moments, the pulley wires grind into operation and a metal bucket slowly descends.</line>
+    <line>While she watches the bucket approach, Shannon's mind wanders.</line>
+    <option goto="weaver" insertedText="She thinks about Weaver.">Think about Weaver.</option>
+    <option goto="shop" insertedText="She thinks about her shop.">Think about the shop.</option>
+  </scene>
+
+  <scene name="weaver" nextScene="bucket-appears">
+    <setGameVar name="underworld-power-company-thought-about-weaver" value="true" />    
+    <line>She wonders if Weaver is down here somewhere on the |Zero|, and what she might say about it. Probably something about its topology, its knotted surface.</line>
+    <line>She remembers a puzzle Weaver enjoyed as a teenager, about bridges and islands. Move between the islands, crossing each bridge once and and only once.</line>
+    <line>Weaver filled sketchbooks drawing these islands and bridges from memory, trying different routes. Eventually she moved on to other puzzles. Had she solved it? Given up? Or maybe she'd just drawn those bridges and islands so many times that she no longer needed paper and pencil to work on it.</line>
+  </scene>
+
+  <scene name="shop" nextScene="bucket-appears">
+    <setGameVar name="underworld-power-company-thought-about-shop" value="true" />        
+    <line>When she first moved in, the workshop was a sort of hybrid storage closet and garbage can for expired snacks. Months later, after she'd installed enough shelves and surge protectors to feel at home, she continued to find discontinued protein bars and gray candy wrappers in odd corners of the room.</line>
+    <line>It wasn't a huge shift to start sleeping there. She's always had trouble falling asleep without a droning fan or some other white noise. So, now what? Another shop, or an apartment, will need some kind of deposit ...</line>
+    <line>Maybe she can sleep outside. Trade the hiss of a dead channel for the wind in dead leaves.</line>
+  </scene>
+
+  <scene name="bucket-appears" nextScene="end">
+    <audioFade clip="pulley" direction="out" speed="4" destroy="true" />
+    <line>The pulley stops abruptly as the bucket reaches shoulder height. Inside is a handwritten note: "REGRETTABLY INDISPOSED PLEASE CALL AGAIN."</line>
+  </scene>
+</conversation>

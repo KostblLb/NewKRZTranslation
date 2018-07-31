@@ -1,0 +1,283 @@
+<songs>
+  <verse name="verse-2-1">
+    <word start="0.37" end="0.86" word="the"/>
+    <word start="0.93" end="1.42" word="hurt"/>
+    <word start="1.44" end="1.93" word="you"/>
+    <word start="1.95" end="2.8" word="left"/>
+    <word start="2.84" end="5.37" word="behind"/>
+    <word start="6.4" end="6.95" word="would"/>
+    <word start="7.02" end="7.84" word="truly"/>
+    <word start="7.86" end="9.64" word="never"/>
+    <word start="9.64" end="13.13" word="heal."/>
+    <word start="16.37" end="16.84" word="a"/>
+    <word start="16.88" end="17.42" word="hole"/>
+    <word start="17.42" end="17.84" word="where"/>
+    <word start="17.88" end="18.31" word="my"/>
+    <word start="18.31" end="19.35" word="heart"/>
+    <word start="19.35" end="23.82" word="knew"/>
+    <word start="24.73" end="25.28" word="there"/>
+    <word start="25.31" end="25.71" word="should"/>
+    <word start="25.73" end="26.53" word="be"/>
+    <word start="26.53" end="27.77" word="something"/>
+    <word start="27.84" end="30" word="real."/>
+  </verse>
+  <verse name="verse-2-2">
+    <word start="0.42" end="0.8" word="i"/>
+    <word start="0.88" end="1.77" word="never"/>
+    <word start="1.8" end="2.84" word="thought"/>
+    <word start="2.91" end="3.93" word="i'd"/>
+    <word start="3.93" end="4.51" word="miss"/>
+    <word start="4.48" end="6.64" word="you"/>
+    <word start="8.8" end="9.37" word="but"/>
+    <word start="9.4" end="9.73" word="i"/>
+    <word start="9.75" end="11.95" word="sorely"/>
+    <word start="11.95" end="14.66" word="did."/>
+    <word start="16.77" end="17.75" word="i"/>
+    <word start="17.77" end="18.26" word="kept"/>
+    <word start="18.28" end="18.75" word="my"/>
+    <word start="18.82" end="19.33" word="hopes"/>
+    <word start="19.35" end="22.48" word="up"/>
+    <word start="24.73" end="25.28" word="when"/>
+    <word start="25.33" end="25.64" word="i"/>
+    <word start="25.66" end="26.44" word="should've"/>
+    <word start="26.48" end="27.53" word="run"/>
+    <word start="27.6" end="27.91" word="and"/>
+    <word start="27.95" end="30" word="hid."/>
+  </verse>
+  <verse name="verse-2-3">
+    <word start="0.42" end="0.91" word="as"/>
+    <word start="0.97" end="1.44" word="long"/>
+    <word start="1.48" end="1.91" word="as"/>
+    <word start="1.91" end="2.84" word="you"/>
+    <word start="2.86" end="3.35" word="were"/>
+    <word start="3.35" end="5.95" word="gone"/>
+    <word start="6.8" end="7.86" word="i"/>
+    <word start="7.84" end="8.6" word="knew"/>
+    <word start="8.68" end="8.95" word="that"/>
+    <word start="8.95" end="9.17" word="i"/>
+    <word start="9.2" end="9.53" word="was"/>
+    <word start="9.53" end="12.26" word="free."/>
+    <word start="15.73" end="16.31" word="free"/>
+    <word start="16.31" end="16.66" word="from"/>
+    <word start="16.68" end="22.42" word="certainty"/>
+    <word start="22.46" end="22.73" word="that"/>
+    <word start="22.8" end="23.53" word="other"/>
+    <word start="23.55" end="24.48" word="loves"/>
+    <word start="24.51" end="24.82" word="could"/>
+    <word start="24.82" end="25.37" word="never"/>
+    <word start="25.4" end="27.37" word="be."/>
+  </verse>
+  <verse name="chorus-1">
+    <word start="0.0" end="0.28" word="it's"/>
+    <word start="0.3" end="0.92" word="too"/>
+    <word start="0.98" end="2.06" word="late"/>
+    <word start="5.44" end="5.9" word="to"/>
+    <word start="5.9" end="6.78" word="love"/>
+    <word start="6.84" end="7.4" word="you"/>
+    <word start="7.42" end="15.52" word="now."/>
+    <word start="15.86" end="16.36" word="it's"/>
+    <word start="16.42" end="16.84" word="too"/>
+    <word start="16.9" end="18.38" word="late"/>
+    <word start="21.22" end="21.8" word="i've"/>
+    <word start="21.82" end="22.58" word="made"/>
+    <word start="22.56" end="23.92" word="my"/>
+    <word start="23.97" end="30.75" word="vow."/>
+  </verse>
+  <verse name="chorus-3">
+    <word start="0.0" end="0.42" word="it's"/>
+    <word start="0.42" end="0.93" word="too"/>
+    <word start="0.95" end="2.17" word="late"/>
+    <word start="5.42" end="5.88" word="to"/>
+    <word start="5.95" end="6.62" word="love"/>
+    <word start="6.64" end="7.35" word="you"/>
+    <word start="7.37" end="15.75" word="now."/>
+    <word start="15.8" end="16.37" word="it's"/>
+    <word start="16.4" end="16.82" word="too"/>
+    <word start="16.84" end="17.93" word="late"/>
+    <word start="21.35" end="21.82" word="i've"/>
+    <word start="21.91" end="22.51" word="made"/>
+    <word start="22.57" end="23.91" word="my"/>
+    <word start="23.97" end="30.37" word="vow."/>
+  </verse>
+  <verse name="chorus-3-bridge">
+    <word start="30.46" end="31.73" word="another"/>
+    <word start="31.82" end="32.71" word="love"/>
+    <word start="32.75" end="33.22" word="came"/>
+    <word start="33.26" end="34.84" word="by"/>
+    <word start="35.28" end="35.64" word="and"/>
+    <word start="35.73" end="36.28" word="stole"/>
+    <word start="36.35" end="36.71" word="my"/>
+    <word start="36.73" end="37.11" word="heart"/>
+    <word start="37.13" end="39.06" word="away."/>
+    <word start="40.4" end="40.64" word="i"/>
+    <word start="40.68" end="41.02" word="wish"/>
+    <word start="41.02" end="41.26" word="that"/>
+    <word start="41.28" end="41.48" word="i"/>
+    <word start="41.51" end="41.68" word="could"/>
+    <word start="41.71" end="41.95" word="take"/>
+    <word start="41.97" end="42.22" word="it"/>
+    <word start="42.22" end="43.8" word="back"/>
+    <word start="44.33" end="44.68" word="but"/>
+    <word start="44.71" end="45.22" word="it's"/>
+    <word start="45.22" end="45.95" word="too"/>
+    <word start="46.0" end="47.8" word="late."/>
+  </verse>
+  <verse name="chorus-2">
+    <word start="0.0" end="0.4" word="it's"/>
+    <word start="0.4" end="0.95" word="too"/>
+    <word start="0.95" end="2.33" word="late"/>
+    <word start="5.39" end="5.93" word="to"/>
+    <word start="5.93" end="6.62" word="love"/>
+    <word start="6.96" end="7.46" word="you"/>
+    <word start="7.48" end="15.36" word="now."/>
+    <word start="15.85" end="16.25" word="it's"/>
+    <word start="16.26" end="16.91" word="too"/>
+    <word start="16.92" end="17.9" word="late"/>
+    <word start="21.36" end="21.86" word="i've"/>
+    <word start="21.88" end="23.34" word="made"/>
+    <word start="23.36" end="24.29" word="my"/>
+    <word start="24.3" end="31" word="vow."/>
+  </verse>
+  <verse name="verse-1-3">
+    <word start="0.95" end="1.82" word="i"/>
+    <word start="1.93" end="3.0" word="wish"/>
+    <word start="3.02" end="3.8" word="we'd"/>
+    <word start="3.93" end="6.11" word="met"/>
+    <word start="8.88" end="9.55" word="before"/>
+    <word start="9.6" end="9.91" word="i"/>
+    <word start="9.95" end="10.57" word="ever"/>
+    <word start="10.6" end="11.37" word="learned"/>
+    <word start="11.42" end="11.57" word="to"/>
+    <word start="11.6" end="13.42" word="cry"/>
+    <word start="16.77" end="17.64" word="when"/>
+    <word start="17.71" end="18.71" word="someone"/>
+    <word start="18.75" end="19.35" word="loved"/>
+    <word start="19.37" end="19.84" word="me"/>
+    <word start="19.88" end="21.68" word="briefly"/>
+    <word start="24.73" end="25.31" word="and"/>
+    <word start="25.35" end="25.6" word="then"/>
+    <word start="25.62" end="27.15" word="said"/>
+    <word start="27.15" end="31.28" word="goodbye."/>
+  </verse>
+  <verse name="verse-1-2">
+    <word start="0.88" end="1.71" word="i"/>
+    <word start="1.97" end="2.62" word="never"/>
+    <word start="2.64" end="3.4" word="should"/>
+    <word start="3.42" end="3.88" word="have"/>
+    <word start="3.91" end="5.82" word="met"/>
+    <word start="5.82" end="7.66" word="you"/>
+    <word start="9.82" end="11.46" word="on"/>
+    <word start="11.64" end="11.91" word="that"/>
+    <word start="11.97" end="12.51" word="awful"/>
+    <word start="12.55" end="14.11" word="day."/>
+    <word start="17.75" end="18.31" word="i"/>
+    <word start="18.37" end="18.71" word="was"/>
+    <word start="18.71" end="19.44" word="happy"/>
+    <word start="19.48" end="21.82" word="then"/>
+    <word start="22.35" end="23.17" word="until"/>
+    <word start="23.17" end="23.33" word="you"/>
+    <word start="23.35" end="24.13" word="stole"/>
+    <word start="24.2" end="24.53" word="my"/>
+    <word start="24.57" end="26.48" word="heart"/>
+    <word start="27.51" end="27.75" word="and"/>
+    <word start="27.77" end="29.11" word="disappeared"/>
+    <word start="29.2" end="30" word="again."/>
+  </verse>
+  <verse name="verse-1-1">
+    <word start="0.95" end="1.4" word="when"/>
+    <word start="1.48" end="1.93" word="you"/>
+    <word start="2.0" end="3.66" word="left"/>
+    <word start="3.73" end="5.86" word="me"/>
+    <word start="6.84" end="7.82" word="my"/>
+    <word start="7.82" end="9.35" word="heart"/>
+    <word start="9.37" end="9.91" word="was"/>
+    <word start="9.95" end="10.64" word="broke"/>
+    <word start="11.37" end="11.88" word="in"/>
+    <word start="11.88" end="16.02" word="two."/>
+    <word start="16.91" end="17.44" word="but"/>
+    <word start="17.44" end="17.82" word="i"/>
+    <word start="17.84" end="18.86" word="patched"/>
+    <word start="18.91" end="19.86" word="it"/>
+    <word start="19.88" end="21.93" word="up"/>
+    <word start="22.42" end="22.8" word="and"/>
+    <word start="22.84" end="23.82" word="promised"/>
+    <word start="23.86" end="25.33" word="i"/>
+    <word start="25.35" end="25.8" word="would"/>
+    <word start="25.82" end="27.15" word="wait"/>
+    <word start="27.24" end="27.77" word="for"/>
+    <word start="27.8" end="31" word="you."/>
+  </verse>
+  <verse name="verse-3-1">
+    <word start="0.95" end="1.93" word="in"/>
+    <word start="1.93" end="3.46" word="time"/>
+    <word start="3.62" end="3.95" word="i"/>
+    <word start="3.97" end="6.48" word="thought"/>
+    <word start="9.4" end="9.71" word="that"/>
+    <word start="9.75" end="10.84" word="somehow"/>
+    <word start="10.88" end="11.68" word="love"/>
+    <word start="11.68" end="11.86" word="would"/>
+    <word start="11.91" end="12.33" word="find"/>
+    <word start="12.42" end="12.51" word="a"/>
+    <word start="12.55" end="13.84" word="way."/>
+    <word start="17.33" end="17.64" word="but"/>
+    <word start="17.66" end="17.88" word="you"/>
+    <word start="17.88" end="18.66" word="waited"/>
+    <word start="18.86" end="19.22" word="too"/>
+    <word start="19.31" end="21.8" word="long"/>
+    <word start="21.86" end="24.02" word="darlin'"/>
+    <word start="24.71" end="25.44" word="it's"/>
+    <word start="25.8" end="26.42" word="too"/>
+    <word start="26.48" end="27.91" word="late."/>
+    <word start="28.75" end="29.55" word="it's"/>
+    <word start="29.82" end="30.26" word="too"/>
+    <word start="30.35" end="31.57" word="late."/>
+  </verse>
+  <verse name="verse-3-3">
+    <word start="0.88" end="3.44" word="after"/>
+    <word start="3.46" end="5.35" word="years"/>
+    <word start="5.37" end="5.93" word="i"/>
+    <word start="5.97" end="7.44" word="know"/>
+    <word start="8.93" end="9.31" word="that"/>
+    <word start="9.35" end="9.93" word="i'm"/>
+    <word start="9.95" end="10.46" word="bound"/>
+    <word start="10.48" end="10.8" word="to"/>
+    <word start="10.84" end="11.31" word="my"/>
+    <word start="11.33" end="12.93" word="fate."/>
+    <word start="17.02" end="17.62" word="because"/>
+    <word start="17.71" end="17.95" word="you"/>
+    <word start="18.02" end="18.82" word="waited"/>
+    <word start="18.86" end="19.24" word="too"/>
+    <word start="19.26" end="21.84" word="long"/>
+    <word start="21.84" end="24.22" word="darlin'"/>
+    <word start="24.91" end="25.62" word="it's"/>
+    <word start="25.68" end="26.33" word="too"/>
+    <word start="26.37" end="27.82" word="late."/>
+    <word start="28.75" end="29.75" word="it's"/>
+    <word start="29.77" end="30.2" word="too"/>
+    <word start="45.0" end="47.0" word="late."/>
+  </verse>
+  <verse name="verse-3-2">
+    <word start="0.82" end="1.4" word="there"/>
+    <word start="1.44" end="1.95" word="were"/>
+    <word start="1.97" end="2.95" word="months"/>
+    <word start="2.97" end="3.86" word="i"/>
+    <word start="3.93" end="6.51" word="wished"/>
+    <word start="8.91" end="9.44" word="you'd"/>
+    <word start="9.51" end="9.77" word="come"/>
+    <word start="9.82" end="11.8" word="back"/>
+    <word start="11.86" end="12.48" word="every"/>
+    <word start="12.55" end="14.08" word="day."/>
+    <word start="17.33" end="17.64" word="but"/>
+    <word start="17.68" end="17.91" word="you"/>
+    <word start="17.93" end="18.75" word="waited"/>
+    <word start="18.77" end="19.37" word="too"/>
+    <word start="19.37" end="21.82" word="long"/>
+    <word start="21.84" end="23.88" word="darlin'"/>
+    <word start="24.8" end="25.57" word="it's"/>
+    <word start="25.57" end="26.42" word="too"/>
+    <word start="26.46" end="28.26" word="late."/>
+    <word start="28.77" end="29.62" word="it's"/>
+    <word start="29.68" end="30.26" word="too"/>
+    <word start="30.33" end="31" word="late."/>
+  </verse>
+</songs>

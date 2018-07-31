@@ -1,0 +1,45 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />
+    <line>That gas station isn't anchored to anything; it follows the current. We might run into it anywhere along the river. Cate just starts looking for it when she's low on fuel, and the Echo provides. It's not usually on the `lake`, though ... that was strange.</line>
+    <option goto="wait-to-refuel">Cate likes to wait until the very last minute to refuel.</option>
+    <option goto="no-name">Cate says the place doesn't even have a name.</option>
+    <option goto="lake-theory">Cate had a theory.</option>
+  </scene>
+
+  <scene name="wait-to-refuel" nextScene="junebug-and-johnny">
+    <line>Yeah, she's a thrillseeker, and you'd never guess it — she seems so `centered`, doesn't she? I've always thought so. Maybe that's why she enjoys rocking the boat a little. She knows she can stay upright through a little bad weather, so she can just relax and enjoy the chaos. Well, I admire her confidence.</line>
+    <line>But there was plenty of chaos to go around that night already, with that ugly storm upstairs, though we didn't know the extent of the flood damage yet at that point ...</line>
+  </scene>
+
+  <scene name="no-name" nextScene="junebug-and-johnny">
+    <line>The sign just says "GAS" in big, blocky letters, leaving little room for ambiguity. It has to be legible from a ways off, and anyway nobody wants to be left guessing about where they'll get their fuel, especially not on a night like that, with that storm system tearing around, flooding roads and dashing gardens.</line>
+  </scene>
+
+  <scene name="lake-theory" nextScene="junebug-and-johnny">
+    <line>She thought the rude weather upstairs was flooding the river, and everyone headed down to the lake to ride it out on calmer waters.</line>
+  </scene>
+
+  <scene name="junebug-and-johnny">
+    <line>Anyway, my mechanical musician friends went ashore for a bit, too, looking for some snack foods — Cate doesn't stock anything aboard `The Mucky Mammoth` that doesn't grow wild, and it's not to everyone's taste — or maybe just to stretch their limbs and charge their batteries.</line>
+    <option goto="refreshed">They came back looking refreshed.</option>
+    <option goto="confused">They came back looking kind of confused, though.</option>
+  </scene>
+
+  <scene name="refreshed" nextScene="attendant">
+    <line>I'm sure they needed that moment to themselves. You wouldn't think a pair who made their living performing on a stage could be so introverted, but they really were, in their way. Sure, they had plenty of friends along the river, where they traveled and performed often in those days, but I think nobody else ever really got through. That inner circle was drawn with two strokes — I mean, for a while, anyway ...</line>
+  </scene>
+
+  <scene name="confused" nextScene="attendant">
+    <line>I don't mean confused like ... not like when somebody asks you a question and you don't know the answer, but you feel like you should, and you get that kind of alarmed blankness in your mind's eye. Not like that.</line>
+    <line>They looked confused like when you see two kinds of motor oil, and they cost the same, and you've never heard of either of them, and you read all the text on both packages, but all that new information just makes the choice seem even more impossible. You might be inclined to flip a coin — but how could you, with something that important?</line>
+  </scene>
+
+  <scene name="attendant" nextScene="end">
+    <line>Naturally, I assume they met the gas station attendant, a man as anonymous and itinerant as the place itself. I assume he talked their ear off — everyone on this river does — but I know that fellow well enough to know he wouldn't want us reminiscing on him now.</line>
+    <line>So, they came back aboard, `Mammoth` refueled, and we ambled on toward The Rum Colony.</line>
+  </scene>
+
+</conversation>
+

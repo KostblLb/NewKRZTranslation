@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-stills" value="true"/>
+    <triggerEvent name="start-tape"/>
+    
+    <line speaker="doolittle" style="skeleton">White lightning in a copper bottle. Ha! Some folks have other names for it ...</line>
+    <option goto="proof" speaker="conway">How strong is it?</option>
+    <option goto="taste" speaker="conway">What's it taste like?</option>
+  </scene>
+
+  <scene name="proof" nextScene="drink">
+    <line speaker="doolittle" style="skeleton">We get it up to about a hundred and thirty-five proof before it's filtered, cut, and barreled.</line>
+  </scene>
+
+  <scene name="taste" nextScene="drink">
+    <line speaker="doolittle" style="skeleton">Like a revelation, my friend.</line>
+  </scene>
+
+  <scene name="drink" nextScene="neck">
+    <line speaker="doolittle" style="skeleton">Oh, you wouldn't want to drink it at this stage. Not that you `could` get a hold of any here. That's what the safe is for ...</line>
+  </scene>
+
+  <scene name="neck" nextScene="condenser">
+    <triggerEvent name="look-at-still-neck"/>
+    
+    <line speaker="doolittle" style="skeleton">Look at the neck. Like a swan's, eh?</line>
+    <line speaker="doolittle" style="skeleton">This design is part of our legacy. The vapor passes up through this neck along just such a contour so as to produce our bourbon's signature character.</line>
+    <line speaker="doolittle" style="skeleton">Mr. Bishop always said the shape came to him in a dream. He shot awake in the middle of the night, and set to work hammering an old tea kettle to match that phantom geometry.</line>
+    <line speaker="doolittle" style="skeleton">Believe what you will!</line>
+  </scene>
+  
+  <scene name="condenser" nextScene="end">
+    <triggerEvent name="look-at-still-condenser"/>
+        
+    <line speaker="doolittle" style="skeleton">Here, the vapors pass through a coil submerged in cold water, and condense.</line>
+    <line speaker="doolittle" style="skeleton">Again, the geometry is very particular. Mr. Bishop arrived by intuition at a series of mathematical relationships between the angles and magnitudes here — some weird cacophony of ratios.</line>
+    <line speaker="doolittle" style="skeleton">Well, those principles are lost to history now. Moving along!</line>
+  </scene>
+</conversation>

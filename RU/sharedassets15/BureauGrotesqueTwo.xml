@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="bureau-looked-at-grotesque-2" value="true"/>    
+    <line>The television is playing a cartoon about a bird. The cartoon bird collects pieces for its nest: a scarf, a plastic shopping bag, a bit of a young girl's hair. The nest is warm, but precariously fragile.</line>
+  </scene>
+</conversation>

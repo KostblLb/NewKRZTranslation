@@ -1,0 +1,18 @@
+# -*- mode: blocking -*-
+
+Tugboat Cursor Hide
+Tugboat Listen segment-change
+
+# Tugboat Message RiverworldManager SetDialogTrigger 10
+Tugboat Message RiverworldManager QueueState FloatingGasStation
+Tugboat Message RiverworldManager SetDestination FloatingGasStation
+
+Tugboat Message RiverworldManager EnableDialogThrottle
+Tugboat Wait 12
+Tugboat Cursor Show
+Tugboat Dialog RiverVignetteWillIntroduction
+Tugboat Message RiverworldManager DisableDialogThrottle
+
+# Vignette Listen conversation-closing
+# Vignette Message RiverworldManager QueueState FloatingGasStation
+# Vignette Message RiverworldManager SetDestination FloatingGasStation

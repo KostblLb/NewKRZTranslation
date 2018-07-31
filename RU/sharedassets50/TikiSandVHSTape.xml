@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-vhs-tape" value="true" />
+    <line>Something glints black in the flashlight's beam. Shannon brushes sand off a damaged VHS tape. The smudged label on the spine reads, "PRIVATE, DO NOT WATCH, BUT DO NOT ERASE."</line>
+  </scene>
+</conversation>

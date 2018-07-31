@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-photograph" value="true" />
+    <line>A photograph, washed up on the beach, is too faded to interpret. There's something large or close in the foreground. The background is dim, but not dark. Maybe it's evening. It's not night. Or it might be night, but in a well-lit place, like a city or a gas station. Is that a dog?</line>
+  </scene>
+</conversation>

@@ -1,0 +1,92 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="restore-road-sounds">
+  <scene name="intro">
+    <setGameVar name="overworld-visited-diner" value="true"/>
+    
+    <line>
+      The diner doesn't appear to have a name. A vinyl banner slung above the door simply reads: &quot;24 Hours.&quot; It only has one window, behind which the blinds are tightly closed.
+    </line>
+
+    <option goto="try-door" insertedText="Conway tries the door.">Try the door.</option>
+    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+  </scene>
+
+  <scene name="try-door" nextScene="end">
+    <line>
+      The door swings open easily. A bell rings nearby. The interior of the diner is pitch black.
+    </line>
+
+    <option goto="walk-in" insertedText="Conway enters the diner and closes the door behind him.">Walk in.</option>
+    <option goto="wait-for-eyes" insertedText="Conway stands in the doorway, waiting for his eyes to adjust.">Wait a moment to adjust to the darkness.</option>
+    <option goto="end" insertedText="Conway closes the door and returns to his truck.">Leave.</option>    
+  </scene>
+
+  <scene name="wait-for-eyes" nextScene="describe-figures">
+    <line>
+      A bit of errant light from the nearby highway creeps through the open door, and gradually Conway is able to make out a few figures inside:
+    </line>
+  </scene>
+
+  <scene name="walk-in" nextScene="describe-figures">
+    <line>
+      Someone shines a flashlight in Conway's eyes. The light is almost immediately blinding, but in the instant it switches on he can make out a few figures inside:
+    </line>
+  </scene>
+
+  <scene name="describe-figures" nextScene="door-closes">
+    <line>Two old men in trucker hats sit in a corner booth, with a checkers board set on the table between them.</line>
+
+    <line>A young woman standing behind the counter in an apron must be a waitress.</line>
+
+    <line>The cook stares blankly from the kitchen.</line>
+  </scene>
+
+  <scene name="door-closes">
+    <triggerEvent name="fade-out-road-sounds"/>
+    
+    <line>The door slams shut, and the room is dark again.</line>
+
+    <option goto="sit-at-counter" insertedText="Conway walks in the direction of the counter.">Sit down at the counter.</option>
+    <option goto="end" insertedText="Conway stumbles back out through the door, and returns to his truck.">Try to open the door and leave.</option>
+  </scene>
+
+  <scene name="sit-at-counter">
+    <line>
+      He hits his knee on something hard and metallic, winces quietly, and then carefully finds his way to a stool. He places his hand on the counter.
+    </line>
+    
+    <line>
+      Another hand, a young woman's, rests itself on his. She guides his fingers to a laminated menu. Conway closes his eyes, opens them, maybe closes them again. Impossible to differentiate.
+    </line>
+
+    <option goto="order-coffee" insertedText="">Order coffee.</option>
+    <option goto="order-waffles" insertedText="">Order waffles.</option>
+    <option goto="basketball-game" insertedText="">Ask her about the basketball game.</option>
+  </scene>
+
+  <scene name="order-coffee" nextScene="waitress">
+    <line>
+      A cup of coffee would do it. Black ... oily, even. Hot, familiar diner coffee. Conway runs his hand down the menu. The surface is uniformly flat, and slick with condensation.
+    </line>
+  </scene>
+
+  <scene name="order-waffles" nextScene="waitress">
+    <line>
+      Waffles are a safe bet even at some darkened hole-in-the-wall. Conway squints hopelessly at the menu, searching in the dark for some legible text.
+    </line>
+  </scene>
+
+  <scene name="basketball-game" nextScene="waitress">
+    <line>
+      The Wildcats are struggling, but today's was an important game. They could have rallied. Perhaps the waitress heard the game from the kitchen; or maybe she's a fan herself. Conway clears his throat.
+    </line>
+  </scene>
+
+  <scene name="waitress" nextScene="end">
+    <setGameVar name="overworld-completed-diner" value="true"/>
+    
+    <line>
+      He feels a warm hand against his cheek, and freezes. Her fingers run across the stubble of his chin. He feels like apologizing. She leans forward, and so does he —
+    </line>
+  </scene>
+</conversation>

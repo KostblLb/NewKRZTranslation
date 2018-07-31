@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-looked-at-musician" value="true" />
+    <line>The musician is busy right now, plucking and sliding the lap steel guitar while his tape machine keeps time. Johnny seems eager to talk to him, but is waiting to do so between songs.</line>
+  </scene>
+</conversation>

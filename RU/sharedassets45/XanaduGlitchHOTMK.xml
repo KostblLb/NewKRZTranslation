@@ -1,0 +1,16 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue,xanadu-glitch-music-stop">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="end"/>
+
+    <line speaker="xanadu" style="xanadu-glitch">_fter w_at may h_v_ be._ y_ar_, _ou stu_bl_ _t  o_ a tunnel ii__ a cav_.__uu _pen spp_..</line>
+    
+    <line speaker="shannon">Well ... OK.</line>
+    
+    <line speaker="xanadu" style="xanadu-glitch">SSalactites aaorn the c.iiing __ke gr_tess__s. _n _he cen_.r of t_. .o_  __ an _no_mous,  ock. spir_.</line>
+    <line speaker="xanadu" style="xanadu-glitch">.hi_ is where you _.__ set up y_ur __ui_men. —</line>
+    <line speaker="xanadu" style="xanadu-glitch">Premature end of file. Press any key to quit.</line>
+
+    <line speaker="junebug">This is a lost cause ... what a piece of junk!</line>
+  </scene>
+</conversation>

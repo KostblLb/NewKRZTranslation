@@ -1,0 +1,128 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="end">
+    <line speaker="xanadu" style="xanadu">You are in Bedquilt, a long east/west passage with holes everywhere.</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* and *LULA* remove the computer equipment they are carrying on their backs, and begin setting up.</line>
+    <line speaker="lula" style="xanadu">That's the last trip. So everything's down here now ...</line>
+    
+    <option goto="bedquilt-talk-to-lula" speaker="shannon">Say something back to her.</option>
+    <option goto="bedquilt-set-up-gear" speaker="junebug">Set up the gear.</option>
+  </scene>
+
+  <scene name="bedquilt-talk-to-lula" nextScene="bedquilt-lula-pensive">
+    <line speaker="conway">`(Typing.)` ~Say something back.~</line>
+    <line speaker="xanadu" style="xanadu">You make an awkward joke.</line>
+    <line speaker="joseph" style="xanadu">Don't be so morbid.</line>
+  </scene>
+
+  <scene name="bedquilt-set-up-gear" nextScene="bedquilt-lula-pensive">
+    <line speaker="conway">`(Typing.)` ~Set up gear.~</line>
+    <line speaker="xanadu" style="xanadu">I only understood you as far as wanting to set the up above.</line>
+    <line speaker="shannon">&quot;Set the up above&quot; ... ?</line>
+  </scene>
+
+  <scene name="bedquilt-lula-pensive" nextScene="bedquilt-lula-dialog-choices">
+    <line pause="false" speaker="xanadu" style="xanadu">LULA looks pensive.</line>
+  </scene>
+
+  <scene name="bedquilt-lula-dialog-choices">
+    <goto condition="xanadu-bedquilt-lula-conversation-count[gt]1" sceneName="bedquilt-construction"/>
+    
+    <option condition="!xanadu-asked-lula-about-gear" goto="bedquilt-ask-lula-about-gear" speaker="junebug">What's the gear they're carrying?</option>
+    <option condition="!xanadu-asked-lula-about-cave" goto="bedquilt-ask-lula-about-cave" speaker="shannon">Ask her about the cave.</option>
+    <option condition="!xanadu-asked-lula-about-treasure" goto="bedquilt-ask-lula-about-treasure" speaker="ezra">Ask her where the treasure is.</option>
+  </scene>
+
+  <scene name="bedquilt-ask-lula-about-gear" nextScene="bedquilt-lula-dialog-choices">
+    <setGameVar name="xanadu-asked-lula-about-gear" value="true"/>
+    <setGameVar name="xanadu-bedquilt-lula-conversation-count" value="+1"/>
+    
+    <line speaker="conway">`(Typing.)` ~Ask Lula about gear.~</line>
+    <line speaker="lula" style="xanadu">Sure, Donald. We may as well take inventory.</line>
+    <line speaker="lula" style="xanadu">I've got the tape machine and the synthesizer parts we &quot;borrowed&quot; from the School of Music. It's all tuned up to my voice so we won't have to type so much.</line>
+    <line speaker="lula" style="xanadu">Joseph has his slate, and the punched cards he's transcribed from the poems we read him. He's got the typewriter and the paper tape reader.</line>
+    <line pause="false" speaker="lula" style="xanadu">And you've got the CRT display. How's your back holding up?</line>
+  </scene>
+
+  <scene name="bedquilt-ask-lula-about-cave" nextScene="bedquilt-lula-dialog-choices">
+    <setGameVar name="xanadu-asked-lula-about-cave" value="true"/>
+    <setGameVar name="xanadu-bedquilt-lula-conversation-count" value="+1"/>
+    
+    <line speaker="conway">`(Typing.)` ~Ask Lula about cave.~</line>
+    <line speaker="lula" style="xanadu">Having second thoughts? I don't blame you; it's ... unsettling down here. Weird acoustics.</line>
+    <line speaker="lula" style="xanadu">Earlier, as we were climbing down, I thought I heard voices for a moment. Or ... not voices themselves, but the echoes of voices, singing. Some kind of eerie, tuneless working song.</line>
+    <line pause="false" speaker="lula" style="xanadu">I'm glad I'm not down here alone.</line>
+  </scene>
+
+  <scene name="bedquilt-ask-lula-about-treasure" nextScene="bedquilt-lula-dialog-choices">
+    <setGameVar name="xanadu-asked-lula-about-treasure" value="true"/>
+    <setGameVar name="xanadu-bedquilt-lula-conversation-count" value="+1"/>
+    
+    <line speaker="conway">`(Typing.)` ~Ask Lula where the treasure is.~</line>
+    <line speaker="lula" style="xanadu">Ha. If we knew that, we wouldn't have to set up down here ...</line>
+    <line speaker="lula" style="xanadu">I know you think this environment will help our project, get us in touch with a deep romantic reverence for some kind of profound natural spookiness ... but I was more comfortable in our lab.</line>
+    <line speaker="lula" style="xanadu">The university picked the worst time to cut our funding! Typical institutional stinginess and academic politics. I mean, I felt like we were getting really close to something ... something ...</line>
+    <line pause="false" speaker="lula" style="xanadu">Anyway, I don't know if it's sustainable down here. You know, to live and work here ... together.</line>
+  </scene>
+
+  <scene name="bedquilt-construction">
+    <line speaker="xanadu" style="xanadu">*JOSEPH* looks uncomfortable.</line>
+    <line speaker="junebug">Jealous ...</line>
+    <line speaker="joseph" style="xanadu">Hey, Donald, can you help me, uh ... wire up these generators?</line>
+    <line speaker="lula" style="xanadu">I'll assemble the synthesizer. But I could use some help with the serial interface, if you have time.</line>
+    <line speaker="xanadu" style="xanadu">You hear an unfamiliar echo from a tunnel to the east.</line>
+    
+    <option goto="construction-help-joseph" speaker="shannon">Wire up the generators.</option>
+    <option goto="construction-help-lula" speaker="shannon">Maybe if we help Lula, she'll have some more to tell us.</option>
+  </scene>
+
+
+  <scene name="construction-help-joseph">
+    <line speaker="conway">`(Typing.)` ~Help Joseph.~</line>
+    <line speaker="joseph" style="xanadu">I appreciate it, Donald. I'm not much of an electrician, you know ... you know that.</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* hands you a bundle of wires. His kitten curls up on a spool of cabling.</line>
+    <line speaker="joseph" style="xanadu">Listen. The three of us had a good thing for a minute, wouldn't you say? Up at the old place? Before it got ugly?</line>
+    <line speaker="joseph" style="xanadu">I'm saying ... We came down here to work. To really do it. XANADU. And I mean we've got to be rational about this. All three of us have got to put our feelings aside for a bit and be rational ... do you know what I'm saying?</line>
+    
+    <option goto="joseph-back-off" speaker="shannon">Is he talking about Lula? Kind of creepy.</option>
+    <option goto="joseph-ok" speaker="shannon">Just agree with whatever he's saying; this isn't helpful.</option>
+  </scene>
+
+  <scene name="joseph-back-off" nextScene="to-tunnels-after-conversation">
+    <line speaker="conway">`(Typing.)` ~Tell Joseph to back off.~</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* wipes his brow with a dusty sleeve.</line>
+    <line speaker="joseph" style="xanadu">Seems ... down here, we're all strangers. Permanently strange.</line>
+  </scene>
+
+  <scene name="joseph-ok" nextScene="to-tunnels-after-conversation">
+    <line speaker="conway">`(Typing.)` ~Agree with Joseph.~</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* sets down the wire-strippers in his hand.</line>
+    <line speaker="joseph" style="xanadu">You really mean that?</line>
+    <line speaker="joseph" style="xanadu">You're pretty OK, Donald. I mean you have a clear idea on what's sensible. We're in unmapped territory here, strange to the whole thing. Got to have a focus. She'll understand.</line>
+  </scene>
+
+  <scene name="construction-help-lula" nextScene="to-tunnels-after-conversation">
+    <line speaker="conway">`(Typing.)` ~Help Lula.~</line>
+    <line speaker="lula" style="xanadu">Thanks, Donald. I can never remember which color lead goes to which pin ...</line>
+    <line speaker="xanadu" style="xanadu">*LULA* begins unpacking a box of wires and terminals.</line>
+    <line speaker="lula" style="xanadu">Do you think there are paintings down here? Cave paintings, I mean. Maybe some old pottery shards, from when the world was young and early men and women huddled in these caves to ...</line>
+    <line speaker="lula" style="xanadu">Do you know, I think cultural fossils are the saddest fossils? Sadder than animal remains, I mean ...</line>
+    <line speaker="lula" style="xanadu">We might come across a petrified mollusk, or a partial dinosaur footprint, and we say: &quot;there was a point of contact here, where a body touched the earth, and maybe there's a little bit of evidential garbage, but the life who owned that body never cared and has moved on anyway.&quot;</line>
+    <line speaker="lula" style="xanadu">And that's the end of it.</line>
+    <line speaker="lula" style="xanadu">But suppose I shine my lantern on one of these walls, and I see a crude painting, thousands of years old. Two men and a woman. Charcoal and blood, on rock.</line>
+    <line speaker="lula" style="xanadu">Someone put that there, to keep something on the rock after she passed. A hope, a relationship, or a moment. A worry, maybe ... a regret.</line>
+    <line speaker="lula" style="xanadu">She made a painting to keep something alive for her, but like that dead mollusk and that itinerant dinosaur, she had to move on. Whatever it was is gone, and now we're looking at this painting. This dangling copy, with no original.</line>
+  </scene>
+
+  <scene name="to-tunnels-after-conversation" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="tunnels"/>
+    
+    <line speaker="xanadu" style="xanadu">You are interrupted by the ominous echo of a grating, scraping sound from the east, louder than before.</line>
+    <line speaker="joseph" style="xanadu">What the hell was that?</line>
+    <line speaker="lula" style="xanadu">Let's check it out.</line>
+  </scene>
+</conversation>

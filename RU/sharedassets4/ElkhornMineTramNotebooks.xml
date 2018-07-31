@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="elkhorn-mine-found-tram-notebooks" value="true"/>
+    
+    <line>The notebook at the top of this dusty stack is labeled in black marker. The label is dusty and smudged, but it looks like it might say &quot;Horses.&quot;</line>
+    <line>&quot;Houses,&quot; maybe? Or ... &quot;Verses,&quot; even? Crude and hurried handwriting, too. Lysette has immaculate handwriting. Pristine and measured cursive. Never a stray mark.</line>
+    <line>For the last several months, she filled out the receipts for each order — since that young couple complained about the handwriting on the order slip. It's carbon paper, anyway, it's bound to wear away over time. If they're so precise about their records, they should put it on the computer anyway ...</line>
+  </scene>
+</conversation>

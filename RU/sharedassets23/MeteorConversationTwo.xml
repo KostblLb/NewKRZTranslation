@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="crater-heard-conversation-two" value="true"/>
+    <line speaker="Young man">Old William! That old man must see a flying saucer every night, and two on the weekend! I never —</line>
+    <line speaker="Old man">Now, didn't I say that earlier about flying saucers? You heard me! You know just a week ago, up by the lake —</line>
+  </scene>
+</conversation>

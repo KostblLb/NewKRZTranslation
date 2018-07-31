@@ -1,0 +1,19 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-scene">
+  <scene name="intro">
+    <line speaker="conway">Yeah, you're right about that! I never quite thought of it that way —</line>
+    <option goto="leave" speaker="shannon">Hey, we're getting ready to head out.</option>
+    <option goto="who-are-you-talking-to" speaker="shannon">Who are you talking to?</option>
+  </scene>
+
+  <scene name="leave" nextScene="end">
+    <line speaker="conway">`(Noticing SHANNON for the first time.)` Oh!</line>
+    <line speaker="conway">Oh, sure. I'll be right there.</line>
+  </scene>
+
+  <scene name="who-are-you-talking-to" nextScene="end">
+    <line speaker="conway">`(Noticing SHANNON for the first time.)` Oh!</line>
+    <line speaker="conway">Naw, it's ... nothing.</line>
+    <line speaker="conway">Hey, let's get out of here. Work to be done, right?</line>
+  </scene>
+</conversation>

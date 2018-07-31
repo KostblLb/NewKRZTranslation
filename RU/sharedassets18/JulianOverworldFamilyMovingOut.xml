@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-family-moving-out" value="true"/>
+
+    <line>Five people hurriedly carry large objects from an apartment building into a van. The larger two are hauling beige shapes nearly their height. The smaller three clutch brightly colored objects under their elbows. Most of the lights in the building are dark, the yards empty, the windows boarded shut.</line>
+  </scene>
+</conversation>

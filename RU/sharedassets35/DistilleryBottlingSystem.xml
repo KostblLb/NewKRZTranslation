@@ -1,0 +1,24 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>        
+    <setGameVar name="distillery-saw-bottling" value="true"/>    
+    <line speaker="doolittle" style="skeleton">This is where most of our staff ends up.</line>
+    <option goto="what-doing" speaker="conway">What are they doing?</option>
+    <option goto="modern-equipment" speaker="shannon">Pretty modern equipment.</option>
+  </scene>
+
+  <scene name="what-doing" nextScene="replacements">
+    <line speaker="doolittle" style="skeleton">Checking the, um ... quality ... quality assurance.</line>
+  </scene>
+
+  <scene name="modern-equipment" nextScene="replacements">
+    <line speaker="doolittle" style="skeleton">Oh, absolutely, top-of-the-line machinery. A dramatic improvement.</line>
+  </scene>
+
+  <scene name="replacements" nextScene="end">
+    <line speaker="doolittle" style="skeleton">We used to bottle everything by hand, but these machines are marvelously effective. Made things a bit complicated for the workers — after all, the distillery can't just `fire` them. How then would they settle their accounts?</line>
+    <line speaker="doolittle" style="skeleton">But there's nowhere else to put them ... they keep an eye on things here. Can't be paid as much just to watch, of course.</line>
+    <line speaker="doolittle" style="skeleton">Well, that's progress for you!</line>
+  </scene>
+</conversation>

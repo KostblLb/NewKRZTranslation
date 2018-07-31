@@ -1,0 +1,109 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <goto sceneName="birds-1" condition="temp:video=birds-1" />
+    <goto sceneName="birds-2" condition="temp:video=birds-2" />
+    <goto sceneName="birds-3" condition="temp:video=birds-3" />
+    
+    <goto sceneName="weaver" condition="temp:video=weaver" />
+    
+    <goto sceneName="in-memory-of" condition="temp:video=in-memory-of" />
+    <goto sceneName="microwaves" condition="temp:video=microwaves" />
+    <goto sceneName="tip-of-your-tongue" condition="temp:video=tip-of-your-tongue" />
+
+    <goto sceneName="history-of-weather" condition="temp:video=history-of-weather" />
+    <goto sceneName="i-believe-you" condition="temp:video=i-believe-you" />
+    <goto sceneName="swap-shop" condition="temp:video=swap-shop" />        
+  </scene>
+  
+  <scene name="birds-1" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />
+    <setGameVar name="tugboat-videos-watched-birds-1" value="true" />
+    
+    <line>Blue-black morning swings across the screen. The birdwatcher tramps through dewy grass. He stops with a wet grunt, and rests the camera on a pile of rocks.</line>
+    <line>"Birds, From Great Distances, Episode 12" appears briefly on screen. He twists the lens by hand, pushing the frame past trees, onto the road, and coming to a halt zoomed in on a fuzzy, fist-sized artifact resting on the momentary stroke of a telephone wire.</line>
+    <line>Shannon and the birdwatcher observe. He breathes heavily, and she holds her breath, like she's afraid he might hear, afraid of distracting him or of being discovered and contaminating his perfect isolation.</line>
+    <line>Traffic picks up, indifferent. As the sky lightens, the black smudge in the center of the frame gradually becomes more prominent, but never in any greater detail.</line>
+  </scene>
+
+  <scene name="birds-2" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />    
+    <setGameVar name="tugboat-videos-watched-birds-2" value="true" />    
+    <line>It's raining heavily as the title "Birds, From Great Distances, Episode 27" flashes on screen. She knows by the sound: the volley of rainwater on mud, tree branches, the rusted bed of an old pickup, and on the birdwatcher's own skin and hair. He swears under his breath. She can hear the rain there, too, in his wet breath and the wet exclamation of his palm, slopping the water from his forehead and shoulders.</line>
+    <line>The camera is pointed at a cedar shed with one hinged door angling erratically in the storm. From this distance, it's hard to tell if it's been damaged or simply left open. When the door swings wide, she can see that the shed is full of small boards — scraps, maybe, or rough cut pieces meant for very small projects and then stacked carelessly on shelves, in piles, quickly sorted and then forgotten.</line>
+    <line>And there's the bird: a blue ball taking shelter on the shed floor, nested in scrap wood.</line>
+  </scene>
+
+  <scene name="birds-3" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />    
+    <setGameVar name="tugboat-videos-watched-birds-3" value="true" />        
+    <line>The video is black. Shannon only knows it's playing because of the cicadas, and then "Birds, From Great Distances, Episode 81."</line>
+    <line>The screen isn't totally dark, of course. It's what she thinks of as `video-black` — a deep, mottled blue, noisy with magnetic decay and the cottony limits of the camera's sensors. It's the black she sees before she goes to sleep, the `night-black`, the `eyes-shut-against-streetlights-black`. She has more words for it than she expected.</line>
+    <line>She wonders what words the birdwatcher uses for it. She wonders where he is, relative to the camera, or where the bird is, for that matter.</line>
+  </scene>
+
+  <scene name="history-of-weather" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />    
+    <setGameVar name="tugboat-videos-watched-history-of-weather" value="true" />
+    <line>The on-screen title identifies this program as "The History of Weather, Volume 3: Drought."</line>
+    <line>Over footage of a dry riverbed, the program's narrator explains the differences between modern drought and ancient drought. The narrator proposes that modern drought may hardly be considered weather at all, since its severity and behavior are so influenced by human activity.</line>
+  </scene>
+
+  <scene name="i-believe-you" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />
+    <setGameVar name="tugboat-videos-watched-i-believe-you" value="true" />
+    <line>It looks like Will — though much younger — reclined on a sofa and taking calls. His arm, draped over the back of the couch, holds a bottle of something clear.</line>
+    <line>People call in with stories of their encounters with the supernatural. Will offers little commentary or response. He acknowledges them. Sometimes he interrupts to clarify, or repeat something back to them. Mostly he just listens, and pulls from that clear glass bottle.</line>
+    <line>A handmade banner strung above the couch reads "I BELIEVE YOU."</line>
+  </scene>
+
+  <scene name="in-memory-of" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />
+    <setGameVar name="tugboat-videos-watched-in-memory-of" value="true" />    
+    <line>An elderly couple sit on folding chairs in the middle of a TV studio, undecorated except for a funereal lily in a thin, blue vase on the table. The lights are a bit too dim to make out their features. She reads from a newspaper with unhurried efficiency.</line>
+    <line>Gloria B. of Munfordville passed away on Monday at her residence. Survivors include her children: Dakota, Montana, Minnesota, and Bobby, all of Munfordville. A memorial service will be held at 7 PM Thursday at Hatton-Huffman Funeral Home in Munfordville, with cremation to follow.</line>
+    <line>She never knew Gloria. He thinks he may have heard the name, wondering aloud if she ever worked at a cafe down there in Munfordville. The woman who ran that place was once called "Gloria," or maybe still is.</line>
+    <line>They take a call: someone who knew Gloria B., if not very well. The caller once installed a satellite dish at Gloria's house, a nine-hundred square foot, ranch-style home on two acres at a dead end, backed by weeds and pine.</line>
+    <line>When the caller mounted the ladder up to Gloria's roof, she slid open her window and tugged urgently at his pant leg. He followed her gaze behind the house to two wild turkeys picking through the weeds. Gloria and the caller watched, silent and still, as the huge birds foraged obliviously into the trees. Then he installed the satellite dish.</line>
+  </scene>
+  
+  <scene name="microwaves" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />    
+    <setGameVar name="tugboat-videos-watched-microwaves" value="true" />        
+    <line>At first, she thinks the video might be paused, but on closer inspection she can see the edges of the frame shrinking inwards around the chairs, desk, and loose, gray furniture of a sterile waiting room.</line>
+    <line>She watches for a while. She's not sure for how long. Several minutes. The zoom tightens — so gradually she sometimes forgets it's happening at all — and finally rests on an oscillating desk fan.</line>
+    <line>She ejects the tape before the next part of the triptych begins.</line>
+  </scene>
+
+  <scene name="swap-shop" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />    
+    <setGameVar name="tugboat-videos-watched-swap-shop" value="true" />            
+    <line>A woman sits at a card table with a lamp, notepad, and a beige multi-line telephone. A scrolling marquee reads, "SWAP SHOP BUY SELL TRADE OR WANT TO BUY CALL THE BROKER," and then a phone number, repeating without pause.</line>
+    <line>Eddie has fresh eggs to trade for a basil plant — a dozen eggs for one plant, which is a steal. Eddie's eggs are good eggs.</line>
+    <line>Sadie has a bag of fine shells. No reasonable offer will be refused.</line>
+    <line>Christopher is looking for a scrub plane in decent shape. It doesn't have to be too nice, just something to get a tabletop near to flat from some oak that's been air-drying in a barn for twenty (maybe thirty) years, and while it's true he could get the job done without it since he's got a nice, heavy jack plane his grandfather used to use, he'd just as soon not fuss with grinding a camber onto it, and anyway he has a little extra capital from a swap earlier in the week and wouldn't mind putting it down on a decent scrub plane before the cash burns a hole through his pocket.</line>
+    <line>Carla is looking to trade typing services for calligraphy services, or vice versa.</line>
+    <line>The broker takes notes and switches lines, but never speaks, drunk on the hum of commerce.</line>
+  </scene>
+
+  <scene name="tip-of-your-tongue" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />    
+    <setGameVar name="tugboat-videos-watched-tip-of-your-tongue" value="true" />
+    <line>The words "Tip Of Your Tongue," and a phone number are occasionally superimposed on the screen. A few dozen people sit in bleachers, shouting out ideas, loosely moderated by a short woman with a microphone and laser pointer.</line>
+    <line>One caller is trying to remember the name of an old friend she hasn't seen in years. It starts with a consonant. It's full of consonants, actually; there are maybe one or two vowels. It sounds long but she doesn't remember having had any trouble spelling it at any point. The friend had brown hair? That's probably not helpful.</line>
+    <line>Another caller is trying to remember a verb that means "to make oneself vulnerable." Something like "to expose oneself," but not quite that. To become `emotionally`, `spiritually` vulnerable, like with a lover, or a poem.</line>
+    <line>A third caller just knows there was something he was supposed to do tonight. He offers some biographical background, a narrative of his day. He's unemployed, has no real hobbies, and has already eaten. Few ideas from the bleachers.</line>
+  </scene>
+
+  <scene name="weaver" nextScene="end">
+    <setGameVar name="tugboat-videos-count" value="+1" />    
+    <setGameVar name="tugboat-videos-watched-weaver" value="true" />    
+    <line>That awful hum ... it seems to start before Shannon even hits "play." Then there's the familiar room. There are the blank, gray walls marked with tape, and school desks, and this time she notices a few more details: the murky carpet like standing water, some video equipment stashed in the corner, a row of lockers.</line>
+    <line>And there's Weaver, looking serenely at the camera. As before, she starts speaking and, as before, there's no sound but that hum. Shannon finds Weaver's words coming back to her, as they appear in captions on the screen.</line>
+    <line speaker="weaver" style="skeleton">... mail, school, and these magnificent, tragic horses.</line>
+    <line speaker="weaver" style="skeleton">Go underground, as deep as you can go. The air is cool and the earth is damp, and when you close your eyes you are surrounded by the dead. Remember where that is? You'll find your way from there.</line>
+    <line speaker="weaver" style="skeleton">I think this place is what you're looking for. Some of it will wash away soon, but I think you'll be happy here, even without the mail, school ...</line>
+    <line>The text repeats for a few minutes, and Shannon stops the tape.</line>
+  </scene>
+
+</conversation>

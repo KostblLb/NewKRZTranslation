@@ -1,0 +1,15 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line>`(EZRA runs up to SHANNON.)`</line>
+    <line speaker="shannon">Whoa, slow down! It's slippery up on deck.</line>
+    <line speaker="ezra">Do you have batteries?</line>
+    <line speaker="shannon">Yeah, of course. What for?</line>
+    <line speaker="ezra">Johnny said I could use his tape recorder but it needs a battery.</line>
+    <line speaker="shannon">Oh, fun. Well ...</line>
+    <line>`(SHANNON searches her pockets.)`</line>
+    <line speaker="shannon">Here's ... four different kinds; surely one of these should fit.</line>
+    <line speaker="ezra">Thank you.</line>
+  </scene>
+
+</conversation>

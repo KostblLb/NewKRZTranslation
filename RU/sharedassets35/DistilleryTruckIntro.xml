@@ -1,0 +1,41 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape,truck-tour-enter">
+  <scene name="intro">
+    <triggerEvent name="truck-tour-zoom"/>
+    <setGameVar name="distillery-started-truck-sequence" value="true"/>
+    <triggerEvent name="start-tape,start-truck-tour" />
+
+    <line speaker="doolittle" style="skeleton">Here it is. Now, I have to ask, as a matter of course: what kind of experience do you have driving trucks?</line>
+    <option goto="antiques" speaker="conway">I drove deliveries for an antique shop, up until this last run.</option>
+    <option goto="long-hauls" speaker="conway">I used to drive long hauls.</option>
+  </scene>
+
+  <scene name="antiques" nextScene="safety">
+    <line speaker="doolittle" style="skeleton">Aha, precious cargo ... you'll do just fine.</line>
+  </scene>
+
+  <scene name="long-hauls" nextScene="safety">
+    <line speaker="doolittle" style="skeleton">It's a lonely kind of thing, or so I hear.</line>
+  </scene>
+
+  <scene name="safety">
+    <line speaker="doolittle" style="skeleton">And you can drive ... `safely`, can't you?</line>
+    <line speaker="doolittle" style="skeleton">I haven't any doubt, now, it's only ... after what happened with Miguel this evening.</line>
+    <option goto="what-happened" speaker="shannon">What happened with Miguel this evening?</option>
+    <option goto="all-my-life" speaker="conway">I've been driving all my life, for better or worse.</option>
+  </scene>
+
+  <scene name="what-happened" nextScene="miguel">
+    <line speaker="doolittle" style="skeleton">Well, the dust is still clearing, of course. Perhaps he closed his eyes a moment. Or simply hit a curve too devilish.</line>
+  </scene>
+
+  <scene name="all-my-life" nextScene="miguel">
+    <line speaker="doolittle" style="skeleton">I suppose that's all you must say? I like that. Never say more than you must — it's boastful, and ugly.</line>
+  </scene>
+
+  <scene name="miguel" nextScene="end">
+    <line speaker="doolittle" style="skeleton">I do pity ill-fated Miguel — he was good company, and slow to anger. But, if we're speaking confidentially ...</line>
+    <line speaker="doolittle" style="skeleton">Well, with all that lost `product` to be repaid — bourbon and glass dashed across the interstate, and a few casks too — we're all just thankful he had no ... next of kin.</line>
+    <line speaker="doolittle" style="skeleton">So. Let's see if we can ring up the dispatcher.</line>
+  </scene>
+</conversation>

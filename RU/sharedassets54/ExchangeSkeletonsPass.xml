@@ -1,0 +1,81 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="conway">What? You're looking at me like I'm crazy. Ha ha.</line>
+    
+    <option goto="dont-know-conway" speaker="shannon">Just — sometimes I forget I don't even really know you that well.</option>
+    <option goto="how-conway-feeling" speaker="shannon">Are you feeling OK?</option>
+    <option goto="its-nothing" speaker="shannon">It's nothing.</option>
+  </scene>
+
+  <scene name="dont-know-conway" nextScene="distillery-boys">
+    <line speaker="conway">Yeah, well, that makes two of us.</line>
+  </scene>
+
+  <scene name="how-conway-feeling" nextScene="distillery-boys">
+    <line speaker="conway">Oh, uh, sure. It doesn't hurt anymore, my leg. It's just kind of `numb`. Like it's not there. My shoulder, too, actually. That's an old one, though, from an accident. I'm lucky I just had some nerve damage there, it probably should have been a lot worse.</line>
+  </scene>
+
+  <scene name="its-nothing" nextScene="distillery-boys">
+    <line speaker="conway">Sure.</line>
+  </scene>
+
+  <scene name="distillery-boys">
+    <line speaker="conway">You know, those guys from the distillery are just making the best of a bad situation, just like the rest of us. Hey, one of them said to me earlier they could even help me take care of these medical bills for my leg, you know? Get it all together on a plan. Consolidated.</line>
+    <option goto="talked-again" speaker="shannon">What? When did you talk to them about that?</option>
+    <option goto="bad-idea" speaker="shannon">That sounds like a really bad idea.</option>
+    <option goto="weaver" speaker="shannon" condition="shannon-saw-weaver-video">Hey, if we can find her, maybe Weaver could get you out of this thing with the distillery? She has some experience with them.</option>
+  </scene>
+
+  <scene name="talked-again" nextScene="conway-reassurance">
+    <line speaker="conway">Oh, they're around. They're pretty much everywhere you look, on this river. You really haven't noticed?</line>
+  </scene>
+
+  <scene name="bad-idea" nextScene="conway-reassurance">
+    <line speaker="conway">Oh, I don't know. They seem to have a lot of experience with this kind of stuff. They've got a whole process figured out.</line>
+  </scene>
+
+  <scene name="weaver" nextScene="conway-reassurance">
+    <line speaker="conway">Oh, sure, could be.</line>
+  </scene>
+
+  <scene name="conway-reassurance">
+    <line speaker="conway">Anyway, I have a feeling it'll all work out.</line>
+    <option goto="even-delivery" speaker="shannon">Even this delivery?</option>
+    <option goto="even-shannon" speaker="shannon">Even for me?</option>
+  </scene>
+
+  <scene name="even-delivery" nextScene="truck">
+    <line speaker="conway">Yeah, we're almost there, right? Hell, at this point I bet we could just take off the parking brake and that truck would roll into `5 Dogwood Drive` by itself.</line>
+  </scene>
+
+  <scene name="even-shannon" nextScene="truck">
+    <line speaker="conway">Hey, why not? Seems like we're getting pretty close to finding your cousin, right? And besides that, you're young and smart, plenty of time to bounce back from ... whatever.</line>
+  </scene>
+
+  <scene name="truck">
+    <line speaker="conway">Listen ... that old truck I've been driving belonged to my boss Ira, Lysette's husband. To be honest, Ira didn't like me very much, but somehow Lys got it into her mind that he would have wanted me to have that truck someday. Maybe to make up for all the yelling he did. Or maybe so his ghost could hold it over me, just one more thing to feel like I owed him for ...</line>
+    <line speaker="conway">Anyway, they got their own trucks at the distillery, and now that the antique shop is closing up ... I've got no use for that old truck. I was thinking `you` could take it.</line>
+    <option goto="barely-know-you" speaker="shannon">I barely know you ...</option>
+    <option goto="dont-need" speaker="shannon">That's very generous, but I don't need a truck.</option>
+    <option goto="accept-truck" speaker="shannon">Sure, I could keep an eye on it for you, until you get straightened out.</option>
+  </scene>
+
+  <scene name="barely-know-you" nextScene="think-about-it">
+    <line speaker="conway">Hell, I barely know `anyone`. It's not like I'm going to give this truck to my damn brother or something. I don't even know how to get ahold of him these days ...</line>
+  </scene>
+
+  <scene name="dont-need" nextScene="think-about-it">
+    <line speaker="conway">You could drive it around while you figure out what's next. Hell, you could `sleep` in it if you need to — it's big enough.</line>
+  </scene>
+
+  <scene name="think-about-it" nextScene="end">
+    <line speaker="conway">Well, just think about it, anyway. You'd be doing me a favor, you know? One less thing to deal with.</line>
+  </scene>
+
+  <scene name="accept-truck" nextScene="end">
+    <line speaker="conway">Sure, OK. Sounds good.</line>
+  </scene>
+
+</conversation>
+

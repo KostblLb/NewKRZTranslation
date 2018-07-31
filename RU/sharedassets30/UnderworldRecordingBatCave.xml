@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    <setGameVar name="underworld-saw-bat-cave" value="true"/>
+    
+    <line>The rock around the tunnel mouth is covered in inch-long scratches at odd angles. Light from the road doesn't seem to penetrate very far, but a faint, thin grumble from the darkness catches Johnny's attention.</line>
+    <option goto="enter" insertedText="Junebug pulls the bike into the cave entrance.">Enter the cave.</option>
+    <option goto="end" insertedText="Junebug stays on the highway, following the truck.">Drive on.</option>
+  </scene>
+
+  <scene name="enter">
+    <line>The bike's headlight beams feebly into the darkness. After a short drive, it's too dark to continue safely.</line>
+    <option goto="on-foot" insertedText="Johnny slips out of the sidecar and continues on foot.">Continue on foot.</option>
+    <option goto="end" insertedText="Junebug returns to the highway.">Drive away.</option>
+  </scene>
+
+  <scene name="on-foot">
+    <line>Field recorder in hand, he walks delicately through the shadows. Junebug watches with amusement from the bike.</line>
+    <option goto="walls" insertedText="Johnny feels around for the cave walls.">Feel around for walls.</option>
+    <option goto="faster" insertedText="Johnny picks up his pace.">Walk faster.</option>
+    <option goto="night-vision" insertedText="Johnny switches to night vision.">Switch to night vision.</option>
+  </scene>
+
+  <scene name="walls">
+    <line>They're slick with a warm, sulfury substance.</line>
+    <option goto="guano" insertedText="Johnny scoops up some of it to examine.">Examine the substance.</option>
+    <option goto="night-vision" insertedText="Johnny switches to night vision.">Switch to night vision.</option>
+  </scene>
+
+  <scene name="guano" nextScene="bat-rush">
+    <line>It's definitely organic. Some kind of —</line>
+  </scene>
+
+  <scene name="faster" nextScene="bat-rush">
+    <line>A gently sulfurous smell begins to overtake him. His eyelid twitches. He —</line>
+  </scene>
+
+  <scene name="night-vision" nextScene="end">
+    <line>The cave is about seventy feet in diameter at this point. The floor seems unusually warm, as though it's covered in a ragged yarn blanket. Looking up to the ceiling, he —</line>
+  </scene>
+
+  <scene name="bat-rush" nextScene="end">
+    <audioFade clip="bats" direction="in" speed="4" />
+    <line>A hurricane of bats rush through the tunnel. Johnny is briefly overwhelmed, but remembers to switch on the field recorder just as he's knocked to the floor by the panicked flurry of a thousand tiny wings. Junebug covers her head and laughs. That should be a good one.</line>
+    <line>This recording should be labeled &quot;weather.&quot;</line>
+  </scene>
+</conversation>

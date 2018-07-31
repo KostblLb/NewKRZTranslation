@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tavern-looked-at-dumpster" value="true"/>
+    
+    <line>The trash bin is filled. Several pairs of working shoes, a few hats, and a small zip-loc bag with three pairs of eyeglasses.</line>
+  </scene>
+</conversation>

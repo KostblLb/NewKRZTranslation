@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="distillery-discussed-casks" value="true" />
+    
+    <line speaker="shannon">So I guess these are like ... before and after?</line>
+    <option goto="new" speaker="conway">The new casks look like they could be used for anything.</option>
+    <option goto="old" speaker="conway">I wonder what they keep the old casks around for.</option>
+  </scene>
+
+  <scene name="new" nextScene="renew">
+    <line speaker="shannon">Yeah, before they get all warped and stained ... You really can't undo that, can you?</line>
+  </scene>
+
+  <scene name="old" nextScene="renew">
+    <line speaker="shannon">They smell nice for a little while, but it's pretty overpowering. No way around that smell ...</line>
+  </scene>
+
+  <scene name="renew" nextScene="end">
+    <line speaker="shannon">No way to clean them after the aging process, I mean. It's a one-way street.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-shannon-talked-to-dawn" value="true" />
+    <line speaker="dawn">`<filter name="capitalize"><variable name="tiki-sonny-rant-subject" /></filter>`! That's a new one. Ha ha.</line>
+    <line speaker="dawn">He's ridiculous, but I love him. I guess you'd have to, to sit here and listen to shit like `<variable name="tiki-sonny-rant-subject" />`, right?</line>
+    <line speaker="dawn">The Mai Tais help ...</line>
+  </scene>
+</conversation>

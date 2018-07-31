@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-guitar-player" value="true"/>
+
+    <line>A tiny gray figure walks along the side of the road, carrying what appears to be a guitar case. He is followed closely by a smaller shape. A dog?</line>
+    <line condition="one:overworld-visited-guitar-player">He looks tired.</line>
+    <line condition="!one:overworld-visited-guitar-player">He suddenly winks out of view, perhaps into the woods.</line>
+  </scene>
+</conversation>

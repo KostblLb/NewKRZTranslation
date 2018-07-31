@@ -1,0 +1,34 @@
+# -*- mode: blocking -*-
+
+Main Cursor Hide
+
+Main Disable Silo/Root/Wobble/Coconut ? riverworld-research-lab=aboard
+
+Main Audio* FadeIn truck 2
+Main Audio* FadeIn water 2
+Main Audio* FadeIn reflections 20
+
+Main Listen start-silo-dialog
+Main Cursor Show
+Main Dialog SiloCombined
+Main Cursor Hide
+Main Wait 2
+Main Message MainCamera Ascend
+Main Wait 5
+Main Run* Ezra EndingPositions/EzraEndPosition
+Main Wait 2
+Main Audio* FadeOut water 30
+Main Audio* FadeOut reflections 30
+Main Audio* FadeOut truck 30
+Main Walk* Shannon EndingPositions/ShannonEndPosition
+Main Wait 2
+Main Walk* Junebug EndingPositions/JunebugEndPosition
+Main Wait 1.25
+Main Walk* Johnny EndingPositions/JohnnyEndPosition
+Main Wait 1
+Main Walk* Clara EndingPositions/ClaraEndPosition
+Main Audio* FadeIn birds 30
+Main Wait 20
+Main Set act-four-finished true
+Main Event save
+Main SceneChange End

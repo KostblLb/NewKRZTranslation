@@ -1,0 +1,205 @@
+# -*- mode: blocking -*-
+
+@set Root VignetteMapRoom
+
+# Universal setup
+@func SetupVignette
+
+  Main Set temp:tugboat-inside true
+  Main Set temp:tugboat-peeled true
+  Main Set temp:tugboat-side starboard
+
+  @LockDoors
+
+  Main Enable [Root]
+  Main Message TugboatStaging SetPeelOrigin [Root]/PeelStartPosition
+  Main Message TugboatCameraRig SetZoom -3
+  Main Message TugboatCameraRig SetSpeedFactor 0.2
+  Main Message TugboatCameraRig SetPlayer Ezra
+  
+  Main Message ActorLightswitchCabin ToggleImmediate
+  Main Interact ActorLightswitchCabin Off
+
+  Main Marker Lock
+
+  Main Player Ezra Player
+
+  @inline SetupInsideSound
+  
+  Zoom Sync Staging
+  Zoom Message TugboatCameraRig SetZoom -2
+
+  Will Message Will DisableNavigation
+  Will Transform Will [Root]/WillStartPosition
+  Will Gesture Will Snap MapRoomLean
+
+  Conway Message Conway DisableNavigation
+  Conway Transform Conway [Root]/ConwayStartPosition
+  Conway Gesture Conway Snap MessTable
+
+  Clara Message Clara DisableNavigation
+  Clara Transform Clara [Root]/ClaraStartPosition
+  Clara Gesture Clara Snap Bunk
+
+  #Shannon Message Shannon DisableNavigation
+  #Shannon Transform Shannon [Root]/ShannonStartPosition
+  #Shannon Gesture Shannon Snap ThereminIdle
+
+  Shannon Message [Root]/ThereminShannon SetupAnimations
+  Shannon Message [Root]/ThereminShannon MarkForRender
+
+  Hound Transform Hound [Root]/HoundStartPosition
+  Hound Gesture Hound Snap IdleFloor
+  Hound Disable Hound CharacterPointOfInterest
+
+  Val Transform Val [Root]/ValStartPosition
+
+  Cat Transform Cat [Root]/CatStartPosition
+
+@end
+
+@func ThereminFraming
+  Main Message TugboatCameraRig SetZoom -2
+@end
+
+@func ClearThereminFraming
+  Main Message TugboatCameraRig SetZoom 0
+@end
+
+@func WillFraming
+  Main Message TugboatCameraRig SetPlayer Will
+  Main Message TugboatCameraRig SetZoom -2
+@end
+
+@func WillPoints
+  Will Gesture Will Enter MapRoomPoint
+@end
+
+@func EzraLooksAtWill
+  Ezra Look Ezra Will
+@end
+
+@func EzraLooksAtMaps
+  Ezra Look Ezra [Root]/LookMaps
+@end
+
+@func EzraLooksAtMapPile
+  Ezra Look Ezra [Root]/EzraMapPile
+  Ezra Walk Ezra [Root]/EzraMapPile
+@end
+
+@func EzraBackAtWill
+  Ezra Unlook Ezra
+  Ezra Walk Ezra [Root]/WillHint
+@end
+
+@func EndScene
+  End Cursor Hide
+  End Interact Off
+  End Marker Lock
+  End Wait 2
+  End SceneChange Overworld ? !debug-run-all-tugboat-vignettes
+  End Set tugboat-vignette VideoArchive ? debug-run-all-tugboat-vignettes
+  End SceneChange Tugboat ? debug-run-all-tugboat-vignettes
+@end
+
+# Bookmarks
+@func LoadBookmark
+  Main Exec LoadStartBookmark ? tugboat-maproom-bookmark=start
+  Main Exec LoadWheelhouseBookmark ? tugboat-maproom-bookmark=wheelhouse
+  Main Exec LoadWillBookmark ? tugboat-maproom-bookmark=will
+@end
+
+@func LoadStartBookmark
+
+  Main Tag Ezra/*/EzraPoi PointOfInterestHigh
+  Main Warp Ezra [Root]/EzraStartPosition
+  Main Align* Ezra [Root]/EzraStartPosition
+  Main Gesture* Ezra Snap Helm
+  Main Message Ezra SetLimitedLook
+  Main Exec SnapStaging
+
+  Cate Warp Cate [Root]/CateStartPosition
+  Cate Wait temp:looked-outside
+  Cate Walk Cate [Root]/CateTalkEzraPosition
+  Cate Look Val Cate
+  Cate Look Cate Ezra
+  Cate Wait !temp:dialog-running
+  Cate Message TugboatCameraRig SetZoom 0
+  Cate Message TugboatStaging ClearPeelOrigin
+  Cate Look Ezra Cate
+  Cate Unalign Ezra
+  Cate Gesture Ezra Exit Helm
+  Cate Message Ezra EnableLayer Recorder
+  Cate Turn Ezra Cate
+  Cate Dialog TugboatMapRoomCateAndEzraInWheelhouse Arrow
+  Cate Unlook Cate
+  Cate Unlook Ezra
+  Cate Set temp:ezra-done-lookout true
+  Cate Fork Ezra
+  Cate Walk Cate [Root]/CateWheelhousePosition
+  Cate Align Cate [Root]/CateWheelhousePosition
+  Cate Gesture Cate Enter Steer
+  Cate Message TugboatCameraRig SetSpeedFactor 1
+
+  Ezra Interact Off
+  Ezra Walk Ezra [Root]/EzraWheelhousePosition
+  Ezra Message TugboatMotion BlendAmplitude 0.1
+  Ezra Message TugboatStaging BlendMistSpeed 0.1
+  Ezra Marker Unlock
+  Ezra Interact On
+  Ezra Set tugboat-maproom-bookmark wheelhouse
+  Ezra Event save
+  
+@end
+
+@func LoadWheelhouseBookmark
+
+  Main Set temp:looked-outside true
+  Main Set temp:ezra-done-lookout true  
+
+  Main Warp Cate [Root]/CateWheelhousePosition
+  Main Gesture Cate Snap Steer
+  Main Look Val Cate
+  
+  Main Message TugboatCameraRig SetZoom 0
+  Main Message TugboatStaging ClearPeelOrigin
+  Main Message TugboatCameraRig SetSpeedFactor 1
+  
+  Main Warp Ezra [Root]/EzraWheelhousePosition
+  Main Exec SnapStaging
+  
+  Main Message TugboatMotion BlendAmplitude 0.1
+  Main Message TugboatStaging BlendMistSpeed 0.1
+  Main Marker Unlock
+
+@end
+
+@func LoadWillBookmark
+
+  Main Set temp:looked-outside true
+  Main Set temp:ezra-done-lookout true  
+
+  Main Warp Cate [Root]/CateWheelhousePosition
+  Main Gesture Cate Snap Steer
+  Main Look Val Cate
+  
+  Main Message TugboatCameraRig SetZoom 0
+  Main Message TugboatStaging ClearPeelOrigin
+  Main Message TugboatCameraRig SetSpeedFactor 1
+  
+  Main Warp Ezra [Root]/WillHint
+  Main Exec SnapStaging
+  Main Sync Staging
+  Main Message [Root]/ThereminShannon MarkForRender  
+  Main Message Will MarkForRender
+  Main Message Clara MarkForRender
+  
+  Main Message TugboatMotion BlendAmplitude 0.1
+  Main Message TugboatStaging BlendMistSpeed 0.1
+  Main Marker Unlock
+
+@end
+
+@SetupVignette
+@LoadBookmark

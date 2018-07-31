@@ -1,0 +1,32 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-second-bike-conversation">
+  <scene name="intro">
+    <setGameVar name="breakdown-bike-talked-about-headlight" value="true"/>
+    
+    <line speaker="johnny">You know, we're already late ...</line>
+    <option goto="keep-moving" speaker="junebug">So we'd better keep moving.</option>
+    <option goto="harry" speaker="junebug">Are you going to explain all this to Harry?</option>
+  </scene>
+
+  <scene name="keep-moving" nextScene="decision">
+    <line pause="false" speaker="johnny">I just mean ... what's another few minutes?</line>
+  </scene>
+
+  <scene name="harry" nextScene="decision">
+    <line speaker="johnny">Oh, uh ... No way. You're the smooth talker.</line>
+    <line pause="false" speaker="johnny">In fact ... I bet you'd have no problem explaining we had to stop out of the goodness of our nature, and check on some wayfaring strangers.</line>
+  </scene>
+
+  <scene name="decision">
+    <option goto="end-stop" speaker="junebug">Fine. Just for a few minutes, though.</option>
+    <option goto="end" speaker="junebug">Every minute counts, cricket.</option>
+  </scene>
+
+  <scene name="end-stop" nextScene="end">
+    <setGameVar name="breakdown-agreed-to-stop" value="true"/>
+    <setGameVar name="breakdown-reason-for-stopping" value="late"/>
+    
+    <line speaker="johnny">You're the best. And, hey, maybe if they're not busy they can fill some seats at the gig. You know if no one's there Harry'll try and bilk us on our fee.</line>
+  </scene>
+
+</conversation>

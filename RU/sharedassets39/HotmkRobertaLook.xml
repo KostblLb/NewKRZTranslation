@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <line>A woman in a long, worn shirt stares at the fire, lost in thought.</line>
+  </scene>
+</conversation>

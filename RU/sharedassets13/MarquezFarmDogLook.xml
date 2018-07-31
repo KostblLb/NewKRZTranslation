@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <line>An old hound in a straw hat. Both have seen better days.</line>
+  </scene>
+</conversation>

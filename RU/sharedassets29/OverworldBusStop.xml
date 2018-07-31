@@ -1,0 +1,87 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" time="2"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="root-choices">
+    <triggerEvent name="fade-out-radio"/>    
+    <setGameVar name="overworld-saw-bus-stop" value="true"/>
+    <audioFade clip="clock-shop" direction="to" target="0.125" time="4"/>
+    <audioFade clip="small-town" direction="in" time="2"/>
+    
+    <triggerEvent name="fade-out-road-sounds"/>
+    
+    <line>A faux-rustic wooden sign hangs by chain above the door: &quot;Glasgow Clockworks,&quot; carved in a fanciful typeface, then set with what looks like brass or colored plastic. The windows are darkened, too crowded with antique clocks to make out the interior.</line>
+    <line>A small metal sign bolted in the building's alley reads &quot;GTS Stop #5. 5:30 — 7:15 — 8:45 — 10:15 — 12:15 — ,&quot; and then several more numbers or words, worn illegible by rain.</line>
+    
+    <line condition="!overworld-bus-stop-picked-up-anyone">Three people stand under the sign: a young man with a newspaper, a young woman scribbling anxiously in a leather-bound journal, and an older woman whose face is shadowed by a wide-brimmed hat.</line>
+    <line condition="overworld-bus-stop-picked-up-anyone+!overworld-bus-stop-picked-up-keith">A young man with a newspaper leans against the wall.</line>
+    <line condition="overworld-bus-stop-picked-up-anyone+!overworld-bus-stop-picked-up-patty">A young woman scribbles anxiously in a leather-bound journal.</line>
+    <line condition="overworld-bus-stop-picked-up-anyone+!overworld-bus-stop-picked-up-linda">An older woman's face is shadowed by a wide-brimmed hat.</line>    
+  </scene>
+
+  <scene name="root-choices">
+    <audioFade clip="clock-shop" direction="to" target="0.125" time="4"/>
+    <audioFade clip="small-town" direction="in" time="1"/>
+    
+    <option condition="!overworld-looked-into-clockworks-window" goto="window" insertedText="Conway peers into the window.">Peer into the window.</option>
+    <option condition="!overworld-listened-at-clockworks-window" goto="window-listen" insertedText="">Listen at the glass.</option>
+    
+    <option condition="!overworld-bus-stop-examined-sign" goto="bus-sign" insertedText="Conway examines the metal sign.">Examine the sign.</option>
+    
+    <option condition="overworld-bus-stop-examined-sign+!overworld-bus-stop-picked-up-keith" goto="offer-ride-man" insertedText="Conway offers a ride to the man with the newspaper.">Offer a ride to the man.</option>
+    <option condition="overworld-bus-stop-examined-sign+!overworld-bus-stop-picked-up-patty" goto="offer-ride-young-woman" insertedText="Conway offers a ride to the woman with the journal.">Offer a ride to the younger woman.</option>
+    <option condition="overworld-bus-stop-examined-sign+!overworld-bus-stop-picked-up-linda" goto="offer-ride-old-woman" insertedText="Conway offers a ride to the woman in the hat.">Offer a ride to the older woman.</option>
+    
+    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+  </scene>
+
+  <scene name="window" nextScene="root-choices">
+    <setGameVar name="overworld-looked-into-clockworks-window" value="true"/>    
+    <line>It's hard to tell where the curtains' shadows end and the dusty clock silhouettes begin.</line>
+  </scene>
+
+  <scene name="window-listen" nextScene="root-choices">
+    <setGameVar name="overworld-listened-at-clockworks-window" value="true"/>
+    <audioFade clip="small-town" direction="out" time="4"/>    
+    <audioFade clip="clock-shop" direction="to" target="0.5" time="4"/>
+    <line>Conway rests his head against the window and closes his eyes. It feels cool. His breath fogs the glass like September.</line>
+    <line>It was fall when he met Lysette. School days. Neither of them were very good students. They'd cut out early and spend the afternoons in darkened bars.</line>
+    <line>Sometimes she'd sing, or he'd pick up bottles, and the staff would pretend they were old enough to be there. Conway and Lysette would pretend, too.</line>
+    <line>Then he got a long haul job, lost it on the road, and took too long coming home. He took a job from a wiry, irritable roofer named Ira.</line>
+    <line>Ira brought him home to meet the wife and son, and there she was. Conway kept his mouth shut, not out of respect but out of habit.</line>
+  </scene>
+
+  <scene name="bus-sign">
+    <setGameVar name="overworld-bus-stop-examined-sign" value="true"/>
+    
+    <line>It's impossible to tell how late the bus runs. Are these people just waiting? Could they have missed the last bus?</line>
+    <option condition="!overworld-bus-stop-picked-up-keith" goto="offer-ride-man" insertedText="Conway offers a ride to the man with the newspaper.">Offer a ride to the man.</option>
+    <option condition="!overworld-bus-stop-picked-up-patty" goto="offer-ride-young-woman" insertedText="Conway offers a ride to the woman with the journal.">Offer a ride to the younger woman.</option>
+    <option condition="!overworld-bus-stop-picked-up-linda" goto="offer-ride-old-woman" insertedText="Conway offers a ride to the woman in the hat.">Offer a ride to the older woman.</option>
+    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+  </scene>
+
+  <scene name="offer-ride-man" nextScene="end">
+    <setGameVar name="overworld-bus-stop-picked-up-anyone" value="true"/>
+    <setGameVar name="overworld-bus-stop-picked-up-keith" value="true"/>
+    
+    <line>The man accepts gratefully. His name is Keith. He lives a ways west, not far from the Museum of Dwellings. Just south across sixty-five.</line>
+  </scene>
+
+  <scene name="offer-ride-young-woman" nextScene="end">
+    <setGameVar name="overworld-bus-stop-picked-up-anyone" value="true"/>
+    <setGameVar name="overworld-bus-stop-picked-up-patty" value="true"/>
+    
+    <line>The young woman accepts cautiously. Her name is Patty. She lives near the state park, a short drive west of the Marquez farmhouse, on route seventy.</line>
+  </scene>
+
+  <scene name="offer-ride-old-woman" nextScene="end">
+    <setGameVar name="overworld-bus-stop-picked-up-anyone" value="true"/>
+    <setGameVar name="overworld-bus-stop-picked-up-linda" value="true"/>
+    
+    <line>The old woman grumbles to herself as she climbs in the truck. Her name is Linda. She lives near the artificial limb factory, but can't be bothered for specifics.</line>
+  </scene>
+
+</conversation>

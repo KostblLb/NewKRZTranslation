@@ -1,0 +1,24 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="mimi">Good "morning" ...</line>
+    <line speaker="jenn">Baggs isn't feeling well — long night ...</line>
+    <line speaker="mimi">Poor kitty.</line>
+    <line speaker="jenn">What are you watching?</line>
+    <line speaker="mimi">Security tape from last night. Darryl left the lights on again. Should we slash his tires?</line>
+    <line speaker="jenn">I'll leave a stern note on his desk.</line>
+    <line speaker="mimi">Spare the rod ...</line>
+    <line speaker="jenn">Hm. What are we doing today?</line>
+    <line speaker="mimi">Right. This is weird ... you know that old vending machine?</line>
+    <line speaker="jenn">The one that only has tomato juice?</line>
+    <line speaker="mimi">No, no, the old one they just stopped refilling ... Remember, we rolled it out onto the dock last August and some scavenger stripped it for metal in the middle of the night? Darryl cut his hand cleaning up after them, and it got infected. Remember?</line>
+    <line speaker="jenn">No ...</line>
+    <line speaker="mimi">OK. Anyway, the rest of it ended up in the coat room until, finally, Darryl was piling it into a big bag for the trash barge to pick up, and he came across this box lost behind all the junk.</line>
+    <line speaker="mimi">Check it out.</line>
+    <line speaker="jenn">This looks old.</line>
+    <line speaker="mimi">Yeah. There's a bunch of video tapes and completed questionnaires. I looked up the reference number, and it's never been processed. So I guess that's what we're doing today!</line>
+    <line speaker="mimi">There's no date on it. We'll just have to make one up, unless there's some footage of a calendar or something in here. Ha ha.</line>
+    <line speaker="jenn" blocking="@inline PlayPaperSound">`(Flipping through questionnaire.)` I guess these are the `old` tests, before we started doing the video exit interviews. That's annoying.</line>
+    <line speaker="mimi">Yeah. Let's see, how did we do this ... I'll run the tape, you interpret the questionnaire, and I'll type it up?</line>
+  </scene>
+</conversation>

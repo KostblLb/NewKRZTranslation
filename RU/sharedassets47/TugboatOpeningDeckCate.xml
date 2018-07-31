@@ -1,0 +1,131 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tugboat-shannon-talked-to-cate" value="true" debug="true" />
+    <setGameVar name="tugboat-opening-bookmark" value="cate" />
+    
+    <line speaker="cate">How's that cold river spray treating you? I thought I saw you squinting; it's "hard water," you know, hard on the eyes. It still irritates mine a little, and I'm piloting a tugboat through it six nights a week.</line>
+    
+    <line speaker="cate">Don't be too shy to close them in public. Your eyes, I mean. People will just assume you're thoughtful.</line>
+    <line speaker="cate">You need tea ...</line>
+    <line speaker="cate"><template name="teaIngredientList" seed="medicine" /></line>
+    <option goto="tea-ingredients" speaker="shannon">What are all those for?</option>
+    <option goto="travel-status" speaker="shannon">How far are we from Dogwood Drive?</option>
+  </scene>
+
+  <scene name="tea-ingredients">
+    <line speaker="cate">Eye strain. <variable name="tugboat-first-tea-ingredient" /> masks the taste of the rest of it — <variable name="tugboat-second-tea-ingredient" /> in particular has an `eccentric` flavor profile. It's mushroom-based. I'm a big believer in the fungal pharmacy.</line>
+    
+    <option goto="travel-status" speaker="shannon">How far are we from Dogwood Drive?</option>
+    <option goto="travel-status" speaker="shannon">How's the water looking tonight?</option>
+    <option goto="captains-dog" speaker="shannon">Is that your dog?</option>
+  </scene>
+
+  <scene name="travel-status" nextScene="amenities">
+    <triggerEvent name="enter-ezra" debug="true" />
+    <line speaker="cate">The Echo is dicey tonight. Bad luck for you. Expect waves and diversions. Dogwood Drive is by the Silo mail stop, but we may need to spend some time on the `indirect route` before we hit your stop, OK?</line>
+    <line speaker="cate">And there's other business. Mail to drop off, garbage to pick up, and a few favors to execute, all dotted on the river banks from here to there!</line>
+  </scene>
+
+  <scene name="captains-dog" nextScene="amenities">
+    <triggerEvent name="enter-ezra" debug="true" />
+    <line speaker="cate">Yeah, that's Valkyrie. I call her "Val." She's a rescue. Isn't she dignified? I've always thought so ...</line>
+    <option speaker="shannon" goto="amenities">Very dignified.</option>
+    <option speaker="shannon" goto="cat">Is that your cat, too, below deck?</option>
+  </scene>
+
+  <scene name="cat" nextScene="amenities">
+    <setGameVar name="tugboat-opening-cate-mentioned-cat" value="true" />
+    <line speaker="cate">Huh? I thought that was `your` cat. He came on board with you at the Bureau.</line>
+    <line speaker="cate">Well, it wouldn't be the first time some strange animal hitched a ride ...</line>
+  </scene>
+  
+  <scene name="amenities">
+    <line speaker="cate">I hope you enjoy the trip on our little `Mammoth`. Take advantage of all the amenities: fresh air, cozy bunks, hot tea, the video room ...</line>
+    <line speaker="cate">There are some pretty interesting tapes down there, actually. `Unusual`, I mean. `Weird`. Watch out that VCR doesn't take your hand off, though! It's untrustworthy.</line>
+
+    <option speaker="shannon" goto="vcr">What's wrong with the VCR? I could take a look.</option>
+    <option speaker="shannon" goto="weird-tapes">What kind of weird tapes?</option>    
+  </scene>
+
+  <scene name="weird-tapes" nextScene="favor">
+    <line speaker="cate">There's one with this woman ... She's just, like, standing there `talking`, but you can't really hear her, and there's this awful hum ...</line>
+    <line speaker="cate">See for yourself, it's down there somewhere.</line>
+  </scene>
+  
+  <scene name="vcr" nextScene="favor">
+    <line speaker="cate">Oh, please do! I don't know anything about electronics. Maybe try a few different tapes. You'll get the picture.</line>
+  </scene>
+  
+  <scene name="favor" nextScene="end">
+    <line speaker="cate" condition="!tugboat-shannon-talked-to-will">Hey, do me a favor: go ask Will how the repairs are going and if he needs anything. We're coming up on the next stop here, just refueling and picking up a few things. I could grab a bolt or some wire or something. Whatever he needs.</line>
+    <line speaker="cate" condition="tugboat-shannon-talked-to-will">I saw you talking to Will. He's an old friend. Don't be fooled by that "burned-out" aura; he's a smart and kind man. I think his only vice is those silly scratch tickets. Speaking of which, we're coming up on our next stop shortly, refueling and picking up a few things.</line>
+    <line speaker="cate">Well, eyes on the road. Ha ha.</line>
+  </scene>
+
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <teaIngredientList>
+      <common>
+        <template xml:space="preserve">So ... <ingredient />, definitely. <ingredient filter="capitalize" />, <ingredient capture="tugboat-first-tea-ingredient" />, <ingredient />, and <ingredient capture="tugboat-second-tea-ingredient" />.</template>
+        <template xml:space="preserve">So ... <ingredient capture="tugboat-first-tea-ingredient" />, definitely. <ingredient filter="capitalize" /> ... maybe <witchyIngredient />? Just kidding. <ingredient filter="capitalize" />, <ingredient />, <ingredient capture="tugboat-second-tea-ingredient" />, and <ingredient />.</template>
+        <template xml:space="preserve">Let's mix up some <ingredient capture="tugboat-first-tea-ingredient" />, <ingredient />, and <ingredient capture="tugboat-second-tea-ingredient" />. Just add <witchyIngredient /> and that'd be a love potion! I'm teasing ... `or am I?`</template>
+      </common>
+
+      <rare>
+        <template xml:space="preserve"><ingredient filter="capitalize" capture="tugboat-first-tea-ingredient" />, then. It's in a little green box with a drawing of a moth on it. There's a jar of <ingredient /> under the table — keeping cool and dark. Get a solid fingerful and let it steep with <ingredient capture="tugboat-second-tea-ingredient" /> thirty seconds, then throw it out the window.</template>
+        <template xml:space="preserve">Down in the mess, there's a bit of <ingredient capture="tugboat-first-tea-ingredient" /> bundled into a cloth napkin and stuck in a coke can. Chew on it for five minutes — don't swallow anything, just spit into a coffee mug as needed. Mix that saliva with some cold water and some of the <ingredient capture="tugboat-second-tea-ingredient" /> in the cupboard, and let it steep just a few minutes before straining the liquid and putting it in the microwave.</template>
+      </rare>
+    </teaIngredientList>
+  </templates>
+
+  <templateValues>
+    <ingredient>
+      <common>
+        <value>milk thistle</value>
+        <value>peppermint</value>
+        <value>ginger</value>
+        <value>licorice</value>
+        <value>pomegranate</value>
+        <value>slippery elm</value>
+        <value>maitake</value>
+        <value>sun-dried oyster cap</value>
+        <value>turkey tail fungus</value>
+        <value>caterpillar fungus</value>
+        <value>`agrocybe aegerita`</value>
+        <value>boiled lichen</value>
+        <value>dried spring agaricus</value>
+        <value>bitter hedgehog</value>
+        <value>shiitake</value>
+        <value>split gill powder</value>
+        <value>bay bolete cap</value>
+        <value>dried reishi</value>
+      </common>
+
+      <rare>
+        <value>horse mushroom</value>
+        <value>flash-pickled sheep polypore</value>
+        <value>greening goat's foot</value>
+        <value>saw dust</value>
+        <value>cat dander</value>
+        <value>instant coffee</value>
+      </rare>
+    </ingredient>
+
+    <witchyIngredient>
+      <common>
+        <value>swelter'd venom</value>
+        <value>toad</value>
+        <value>wool of bat</value>
+        <value>tongue of dog</value>
+        <value>swamp snake</value>
+        <value>lizard leg</value>
+        <value>owlet wing</value>
+        <value>wolf tooth</value>
+        <value>hemlock root</value>
+      </common>
+    </witchyIngredient>
+  </templateValues>
+</conversation>

@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <blocking>@ShowSkeletons</blocking>
+    <setGameVar name="tiki-shannon-talked-to-junebug-departure" value="true" />
+    <line speaker="junebug">Well, that was a pleasant detour.</line>
+    <line speaker="johnny">Yes ma'am.</line>
+    <line speaker="junebug">`(To SHANNON.)` Ready to get moving? How about you round up the old man, if you can tear him free.</line>
+  </scene>
+
+</conversation>

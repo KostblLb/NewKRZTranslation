@@ -1,0 +1,41 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-lula-conversation">
+  <scene name="intro">
+    <setGameVar name="bureau-talked-to-lula" value="true"/>
+    
+    <line speaker="lula">Here you are. Mary Ann has the rest of the evening off, so I'm minding the desk.</line>
+    <option goto="busy" speaker="shannon">You're not too busy?</option>
+    <option goto="address" speaker="shannon">Any word on the address?</option>
+    <option goto="nice-place" speaker="junebug">Nice place.</option>
+  </scene>
+
+  <scene name="busy" nextScene="address">
+    <line speaker="lula">If I'm in the middle of something, I just let the phone ring. It's soothing, in a way.</line>
+  </scene>
+
+  <scene name="nice-place" nextScene="address">
+    <line speaker="lula">It is, isn't it? Sometimes I forget. The acoustics in here have a way of ... grinding one down.</line>
+  </scene>
+
+  <scene name="address">
+    <line speaker="lula">The results just came in by courier. Good news: Donald and his assistants were able to sort through the noise.</line>
+    <line speaker="lula">I had Rick cross-reference their results against some of our records. He found a corresponding mail stop, on the Echo River route.</line>
+    <line speaker="lula">As it happens, the night ferry is scheduled to make its stop here shortly. The ferryman carries the mail and collects the garbage as well. I'm sure you can catch a ride out that way.</line>
+    <line speaker="lula">You're welcome to wait here. I have to get back to packing.</line>
+    <option goto="packing" speaker="shannon">Are you going somewhere?</option>
+    <option goto="thanks" speaker="shannon">Thanks for your help.</option>
+  </scene>
+
+  <scene name="packing" nextScene="goodbye">
+    <line speaker="lula">I might. I'm feeling impulsive, and I'd like to be ready.</line>
+    <line speaker="lula">Maybe back to Mexico. It's been years ... they still have one of my sculptures in a museum down there, did you know? Big, ugly, iron thing. Time to have it scrapped, anyway.</line>
+  </scene>
+
+  <scene name="thanks" nextScene="goodbye">
+    <line speaker="lula">&quot;Happy to help.&quot; Ha ha. I suppose we just repeat it until it's true.</line>
+  </scene>
+
+  <scene name="goodbye" nextScene="end">
+    <line speaker="lula">Safe travels. Try to stay out of the water. It's colder than it looks, and deep.</line>
+  </scene>
+</conversation>

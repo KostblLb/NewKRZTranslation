@@ -1,0 +1,38 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-mill" value="true"/>
+    <triggerEvent name="start-tape"/>
+    
+    <triggerEvent name="look-at-grist-mill"/>
+    <line speaker="doolittle" style="skeleton">The mill. It's an antique! Perfectly functional. We recuperated it from a site upriver, decades ago. Keeps us honest in our old-world charm, if you follow. We do as much upkeep as The Formula allows.</line>
+    <option goto="good-shape" speaker="conway">Looks like it's in good shape.</option>
+    <option goto="water-wheel" speaker="shannon">The water wheel is twenty feet up!</option>
+  <option goto="formula" speaker="shannon" condition="!distillery-heard-about-formula">What's The Formula?</option>
+  </scene>
+
+  <scene name="good-shape" nextScene="out-of-water">
+    <line speaker="doolittle" style="skeleton">Nice of you to say — we take maintenance quite seriously here. But we can't accept all the credit. It was running perfectly well when we found it, long-abandoned though it was.</line>
+  </scene>
+
+  <scene name="water-wheel" nextScene="out-of-water">
+    <line speaker="doolittle" style="skeleton">Gives us more clearance for a big hopper.</line>
+  </scene>
+
+  <scene name="out-of-water" nextScene="end">
+    <line speaker="doolittle" style="skeleton">When we pulled it out of the water at the old site, the wheel just kept spinning and it hasn't stopped yet. Guess it didn't need the river to turn it after all.</line>
+  </scene>
+
+  <scene name="formula">
+    <setGameVar name="distillery-heard-about-formula" value="true" />
+    <line speaker="doolittle" style="skeleton">Eh? Oh, The Formula! Changed our lives.</line>
+    <line speaker="doolittle" style="skeleton">Once, years ago, we were as prisoners to the intricacies of our debts here. We'd have to account for everything on paper.</line>
+    <line speaker="doolittle" style="skeleton">Compounding interest by hand, reassessing amortization and leveraged asset distributions according to nightly merit decay ...</line>
+    <line speaker="doolittle" style="skeleton">Then, `she` stepped out of the dark caves, to show us the light of The Formula! She had a brilliant grasp of mathematics, and a saintlike way of speaking right `through` the numbers.</line>
+    <line speaker="doolittle" style="skeleton">Now, we just plug our daily numbers into The Formula, and run it all through the adding machine. We occasionally suffer some surplus drift, but she instructed us on all the necessary adjustments.</line>
+    <line speaker="doolittle" style="skeleton">It was devastating to see our revered mathematician go, but she was needed elsewhere. Her legacy abides.</line>
+
+    <option goto="good-shape" speaker="conway">Looks like it's in good shape.</option>
+    <option goto="water-wheel" speaker="shannon">The water wheel is twenty feet up!</option>
+  </scene>  
+</conversation>

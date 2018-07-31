@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="scratch-ticket">
+    <line speaker="jenn">Bye, kitty.</line>
+    <line speaker="mimi">They look like nice enough people. I'm sure she's very happy with them.</line>
+    <line speaker="jenn">Yeah.</line>
+  </scene>
+
+  <scene name="scratch-ticket" nextScene="closing">
+    <goto condition="floating-gas-station-scratch-ticket-choice=none" sceneName="closing" />
+    
+    <line speaker="jenn" condition="floating-gas-station-scratch-ticket-choice=bats">Whoa, somebody left a scratch ticket in this file. "Bat Bucks."</line>
+    <line speaker="jenn" condition="floating-gas-station-scratch-ticket-choice=sudoku">Whoa, somebody left a scratch ticket in this file. "Sudokash."</line>
+    <line speaker="jenn" condition="floating-gas-station-scratch-ticket-choice=minefield">Whoa, somebody left a scratch ticket in this file. "Money Minefield."</line>
+    <line speaker="mimi">Do it.</line>
+    <line speaker="jenn">OK ... Let's see ...</line>
+    <line speaker="jenn">Five bucks!</line>
+    <line speaker="mimi">This is the greatest day of my life.</line>
+    <line speaker="jenn">Oh, wait, it's expired ... like, `really` expired. Damn.</line>
+    <line>`(MIMI sighs.)`</line>        
+    <line speaker="mimi">I'm over it.</line>    
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line speaker="jenn">So ...</line>
+    <line speaker="jenn">This has been a bit of a memory trip for you, huh? I bet you didn't expect these old tapes to stir up so much ... How does it feel for these people to come up again, Weaver Márquez and Wise Will, I mean, and ... what was your boyfriend's name? The one who died in college.</line>
+    <line speaker="mimi">Charlie. Yeah, it's kind of a bittersweet experience, actually. Like looking at photographs of people who've died, or moved away. People that are gone.</line>
+    <line speaker="jenn">Gone, but not forgotten.</line>
+    <line speaker="mimi">No, not forgotten. You're right.</line>
+  </scene>
+</conversation>

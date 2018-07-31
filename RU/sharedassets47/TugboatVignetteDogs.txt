@@ -1,0 +1,38 @@
+# -*- mode: blocking -*-
+
+# TODO Dogs hang out. Below is placeholder.
+
+@set Root VignetteDogs
+
+Main Set temp:tugboat-inside true
+Main Set temp:tugboat-peeled true
+Main Set temp:tugboat-side starboard
+
+Main Message TugboatMotion SetAmplitude 0.1
+Main Message TugboatStaging SetMistSpeed 0.1
+
+Main Enable [Root]
+Main Marker Lock
+Main Interact Off
+#Main Cursor Hide
+
+@inline SetupInsideSound
+
+Val Transform Val [Root]/ValStartPosition
+Val Disable Val CharacterPointOfInterest
+
+Hound Transform Hound [Root]/HoundStartPosition
+Hound Disable Hound CharacterPointOfInterest
+Hound Gesture Hound Snap IdleFloor
+
+Main Message TugboatCameraRig SetPlayer [Root]/DogsPlayer
+Main Message TugboatStaging SetPeelOrigin [Root]/DogsPlayer
+Main Exec SnapStaging
+Main Sync Staging
+Main Message TugboatCameraRig SetSpeedFactor 0.05
+Main Message TugboatCameraRig SetZoom -1
+Main Wait 15
+Main SceneChange Overworld ? !debug-run-all-tugboat-vignettes
+Main Set tugboat-vignette MemoryGame ? debug-run-all-tugboat-vignettes
+Main SceneChange Tugboat ? debug-run-all-tugboat-vignettes
+

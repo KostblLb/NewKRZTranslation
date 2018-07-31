@@ -1,0 +1,54 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="bike-passing-conversation-end">
+  <scene name="intro">
+    <setGameVar name="breakdown-after-passing-talked-to-someone" value="true"/>
+    <setGameVar name="breakdown-after-passing-talked-to-shannon" value="true"/>
+    
+    <line speaker="shannon">Maniacs.</line>
+    <line speaker="shannon">Are you OK?</line>
+    
+    <option goto="dust" speaker="conway">Got a little dust in my eye.</option>
+    <option goto="fine" speaker="conway">Fine.</option>
+    <option goto="you" speaker="conway">Sure; you?</option>
+  </scene>
+
+  <scene name="dust" nextScene="bike">
+    <line speaker="shannon">Oh no. Here, I think I have some eye drops ...</line>
+  </scene>
+
+  <scene name="fine" nextScene="bike">
+    <line condition="one:shannon-gave-painkillers" speaker="shannon">&quot;Fine&quot; like you were back at the mine, or the storage facility? Never mind ...</line>
+    <line condition="one:shannon-gave-painkillers" speaker="shannon">If you want another painkiller, just let me know. I don't need them. If they sit in my bag any longer they'll probably sprout some weird psychotropic mold.</line>
+    <line condition="!one:shannon-gave-painkillers" speaker="shannon">Of course you are.</line>
+  </scene>
+
+  <scene name="you" nextScene="bike">
+    <line speaker="shannon">Oh. No, I'm fine.</line>
+    <line speaker="shannon">Thanks.</line>
+  </scene>
+
+  <scene name="bike">
+    <line speaker="shannon">They were in a hurry.</line>
+    
+    <option goto="you-think" speaker="conway">Where do you think they were headed?</option>
+    <option goto="hurry" speaker="conway">Some folks are always in a hurry.</option>
+  </scene>
+
+  <scene name="you-think" nextScene="end">
+    <line condition="one:conway-fascination=destination" speaker="shannon">I don't know. Headed to work? Headed home? Where are any of us headed?</line>
+    <line condition="one:conway-fascination=wandering" speaker="shannon">What do `I` think about where `they` were headed? Sometimes you're pretty ... abstract.</line>
+  </scene>
+
+  <scene name="hurry" nextScene="end">
+    <line condition="one:conway-fascination=destination" speaker="shannon">Not you though, huh? You just keep drifting along and don't let anyone rush you. What is that? Is that patience?</line>
+    <line condition="one:conway-fascination=destination" speaker="shannon">Something like patience.</line>
+
+    <line condition="one:conway-fascination=wandering" speaker="shannon">Not you though, huh? You get caught up on a stranger's yarn, or a streetlight reflected in a puddle.</line>
+    <line condition="one:conway-fascination=wandering" speaker="shannon">And nobody can get you moving again until you've let the grace of the moment right into your bones.</line>
+    <line condition="one:conway-fascination=wandering" speaker="shannon">Like a poet.</line>
+    <line condition="one:conway-fascination=wandering" speaker="shannon">Or a donkey.</line>
+
+    <line speaker="shannon">I guess that's what I like about you, old man. You know how to wait.</line>
+    <line speaker="shannon">I don't think I ever will.</line>
+  </scene>
+</conversation>

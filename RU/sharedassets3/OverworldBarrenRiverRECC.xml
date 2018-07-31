@@ -1,0 +1,74 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="intro-options">
+    <setGameVar name="overworld-visited-barren-river-recc" value="true"/>
+    
+    <line pause="false">The exterior of the `Barren River Rural Electric Cooperative Corporation` is a dingy beige, sprinkled with fading graffiti. The front door hangs open from a broken hinge. The windows are dark.</line>
+  </scene>
+
+  <scene name="intro-options">
+    <option goto="look-in-window" insertedText="Conway looks in a window.">Look in a window.</option>
+    <option goto="inside-front-door" insertedText="Conway steps through the front door.">Enter the front door.</option>
+    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+  </scene>
+
+  <scene name="look-in-window" nextScene="intro-options">
+    <line pause="false">The windows are too dirty to see anything inside but a few dim shapes. Furniture, maybe, or livestock.</line>
+  </scene>
+
+  <scene name="inside-front-door" nextScene="inside-front-door-options">
+    <line>The room feels empty with no furniture other than the built-in front desk, host to a disconnected telephone and a few empty beer cans. Meandering lines of color have been spray-painted along the walls.</line>
+    <line pause="false">Behind the desk, a hallway leads into darkness.</line>
+  </scene>
+
+  <scene name="inside-front-door-options">
+    <option condition="!barren-river-recc-checked-phone" goto="telephone" insertedText="Conway lifts the telephone receiver to his ear.">Pick up the telephone.</option>
+    <option goto="hallway" insertedText="Conway steps into the hallway.">Enter the hallway.</option>
+    <option goto="intro" insertedText="Conway steps out the front door.">Leave the building.</option>
+  </scene>
+
+  <scene name="telephone">
+    <setGameVar name="barren-river-recc-checked-phone" value="true"/>
+    
+    <line>There's no dial tone. The phone is disconnected.</line>
+    <option goto="telephone-listen-closer" insertedText="Conway closes his eyes.">Listen closer.</option>
+    <option goto="inside-front-door-options" insertedText="Conway sets the phone handset back down.">Put the phone down.</option>
+  </scene>
+
+  <scene name="telephone-listen-closer" nextScene="inside-front-door-options">
+    <line pause="false">With the phone pressed close to his ear, Conway can hear a thin, quiet roar, like the ocean or the highway.</line>
+  </scene>
+
+  <scene name="hallway">
+    <line>The hallway passes several smaller office doors. It quickly disappears into darkness. Something is glowing in the distance, barely.</line>
+    
+    <option goto="dark-end-of-hallway" insertedText="Conway walks to the dark end of the hall.">Walk to the dark end of the hall.</option>
+    <option condition="!barren-river-recc-checked-doors" goto="try-office-door" insertedText="Conway tries a few of the office doors.">Try an office door or two.</option>
+    <option goto="inside-front-door" insertedText="Conway steps back out of the hallway.">Return to the front desk.</option>
+  </scene>
+
+  <scene name="try-office-door" nextScene="hallway">
+    <setGameVar name="barren-river-recc-checked-doors" value="true"/>
+    
+    <line>One of the office doors is still locked. Another has been broken open, the door handle bent awkwardly inwards and embedded in the wood, but it's jammed against a filing cabinet. On closer inspection through the crack in the door, the whole room is filled with filing cabinets and other disused furniture.</line>
+  </scene>
+
+  <scene name="dark-end-of-hallway">
+    <line>The door at the far end of the hallway is tightly closed, but a warm glow bleeds in from its edges.</line>
+    
+    <option goto="open-dark-door" insertedText="Conway opens the door at the end of the hallway.">Open the door.</option>
+    <option goto="inside-front-door" insertedText="Conway steps back out of the hallway.">Return to the front desk.</option>
+  </scene>
+
+  <scene name="open-dark-door" nextScene="campfire">
+    <line>The handle is loose, and the door swings open easily. The hallway fills with warmth, light, and the smells of smoke and coffee.</line>
+  </scene>
+
+  <scene name="campfire" nextScene="end">
+    <setGameVar name="overworld-completed-barren-river-recc" value="true"/>
+    
+    <line>About a dozen men and women sit around a campfire in the middle of a large room. Cubicle walls have been cut into pieces: some leaning up against the walls, and some arranged into stacks of firewood.</line>
+    <line>One of the women waves to Conway, and offers him an empty chair. It's missing wheels, but it's comfortable and easily adjustable to his height. Someone takes a pot hung above the fire and pours coffee into a styrofoam cup. Conway accepts it, and they all return to watching the fire.</line>
+  </scene>
+
+</conversation>

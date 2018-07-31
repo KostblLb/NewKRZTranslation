@@ -1,0 +1,44 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />    
+    <line>That right there is Ratliff Monuments, if you ever need a headstone carved ... for a loved one, I mean.</line>
+    <line>Violet Ratliff, never married, nevertheless bore six children (Earl, Kelly, Barb, Ron, Young Earl, and Beauty), and for each birth she locked the doors of Ratliff Monuments for only one day, even with Young Earl, when she was in labor for thirty-six hours.</line>
+    <line>Well, that's what folks said, and I met her, and I believe them; she had the unyielding disposition of a cliffside.</line>
+    <line>None of Violet's children had any desire to go into monument-making.</line>
+    <option goto="earl">Earl was more interested in car speakers.</option>
+    <option goto="beauty">Beauty thought it all a bit ghoulish.</option>
+    <option goto="barb">Barb was never very good with her hands.</option>
+  </scene>
+
+  <scene name="earl" nextScene="young-earl">
+    <line>This was to be a lifelong passion for Earl, though cut short by bad wiring.</line>
+  </scene>
+
+  <scene name="beauty" nextScene="young-earl">
+    <line>There's some truth to that; very little demand for monuments to the living, after all.</line>
+  </scene>
+
+  <scene name="barb" nextScene="young-earl">
+    <line>She ended up reading scripts in a call center, where she only occasionally has to press a button or take down an order. Mostly she talks and listens, which suits her well enough.</line>
+  </scene>
+
+  <scene name="young-earl">
+    <line>The run of the shop fell at last to Young Earl, the only Ratliff still at home when his mother finally passed at eighty-two, and who then had the honor of engraving her headstone.</line>
+    <line>He's done well, for the most part.</line>
+    <option goto="flood">The shop was damaged in a flood several years ago.</option>
+    <option goto="craftsmanship">His craftsmanship has suffered over time.</option>
+  </scene>
+
+  <scene name="flood" nextScene="end">
+    <line>The "showcase," a mock cemetery out front, was mostly washed away. Stone monuments, bobbing violently in the first torrents of the flood, eventually sank and spread along the channel bottom down-river, an elongated graveyard for no human loss, visited by eyeless fish and adorned with indifferent wreaths of algae.</line>
+    <line>If a few stray stones ended up at the bottom of Lake Lethe, too, we'll never know.</line>
+    <line>Young Earl is the last of his short line, professionally, and there's nobody around qualified to carve his monument, so he's already claimed one of those at the bottom of the river for himself.</line>
+  </scene>
+
+  <scene name="craftsmanship" nextScene="end">
+    <line>It's his hands, cut and bruised by missed strokes, shaken apart from the inside, too. He learned from Violet, when striking a block of stone with a mallet and chisel, to absorb the extra shock right into his bones so as to keep the apparatus straight and carve a perfect line.</line>
+    <line>He spends his time outside work just caring for his hands, soaking his bones in salt water, doing little exercises and stretches. It won't improve the straightness of his marks, but it might put off the day he finds himself unable to carve a line at all, scribbling on rocks, like his ancestors. That's the day he has nightmares about. He dreads it like death, though he makes no distinction between the two.</line>
+  </scene>
+
+</conversation>

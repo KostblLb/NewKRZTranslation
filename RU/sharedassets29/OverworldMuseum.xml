@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" time="2"/>
+  </endingAudioEvents>
+
+  <scene name="intro">
+    <triggerEvent name="fade-out-radio"/>
+    <setGameVar name="overworld-visited-museum" value="true"/>
+    <line>A sign in front of the building just reads "Museum." The lights are off, but the front door is open.</line>
+    <option goto="enter-museum" insertedText="Conway steps through the museum's doors.">Enter the museum.</option>
+    <option goto="end">Drive away.</option>
+  </scene>
+
+  <scene name="enter-museum">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <audioFade clip="museum-interior" direction="in" time="8" />
+    <audioFade clip="sweeping-glass" direction="in" time="16" />
+    
+    <line>A few feet inside the museum doors, the ambient sound of the highway drops sharply away. The room is cold, dark, and still.</line>
+    <line>Three gray figures sweep up broken glass.</line>
+    <option goto="help" insertedText="Conway picks up a broom and helps clean up.">Help clean up.</option>
+    <option goto="end" insertedText="Conway drives off.">Drive away.</option>
+  </scene>
+
+  <scene name="help">
+    <setGameVar name="overworld-helped-clean-up-museum" value="true" />
+    <line>They carefully sweep the glass, stopping now and then to get on their knees and pick up a large chunk, or delicately brush some smaller fragments into a dustpan.</line>
+    <option goto="can" insertedText="Conway moves into the hall to look for a trash can.">Look for a trash can.</option>
+    <option goto="shoe" insertedText="Conway stops to dislodge a piece of glass from his shoe.">Check shoes for broken glass.</option>
+  </scene>
+
+  <scene name="can" nextScene="end">
+    <line>A large, plastic trash bin with wheels is parked around the corner, but it's already overflowing. Where did all this glass come from?</line>
+  </scene>
+
+  <scene name="shoe" nextScene="end">
+    <line>It's about a half-inch long, jutting uncomfortably into the sole of his boot. He throws it at the dustpan. For a moment, it catches a ray of streetlight from the doorway, a wavering red-green-blue prism. It lands with a clink among the other pieces of glass.</line>
+  </scene>
+</conversation>

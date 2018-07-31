@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="enter-personnel-storage,disable-degauss,pre-ending">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-returned-hardhats" value="true"/>
+    <triggerEvent name="stand-outside-personnel-storage"/>
+    <line speaker="doolittle" style="skeleton">If you don't mind ...</line>
+  </scene>
+</conversation>

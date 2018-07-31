@@ -1,0 +1,48 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="exterior">
+    <setGameVar name="overworld-visited-shannons-workshop" value="true"/>
+    
+    <line>Conway and Shannon pull into the bait shop parking lot.</line>
+  </scene>
+
+  <scene name="exterior">
+    <line>Vaulted above the road on a thin steel bar, a handwritten sign reads &quot;LIVE BAIT. MINNOWS SMALL AND ALSO LARGE FOR STRIPERS. NIGHTCRAWLERS. CHIPS AND BEER.&quot; A green flyer hangs loosely from a bit of masking tape at eye-level.</line>
+    <line>To the shop's right, a dirt parking lot sprawls unevenly into grass and then eventually trees.</line>
+    <line>The bait shop is closed.</line>
+    
+    <option goto="workshop-entrance" insertedText="Conway and Shannon walk around to the side of the building into the workshop.">Enter the side door to Shannon's workshop.</option>
+    <option goto="end" insertedText="Conway and Shannon drive away.">Drive away.</option>
+  </scene>
+
+  <scene name="workshop-entrance" nextScene="workshop-entrance-options">
+    <line>The walls are lined with cheap metal shelves, loaded precariously with vacuum tubes, awkwardly-shaped metal casings, and coffee cans full of electronic components.</line>
+    <line pause="false">Shannon leads Conway to the back of the room, where a few TV sets in various states of disassembly are set up on a rough wooden table. She flips the switch on the power strip they're all plugged into, and the TV sets tremble to life.</line>
+  </scene>
+
+  <scene name="workshop-entrance-options">
+    <option goto="watch-tv" insertedText="Conway watches the TV sets.">Watch the TV sets.</option>
+    <option goto="ask-about-weaver" insertedText="Conway asks Shannon where she saw Weaver.">Ask Shannon about Weaver.</option>
+    <option goto="exterior" insertedText="Conway and Shannon walk back out of the workshop.">Leave the workshop.</option>
+  </scene>
+
+  <scene name="watch-tv" nextScene="workshop-entrance-options">
+    <line pause="false">A ghostly white wobble flickers along one screen in a rhythmic pattern. Another is just snow. A third — a small security monitor in the middle of the table — is oscillating between different shades of black.</line>
+  </scene>
+
+  <scene name="ask-about-weaver">
+    <line>Shannon points to a small security monitor on the table. The image on the screen is just black, but it seems to be fading slowly — almost imperceptibly — between different shades of black.</line>
+    <line>Shannon tweaks a few knobs on the side of the monitor, but the picture doesn't change.</line>
+    
+    <option goto="stare-at-monitor" insertedText="Conway stares directly at the security monitor.">Stare at the security monitor.</option>
+    <option goto="exterior" insertedText="Conway and Shannon walk back out of the workshop.">Leave the workshop.</option>
+  </scene>
+
+  <scene name="stare-at-monitor" nextScene="end">
+    <setGameVar name="overworld-completed-shannons-workshop" value="true"/>
+    
+    <line>The screen is a cavernous black. It hums and swells at the pace of the tide. Conway loses track of the workshop's walls — they could be inches away, or miles. He is adrift on black water, traveling swiftly toward a rocky shore. There should be a lighthouse or a buoy by these rocks — it's too dangerous.</line>
+    <line>Shannon switches off the power strip. Weaver is not here.</line>
+  </scene>
+
+</conversation>

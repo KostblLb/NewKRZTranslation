@@ -1,0 +1,87 @@
+# -*- mode: blocking -*-
+
+# 1
+@func MovementOne
+
+  Theremin Set temp:next-movement 1
+  Theremin Event calculate-ezra-choice
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 1
+  Theremin Wait 5
+  Theremin Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture  
+  Theremin Wait 1
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayMovement one
+  Theremin Message MainCamera IncrementZoom
+
+@end
+
+# 2
+
+@func MovementTwo
+
+  Theremin Set temp:next-movement 2
+  Theremin Event calculate-ezra-choice
+  Theremin Wait temp:movement-one-done
+  Theremin Wait 1
+  Theremin Wait 4 ? !ezra-has-recordings-to-play  
+  Theremin Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture    
+  Theremin Wait 1
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayMovement two
+  Theremin Wait 4
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 2
+  Theremin Message MainCamera IncrementZoom
+  
+@end
+
+# 3
+@func MovementThree
+
+  Theremin Set temp:next-movement 3
+  Theremin Event calculate-ezra-choice
+  Theremin Wait temp:movement-two-done
+  Theremin Wait 1
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 3
+  Theremin Wait 2
+  Theremin Wait 4 ? !ezra-has-recordings-to-play    
+  Theremin Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture    
+  Theremin Wait 1
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayMovement three      
+  Theremin Message MainCamera IncrementZoom
+  
+@end
+
+# 4
+@func MovementFour
+
+  Theremin Set temp:next-movement 4
+  Theremin Event calculate-ezra-choice
+  Theremin Wait temp:movement-three-done
+  Theremin Wait 1
+  Theremin Wait 4 ? !ezra-has-recordings-to-play
+  Theremin Message DockyardTugboat/Root/Wobble/Clara ExitPauseGesture      
+  Theremin Wait 1
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayMovement four
+  Theremin Wait 4      
+  Theremin Message DockyardTugboat/Root/Wobble/Clara PlayTapeForMovement 4
+  Theremin Message MainCamera IncrementZoom
+
+  Theremin Listen end-movement
+
+  Theremin Wait 5
+  Theremin Message MainCamera ResetZoom
+  Theremin Set temp:theremin-done true
+  
+@end
+
+# Scene
+
+Main Cursor Hide
+Main Gesture DockyardTugboat/Root/Wobble/Clara Snap Pause
+Main Listen dialog-can-start
+Main Exec MovementOne
+Main Wait 30
+Main Cursor Show
+Main Dialog DockyardJunebugAndJohnny
+Main Cursor Hide
+Main Wait 5
+Main Wait temp:theremin-done
+Main SceneChange Overworld

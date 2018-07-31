@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>        
+    <setGameVar name="distillery-saw-bunks" value="true"/>
+    
+    <line speaker="doolittle" style="skeleton">Thought you'd like to see the accommodations. We supply what bedding we can, according to The Formula.</line>
+    <option goto="sleep-here" speaker="conway">You sleep here?</option>
+    <option goto="number-of-employees" speaker="conway">How many people work here?</option>
+    <option goto="formula" speaker="shannon" condition="!distillery-heard-about-formula">What formula?</option>    
+  </scene>
+
+  <scene name="sleep-here" nextScene="focused">
+    <line speaker="doolittle" style="skeleton">A commute would cut into our working hours — and we dearly `need` those working hours. Some more than others.</line>
+    <line speaker="doolittle" style="skeleton">Why, I haven't seen the outdoors in ...</line>
+  </scene>
+
+  <scene name="number-of-employees" nextScene="focused">
+    <line speaker="doolittle" style="skeleton">Oh, about thirty, forty, something like that. Some of us count for more than others ...</line>
+  </scene>
+
+  <scene name="focused" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Myself, I'm `focused`. Well, shouldn't I be? I've got this figure to pay down. The longer I sleep, the more interest accrues. It's a sin to sleep your freedom away like that.</line>
+    <line speaker="doolittle" style="skeleton">Of course, as a delivery driver, you'd be able to come and go a little. You're timed pretty closely, but you can still roll the window down. Maybe glimpse a familiar silhouette on the side of the road, as you pass.</line>
+  </scene>
+
+  <scene name="formula">
+    <setGameVar name="distillery-heard-about-formula" value="true" />
+    
+    <line speaker="doolittle" style="skeleton">Eh? Oh, The Formula! Changed our lives.</line>
+    <line speaker="doolittle" style="skeleton">Once, years ago, we were as prisoners to the intricacies of our debts here. We'd have to account for everything on paper.</line>
+    <line speaker="doolittle" style="skeleton">Compounding interest by hand, reassessing amortization and leveraged asset distributions according to nightly merit decay ...</line>
+    <line speaker="doolittle" style="skeleton">Then, `she` stepped out of the dark caves, to show us the light of The Formula! She had a brilliant grasp of mathematics, and a saintlike way of speaking right `through` the numbers.</line>
+    <line speaker="doolittle" style="skeleton">Now, we just plug our daily numbers into The Formula, and run it all through the adding machine. We occasionally suffer some surplus drift, but she instructed us on all the necessary adjustments.</line>
+    <line speaker="doolittle" style="skeleton">It was devastating to see our revered mathematician go, but she was needed elsewhere. Her legacy abides.</line>
+
+    <option goto="sleep-here" speaker="conway">So you sleep here?</option>
+    <option goto="number-of-employees" speaker="conway">How many people work here?</option>
+  </scene>
+</conversation>

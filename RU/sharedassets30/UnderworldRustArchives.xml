@@ -1,0 +1,87 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="archives" destroy="true" direction="out" time="2" />
+  </endingAudioEvents>
+
+  <scene name="intro" nextScene="inside">
+    <triggerEvent name="fade-out-radio"/>
+    <triggerEvent name="fade-out-road-sounds"/>    
+    <setGameVar name="underworld-saw-rust-archives" value="true"/>
+    <line>The rust archives are housed in a low, wooden building with angular flourishes in glass. Shannon enters alone, up a shallow ramp and through glass doors.</line>
+  </scene>
+
+  <scene name="inside" nextScene="folder-choices">
+    <audioFade clip="archives" direction="in" time="8" />
+    <line>A young woman seated in a wheelchair staffs the front desk. She smiles politely.</line>
+  </scene>
+
+  <scene name="folder-choices">
+    <line>Two folders are stacked on the desk, an orange one labeled "Wheattree: Mexico City, VAM Station Wagon, 1974," and a green one labeled "Wheattree: Elizabethtown, Kinetic Sculpture, 1968."</line>
+    <option insertedText="Shannon picks up the file labeled 'Mexico City, VAM Station Wagon, 1974.'" goto="station-wagon-intro">Pick up the orange folder.</option>
+    <option insertedText="Shannon picks up the file labeled 'Elizabethtown, Kinetic Sculpture, 1968.'" goto="sculpture-intro">Pick up the green folder.</option>
+    <option insertedText="Shannon leaves the Rust Archives." goto="end">Leave.</option>
+  </scene>
+
+  <scene name="station-wagon-intro" nextScene="station-wagon-root">
+    <line condition="!underworld-rust-archives-examined-any-folder">The woman at the front desk gestures to an unlabeled door in the back of the room. Shannon enters, switches on a lamp at a desk inside the small room, and sits down with the orange folder.</line>
+    <line>Inside the folder are three clear plastic bags containing muddy brown flakes of varying sizes and hues. Each sample is numbered, with corresponding one-sheet documents interleaved.</line>
+  </scene>
+
+  <scene name="station-wagon-root">
+    <setGameVar name="underworld-rust-archives-examined-station-wagon-folder" value="true" />
+    <setGameVar name="underworld-rust-archives-examined-any-folder" value="true" />    
+    
+    <option insertedText="Shannon reads about the first sample." goto="station-wagon-one">Examine the first sample.</option>
+    <option insertedText="Shannon reads about the second sample." goto="station-wagon-two">Examine the second sample.</option>
+    <option insertedText="Shannon reads about the third sample." goto="station-wagon-three">Examine the third sample.</option>
+    <option insertedText="Shannon returns the folder to the front desk." goto="folder-choices">Return the folder.</option>
+  </scene>
+
+  <scene name="station-wagon-one" nextScene="station-wagon-root">
+    <setGameVar name="underworld-rust-archives-examined-station-wagon-1" value="true" />        
+    <line>This sample was taken from the hood of the station wagon. The text speculates about a tree under which it was parked, the decayed oak leaves found stuck in the windshield wipers, pools of dew that had accumulated in dents.</line>
+  </scene>
+
+  <scene name="station-wagon-two" nextScene="station-wagon-root">
+    <setGameVar name="underworld-rust-archives-examined-station-wagon-2" value="true" />            
+    <line>This sample was taken from the passenger-side door. The text describes some variance in oxidation and age — evidence that the station wagon was involved in a minor accident and a part of the door repaired and painted over.</line>
+  </scene>
+
+  <scene name="station-wagon-three" nextScene="station-wagon-root">
+    <setGameVar name="underworld-rust-archives-examined-station-wagon-3" value="true" />
+    <line>This sample was taken from the gas tank. Given the relatively small amount of rust accumulated here when compared to the rest of the car, the accompanying text concludes that the station wagon was returned to use after being abandoned for some time.</line>
+  </scene>
+
+  <scene name="sculpture-intro" nextScene="sculpture-root">
+    <line condition="!underworld-rust-archives-examined-any-folder">The woman at the front desk gestures to an unlabeled door in the back of the room. Shannon enters, switches on a lamp at a desk inside the small room, and sits down with the green folder.</line>
+    <line>Inside the folder are three clear plastic bags containing muddy brown flakes of varying sizes and hues. Each sample is numbered, with corresponding one-sheet documents interleaved.</line>
+  </scene>
+
+  <scene name="sculpture-root">
+    <setGameVar name="underworld-rust-archives-examined-any-folder" value="true" />        
+    <setGameVar name="underworld-rust-archives-examined-sculpture-folder" value="true" />
+    
+    <option insertedText="Shannon reads about the first sample." goto="sculpture-one">Examine the first sample.</option>
+    <option insertedText="Shannon reads about the second sample." goto="sculpture-two">Examine the second sample.</option>
+    <option insertedText="Shannon reads about the third sample." goto="sculpture-three">Examine the third sample.</option>
+    <option insertedText="Shannon returns the folder to the front desk." goto="folder-choices">Return the folder.</option>
+  </scene>
+
+  <scene name="sculpture-one" nextScene="sculpture-root">
+    <setGameVar name="underworld-rust-archives-examined-sculpture-1" value="true" />    
+    <line>This sample was taken from the sculpture's base, and is the smallest of the three. The accompanying text explains that the base was made up of a cheap stainless steel. It resisted decay, but not entirely.</line>
+  </scene>
+
+  <scene name="sculpture-two" nextScene="sculpture-root">
+    <setGameVar name="underworld-rust-archives-examined-sculpture-2" value="true" />        
+    <line>This sample is made up of dozens of small flakes, and was taken from a chain-link fence that surrounded the sculpture. The text speculates that the material making up the fence could not have been seriously intended to protect anyone or anything. It was too weak to be anything but decorative.</line>
+  </scene>
+
+  <scene name="sculpture-three" nextScene="sculpture-root">
+    <setGameVar name="underworld-rust-archives-examined-sculpture-3" value="true" />        
+    <line>This sample was taken from a garbage can near the sculpture. The accompanying text describes this kind of metal garbage can, its common use in institutional settings, and its resilience against air conditioning, discarded carbonated drinks, and other institutional hazards.</line>
+  </scene>
+
+</conversation>

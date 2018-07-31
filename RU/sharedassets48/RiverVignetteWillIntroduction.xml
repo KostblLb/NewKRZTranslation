@@ -1,0 +1,15 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-story" />    
+    <line>I'm sure I talk too much — everyone on this river does. The problem is that we `listen` twice as much as that. We're only telling you half of the stories we hear!</line>
+    <line>Cate told me that I ought to have been a photographer. She said, "you have an uncanny way of having been in the place at the time the thing happened there, and that's the hardest part of taking a photograph, anyway."</line>
+    <line>Nice of her to say, but it isn't true. Though I know just about every story on this river, most of them I've picked up second-, third-, or fourth-hand, and so on. Listening, see?</line>
+    <line>Now, I know what you're gonna ask, so I'm gonna answer it: yes, I'm sure they're all "true." I personally believe a story gets `more` true as it's tossed around from brain to brain and the whole community brings their insight to bear on the brittle facts of experience.</line>
+    <line>There are a few Echo River stories I witnessed directly. I saw that big owl migration pass through, you might have heard about that. I was there when the old train station flooded. I saw the ghost of Stephen Bishop brew up a batch of white lightning on a raft ... or, anyway, I talked to a few sailors who'd recently crossed paths with him — and, I suspect, sampled his wares ...</line>
+    <line>One night, when I was working on `The Mucky Mammoth`, we picked up a gaggle of passengers headed down to a mail drop by the Silo of Late Reflections.</line>
+    <line>I knew a couple of them in passing: a pair of traveling musicians, whom I often encountered on the river. The others were strangers to me at the time: a young woman, a small boy, and an old man whose name I didn't catch. Oh, and a smelly old dog.</line>
+    <line>We docked at a gas station, so the `Mammoth` could refuel.</line>
+  </scene>
+
+</conversation>

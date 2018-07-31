@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="bureau-talked-to-hound" value="true"/>
+    
+    <option goto="rest" speaker="conway">Get a good rest in the truck?</option>
+    <option goto="leg" speaker="conway">This leg is getting kinda stiff now, {if}[one:dog-nameless]old man{end}{if}[!one:dog-nameless]${one:dog-name}{end}.</option>
+  </scene>
+
+  <scene name="rest">
+    <option goto="drive" speaker="conway">Yeah, I know you love a drive.</option>
+    <option goto="walking" speaker="conway">Sorry about all this walking.</option>
+  </scene>
+
+  <scene name="drive">
+    <option goto="end" speaker="conway">I do too, usually.</option>
+    <option goto="end" speaker="conway">The wind in your ears. Yeah, I saw you back there{if}[!one:dog-nameless], ${one:dog-name}{end}!</option>
+  </scene>
+
+  <scene name="walking">
+    <option goto="end" speaker="conway">Maybe we could both use the exercise.</option>
+    <option goto="end" speaker="conway">I'm sure it's hard on your creaky paws, too.</option>
+  </scene>
+
+  <scene name="leg">
+    <option goto="good-sign" speaker="conway">I don't know if that's a good sign.</option>
+    <option goto="walk-it-out" speaker="conway">Maybe I just need to walk it out.</option>
+  </scene>
+
+  <scene name="good-sign">
+    <option goto="end" speaker="conway">Well, I hope it is.</option>
+    <option goto="end" speaker="conway">I'm no doctor, not by a long shot.</option>
+  </scene>
+
+  <scene name="walk-it-out">
+    <option goto="end" speaker="conway">Well, I hope that's the case.</option>
+    <option goto="end" speaker="conway">Yeah, a walk's good for a lot of things.</option>
+  </scene>
+
+</conversation>

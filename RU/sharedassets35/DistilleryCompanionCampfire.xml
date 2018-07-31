@@ -1,0 +1,23 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="distillery-discussed-campfire" value="true" />
+    
+    <line speaker="shannon">Huh. Who do you suppose set this up?</line>
+    <option goto="nomad" speaker="conway">Looks like someone passing through.</option>
+    <option goto="crowded" speaker="conway">Maybe they're running out of bunks.</option>
+  </scene>
+
+  <scene name="nomad" nextScene="leave">
+    <line speaker="shannon">Nomads. Like us. Ha ha.</line>
+  </scene>
+
+  <scene name="crowded" nextScene="leave">
+    <line speaker="shannon">I wonder what the turnover's like here. It sounds like people end up staying for a while ...</line>
+  </scene>
+
+  <scene name="leave" nextScene="end">
+    <line speaker="shannon">Listen, there's something ... I don't like this place. I don't trust this guy showing us around. Let's get the information we need and move on as soon as we can.</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,32 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-door-conversation">
+  <scene name="intro">
+    <setGameVar name="tavern-looked-at-door" value="true"/>
+    <line speaker="shannon">Kind of late — are you sure they're open?</line>
+    <line speaker="junebug">Sure, they're open. This is one of `those` places.</line>
+    <option condition="two:overworld-saw-tavern" goto="closed-earlier" speaker="conway">We came by earlier and they were closed.</option>
+    <option goto="head-in" speaker="conway">Let's head on in.</option>
+    <option goto="wait" speaker="conway">Give me a minute, here.</option>
+  </scene>
+
+  <scene name="closed-earlier">
+    <line speaker="junebug">Oh, you know it? Pretty rough, huh?</line>
+    <line speaker="shannon">We never went inside.</line>
+    <line speaker="junebug">Eh, it's not that bad.</line>
+    <option goto="head-in" speaker="conway">Let's head on in.</option>
+    <option goto="wait" speaker="conway">Give me a minute, here.</option>
+  </scene>
+
+  <scene name="head-in" nextScene="end">
+    <setGameVar name="tavern-enter-at-conversation-end" value="true"/>
+    <line speaker="junebug">&quot;We are not saints, but we've kept our appointment. How many people can boast as much?&quot;</line>
+    <line speaker="johnny">That's lovely, ma'am. Who said it?</line>
+    <line speaker="junebug">A poet.</line>
+  </scene>
+
+  <scene name="wait" nextScene="end">
+    <line speaker="junebug">&quot;We are not saints, but we've kept our appointment. How many people can boast as much?&quot;</line>
+    <line speaker="johnny">That's lovely, ma'am. Who said it?</line>
+    <line speaker="junebug">A poet.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,16 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <setGameVar name="elkhorn-valley-outro-shannon-talked-about-truck" value="true"/>
+    
+    <line speaker="shannon">&quot;Lysette's Antiques.&quot; I guess this is your truck?</line>
+
+    <option goto="surprised" speaker="conway">Surprised?</option>    
+    <option goto="end" speaker="conway">This is my truck.</option>
+  </scene>
+
+  <scene name="surprised" nextScene="end">
+    <line speaker="shannon">It's kind of old ... no, I'm not surprised. I guess it's an antique, too.</line>
+    <line speaker="shannon">I think it suits you.</line>
+  </scene>
+</conversation>

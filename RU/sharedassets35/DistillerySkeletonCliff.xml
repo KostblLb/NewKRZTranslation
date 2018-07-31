@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-cliff" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">This is Cliff, in bottling. Did you know — well, how could you? Cliff was behind bars not long ago. He placed a desperate advertisement in a local newspaper seeking assistance on his bail. The distillery put up the money, and now he's working it off while his case hovers in bureaucratic limbo.</line>
+  </scene>
+</conversation>

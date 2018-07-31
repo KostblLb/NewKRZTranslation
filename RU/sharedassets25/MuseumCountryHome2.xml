@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-looked-at-country-home-2" value="true"/>
+    <setGameVar name="museum-location" value="country-home-2" />    
+    <line speaker="george">We were working in the greenhouse, and I saw them come up in the elevator. They were lost, obviously.</line>
+    <line speaker="annie">It was obvious.</line>
+  </scene>
+
+</conversation>

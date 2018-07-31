@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-leah" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Leah's good people. Used to run a magazine, payed writers by the word and ended up a few flowery adjectives in the red. Hard Times co-signed on a loan for a quarterly digest, but it sank. Doesn't talk much now.</line>
+  </scene>
+</conversation>

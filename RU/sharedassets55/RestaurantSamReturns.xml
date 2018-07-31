@@ -1,0 +1,122 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="sam-soliloquy-done">
+  <scene name="intro">
+    <line speaker="sam">Well, buddy, I guess you're the `catch of the day`. The one and only. Ha ha ...</line>
+    <line speaker="sam">So, what are you? You look like ... well, some kind of <filter name="lowercase"><variable name="restaurant-catch-species" /></filter>, I guess? Kind of a <variable name="restaurant-catch-emotion" /> little guy, huh? Yeah, I can see it in your eyes.</line>
+    <line speaker="sam" condition="restaurant-catch-smell=friend">You smell like ... an old friend of mine. Ha ha.</line>
+    <line speaker="sam" condition="restaurant-catch-smell=dust">You smell like ... kind of dusty, dry. Where the hell have you been swimming?</line>
+    <line speaker="sam" condition="restaurant-catch-smell=butter">You smell like ... sort of buttery. Well, that should be just fine.</line>
+
+    <line speaker="sam" condition="restaurant-catch-feel=warm">Strangely warm to the touch. Now how do you pull `that` off?</line>
+    <line speaker="sam" condition="restaurant-catch-feel=cold">Skin feels cold. Colder than the water.</line>
+    <line speaker="sam" condition="restaurant-catch-feel=slippery">Better keep a good grip on you; you're a slippery one, now!</line>
+    <line speaker="sam" condition="restaurant-catch-feel=sandpapery">Skin feels like ... sandpaper. Huh. Well, she'll figure something out.</line>
+
+    <line speaker="sam">I think I'll call you ...</line>
+    
+    <option goto="eel-name" speaker="sam" variableChange="restaurant-catch-name=$restaurant-catch-name-option-1" insertedText="`${restaurant-catch-name-option-1}`.">`<template name="catchName" capture="restaurant-catch-name-option-1" seed="three:xanadu-resources-time" seed-offset="restaurant-catch-name-offset" />`.</option>
+    <option goto="eel-name" speaker="sam" variableChange="restaurant-catch-name=$restaurant-catch-name-option-2" insertedText="`${restaurant-catch-name-option-2}`.">`<template name="catchName" capture="restaurant-catch-name-option-2" seed="three:xanadu-resources-time" seed-offset="restaurant-catch-name-offset" />`.</option>
+    <option goto="eel-name" speaker="sam" variableChange="restaurant-catch-name=$restaurant-catch-name-option-3" insertedText="`${restaurant-catch-name-option-3}`.">`<template name="catchName" capture="restaurant-catch-name-option-3" seed="three:xanadu-resources-time" seed-offset="restaurant-catch-name-offset" />`.</option>
+  </scene>
+
+  <scene name="eel-name" nextScene="divers-story">
+    <line speaker="sam">Welcome to Sam &amp; Ida's, the one and only `<variable name="restaurant-catch-name" />`. I hope you enjoy your stay. I mean, not `too` much ...</line>
+    <line speaker="sam">Have you ever seen a creature like me before? You were pretty far down there; I wouldn't be surprised if I'm the first, except ... there `were` two divers who went before me, long ago.</line>
+    <line speaker="sam">Maybe that was before your time; how old are you, anyway? I wonder.</line>
+  </scene>
+
+  <scene name="divers-story" nextScene="end" skimmingScene="eel-bored">
+    <line speaker="sam">They ate here once, back in the "bad old days." Two young guys; could have been brothers, maybe. I was over in the corner with my coffee and crossword. I hadn't been able to catch a thing, so Ida just fried up something from frozen.</line>
+    <line speaker="sam">Well, these guys were hungry enough to eat it, and ask for more, and they did at least as much `talking` as eating. See, like I said, they were divers, and like I said, they might have been brothers; they had a kind of a `rivalry` going between them or something.</line>
+    <line speaker="sam">Ida was about to write up their check, but I slipped calmly and quietly into the kitchen for a minute, and told her to just keep bringing out food. I figured they wouldn't notice, caught up in their boasting as they were. And I wanted to listen.</line>
+    <line speaker="sam">They went back and forth for hours about all the deep and dangerous dives they'd been on: new tunnels they'd discovered, all the weird creatures they'd encountered at the weirdest depths of Lake Lethe. It was like a dance — no, like a boxing match. Each story went deeper than the last.</line>
+    <line speaker="sam">And I listened to every word of it, memorized every description of every tunnel and diving route they'd discovered. That's my `map` now, you see? For fifteen years, I've been using routes those two young divers discussed right there at that table!</line>
+    <line speaker="sam">Yeah, I could write a guide book to the depths of this lake — but I don't dare! Someone would steal my good diving spots, and then where would we be?</line>
+    <line speaker="sam">See, people come here from all over just to try our daily catch, because they know it's unique. Ain't you proud?</line>
+    <line speaker="sam">Since I can't write any of it down, I just preserved that table where they had their meal so I can look at it to jog my memory, like "they were eating pickled crab when they talked about that shipwreck full of salamanders." Pretty clever, huh? It's my own secret code.</line>
+    <line speaker="sam">Well, I'll be straight with you, `<variable name="restaurant-catch-name" />`, there is `one` feature of this arrangement that I find unsettling. In fact, I lose a decent amount of sleep over it ...</line>
+    <line speaker="sam">I told you those boys were `competing`, right? One-upping each other, I mean, each getting wilder and more adventurous as they traded tales.</line>
+    <line speaker="sam">Well, I navigate mostly in the dark down there, just going by touch and a kind of mental picture I can construct from their detailed boasts. And every time I explore a new diving spot from those recollections, I have to weigh it all against the risk that I'm headed right into a dangerous falsehood!</line>
+    <line speaker="sam">One of those men could have felt for a moment like he was losing some ground in their little duel, so he could have slipped a fake one in there. Maybe told a fib about some dive he went on and found a colony of blind shrimp living in a discarded refrigerator. And when `I` get down there, my diving bell cracks open on a sharp rock where he said that fridge would be, and that's the end of Sam of `Sam &amp; Ida's.`</line>
+    <line speaker="sam">To be honest, that possibility puts the fear of death in me every time I touch water ...</line>
+  </scene>
+
+  <scene name="eel-bored" nextScene="end">
+    <line>`(<filter name="uppercase"><variable name="restaurant-catch-name" /></filter> goes limp.)`</line>
+    <line speaker="sam">Aw, hell, listen to me. What do `you` care about all this, anyway? I ought to just let you go in peace and quiet. Dignified. The noble `<variable name="restaurant-catch-name" />`.</line>
+  </scene>
+  
+  <!-- Template stuff -->
+
+  <templates>
+    <catchName>
+      <common>
+        <template xml:space="preserve"><noun filter="capitalize" /> <variable name="restaurant-catch-species" /></template>
+        <template xml:space="preserve"><adjective filter="capitalize" /> <variable name="restaurant-catch-species" /></template>
+        <template xml:space="preserve"><variable name="restaurant-catch-color" /> <variable name="restaurant-catch-species" /></template>
+        <template xml:space="preserve"><adjective filter="capitalize" /> <variable name="restaurant-catch-color" /> <variable name="restaurant-catch-species" /></template>        
+      </common>
+      <rare>
+        <template xml:space="preserve"><adjective filter="capitalize" />, <adjective filter="capitalize" />, <adjective filter="capitalize" /> <variable name="restaurant-catch-species" /></template>        
+      </rare>
+    </catchName>
+  </templates>
+
+  <templateValues>
+    <noun>
+      <common>
+        <value>spaghetti</value>
+        <value>sawtooth</value>
+        <value condition="restaurant-catch-species=Eel">snake</value>
+        <value>depth</value>
+        <value condition="restaurant-catch-smell=friend">Bob the</value>
+        <value condition="restaurant-catch-smell=dust">dust</value>
+        <value condition="restaurant-catch-smell=butter">butter</value>
+        
+        <value condition="restaurant-catch-feel=slippery">grease</value>
+        <value condition="restaurant-catch-feel=warm">fire</value>
+        <value condition="restaurant-catch-feel=cold">ice</value>
+        <value condition="restaurant-catch-feel=sandpapery">grit</value>
+        <value condition="restaurant-catch-feel=sandpapery">sandpaper</value>
+      </common>
+      <rare>
+        <value>gloom</value>
+      </rare>
+    </noun>
+
+    <adjective>
+      <common>
+        <value>cold</value>
+        <value>lazy</value>        
+        <value>deep</value>
+        <value>silent</value>
+        <value>curious</value>
+
+        <value condition="restaurant-catch-species=Eel">serpentine</value>
+        <value condition="restaurant-catch-species=Fish">scaly</value>
+        <value condition="restaurant-catch-species=Squid">leggy</value>
+        
+        <value condition="restaurant-catch-smell=friend">Bob-smelling</value>
+        <value condition="restaurant-catch-smell=dust">dusty</value>
+        <value condition="restaurant-catch-smell=butter">buttery</value>
+        <value condition="restaurant-catch-smell=butter">rich</value>        
+        
+        <value condition="restaurant-catch-feel=slippery">greasy</value>
+        <value condition="restaurant-catch-feel=slippery">oily</value>
+        <value condition="restaurant-catch-feel=slippery">slippery</value>
+
+        <value condition="restaurant-catch-feel=warm">cozy</value>
+        <value condition="restaurant-catch-feel=cold">chilly</value>
+        <value condition="restaurant-catch-feel=sandpapery">rough</value>        
+      </common>
+      <rare>
+        <value>unlucky</value>
+        <value>gentle</value>        
+      </rare>
+      <esoteric>
+        <value>cursed</value>
+        <value>heartbroken</value>        
+      </esoteric>
+    </adjective>
+  </templateValues>
+</conversation>

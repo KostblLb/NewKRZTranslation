@@ -1,0 +1,13 @@
+# -*- mode: blocking -*-
+
+@set Scene Silo
+@set Stop riverworld-silo
+
+@func PreScene
+
+  Tugboat Listen boat-stop
+  Tugboat Message RiverworldManager LoadScene Silo
+
+@end
+
+Tugboat Exec PreScene

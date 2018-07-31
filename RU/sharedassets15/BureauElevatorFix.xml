@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <line speaker="Shannon">Mary Ann should really have a look at that elevator, it's really acting up...</line>
+  </scene>
+</conversation>

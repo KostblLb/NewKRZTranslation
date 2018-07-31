@@ -1,0 +1,78 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line blocking="Dialog Look Cat Clara; Dialog Gesture Clara Enter GrabCard">`(CLARA draws a card.)`</line>
+    <line speaker="clara">Three deep breaths, eight white doves, five slow hours.</line>
+    <line blocking="Dialog Look Cat Cate; Dialog Gesture Cate Enter GrabCard">`(CATE draws a card.)`</line>
+    <line speaker="cate">Seven blue petals, three deep breaths, eight white doves, five slow hours.</line>
+    <line speaker="clara">`(To CATE.)` What are we listening to?</line>
+    <line speaker="cate">Oh, uh, just this tape a friend of mine sent me; they live in the desert ... "`Vecinx`?" Something like that ...</line>
+    <line speaker="junebug">Sounds good on the `Mammoth`'s P.A.</line>
+    <line speaker="cate">Yeah, that's the only way I listen to anything lately. Ha ha.</line>
+    <line speaker="cate">`(To EZRA.)` Your turn, buddy.</line>
+    <line blocking="Dialog Look Cat Ezra; Dialog Gesture Ezra Enter GrabCard">`(EZRA draws a card.)`</line>
+    <option goto="ezra-card-remember" speaker="ezra">Nine gray feathers, seven blue petals, three deep breaths, eight white doves, five slow hours.</option>
+    <option goto="ezra-card-forget" speaker="ezra">Nine gray feathers, seven blue petals, three white doves, eight deep breaths, five slow hours.</option>
+    <option goto="ezra-card-pass" speaker="ezra">Pass.</option>
+  </scene>
+
+  <scene name="ezra-card-remember">
+    <setGameVar name="ezra-game-memory-title" value="Remembering Game" />
+    <line blocking="Dialog Look Cat Will; Dialog Gesture Will Enter GrabCard">`(WILL draws a card.)`</line>
+    <line blocking="Dialog Look Cat Will" speaker="will">Three — no, `nine` gray feathers ...</line>
+    <line blocking="Dialog Look Cat Clara" speaker="clara">Stay focused! Ha ha.</line>
+    <line blocking="Dialog Look Cat Will" speaker="will">No, I've got it ... um ... seven blue petals.</line>
+    <line blocking="Dialog Look Cat Clara" speaker="clara">And ... ?</line>
+    <line blocking="Dialog Look Cat Will" speaker="will">Five —</line>
+    <line blocking="Dialog Look Cat Cate" speaker="cate">Oh no! It was "nine, seven, `three`!"</line>
+    <line blocking="Dialog Look Cat Will" speaker="will">`(To EZRA.)` This game is more difficult than it sounds, my friend.</line>
+    <option goto="cate-how-many-cards" speaker="ezra">It's not that hard.</option>
+    <option goto="cate-how-many-cards" speaker="ezra">You still did pretty good.</option>
+  </scene>
+
+  <scene name="ezra-card-forget">
+    <setGameVar name="ezra-game-memory-title" value="Forgetting Game" />    
+    <line blocking="Dialog Look Cat Cate" speaker="cate">Oh no! It was "seven, three, `eight`!"</line>
+    <line blocking="Dialog Look Cat Clara" speaker="clara">`(To EZRA.)` Aw, you're beaten at your own game! Ha ha.</line>
+    <line blocking="Dialog Look Cat Will" speaker="will">I'm just glad it didn't come to my turn again. You took a bullet there, my friend.</line>
+    <option goto="cate-how-many-cards" speaker="ezra">It's a hard game, that's why I like it.</option>
+    <option goto="cate-how-many-cards" speaker="ezra">I was going easy on you.</option>
+  </scene>
+
+  <scene name="ezra-card-pass">
+    <setGameVar name="ezra-game-memory-title" value="Forgetting Game" />
+    <line blocking="Dialog Look Cat Clara" speaker="clara">Hm? I didn't know you could say "pass."</line>
+    <option goto="pass-clarification" speaker="ezra">Everybody gets one pass.</option>
+    <option goto="pass-clarification" speaker="ezra">If you pass, the next person gets two tries.</option>
+  </scene>
+
+  <scene name="pass-clarification" nextScene="cate-how-many-cards">
+    <line blocking="Dialog Look Cat Clara" speaker="clara">Interesting.</line>
+    <line blocking="Dialog Look Cat Will" speaker="will">Sounds good to me — this game is hard enough as it is.</line>
+  </scene>
+
+  <scene name="cate-how-many-cards">
+    <line blocking="Dialog Look Cat Cate" speaker="cate">And we're only — how many cards in now? Five or something? I assume it will go to fifty-two?</line>
+    <option goto="whole-deck" speaker="ezra">Yeah, it's the whole deck.</option>
+    <option goto="until-everyone-forgets" speaker="ezra">It goes until everyone forgets a card.</option>
+  </scene>
+
+  <scene name="whole-deck" nextScene="cate-brain-moisture">
+    <line blocking="Dialog Look Cat Cate" speaker="cate">So, in some cases, there may be a stalemate. Though, not with this crowd, I don't think!</line>
+  </scene>
+
+  <scene name="until-everyone-forgets" nextScene="cate-brain-moisture">
+    <setGameVar name="ezra-game-memory-title" value="Forgetting Game" />
+    <line blocking="Dialog Look Cat Cate" speaker="cate">That could go on a long time, then! Well, not with this crowd, I guess. Ha ha.</line>
+  </scene>
+
+  <scene name="cate-brain-moisture" nextScene="end">
+    <line blocking="Dialog Look Cat Cate" speaker="cate">We're all too `soggy-brained`. I know I am. I even take homemade supplements for it: shade-grown lichen boiled with the peel of a lemon, then frozen and crushed with oak leaves. It's a scalp massage oil. You can smell it if I get close.</line>
+    <line speaker="cate">It dries the brain out a bit, which is helpful for a good memory, if I can remember to use it often enough in the first place!</line>
+    <line speaker="cate">Oh, don't worry, the `soggy` brain has its benefits, too. If your brain is soft and damp, new ideas can make a clear impression, like a boot in wet sand. But, like wet sand, it can easily get muddied and washed away. So there's a trade-off, see?</line>
+    <line speaker="cate">It's a shame we can't have it both ways, isn't it?</line>
+    <line speaker="clara">What's this game called, Ezra?</line>
+    <line speaker="ezra">`<variable name="ezra-game-memory-title" />`.</line>
+  </scene>
+
+</conversation>

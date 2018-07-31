@@ -1,0 +1,35 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-theater-conversation-three">
+  <scene name="intro">
+    <line speaker="junebug">Seems like a lot of trouble to make a delivery. You couldn't have referred them to someone local?</line>
+    <option goto="business" speaker="conway">Lysette needed the business.</option>
+    <option goto="specific" speaker="conway">They were very specific.</option>
+  </scene>
+
+  <scene name="business" nextScene="movie-ending">
+    <line speaker="junebug">Sure. Who doesn't, right?</line>
+  </scene>
+
+  <scene name="specific" nextScene="movie-ending">
+    <line speaker="junebug">Huh. Good for them knowing what they want, I guess.</line>
+  </scene>
+
+  <scene name="movie-ending">
+    <triggerEvent name="end-movie" />
+    <line speaker="ezra">Whoa. That's it?</line>
+    <line speaker="shannon">Yeah, it just kind of ... trailed off.</line>
+    <line speaker="shannon">It was really weird the way the big guy just sat down in the road like that. What do you think it means?</line>
+    <option goto="gave-up" speaker="conway">He gave up.</option>
+    <option goto="never-know" speaker="conway">I guess we'll never know.</option>
+  </scene>
+
+  <scene name="gave-up" nextScene="end">
+    <line speaker="shannon">That's kind of sad.</line>
+    <line speaker="shannon">Well, let's get back on the road, huh?</line>
+  </scene>
+
+  <scene name="never-know" nextScene="end">
+    <line speaker="shannon">OK. I can live with that.</line>
+    <line speaker="shannon">Well, let's get back on the road, huh?</line>
+  </scene>
+</conversation>

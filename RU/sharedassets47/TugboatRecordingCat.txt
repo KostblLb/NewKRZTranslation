@@ -1,0 +1,43 @@
+# -*- mode: blocking -*-
+
+Record Set temp:recording-positioning [Positioning]
+
+Record Marker Lock
+
+Record Message TugboatCameraRig SetRecordingOffset [OffsetPort] ? temp:tugboat-side=port
+Record Message TugboatCameraRig SetRecordingOffset [OffsetStarboard] ? temp:tugboat-side=starboard
+
+Record Event start-recording
+
+Record Walk Ezra [ACTOR]/StandPositionPort ? temp:tugboat-side=port+temp:recording-positioning=move
+Record Walk Ezra [ACTOR]/StandPositionStarboard ? temp:tugboat-side=starboard+temp:recording-positioning=move
+Record Turn Ezra [Target] ? temp:recording-positioning=turn
+
+Record Gesture Ezra Enter Record
+
+# FadeOutAll fades out everything playing via AudioEventManager, then
+# the fade-out-all event fades other sources in the scene that have a
+# PanSoundByScreenPosition component, like the mammoth sounds and other
+# environmental sources.
+
+Record Audio* Play tape-start
+Record Audio* FadeOutAll 8
+Record Audio* FadeIn [Recording] 4
+Record Audio* FadeIn tape-run 1
+Record Event fade-out-all
+
+Record Wait 3
+Record Listen player-woke-up
+
+Record Audio* FadeInAll 4
+Record Audio* FadeOut [Recording] 1 Destroy
+Record Audio* Play tape-stop
+Record Audio* FadeOut tape-run 1 Destroy
+
+Record Event fade-in-all
+
+Record Event stop-recording
+Record Gesture Ezra Exit Record
+Record Wait 3
+Record Marker Unlock
+Record Event done-recording

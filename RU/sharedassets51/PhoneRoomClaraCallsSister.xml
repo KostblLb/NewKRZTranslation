@@ -1,0 +1,51 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="nadia">I'm glad you phoned. I was just thinking of you.</line>
+    <option goto="call-yesterday" speaker="clara">Sorry I didn't call this week. I've been traveling constantly.</option>
+    <option goto="how-nice" speaker="clara">You're sitting by the phone waiting for my call? That's so nice.</option>
+  </scene>
+
+  <scene name="call-yesterday" nextScene="uncle">
+    <line speaker="nadia">That's fine.</line>
+  </scene>
+
+  <scene name="how-nice" nextScene="uncle">
+    <line speaker="nadia">I was eating an early lunch, actually, and my mind was wandering.</line>
+  </scene>
+
+  <scene name="uncle">
+    <line speaker="nadia">I visited the hospital yesterday. I went to visit Uncle Andrius, but they moved him. Now he's in a hospice care facility run by some old Polish nun. Everyone says it's very ... "nice."</line>
+    <line speaker="nadia">I asked them about visiting and they said he didn't want any visitors ...</line>
+    <option goto="stubborn" speaker="clara">He's just being stubborn.</option>
+    <option goto="right" speaker="clara">That's his right.</option>
+  </scene>
+
+  <scene name="stubborn" nextScene="clara-visit">
+    <line speaker="nadia">Yes, it's typical of Andrius. I was thinking, maybe ...</line>
+  </scene>
+
+  <scene name="right" nextScene="clara-visit">
+    <line speaker="nadia">I guess it is, technically ... Clara, I don't think it's really what he wants.</line>
+  </scene>
+
+  <scene name="clara-visit">
+    <line speaker="nadia">If `you` came to visit, he would see you. All those afternoons you two would go drinking beers by the river ... Don't you think it would mean a lot to him if he could say goodbye to you in person?</line>
+    <option goto="at-his-word" speaker="clara">We must take him at his word.</option>
+    <option goto="back-in-time" speaker="clara">Oh, Nadia. I'd never make it back in time anyway.</option>
+  </scene>
+
+  <scene name="at-his-word" nextScene="closing">
+    <line speaker="nadia">Maybe you know him better than I do, but ... I just don't believe anyone would really want to die alone.</line>
+  </scene>
+
+  <scene name="back-in-time" nextScene="closing">
+    <line speaker="nadia">It's true, you're a long way from home, Clara. I suppose it can't be helped.</line>
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line speaker="nadia">Oh, here's mother at the door. We're going to try again to see him. I hope the tour is going well. Love you. Be careful.</line>
+  </scene>
+
+</conversation>
+

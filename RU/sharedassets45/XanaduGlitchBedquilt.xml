@@ -1,0 +1,34 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue,degausser-mentioned">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="wait-for-degauss"/>
+    <line speaker="xanadu" style="xanadu-glitch">You ar. in B..qu_lt, a lo._ east/we_t _assag_ w_th h_.es everyw.e_e_</line>
+    <line speaker="xanadu" style="xanadu">*_O__PH* an_ *LULA* re.ove the c_mputtr euuu_m_n_ t__y __e c_r.ying on thei. b_cks_ aad bbein s_.___g  p.</line>
+    <line speaker="lula" style="xanadu-glitch">That__ the __s_ _rip. S_ eve_yt_ing's _o_n heee _ow ...</line>
+    
+    <option goto="lula" speaker="shannon">Did that say &quot;Lula?&quot;</option>
+    <option goto="percussive-maintenance" speaker="junebug">Time for some percussive maintenance ...</option>
+  </scene>
+
+  <scene name="lula" nextScene="degauss">
+    <line speaker="conway">`(Typing.)` ~LULA.~</line>
+    <line speaker="lula" style="xanadu-glitch">__re, Donal_. _e ma_ as _ell ___e in_entorr..</line>
+    <line speaker="lula" style="xanadu-glitch">I've g_t _he t__e machi_e  nd t_e sy..hss__er part_ _e b_r_weed fr.m the Scoool of M.s_c. I__s a_l t__ed uu tt my v_ic_ so we won'. _a_e t  .ype so m_.h</line>
+    <line speaker="lula" style="xanadu-glitch">__seph has hi  sla_e_ an. t_e p.nche_ cards he'_ ..anscribed fr.  the __e.s ._ re_d him  H_'s _oo t.e __pewrit_  _dd th  paper ta.. reader</line>
+    <line speaker="lula" style="xanadu-glitch">A_d you'v_ g__ ___ .RT disp_a_. How's  _ur _ack _olding __?</line>
+
+    <line speaker="shannon">Damn, I can't tell what she's saying.</line>
+  </scene>
+
+  <scene name="percussive-maintenance" nextScene="degauss">
+    <triggerEvent name="thump" />
+    <line>`(CONWAY thumps the side of the machine with his palm.)`</line>
+  </scene>
+
+  <scene name="degauss" nextScene="end">
+    <line speaker="shannon">Oh — I have my portable `degausser` with me!</line>
+    <line speaker="shannon">Old systems like this one can build up a remnant magnetic field that sort of warps everything along whatever pattern it's settled into, you know?</line>
+    <line speaker="shannon">The degausser clears that up by suddenly shaking the magnetic field around until it's uniform again ...</line>
+    <line speaker="shannon">That's how I like to think of it, anyway: like shaking a snow globe. Ha ha. Worth a shot.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="end-julian-crash-conversation">
+  <scene name="intro" nextScene="end">
+    <line speaker="shannon">Hey. Old man. Wake up.</line>
+    <line speaker="shannon">You passed out. I guess the sudden speed was ... it made me a little dizzy too.</line>
+    <line speaker="shannon">But ... look around you! Just look!</line>
+  </scene>
+</conversation>

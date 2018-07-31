@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-story" />    
+    <line>Cate came back from her mushroom hunting excursion with a small basket full of oddly-colored caps and stems, no doubt delicious to a morsel. Of course, she intended to use many of them in her medical practice: to ease the pain, nausea, and anxiety of pregnant women. But I can usually rely on my charms to snare a bite or two.</line>
+    <line>I have no preferences, when it comes to mushrooms, by which I mean that I treat them all interchangeably. I prefer not to know their names or qualities before I cook them up and eat them. It's useless, after all; they "escape your erudition," as the fella says.</line>
+    <line>That's a good mushroom hunting island, I guess. It's plenty damp, and they've got the cypress trees there to grow on. Of course they're not indigenous — the cypress trees, I mean.</line>
+    <line>Everyone down here seems to agree that they were planted as some kind of a marker or memorial. And most people will tell you they've got a distant relation or acquaintance who helped dig a hole or water a seedling.</line>
+    <line>But nobody remembers what it was all for, and nobody left a plaque or anything. It's a shame — looks like it must have been a lot of work. Well, at least we have the trees.</line>
+    <line>And the mushrooms!</line>
+  </scene>
+</conversation>

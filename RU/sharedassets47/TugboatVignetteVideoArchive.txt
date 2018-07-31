@@ -1,0 +1,211 @@
+# -*- mode: blocking -*-
+
+@set Root VignetteVideoArchive
+@ref TvGlow Tugboat/*/TvGlow
+
+Main Set temp:tugboat-inside true
+Main Set temp:tugboat-peeled true
+Main Set temp:tugboat-side port
+
+Main Message TugboatMotion SetAmplitude 0.1
+Main Message TugboatStaging SetMistSpeed 0.1
+Main Message TugboatCameraRig SetOffsetY -0.8
+
+Main Set temp:video-browsing true ? tugboat-videos-watched-weaver
+
+@inline SetupInsideSound
+
+@LockDoors
+
+Main Enable [Root]
+
+Main Marker Lock
+Main Message TugboatCameraRig SetPlayer [Root]/VideoRoomPlayer
+Main Exec SnapStaging
+
+Main Message Shannon FreeRotate
+Main Player Shannon Player
+
+Main Message Shannon ContinuousRendering
+Main Message Shannon DisableNavigation
+Main Transform Shannon [Root]/SitPosition
+Main Gesture Shannon Snap Sit
+Main Set temp:lights-off true
+Main Set temp:video-state watching
+Main Set temp:video-reaction Next
+Main Set temp:video start
+
+Tv Wait 0.1
+Tv Message TvGlow* TurnOn
+Tv Audio* FadeIn tv-starting 4
+
+Main Interact ActorLightswitchMailroom Off
+
+Zoom Wait 0.1
+Zoom Message TugboatCameraRig SetZoom -2
+Zoom Message TugboatCameraRig SetSpeedFactor 0.35
+
+Exit Disable [Root]/EndHint
+Exit Wait temp:video-browsing+temp:video-state=done-watching
+Exit Marker Unlock
+Exit Message TugboatCameraRig SetPlayer Shannon
+Exit Message TugboatCameraRig SetZoom 0
+Exit Message TugboatCameraRig SetOffsetY 0
+Exit Disable [Root]/BlockExit
+Exit Enable [Root]/EndHint
+Exit Message Shannon AutoRotate
+Exit Set temp:unlock-boat true
+
+Cate Message Cate DisableNavigation
+Cate Transform Cate [Root]/CateStartPosition
+Cate Message Cate SetLimitedLook
+Cate Gesture Cate Snap MessTable
+
+Will Warp Will [Root]/WillStartPosition
+Will Wait temp:unlock-boat
+Will Walk Will [Root]/WillCatePosition
+Will Look Cate Will
+Will Look Will Cate
+
+Hound Transform Hound [Root]/HoundStartPosition
+Hound Gesture Hound Snap SniffGround
+Hound Disable Hound CharacterPointOfInterest
+
+Val Transform Val [Root]/ValStartPosition
+Val Disable Val CharacterPointOfInterest
+
+Cat Transform Cat [Root]/CatStartPosition
+
+@func ShannonSitDown
+  Shannon Walk Shannon [Root]/LightswitchPosition ? !temp:lights-off
+  Shannon Gesture* Shannon Enter Lightswitch ? !temp:lights-off
+  Shannon Wait 0.3
+  Shannon Audio* Play light-switch
+  Shannon Message ActorLightswitchMailroom TurnOff ? !temp:lights-off
+  Shannon Set temp:lights-off true
+  Shannon Wait 0.5
+  Shannon Walk Shannon [Root]/SitPosition
+  Shannon Align* Shannon [Root]/SitPosition
+  Shannon Gesture Shannon Enter Sit
+  Shannon Set temp:video-state watching
+  Shannon Dialog WatchVideo
+  Shannon Event save
+  Shannon Event sitting-down
+@end
+
+@func ShannonStandUp
+  Shannon Unalign* Shannon
+  Shannon Gesture Shannon Exit Sit
+  Shannon Set temp:video-state done-watching
+  Shannon Event standing-up
+@end
+
+@func InsertTape
+  Shannon Walk Shannon [Root]/VcrPosition
+  Shannon Gesture* Shannon Enter InsertTape
+  Shannon Wait 1.5
+  Shannon Audio* Play insert-tape
+  Shannon Wait 2
+  Shannon Exec InsertTapeAudio
+  Shannon Message TvGlow* TurnOn
+  Shannon Set temp:video-state tape-inserted
+  Shannon Event tape-inserted
+@end
+
+@func InsertTapeAudio
+  VCRAudio Audio* FadeIn tv-morning-road 0.5 ? temp:video=birds-1
+  VCRAudio Audio* FadeIn tv-rain 0.5 ? temp:video=birds-2
+  VCRAudio Audio* FadeIn tv-cicadas 0.5 ? temp:video=birds-3
+
+  VCRAudio Audio* FadeIn tv-weaver 1 ? temp:video=weaver
+  
+  VCRAudio Audio* FadeIn tv-funeral 0.5 ? temp:video=in-memory-of
+  VCRAudio Audio* FadeIn tv-hum 0.5 ? temp:video=microwaves
+  VCRAudio Audio* FadeIn tv-hum 0.5 ? temp:video=tip-of-your-tongue
+  
+  VCRAudio Audio* FadeIn tv-nature-doc 0.5 ? temp:video=history-of-weather
+  VCRAudio Audio* FadeIn tv-hum 0.5 ? temp:video=i-believe-you
+  VCRAudio Audio* FadeIn tv-swap-shop 0.5 ? temp:video=swap-shop
+@end  
+  
+
+@func EjectTape
+  Shannon Walk Shannon [Root]/LightswitchPosition ? temp:lights-off
+  Shannon Gesture* Shannon Enter Lightswitch ? temp:lights-off
+  Shannon Wait 0.3
+  Shannon Message ActorLightswitchMailroom TurnOn ? temp:lights-off
+  Shannon Audio* Play light-switch  
+  Shannon Set temp:lights-off off
+  Shannon Wait 0.5
+  Shannon Walk Shannon [Root]/VcrPosition
+  Shannon Gesture* Shannon Enter EjectTape
+  Shannon Wait 1
+  Shannon Audio* Play eject-tape
+  Shannon Exec EjectTapeAudio
+  Shannon Message TvGlow* TurnOff
+  Shannon Set temp:video-state tape-ejected
+  Shannon Event tape-ejected
+@end
+
+@func EjectTapeAudio
+  VCRAudio Audio* FadeOut tv-starting 0.25 ? temp:video=start
+  VCRAudio Audio* FadeOut tv-morning-road 0.25 ? temp:video=birds-1
+  VCRAudio Audio* FadeOut tv-rain 0.25 ? temp:video=birds-2
+  VCRAudio Audio* FadeOut tv-cicadas 0.25 ? temp:video=birds-3
+
+  VCRAudio Audio* FadeOut tv-weaver 0.25 ? temp:video=weaver
+  
+  VCRAudio Audio* FadeOut tv-funeral 0.25 ? temp:video=in-memory-of
+  VCRAudio Audio* FadeOut tv-hum 0.25 ? temp:video=microwaves
+  VCRAudio Audio* FadeOut tv-hum 0.25 ? temp:video=tip-of-your-tongue
+  
+  VCRAudio Audio* FadeOut tv-nature-doc 0.25 ? temp:video=history-of-weather
+  VCRAudio Audio* FadeOut tv-hum 0.25 ? temp:video=i-believe-you
+  VCRAudio Audio* FadeOut tv-swap-shop 0.25 ? temp:video=swap-shop
+  
+@end
+
+@func SearchTapes
+  Shannon Walk Shannon [Root]/ShelfPosition
+  Shannon Audio* PlayRandom return-tape-1,return-tape-2,return-tape-3
+  Shannon Gesture Shannon Enter ReturnTape
+  Shannon Dialog SelectVideo
+  Shannon Audio* PlayRandom take-tape-1,take-tape-2,take-tape-3  
+  Shannon Gesture Shannon Enter GrabTape
+  Shannon Set temp:video-state tape-selected
+  Shannon Event done-searching
+@end
+
+@func ReturnTape
+  Shannon Walk Shannon [Root]/ShelfPosition
+  Shannon Audio* PlayRandom return-tape-1,return-tape-2,return-tape-3
+  Shannon Gesture Shannon Enter ReturnTape
+  Shannon Set temp:video-state no-tape
+  Shannon Event tape-returned
+@end
+
+@func BrowseTapes
+  Shannon Walk Shannon [Root]/ShelfPosition
+  Shannon Dialog SelectVideo
+  Shannon Audio* PlayRandom take-tape-1,take-tape-2,take-tape-3  ? !(temp:video=__none__)
+  Shannon Gesture Shannon Enter GrabTape ? !(temp:video=__none__)
+  Shannon Set temp:video-state tape-selected  ? !(temp:video=__none__)
+  Shannon Event done-browsing
+@end
+
+@func FinalConvo
+  Final Look Cate Shannon
+  Final Look Will Shannon
+  Final Message TugboatCameraRig SetZoom -2
+@end
+
+@func EndScene
+  End Cursor Hide
+  End Interact Off
+  End Marker Lock
+  End Wait 2
+  End SceneChange Overworld ? !debug-run-all-tugboat-vignettes
+  End Set tugboat-vignette Dogs ? debug-run-all-tugboat-vignettes
+  End SceneChange Tugboat ? debug-run-all-tugboat-vignettes
+  
+@end

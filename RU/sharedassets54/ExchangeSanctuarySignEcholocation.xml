@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <blocking>Sign Message [DinghyFlashlight] SetScriptedTarget ActorBatFacts1/FlashlightHint</blocking>
+    <line speaker="bat fact">Ever talk with your mouth full? Bats do it all the time!</line>
+    <line speaker="bat fact">Bats talk in extremely high-frequency `clicks`, too high for humans to hear, then they use their powerful ears to scan for the `echoes` of these ultrasonic clicks. By comparing very subtle differences in the time these echoes take to come back — differences of just millionths of a second — bats are able to picture their environment with enough accuracy to catch a flying insect!</line>
+    <line speaker="bat fact">Once a bat has caught an insect in its mouth, it's still flying and so it still needs to avoid running into anything. So bats keep clicking away, even while they munch on a tasty bug snack! It may be poor table manners, but it's crucial for surviving in the dark.</line>
+    <line speaker="conway">I wonder how the other bats know whether one of them is really talking or just chasing a bug.</line>
+    <option goto="singing" speaker="shannon">I think when they're actually communicating it sounds more like singing.</option>
+    <option goto="like-people" speaker="shannon">Sometimes it's hard to know with people, too.</option>
+  </scene>
+
+  <scene name="singing" nextScene="end">
+    <line speaker="conway">Hm. I'd like to hear that.</line>
+  </scene>
+
+  <scene name="like-people" nextScene="end">
+    <line speaker="conway">Oh, yeah. Like, "how about this weather?"</line>
+    <line speaker="conway">I guess there are layers to it, right? Sometimes you just need to get the other person talking so you can check their body language, or hear what their voice sounds like. Find out if they're friendly. Or angry ... Or drunk. Ha ha.</line>
+  </scene>
+
+</conversation>

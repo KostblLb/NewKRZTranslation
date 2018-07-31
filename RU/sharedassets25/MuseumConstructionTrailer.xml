@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape,exit-trailer">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <triggerEvent name="enter-trailer"/>
+    <setGameVar name="museum-talked-to-james" value="true"/>
+    <setGameVar name="museum-location" value="trailer" />
+    <line speaker="james">I guess they must have gone through some papers here. It was in some disarray and a few folders were pulled out and left on the table. I mean it wasn't `too` bad; I only notice cause Diane is such a stickler. She's real organized, I mean.</line>
+    <option goto="folders" speaker="museum staff">What folders were they looking at?</option>
+    <option goto="missing" speaker="museum staff">Was anything missing?</option>
+  </scene>
+
+  <scene name="folders" nextScene="non-resident-folder">
+    <line speaker="james">Yeah, uh ... mostly stuff about the building site, I guess. They had a list of all the homes we relocated here. A list of original residences before we leveled the neighborhood. I'd guess they were looking for one of the old residents.</line>
+  </scene>
+
+  <scene name="missing" nextScene="non-resident-folder">
+    <line speaker="james">Uh, nope.</line>
+  </scene>
+
+  <scene name="non-resident-folder" nextScene="complaint">
+    <line speaker="james">They pulled out a list of the folks who didn't take the offer, folks who moved elsewhere, but they filed that back — out of order — so I guess they didn't find what they were looking for there.</line>
+  </scene>
+
+  <scene name="complaint">
+    <line speaker="james">Hey, uh, while I have you here ... work's kind of slowed down, and it seems like — I know you folks know what you're doing, but it seems like the residents are just kind of ... settling in?</line>
+    <option goto="the-idea" speaker="museum staff">That's the idea.</option>
+    <option goto="back-to-work" speaker="museum staff">We'll get your boys back to work soon.</option>
+  </scene>
+
+  <scene name="the-idea" nextScene="end">
+    <line speaker="james">Yeah, I get that. Just — how about that roof, huh? You just write us a check and we'll finish it right up! I know you've got this museum thing going on, but you don't want to be slumlords, now ...</line>
+  </scene>
+
+  <scene name="back-to-work" nextScene="end">
+    <line speaker="james">Yeah, sure, I get you ... ha ha.</line>
+    <line speaker="james">You happen get that last invoice ... ?</line>
+  </scene>
+
+</conversation>

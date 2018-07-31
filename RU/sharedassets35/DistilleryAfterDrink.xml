@@ -1,0 +1,19 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-scene,stop-tape">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="unhaunt-mouse"/>
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Decent enough! Welcome aboard.</line>
+    <line speaker="shannon">He's not working for you! We have to get back to this ... our ... he has a delivery to make.</line>
+    <line speaker="doolittle" style="skeleton">What's this? Not working? Are you turning down this opportunity?</line>
+    <line speaker="conway">She's right, I have to make this, uh ...</line>
+    <line speaker="doolittle" style="skeleton">I'm ... disappointed.</line>
+    <line speaker="doolittle" style="skeleton">And I'm afraid that leaves us with a delicate problem. As I indicated, this is the top-shelf stuff you're drinking now. It isn't cheap.</line>
+    <line speaker="doolittle" style="skeleton">If it's not your first `shift drink` ... well, and there's the matter of this `tour` just now. My time and experience are billed at quite a premium!</line>
+    <line speaker="doolittle" style="skeleton">This is not good for you, my friend. You're in quite deep, by my back-of-the-envelope estimations. Well, we have that in common, I suppose. All of us.</line>
+    <line speaker="doolittle" style="skeleton">Yes, I'm afraid you'll have to work this off somehow. It's just the way of it.</line>
+    <line speaker="shannon">What's happening right now?</line>
+    <line speaker="doolittle" style="skeleton">You can start tomorrow. Take the time to settle your affairs. Of course, the interest begins to compound immediately, and ... well, we'll go over The Formula when you get here.</line>
+    <line speaker="doolittle" style="skeleton">I should get back to work. See you tomorrow, then.</line>
+  </scene>
+</conversation>

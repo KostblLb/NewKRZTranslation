@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="fade-out-radio"/>    
+    <setGameVar name="overworld-bus-stop-dropped-off-keith" value="true"/>
+    
+    <line>Keith is an auto claims adjuster now. He went to the University of Indianapolis: mathematics, with a minor in sports marketing.</line>
+    <line>Halfway through his junior year in college, Keith's boyfriend ran away with an older woman. His grades fell off. He stopped shaving. His friends were concerned, and suggested he take a semester off to refocus himself. He sold his car, and spent three months traveling the country by Greyhound bus.</line>
+    <line>Keith found himself in Butte, Montana, in the dead of winter, his rough beard stained with gas station coffee, and his eyes clouded with travel. He bought a second coat at a thrift store, then settled onto a stool in a tavern by the cemetery.</line>
+    <line>Keith sipped a light beer and lost himself in a photo on the wall: a portrait of Evil Knievel. Knievel looked tired. More than tired: spent. Drained. Old. But Keith could have sworn those murky, bloodshot eyes were looking `right` into his soul, as if to tell him —</line>
+    <line>Keith's apartment is here, on the left. The salmon-colored building. That's his apartment, with the blue and white star decals stuck in the window.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,32 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />    
+    <line>I rarely miss a chance to lounge on the beach around The Rum Colony — and I do enjoy a drink, though I don't find their signature liquor suits me — but this time I elected to stay aboard and shoot the breeze with Cate over some mineral water. Still, I heard reports.</line>
+    <option goto="conway">I heard the old man went a little deeper in his cups.</option>
+    <option goto="ezra">Ezra told me about the dark corners.</option>
+    <option goto="junebug">Junebug missed an appointment, but didn't seem perturbed.</option>
+  </scene>
+
+  <scene name="conway" nextScene="end">
+    <line>Not at all surprising — he seemed to have some momentum, and Patch mixes up some pretty `magnetic` drinks.</line>
+  </scene>
+
+  <scene name="ezra">
+    <line>See, that beach is lit by a congregation of amber torches stuck in the sand. They mix the torch fuel with citronella oil — it keeps the bugs away, which keeps the bats away, but the light doesn't fall very far from the flame. The rest is shadows and sandy echoes, and that's the part Ezra wanted to tell me about.</line>
+    <option goto="run-in-dark">He said he liked to run in the dark.</option>
+    <option goto="treasure">He said he found a treasure.</option>
+  </scene>
+
+  <scene name="run-in-dark" nextScene="end">
+    <line>I have a childhood memory of running barefoot along the Ohio river at dusk, so I know roughly what he meant ...</line>
+  </scene>
+
+  <scene name="treasure" nextScene="end">
+    <line>I knew better than to pry ...</line>
+  </scene>
+
+  <scene name="junebug" nextScene="end">
+    <line>I'm sure those two were more eager to listen to the house band — I can't remember exactly who was playing, but Patch always has someone in to tranquilize the crowd ...</line>
+  </scene>
+</conversation>

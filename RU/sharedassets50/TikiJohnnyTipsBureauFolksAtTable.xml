@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-bureau-folks" value="true" />
+    <setGameVar name="tiki-johnny-tips-total" value="+1500" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>These kooks are really going for it. It's good; you can't always hope for much with these fly-by-night crowds. Could have been some deep tiki fanatics getting uptight about Cyrano's tape machine or something. But these folks are tourists wherever they go.</line>
+  </scene>
+</conversation>

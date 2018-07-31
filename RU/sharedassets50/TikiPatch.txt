@@ -1,0 +1,32 @@
+# -*- mode: blocking -*-
+
+Main Marker Lock
+Main Clear TikiPatch
+Main Message TikiCamera LookAt WaypointJunebugAndPatch
+Main Message TikiCamera ZoomIn
+
+Shannon Push Shannon
+Shannon Message Shannon DisableFlashlight
+Shannon Look Shannon PoiMusician
+Shannon Walk Shannon WaypointShannonHut*
+
+Patch Look TikiPatch PoiJunebug
+Patch Look TikiJunebug TikiPatch
+Patch Look Johnny TikiPatch
+Patch Walk TikiPatch WaypointPatchTalkJunebug
+Patch Wait 1
+Patch Dialog TikiBartender WorldPlacement Focus:ActorPatch ArrowFollowsObject
+Patch Message TikiCamera Clear
+Patch Message TikiCamera ZoomOut
+
+Shannon Sync Patch
+Shannon Unlook Shannon
+Shannon Pop Shannon
+Shannon Marker Unlock
+Shannon Event done-talking-to-patch
+
+Main Sync Shannon
+Main Unlook TikiPatch
+Main Unlook TikiJunebug
+Main Unlook Johnny
+Main Walk TikiPatch WaypointPatchWatchMusician

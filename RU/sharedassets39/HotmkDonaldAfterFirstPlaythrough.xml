@@ -1,0 +1,51 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="warp-to-distillery">
+  <scene name="intro">
+    <setGameVar name="hotmk-talked-to-donald-after-first-playthrough" value="true"/>
+    
+    <line speaker="donald">So. You've seen it for yourself, what's left of it.</line>
+    
+    <option goto="the-end" speaker="junebug">Pretty busted.</option>
+    <option goto="the-end" speaker="conway">Is that the end?</option>
+  </scene>
+
+  <scene name="the-end">
+    <line speaker="donald">The chalky bones of a beautiful dream. But you can see what it once was, can't you? Can't you?</line>
+    <line speaker="donald">There was so much more to it: ornate labyrinths of memory, exhaustively-simulated parallel cave ecosystems. Real artificial intelligence built on sophisticated neural network algorithms! The birds in the forest could flock in three dimensions! The bats could learn to `sing`!</line>
+    <line speaker="donald">And then it began to crumble, when the strangers came ...</line>
+    <line speaker="donald">At first we only heard them: walking heavily through the caves, dragging things around, hammering and clattering their tools. Sometimes we heard working songs — never close enough to make out real voices, just their echoes cascading wordlessly in the tunnels. Then we caught a glimpse of one.</line>
+    <option goto="strangers-appearance" speaker="conway">What did they look like?</option>
+    <option goto="strangers-work" speaker="conway">What were they working on?</option>
+  </scene>
+
+  <scene name="strangers-appearance" nextScene="strangers-work">
+    <line speaker="donald">They look like ... no, it's too horrible.</line>
+  </scene>
+
+  <scene name="strangers-work" nextScene="lula">
+    <line speaker="donald">I shouldn't be telling you about this. They're dangerous, they're ... strange. I should never have tried to outwit them. They were always too much for me. But it's too late now; if I'd listened to Lula, I —</line>
+    <line speaker="shannon">Lula? Lula Chamberlain?</line>
+  </scene>
+
+  <scene name="lula">
+    <line speaker="donald">Yes, of course. Oh, do you know her?</line>
+    <option goto="find-lula" speaker="shannon">We're looking for her now.</option>
+    <option goto="how-do-you-know-lula" speaker="conway">How do you know her?</option>
+  </scene>
+
+  <scene name="how-do-you-know-lula" nextScene="find-lula">
+    <line speaker="donald">It was a long time ago. All this, you see ... just look at it ...</line>
+  </scene>
+
+  <scene name="find-lula" nextScene="end">
+    <line speaker="donald">No, she's gone now. She left. We built this together, did you know? Lula, Joseph, and I.</line>
+    <line speaker="donald">Lula is gone from here, but `(DONALD points across the cave with his pipe)` still in there. In `XANADU`.</line>
+    <line speaker="donald">I don't know where Lula is now, or how to get there from here, or how to unwind that damned tangled highway, but ... `XANADU`, before its ruin, was faultless as an oracle: a shrine to perfect simulation.</line>
+    <line speaker="donald">Until ... but maybe?</line>
+    <line speaker="donald">Those weird interlopers destroyed my `XANADU`. Perhaps they know how to fix it.</line>
+    <line speaker="donald">It may be dangerous. I've sent many eager seconds to negotiate with them, to repair my masterpiece ...</line>
+    <line speaker="donald">Back there, that tunnel. Push back the vines. Crawl out into the darkness. Watch your step. After a while, you'll feel the terrain change beneath your hands and knees, from rock to crystal, and then to mud. Then you'll be out.</line>
+    <line speaker="donald">That's where the strangers come from.</line>
+    <line speaker="donald">Now leave me alone. I still have a bit of mold in my pipe, and a few dreams left.</line>
+  </scene>
+</conversation>

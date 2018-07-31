@@ -1,0 +1,60 @@
+# -*- mode: blocking -*-
+
+@set SkeletonConway ExchangeMotorboat/Root/Wobble/SkeletonConway
+@set ConwayPoi ExchangeMotorboat/Root/Wobble/ConwayPoi
+
+@func ShannonTurns
+  Shannon Turn Shannon ExchangeMotorboat
+  Shannon Wait 10
+  Shannon Exec ShannonTurns
+@end
+
+Vanish Marker Lock
+Vanish Message LampAction Hide
+Vanish Message ExchangeStaging SetMotorboatWakeEnding
+Vanish Message ExchangeMotorboat/*/SkeletonGlow SetIntensity 1
+
+
+Vanish Disable TunnelHintDinghy
+Vanish Disable TunnelHintMotorboat
+Vanish Disable TunnelHintHound
+
+Vanish Disable ExchangeDinghy/Root/Wobble/Conway
+Vanish Disable ExchangeDinghy/Root/WobbleInverse/ReflectionMariners
+Vanish Disable ExchangeDinghy/Root/WobbleInverse/ReflectionMarinersSolid
+Vanish Enable [SkeletonConway]
+Vanish Disable TunnelHintDinghy
+Vanish Enable TunnelHintMotorboat
+Vanish Look Hound ExchangeMotorboat/Root/Wobble/ConwayPoiHound
+
+Vanish Fork Conway
+Conway Wait 4
+Conway Look [SkeletonConway] Shannon
+Conway Wait 5
+Conway Look [SkeletonConway] Hound
+
+Vanish Message ExchangeMotorboat DisableDrift
+
+Vanish Message Shannon SetSpeedFactor 1
+Vanish Turn Shannon [ConwayPoi]
+Vanish Look Shannon [ConwayPoi]
+Vanish Wait 2
+Vanish Look Shannon ExchangeDinghy
+Vanish Wait 2
+
+Vanish Cursor Show
+Vanish Interact On
+Vanish Interact ActorHound On
+
+Vanish Look Shannon [ConwayPoi]
+Vanish Wait 5
+Vanish Exec ShannonTurns
+Vanish Wait 10
+
+Vanish Interact Off
+Vanish Cursor Hide
+
+Vanish Wait 20
+Vanish Message _Managers/AudioManager FadeOutListener
+Vanish Wait 5
+Vanish SceneChange Overworld

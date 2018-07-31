@@ -1,0 +1,56 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="exchange-talked-to-flora" value="true" />
+    <line speaker="flora">Oh, hi. I remember you.</line>
+    <option goto="why-flora-here" speaker="shannon">What are you doing down here?</option>
+    <option goto="nice-boat" speaker="shannon" condition="three:museum-parking-completed-boat-watch">That's a nice boat.</option>
+    <option goto="operator" speaker="shannon">Do you know where the telephone exchange operator is?</option>
+  </scene>
+
+  <scene name="why-flora-here" nextScene="flora-romantic">
+    <line speaker="flora">I'm just <if condition="three:museum-parking-completed-boat-watch">getting my boat back<else>exploring</else></if>. I like dark, underground places. I'm a romantic.</line>
+  </scene>
+
+  <scene name="operator" nextScene="why-flora-here">
+    <line speaker="flora">`(Singing.)` I don't know what that means.</line>
+  </scene>
+
+  <scene name="nice-boat">
+    <line speaker="flora">This boat has traveled really far — about two hundred fifty thousand miles. It's made out of paper. There's a secret inside it.</line>
+    <option goto="boat-well-built" speaker="shannon">It must be very well built if it's traveled so far.</option>
+    <option goto="boat-secret" speaker="shannon">So, what's the secret?</option>
+  </scene>
+
+  <scene name="boat-well-built" nextScene="flora-romantic">
+    <line speaker="flora">I used a piece of paper from the front desk at the museum. There's a lot of paper up there, and I chose this one because of the way it looks, not how strong or durable it is. I'm a romantic.</line>
+  </scene>
+
+  <scene name="boat-secret" nextScene="flora-romantic">
+    <line speaker="flora">I drew a picture of Ezra on it before I folded it up. He's my `paramour`. I'm a romantic.</line>
+  </scene>
+
+  <scene name="flora-romantic">
+    <option goto="what-does-romantic-mean" speaker="shannon">Really? What does that mean to you?</option>
+    <option goto="shannon-is-romantic" speaker="shannon">So am I, I think.</option>
+    <option goto="shannon-is-classical" speaker="shannon">I think I'm more `classical`, myself.</option>
+  </scene>
+
+  <scene name="shannon-is-romantic" nextScene="flora-leaves">
+    <line speaker="flora">Yeah, you'd have to be, to hang out down here.</line>
+  </scene>
+
+  <scene name="shannon-is-classical" nextScene="flora-leaves">
+    <line speaker="flora">That sounds like the same thing to me.</line>
+  </scene>
+
+  <scene name="what-does-romantic-mean" nextScene="flora-leaves">
+    <line speaker="flora">It means I like poems and rivers and mysteries.</line>
+  </scene>
+
+  <scene name="flora-leaves" nextScene="end">
+    <line speaker="flora">OK, bye.</line>
+  </scene>
+
+</conversation>
+

@@ -1,0 +1,52 @@
+<research>
+  <!-- Debugging -->
+  <result category="debugging" realism="+10" romance="+0">
+    $assistant makes adjustments to the echolocation algorithm. Bats now fly normally instead of getting hung up on each others wings and clustering together like horrible, leathery tumbleweeds.
+  </result>
+  
+  <result category="debugging" realism="+0" romance="-5">
+    $assistant identifies a bug with the oxygen level simulation, but is unable to fix it.
+  </result>
+  
+  <result category="debugging" realism="+10" romance="+0">
+    $assistant fixes some weird math with some weirder math.
+  </result>
+  
+  <result category="debugging" realism="+10" romance="-5">
+    $assistant widens tunnels slightly, to reduce the need for extra "crouch" commands.
+  </result>
+
+  <!-- Transcription -->
+  <result category="transcription" realism="+15" romance="-5">
+    $assistant extensively notates tunnel diameter as a function of length.
+  </result>
+  
+  <result category="transcription" realism="-10" romance="+15">
+    $assistant types up some lurid imagery from a dream journal.
+  </result>
+  
+  <result category="transcription" realism="+10" romance="+5">
+    $assistant carefully transcribes the sounds of dripping water in all their variations over a period of several hours.
+  </result>
+  
+  <result category="transcription" realism="+15" romance="-5">
+    $assistant summarizes the migratory patterns of bats through the tunnels.
+  </result>
+  
+  <!-- Speculation -->
+  <result category="speculation" realism="-5" romance="+15">
+    $assistant makes a convincing argument for the edibility of stone.
+  </result>
+  
+  <result category="speculation" realism="-15" romance="+5">
+    $assistant discards centuries of exhaustive data on the uniformity of cause and effect.
+  </result>
+  
+  <result category="speculation" realism="-5" romance="+15">
+    $assistant posits that nature, not reason, is the master of industry.
+  </result>
+  
+  <result category="speculation" realism="-5" romance="+20">
+    $assistant muses about the love lives of fungal colonies.
+  </result>
+</research>

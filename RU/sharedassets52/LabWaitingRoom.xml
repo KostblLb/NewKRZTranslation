@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="jenn">Busy night.</line>
+    <line speaker="mimi">There he is again, sleeping. Where do I know him from? It's going to drive me up the wall.</line>
+    <line speaker="jenn" event="room-1-on">Does he work at the university?</line>
+    <line speaker="mimi">Oh, that sounds familiar ... Yeah, I think he might have worked there a long time ago. Maybe when I was an undergrad.</line>
+    <line speaker="jenn">Ah, the `paleolithic`. I thought he looked a bit rugged.</line>
+    <line speaker="mimi">That's right, Jenn, I went to college during the stone age.</line>
+    <line speaker="jenn">What was your major?</line>
+    <line speaker="mimi" event="room-2-on">Fire. I don't think he was a professor; maybe staff? It's been so long ... Sometimes, I wish I'd just barreled through — like you did — instead of taking time off before grad school.</line>
+    <line speaker="jenn">Hm. I'm sure it was the right thing to do at the time.</line>
+    <line speaker="mimi">Yeah ... or the `only` thing. I was such a mess. Did I ever tell you about that? My boyfriend died suddenly, in my last year of college.</line>
+    <line speaker="jenn">Oh! Poor thing.</line>
+    <line speaker="mimi">It's OK. It was a long time ago. But, yeah, it really shook me up, back then. He was studying <variable name="three:lysettes-kitchen-charlie-studied" />. We were both really into experimental music. We took a few art classes together.</line>
+    <line speaker="jenn" event="room-1-off">That's so sad. How did ... Sorry, never mind.</line>
+    <line speaker="mimi">No, it's OK. That's the thing, actually — I mean, that's what shook me up about it — it was just this random accident that never should have happened, and so sudden you never could have seen it coming. He was back home, visiting his parents, and he fell off a roof!</line>
+    <line speaker="jenn">Damn. I know what you mean. You can't predict that kind of ... what do you call it ... "freak accident" kind of thing.</line>
+    <line speaker="mimi">My psychiatrist says that's why I'm such a pessimist.</line>
+    <line speaker="jenn">Well, I think you're remarkably upbeat, all things considered ... I mean, you know, that thing with your boyfriend and the roof, but also what happened to the TV station!</line>
+    <line speaker="mimi" event="room-2-off">"Acts of God."</line>
+    <line speaker="jenn">You think?</line>
+    <line speaker="mimi">No, I mean that's what you call it. That's what you say when it's nobody's fault.</line>    
+  </scene>
+</conversation>

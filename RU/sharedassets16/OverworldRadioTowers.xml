@@ -1,0 +1,37 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="restore-road-sounds">
+  <scene name="intro" nextScene="intro-options">
+    <setGameVar name="overworld-saw-radio-towers" value="true"/>
+    <line>A roughly circular cluster of narrow radio towers sprout from a muddy field. A ragged chain-link fence strung up around the field would do very little to keep out vandals. Birds and other animals avoid the area. It is forcefully silent.</line>
+  </scene>
+
+  <scene name="intro-options">
+    <option goto="walk-in" insertedText="Conway and Shannon walk into the center of the cluster.">Walk into the center of the cluster.</option>
+    <option condition="!overworld-tried-radio" goto="truck-radio" insertedText="Conway and Shannon try to tune the truck's radio.">Try to tune the truck's radio.</option>
+    <option goto="end">Drive away.</option>
+  </scene>
+
+  <scene name="walk-in">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <line>The chain link fence easily folds out of the way. Shannon holds a corner of it off the ground as Conway crawls under. Inside the fence, a subtle but perceptible hum disturbs the air.</line>
+    <option goto="listen" insertedText="They listen.">Listen.</option>
+    <option goto="walk-in-farther" insertedText="They walk farther in.">Walk farther in.</option>
+    <option goto="end">Leave.</option>
+  </scene>
+
+  <scene name="listen">
+    <line>The hum is inaudible — it's more like a current of wind or a feeling of uneasiness.</line>
+    <option goto="walk-in-farther" insertedText="They walk farther in.">Walk farther in.</option>
+    <option goto="end">Leave.</option>
+  </scene>
+
+  <scene name="walk-in-farther" nextScene="end">
+    <line>At the center of the circle, Conway notices a tremor in his vision. His left eyelid twitches. On the ground nearby, a few empty beer cans surround a circle of scorched earth, like candles.</line>
+  </scene>
+
+  <scene name="truck-radio" nextScene="intro-options">
+    <setGameVar name="overworld-tried-radio" value="true"/>
+    <line>The truck's radio hasn't worked for years. Not so much as a whimper of static.</line>
+  </scene>
+
+</conversation>

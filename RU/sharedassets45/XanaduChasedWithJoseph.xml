@@ -1,0 +1,208 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="wait-options">
+    
+    <line speaker="xanadu" style="xanadu">You are in Bedquilt, a long east/west passage with holes everywhere.</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* is here, panting for breath.</line>
+    <line speaker="joseph" style="xanadu">Damn. Did they follow us? Where's Lula?</line>
+  </scene>
+
+  <scene name="wait-options">
+    <option condition="!xanadu-chased-reassured-partner" goto="scared" speaker="shannon">He seems pretty scared.</option>
+    <option condition="xanadu-chased-wait-time=none" goto="wait-first" speaker="shannon">May as well wait.</option>
+    <option condition="xanadu-chased-wait-time=moment" goto="wait-hour" speaker="shannon">I guess we could wait for an hour or so.</option>
+    <option condition="xanadu-chased-wait-time=hour" goto="wait-day" speaker="shannon">Let's wait a bit longer.</option>
+    <option condition="xanadu-chased-wait-time=day" goto="wait-month" speaker="shannon">Keep waiting? He seems to want to wait. A month?</option>
+    <option condition="xanadu-chased-wait-time=month" goto="wait-year" speaker="shannon">How long will it let us wait here? Like what's the maximum time?</option>
+    <option goto="search" speaker="junebug">Search for her.</option>
+  </scene>
+
+  <scene name="scared" nextScene="wait-options">
+    <setGameVar name="xanadu-chased-reassured-partner" value="true"/>    
+    <line speaker="conway">`(Typing.)` ~Reassure Joseph.~</line>
+    <line speaker="joseph" style="xanadu">Hell with you! I told you to find her, you son of ...</line>
+    <line speaker="joseph" style="xanadu">Enough. This is where she'll go, right? We'll wait for her. Here. She'll be OK. She's tougher than either of us.</line>
+  </scene>
+
+  <scene name="wait-first" nextScene="wait-options">
+    <setGameVar name="xanadu-chased-waited" value="true"/>
+    <setGameVar name="xanadu-chased-wait-time" value="moment"/>
+
+    <line speaker="conway">`(Typing.)` ~Wait.~</line>
+    <line speaker="xanadu" style="xanadu">Time passes. Joseph nervously pets the kitten in his coat pocket.</line>
+  </scene>
+
+  <scene name="wait-hour" nextScene="wait-options">
+    <setGameVar name="xanadu-chased-wait-time" value="hour"/>
+    
+    <line speaker="conway">`(Typing.)` ~Wait for an hour.~</line>
+    <line speaker="xanadu" style="xanadu">Time passes. A shifting, fluttering sound grows louder from one of the tunnels.</line>
+    <line speaker="joseph" style="xanadu">What's that? Was that her?</line>
+    <line speaker="xanadu" style="xanadu">Five disoriented bats stumble through your lantern light and off into an adjacent passage.</line>
+  </scene>
+
+  <scene name="wait-day" nextScene="wait-options">
+    <setGameVar name="xanadu-chased-wait-time" value="day"/>
+
+    <line speaker="conway">`(Typing.)` ~Wait for a day.~</line>
+    <line speaker="xanadu" style="xanadu">Time passes.</line>
+    <line speaker="joseph" style="xanadu">Plenty of water down here, at least. And I packed some of that jerky I made. Didn't come out too well, but ...</line>
+    <line speaker="joseph" style="xanadu">I'll try to start a fire, I guess. I don't know.</line>
+  </scene>
+
+  <scene name="wait-month" nextScene="wait-options">
+    <setGameVar name="xanadu-chased-wait-time" value="month"/>
+
+    <line speaker="conway">`(Typing.)` ~Wait for a month.~</line>
+    <line speaker="xanadu" style="xanadu">Time passes.</line>
+    <line speaker="xanadu" style="xanadu">You begin to measure days and nights by the life and death of the fire.</line>
+    <line speaker="joseph" style="xanadu">I don't know about you, Donald, but I'm starting to hate this place. So confining. I can't even think without it bouncing off all these damn weird walls, coming back at me all distorted. Last few days I've been thinking ... sort of daydreaming ... maybe I'll set up on the side of the road somewhere. Ditch the academics and get a couple more cats.</line>
+    <line speaker="joseph" style="xanadu">It sounds nice, doesn't it? After all this?</line>
+    <line speaker="xanadu" style="xanadu">Joseph withdraws into his thoughts.</line>
+  </scene>
+
+  <scene name="wait-year" nextScene="found-lula">
+    <setGameVar name="xanadu-chased-wait-time" value="year"/>
+
+    <line speaker="conway">`(Typing.)` ~Wait indefinitely.~</line>
+    <line speaker="xanadu" style="xanadu">Time passes.</line>
+    <line speaker="xanadu" style="xanadu">*LULA* is here. She's either just arrived, or has been standing here for some period of time.</line>
+  </scene>
+
+  <scene name="search" nextScene="search-options">
+    <setGameVar name="xanadu-chased-searched" value="true"/>
+    
+    <line speaker="conway">`(Typing.)` ~Search.~</line>
+    <line speaker="xanadu" style="xanadu">I only understood you as far as wanting to search.</line>
+    <line speaker="shannon">We have to be more specific ...</line>
+  </scene>
+
+  <scene name="search-options">
+    <goto condition="xanadu-chased-search-count[gt]1" sceneName="search-found-lula"/>
+
+    <option condition="!xanadu-chased-searched-tunnel" goto="search-tunnel" speaker="junebug">Down one of the tunnels?</option>
+    <option condition="!xanadu-chased-searched-equipment" goto="search-equipment" speaker="junebug">With the equipment?</option>
+    <option condition="!xanadu-chased-searched-outside" goto="search-outside" speaker="junebug">Back outside?</option>
+  </scene>
+
+  <scene name="search-tunnel" nextScene="search-options">
+    <setGameVar name="xanadu-chased-search-count" value="+1"/>
+    <setGameVar name="xanadu-chased-searched-tunnel" value="true"/>
+    
+    <line speaker="conway">`(Typing.)` ~Search tunnel.~</line>
+    <line speaker="xanadu" style="xanadu">You select a tunnel at random. Your lantern illuminates several sets of footprints on the moldy cave floor, but they are impossible to identify.</line>
+  </scene>
+
+  <scene name="search-equipment" nextScene="search-options">
+    <setGameVar name="xanadu-chased-search-count" value="+1"/>
+    <setGameVar name="xanadu-chased-searched-equipment" value="true"/>
+    
+    <line speaker="conway">`(Typing.)` ~Search equipment.~</line>
+    <line speaker="xanadu" style="xanadu">The various computer and audio equipment casts angular shadows into the tunnels as you scan slowly across the pile. Nothing.</line>
+  </scene>
+
+  <scene name="search-outside" nextScene="search-options">
+    <setGameVar name="xanadu-chased-search-count" value="+1"/>
+    <setGameVar name="xanadu-chased-searched-outside" value="true"/>
+    
+    <line speaker="conway">`(Typing.)` ~Search outside.~</line>
+    <line speaker="xanadu" style="xanadu">You grab hold of the rope and slowly climb up. Your days lecturing on esoteric computer science topics did not prepare you to scale cave walls with rope. Your evenings gathering with friends to roll dice and consult fancifully illustrated charts, however, prepared you for the likelihood that this climb could end badly.</line>
+    <line speaker="xanadu" style="xanadu">You carefully descend back into the cave.</line>
+  </scene>
+
+  <scene name="search-found-lula" nextScene="found-lula">
+    <line condition="!xanadu-chased-searched-outside" speaker="xanadu" style="xanadu">*LULA* climbs down from the rope still tied above.</line>
+    <line condition="!xanadu-chased-searched-equipment" speaker="xanadu" style="xanadu">*LULA* steps cautiously out from behind the computer equipment.</line>
+    <line condition="!xanadu-chased-searched-tunnel" speaker="xanadu" style="xanadu">*LULA* emerges suddenly from one of the tunnels.</line>
+  </scene>
+
+  <scene name="found-lula">
+    <line speaker="lula" style="xanadu">Is it you? Or more shadows?</line>
+    <line speaker="xanadu" style="xanadu">*LULA* advances carefully.</line>
+    <line speaker="lula" style="xanadu">It ... it really is you, isn't it? I got lost out there in the tunnels. For a while I thought I was running in circles. Or some kind of labyrinth. Every rocky wall and floor looked the same.</line>
+    <line speaker="lula" style="xanadu">Finally, I ended up here.</line>
+    <line condition="xanadu-chased-searched" speaker="lula" style="xanadu">I hid out for a bit. Waiting for you. I heard voices, but ... I wasn't sure! Not after what I've seen.</line>
+    <line condition="xanadu-chased-wait-time=moment|xanadu-chased-wait-time=hour" speaker="lula" style="xanadu">I heard voices, and ... I wasn't sure! Not after what I've seen.</line>
+    <line condition="xanadu-chased-wait-time=day" speaker="lula" style="xanadu">I haven't slept ... I don't know if I'll ever sleep again. I heard you talking but I thought I might have been hallucinating.</line>
+    <line condition="xanadu-chased-wait-time=month" speaker="lula" style="xanadu">I heard you talking, but I thought I might have been hallucinating. I ran away again, back into the tunnels, for ... I don't know how long. There's plenty of fresh water trickling through these caves. I found nourishment where I could. I don't want to talk about that.</line>
+    <line condition="xanadu-chased-wait-time=year" speaker="lula" style="xanadu">I heard you talking, but I thought I might have been hallucinating. I ran back into the tunnels and ... I found some other people, and they fed me. They housed me. They fixed my glasses. Patched up my sweater. Decent people, but ... strange. Secretive.</line>
+    <line speaker="lula" style="xanadu">While I was out there, I ... I spent some time on the |Zero|.</line>
+    <line speaker="joseph" style="xanadu">What? Why?!</line>
+    <line speaker="lula" style="xanadu">Joseph, it's ... it's different than we've heard. It's like a real place: they pick up garbage, they deliver mail, they go to work and to church ...</line>
+    <line speaker="lula" style="xanadu">My most vivid memory is a parade of images, like a waking dream or a slide lecture I'll never understand:</line>
+    <line speaker="lula" style="xanadu">A television, a scarecrow, a crystal, a feather, a sandwich ... a CRT monitor, a bottle ... an anchor ...</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* seems agitated.</line>
+    <option goto="intro-zero-direct" speaker="shannon">We should ask her more about it.</option>
+    <option goto="intro-zero-joseph" speaker="shannon">What's up with Joseph?</option>
+  </scene>
+
+  <scene name="intro-zero-joseph" nextScene="fight">
+    <line speaker="conway">`(Typing.)` ~Ask Joseph what is up.~</line>
+    <line speaker="joseph" style="xanadu">Naw, it's ... Lula, you've heard the same damned stories I have —</line>
+    <line speaker="lula" style="xanadu">There was a cathedral, Joseph! A cathedral. I'm not saying it's any ordinary highway. The cars that passed ... the things that passed ...</line>
+    <line speaker="joseph" style="xanadu">Why've you got to be so damned fascinated, Lula? Why've you always got to ...</line>
+  </scene>
+
+  <scene name="intro-zero-direct" nextScene="fight">
+    <line speaker="conway">`(Typing.)` ~Ask Lula about the ~|Zero|~.~</line>
+    <line speaker="lula" style="xanadu">It's calling to me, Donald ... it seems important.</line>
+    <line speaker="joseph" style="xanadu">Important? It's ...</line>
+  </scene>
+
+  <scene name="fight">
+    <line speaker="joseph" style="xanadu">It doesn't matter now, dammit. I'm leaving. To hell with all of it!</line>
+    <option goto="fight-2-stop" speaker="junebug">Whoa, we should stop him!</option>
+    <option goto="fight-2-back-on-track" speaker="shannon">Get him back on track, we're so close.</option>
+  </scene>
+
+  <scene name="fight-2-stop" nextScene="fight-2">
+    <line speaker="conway">`(Typing.)` ~Stop Joseph.~</line>
+  </scene>
+
+  <scene name="fight-2-back-on-track" nextScene="fight-2">
+    <line speaker="conway">`(Typing.)` ~Divert Joseph's attention.~</line>
+  </scene>
+
+  <scene name="fight-2">
+    <line speaker="xanadu" style="xanadu">You shout something at *JOSEPH* about the project you are working on together.</line>
+    <line speaker="joseph" style="xanadu">You'll die in these damn cold caves! And what about those men? You know they'll come back.</line>
+    
+    <option goto="fight-3-fire" speaker="shannon">Tell him we can find somewhere to start a fire.</option>
+    <option goto="fight-3-hide" speaker="shannon">Tell him we can hide from the strangers.</option>
+  </scene>
+
+  <scene name="fight-3-fire" nextScene="fight-3">
+    <line speaker="conway">`(Typing.)` ~Suggest finding somewhere safe to start a fire.~</line>
+  </scene>
+
+  <scene name="fight-3-hide" nextScene="fight-3">
+    <line speaker="conway">`(Typing.)` ~Suggest finding a hiding place.~</line>
+  </scene>
+
+  <scene name="fight-3">
+    <line speaker="xanadu" style="xanadu">You shout something at *JOSEPH* about going deeper into the caves.</line>
+    <line speaker="joseph" style="xanadu">Did you hear their voices? They're not ... they'll find you. But not me. I'm going back to the surface.</line>
+    <line speaker="lula" style="xanadu">Stop! Your stupid fight is ringing through the whole damned cave. Joseph is right: we can't stay here. I'm leaving, too. But I'm not going back to the surface. I'm taking my station wagon and I'm heading down the |Zero|.</line>
+    <option goto="fight-4-stay" speaker="shannon">I think we need her to stay.</option>
+    <option goto="fight-4-follow" speaker="junebug">Make sure she takes us with her!</option>
+  </scene>
+
+  <scene name="fight-4-stay" nextScene="fight-4">
+    <line speaker="conway">`(Typing.)` ~Ask Lula to stay.~</line>
+  </scene>
+
+  <scene name="fight-4-follow" nextScene="fight-4">
+    <line speaker="conway">`(Typing.)` ~Get Lula's attention.~</line>
+  </scene>
+
+  <scene name="fight-4" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="abandoned"/>    
+    <line speaker="xanadu" style="xanadu">You plead with *LULA* about your continued collaboration.</line>
+    <line speaker="lula" style="xanadu">I'll send you this tape when I'm done recording. I'll put it in the mail. And then you can see what your damned machine does with it.</line>
+    <line speaker="xanadu" style="xanadu">*LULA* and *JOSEPH* have left.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="hotmk-talked-to-dog-beginning" value="true"/>
+    
+    <option goto="what-happened" speaker="conway">What do you suppose happened here?</option>
+    <option goto="maintenance" speaker="conway">They don't keep the roads up too well, do they?</option>
+  </scene>
+
+  <scene name="what-happened">
+    <option goto="old-and-rotted" speaker="conway">Just old and rotted, maybe?</option>
+    <option goto="storm" speaker="conway">Some kind of storm washed it away?</option>
+  </scene>
+
+  <scene name="old-and-rotted">
+    <option goto="end" speaker="conway">I can't tell how old any of this stuff is, down here.</option>
+    <option goto="end" speaker="conway">Old and rotted ... like us, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>.</option>
+  </scene>
+
+  <scene name="storm">
+    <option goto="end" speaker="conway">Haven't seen much weather down here, though ...</option>
+    <option goto="end" speaker="conway">Or just a slow drip from the ceiling, wearing it down.</option>
+  </scene>
+
+  <scene name="maintenance">
+    <option goto="maintenance-never" speaker="conway">Never have.</option>
+    <option goto="maintenance-zero" speaker="conway">Not down here.</option>
+  </scene>
+
+  <scene name="maintenance-never">
+    <option goto="end" speaker="conway">I know how you hate to hit a pothole, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>!</option>
+    <option goto="end" speaker="conway">May as well walk.</option>
+  </scene>
+
+  <scene name="maintenance-zero">
+    <option goto="end" speaker="conway">Who do you think is responsible?</option>
+    <option goto="end" speaker="conway">So empty. Just let it go, I guess.</option>
+  </scene>
+</conversation>

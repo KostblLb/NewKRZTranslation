@@ -1,0 +1,121 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="temp:ezra-sights-offset" value="0" />
+    <line>Ezra watches the lake drift by. He sees:</line>
+    <line><template name="lakeSight" seed="ezra-lake-sights" seed-offset="temp:ezra-sights-offset" /></line>
+    <line>A floating gas station.</line>
+    <line><template name="lakeSight" seed="ezra-lake-sights" seed-offset="temp:ezra-sights-offset" /></line>
+    <line><template name="lakeSight" seed="ezra-lake-sights" seed-offset="temp:ezra-sights-offset" /></line>
+  </scene>
+
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <lakeSight>
+      <common>
+        <template xml:space="preserve" once="true">A school of <color /> fish.</template>
+        <template xml:space="preserve" once="true">A <adjective /> flock of bats.</template>
+        <template xml:space="preserve" once="true"><number filter="capitalize" /> <adjective /> <manMadeObjectPlural />, tethered together with <color /> rope.</template>
+        <template xml:space="preserve">A <naturalSurface /> covered with <animalPlural />.</template>
+        <template xml:space="preserve">A <manMadeObject /> covered with <color /> <animalPlural />.</template>
+        <template xml:space="preserve" once="true">A lone swimmer in a <color /> vest.</template>
+      </common>
+    </lakeSight>
+  </templates>
+  
+  <templateValues>
+    <number>
+      <common>
+        <value>three</value>
+        <value>five</value>
+        <value>seven</value>
+        <value>a few</value>        
+      </common>
+      <rare>
+        <value>half a dozen</value>
+        <value>several</value>        
+      </rare>
+    </number>
+    
+    <animalPlural>
+      <common>
+        <value>frogs</value>
+        <value>turtles</value>        
+        <value>barnacles</value>
+        <value>crabs</value>
+      </common>
+      <rare>
+        <value>snakes</value>
+        <value>newts</value>
+        <value>bats</value>
+      </rare>
+      <esoteric>
+        <value>paper cranes</value>
+        <value>centipedes</value>
+      </esoteric>
+    </animalPlural>
+    
+    <color>
+      <common>
+        <value>beige</value>
+        <value>gray</value>
+        <value>silver</value>
+        <value>black</value>
+        <value>green</value>
+      </common>
+
+      <rare>
+        <value>colorless</value>
+        <value>shimmering</value>
+      </rare>
+    </color>
+    
+    <adjective>
+      <common>
+        <value>small</value>
+        <value>dirty</value>
+        <value>worn</value>
+        <value>waterlogged</value>
+      </common>
+    </adjective>
+
+    <naturalSurface>
+      <common>
+        <value>rock</value>
+        <value>small island</value>
+      </common>
+    </naturalSurface>
+    
+    <manMadeObjectPlural>
+      <common>
+        <value>boats</value>
+        <value>buoys</value>
+        <value>mining helmets</value>
+      </common>
+
+      <rare>
+        <value once="true">telephone books</value>
+        <value once="true">cardboard boxes</value>
+      </rare>
+    </manMadeObjectPlural>
+
+    <manMadeObject>
+      <common>
+        <value>boat</value>
+        <value>buoy</value>
+      </common>
+
+      <rare>
+        <value>tipped canoe</value>        
+        <value>telephone book</value>
+        <value>cardboard box</value>
+      </rare>
+
+      <esoteric>
+        <value>bobbing, overturned umbrella</value>
+      </esoteric>
+    </manMadeObject>
+  </templateValues>
+</conversation>

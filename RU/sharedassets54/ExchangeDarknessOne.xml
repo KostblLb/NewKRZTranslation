@@ -1,0 +1,73 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="conway">Damn. It's really dark down here.</line>
+    <line speaker="conway">Are you still there?</line>
+    <option goto="just-thinking" speaker="shannon">Sorry, just thinking.</option>
+    <option goto="touch-shoulder">`(SHANNON touches CONWAY's shoulder.)`</option>
+  </scene>
+
+  <scene name="just-thinking">
+    <line speaker="conway">Yeah. It's a reflective kind of place, if you're that kind of person. Which I think you are.</line>
+    <line speaker="conway">What are you thinking about?</line>
+    <option goto="shannon-thought-bats" speaker="shannon">Bats.</option>
+    <option goto="shannon-thought-weaver" speaker="shannon">Weaver.</option>
+    <option goto="shannon-thought-nothing" speaker="shannon">Nothing.</option>
+  </scene>
+
+  <scene name="shannon-thought-bats" nextScene="conway-story-route">
+    <line speaker="conway">Yeah. Hard not to, huh?</line>
+  </scene>
+
+  <scene name="shannon-thought-weaver">
+    <line speaker="conway">Oh, yeah. You think she's down here somewhere?</line>
+    <option goto="conway-story-route" speaker="shannon">Yeah, I do, actually.</option>
+    <option goto="conway-story-route" speaker="shannon">I guess not.</option>
+    <option goto="conway-story-route" speaker="shannon">I don't know.</option>
+  </scene>
+
+  <scene name="shannon-thought-nothing" nextScene="conway-story-route">
+    <line speaker="conway">That's a good skill to have. You should teach lessons.</line>
+  </scene>
+
+  <scene name="touch-shoulder" nextScene="conway-story-route">
+    <line speaker="conway">Oh, there you are. I `hope` that's you. Ha ha.</line>
+  </scene>
+
+  <scene name="conway-story-route">
+    <goto sceneName="father" condition="one:conway-family-illness=father" />
+    <goto sceneName="mother" condition="one:conway-family-illness=mother" />
+    <goto sceneName="lysette" />
+  </scene>
+
+  <scene name="mother">
+    <line speaker="conway">I was just thinking about my ma ... I guess because we were talking about your folks a minute ago. To be honest with you, I don't think about her that often. Your cousin brought her up earlier, and she's just been on my mind.</line>
+    <line speaker="conway">It's good your folks have a memorial. A lot of people ... nobody remembers them when they're gone.</line>
+    <option goto="mother-memorial" speaker="shannon">You mean, like your ma?</option>
+    <option goto="conway-memorial" speaker="shannon">You mean, like you?</option>
+  </scene>
+
+  <scene name="father">
+    <line speaker="conway">I was just thinking about my dad ... I guess because we were talking about your folks a minute ago. To be honest with you, I don't think about him that often. Your cousin brought him up earlier, and he's just been on my mind.</line>
+    <line speaker="conway">It's good your folks have a memorial. A lot of people ... nobody remembers them when they're gone.</line>
+    <option goto="father-memorial" speaker="shannon">You mean, like your dad?</option>
+    <option goto="conway-memorial" speaker="shannon">You mean, like you?</option>
+  </scene>
+
+  <scene name="mother-memorial" nextScene="end">
+    <line speaker="conway">Oh. No, she would have hated that. I don't know what I mean. Ha ha.</line>
+  </scene>
+
+  <scene name="father-memorial" nextScene="end">
+    <line speaker="conway">Oh. No, he would have hated that. I don't know what I mean. Ha ha.</line>
+  </scene>
+
+  <scene name="conway-memorial" nextScene="end">
+    <line speaker="conway">Yeah, I guess so. I'm not the kind of guy you build a memorial for. Ha ha.</line>
+  </scene>
+
+  <scene name="lysette" nextScene="end">
+    <line speaker="conway">I was thinking about Lysette. I actually think she'd like it down here. She's always liked old things and empty places. I mean ... places that are full of weird stuff but they still feel empty. Like the wax museum.</line>
+  </scene>
+
+</conversation>

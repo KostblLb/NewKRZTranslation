@@ -1,0 +1,33 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-second-bike-conversation">
+  <scene name="intro">
+    <setGameVar name="breakdown-bike-talked-about-sidecar" value="true"/>
+    
+    <line speaker="johnny">They had a kid with them.</line>
+    
+    <option goto="recordings" speaker="junebug">An audience for your recordings?</option>
+    <option goto="friend" speaker="junebug">I'm sure he's in good hands.</option>
+  </scene>
+
+  <scene name="recordings" nextScene="decision">
+    <line pause="false" speaker="johnny">I bet he'd be into it. It could be like a game: I'll play him a turkey call at half-speed, and make him guess what kind of animal it is.</line>
+  </scene>
+
+  <scene name="friend" nextScene="decision">
+    <line speaker="johnny">He's hanging out with an old dog, an old man, and some kind of telephone technician or something.</line>
+    <line speaker="johnny">Sounds boring.</line>
+    <line pause="false" speaker="johnny">I just feel sorry for him, is all ...</line>
+  </scene>
+
+  <scene name="decision">
+    <option goto="end-stop" speaker="junebug">Fine, fine. You can make a friend. Briefly.</option>
+    <option goto="end" speaker="junebug">Gotta keep moving, cricket.</option>
+  </scene>
+
+  <scene name="end-stop" nextScene="end">
+    <setGameVar name="breakdown-agreed-to-stop" value="true"/>
+    <setGameVar name="breakdown-reason-for-stopping" value="ezra"/>
+    
+    <line speaker="johnny">You're the best. And, hey, maybe if they're not busy they can fill some seats at the gig. You know if no one's there Harry'll try and bilk us on our fee.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+    <scene name="intro" nextScene="end">
+      <triggerEvent name="looked-at-sign" />
+      <line>`(A dusty, rusty sign is bolted onto the wall.)`</line>
+      <line speaker="sign">THESE ARE THE RULES:</line>
+      <line speaker="sign">1. No open flames near the gasoline.
+2. No consumption of beer or spirits on the premises.
+3. In case of sudden darkness, do not panic. Relax. Count backwards from five.
+4. Strictly limit time spent in the basement to fewer than three minutes of every hour.</line>
+
+    </scene>
+</conversation>

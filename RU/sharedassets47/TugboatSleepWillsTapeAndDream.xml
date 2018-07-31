@@ -1,0 +1,68 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="lecture">
+    <line>`(A recorded lecture plays from a tape machine next to WILL's bunk.)`</line>
+    <line speaker="lecturer" style="skeleton" event="play-will-tape-1">— and even hinted that he had in mind a design for this device, as recorded in the `Diary and Sundry Observations`.</line>
+  </scene>
+
+  <scene name="lecture" skimmingScene="lecture-skip" nextScene="will-wakes-up">
+    <line speaker="lecturer" style="skeleton" event="play-will-tape-2">`(Reading.)` "Why should personalities in another existence or sphere waste their time working a little triangular piece of wood over a board with certain lettering on it? The whole business seems so childish to me ... if we are to make any real progress in psychic investigation, we must do it with scientific apparatus."</line>
+    <line speaker="lecturer" style="skeleton" event="play-will-tape-3">Again, for Edison, a technical solution to every problem. He goes on to suggest the parameters of the apparatus, and — yes? A question in the back? James?</line>
+    <line speaker="student" style="skeleton" event="play-will-tape-4">`(Indistinguishable.)`</line>
+    <line speaker="lecturer" style="skeleton" event="play-will-tape-5">Yes, this idea of "personalities" lingering after death does `appear` to be in conflict with Edison's theories about what he called "life units," the subatomic entities that animate matter and then scatter to other configurations when a person passes on.</line>
+    <line speaker="lecturer" style="skeleton" event="play-will-tape-6">But, given Edison's emphasis on `memory` in cognition — remember, we're talking about the inventor of the phonograph — and his colorful description of the "swarm" of interchangeable, drone-like — Edison even uses the word "proletarian" — life units animating the human mind, his theory naturally posits that any individual life unit possesses on its own some fragment of memory.</line>
+    <line speaker="lecturer" style="skeleton" event="play-will-tape-7">So, according to Edison, when life units recombine from, say, a `soldier` into, say, a `flower`, we may be able — using some apparatus — to coax out from the flower memories of war!</line>
+    <line blocking="Dialog Exec EzraStopsRecordingTape" event="stop-will-tape">`(The tape stops.)`</line>
+  </scene>
+
+  <scene name="lecture-skip" nextScene="will-wakes-up">
+    <line blocking="Dialog Exec EzraStopsRecordingTape" event="stop-will-tape">`(EZRA stops the tape.)`</line>
+  </scene>
+  
+  <scene name="will-wakes-up">
+    <line blocking="Dialog Exec WillWakesUp">`(WILL wakes up.)`</line>
+    <line speaker="will">Well, hello, small man. You caught me in my pre-dawn nap. I try to sleep in little `nibbles`, when I can; it maximizes my time in the threshold states.</line>
+    <option goto="about-tape" speaker="ezra">What were you listening to?</option>
+    <option goto="threshold" speaker="ezra">What?</option>
+  </scene>
+
+  <scene name="threshold" nextScene="sleep-learning">
+    <line speaker="will">Oh, you know: the half-asleep, half-awake, in-between places.</line>
+  </scene>
+
+  <scene name="about-tape" nextScene="sleep-learning">
+    <line speaker="will">Well, I used to work at a university, and I'd always eavesdrop on lectures through the ventilation system. Anything and everything; I'm a polymath by nature. An old friend recently found this box of tape-recorded lectures next to the dumpster there, and passed them on in the spirit of fondly recalling better days.</line>
+    <line speaker="will">This one is ...</line>
+    <line>`(WILL looks at the label on the tape.)`</line>
+    <line speaker="will">`(Reading.)` "History of the Philosophy of Death." Yikes.</line>
+  </scene>
+
+  <scene name="sleep-learning">
+    <line speaker="will">I play these old taped lectures during my little nibble-naps, to absorb the information more easily. It's pretty effective; I wish I could do `everything` half-asleep!</line>
+    <line speaker="will">Can't say I learned very much just now, though. I may have been too busy dreaming — a vivid, narcotic fantasia aboard the ... but those are always the quickest to dissipate. I'd better tell you about it now, before the spell is broken.</line>
+    <line>`(WILL takes a deep breath, focusing on the task of recalling his dream.)`</line>
+    <line speaker="will">I was small. Not a child — an animal, maybe.</line>
+    <line speaker="will">I patrolled the corridors of a great iron ship, searching for scraps and ... mice, I think? And crying, always, a weak and mournful "mew."</line>
+    <line speaker="will">Other crewmen slumped in odd corners or lay drunk on the deck. The halls smelled of shame, defeat, and rotgut corn whiskey. They dumped artillery into the water, tore their flags into cloth scraps and made handkerchiefs to bury their sobbing faces.</line>
+    <line speaker="will">They drifted on Lake Lethe, drinking the cold, black water and eating eyeless fish — raw, when they at last ran out of cooking fuel! They seemed, in their despair, to forget even language. After an interval of years, the ship crossed a threshold into absolute silence ...</line>
+    <line speaker="will">Silence, except for my hopeless, whimpering cry ...</line>
+    <line speaker="will">Anyway, that's all I remember.</line>
+    <option goto="bad-dream" speaker="ezra">Sorry you had a bad dream.</option>
+    <option goto="dont-remember-dreams" speaker="ezra">Lately, I never remember my dreams.</option>
+  </scene>
+
+  <scene name="bad-dream" nextScene="next-stop">
+    <line speaker="will">Oh, no, not "bad." Unsettling. Puzzling.</line>
+    <line speaker="will">But thanks for your concern, doc!</line>
+  </scene>
+
+  <scene name="dont-remember-dreams" nextScene="next-stop">
+    <line speaker="will">Hm. It's probably for the best — the images of dreams are often wasted on the waking.</line>
+  </scene>
+
+  <scene name="next-stop" nextScene="end">
+    <line speaker="will">Well, I've got a stew to start. You may want to hurry back above deck — I believe we're about to pass the bat sanctuary. It's quite a thing to see!</line>
+  </scene>
+
+</conversation>
+

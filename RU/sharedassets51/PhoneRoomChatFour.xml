@@ -1,0 +1,125 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="clara">My sister, back home. She's very depressing to me this morning. My uncle Andrius is terminally ill and refusing visitors, and Nadia is making a stir about it.</line>
+    <option goto="bother-clara" speaker="cate">It doesn't bother you that your uncle is refusing visitors?</option>
+    <option goto="close-to-uncle" speaker="cate">I'm sorry to hear. Are you close?</option>
+  </scene>
+
+  <scene name="bother-clara" nextScene="respect">
+    <line speaker="clara">He's a bear of a man. Wild animals — it's what they do. When it's time to die, they wander off into the forest, alone.</line>
+    <line speaker="clara">No, I said it wrong: they don't "wander." They make a pilgrimage.</line>
+  </scene>
+
+  <scene name="close-to-uncle" nextScene="respect">
+    <line speaker="clara">Yes, but only recently. He lived abroad for most of my life. I only met him a few years ago. My sister is older, so she knew him as a child, too.</line>
+    <line speaker="clara">So I think her respect for him is distorted by sentiment.</line>
+  </scene>
+
+  <scene name="respect">
+    <line speaker="clara">We must always take the dying at their word. Their motivations are beyond our understanding.</line>
+    <line speaker="clara">The older man — he's swimming back to the `Mammoth`? No emergency, I hope?</line>
+    <option goto="conway-arthritis" speaker="cate" condition="phone-room-shannon-conway-explanation=leg-pain">He's tending to his aching joints.</option>
+    <option goto="conway-lazy" speaker="cate" condition="phone-room-shannon-conway-explanation=leg-pain">Best for him not to move around too much.</option>
+    
+    <option goto="conway-garlic" speaker="cate" condition="phone-room-shannon-conway-explanation=headache">You know, he `could` try some garlic. Miraculous.</option>
+    <option goto="conway-caffeine" speaker="cate" condition="phone-room-shannon-conway-explanation=headache">Hm, maybe some caffeine would help his headache.</option>
+    
+    <option goto="conway-toilet" speaker="cate" condition="phone-room-shannon-conway-explanation=bathroom">He's looking for the toilet.</option>
+    <option goto="conway-paper" speaker="cate" condition="phone-room-shannon-conway-explanation=bathroom">Oh, I hope there's paper ... it's been a busy night.</option>
+    
+    <option goto="conway-sweet-tooth" speaker="cate" condition="phone-room-shannon-conway-explanation=thirsty">Seems he has a sweet tooth.</option>
+    <option goto="conway-indigestion" speaker="cate" condition="phone-room-shannon-conway-explanation=thirsty">He should really just try some licorice root tea.</option>
+  </scene>
+
+  <scene name="conway-arthritis" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="arthritis" />
+    <line speaker="clara">Arthritis? It runs in my family, too.</line>
+  </scene>
+
+  <scene name="conway-lazy" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="lazy" />    
+    <line speaker="clara">I see. Well, let him be a little lazy; he's old and it's very late at night.</line>
+  </scene>
+
+  <scene name="conway-garlic" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="cooking" />    
+    <line speaker="clara">He's cooking? Didn't strike me as the type.</line>
+  </scene>
+
+  <scene name="conway-caffeine" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="coffee" />    
+    <line speaker="clara">Another coffee lover. I wish I had some on board to share.</line>
+  </scene>
+
+  <scene name="conway-toilet" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="toilet" />    
+    <line speaker="clara">Well, I hope he finds it before we embark; he seems unsteady on his feet as it is ...</line>
+  </scene>
+
+  <scene name="conway-paper" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="letter" />
+    <line speaker="clara">He's writing a letter?</line>
+    <line speaker="cate">Ha ha. I hadn't heard that euphemism. Must be Lithuanian ...</line>
+  </scene>
+
+  <scene name="conway-sweet-tooth" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="candy" />    
+    <line speaker="clara">I know the type. Andrius always carried peppermints.</line>
+  </scene>
+
+  <scene name="conway-indigestion" nextScene="brandon-approaches">
+    <setGameVar name="phone-room-clara-conway-explanation" value="indigestion" />
+    <line speaker="clara">Ah, indigestion.</line>
+  </scene>
+
+  <scene name="brandon-approaches">
+    <line>`(BRANDON approaches.)`</line>
+    <line speaker="brandon">I don't suppose any of you folks are headed past the Bureau of Reclaimed Spaces?</line>
+    
+    <option speaker="cate" goto="not-passing-bureau">Not on this run, but we'll be coming back this way in a few hours.</option>
+    <option speaker="cate" goto="brandons-ride">Can't get ahold of your ride?</option>
+  </scene>
+
+  <scene name="not-passing-bureau" nextScene="stranded">
+    <line speaker="brandon">Well, I may still be here, then!</line>
+  </scene>
+  
+  <scene name="brandons-ride">
+    <line speaker="brandon">Yeah, my mom usually picks me up from work, but I got wrapped up in a card game and I didn't call her in time. I hitched a ride this far, but ...</line>
+    <option speaker="cate" goto="card-game">Must have been quite a card game! Did you win anything?</option>    
+    <option speaker="cate" goto="stranded">Yikes. Stranded?</option>
+  </scene>
+
+  <scene name="card-game" nextScene="stranded">
+    <line speaker="brandon">Oh, uh, it's a variant of `Solitaire`. I designed it myself. Well, it's a work in progress.</line>
+  </scene>
+  
+  <scene name="stranded">
+    <line speaker="brandon">It's no big deal. I'll just hang out and read or something until it's time to head back to work.</line>
+    <line speaker="brandon">Hey, you folks are traveling with that old guy, right? With the leg? Is he OK?</line>
+    <line speaker="brandon">I saw him earlier tonight. He came by the storage facility for some files. He totally `bit it` on the staircase!</line>
+    <line speaker="brandon">He's OK though, right?</line>
+    
+    <option speaker="cate" goto="conway-is-passenger">I think so. I don't know him too well; he's a passenger.</option>
+    <option speaker="cate" goto="conway-is-drunk">Sure, he's just been drinking a bit. You know how it is.</option>
+    <option speaker="cate" goto="conway-is-preoccupied">He just seems preoccupied to me.</option>
+  </scene>
+
+  <scene name="conway-is-passenger" nextScene="closing">
+    <line speaker="brandon">Cool. Hey, I guess he's well enough to swim!</line>
+  </scene>
+  
+  <scene name="conway-is-drunk" nextScene="closing">
+    <line speaker="brandon">Yeah, you'd have to be, to dive into the Echo like that! Ha ha.</line>
+  </scene>
+  
+  <scene name="conway-is-preoccupied" nextScene="closing">
+    <line speaker="brandon">Yeah, I got that feeling, too. Back at the storage facility, he was asking a lot of weird questions. And he seemed distracted, like ... spiritually.</line>
+  </scene>
+  
+  <scene name="closing" nextScene="end">
+    <line speaker="brandon">Well, have a good night. Or, uh ... morning, almost.</line>
+  </scene>
+
+</conversation>

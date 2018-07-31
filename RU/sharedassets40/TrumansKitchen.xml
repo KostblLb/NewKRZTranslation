@@ -1,0 +1,165 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-scene">
+  <scene name="intro">
+    <line speaker="dr. truman">... but that's only if you make a late payment on a follow-up visit; I think everything went well enough here that they'll only want to bill for —</line>
+    <line speaker="shannon">Oh! He's awake. How do you feel, old man? All fixed up? Truman says you might be a bit &quot;misty&quot; coming out of it, so —</line>
+    <option goto="dreaming" speaker="conway">I was dreaming.</option>
+    <option goto="how-long" speaker="conway">What time is it?</option>
+    <option goto="i-feel-fine" speaker="conway">I feel fine.</option>
+  </scene>
+
+  <scene name="dreaming">
+    <line speaker="dr. truman">That's unlikely. `Neurypnol TM` is quite powerful. In fact, many patients report a sensation of &quot;lost time.&quot; Do you feel like you've lost time?</line>
+    <option goto="how-long" speaker="conway">I guess so.</option>
+    <option goto="i-feel-fine" speaker="conway">I feel fine.</option>
+  </scene>
+
+  <scene name="how-long">
+    <line speaker="shannon">It's been about two hours.</line>
+    <option goto="what-shannon-has-been-doing" speaker="conway">What have you been doing?</option>
+    <option goto="i-feel-fine" speaker="conway">Feel like I got some rest.</option>
+  </scene>
+
+  <scene name="i-feel-fine" nextScene="hows-your-leg">
+    <line speaker="shannon">Good.</line>
+  </scene>
+
+  <scene name="what-shannon-has-been-doing" nextScene="hows-your-leg">
+    <line speaker="shannon">We watched TV for a while. Then Dr. Truman showed me some of the terms of this bill. It's kind of ... you'll want to look over it yourself, I think.</line>
+  </scene>
+
+  <scene name="hows-your-leg">
+    <line speaker="dr. truman">How about that leg? How's your leg feeling?</line>
+    <line speaker="shannon">Yeah, that's the important part.</line>
+    <line>`(CONWAY shifts his leg a bit in the chair, testing it.)`</line>
+    <line speaker="shannon">Well?</line>
+    <option goto="not-my-leg" speaker="conway">This isn't my leg.</option>
+    <option goto="wasnt-worth-it" speaker="conway">It seems better, but ... it wasn't worth it.</option>
+    <option goto="heat" speaker="conway">It was the heat. The shingles were cracked in the sun, and one of them slipped out under his feet ...</option>
+  </scene>
+
+  <scene name="not-my-leg">
+    <line speaker="shannon">Not your — of course it's your leg!</line>
+    <option goto="looks-wrong" speaker="conway">It looks wrong. You replaced it.</option>
+    <option goto="belongs" speaker="conway">It doesn't feel like it belongs to me anymore.</option>
+  </scene>
+
+  <scene name="looks-wrong" nextScene="body-integrity">
+    <setGameVar name="leg-problem" value="looks-wrong"/>
+  </scene>
+
+  <scene name="belongs" nextScene="body-integrity">
+    <setGameVar name="leg-problem" value="doesnt-belong-to-me"/>    
+  </scene>
+
+  <scene name="body-integrity" nextScene="still-misty">
+    <line speaker="dr. truman">Hm. I haven't encountered this ... reaction before. But it's not totally unheard of. I read a paper about something like this last year. It can happen for a lot of reasons: neurological, psychological, social ... I'm sure it won't persist in your case.</line>
+  </scene>
+
+  <scene name="wasnt-worth-it" nextScene="still-misty">
+    <setGameVar name="leg-problem" value="not-worth-it"/>
+    <line speaker="shannon">Come on, of course it was worth it! We've got — you've got work to do, right? Your delivery.</line>
+  </scene>
+
+  <scene name="heat" nextScene="still-misty">
+    <setGameVar name="leg-problem" value="memory"/>
+    <line speaker="shannon">... shingles? What are you talking about? Who slipped?</line>
+  </scene>
+
+  <scene name="still-misty">
+    <line speaker="dr. truman">Your thoughts and feelings are probably still a little nebulous, from the `Neurypnol TM`. That's totally normal. It'll pass. I wouldn't recommend driving, at least for another hour or two, regardless.</line>
+    <option goto="thank-you-doctor" speaker="conway">Thank you, doctor.</option>
+    <option goto="i-can-drive" speaker="conway">I can drive.</option>
+    <option goto="silent-about-driving">`(CONWAY stares remotely at his leg.)`</option>
+  </scene>
+
+  <scene name="thank-you-doctor" nextScene="things-to-be-aware-of">
+    <line speaker="dr. truman">Sure, it's ...</line>
+  </scene>
+
+  <scene name="i-can-drive" nextScene="things-to-be-aware-of">
+    <line speaker="shannon">You should rest that clutch foot. Dr. Truman fixed some coffee; I'm not tired.</line>
+  </scene>
+
+  <scene name="silent-about-driving" nextScene="things-to-be-aware-of">
+    <setGameVar name="trumans-kitchen-silent-about-driving" value="true"/>
+  </scene>
+
+  <scene name="things-to-be-aware-of">
+    <line speaker="dr. truman">Let's talk about a few things you should be aware of: recovery, rehabilitation, and side effects.</line>
+    <option goto="resting-time" speaker="conway">I should have plenty of resting time coming up soon.</option>
+    <option goto="side-effects" speaker="conway">Oh, I'm used to a few side effects.</option>
+    <option goto="recovery-length" speaker="conway">How long am I going to be recovering?</option>
+  </scene>
+
+  <scene name="resting-time">
+    <line speaker="dr. truman">Good for you. Vacation, or ... ?</line>
+    <option goto="recovery-length" speaker="conway">More like unemployment.</option>
+    <option goto="recovery-length">`(SHANNON casts a reassuring glance in CONWAY's direction.)`</option>
+  </scene>
+
+  <scene name="recovery-length">
+    <line speaker="dr. truman">Well, at your age ... I want to be clear: you should expect lingering effects of the injury for more or less the rest of your life. Don't immerse it fully in water. Avoid extremes of temperature. I'd stay away from dusty roads and mountain lions, as much as possible.</line>
+    <option goto="dust" speaker="conway">Dusty roads?</option>
+    <option goto="mountain-lions" speaker="conway">Mountain lions?</option>
+  </scene>
+
+  <scene name="dust" nextScene="clean">
+    <line speaker="dr. truman">Yeah, dust can be pretty dangerous — if too much accumulates you can expect some severe shocks.</line>
+  </scene>
+
+  <scene name="mountain-lions" nextScene="clean">
+    <line speaker="dr. truman">Good advice in any context!</line>
+  </scene>
+
+  <scene name="side-effects" nextScene="clean">
+    <setGameVar name="trumans-kitchen-asked-about-side-effects" value="true"/>
+    <line speaker="dr. truman">They'll be side effects of `Neurypnol TM`, mostly; the operation itself wasn't particularly remarkable. Typically, we see daydreaming, deja vu, pensiveness, fugue states, irregular perception of time ... about fifteen percent of patients report a generalized sensation of &quot;lateness.&quot;</line>
+    <line speaker="dr. truman">Nothing to be alarmed about. Just keep it in mind.</line>
+  </scene>
+
+  <scene name="clean">
+    <line speaker="dr. truman">Best thing you can do is keep it clean and free of debris.</line>
+    <option goto="clean-what" speaker="conway">What do I clean it with?</option>
+    <option goto="clean-often" speaker="conway">How often do I clean it?</option>    
+  </scene>
+
+  <scene name="clean-what" nextScene="other-questions">
+    <line speaker="dr. truman">Only clean your leg with a soft cloth, moistened with water or isopropyl alcohol.</line>
+    <line speaker="dr. truman">You'll definitely want to avoid abrasive agents like detergents, or other solvents.</line>
+  </scene>
+  
+  <scene name="clean-often" nextScene="other-questions">
+    <line speaker="dr. truman">I'd say about once a month. If you find yourself unable to avoid overly dusty or moist environments, you'll want to clean it more often.</line>
+    <line speaker="dr. truman">And, of course, have a doctor examine and recalibrate it every twelve months or so.</line>
+  </scene>
+  
+  <scene name="other-questions">
+    <line speaker="dr. truman">So. Do you have any questions? Anything about the bill that didn't make sense? I don't mean to rush you, but I have an early fishing trip.</line>
+    <option goto="payment-plan" speaker="shannon">Tell him about the payment plan. In the bill.</option>
+    <option goto="no-questions" speaker="conway">I don't want to think about that bill right now ...</option>
+    <option goto="fishing" speaker="conway">What are you fishing for?</option>
+  </scene>
+
+  <scene name="payment-plan" nextScene="goodbye">
+    <setGameVar name="trumans-kitchen-heard-about-bill" value="true"/>
+    <line speaker="dr. truman">Ah. Yeah that's one of the, uh ... `atypical` clauses. I don't really have any control over the bill, now that the Consolidated Power Company bought my employer. They handle everything.</line>
+    <line speaker="dr. truman">So it all runs through your electricity bill now. You can pay it back in full on your next billing cycle, or you can get on an energy credit payment plan. You'd have to call Consolidated for more detail about that; I don't really understand how it works. Something about generating electricity to send back into the grid ...</line>
+  </scene>
+
+  <scene name="no-questions" nextScene="goodbye">
+    <line speaker="dr. truman">Sure. Well, you can go over it later. If you have any questions, there's a phone number on the bottom where you can reach the Consolidated Power Company — they handle all the billing. I wouldn't put it off `too` long, if I were you.</line>
+  </scene>
+
+  <scene name="fishing" nextScene="goodbye">
+    <line speaker="dr. truman">Just out on the lake. Stripers, maybe. Got to keep those wrists and elbows limber, you know? Ha ha.</line>
+  </scene>
+
+  <scene name="goodbye" nextScene="end">
+    <line condition="!trumans-kitchen-asked-about-side-effects" speaker="dr. truman">Oh, one more thing. Don't be alarmed if you experience any side effects of the `Neurypnol TM`.</line>
+    <line condition="!trumans-kitchen-asked-about-side-effects" speaker="dr. truman">Typically, we see daydreaming, deja vu, pensiveness, fugue states, irregular perception of time ... about fifteen percent of patients report a generalized sensation of &quot;lateness.&quot;</line>
+    <line condition="!trumans-kitchen-asked-about-side-effects" speaker="dr. truman">Nothing to be alarmed about. Just keep it in mind.</line>
+    <line speaker="shannon">Thanks for your help.</line>
+    <line speaker="ezra">Julian's outside. We can head back to your truck.</line>
+  </scene>
+</conversation>

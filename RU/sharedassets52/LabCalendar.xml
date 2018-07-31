@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="mimi">Oh, look. Can you read the date?</line>
+    <line speaker="jenn">Um ...</line>
+    <line speaker="mimi">Damn, I can't read it either.</line>
+    <line speaker="jenn">It may not have even been current. I remember for a while we had a calendar up that was, like, `years` behind. I think Darryl liked the picture?</line>
+    <line speaker="mimi">What was it?</line>
+    <line speaker="jenn">"Best Friends." Every month there was a different pair of animals that were friends.</line>
+    <line speaker="mimi">That's adorable. I think I'm going to be sick.</line>
+    <line speaker="jenn">You don't remember that? That weird intern brought it in from home, um ... What was his name?</line>
+    <line speaker="mimi">Who?</line>
+    <line speaker="jenn">Oh, you remember, he was always, like ... I mean we would make fun of him for ...</line>
+    <line speaker="jenn">Damn, he's almost completely gone from my brain. So many interns coming and going then, I guess I didn't bother even remembering their names.</line>
+    <line speaker="mimi">I wonder who was working back when this was recorded ... Is there a tape of the monitoring room?</line>
+    <line speaker="jenn">Yeah, here it is —</line>
+    <line speaker="mimi">Oh, before we check that out, did she flip the calendar forward or backward?</line>
+    
+    <line speaker="jenn" condition="lab-calendar-flipped=Up">Um. Forward.</line>
+    <line speaker="mimi" condition="lab-calendar-flipped=Up">Oh, weird. They usually flip it backward.</line>
+    
+    <line speaker="jenn" condition="lab-calendar-flipped=Down">Um. Backward.</line>
+    <line speaker="mimi" condition="lab-calendar-flipped=Down">Oh, weird. They usually flip it forward.</line>
+  </scene>
+</conversation>

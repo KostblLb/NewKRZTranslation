@@ -1,0 +1,41 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="walk-enable-amy">
+  <scene name="intro">
+    <triggerEvent name="walk-disable-amy"/>    
+    <setGameVar name="hotmk-talked-to-amy" value="true"/>
+    
+    <line speaker="amy">Oh, it's triangles within triangles down here! Shifting, intersecting, overlaying ... isn't it romantic? Let's see:</line>
+    <line speaker="amy">`(To SHANNON.)` You're here to steal back the love of a boy you once knew, when you were too young to recognize the movements of the heart ...</line>
+    <line speaker="amy">`(To CONWAY.)` And you're escorting her, pretending to have her interests at heart while really ...</line>
+    <line speaker="amy">`(To JUNEBUG.)` ... really, you're in love with the young woman as well, and so you've agreed to help him conspire to win her affections, but it's just a ploy to set him up for embarrassment, and diminish him out of the picture!</line>
+    
+    <option goto="what-are-you-talking-about" speaker="shannon">What are you talking about?</option>
+    <option goto="junebug-into-it" speaker="junebug">I'm into it.</option>
+  </scene>
+
+  <scene name="junebug-into-it" nextScene="used-to-be-good-at-this">
+    <line speaker="amy">Well, maybe I still have the knack ...</line>
+  </scene>
+
+  <scene name="what-are-you-talking-about" nextScene="used-to-be-good-at-this">
+    <line speaker="amy">No, you're right. It's insipid. Derivative.</line>
+  </scene>
+
+  <scene name="used-to-be-good-at-this">
+    <line speaker="amy">I used to be really good at this! I had eleven novels published, from &quot;The Billionaire's Bidding&quot; to &quot;Fields of Longing.&quot; Real hot, bodice-ripping stuff, you know? I miss those days in my Lexington studio apartment — just me and my thesaurus, steaming up the windows ...</line>
+    <option condition="!distillery-completed-graveyard" goto="why-stop-writing" speaker="conway">Why did you stop writing?</option>
+    <option condition="distillery-completed-graveyard" goto="why-stop-writing" speaker="junebug">Why did you stop writing?</option>    
+    <option goto="ezra-shouldnt-be-listening" speaker="shannon">`(To EZRA.)` I'm not sure you should be listening to this, kid.</option>
+  </scene>
+
+  <scene name="ezra-shouldnt-be-listening" nextScene="why-stop-writing">
+    <line speaker="ezra">I'm not listening ...</line>
+    <line speaker="amy">But of course it couldn't last ...</line>
+  </scene>
+
+  <scene name="why-stop-writing" nextScene="end">
+    <line speaker="amy">You know, suddenly it was all computers everywhere you went. I thought I might be able to do something with that. Inject a little libido into those ugly beige boxes. Ha! So I went back to the university and I studied human-computer interaction, and then I picked up Donald's research assistantship here, as a tester. Debugging.</line>
+    <line speaker="amy">In my off-hours, I played around with the doomed love story at the core of our little simulation. That seemed to amuse Donald, so I kept at it ... I'm afraid I tinkered too much, made it too complex. Now our work is never done. We don't even have to add any new functionality: the bugs just grow on their own. Too complex.</line>
+    <line speaker="amy">I miss those days in my Lexington studio apartment ...</line>
+  </scene>
+</conversation>

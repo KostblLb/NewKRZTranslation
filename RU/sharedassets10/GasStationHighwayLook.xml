@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+    <scene name="intro" nextScene="end">
+      <line>An interstate highway — sixty-five — running from Alabama up to just shy of Chicago. It ought to be quitting time in this part of Kentucky, but the daylight just won't shake. The sun just won't go away.</line>
+    </scene>
+</conversation>

@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="after-hearing-tape-done">
+  <scene name="intro">
+    <setGameVar name="elkhorn-mine-found-tape-player" value="true"/>
+    
+    <line speaker="shannon">Oh. I didn't know those were still down here.</line>
+    
+    <option goto="what-was-that" speaker="conway">What was that?</option>
+    <option goto="down-here-before" speaker="conway">You've been down here before?</option>
+  </scene>
+
+  <scene name="what-was-that" nextScene="route-archivists">
+    <line speaker="shannon">Look, there's a tape player down there, one of those old reel-to-reel setups.</line>
+  </scene>
+
+  <scene name="down-here-before" nextScene="route-archivists">
+    <line speaker="shannon">Not this deep. But I knew about the tape machines.</line>
+  </scene>
+
+  <scene name="route-archivists">
+    <goto condition="!elkhorn-mine-heard-about-archivists" sceneName="archivists-first-time"/>
+    <goto condition="elkhorn-mine-heard-about-archivists" sceneName="archivists-again"/>    
+  </scene>
+  
+  <scene name="archivists-first-time" nextScene="questions">
+    <setGameVar name="elkhorn-mine-heard-about-archivists" value="true"/>    
+    
+    <line speaker="shannon">When this mine was active, a couple of folk music archivists spent time here recording miners' songs. Really academic, ivory tower types. None of the miners really talked to them much.</line>
+    <line speaker="shannon">So they stayed at the margins, observed, took notes, and then sometimes they'd get someone on a lunch break to sing into their microphone.</line>
+    <line speaker="shannon">Then I guess the power company got some kind of interest in the project, and gave the archivists some coal scrip tokens to pay the miners with for their songs.</line>
+  </scene>
+
+  <scene name="archivists-again" nextScene="questions">
+    <line speaker="shannon">They'd record up on that old scaffolding we saw, and I guess then they'd sequester themselves down here to listen to the recorded songs.</line>
+  </scene>
+
+  <scene name="questions">
+    <option goto="parents-sing" speaker="conway">Did your parents sing?</option>
+    <option goto="happened-to-archivists" speaker="conway">What happened to the archivists?</option>
+  </scene>
+
+  <scene name="parents-sing" nextScene="end">
+    <line speaker="shannon">Oh, uh ... yeah. They sang. They sang in the mine for coal scrip tokens.</line>
+  </scene>
+
+  <scene name="happened-to-archivists" nextScene="end">
+    <line speaker="shannon">They got out. When the flood came, they left.</line>
+  </scene>
+
+</conversation>

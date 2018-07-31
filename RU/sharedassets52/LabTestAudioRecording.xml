@@ -1,0 +1,54 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="question-1">
+    <line speaker="mimi">Oh, OK. This is before the CD players.</line>
+    <line speaker="jenn">I hope she remembered to rewind.</line>
+    <line speaker="mimi">They never did — and Darryl would be in all night, rolling all these tapes back one-by-one in his little walkman.</line>
+    <line speaker="jenn">He still has that thing. He says he uses it "at the gym," but I think he's just too attached to his old mixtapes.</line>
+    <line speaker="mimi">He is so sentimental, our Darryl.</line>
+    <line speaker="jenn">These tapes had sounds from my apartment building — did you know that?</line>
+    <line speaker="mimi">Oh? I thought it was stock sound effects from the library.</line>
+    <line speaker="jenn">Yeah, the CDs are. But when it was on tape, Darryl had me borrow a tape recorder from the music department and go collect them myself.</line>
+    <line speaker="jenn">He showed me a first draft of the questionnaire. I think some of them are still in there, like ...</line>
+  </scene>
+
+  <scene name="question-1">
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">What were you thinking about, immediately before listening to the tape?</line>
+    <option goto="question-2" speaker="response" style="questionnaire">I was thinking about my cousin.</option>
+    <option goto="question-2" speaker="response" style="questionnaire">I was thinking about my friend.</option>
+    <option goto="question-2" speaker="response" style="questionnaire">I was thinking about my job.</option>
+  </scene>
+
+  <scene name="question-2">
+    <line speaker="question" style="questionnaire">After the tape ended, how quickly did your thoughts return to that subject?</line>
+    <option goto="after-question-2" speaker="response" style="questionnaire">Maybe a few seconds.</option>
+    <option goto="after-question-2" speaker="response" style="questionnaire">I never really stopped thinking about it.</option>
+    <option goto="after-question-2" speaker="response" style="questionnaire">I'd forgotten until just now.</option>
+  </scene>
+
+  <scene name="after-question-2" nextScene="question-3">
+    <line speaker="mimi">Right. I don't really get the point of that question.</line>
+    <line speaker="jenn">I think it's just there to set a baseline for the "introspection index."</line>
+    <line speaker="mimi">So all the doors opening and closing — those are all from your apartment?</line>
+    <line speaker="jenn">Most of them, yeah. Others were from the basement. We have these rows of storage closets down there. None of them are locked or anything, it's just like this weird row of doors.</line>
+    <line speaker="jenn">They're not even marked or differentiated; you have to keep count as you go and remember which one is yours. Mine is number eight. I went down there a little tipsy once — Sunday cleaning, you know, a few glasses of wine ...</line>
+    <line speaker="jenn">Anyway, I accidentally opened number nine, and it was full of mice! Like, for a computer I mean. They were all neatly arranged on shelves, organized by some inscrutable quality, cables tied with velcro.</line>
+    <line speaker="mimi">The neighborhood mouse hoarder.</line>
+    <line speaker="jenn">A collector, I think. I guess he lived next door.</line>
+    <line speaker="jenn">I told Darryl we should add a question, something like ...</line>
+  </scene>
+
+  <scene name="question-3">
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">While listening to the tape recordings of doors opening, if at any point you have any expectation or visualization about what might be on the other side of one of these doors, please write it down.</line>
+    <option goto="after-question-3" speaker="response" style="questionnaire">The first door — I thought it led outside.</option>
+    <option goto="after-question-3" speaker="response" style="questionnaire">Door number nine — I thought it might be a closet.</option>
+    <option goto="after-question-3" speaker="response" style="questionnaire">The last door — it sounded like a kitchen door.</option>
+  </scene>
+
+  <scene name="after-question-3" nextScene="end">
+    <line speaker="jenn">I was just curious, I guess. Since it was from my building. Like, `I` have a strong sense of where these doors lead, just by hearing them. But is that just from my memory, or is it inherent in the sound somewhere?</line>
+    <line speaker="mimi">Interesting. You should write a grant proposal.</line>
+    <line speaker="jenn">Oh, I wouldn't want to step on any toes ... You know, university politics.</line>
+    <line speaker="jenn">Oh, here's another extended monitoring tape, from the waiting room.</line>
+  </scene>
+</conversation>

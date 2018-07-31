@@ -1,0 +1,177 @@
+# -*- mode: blocking -*-
+
+@ref Recorder Ezra/*/TugboatRecorder
+
+@func SetPlayer [Player]
+
+  Main Player [Player] Player
+  Main Message TugboatCameraRig SetPlayer [Player]
+
+@end
+
+@func SetInitialPlayer [Player]
+
+  Main Player [Player]
+  Main Message TugboatCameraRig SetPlayer [Player]
+  Main Message TugboatCameraRig Snap
+  Main Message TugboatStaging Snap
+  Main Message TugboatNavigation Snap
+
+@end
+
+@func SetInside
+
+  Staging Set temp:tugboat-inside true
+  Staging Set temp:tugboat-peeled true
+  Staging Message TugboatStaging Snap
+  Staging Message TugboatNavigation Snap
+
+@end
+
+@func SetOutside
+
+  Staging Set temp:tugboat-inside false
+  Staging Message TugboatStaging Snap
+  Staging Message TugboatNavigation Snap
+
+@end
+
+@func SetCameraZoom [Value]
+
+  Staging Message TugboatCameraRig SetZoom [Value]
+
+@end
+
+@func SetCameraOffset [X] [Y]
+
+  Staging Message TugboatCameraRig SetOffset [X],[Y]
+
+@end
+
+@func SetCameraOffsetX [X]
+
+  Staging Message TugboatCameraRig SetOffsetX [X]
+
+@end
+
+@func SetCameraOffsetY [Y]
+
+  Staging Message TugboatCameraRig SetOffsetY [Y]
+
+@end
+
+@func SetCameraSpeedFactor [F]
+
+  Staging Message TugboatCameraRig SetSpeedFactor [F]
+
+@end
+
+@func SnapStaging
+
+  Staging Message TugboatCameraRig Snap
+  Staging Message TugboatStaging Snap
+  Staging Message TugboatNavigation Snap
+
+@end
+
+# Use with npcs, available doors:
+
+# CockpitDoorPort
+# CockpitDoorStarboard
+# DeckDoorPortFront
+# DeckDoorPortBack
+# DeckDoorStarboardFront
+# DeckDoorStarboardBack
+
+@func GoInside [Character] [Door] [Speed]
+
+  Door Disable Actor[Door]/Obstacle
+
+  Door [Speed] [Character] Actor[Door]/Outside
+  Door Fork DoorHunch
+  Door Audio* Play door  
+  Door Message Actor[Door]/Door Open Wait
+  Door [Speed] [Character] Actor[Door]/Inside
+  Door Message Actor[Door]/Door Close Wait
+
+  Door Enable Actor[Door]/Obstacle
+
+  DoorHunch Wait 1.5
+  DoorHunch Message [Character] SetHunch 0.8
+  DoorHunch Wait 1.5
+  DoorHunch Message [Character] SetHunch 0
+
+@end
+
+@func GoOutside [Character] [Door] [Speed]
+
+  Door Disable Actor[Door]/Obstacle
+
+  Door [Speed] [Character] Actor[Door]/Inside &0,0,0,180
+  Door Fork DoorHunch
+  Door Message Actor[Door]/Door Open Wait
+  Door [Speed] [Character] Actor[Door]/Outside &0,0,0,180
+  Door Message Actor[Door]/Door Close Wait
+
+  Door Enable Actor[Door]/Obstacle
+
+  DoorHunch Wait 1.5
+  DoorHunch Message [Character] SetHunch 0.8
+  DoorHunch Wait 1.5
+  DoorHunch Message [Character] SetHunch 0
+
+@end
+
+@func LockDoors
+
+  Main Disable ActorCockpitDoorPort Actor
+  Main Disable ActorCockpitDoorStarboard Actor
+  Main Disable ActorDeckDoorPortBack Actor
+  Main Disable ActorDeckDoorPortFront Actor
+  Main Disable ActorDeckDoorStarboardBack Actor
+  Main Disable ActorDeckDoorStarboardFront Actor
+
+@end
+
+@func UnlockDoors
+
+  Main Enable ActorCockpitDoorPort Actor
+  Main Enable ActorCockpitDoorStarboard Actor
+  Main Enable ActorDeckDoorPortBack Actor
+  Main Enable ActorDeckDoorPortFront Actor
+  Main Enable ActorDeckDoorStarboardBack Actor
+  Main Enable ActorDeckDoorStarboardFront Actor
+
+@end
+
+@func SetupOutsideSound
+
+  BackgroundSound Message TugboatEnvironmentSounds SnapOutside
+  BackgroundSound Audio* FadeIn engine 5
+  BackgroundSound Audio* FadeIn water-ambience 5
+  
+@end
+
+@func SetupInsideSound
+
+  BackgroundSound Message TugboatEnvironmentSounds SnapInside
+  BackgroundSound Audio* FadeIn tugboat-interior 5
+  BackgroundSound Audio* FadeIn tugboat-interior-water 5  
+  
+@end
+
+# Disable all vignette game objects by default
+
+Main Disable VignetteTest
+Main Disable VignetteIntro
+Main Disable VignetteOpening
+Main Disable VignetteMapRoom
+Main Disable VignetteVideoArchive
+Main Disable VignetteMemoryGame
+Main Disable VignetteMushroomStew
+Main Disable VignetteWillSleeping
+Main Disable VignetteDogs
+
+# Misc
+
+Main Disable Tugboat/*/Stew

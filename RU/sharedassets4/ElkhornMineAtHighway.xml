@@ -1,0 +1,19 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <setGameVar name="elkhorn-mine-found-highway" value="true"/>
+    
+    <line speaker="shannon">Do you hear that? Kind of a muffled rumbling.</line>
+    <option goto="water" speaker="conway">Maybe we're near water?</option>
+    <option goto="surface" speaker="conway">Maybe we're near the surface?</option>
+  </scene>
+
+  <scene name="water" nextScene="end">
+    <line speaker="shannon">Could be. There was an underground lake around here years ago. I guess that's why they stopped digging so abruptly here.</line>
+  </scene>
+
+  <scene name="surface" nextScene="end">
+    <line speaker="shannon">Yeah, sounds kind of like a highway. I wonder why they stopped digging so abruptly here. Maybe they hit a pipe or something.</line>
+  </scene>
+
+</conversation>

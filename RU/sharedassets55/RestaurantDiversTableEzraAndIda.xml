@@ -1,0 +1,73 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line>`(EZRA leans over the table and carefully examines the preserved food and drink.)`</line>
+    <option goto="poke-tentacle">`(He prods a half-eaten tentacle.)`</option>
+    <option goto="press-eye">`(He gently compresses a pea-sized eyeball on a plate.)`</option>
+    <option goto="touch-claw">`(He runs his finger along a grayish claw.)`</option>
+  </scene>
+
+  <scene name="poke-tentacle" nextScene="startle">
+    <line>`(The tentacle is solid and fixed in place.)`</line>
+    <line speaker="ida">We used to steam those. Juicy! But I prefer them smoked now.</line>
+  </scene>
+
+  <scene name="press-eye" nextScene="startle">
+    <line>`(The eye is hard, like glass.)`</line>
+    <line speaker="ida">Oh, you like candied fish-eye? Most kids are repulsed just looking at them — which is a shame, because they're really delicious. Ha ha. I have a bowl of them in the kitchen. I'll bring some out.</line>
+  </scene>
+
+  <scene name="touch-claw" nextScene="startle">
+    <line>`(The surface of the claw is completely smooth.)`</line>
+    <line speaker="ida">And that was the `small` one! They're asymmetrical.</line>
+  </scene>
+
+  <scene name="startle">
+    <blocking>Ezra Turn Ezra Ida</blocking>
+    <line speaker="ida">Sorry I startled you, sweetie.</line>
+    <option goto="whose-food" speaker="ezra">Whose food is this?</option>
+    <option goto="didnt-finish-meal" speaker="ezra">Why didn't they finish their meal?</option>
+    <option goto="preserved" speaker="ezra">Why is it hard?</option>
+  </scene>
+
+  <scene name="whose-food" nextScene="divers-story-intro">
+    <line speaker="ida">This is the divers' table, and this was the divers' meal.</line>
+  </scene>
+
+  <scene name="didnt-finish-meal" nextScene="divers-story-intro">
+    <line speaker="ida">Well, they had more than twice as much food as they really needed, so even half was too much ...</line>
+  </scene>
+
+  <scene name="preserved" nextScene="divers-story-intro">
+    <line speaker="ida">We covered it in `shellac`. Do you know what `shellac` is? It's bug wax.</line>
+  </scene>
+
+  <scene name="divers-story-intro" nextScene="divers-story">
+    <line speaker="ida">This food is about fifteen years old. It's true! Things were different then. Nobody came to eat here. We were fighting just to keep the lights on.</line>
+    <line speaker="ida">Sam — my husband, Sam — was depressed. He couldn't catch anything, that was part of the problem. Most of what we served was shipped in frozen or dried, and I just threw it in the fryer ... We've both come a long way since then.</line>
+  </scene>
+  
+  <scene name="divers-story" nextScene="ida-leaves" skimmingScene="ezra-bored">
+    <line speaker="ida">Well, two young men came in for dinner. Seasoned divers, they said, over ten thousand hours between them in Lake Lethe alone. They'd been out all day, salvaging parts from a riverboat wreck, and had worked up a fierce hunger, they said. They ordered the whole menu, without even looking! It was a short menu, in those days.</line>
+    <line speaker="ida">I sat them right here, and went back to the kitchen. Sam was at the next table doing a sudoku and drinking malt liquor, his usual routine at the time.</line>
+    <line speaker="ida">An hour later, I was cleaning up, when Sam came bursting into the kitchen. "Ida," he said, kind of frantic. "These divers are still hungry! Bring them another course!"</line>
+    <line speaker="ida">And I said, "They already ordered the whole menu!"</line>
+    <line speaker="ida">Sam said, "Make something new! Keep making up dishes, whatever — just keep bringing out food!"</line>
+    <line speaker="ida">So I did until the small hours of the morning. I made up so many new dishes that night, I could write a book. And it was good! Inspired.</line>
+    <line speaker="ida">But I was working so hot and fast at the burning edge of inspiration, I didn't think to write any of it down! And I was so wrecked with exhaustion the next day, I knew I couldn't remember what all I'd done in the kitchen.</line>
+    <line speaker="ida">Sam thought we could take a photograph of the leftovers, but we couldn't get the lighting right, so we just shellacked the whole table. Now, when I need inspiration for the menu, I come and look here and think about all those ingenious dishes I threw together for those divers.</line>
+    <line speaker="ida">Of course, they didn't pay their full bill ... I heard one of them complaining to the other, "Let's just pay half and let them charge the other half to whatever demon in the kitchen kept making up food faster than we could ask for it."</line>
+    <line speaker="ida">But it all worked out. Things have really turned around since then! This place is actually pretty popular now. The success, and our expanded menu, inspired Sam, too. He started bringing back the most magnificent ingredients from his nightly dives.</line>
+  </scene>
+
+  <scene name="ezra-bored" nextScene="ida-leaves">
+    <line>`(EZRA's head nods involuntarily. IDA pokes him on the shoulder.)`</line>
+    <line speaker="ida">Boy, you've got a look on your face like a gutted bass. I must be boring you to pieces! Poor thing.</line>
+  </scene>
+  
+  <scene name="ida-leaves" nextScene="end">
+    <line speaker="ida">I'd better get to work. Stay right here, sweetie, and I'll bring you a treat on my way back out!</line>
+  </scene>
+
+</conversation>
+

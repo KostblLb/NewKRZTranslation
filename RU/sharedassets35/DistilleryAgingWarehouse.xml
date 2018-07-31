@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-aging-warehouse" value="true"/>
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Feel that draft of warmth? Like a summer breeze. This is the aging warehouse.</line>
+    <option goto="how-many" speaker="conway">How many casks have you got aging in there?</option>
+    <option goto="heat" speaker="shannon">It's heated artificially?</option>
+  </scene>
+
+  <scene name="how-many" nextScene="exchange">
+    <line speaker="doolittle" style="skeleton">I couldn't say, exactly. Take a look at the inventory report later, if you like. Plenty though.</line>
+  </scene>
+
+  <scene name="heat" nextScene="exchange">
+    <line speaker="doolittle" style="skeleton">One-hundred percent. Draws a lot of electricity to tame this cold, rocky cave, I'll tell you that!</line>
+  </scene>
+
+  <scene name="exchange" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Of course, we only have half our aging stock in here at any given time.</line>
+    <line speaker="doolittle" style="skeleton">Most distilleries let their whiskey sit in casks through the cycle of seasons. In summer, the wood expands and the whiskey seeps in, picking up flavor. In winter, the wood contracts and squeezes the whiskey back out.</line>
+    <line speaker="doolittle" style="skeleton">Down here, there are no seasons. Each workday proceeds from the last in an unbroken chain of climate control.</line>
+    <line speaker="doolittle" style="skeleton">So, we make our own seasons: each cask alternates in a weekly cycle, between the cold ground upstairs and this heated warehouse.</line>
+  </scene>
+</conversation>

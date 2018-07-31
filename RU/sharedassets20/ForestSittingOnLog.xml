@@ -1,0 +1,51 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="julian-conversation-finished">
+  <scene name="intro">
+    <setGameVar name="forest-talked-by-log" value="true"/>
+    
+    <line speaker="shannon">It's OK. Just take it easy.</line>
+    <option goto="road" speaker="conway">We've got to get back on the road.</option>
+    <option goto="nap" speaker="conway">I'll just close my eyes.</option>
+  </scene>
+
+  <scene name="road" nextScene="delivery-options">
+    <line speaker="shannon">We will. But we need to get this leg looked at first. Right now you're in no condition to haul anything out of that truck, even when we do find Dogwood Drive.</line>
+    <line speaker="shannon">Why is ... why is this delivery so important to you?</line>
+  </scene>
+
+  <scene name="delivery-options">
+    <option goto="job" speaker="conway">It's my job.</option>
+    <option goto="last-delivery" speaker="conway">It's my last delivery.</option>
+    <option goto="dont-know" speaker="conway">I don't know.</option>
+  </scene>
+
+  <scene name="job" nextScene="end">
+    <line speaker="shannon">Yeah, OK. I get that.</line>
+    <line speaker="shannon">My dad used to say I was born with a soldering iron in my hand. It's just always been who I am.</line>
+  </scene>
+
+  <scene name="last-delivery">
+    <line speaker="shannon">Oh. You're retiring or something? Or ... sorry.</line>
+    <option goto="closing" speaker="conway">Lysette's closing up the shop.</option>
+    <option goto="strong" speaker="conway">I'm just not as tough as I used to be.</option>
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line speaker="shannon">That's, uh ... Damn.</line>
+  </scene>
+
+  <scene name="strong" nextScene="end">
+    <line speaker="shannon">Well just rest up for a minute. I bet you're still plenty tough.</line>
+  </scene>
+
+  <scene name="dont-know" nextScene="end">
+    <line speaker="shannon">OK. Well, who knows why we do anything, right?</line>
+    <line speaker="shannon">Somehow it seems important to me, too. Maybe we'll figure it out when we get there.</line>
+  </scene>
+
+  <scene name="nap" nextScene="delivery-options">
+    <line speaker="shannon">I don't think that's a good idea. Just take some strain off your leg for a minute, and then we'll keep going.</line>
+    <line speaker="shannon">Why is ... why is this delivery so important to you?</line>
+  </scene>
+
+</conversation>

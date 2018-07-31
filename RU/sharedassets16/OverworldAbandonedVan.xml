@@ -1,0 +1,15 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="overworld-saw-abandoned-van" value="true"/>
+    
+    <line>The side of the van is painted with the image of a cartoonish housekeeper, effortlessly carrying a mountain of cleaning supplies balanced in one hand. The words painted below the image are too faded to read.</line>
+    <option goto="inside-van" insertedText="Conway looks inside the van.">Look inside the van.</option>
+    <option goto="end">Drive away.</option>
+  </scene>
+
+  <scene name="inside-van" nextScene="end">
+    <line>Peering through a dusty window, Conway and Shannon can barely make out several piles of paper stacked in the back of the van. Some are piled on boxes, some loose. All of it is sheet music.</line>
+  </scene>
+
+</conversation>

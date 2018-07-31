@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="overworld-saw-museum" value="true"/>
+
+    <line>The neighborhood at the address on Lula's card has been demolished. In its place is a large museum, still partially under construction.</line>
+  </scene>
+
+</conversation>

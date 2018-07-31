@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="forest-hound-talked-by-cabin" value="true"/>
+    <option goto="winter" speaker="ezra">Have you ever been here in the winter?</option>
+    <option goto="lake" speaker="ezra">Have you ever been over to the lake?</option>
+  </scene>
+
+  <scene name="winter">
+    <option goto="snow" speaker="ezra">I bet it's all snowy.</option>
+    <option goto="lake-freezes" speaker="ezra">I bet the lake freezes.</option>
+  </scene>
+
+  <scene name="snow">
+    <option goto="end" speaker="ezra">And totally quiet.</option>
+    <option goto="end" speaker="ezra">And you can just listen to it piling up.</option>
+  </scene>
+
+  <scene name="lake-freezes">
+    <option goto="end" speaker="ezra">You can walk anywhere!</option>
+    <option goto="end" speaker="ezra">Too bad it gets dark so early.</option>
+  </scene>
+
+  <scene name="lake">
+    <option goto="went-there" speaker="ezra">I went there once with my folks.</option>
+    <option goto="deep" speaker="ezra">It's really deep.</option>
+  </scene>
+
+  <scene name="went-there">
+    <option goto="end" speaker="ezra">We had some burgers. Pretty great.</option>
+    <option goto="end" speaker="ezra">I got in trouble for swimming too far.</option>
+  </scene>
+
+  <scene name="deep">
+    <option goto="end" speaker="ezra">Me and Julian fly over it all the time. We can see it all through the water.</option>
+    <option goto="end" speaker="ezra">I bet I could swim to the bottom, though.</option>
+  </scene>
+
+</conversation>

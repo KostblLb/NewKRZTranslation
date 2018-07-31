@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="cate">Hey! Just a quick one, here; I'm going ashore to do some mushroom hunting. This little island is my favorite spot, and I figured we're already running late; what's one more unscheduled stop?</line>
+    <line speaker="cate">I just need to find Will and get him up here to keep an eye on things ... You know, I bet he's asleep. Could you run down and wake him up for me? Bunks are down on the lower level, right next to the map room.</line>
+    <line speaker="cate">Thanks!</line>
+  </scene>
+
+</conversation>

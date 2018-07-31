@@ -1,0 +1,707 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="four" endingEvent="grove-conversation-complete">
+  <scene name="intro">
+    <goto condition="grove-bookmark-cate=iron-pariah-appears" sceneName="iron-pariah-appears" />
+    <goto sceneName="start" />
+  </scene>
+
+  <scene name="start">
+    <blocking>@inline CateCrouch</blocking>
+    <line>`(CATE gently rolls a fallen branch and plucks something white from the underside. She holds it up for EZRA to examine.)`</line>
+    
+    <line speaker="cate" blocking="@inline CateStand; Ezra Walk Ezra [Root]/StartEzraNearCatePosition">`Pleurocybella porrigens`. The common name is "angel wings." Isn't that pleasant? They have a delicate, springy texture, and they're tasty, like sweet moss. Would you like a bite?</line>
+    <option goto="eat-angel-wing" speaker="ezra">OK.</option>
+    <option goto="angel-wing-moss" speaker="ezra">Sweet moss doesn't sound very tasty to me ...</option>
+  </scene>
+
+  <scene name="eat-angel-wing">
+    <line>`(EZRA takes a small bite and ruminates)`</line>
+    <line speaker="cate">What do you think?</line>
+    <option goto="angel-wing-spicy" speaker="ezra">Is it supposed to be spicy?</option>
+    <option goto="angel-wing-bug" speaker="ezra">I think I got a bug.</option>
+    <option goto="angel-wing-moss" speaker="ezra">It does taste like moss.</option>
+  </scene>
+
+  <scene name="angel-wing-spicy" nextScene="mushroom-hunting-intro">
+    <line speaker="cate">Um, no ... go ahead and spit that out, it's OK.</line>
+  </scene>
+
+  <scene name="angel-wing-bug" nextScene="mushroom-hunting-intro">
+    <line speaker="cate">Oh, lucky you.</line>
+    <line speaker="cate">I'm kidding, you can spit it out if you want.</line>
+  </scene>
+
+  <scene name="angel-wing-moss" nextScene="mushroom-hunting-intro">
+    <line speaker="cate">Personally, I like to be able to tell where my food came from, by flavor alone. I like to taste my surroundings, I mean. It keeps me connected to the ... the whole thing.</line>
+  </scene>
+
+  <scene name="mushroom-hunting-intro">
+    <line style="memory" event="cate-music-then">She lit a second cigarette with the embers of the first one. She trembled, sweating a little under a heavy coat. It was warmer near the doors, but she was following directions: "no smoking within 25 feet of hospital entrance."</line>
+    <line style="memory">So she stood by a hot dog cart parked at the edge of the sidewalk.</line>
+    
+    <line speaker="cate" event="cate-music-now">My mushroom-hunting mentor told me, "it's useless to pretend to know mushrooms; they escape your erudition; the more you know them, the less sure you feel about identifying them."</line>
+    <line speaker="cate">`(She taps the cover of the small red book she's carrying.)` That's why I always bring my favorite guidebook.</line>
+    <line blocking="@inline CateCrouch">`(CATE points to a small mushroom growing in the dirt.)`</line>
+    <line speaker="cate" blocking="@inline EzraCrouch">Oh, here's an important one to recognize, though. Look, see the sort of greenish pallor of the cap? `Amanita phalloides`. That's Greek: "amanita" means mushroom, and "phalloides" means, um ... never mind.</line>
+    <option goto="amanita-edible" speaker="ezra">Can you eat it?</option>
+    <option goto="amanita-smell" speaker="ezra">It smells like honey.</option>
+  </scene>
+
+  <scene name="amanita-edible" nextScene="amanita-deadly">
+    <line speaker="cate">Only once! It's deadly poisonous.</line>
+  </scene>
+
+  <scene name="amanita-smell" nextScene="amanita-deadly">
+    <line speaker="cate">Yeah. Sort of nauseating, though, right? Sickly-sweet.</line>
+  </scene>
+
+  <scene name="amanita-deadly" nextScene="have-fun">
+    <line speaker="cate">"Death Cap," that's the common name. It's killed a lot of people, this little mushroom — including a few Roman emperors. It's a revolutionary! Ha ha.</line>
+    <line speaker="cate">Even the Buddha died from eating a mushroom, when he was very old. That's just what they do: clear away old things, make room for new things.</line>
+    <line speaker="cate">Pretty important, right? I've always thought they deserved a little more respect.</line>
+    <line speaker="cate" blocking="@inline CateStand">Would you like to help me look for a few more? I have a sort of shopping list.</line>
+    <line speaker="cate" blocking="@inline EzraStand">Great. Look for ... actually, just grab any mushrooms that catch your eye and throw them in this bag. Let me know when you're done and we'll see what you've got!</line>
+  </scene>
+
+  <scene name="have-fun" nextScene="cate-explores">
+    <line speaker="cate">"Have fun!" That's the second rule of mushroom hunting. The first rule is "ask Cate before eating anything," OK?</line>
+  </scene>
+
+  <!-- cate mushroom hunting -->
+  <scene name="cate-explores">
+    <goto condition="grove-ezra-mushroom-area-count[gt]1|grove-cate-mushroom-area-count[gt]1" sceneName="done-hunting" />
+
+    <blocking>@inline CateStand</blocking>
+    
+    <option goto="grass" condition="!grove-cate-examined-grass">`(CATE kneels in the grass.)`</option>
+    <option goto="dirt" condition="!grove-cate-examined-dirt">`(CATE digs in a bare patch of dirt.)`</option>
+    <option goto="tree-roots" condition="!grove-cate-examined-tree-roots">`(CATE examines some tree roots.)`</option>
+  </scene>
+
+  <!-- area 1 -->
+  <scene name="grass" nextScene="ezra-explores">
+    <blocking>
+      Cate Walk Cate [Root]/CateGrassPosition
+      @inline CateCrouch
+    </blocking>
+    
+    <setGameVar name="grove-cate-examined-grass" value="true" />
+    <setGameVar name="grove-cate-mushroom-area-count" value="+1" />
+    <line>`(She parts the grass with her garden knife, studiously combing the ground.)`</line>
+    
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1a" /></line>
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1b" /></line>
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1c" /></line>    
+    <line condition="grove-cate-mushroom-area-count=2" style="memory" event="cate-music-then"><fragment name="hotdog-guy-2" /></line>
+    <line condition="grove-cate-mushroom-area-count=3" style="memory" event="cate-music-then"><fragment name="hotdog-guy-3" /></line>
+    
+    <line event="cate-music-now">`(There are no mushrooms in the grass.)`</line>
+  </scene>
+
+  <!-- area 2 -->
+  <scene name="dirt">
+    <blocking>
+      Cate Walk Cate [Root]/CateDirtPosition
+      @inline CateCrouch
+    </blocking>
+    
+    <setGameVar name="grove-cate-examined-dirt" value="true" />
+    <setGameVar name="grove-cate-mushroom-area-count" value="+1" />    
+    
+    <line>`(It's a bit muddy from flooding or the general dampness of the caves. She finds two promising specimens: a spotted brown cap, and a dense bundle of dark ridges.)`</line>
+
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1a" /></line>
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1b" /></line>
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1c" /></line>    
+    <line condition="grove-cate-mushroom-area-count=2" style="memory" event="cate-music-then"><fragment name="hotdog-guy-2" /></line>
+    <line condition="grove-cate-mushroom-area-count=3" style="memory" event="cate-music-then"><fragment name="hotdog-guy-3" /></line>
+    
+    <option goto="bitter-hedgehog" event="cate-music-now">`(CATE inspects the spotted brown cap.)`</option>
+    <option goto="false-morel" event="cate-music-now">`(CATE inspects the dense bundle of dark ridges.)`</option>
+  </scene>
+
+  <scene name="bitter-hedgehog">
+    <line>`(The bottom of the cap is covered in tiny, tooth-like protrusions.)`</line>
+    <option goto="take-bitter-hedgehog">`(CATE plucks the mushroom from the dirt and puts it in her bag.)`</option>
+    <option goto="ezra-explores">`(CATE leaves the dirt.)`</option>
+  </scene>
+
+  <scene name="take-bitter-hedgehog" nextScene="ezra-explores">
+    <setGameVar name="grove-cate-took-bitter-hedgehog" value="true" />
+    <setGameVar name="grove-cate-mushrooms-taken-count" value="+1" />    
+  </scene>
+
+  <scene name="false-morel">
+    <line>`(Dark brown ridges and folds cover the surface of the mushroom. It has a pleasant, almost fruity smell.)`</line>
+    <option goto="take-false-morel">`(CATE plucks the mushroom from the dirt and puts it in her bag.)`</option>
+    <option goto="ezra-explores">`(CATE leaves the dirt.)`</option>
+  </scene>
+
+  <scene name="take-false-morel" nextScene="ezra-explores">
+    <setGameVar name="grove-cate-took-false-morel" value="true" />
+    <setGameVar name="grove-cate-mushrooms-taken-count" value="+1" />    
+  </scene>
+
+  <!-- area 3 -->
+  <scene name="tree-roots">
+    <blocking>
+      Cate Walk Cate [Root]/CateRootsPosition
+      @inline CateCrouch
+    </blocking>
+    
+    <setGameVar name="grove-cate-examined-tree-roots" value="true" />
+    <setGameVar name="grove-cate-mushroom-area-count" value="+1" />    
+    
+    <line>`(She spots a couple of intriguing growths along the roots of the tree: a speckled white ball, and a cluster of softly glowing, amber caps.)`</line>
+
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1a" /></line>
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1b" /></line>
+    <line condition="grove-cate-mushroom-area-count=1" style="memory" event="cate-music-then"><fragment name="hotdog-guy-1c" /></line>    
+    <line condition="grove-cate-mushroom-area-count=2" style="memory" event="cate-music-then"><fragment name="hotdog-guy-2" /></line>
+    <line condition="grove-cate-mushroom-area-count=3" style="memory" event="cate-music-then"><fragment name="hotdog-guy-3" /></line>
+
+    <option goto="bat-egg" event="cate-music-now">`(CATE examines the speckled white ball.)`</option>
+    <option goto="shoelace" event="cate-music-now">`(CATE examines the glowing amber caps.)`</option>
+  </scene>
+
+  <scene name="shoelace">
+    <line>`(The mushrooms are slick, sticky to the touch, like they're covered in smoldering honey.)`</line>
+
+    <option goto="take-shoelace">`(Cate cuts the bundle of mushrooms from the tree roots and puts them in her bag.)`</option>
+    <option goto="ezra-explores">`(Cate leaves the tree roots.)`</option>
+  </scene>
+
+  <scene name="take-shoelace" nextScene="ezra-explores">
+    <setGameVar name="grove-cate-took-shoelace" value="true" />
+    <setGameVar name="grove-cate-mushrooms-taken-count" value="+1" />
+  </scene>
+
+  <scene name="bat-egg">
+    <line>`(About the size of an egg, the mushroom has no visible stem. It seems to be attached to the tree root by a sticky black substance leaking from a ring of tiny pores.)`</line>
+
+    <option goto="take-bat-egg">`(Cate gently pries the mushroom off the tree root and puts it in her bag.)`</option>
+    <option goto="ezra-explores">`(Cate leaves the tree roots.)`</option>
+  </scene>
+
+  <scene name="take-bat-egg" nextScene="ezra-explores">
+    <setGameVar name="grove-cate-took-bat-egg" value="true" />
+    <setGameVar name="grove-cate-mushrooms-taken-count" value="+1" />
+  </scene>
+
+  <!-- ezra mushroom hunting -->
+  <scene name="ezra-explores">
+    <goto condition="grove-ezra-mushroom-area-count[gt]1|grove-cate-mushroom-area-count[gt]1" sceneName="done-hunting" />
+
+    <blocking>@inline EzraStand</blocking>
+    
+    <option goto="rotting-stump" condition="!grove-ezra-examined-rotting-stump">`(EZRA investigates a rotting stump.)`</option>
+    <option goto="base-of-tree" condition="!grove-ezra-examined-base-of-tree">`(EZRA pokes around the base of a cypress tree.)`</option>
+    <option goto="plastic-bag" condition="!grove-ezra-examined-plastic-bag">`(EZRA checks out a plastic bag washed up on the island.)`</option>
+  </scene>
+
+  <scene name="rotting-stump">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraRottingStumpPosition
+      @inline EzraCrouch
+    </blocking>
+    
+    <setGameVar name="grove-ezra-mushroom-area-count" value="+1" />
+    <setGameVar name="grove-ezra-examined-rotting-stump" value="true" />    
+    <line>`(The stump is ringed with overlapping shelves of mushrooms striped brown-blue-gray-white. A caterpillar crawls along one of them.)`</line>
+
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory" event="ezra-music-then"><fragment name="ezra-memory-introduction-1" /></line>
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory" event="ezra-music-then"><fragment name="ezra-memory-introduction-2" /></line>
+    
+    <line style="memory" event="ezra-music-then">He didn't have any friends nearby; none of their new neighbors seemed to have children his age. So he played alone in the woods, alone, except for the deer.</line>
+    
+    <option goto="turkey-tail" event="ezra-music-now">`(EZRA inspects the mushrooms.)`</option>
+    <option goto="cordyceps" event="ezra-music-now">`(EZRA inspects the caterpillar.)`</option>
+  </scene>
+  
+  <scene name="turkey-tail">
+    <line>`(It smells spicy, sweet, mild; like how EZRA had expected his father's tobacco to taste, when he hastily chewed and swallowed a noxious fistful, and spent the afternoon retching in secret.)`</line>
+    
+    <line style="memory" event="ezra-music-then">He heard someone calling his name; probably his mother, but her voice didn't sound right through the trees. He kept going.</line>
+    
+    <option goto="take-turkey-tail" event="ezra-music-now">`(EZRA tears off a piece of the mushroom and puts it in his bag.)`</option>
+    <option goto="cate-explores" event="ezra-music-now">`(EZRA leaves the tree stump.)`</option>
+  </scene>
+
+  <scene name="take-turkey-tail" nextScene="cate-explores">
+    <setGameVar name="grove-ezra-took-turkey-tail" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />    
+  </scene>
+  
+  <scene name="cordyceps">
+    <line>`(The caterpillar shuffles listlessly across the mushroom. It seems to be dragging several of its legs. An odd, brown-black thread protrudes about two inches out of its head.)`</line>
+    <line style="memory" event="ezra-music-then">He saw strange lights in the trees, flickering purple. He kept going.</line>
+    
+    <option goto="take-cordyceps" event="ezra-music-now">`(EZRA carefully picks up the caterpillar and puts it in his bag.)`</option>
+    <option goto="cate-explores" event="ezra-music-now">`(EZRA leaves the tree stump.)`</option>
+  </scene>
+
+  <scene name="take-cordyceps" nextScene="cate-explores">
+    <setGameVar name="grove-ezra-took-cordyceps" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />    
+  </scene>
+  
+  <scene name="base-of-tree">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraBaseOfTreePosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-mushroom-area-count" value="+1" />
+    <setGameVar name="grove-ezra-examined-base-of-tree" value="true" />        
+    <line>`(A brownish clump of mushrooms feathers out from the base of the cypress tree. A few feet above, several pale blue puffs cling to the trunk.)`</line>
+
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory"><fragment name="ezra-memory-introduction-1" /></line>
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory"><fragment name="ezra-memory-introduction-2" /></line>
+    
+    <line style="memory" event="ezra-music-then">The woods were full of deer. His dad said the deer liked best to live on the edges of forests. Recent development in the area had created a lot of fresh edges, so they massed here and sometimes ran into the road.</line>
+    
+    <option goto="sheeps-head" event="ezra-music-now">`(EZRA crouches to get a closer look at the brownish clump.)`</option>
+    <option goto="puffball" event="ezra-music-now">`(EZRA examines the blue puffs.)`</option>
+  </scene>
+  
+  <scene name="sheeps-head">
+    <blocking>
+      @inline EzraCrouch
+    </blocking>
+    
+    <line>`(The mushrooms look dried out and brittle, almost like tree bark.)`</line>
+    
+    <line style="memory" event="ezra-music-then">He heard strange, gruff voices back in the direction of the house, and something that sounded like a choked sob or a sharp rebuke. He kept going.</line>
+
+    <option goto="take-sheeps-head" event="ezra-music-now">`(EZRA tears off a piece of the mushroom and puts it in his bag.)`</option>
+    <option goto="cate-explores" event="ezra-music-now">`(EZRA leaves the tree.)`</option>
+  </scene>
+
+  <scene name="take-sheeps-head" nextScene="cate-explores">
+    <setGameVar name="grove-ezra-took-sheeps-head" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />    
+  </scene>
+  
+  <scene name="puffball">
+    <line>`(He prods one of the pale orbs with a stick, and it cracks open a little, releasing a fine dust into the air.)`</line>
+    <line style="memory" event="ezra-music-then">He felt like the world outside the woods had somehow slipped away while he was gone, and now there was nothing but the woods. He kept going.</line>
+    
+    <option goto="take-puffball" event="ezra-music-now">`(EZRA carefully removes a puffball, and puts it in his bag.)`</option>
+    <option goto="cate-explores" event="ezra-music-now">`(EZRA leaves the tree.)`</option>
+  </scene>
+
+  <scene name="take-puffball" nextScene="cate-explores">
+    <setGameVar name="grove-ezra-took-puffball" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />
+  </scene>
+  
+  <scene name="plastic-bag" nextScene="cate-explores">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraPlasticBagPosition
+      @inline EzraCrouch      
+    </blocking>
+    
+    <setGameVar name="grove-ezra-examined-plastic-bag" value="true" />
+    <setGameVar name="grove-ezra-mushroom-area-count" value="+1" />
+    <line>`(The bag is ragged and waterlogged. He nudges it with a stick, coiling up a plastic thread and spreading it out on the beach.)`</line>
+
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory" event="ezra-music-then"><fragment name="ezra-memory-introduction-1" /></line>
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory" event="ezra-music-then"><fragment name="ezra-memory-introduction-2" /></line>
+    
+    <line style="memory" event="ezra-music-then">He'd taken a knife from the kitchen, selected for its long, serrated edge. Meant for slicing bread, its teeth had reminded him of a saw blade. He was determined to collect some firewood to heat the house.</line>
+    <line event="ezra-music-now">`(There are no mushrooms in the bag.)`</line>
+  </scene>
+  
+  <!-- end mushroom hunting -->
+  <scene name="done-hunting">
+    <blocking>
+      @inline CateStand
+      Cate Walk Cate [Root]/CateStartPosition
+
+      @inline EzraStand
+      Ezra Walk Ezra [Root]/EzraStartPosition
+    </blocking>
+    
+    <line speaker="cate" condition="grove-ezra-mushrooms-taken-count=0">Didn't find anything? That's OK.</line>
+    <line speaker="cate" condition="grove-ezra-mushrooms-taken-count=1">Oh, you got one? Let's see it.</line>
+    <line speaker="cate" condition="grove-ezra-mushrooms-taken-count[gt]1">Wow, that looks like quite a haul! Let's see what you've got.</line>
+
+    <line condition="grove-ezra-took-turkey-tail">`(EZRA hands CATE the striped mushroom he took from the tree stump.)`</line>
+    <line speaker="cate" condition="grove-ezra-took-turkey-tail">Oh, great. This is called a "turkey tail." Delicious, and good for the immune system.</line>
+
+    <line condition="grove-ezra-took-cordyceps">`(EZRA hands CATE the caterpillar he found on the tree stump.)`</line>
+    <line speaker="cate" condition="grove-ezra-took-cordyceps">Is this a caterpillar? Oh, I see ... Did you get a look at this black thread coming out of his head? That's actually a fungus. It grows in the caterpillar, eats it from the inside out, even changes its behavior a bit!</line>
+    <line speaker="cate" condition="grove-ezra-took-cordyceps">They kill for these in Tibet. I don't have much use for them in my line of work, though.</line>
+    
+    <line condition="grove-ezra-took-sheeps-head">`(EZRA hands CATE the brittle, brownish mushroom he took from the base of the cypress tree.)`</line>
+    <line speaker="cate" condition="grove-ezra-took-sheeps-head">Aha! Brown gold. Most people call these "sheep's head," but in alternative medicine circles it's better known by its Japanese name: "maitake," the dancing mushroom. Apt, because you do a happy little dance when you find one.</line>
+    <line speaker="cate" condition="grove-ezra-took-sheeps-head">It fights cancer, supports the immune system, regulates blood sugar, and tastes like eggplant. This one's a bit old and tough, but it's nothing that can't be solved with a lot of butter.</line>
+    <line speaker="cate" condition="grove-ezra-took-sheeps-head">Good find, Ezra!</line>
+
+    <line condition="grove-ezra-took-puffball">`(EZRA hands CATE the blue puffball he took from the cypress tree.)`</line>
+    <line speaker="cate" condition="grove-ezra-took-puffball">A blue puffball ... interesting. I don't think I've seen this `exact` species before. This one's too old to be of any use, anyway. Puffballs get all dried out like this as they age, until they're so delicate that it only takes the slightest agitation —</line>
+    <line condition="grove-ezra-took-puffball">`(CATE gently shakes the puffball. It bursts into a cloud of spores.)`</line>
+    <line speaker="cate" condition="grove-ezra-took-puffball">— and the wind does the rest. See, it's `weakness` as a survival strategy. A kind of radical, transformative weakness.</line>
+
+    <line speaker="cate" condition="grove-ezra-mushrooms-taken-count=0+grove-cate-mushrooms-taken-count=0">I didn't find anything either. You never know when or how they'll appear, with mushrooms. There are a few species that can be cultivated, but mostly the conditions that make them grow are just too complicated and obscure to reproduce.</line>
+    <line speaker="cate" condition="grove-ezra-mushrooms-taken-count=0+grove-cate-mushrooms-taken-count=0">They're one of the only truly `wild` things left in this world. I mean, even the weather is more or less under the influence of human industry at this point, right?</line>
+
+    <line speaker="cate" condition="grove-cate-mushrooms-taken-count=0+grove-ezra-mushrooms-taken-count[gt]0">You've got me beat; I didn't find a thing.</line>
+    
+    <line speaker="cate" condition="grove-cate-mushrooms-taken-count=1">I just found this one:</line>
+    <line speaker="cate" condition="grove-cate-mushrooms-taken-count[gt]1">Here's my haul:</line>
+    
+    <line condition="grove-cate-took-bitter-hedgehog">`(CATE takes the spotted brown cap out of her bag.)`</line>
+    <line speaker="cate" condition="grove-cate-took-bitter-hedgehog">OK, this one is called "Bitter Hedgehog," and it's on my list. It's great for nausea, which is basically the number one complaint of the pregnant women I treat.</line>
+    <line speaker="cate" condition="grove-cate-took-bitter-hedgehog">It tastes kind of like black pepper ... It's `OK`. I let it dry out so it's really tough, and they just chew on it like bubble gum.</line>
+    
+    <line condition="grove-cate-took-false-morel">`(CATE takes the dense bundle of dark ridges out of her bag.)`</line>
+    <line speaker="cate" condition="grove-cate-took-false-morel">This one I can't really use, but I picked it just to show it to you. It looks a lot like a very popular eating mushroom around these parts, called a "morel." But it's not a morel.</line>
+    <line condition="grove-cate-took-false-morel">`(CATE slices the mushroom in half, lengthwise. It's full of white fiber, the consistency of cotton.)`</line>
+    <line speaker="cate" condition="grove-cate-took-false-morel">This is the easiest way to tell them apart. The real morel is empty. `This` one, the "false morel," is actually kind of poisonous!</line>
+    <line speaker="cate" condition="grove-cate-took-false-morel">I forget what its effects are, exactly ... Here, let's check the `Vermeulen` book.</line>
+    <line condition="grove-cate-took-false-morel">`(CATE flips through the pages of her guidebook.)`</line>
+    <line speaker="cate" condition="grove-cate-took-false-morel">OK, here it is: `(Reading.)` "... Symptoms include wanting to fight; demanding answers; dryness of eyes, nose, and lips; restless sleep ..."</line>
+    <line speaker="cate" condition="grove-cate-took-false-morel">"... Dreams of flood, of rolling stones, accidents, people transforming into owls, vampires, rockets, and traveling to stars ..."</line>
+    <line speaker="cate" condition="grove-cate-took-false-morel">Huh. That doesn't sound so bad, actually ...</line>
+    <line condition="grove-cate-took-false-morel">`(CATE puts the mushroom back into her bag.)`</line>
+    
+    <line speaker="cate" condition="grove-cate-took-shoelace">`(CATE takes the bundle of amber caps from her bag.)`</line>
+    <line speaker="cate" condition="grove-cate-took-shoelace">These ones are really cool. See how they kind of glow a little?</line>
+    <line speaker="cate" condition="grove-cate-took-shoelace">It's not enough to find your way in the dark or anything, but still pretty amazing.</line>
+    <line speaker="cate" condition="grove-cate-took-shoelace">Anyway, I make a tea out of them; pretty good for headaches.</line>
+    <line speaker="cate" condition="grove-cate-took-shoelace">`(CATE puts the mushrooms back into her bag.)`</line>
+
+    <line speaker="cate" condition="grove-cate-took-bat-egg">`(CATE takes the speckled white ball out of her bag.)`</line>
+    <line speaker="cate" condition="grove-cate-took-bat-egg">These are called "bat eggs." See this gooey black stuff leaking out the side here? I guess somebody somewhere once thought this stuff looked like egg yolk, and it's black, like a bat ...</line>
+    <line speaker="cate" condition="grove-cate-took-bat-egg">I mean — I'm kind of speculating. I don't `really` know why they're called "bat eggs."</line>
+    <line speaker="cate" condition="grove-cate-took-bat-egg">They're not good for anything, really, and they'll give you bad stomach ache if you try to eat them. I just wanted to show it to you.</line>
+    <line speaker="cate" condition="grove-cate-took-bat-egg">`(CATE tosses the "bat egg" into the water.)`</line>
+
+    <line style="memory" event="ezra-music-then">He tripped on a protruding root and lay for a while in the mud, examining the pale upper branches of a sycamore tree, listening to the soft rumble of a faraway thunderstorm, then louder, closer, and his hair stood on end, and there was the bird.</line>
+    
+    <line speaker="cate" event="ezra-music-now">So ...</line>
+
+    <option goto="ezra-parents" speaker="cate">What do your parents do? For work, I mean.</option>
+    <option goto="ezra-brother" speaker="cate">You have a brother out there somewhere?</option>
+  </scene>
+
+  <scene name="ezra-parents" nextScene="ezra-asks-about-family">
+    <setGameVar name="grove-ezra-family-history" value="parents" />
+    <line speaker="ezra">My dad used to sell windows. People were building a lot of new houses, and they needed a lot of windows, but then they stopped building houses.</line>
+    <line speaker="ezra">My mom worked at a bakery and a bar. Sometimes she would see the same people in the morning and the evening. The bakery closed, and she doesn't work at the bar anymore, but she still goes there a lot to see her friends.</line>
+  </scene>
+
+  <scene name="ezra-brother" nextScene="ezra-asks-about-family">
+    <setGameVar name="grove-ezra-family-history" value="brother" />    
+    <line speaker="ezra">Julian. He's going to come find me in the morning, after the work is done.</line>
+    <line speaker="ezra">Yep, we work pretty hard. We used to spend part of each night looking for my folks, but now we pretty much just work ... but maybe that'll change now. I have some new friends.</line>
+  </scene>
+
+  <scene name="ezra-asks-about-family">
+    <line speaker="ezra">Do you have a family?</line>
+    <option goto="miscarriage" speaker="cate">I almost had a baby once.</option>
+    <option goto="runaway" speaker="cate">I left home when I was very young. Not much older than you, actually.</option>
+  </scene>
+
+  <scene name="miscarriage">
+    <setGameVar name="grove-cate-family-history" value="miscarriage" />    
+    <option goto="memorial-wait" speaker="cate">I learned a lot about difficult pregnancies, at least. So now I can help other women.</option>
+    <option goto="memorial-wait" speaker="cate">I got very sick, and the only thing that helped me was a funny-looking mushroom called "collared earthstar."</option>
+  </scene>
+
+  <scene name="runaway">
+    <setGameVar name="grove-cate-family-history" value="runaway" />        
+    <option goto="memorial-wait" speaker="cate">I bounced around jobs and shelters, and finally found my way down to the Echo River. Never looked back.</option>
+    <option goto="memorial-wait" speaker="cate">Years later my mother got sick and I tried to visit her, but it was too late. She was all spaced out on fevers and morphine.</option>
+  </scene>
+
+  <scene name="memorial-wait" nextScene="memorial">
+    <line speaker="cate">I've basically been on my own since then ... Well, that's not really true. Just about everyone who sets foot aboard `The Mucky Mammoth` feels like family to me now. I guess if `nobody`'s family, then `everybody`'s family. Ha ha.</line>
+  </scene>
+
+  <scene name="memorial">
+    <line style="memory" event="cate-music-then">Months later, she came across a book on homeopathic medicine in a used bookstore, and bought it. She thought it was mostly bullshit, but found the author's notes on the unpredictability of mushrooms immediately compelling. Spiritual, even.</line>
+    <line style="memory" event="cate-music-then">She started collecting mushrooms on hikes; never eating them, just collecting, identifying, and discarding. Eventually, she connected with the Lexington Mycological Society, and began to study in earnest the medicinal uses of fungi.</line>
+    
+    <option goto="memorial-trees" speaker="ezra">These are the only trees in this whole cave. Who planted them here?</option>
+    <option goto="memorial-island" speaker="ezra">What's this island for? It looks like someone made it on purpose.</option>
+  </scene>
+  
+  <scene name="memorial-trees" nextScene="memorial-background">
+    <triggerEvent name="cate-music-now" />
+    <line speaker="cate">Right, not many trees down here in the dark ...</line>
+    <line speaker="cate">I know these are ... some kind of cypress. And they were definitely planted here deliberately, uh ... by someone who ...</line>
+  </scene>
+
+  <scene name="memorial-island" nextScene="memorial-background">
+    <triggerEvent name="cate-music-now" />    
+    <line speaker="cate">Oh, right, it's kind of a nice, simple shape. Pleasantly minimal island geometry.</line>
+    <line speaker="cate">I'm sure it `could` be natural, though. I mean, I don't know if the island itself is man-made or not, but ...</line>
+  </scene>
+
+  <scene name="memorial-background" nextScene="ezra-searches-for-clues">
+    <line speaker="cate">I guess I don't know much about this place, really. It's supposed to be some kind of memorial? To something?</line>
+    <line speaker="cate">Will would know more.</line>
+    <line speaker="cate">Sorry, it's a mystery.</line>
+    <line speaker="ezra" blocking="@EnterIronPariah">It's a mystery!</line>
+    <line speaker="ezra">I'll search for clues.</line>
+  </scene>
+
+  <!-- search for clues -->  
+  <scene name="ezra-searches-for-clues">
+    <blocking>
+      @inline EzraStand
+    </blocking>
+
+    <goto condition="grove-ezra-clue-area-count[gt]1" sceneName="ezra-returns-with-evidence" />
+    
+    <option goto="cypress-tree" condition="!grove-ezra-searched-cypress-tree">`(EZRA investigates a cypress tree.)`</option>
+    <option goto="edge-of-water" condition="!grove-ezra-searched-edge-of-water">`(EZRA looks around the shore.)`</option>
+    <option goto="large-rock" condition="!grove-ezra-searched-large-rock">`(EZRA examines a large stone monument.)`</option>
+  </scene>
+
+  <scene name="cypress-tree">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraBaseOfTreePosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-searched-cypress-tree" value="true" />
+    <setGameVar name="grove-ezra-clue-area-count" value="+1" />    
+    <line>`(The tree smells spicy, oily.)`</line>
+    <option goto="examine-bark-graffiti">`(EZRA inspects the bark.)`</option>
+    <option goto="examine-trimmed-branches">`(EZRA looks up into the branches.)`</option>
+  </scene>
+
+  <scene name="edge-of-water">
+    <blocking>
+      Ezra Walk Ezra [Root]/LandingPosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-searched-edge-of-water" value="true" />
+    <setGameVar name="grove-ezra-clue-area-count" value="+1" />        
+    <line>`(EZRA steps on a plastic bottle. A wooden post projects from the sand nearby.)`</line>
+    <option goto="examine-mooring-post">`(EZRA examines the wooden post.)`</option>
+    <option goto="examine-plastic-bottle">`(EZRA picks up the plastic bottle.)`</option>
+  </scene>
+
+  <scene name="large-rock">
+    <blocking>
+      Ezra Walk Ezra [Root]/RuinsPosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-searched-large-rock" value="true" />
+    <setGameVar name="grove-ezra-clue-area-count" value="+1" />        
+    <line>`(The monument is covered with lichen and painted text.)`</line>
+    <option goto="examine-rock-graffiti">`(EZRA reads the text.)`</option>
+    <option goto="examine-lichen">`(EZRA inspects the lichen.)`</option>
+  </scene>
+
+  <scene name="examine-bark-graffiti" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-bark-graffiti" value="true" />
+    <line>`(A message is carved in the bark.)`</line>
+    <line speaker="bark carving">OZY</line>
+  </scene>
+
+  <scene name="examine-trimmed-branches" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-trimmed-branches" value="true" />    
+    <line>`(Some of the branches have been trimmed recently.)`</line>
+  </scene>
+
+  <scene name="examine-mooring-post" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-mooring-post" value="true" />    
+    <line>`(A groove is worn near the top of the post.)`</line>
+  </scene>
+
+  <scene name="examine-plastic-bottle" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-plastic-bottle" value="true" />
+    
+    <blocking>
+      @inline EzraCrouch
+      Ezra Wait 2
+      @inline EzraStand
+    </blocking>
+    
+    <line>`(There's a scrap of paper inside the bottle. EZRA takes it out and reads it.)`</line>
+    <line speaker="message">EGGS FLOUR CHARDONNAY LAXATIVES PAPER TOWELS SCRATCH TICKET</line>
+  </scene>
+
+  <scene name="examine-rock-graffiti" nextScene="ezra-searches-for-clues">
+    <blocking>
+      @inline EzraCrouch
+    </blocking>
+    
+    <setGameVar name="grove-ezra-found-rock-graffiti" value="true" />    
+    <line speaker="rock graffiti">X+O 4EVA</line>
+  </scene>
+
+  <scene name="examine-lichen" nextScene="ezra-searches-for-clues">
+    <blocking>
+      @inline EzraCrouch
+    </blocking>
+    
+    <setGameVar name="grove-ezra-found-lichen" value="true" />    
+    <line>`(Colorful lichen coats the surface of the monument, mixing with painted graffiti, in some places indistinguishably.)`</line>
+  </scene>
+  
+  <!-- return with evidence -->
+  <scene name="ezra-returns-with-evidence" nextScene="iron-pariah-appears">
+    <blocking>
+      @inline EzraStand
+      Ezra Walk Ezra [Root]/EzraStartPosition
+    </blocking>
+    
+    <line style="memory" event="cate-music-then">She put out her cigarette, said goodbye to the hot dog vendor, and spent the rest of the afternoon listening to doctors, and trying to understand the world as they did: as a list of discrete injuries to be mended.</line>
+    <line speaker="cate" event="cate-music-now">Alright, what have you got?</line>
+
+    <line speaker="ezra" condition="grove-ezra-found-rock-graffiti">That stone face monument has "x+o 4eva" painted on it.</line>
+    <line speaker="cate" condition="grove-ezra-found-rock-graffiti">Interesting. What do you think that means? "Hug and kiss forever?"</line>
+    <line speaker="cate" condition="grove-ezra-found-rock-graffiti">Or they could be initials. "Xavier and Olivia forever."</line>
+    <line speaker="cate" condition="grove-ezra-found-rock-graffiti">"Xerxes and Oliver?"</line>
+    
+    <line speaker="ezra" condition="grove-ezra-found-lichen">There's some weird, colorful moss growing on the stone face monument.</line>
+    <line speaker="cate" condition="grove-ezra-found-lichen">Ah, that's called "lichen." It's actually part fungus. It's sort of a weird hybrid.</line>
+    <line speaker="cate" condition="grove-ezra-found-lichen">Not really my area of expertise, but some of it has useful medicinal properties. And some of it is poison. The usual. Ha ha.</line>
+    <line speaker="cate" condition="grove-ezra-found-lichen">It's beautiful, though, isn't it?</line>
+
+    <line speaker="ezra" condition="(grove-ezra-found-rock-graffiti|grove-ezra-found-lichen)">What do you think that monument is for?</line>
+    <line speaker="cate" condition="(grove-ezra-found-rock-graffiti|grove-ezra-found-lichen)">I'm not sure anyone remembers.</line>    
+    
+    <line speaker="ezra" condition="(grove-ezra-found-rock-graffiti|grove-ezra-found-lichen)+tugboat-ezras-favorite-rock-is-dinosaur-rock">That's my new favorite rock.</line>
+    <line speaker="cate" condition="(grove-ezra-found-rock-graffiti|grove-ezra-found-lichen)+tugboat-ezras-favorite-rock-is-dinosaur-rock">Wow, even better than "Dinosaur Rock?"</line>    
+    <line speaker="ezra" condition="(grove-ezra-found-rock-graffiti|grove-ezra-found-lichen)+tugboat-ezras-favorite-rock-is-dinosaur-rock">... I think so.</line>
+    
+    <line speaker="ezra" condition="grove-ezra-found-bark-graffiti">Somebody carved "OZY" in that tree over there.</line>
+    <line speaker="cate" condition="grove-ezra-found-bark-graffiti">Oh, huh. What do you think that means?</line>
+    <line speaker="ezra" condition="grove-ezra-found-bark-graffiti">It's part of somebody's name. Or it's short for something.</line>
+    <line speaker="cate" condition="grove-ezra-found-bark-graffiti">"Observe |Zero| Yaks."</line>
+    <line speaker="ezra" condition="grove-ezra-found-bark-graffiti">"Old Zebra Yard."</line>
+    <line speaker="cate" condition="grove-ezra-found-bark-graffiti">"Ornery Zoologist Yacht."</line>
+    <line speaker="ezra" condition="grove-ezra-found-bark-graffiti">I don't know what that means.</line>
+    <line speaker="cate" condition="grove-ezra-found-bark-graffiti">Yeah, it was a stretch.</line>
+    
+    <line speaker="ezra" condition="grove-ezra-found-trimmed-branches">The branches on the tree are trimmed.</line>
+    <line speaker="cate" condition="grove-ezra-found-trimmed-branches">Oh, good observation! So I guess somebody's still taking care of this place. Or just practicing their tree-trimming somewhere out of the way ...</line>
+    
+    <line speaker="ezra" condition="grove-ezra-found-mooring-post">There's a pole in the ground over there; it's all scratched up.</line>
+    <line speaker="cate" condition="grove-ezra-found-mooring-post">Oh, yeah. I bet people tie their boats there.</line>
+    <line speaker="ezra" condition="grove-ezra-found-mooring-post">Maybe somebody who takes care of the trees.</line>
+    <line speaker="cate" condition="grove-ezra-found-mooring-post">Could be. Or other travelers and mushroom hunters, like us.</line>
+    
+    <line speaker="ezra" condition="grove-ezra-found-plastic-bottle">I found this message in a bottle.</line>
+    <line speaker="cate" condition="grove-ezra-found-plastic-bottle">Looks like somebody's grocery list.</line>
+
+    <line speaker="cate">Well, Ezra, I can't say I know what that all adds up to ... Like I said, I wish Will were here. He'd have some local history for us. We can ask him, back on the boat.</line>
+  </scene>
+
+  <scene name="iron-pariah-appears">
+    <line>`(CATE and EZRA look up at an old battleship drifting by.)`</line>
+    
+    <line speaker="cate">Oh, there it is. `The Iron Pariah`. Don't worry, it's just passing by.</line>
+
+    <option speaker="cate" goto="iron-pariah-questions">What do you think of it?</option>
+    <option speaker="cate" goto="iron-pariah-rumors">I don't know much about it first-hand, but I've heard things ...</option>
+  </scene>
+
+  <!-- questions -->  
+  <scene name="iron-pariah-questions">
+    <goto condition="grove-ezra-iron-pariah-question-count[gt]1|grove-cate-iron-pariah-rumor-count[gt]1" sceneName="iron-pariah-done" />
+    
+    <option goto="iron-pariah-question-origin" condition="!grove-ezra-asked-iron-pariah-question-origin" speaker="ezra">Where did it come from?</option>
+    <option goto="iron-pariah-question-been-aboard" condition="!grove-ezra-asked-iron-pariah-question-been-aboard" speaker="ezra">Have you ever been aboard?</option>
+    <option goto="iron-pariah-question-ghosts" condition="!grove-ezra-asked-iron-pariah-question-ghosts" speaker="ezra">Is it full of ghosts?</option>
+  </scene>
+
+  <scene name="iron-pariah-question-origin" nextScene="iron-pariah-rumors">
+    <setGameVar name="grove-ezra-asked-iron-pariah-question-origin" value="true" />
+    <setGameVar name="grove-ezra-iron-pariah-question-count" value="+1" />    
+
+    <line speaker="cate">Yeah, it's a mystery. I don't think it was `built` here, so it must have come from somewhere ...</line>
+    <line speaker="cate">There are a lot of ways to get here, though. All these caves are connected, and the same for rivers.</line>
+    <line speaker="cate">It's hard to know where `anything` down here really comes from.</line>
+  </scene>
+
+  <scene name="iron-pariah-question-been-aboard" nextScene="iron-pariah-rumors">
+    <setGameVar name="grove-ezra-asked-iron-pariah-question-been-aboard" value="true" />
+    <setGameVar name="grove-ezra-iron-pariah-question-count" value="+1" />    
+    
+    <line speaker="cate">Oh, no. I've never even been close. I have to admit I'm a `little` curious, but ...</line>
+    <line speaker="cate">Well, sometimes places get an aura of the forbidden about them, and it just seems best to stay away.</line>
+    <line speaker="cate">Plus: it would ruin the mystery!</line>
+  </scene>
+
+  <scene name="iron-pariah-question-ghosts" nextScene="iron-pariah-rumors">
+    <setGameVar name="grove-ezra-asked-iron-pariah-question-ghosts" value="true" />
+    <setGameVar name="grove-ezra-iron-pariah-question-count" value="+1" />    
+    
+    <line speaker="cate">Oh, I don't know, probably ...</line>
+    <line speaker="cate">I mean — no, definitely not. You don't believe in ghosts, do you?</line>
+    <line speaker="ezra">No ...</line>
+    <line speaker="cate">I've never met a young kid who `really` believed in ghosts. Lots of older people do, though. I wonder why that is.</line>
+  </scene>
+
+  <!-- rumors -->
+  
+  <scene name="iron-pariah-rumors">
+    <goto condition="grove-ezra-iron-pariah-question-count[gt]1|grove-cate-iron-pariah-rumor-count[gt]1" sceneName="iron-pariah-done" />
+    
+    <option goto="iron-pariah-rumor-civil-war" condition="!grove-cate-told-iron-pariah-rumor-civil-war" speaker="cate">I've heard it was in the Civil War.</option>
+    <option goto="iron-pariah-rumor-no-people" condition="!grove-cate-told-iron-pariah-rumor-no-people" speaker="cate">Supposedly there's nobody even aboard. No people, I mean.</option>
+    <option goto="iron-pariah-rumor-wailing-sound" condition="!grove-cate-told-iron-pariah-rumor-wailing-sound" speaker="cate">Someone told me she got close to it by accident, and heard a strange wailing sound.</option>
+
+  </scene>
+
+  <scene name="iron-pariah-rumor-civil-war" nextScene="iron-pariah-rumors">
+    <setGameVar name="grove-cate-told-iron-pariah-rumor-civil-war" value="true" />
+    <setGameVar name="grove-cate-iron-pariah-rumor-count" value="+1" />
+
+    <line speaker="cate">I guess they had boats full of soldiers and supplies going up and down the Ohio River. And they fought on the river, like, boat-to-boat, with cannons or something, I guess. Machine guns?</line>
+    <line speaker="cate">I'm no military historian, as you can probably tell. Ha ha.</line>
+    <line speaker="cate">Anyway, I guess this one just got lost, and somehow ended up all the way down here. Maybe it slipped into a cave up north; they're all connected, underground.</line>
+    <line speaker="cate">There's another version of the story where it didn't get lost — it was full of deserters. They came down here to hide. Maybe that's why it's a "Pariah."</line>
+  </scene>
+
+  <scene name="iron-pariah-rumor-no-people" nextScene="iron-pariah-rumors">
+    <setGameVar name="grove-cate-told-iron-pariah-rumor-no-people" value="true" />
+    <setGameVar name="grove-cate-iron-pariah-rumor-count" value="+1" />
+
+    <line speaker="cate">I mean, there must be `something` on there. Life is everywhere. Rats, insects, some kind of hardy mold ...</line>
+    <line speaker="cate">Part of it could be flooded, and host to some of the eyeless fish that live in the Echo.</line>
+    <line speaker="cate">Hey, maybe there are some mushrooms growing in there! Slowly consuming military rations from over a hundred years ago ...</line>
+  </scene>
+
+  <scene name="iron-pariah-rumor-wailing-sound" nextScene="iron-pariah-rumors">
+    <setGameVar name="grove-cate-told-iron-pariah-rumor-wailing-sound" value="true" />
+    <setGameVar name="grove-cate-iron-pariah-rumor-count" value="+1" />
+
+    <line speaker="cate">She was a passenger on the `Mammoth`. She said she'd been out fishing on a rowboat, and got swept up by a current near the Cluttered Place.</line>
+    <line speaker="cate">Before she knew it, `The Iron Pariah` was upon her — unimaginably massive, up close, but eerily silent.</line>
+    <line speaker="cate">The only sounds, she said, were the lapping of the lake water against its iron hull, and a faint sort of ... Well, she said a "chorus of `mews`."</line>
+    <line speaker="cate">I'll be damned if I know what that sounds like! Ha ha. I've never gotten close enough to the ship myself ...</line>
+  </scene>
+  
+  <!-- end rumors -->
+  
+  <scene name="iron-pariah-done" nextScene="end">
+    <triggerEvent name="end-music" />
+    <line style="memory">Ezra's parents shook him awake. They seemed alarmed, but not immediately concerned. They led him back to the house, past the house, into the car.</line>    
+    <line speaker="cate">More mysteries. They do pile up, over time, as people forget the details.</line>
+    <line style="memory">Dad said they were going to stay at the bus station for a while, the one with the little arcade, with the car game he liked.</line>    
+    <line speaker="ezra">Thanks for taking me mushroom picking.</line>
+    <line style="memory">Dad watched him closely in the rear-view mirror, expecting Ezra to be excited, or confused, or scared, but he didn't feel anything. He hardly seemed to hear.</line>    
+    <line speaker="cate">Mushroom `hunting`. You can "pick" apples, because they're right out there in the open. Mushrooms hide. You have to hunt for them.</line>
+    <line style="memory">In fact, he felt like he was observing the family car from a distance, from far above, from the clouds.</line>    
+  </scene>
+
+  <fragments>
+    <fragment name="hotdog-guy-1a">The hot dog vendor tried to strike up a conversation with some immediately-too-personal questions.</fragment>
+    <fragment name="hotdog-guy-1b">She decided to give him the benefit of the doubt; maybe he considered it part of his job, she thought, to offer his customers some kind of counsel.</fragment>
+    <fragment name="hotdog-guy-1c">Maybe it was to salve his guilty conscience, for selling junk food outside a hospital.</fragment>
+    <fragment name="hotdog-guy-2">Had she ever tried any "alternative" medicines? Acupuncture? Homeopathy? Ayurveda? Magical thinking? She said she'd never heard of any of those things. He fished a stray hot dog out of the pickle jar.</fragment>
+    <fragment name="hotdog-guy-3">Was she at the hospital because of `that`? He meant the cigarette. Was she visiting family? Was she vegetarian? That last one was all business; he had some veggie dogs in a separate tray at the bottom of the cart.</fragment>
+
+    <fragment name="ezra-memory-introduction-1">He didn't like to play in the house. It was always too cold. It seemed to store up the cold at night, then slowly discharge it into his bones during the day, while the sun bounced feebly off the windows.</fragment>
+    <fragment name="ezra-memory-introduction-2">But he liked to play in the woods behind the house.</fragment>
+  </fragments>
+
+</conversation>

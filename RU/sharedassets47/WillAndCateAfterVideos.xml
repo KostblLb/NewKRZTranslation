@@ -1,0 +1,65 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="cate">`(To WILL)` No, no, it was only a few notes. Slow and sad. Like funeral music, you know?</line>
+    <line speaker="will">I don't remember it being sad, just simple and unburdened. Maybe that's what funeral music sounds like to me: unburdened.</line>
+    <line speaker="will">`(To SHANNON)` Oh hello! Cate and I were just trying to remember the mammoth's song —</line>
+    <line speaker="cate">— but neither of us have heard it for years. Will just found the mechanism.</line>
+    <line speaker="will">In the mammoth's belly! Hidden in gritty, matted fur. Ha! It's like a big music box — a slowly spinning cylinder covered in metal pins that pluck her dulcet guts and pump the bellows in her bowels.</line>
+    <line speaker="will">But some of the pins are rusted and worn away. Easy to replace, if we can ever remember what the notes were.</line>
+    <line speaker="cate">Did I hear you browsing the archive next door? Find anything good?</line>
+    <option goto="video-origin" speaker="shannon">Where did all those videos come from?</option>
+    <option goto="unsettling-video" speaker="shannon">I found something pretty unsettling, actually.</option>
+  </scene>
+
+  <scene name="video-origin" nextScene="dubs">
+    <line speaker="cate">People just left them on board. Passengers, I mean.</line>
+  </scene>
+
+  <scene name="unsettling-video" nextScene="dubs">
+    <line speaker="cate">Oh dear. I don't even know what's on half of those tapes anymore.</line>
+  </scene>
+
+  <scene name="dubs">
+    <line speaker="cate">They used to all be movies and that kind of stuff — I like nature documentaries especially. Some people left home movies or little art videos they'd made. But that damned VCR `devours` anything you leave in it!</line>
+    <line speaker="cate">It just switches into "record" mode at random, I think, and picks up whatever's coming in over the antenna. Of course the only station we get down here is that WEVP. Community television, you know. They've got that show with the gentleman playing banjo in his birthday suit — I'm sure you've seen it.</line>
+    <line speaker="will">Oh yes.</line>
+    <line speaker="cate">And if there's no tape in the machine when it tries to start recording, it makes this `awful` sound! Like putting a squeaky toy in a food processor. I can hear it above deck. Awful!</line>
+    <line speaker="cate">That's why I put the sign up, "please do not rewind after watching!" At least that way nothing gets taped over anymore.</line>
+    <option goto="where-is-wevp" speaker="shannnon">Where is this station? WEVP?</option>
+    <option goto="wills-video" speaker="shannnon" condition="tugboat-videos-watched-i-believe-you">`(To WILL)` You were in one of the videos. "I BELIEVE YOU," it said. Where was that taped?</option>
+    <option goto="fix-vcr" speaker="shannnon">I'm sure I can fix it.</option>
+  </scene>
+
+  <scene name="wills-video" nextScene="meet-dashiell">
+    <line speaker="cate">`(To WILL)` You had a TV show? I never knew!</line>
+    <line speaker="will">Um ... no, I don't believe I ever have.</line>
+    <line speaker="will">The title sounds familiar, but more like it's something I heard about, like second-hand information.</line>
+    <line speaker="cate">They let `anybody` on there, that's the whole idea. "Community television," or "public access," they call it.</line>
+   <line speaker="will">I `would` say it's possible that I did the show you saw, and then forgot. Wouldn't be the first time. The studio ... no, I can't say that I remember where WEVP is, sorry.</line>
+  </scene>
+  
+  <scene name="where-is-wevp" nextScene="meet-dashiell">
+    <line speaker="cate">Hm. I don't know. Will?</line>
+    <line speaker="will">I don't know.</line>
+    <line speaker="cate">I guess I never thought of it. It must be nearby, right? It is "community" television.</line>
+    <line speaker="will">Dashiell would know.</line>
+    <line speaker="cate">Yes!</line>
+  </scene>
+
+  <scene name="fix-vcr">
+    <line speaker="cate">My hero!</line>
+    <line speaker="will">`(To CATE)` We were talking earlier — she has an intuition for these things.</line>
+    
+    <option goto="meet-dashiell" speaker="shannon">I just like to take things apart.</option>
+    <option goto="meet-dashiell" speaker="shannon">It's not intuition, just experience.</option>
+  </scene>
+
+  <scene name="meet-dashiell" nextScene="end">
+    <line speaker="cate">You should meet Dashiell. He did a lot of volunteer work for WEVP, in the early days — wiring up antennas and relays, stuff like that. I think you two would have a lot to talk about. He works at the telephone exchange.</line>
+    <line speaker="will">No, I'm afraid he's been let go.</line>
+    <line speaker="cate">Oh yeah? That's odd, he still takes the ferry to work every day. I'm sure he's at the telephone exchange right now, in fact — I dropped him there a few hours ago.</line>
+    <line speaker="cate">We're stopping at the telephone exchange again shortly, to deliver their mail and pick up their trash. You should go ashore when we do — ask for Dashiell!</line>
+  </scene>
+
+</conversation>

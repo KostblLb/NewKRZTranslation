@@ -1,0 +1,42 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <line speaker="junebug">How's it looking out there? How're y'all feeling tonight?</line>
+    <line speaker="johnny">`(To HARRY.)` Can we get a bit more reverb in the monitors?</line>
+    <line>`(HARRY adjusts a soundboard behind the bar.)`</line>
+    <line speaker="harry">How's that?</line>
+    <line speaker="johnny">Test. Test. One. One. One. Three. Fifty. Lamentation. La — men — ta — tion.</line>
+    <line speaker="johnny">Sounds good.</line>
+    <line speaker="junebug">How's everybody doing? Anybody had a real bad night?</line>
+    <line speaker="junebug">`(To CONWAY.)` How about you, old man?</line>
+    <option goto="not-bad" speaker="conway">Not too bad.</option>
+    <option goto="real-bad" speaker="conway">Yeah, real bad.</option>
+  </scene>
+
+  <scene name="not-bad" nextScene="intro-song">
+    <line speaker="junebug">Well, we'll take care of that right now.</line>
+  </scene>
+
+  <scene name="real-bad" nextScene="intro-song">
+    <line speaker="junebug">We'll try not to make it too much worse.</line>
+  </scene>
+
+  <scene name="intro-song">
+    <line speaker="junebug">This is a song I heard in a tavern many years ago at an open mic night. Me and Johnny were out just riding around, you know — you like to drive around, old man?</line>
+    <option goto="drive" insertedText="*CONWAY*: Tha-" speaker="conway">That's my job.</option>
+    <option goto="drive" insertedText="*CONWAY*: Tha-" speaker="conway">That's where I feel at home.</option>
+  </scene>
+
+  <scene name="drive" nextScene="end">
+    <line speaker="junebug">Of course you do.</line>
+    <line speaker="junebug">So we were out riding around and we passed this gaudy old tavern, I mean it was a real dive. Busted up facade —</line>
+    <line speaker="johnny">— weeds in the parking lot —</line>
+    <line speaker="junebug">— taps all dry —</line>
+    <line speaker="johnny">— bats in the barroom —</line>
+    <line speaker="junebug">— and run by this creaky bag of bones, looked like the only thing keeping him awake was the fear of death.</line>
+    <line speaker="junebug">So glad to be back here at `The Lower Depths`.</line>
+    <line speaker="harry">Hey, now —</line>
+    <line speaker="junebug">So we stopped for an early drink, and there was a lady singing right here on stage. And the song she sang ... well, it stuck with us, and now it's a regular part of our repertoire.</line>
+    <line speaker="junebug">Never got that lady's name, but she seemed like a sweet gal and she had a voice like scotch whisky, and we just hope we do her song justice. So here it is: `Too Late to Love You`.</line>
+  </scene>
+</conversation>

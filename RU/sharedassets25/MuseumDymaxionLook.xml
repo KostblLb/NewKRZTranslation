@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="museum-looked-at-dymaxion-home" value="true"/>
+    <setGameVar name="museum-location" value="dymaxion" />    
+    <line speaker="ivy">Oh, of course, I saw them looking at that odd-shaped building, the ...</line>
+    <option goto="dymaxion" speaker="museum staff">Sure, the rounded metal one.</option>
+    <option goto="inside" speaker="museum staff">Did they go inside?</option>
+  </scene>
+
+  <scene name="inside" nextScene="romantic">
+    <line speaker="ivy">No, they just looked at it for a bit. I don't know that I'd feel safe setting foot in there, personally. It always looks like it's about to ... take off.</line>
+  </scene>
+
+  <scene name="dymaxion" nextScene="romantic">
+    <line speaker="ivy">Yeah, that one. &quot;House of the future&quot; sort of thing. I've always thought it looked more like a grain bin ...</line>
+  </scene>
+
+  <scene name="romantic" nextScene="end">
+    <line condition="museum-umbrella-is-open" speaker="ivy">Actually, I guess it's sort of romantic. Anyway, they seemed interested in it. Tired, huddling under their umbrellas, they still stopped to examine this strange building.</line>
+    <line condition="!museum-umbrella-is-open" speaker="ivy">Actually, I guess it's sort of romantic. Anyway, they seemed interested in it. Tired, soaked from the rain, they still stopped to examine this strange building.</line>
+  </scene>
+
+</conversation>

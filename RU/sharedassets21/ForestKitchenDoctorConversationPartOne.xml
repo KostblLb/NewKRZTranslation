@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="advance-camera,tv-sounds">
+  <scene name="intro">
+    <line speaker="dr. truman">... and, yeah, I think during that exit interview is when I really realized how badly they had me. But how else can you pay for medical school? I have college friends with debts that ... you can't expect to pay that back unless you're planning to sell painkillers on the side or something. Or, you know, some kind of administrative thing?</line>
+    <line speaker="dr. truman">I don't know. Having seen what arthritis did to my grandmother, and my best friend in high school destroy his wrists building synthesizers — I mean he was, like, seventeen ... ailments of the joints and limbs just seem `important` to me.</line>
+    <line speaker="dr. truman">I hope that answers your question. Getting a scholarship with that pharmaceutical company had a lot of strings attached, but at least I have somewhere to practice, even if I have to follow their market trends a bit. And, hey, thanks to all those seminars I'm an expert on the medical uses of `Neurypnol TM`. It's not so bad.</line>
+    <line speaker="dr. truman">So, how about that leg. What happened exactly?</line>
+    <option goto="too-dark" speaker="conway">It was too dark to tell, really.</option>
+    <option goto="grabbed-leg" speaker="conway">It was like something grabbed my leg in the dark.</option>
+    <option goto="crushed" speaker="conway">My leg was crushed by falling rocks.</option>
+  </scene>
+
+  <scene name="too-dark" nextScene="end">
+    <line speaker="dr. truman">Ah, stumbling around in the dark. Hey, you might have just twisted it on something, right? Let's take a look.</line>
+  </scene>
+
+  <scene name="grabbed-leg" nextScene="end">
+    <line speaker="dr. truman">Grabbed? Like an animal? Or a piece of machinery? Hmm. That could be ugly. I've seen some joints twisted right out of ... never mind. Well, let's start the examination.</line>
+  </scene>
+
+  <scene name="crushed" nextScene="end">
+    <line speaker="dr. truman">Ah, crushing injury. Yeah, those can be pretty bad. Everything gets all compressed and there are a lot of little pieces to ... you know what, never mind. Let's take a look — how bad could it be, right?</line>
+  </scene>
+
+</conversation>

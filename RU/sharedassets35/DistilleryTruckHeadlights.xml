@@ -1,0 +1,77 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape,truck-tour-lights-off">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <triggerEvent name="truck-tour-zoom"/>
+    <setGameVar name="distillery-truck-examined-headlights" value="true" />
+    <line speaker="doolittle" style="skeleton">Headlights work fine, see.</line>
+    <line event="truck-tour-lights-on">`(DOOLITTLE fiddles with the controls.)`</line>
+    <line speaker="doolittle" style="skeleton">That's important. Most of our product goes out at night. You never know who you'll run into in the daylight, and dusk can be treacherously misleading with all that indirect light. `The magic hour`, eh?</line>
+    <option goto="magic-hour" speaker="conway">Magic hour, sure.</option>
+    <option goto="sleep-day" speaker="conway">Drivers sleep in the day, then?</option>
+  </scene>
+
+  <scene name="magic-hour">
+    <line speaker="shannon">`(To CONWAY.)` The angle of the sun at dusk and dawn means the light is mostly indirect reflections from the sky. Everything looks like a movie, it's all a bit softer.</line>
+    <option goto="sleep-day" speaker="conway">Drivers sleep in the day, then?</option>
+    <option goto="dusk-vignette">`Conway had to get off the highway `—` too loud, too murky.`</option>
+  </scene>
+
+  <scene name="sleep-day">
+    <line speaker="doolittle" style="skeleton">Sure, those that sleep. Miguel pulled extra day shifts when he could. Sometimes he'd help me, you know. Sometimes over in bottling.</line>
+    <line speaker="doolittle" style="skeleton">He shouldn't have been out driving at dusk. Weird shadows. Soft light. Dangerous.</line>
+    <option goto="pretty-ok" speaker="conway">Headlights look, uh ... pretty OK.</option>
+    <option goto="dusk-vignette">`Conway had to get off the highway `—` too loud, too murky.`</option>
+  </scene>
+
+  <scene name="pretty-ok" nextScene="end">
+    <line speaker="doolittle" style="skeleton">That they do. Moving on!</line>
+  </scene>
+
+  <scene name="dusk-vignette">
+    <triggerEvent name="dialog-darken-fast" />
+    <triggerEvent name="stop-tape" />
+    <triggerEvent name="vignette-darken" />
+    
+    <setGameVar name="distillery-truck-saw-dusk-vignette" value="true" />
+    
+    <audioFade clip="memory-interstate" direction="in" time="5" />
+    <audioFade clip="truck-engine" direction="to" target="0.25" time="3" />
+    
+    <line>`He turned off into some gray cornfield, in Indiana.`</line>
+    <option goto="empties">`Empties rattled under the passenger seat.`</option>
+    <option goto="birds">`He watched traffic and birds.`</option>
+  </scene>
+
+  <scene name="empties" nextScene="pull-over">
+    <line>`He kept them over there so the smell wouldn't spread. That window was always open a crack.`</line>
+  </scene>
+
+  <scene name="pull-over">
+    <line>`He had to pull over.`</line>
+    <option goto="nap">`He just needed a nap, even if he ran late.`</option>
+    <option goto="condition">`He couldn't night-drive in his condition.`</option>
+  </scene>
+
+  <scene name="condition" nextScene="nap">
+    <line>`It wouldn't have been responsible.`</line>
+  </scene>
+
+  <scene name="birds">
+    <line>`Seeing those migrations close up, they looked random. He thought about the load in the trailer `—` thousands of plastic cups. Somebody wanted those cups in Rockford that night.`</line>
+    <option goto="nap">`It wasn't going to happen.`</option>
+    <option goto="dusk-end">`It was pointless.`</option>
+  </scene>
+
+  <scene name="nap" nextScene="dusk-end">
+    <line>`He was only human. He'd been out since the headlights were on `—` didn't even stop for coffee. He cracked a beer at three, eyes on the road. Half past four, he dodged some stray cattle.`</line>
+    <line>`The headlights were coming back on. Rockford could wait. Early morning couldn't be much worse than late night, what could they care?`</line>
+    <line>`He just needed a few hours ...`</line>
+  </scene>
+
+  <scene name="dusk-end" nextScene="end">
+    <audioFade clip="memory-interstate" direction="out" speed="4" destroy="true" />
+    <audioFade clip="truck-engine" direction="in" time="1" />    
+    <line speaker="doolittle" style="skeleton" event="start-tape,dialog-lighten-fast">So. Moving on!</line>
+  </scene>
+</conversation>

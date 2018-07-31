@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-shannon" value="true" />
+    <setGameVar name="tiki-johnny-tips-total" value="+500" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>She didn't have to do that. Had to hurt.</line>
+    <line>But that's the way it goes. The unsteady steadying the unsteady. There's probably a five dollar bill somewhere just floating up and down the river from tip jar to musician to tip jar to musician like an eternal ferry of good intentions.</line>
+  </scene>
+</conversation>

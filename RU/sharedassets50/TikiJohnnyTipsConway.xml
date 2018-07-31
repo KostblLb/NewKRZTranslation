@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-conway" value="true" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />    
+    <line>This guy's keeping some odd company tonight. Better just to let him be.</line>
+  </scene>
+</conversation>

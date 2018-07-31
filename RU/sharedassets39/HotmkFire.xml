@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-fire" value="true" />
+    <line>A pile of discarded electronics burns steadily in the center of the chamber.</line>
+  </scene>
+</conversation>

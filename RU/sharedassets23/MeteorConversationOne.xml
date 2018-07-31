@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="crater-heard-conversation-one" value="true"/>
+    <line speaker="Young man">Well I never heard of a bird so heavy or hot as that, no I don't think you're right about that one, I —</line>
+    <line speaker="Old man">You haven't heard of much, I knew that already! I can tell you right now —</line>
+    <line speaker="Young woman">You don't tell him a thing! If it was a bird how'd it burn up like that? My father-in-law —</line>
+  </scene>
+</conversation>

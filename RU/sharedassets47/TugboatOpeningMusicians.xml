@@ -1,0 +1,38 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tugboat-ezra-talked-to-musicians" value="true" debug="true" />
+    <line speaker="johnny">`(To JUNEBUG.)` Really?</line>
+    <line speaker="junebug">You were entranced! You don't remember this?</line>
+    <line speaker="clara">It's OK. We've all seen a lot of concerts.</line>
+    <line speaker="junebug">Cyrano opened. His tape machine was broken or something; it got really `cosmic`.</line>
+    <line speaker="johnny">Right, at the flower shop. I remember `that` show, I just ... sorry, Clara.</line>
+    <line speaker="clara">Well, you have a second chance to hear it tonight.</line>
+    <line speaker="johnny">`(To EZRA.)` That was fast. Got the batteries?</line>
+    <line speaker="johnny">Let's see ... perfect, this one will do! So, you hit this button `here` to record. Hold it right `here` so you don't cover the microphone with your hand.</line>
+    <line speaker="johnny">I bet you'll find a lot of good sounds just around the tugboat. There's plenty of tape in there, so don't be stingy with it! Just record anything that catches your ear. It really changes the way you `listen` ... for the better, I mean.</line>
+    <option goto="destination" speaker="ezra">How long is the trip?</option>
+    <option goto="concert" speaker="ezra">`(To CLARA.)` Are you playing a concert tonight? I could record that.</option>
+  </scene>
+
+  <scene name="concert" nextScene="rum-colony">
+    <line speaker="junebug">Yeah, Clara here came all the way from Lithuania just to do this Echo River gig!</line>
+    <line speaker="clara">Ha ha. It's a tour. Tomorrow, I'll be in Nashville, and then Atlanta, and then over to the coast.</line>
+    <line speaker="junebug">Brutal. Well, we're lucky she's making a stop. Johnny and I saw her play once, and `I` remember loving it. And Johnny was `moved`.</line>
+    <line speaker="johnny">Speaking of Cyrano, it's his night at The Rum Colony. Cate said she usually stops off there.</line>
+  </scene>
+
+  <scene name="destination" nextScene="rum-colony">
+    <line speaker="junebug">We've got a ways to go, and this boat makes pretty frequent stops. I think Cate said we're moving pretty slowly tonight, too. Weather.</line>
+    <line speaker="johnny">Cate said we could stop at The Rum Colony. Cyrano's playing.</line>
+  </scene>
+
+  <scene name="rum-colony" nextScene="end">
+    <line speaker="junebug">Well, that's ideal — I'm supposed to meet a lady there to look at some old engine parts, about ... three hours ago.</line>
+    <line speaker="johnny">Three hours goes fast at The Rum Colony, ma'am. I bet she's still there.</line>
+    <line speaker="clara">I hope we don't stop there `too` long. My concert is soon, I don't want to keep them waiting.</line>
+    <line speaker="junebug">Naw, it's "river time." Nobody expects you to be punctual.</line>
+    <line speaker="johnny">`(To EZRA.)` Hey, why don't you give that tape recorder a try? See if that cat over there has anything he wants to say.</line>
+    <line speaker="clara">I often use "found sounds" in my music. If you find some interesting sounds tonight, you can help me out!</line>
+  </scene>
+</conversation>

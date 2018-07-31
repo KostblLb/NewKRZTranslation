@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-elkhorn-mine" value="true"/>
+
+    <line>From above, the huge swaying tipple looks like a small wooden lattice framing the edge of the mine entrance.</line>
+  </scene>
+</conversation>

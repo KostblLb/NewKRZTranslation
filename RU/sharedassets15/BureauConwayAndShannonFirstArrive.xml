@@ -1,0 +1,63 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="bureau-intro-conversation-with-shannon-available" value="false"/>
+    <option goto="road" speaker="conway">Didn't we just pass this place?</option>
+    <option goto="directions" speaker="conway">Maybe someone here can point us in the right direction.</option>
+  </scene>
+
+  <scene name="road" nextScene="what-is-this-place">
+    <line speaker="shannon">I don't think the |Zero| operates like the roads we're used to. I don't understand it either.</line>
+    <line speaker="shannon">So, what is this place?</line>
+  </scene>
+
+  <scene name="directions" nextScene="what-is-this-place">
+    <line speaker="shannon">Yeah, looks like they're still open. Must be the night shift. What do you think they do here?</line>
+  </scene>
+
+  <scene name="what-is-this-place">
+    <option goto="office" speaker="conway">It looks like an office building.</option>
+    <option goto="cathedral" speaker="conway">It looks like a cathedral.</option>
+    <option goto="what-does-shannon-think" speaker="conway">What do you think?</option>
+  </scene>
+
+  <scene name="office" nextScene="inside-outside">
+    <line speaker="shannon">Yeah, an office building in a cathedral.</line>
+  </scene>
+
+  <scene name="cathedral" nextScene="inside-outside">
+    <line speaker="shannon">Yeah, a cathedral with an office building in it.</line>
+  </scene>
+
+  <scene name="what-does-shannon-think" nextScene="inside-outside">
+    <line speaker="shannon">When I got my electrician's license, I had to go to this government building in Frankfort. Kind of low to the ground, a bit older ... didn't really `look` like this place, I guess, but they all have that same feel. Bureaucracy in the air. Too much concrete.</line>
+  </scene>
+
+  <scene name="inside-outside">
+    <setGameVar name="bureau-intro-shannon-inside-outside-discussed" value="true"/>    
+    <line speaker="shannon">This is weird, but ... do you think we're `inside` or `outside` right now?</line>
+    <option goto="inside" speaker="conway">Inside.</option>
+    <option goto="outside" speaker="conway">Outside.</option>
+    <option goto="both" speaker="conway">Both.</option>
+  </scene>
+
+  <scene name="inside" nextScene="look-around">
+    <setGameVar name="bureau-intro-shannon-inside-outside" value="inside"/>
+    <line speaker="shannon">Yeah, inside a cave, I guess. Just feels like it's still &quot;outside,&quot; since it's not man-made ...</line>
+  </scene>
+
+  <scene name="outside" nextScene="look-around">
+    <setGameVar name="bureau-intro-shannon-inside-outside" value="outside"/>    
+    <line speaker="shannon">Yeah, outside any man-made structure, I guess. Just feels like it's still &quot;inside,&quot; since we can't see the sky ...</line>
+  </scene>
+
+  <scene name="both" nextScene="look-around">
+    <setGameVar name="bureau-intro-shannon-inside-outside" value="both"/>
+    <line speaker="shannon">Ha. OK. Very poetic.</line>
+  </scene>
+
+  <scene name="look-around" nextScene="end">
+    <line speaker="shannon">Well, maybe someone around here has a better sense of direction ...</line>
+  </scene>
+
+</conversation>

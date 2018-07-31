@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tugboat-mapvignette-ezra-talked-to-conway" value="true" />
+    
+    <line speaker="conway">Hey-y-y-y.</line>
+    <line speaker="conway">What's up.</line>
+    <option goto="maps" speaker="ezra">Going below deck to look at the maps.</option>
+    <option goto="sleep" speaker="ezra">You look like you're about to fall asleep.</option>
+  </scene>
+
+  <scene name="maps" nextScene="end">
+    <line speaker="conway">Maps, oh, yeah, I bet they've got a lot of them down here, um ...</line>
+    <line speaker="conway">Yeah you probably `need` maps to travel by boat.</line>
+    <line speaker="conway">`Myself`, uh, `personally` ... I don't use them. I read the signs, and I remember the roads, you know. Uh, landmarks. Or I ask for directions if I'm going somewhere I've never been before.</line>
+    <line speaker="conway">That's OK, to ask for directions. Remember that, kid. No shame in asking for directions.</line>
+  </scene>
+
+  <scene name="sleep" nextScene="ezra-bye">
+    <line speaker="conway">Naw, I don't think I could ever sleep on a river.</line>
+    <line speaker="conway">You're right, though: it's been a long day. I should maybe find some coffee to go with all this beer ... or just move on up to the real stuff. Doesn't weigh you down as much, you know? Naw, of course you don't ...</line>
+    <line speaker="conway">Hey, what am I talking about? Who knows.</line>
+  </scene>
+
+  <scene name="ezra-bye" nextScene="end">
+    <line speaker="ezra">OK. Bye.</line>
+  </scene>
+
+</conversation>
+

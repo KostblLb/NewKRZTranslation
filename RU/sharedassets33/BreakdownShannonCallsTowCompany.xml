@@ -1,0 +1,144 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="complete-tow-company-call">
+  <scene name="intro">
+    <setGameVar name="breakdown-shannon-called-tow-company" value="true"/>
+    
+    <line>`(SHANNON speaks into the large brick cell phone held up to her ear.)`</line>
+    <line speaker="shannon">Hi, hello. We've got an old, uh, I want to say diesel ... old truck just stalled out.</line>
+    <option goto="two-irritable" speaker="phone">`(Inaudible, irritable.)`</option>
+    <option goto="two-sleepy" speaker="phone">`(Inaudible, sleepy.)`</option>
+    <option goto="two-confused" speaker="phone">`(Inaudible, confused.)`</option>
+  </scene>
+
+  <scene name="two-irritable" nextScene="two-choices">
+    <line speaker="shannon">Sure, it's late for me too. Your card says &quot;open 23 hours a day ...&quot;</line>
+  </scene>
+
+  <scene name="two-sleepy" nextScene="two-choices">
+    <line speaker="shannon">Did I wake you? Your card says &quot;open 23 hours a day ...&quot;</line>
+  </scene>
+
+  <scene name="two-confused" nextScene="two-choices">
+    <line condition="breakdown-tow-company-name=lucky-boot" speaker="shannon">This is Lucky Boot Collision &amp; Towing, right? A friend gave me your card ... &quot;Open 23 hours a day.&quot;</line>
+    <line condition="breakdown-tow-company-name=mercadet" speaker="shannon">This is Mercadet Wreck Recovery, right? A friend gave me your card ... &quot;Open 23 hours a day.&quot;</line>
+    <line condition="breakdown-tow-company-name=nameless" speaker="shannon">This is ... you're a towing company, right? Your flyer has a picture of a tow truck on it. &quot;Open 23 hours a day.&quot;</line>
+  </scene>
+
+  <scene name="two-choices">
+    <option goto="three-accusatory" speaker="phone">`(Inaudible, accusatory.)`</option>
+    <option goto="three-inquisitive" speaker="phone">`(Inaudible, inquisitive.)`</option>
+    <option goto="three-suspicious" speaker="phone">`(Inaudible, suspicious.)`</option>
+  </scene>
+
+  <scene name="three-accusatory" nextScene="three-choices">
+    <line speaker="shannon">Well, isn't that convenient?! Do you just put that on there for ... plausible deniability? Or what?</line>
+  </scene>
+
+  <scene name="three-inquisitive" nextScene="three-choices">
+    <line speaker="shannon">Yeah that's why I'm calling, exactly. That's all.</line>
+  </scene>
+
+  <scene name="three-suspicious" nextScene="three-choices">
+    <line speaker="shannon">We ... yeah we have a car — I mean it's a truck. We're broken down by the side of the road, that's why I'm calling.</line>
+  </scene>
+
+  <scene name="three-choices">
+    <option goto="four-apologetic" speaker="phone">`(Inaudible, apologetic.)`</option>
+    <option goto="four-forceful" speaker="phone">`(Inaudible, forceful.)`</option>
+    <option goto="four-obtuse" speaker="phone">`(Inaudible, obtuse.)`</option>
+  </scene>
+
+  <scene name="four-apologetic" nextScene="four-choices">
+    <line speaker="shannon">No, it's OK, we just need to get to an auto shop and get this taken care of.</line>
+  </scene>
+
+  <scene name="four-forceful" nextScene="four-choices">
+    <line speaker="shannon">Sure, sure, that works for me. Just need to get back on the road, you know?</line>
+  </scene>
+
+  <scene name="four-obtuse" nextScene="four-choices">
+    <line speaker="shannon">That's ... OK. Look, we need to get back on the road here and I'm sure you're busy too ...</line>
+  </scene>
+
+  <scene name="four-choices">
+    <option goto="five-wistful" speaker="phone">`(Inaudible, wistful.)`</option>
+    <option goto="five-maudlin" speaker="phone">`(Inaudible, maudlin.)`</option>
+    <option goto="five-concerned" speaker="phone">`(Inaudible, concerned.)`</option>
+  </scene>
+
+  <scene name="five-wistful" nextScene="five-choices">
+    <line speaker="shannon">Well I'm, uh ... very sorry to interrupt that, but —</line>
+  </scene>
+
+  <scene name="five-maudlin" nextScene="five-choices">
+    <line speaker="shannon">Are you ... Is this a bad time?</line>
+  </scene>
+
+  <scene name="five-concerned" nextScene="five-choices">
+    <line speaker="shannon">Um. Thanks for the offer but we really just need a tow, is all ...</line>
+  </scene>
+
+  <scene name="five-choices">
+    <option goto="six-pragmatic" speaker="phone">`(Inaudible, pragmatic.)`</option>
+    <option goto="six-meticulous" speaker="phone">`(Inaudible, meticulous.)`</option>
+    <option goto="six-neighborly" speaker="phone">`(Inaudible, neighborly.)`</option>
+  </scene>
+
+  <scene name="six-pragmatic" nextScene="six-choices">
+    <line speaker="shannon">Right, yeah. Thanks. OK, it's ... where are we? ... We're out off sixty-five, just kind of pulled up by this tree that fell over —</line>
+  </scene>
+
+  <scene name="six-meticulous" nextScene="six-choices">
+    <line speaker="shannon">Is that, like ... some kind of naval thing? I don't know. We're off sixty-five somewhere, just kind of pulled up by this tree that fell over —</line>
+  </scene>
+
+  <scene name="six-neighborly" nextScene="six-choices">
+    <line speaker="shannon">We, uh ... we already ate. As soon as you can get out here: we're off sixty-five somewhere, just kind of pulled up by this tree that fell over —</line>
+  </scene>
+
+  <scene name="six-choices">
+    <option goto="seven-placating" speaker="phone">`(Inaudible, placating.)`</option>
+    <option goto="seven-specific" speaker="phone">`(Inaudible, specific.)`</option>
+    <option goto="seven-tangential" speaker="phone">`(Inaudible, tangential.)`</option>
+  </scene>
+
+  <scene name="seven-placating" nextScene="seven-choices">
+    <line speaker="shannon">Oh, you do. Great. Yeah, was it a storm or something?</line>
+  </scene>
+
+  <scene name="seven-specific" nextScene="seven-choices">
+    <line speaker="shannon">That's ... actually a pretty accurate description of it, yeah. Hanging over the power lines just like that. Did you see it go down?</line>
+  </scene>
+
+  <scene name="seven-tangential" nextScene="seven-choices">
+    <line speaker="shannon">OK. Well, I don't know any of those people, but that does sound like the right area. You've been over here before?</line>
+  </scene>
+
+  <scene name="seven-choices">
+    <option goto="eight-dismissive" speaker="phone">`(Inaudible, dismissive.)`</option>
+    <option goto="eight-indulgent" speaker="phone">`(Inaudible, indulgent.)`</option>
+    <option goto="eight-assertive" speaker="phone">`(Inaudible, assertive.)`</option>
+  </scene>
+
+  <scene name="eight-dismissive" nextScene="eight-choices">
+    <line speaker="shannon">I guess it doesn't matter. Well, thanks again. We'll see you soon, then. How long do you think you'll be?</line>
+  </scene>
+
+  <scene name="eight-indulgent" nextScene="eight-choices">
+    <line speaker="shannon">OK. My pleasure. How long do you think you'll be?</line>
+  </scene>
+
+  <scene name="eight-assertive" nextScene="eight-choices">
+    <line speaker="shannon">OK. Whatever you need to do. How long do you think you'll be?</line>
+  </scene>
+
+  <scene name="eight-choices">
+    <option goto="nine" speaker="phone">`(Silence.)`</option>
+    <option goto="nine" speaker="phone">`(Radio music.)`</option>
+    <option goto="nine" speaker="phone">`(Distant traffic sounds.)`</option>
+  </scene>
+
+  <scene name="nine" nextScene="end">
+    <line speaker="shannon">Hello?</line>
+  </scene>
+</conversation>

@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="underworld-saw-sinkhole" value="true" />
+    
+    <line>Several hundred feet above the road, a hole torn in the cave wall is leaking sand and dirt. A few pieces of metal debris, painted a vivid red but covered in scratches, are piled on the road below.</line>
+  </scene>
+</conversation>

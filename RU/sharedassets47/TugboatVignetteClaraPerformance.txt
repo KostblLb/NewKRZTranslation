@@ -1,0 +1,21 @@
+# -*- mode: blocking -*-
+
+# TODO Clara's performance. Below is placeholder.
+
+@set Root VignetteClaraPerformance
+
+Main Enable [Root]
+Main Player Clara Player
+Main Message TugboatCameraRig SetPlayer Clara
+Main Warp Clara [Root]/ClaraStartPosition
+Main Exec SnapStaging
+
+@inline SetupOutsideSound
+
+Main Marker Lock
+Main Interact Off
+
+Main Wait 2
+Main Dialog TugboatClaraPerformancePlaceholder
+Main Wait 2
+Main SceneChange Overworld

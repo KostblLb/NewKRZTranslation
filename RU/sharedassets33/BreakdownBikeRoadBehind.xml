@@ -1,0 +1,48 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <triggerEvent name="quarter-turn"/>
+    <setGameVar name="breakdown-bike-talked-about-road-behind" value="true"/>
+    
+    <line speaker="johnny">Is the bike kind of dragging a bit tonight?</line>
+    <option goto="gear" speaker="junebug">We've stripped our gear down pretty bare already.</option>
+    <option goto="jettison" speaker="junebug">If only we had some trash to jettison ...</option>
+  </scene>
+
+  <scene name="gear">
+    <line speaker="johnny">Yeah. Beats hauling a couple guitars and amps around.</line>
+    <option goto="trash" speaker="junebug">I look good with a guitar.</option>
+    <option goto="good-kind" speaker="junebug">You're cute when you're straining yourself.</option>
+  </scene>
+
+  <scene name="jettison">
+    <line speaker="johnny">You know you'd miss me.</line>
+    <option goto="good-kind" speaker="junebug">I only miss you when I know you're coming back.</option>
+    <option goto="good-kind" speaker="junebug">You're the good kind of trash, cricket.</option>
+  </scene>
+
+  <scene name="good-kind">
+    <line speaker="johnny">O-ho. We should write a song about it.</line>
+    <option goto="solo-keytar" speaker="junebug">A fugue for solo keytar.</option>
+    <option goto="dirge" speaker="junebug">A dirge for drums and voice.</option>
+  </scene>
+
+  <scene name="solo-keytar" nextScene="end">
+    <line speaker="johnny">Ha. Maybe for an encore.</line>
+  </scene>
+
+  <scene name="dirge" nextScene="end">
+    <line speaker="johnny">Ha. Very avant garde.</line>
+  </scene>
+
+  <scene name="trash">
+    <line speaker="johnny">It's true. I guess you think I look good standing there with an amplifier under each arm, grinding my gears smooth.</line>
+    <option goto="end" speaker="junebug">Just my type.</option>
+    <option goto="atlas" speaker="junebug">Atlas, son of Jupiter.</option>
+  </scene>
+
+  <scene name="atlas" nextScene="end">
+    <line speaker="johnny">I'm not sure that's right ...</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-feather" value="true" />
+    <line>Shannon pulls a feather from the sand and brushes it clean. When she was a child, she collected feathers — not the way a hobbyist collects trinkets, but the way a clump of dust collects more dust by static electricity. She deposited them on the kitchen table at the end of the day. Weaver's mother said it was unhygienic. Shannon's mother said that was "American germophobe bullshit," and put them in a vase.</line>
+  </scene>
+</conversation>

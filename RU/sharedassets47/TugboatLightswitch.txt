@@ -1,0 +1,9 @@
+# -*- mode: blocking -*-
+
+Main Event continuous-rendering
+Main Message [PLAYER] ContinuousRendering
+Main Message [ACTOR] Toggle
+Main Wait 1
+Main Event used-lightswitch
+Main Message [PLAYER] PeriodicRendering
+Main Event periodic-rendering

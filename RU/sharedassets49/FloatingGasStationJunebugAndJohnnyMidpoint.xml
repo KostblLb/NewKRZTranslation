@@ -1,0 +1,36 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-section" value="johnny-inside" />
+    
+    <goto condition="floating-gas-station-junebug-errand=coffee" scene="intro-coffee" />
+    <goto condition="floating-gas-station-junebug-errand=snacks" scene="intro-snacks" />
+    <goto condition="floating-gas-station-junebug-errand=crystals" scene="intro-crystals" />    
+  </scene>
+
+  <scene name="intro-coffee" nextScene="luck">
+    <line speaker="johnny">No coffee?</line>
+    <line speaker="junebug">Somebody spilled it all. It looked pretty old anyway — I'm not sure that old man would have had the constitution for it.</line>
+    <line speaker="johnny">Aw. You're always thinking of other people's stomachs, ma'am.</line>
+    <line speaker="johnny">You know — I think I'll go take a look after all. Wish me luck.</line>
+  </scene>
+
+  <scene name="intro-crystals" nextScene="luck">
+    <line speaker="johnny">What's that?</line>
+    <line speaker="junebug">It's a crystal. I bought it for you.</line>
+    <line speaker="johnny">Wow. Thank you, ma'am.</line>
+    <line speaker="johnny">Hey, could you hold onto it for a minute? I'm going to look around inside. Wish me luck.</line>
+  </scene>
+
+  <scene name="intro-snacks" nextScene="luck">
+    <line speaker="junebug">Sorry, cricket — nothing good on offer.</line>
+    <line speaker="johnny">Not even those little gummy pomegranate seeds?</line>
+    <line speaker="junebug">I didn't look.</line>
+    <line speaker="johnny">It's OK, I'll go check. Wish me luck.</line>
+  </scene>
+
+  <scene name="luck">
+    <option speaker="junebug" goto="end">Good luck.</option>
+    <option speaker="junebug" goto="end">Don't take too long.</option>    
+  </scene>
+</conversation>

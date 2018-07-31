@@ -1,0 +1,49 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <setGameVar name="elkhorn-mine-found-recording-stage" value="true"/>
+    
+    <line speaker="shannon">Damn. It's almost totally intact. I thought it would have been destroyed.</line>
+    <option goto="what-is-this-place" speaker="conway">What is this place?</option>
+    <option goto="destroyed-by-what" speaker="conway">Destroyed by what?</option>
+  </scene>
+
+  <scene name="destroyed-by-what" nextScene="what-is-this-place">
+    <line speaker="shannon">When the mine flooded, I mean. It looks so fragile, doesn't it?</line>
+  </scene>
+
+  <scene name="what-is-this-place" nextScene="route-archivists">
+    <line speaker="shannon">It's a recording studio, basically. Kind of thrown together, but ...</line>
+  </scene>
+  
+  <scene name="route-archivists">
+    <goto condition="!elkhorn-mine-heard-about-archivists" sceneName="archivists-first-time"/>
+    <goto condition="elkhorn-mine-heard-about-archivists" sceneName="archivists-again"/>    
+  </scene>
+  
+  <scene name="archivists-first-time" nextScene="questions">
+    <setGameVar name="elkhorn-mine-heard-about-archivists" value="true"/>    
+    
+    <line speaker="shannon">When this mine was active, a couple of folk music archivists spent time here recording miners' songs. Really academic, ivory tower types. None of the miners really talked to them much.</line>
+    <line speaker="shannon">So they stayed at the margins, observed, took notes, and then sometimes they'd get someone on a lunch break to sing into their microphone.</line>
+    <line speaker="shannon">Then I guess the power company got some kind of interest in the project, and gave the archivists some coal scrip tokens to pay the miners with for their songs.</line>
+  </scene>
+
+  <scene name="archivists-again" nextScene="questions">
+    <line speaker="shannon">This is where the archivists would record, and I guess then they'd sequester themselves down by that tape deck we found, to listen to the recorded songs.</line>
+  </scene>
+
+  <scene name="questions">
+    <option goto="did-shannon-come-here" speaker="conway">Did you ever come down here?</option>
+    <option goto="what-were-archivists-after" speaker="conway">What do you think the archivists were after?</option>
+  </scene>
+
+  <scene name="did-shannon-come-here" nextScene="end">
+    <line speaker="shannon">Yeah, I came here with my parents once or twice. They used to play music here, even when those archivists weren't around. It was a nice setup; kinda rickety, kinda dangerous, I guess, but ... I don't know. It had a good energy. It was warm, sometimes.</line>
+  </scene>
+
+  <scene name="what-were-archivists-after" nextScene="end">
+    <line speaker="shannon">Data, I guess? Comparing intonation, subject matter, diction ... you know, all those little details that no one really thinks about when they listen to music. Yeah, academics are great at that stuff. Let's get out of here.</line>
+  </scene>
+
+</conversation>

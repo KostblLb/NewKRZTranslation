@@ -1,0 +1,92 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="julian-pickup">
+  <scene name="intro">
+    <line speaker="ezra">I saw you folks drive up. I like your truck! What kind of truck is that?</line>
+    <option goto="just-drive" speaker="conway">It doesn't belong to me, I just drive it.</option>
+    <option goto="only-one-that-runs" speaker="conway">We've got a couple of them at the shop, but this is the only one that runs.</option>
+    <option goto="dr-truman" speaker="shannon">Do you know where Dr. Truman is?</option>
+  </scene>
+
+  <scene name="just-drive">
+    <line speaker="ezra">Yeah, I knew you were a driver! What's the biggest haul you ever did?</line>
+    <option goto="pool-table" speaker="conway">I moved a pool table once, in that same truck.</option>
+    <option goto="horse" speaker="conway">I moved a couple horses once, in a different truck.</option>
+  </scene>
+
+  <scene name="pool-table" nextScene="move-houses-responses">
+    <line speaker="ezra">Me and Julian move whole houses, every night! That's a lot bigger than a pool table.</line>
+  </scene>
+
+  <scene name="horse" nextScene="move-houses-responses">
+    <line speaker="ezra">Me and Julian move whole houses, every night! That's a lot bigger than a couple horses.</line>
+  </scene>
+
+  <scene name="only-one-that-runs" nextScene="move-houses-responses">
+    <line speaker="ezra">Oh yeah, with a truck you've got to keep it up. That's why me and Julian don't use a truck. We just carry the houses!</line>
+  </scene>
+
+  <scene name="move-houses-responses">
+    <option goto="impressive" speaker="conway">That sounds very impressive.</option>
+    <option goto="who-is-julian" speaker="conway">Who's Julian?</option>
+    <option goto="where-houses" speaker="conway">Where do you take the houses?</option>
+  </scene>
+
+  <scene name="impressive" nextScene="where-houses">
+    <line speaker="ezra">Yeah, it's a big job.</line>
+  </scene>
+
+  <scene name="who-is-julian">
+    <line speaker="ezra">Julian's my brother. He's a lot bigger and stronger, and he has more feathers than me, but he's still my brother.</line>
+    <option goto="where-are-parents" speaker="conway">Where are your parents?</option>
+    <option goto="where-houses" speaker="conway">Where do you take the houses?</option>
+  </scene>
+
+  <scene name="where-are-parents">
+    <line speaker="ezra">Well, I don't know where they are. Me and Julian were looking for them for a while, but ... Well, now we have a job to do: got to move these houses.</line>
+    <option goto="where-houses" speaker="conway">Where do you take the houses?</option>
+    <option goto="dr-truman" speaker="shannon">Do you know where Dr. Truman is?</option>
+  </scene>
+
+  <scene name="where-houses">
+    <line speaker="ezra">Me and Julian take them out to the forest every night. And then we bring them back at dawn, before the museum opens.</line>
+    <option goto="forest" speaker="conway">Why do you take them to the forest?</option>
+    <option goto="dr-truman" speaker="shannon">Is Dr. Truman in the forest?</option>
+  </scene>
+
+  <scene name="dr-truman" nextScene="forest">
+    <setGameVar name="museum-heard-truman-is-in-forest" value="true"/>
+    <line speaker="ezra">Yes, ma'am. He's out in the forest. Me and Julian took him out there a few nights ago and he didn't want to come back. He lives there all the time now.</line>
+  </scene>
+
+  <scene name="forest">
+    <line speaker="ezra">This museum is an OK place to live in the daytime, but it's no good at night. Folks just can't sleep in a place like this; or when they do it gives them nightmares. So we take them out to the forest to sleep, and then bring them back in the morning.</line>
+    <option goto="ezra-family-forest" speaker="conway">Is your family out in the forest?</option>
+    <option goto="conway-tired" speaker="conway">I'm getting pretty tired myself.</option>
+    <option condition="!museum-heard-truman-is-in-forest" goto="dr-truman-forest" speaker="shannon">And Dr. Truman is in the forest already?</option>
+  </scene>
+
+  <scene name="conway-tired" nextScene="dr-truman-forest">
+    <line condition="!museum-heard-truman-is-in-forest" speaker="shannon">He hurt his leg. We're looking for Dr. Truman to help him out. Is he out in the forest?</line>
+    <line condition="museum-heard-truman-is-in-forest" speaker="shannon">He hurt his leg. We're looking for Dr. Truman to help him out.</line>    
+  </scene>
+
+  <scene name="dr-truman-forest">
+    <line condition="!museum-heard-truman-is-in-forest" speaker="ezra">Yes, ma'am. He's out in the forest. Me and Julian took him out there a few nights ago and he didn't want to come back. He lives there all the time now.</line>
+    <option goto="ezra-family-forest" speaker="conway">Is your family out in the forest?</option>
+    <option goto="forest-directions" speaker="shannon">Can you tell us how to get there?</option>
+  </scene>
+
+  <scene name="ezra-family-forest" nextScene="forest-directions">
+    <line speaker="ezra">Oh, no, they're ... I don't know where they are. Me and Julian were looking for them for a while, but ...</line>
+    <line speaker="ezra">Anyway, we have a job to do here now, taking these people out to the forest at night so they can sleep. And maybe if the rest of them will be like Dr. Truman and want to stay out there, we'll get back to looking.</line>
+    <line speaker="shannon">Can you tell us how to get to the forest?</line>
+  </scene>
+
+  <scene name="forest-directions" nextScene="end">
+    <line speaker="ezra">You have to follow the Green river way out east, and then hop over Lake Cumberland! The roads don't go there.</line>
+    <line speaker="ezra">But me and Julian can take you. We were just about to go anyway.</line>
+    <line speaker="ezra">I've just got to call him over:</line>
+    <line speaker="ezra">`(Yelling.)` KUK-*KUK*-KUK-*KUK* Hyyyyyyyyy-*aaaaaaa*!</line>
+  </scene>
+
+</conversation>

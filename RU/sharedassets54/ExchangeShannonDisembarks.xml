@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="conway">Careful up there. Can't drive your new truck if you slip and break your legs!</line>
+    <option goto="end" speaker="shannon">I'll be careful.</option>
+    <option goto="bad-deals" speaker="shannon">You too — try not to make any more bad deals while I'm gone ...</option>
+    <option goto="fall-asleep" speaker="shannon">Just don't fall asleep.</option>
+  </scene>
+
+  <scene name="bad-deals" nextScene="dont-look-back">
+    <line speaker="conway">Ha ha. I'll just be floating along down here.</line>
+  </scene>
+
+  <scene name="fall-asleep" nextScene="dont-look-back">
+    <line speaker="conway">Oh, very little risk of that. I've got a lot on my mind.</line>
+  </scene>
+
+  <scene name="dont-look-back" nextScene="end">
+    <line speaker="conway">I just mean keep your eyes open. And don't look back.</line>
+  </scene>
+  
+</conversation>

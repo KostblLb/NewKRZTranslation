@@ -1,0 +1,19 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="tavern-listened-at-door" value="true"/>
+    
+    <line speaker="shannon">Strange. Sounds like music coming from inside, but the sign says &quot;closed.&quot;</line>
+    <option goto="cleaning" speaker="conway">Maybe they're cleaning.</option>
+    <option goto="leave" speaker="conway">I probably shouldn't be going into any bars, anyway.</option>
+  </scene>
+
+  <scene name="cleaning" nextScene="end">
+    <line speaker="shannon">Yeah, just sounds ... I don't know. This place kind of creeps me out. It's OK, I'll just get a coke on the road somewhere.</line>
+  </scene>
+
+  <scene name="leave" nextScene="end">
+    <line speaker="shannon">Oh, yeah, of course. Sorry, I just wanted a coke.</line>
+  </scene>
+
+</conversation>

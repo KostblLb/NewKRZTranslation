@@ -1,0 +1,171 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-junebug-talked-to-norm" value="true" />
+    <line speaker="norm">`(To ATTENDANT.)` Shit, that floodwater washed you halfway up out to sea — I was looking for you down by New Königsberg same as usual but ain't nobody there, and the river's deep as an elephant's —</line>
+    <line speaker="norm">`(Noticing JUNEBUG.)` Oh, didn't see you there, ma'am — pardon my language.</line>
+    <option goto="elephant" speaker="junebug">What, "elephant?"</option>
+    <option goto="headed" speaker="junebug">Where are you headed?</option>
+  </scene>
+
+  <scene name="elephant" nextScene="loretta">
+    <line speaker="norm">Ha ha. Alright, you're no paper flower, I see that.</line>
+  </scene>
+
+  <scene name="headed" nextScene="loretta">
+    <line speaker="norm">Well, in fact, I'm headed right here — glad to have found it at last!</line>
+  </scene>
+
+  <scene name="loretta">
+    <line speaker="norm">`(Extending his hand, warmly.)` I expect you must be Loretta. Enchanted to meet you, sorry I'm late ... hey, is that coming on too flowery or something? "Enchanted?" Repeating it now, I feel a little silly ...</line>
+    <option goto="enchanted-fine" speaker="junebug">I'm not Loretta, but I think you'll do fine with 'enchanted.'</option>
+    <option goto="enchanted-old-fashioned" speaker="junebug">'Enchanted' sounds pretty old-fashioned — is that the kind of gal Loretta is?</option>
+  </scene>
+
+  <scene name="enchanted-fine" nextScene="not-loretta">
+    <line speaker="norm">Well, thanks for saying so!</line>
+  </scene>
+
+  <scene name="enchanted-old-fashioned" nextScene="not-loretta">
+    <line speaker="norm">Hm. I guess I don't know.</line>
+  </scene>
+
+  <scene name="not-loretta">
+    <line speaker="norm">But now I'm double-embarrassed.</line>
+    <option goto="how-do-you-know" speaker="junebug">How do you know Loretta?</option>
+    <option goto="look-like-loretta" speaker="junebug">Do I look like her?</option>
+    <option goto="funny-place" speaker="junebug">You picked a funny place to meet.</option>
+  </scene>
+
+  <scene name="how-do-you-know" nextScene="computer-love">
+    <line speaker="norm">I really don't!</line>
+  </scene>
+
+  <scene name="look-like-loretta" nextScene="computer-love">
+    <line speaker="norm">To be truthful, I couldn't tell you!</line>
+  </scene>
+
+  <scene name="funny-place" nextScene="computer-love">
+    <line speaker="norm">You're probably right about that. I guess I thought it'd be like "neutral territory," and we both live on the river ... it's not very romantic though, is it?</line>
+  </scene>
+
+  <scene name="computer-love">
+    <line speaker="norm">I met Loretta on the computer. We met each other there, I mean. Or, I guess, we spoke through the computer, and agreed to meet? I don't know the terminology ... I haven't dated in quite a while. Back when I met Greta — that's my wife, excuse me, my "ex," or maybe `I` am `her` ex? I don't know how to say it ...</line>
+    <line speaker="norm">Anyway, back then there wasn't even such a thing as computers at all! I mean, I guess there probably was, but I never heard of one. I worked in textiles.</line>
+    <line speaker="norm">So, here I am.</line>
+    
+    <option goto="wife" speaker="junebug">Didn't work out with Greta?</option>
+    <option goto="date-plan" speaker="junebug">So what's your plan, when Loretta shows up?</option>
+  </scene>
+
+  <scene name="wife" nextScene="missed-her">
+    <line speaker="norm">She left me! I'm sure I can't blame her. Ha ha.</line>
+  </scene>
+
+  <scene name="date-plan" nextScene="missed-her">
+    <line speaker="norm">Oh, maybe head down to The Rum Colony. Shoot, I forgot to ask if she likes to drink. You really never know, these days. I guess first I'd ask her about that. If she doesn't like rum, I'd maybe try to take her by the bat sanctuary. That's pretty romantic, in a sense. I mean like misty-valleys-and-ruined-churches romantic, not like flowers-and-chocolates romantic.</line>
+    <line speaker="norm">Of course, they've got that memorial there. That's a little depressing, actually. Maybe we'd kind of sail `around` that ...</line>
+  </scene>
+
+  <scene name="missed-her">
+    <line speaker="norm">Damn it all, I guess I probably missed her. I wonder if she'll agree to meet me again.</line>
+    <option goto="shell-understand" speaker="junebug">I'm sure she'll understand, with the weather and all.</option>
+    <option goto="i-wouldnt" speaker="junebug">I wouldn't, if I thought I'd been stood up.</option>
+  </scene>
+
+  <scene name="shell-understand" nextScene="head-back">
+    <line speaker="norm">Nice of you to say so.</line>
+  </scene>
+
+  <scene name="i-wouldnt" nextScene="head-back">
+    <line speaker="norm">Can't say I would either. You're probably right.</line>
+  </scene>
+
+  <scene name="head-back">
+    <line speaker="norm">Well, I guess I'll head on back ...</line>
+    <line speaker="norm">Hey, um. Supposing Loretta doesn't want to see me after all ...</line>
+    <option goto="already-in-a-thing" speaker="junebug">My card is full.</option>
+    <option goto="out-of-your-league" speaker="junebug">I'm out of your league.</option>
+  </scene>
+
+  <scene name="already-in-a-thing" nextScene="advice">
+    <line speaker="norm">Oh! No, sorry, that's not what I meant.</line>
+  </scene>
+
+  <scene name="out-of-your-league" nextScene="advice">
+    <line speaker="norm">Ha ha. I won't argue with that.</line>
+  </scene>
+
+  <scene name="advice" nextScene="personal-ad">
+    <line speaker="norm">Actually, I wanted to ask you for some advice. I had to type up a sort of "autobiography" for the computer date, and I spent a lot of time on it but I only got one reply, and that was Loretta herself. I was happy to meet her, but ... supposing she's lost interest now ...</line>
+    <line speaker="norm">Do you think you could maybe give me some feedback? It's only a paragraph or so. I have it all memorized — I spent so damn long writing it!</line>
+    <line speaker="norm">OK. Here's how it goes:</line>
+  </scene>
+
+  <!-- Personal ad critique -->
+  
+  <scene name="personal-ad" nextScene="critique-options">
+    <line speaker="norm">`"I'm a good-natured man, retired, and spend most of my time sailing the Echo River, riding currents of subterranean gas and that strange invisible wind that moans out of the small tunnels along the bank."`</line>
+    <line speaker="norm">`"Seeking a companion to map the river with me. I have two grown children but they live far away."`</line>
+    <line speaker="norm">`"No goofballs."`</line>
+
+    <line speaker="norm">OK. What do you think?</line>
+  </scene>
+
+  <scene name="critique-options">
+    <goto sceneName="personal-done" condition="floating-gas-station-critique-count[gt]2" />
+    
+    <option speaker="junebug" goto="wind" condition="!floating-gas-station-junebug-critiqued-wind-line">The thing about the wind is a little much.</option>
+    <option speaker="junebug" goto="children" condition="!floating-gas-station-junebug-critiqued-children-line">Why mention your children?</option>
+    <option speaker="junebug" goto="goofballs" condition="!floating-gas-station-junebug-critiqued-goofballs-line">What was that about "goofballs?"</option>    
+    <option speaker="junebug" goto="personal-done">You'll be fine.</option>
+  </scene>
+  
+  <scene name="wind" nextScene="critique-options">
+    <setGameVar name="floating-gas-station-critique-count" value="+1" />
+    <setGameVar name="floating-gas-station-junebug-critiqued-wind-line" value="true" />    
+    <line speaker="norm">Yeah, you're probably right. I wanted to show my poetic side ... I'll save that for the date.</line>
+  </scene>
+
+  <scene name="children">
+    <setGameVar name="floating-gas-station-critique-count" value="+1" />
+    <setGameVar name="floating-gas-station-junebug-critiqued-children-line" value="true" />
+    <line speaker="norm">Oh, just ... I figure it'll come up somehow? I don't know how people feel about dating with kids. Like I said, it's been a while.</line>
+    <option speaker="junebug" goto="children-embarrassed">Are you embarrassed?</option>
+    <option speaker="junebug" goto="children-proud">Are you proud?</option>    
+  </scene>
+
+  <scene name="children-embarrassed" nextScene="critique-options">
+    <line speaker="norm">Hm.</line>
+    <line speaker="norm">Maybe I'm afraid it overstates my age a little ... ha ha.</line>
+  </scene>
+
+  <scene name="children-proud" nextScene="critique-options">
+    <line speaker="norm">Yeah, sure I am. My son is a schoolteacher and my daughter owns a printing press. Good people. Yeah, maybe I just mentioned it there hoping I'll get asked to brag a little. Ha ha.</line>
+  </scene>
+
+  <scene name="goofballs" nextScene="critique-options">
+    <setGameVar name="floating-gas-station-critique-count" value="+1" />
+    <setGameVar name="floating-gas-station-junebug-critiqued-goofballs-line" value="true" />
+    <line speaker="norm">I mean like `"serious inquiries only."`</line>
+
+    <option speaker="junebug" goto="wasting-time">Worried about people wasting your time?.</option>
+    <option speaker="junebug" goto="great-goofballs">You might miss out on some really great goofballs.</option>
+  </scene>
+
+  <scene name="wasting-time" nextScene="critique-options">
+    <line speaker="norm">Oh, no. I've got nothing but time ...</line>
+    <line speaker="norm">I guess it's more like I want the person reading it to know that `I'm` not a goofball — I'm ready to show up.</line>
+  </scene>
+
+  <scene name="great-goofballs" nextScene="critique-options">
+    <line speaker="norm">Ha ha. You may be right about that.</line>
+  </scene>
+  
+  <scene name="personal-done" nextScene="end">
+    <line speaker="norm" condition="floating-gas-station-critique-count=0">Well, alright, then! Sounds like I'm ready to get back on that computer.</line>    
+    <line speaker="norm" condition="floating-gas-station-critique-count=1|floating-gas-station-critique-count=2">Alright. Thanks for your help, ma'am. Really renewed my confidence! I'm ready to get back on that computer.</line>
+    <line speaker="norm" condition="floating-gas-station-critique-count=3">Alright. Thanks for your help, ma'am. You've given me a lot to think about. I'm ready to get back on that computer.</line>    
+    <line speaker="norm">You have a good night, now — what's left of it, anyway!</line>
+  </scene>
+</conversation>

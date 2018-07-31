@@ -1,0 +1,658 @@
+# -*- mode: blocking -*-
+
+# Initial state
+
+@func SetupInitialState
+
+  Main Disable Coconut
+  Main Look Skeleton1 Conway
+  Main Look Skeleton2 Conway
+  Main Look Skeleton3 Conway
+  Main Disable Skeleton1
+  Main Disable Skeleton2
+  Main Disable Skeleton3
+
+@end
+
+# Common
+
+@func DisableAllActors
+
+  Main Disable ActorsDoorways
+  Main Disable ActorsVideoRoom
+  Main Disable ActorsBooks
+  Main Disable ActorsPhoneCall
+  Main Disable ActorsCalendar
+  Main Disable ActorsTapePlayer
+
+@end
+
+@func DisableInteraction
+
+  Main Marker Lock
+  Main Cursor Hide
+  Main Interact Off
+  
+@end
+
+@func EnableInteraction
+
+  Main Marker Unlock
+  Main Cursor Show
+  Main Interact On
+  
+@end
+
+# Doorways
+
+@func EnterDoorways [StartPosition]
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Enable ActorsDoorways
+  Main Message LabVideoTitler SetTape Doorways
+  Main Message LabVideoCamera SetReference LabDoorways/CameraTransform/Camera
+  Main Warp Shannon [StartPosition]
+  Main Wait 0.1 # Let physics detect player collision
+  Main Message LabDoorways/CameraTransform/Camera Snap
+
+@end
+
+# Doorways seated at table
+
+@func EnterDoorwaysSeatedAtTable
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Enable ActorsDoorways
+  Main Message LabVideoTitler SetTape Doorways
+  Main Warp Shannon LabDoorways/TableSitPosition
+  Main Wait 0.1 # Let physics detect player collision
+  Main Gesture Shannon Enter SitTable
+  Main Set temp:player-sitting true
+  Main Message LabVideoCamera SetReference LabDoorways/CameraTransform/Camera
+  Main Message LabDoorways/CameraTransform/Camera Snap
+
+@end
+
+# Video room
+
+@func EnterVideoRoom
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Enable ActorsVideoRoom
+  Main Message LabVideoTitler SetTape VideoRoom
+  Main Set temp:allow-exam false
+  Main Warp Shannon LabVideoRoom/SubjectStartPosition
+  Main Wait 0.1 # Let physics detect player collision
+  Main Message LabVideoRoom/CameraTransform/Camera Snap
+  Main Message LabVideoCamera SetReference LabVideoRoom/CameraTransform/Camera
+
+@end
+
+# Books
+
+@func EnterBooks
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Enable ActorsBooks
+  Main Message LabVideoTitler SetTape Books
+  Main Message LabBooks/ShannonReading StartReading
+  Main Message LabBooks/ShannonReading LeftPage
+  Main Message LabBooks/ShannonReading SetPose 1
+  Main Message LabBooks/ShannonReading SetBoredom 0
+  Main Message LabVideoCamera SetReference LabBooks/CameraTransform/Camera
+
+@end
+
+@func FirstReadingPose
+
+  Books Message LabVideoCamera NoSignal
+  Books Message LabVideoTitler SetTimeDelta 313
+  Books Message LabBooks/ShannonReading SetPose 1
+  Books Message LabBooks/ShannonReading SetBoredom 0
+  Books Wait 0.5
+  Books Message LabVideoCamera SetReference LabBooks/CameraTransform/Camera
+
+@end
+
+@func SecondReadingPose
+
+  Books Message LabVideoCamera NoSignal
+  Books Message LabVideoTitler SetTimeDelta 278
+  Books Message LabBooks/ShannonReading SetPose 2
+  Books Message LabBooks/ShannonReading SetBoredom 0.5
+  Books Wait 0.5
+  Books Message LabVideoCamera SetReference LabBooks/CameraTransform/Camera
+
+@end
+
+@func ThirdReadingPose
+
+  Books Message LabVideoCamera NoSignal
+  Books Message LabVideoTitler SetTimeDelta 523
+  Books Message LabBooks/ShannonReading SetPose 3
+  Books Message LabBooks/ShannonReading SetBoredom 1
+  Books Wait 0.5
+  Books Message LabVideoCamera SetReference LabBooks/CameraTransform/Camera
+
+@end
+
+# Phone call
+
+@func EnterPhoneCall
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Enable ActorsPhoneCall
+  Main Message LabVideoTitler SetTape PhoneCall
+  Main Warp Shannon LabPhoneCall/SubjectStartPosition
+  Main Message LabVideoCamera SetReference LabPhoneCall/CameraTransform/Camera
+
+@end
+
+@func FocusOnWill
+
+  Phone Message LabPhoneCall/CameraTransform/Camera SetAngleOverlayX -8
+  Phone Message LabPhoneCall/CameraTransform/Camera SetAngleOverlayY -2
+  Phone Message LabPhoneCall/CameraTransform/Camera SetFovOverlay -5
+
+@end
+
+@func ResetPhoneCamera
+
+  Phone Message LabPhoneCall/CameraTransform/Camera SetAngleOverlayX 0
+  Phone Message LabPhoneCall/CameraTransform/Camera SetAngleOverlayY 0
+  Phone Message LabPhoneCall/CameraTransform/Camera SetFovOverlay 0
+
+@end
+
+# Calendar
+
+@func EnterCalendar
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Enable ActorsCalendar
+  Main Message LabVideoTitler SetTape Calendar
+  Main Warp Shannon LabCalendar/SubjectStartPosition
+  Main Message LabVideoCamera SetReference LabCalendar/CameraTransform/Camera
+
+@end
+
+# Tape player
+
+@func EnterTapePlayer
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Enable ActorsTapePlayer
+  Main Message LabVideoTitler SetTape TapePlayer
+  Main Warp Shannon LabTapePlayer/SubjectStartPosition
+  Main Message LabVideoCamera SetReference LabTapePlayer/CameraTransform/Camera
+
+@end
+
+# Waiting Room
+@func EnterWaitingRoom
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Message LabVideoTitler SetTape WaitingRoom
+  Main Message LabVideoCamera SetReference LabWaitingRoom/CameraTransform/Camera
+
+@end
+
+# Dock
+@func EnterDock
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Message LabVideoTitler SetTape Dock
+  Main Message LabVideoCamera SetReference LabDock/CameraTransform/Camera
+
+@end
+
+# Monitoring
+@func EnterMonitoring
+
+  @inline DisableAllActors
+
+  Main Message LabVideoCamera NoSignal
+  Main Message LabVideoTitler SetTape Monitoring
+  Main Message LabVideoCamera SetReference LabMonitoring/CameraTransform/Camera
+
+@end
+
+# Introduction
+@func GotoIntroduction
+
+  Main Set lab-bookmark introduction
+  Main Event save
+  Main Event hum-on
+  @inline EnterMonitoring
+  @inline DisableInteraction
+  Main Wait 2  
+  Main Audio* Play jenn-enters-room
+  Main Audio SetPan jenn-enters-room 0.7
+  Main Wait 5
+  @inline EnableInteraction
+  Main Dialog LabIntroduction
+  @inline GotoFirstTest
+
+@end
+
+@func GotoFirstTest
+
+  Main Set lab-bookmark first-test
+  Main Event save  
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  Main Set lab-doorways-sub-scene arrival
+  Main Message LabDoorways SetupFurnitureCurtainOpen
+  @inline PlayInsertSound
+  @inline EnterDoorways LabDoorways/SubjectStartPosition
+  @inline EnableInteraction
+
+@end
+
+@func GotoDockOne
+
+  Main Set lab-bookmark dock-one
+  Main Event save
+  Main Message LabDock/LabPaperBoat Launch ? three:museum-parking-completed-boat-watch
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Gesture Shannon ResetAll
+  Main Wait 2
+  @inline PlayInsertSound
+  @inline EnterDock
+  Main Warp Ezra LabDock/EzraStart
+  Main Warp Shannon LabDock/ShannonStart
+  @inline EnableInteraction
+  Main Marker Lock
+  Main Audio* FadeIn dock-ambience 1
+  Main Audio* FadeIn dock-fan 2
+  
+@end
+
+@func LeaveDockIfAllConversationsDone
+  Main Set lab-dock-intro-done true ? lab-dock-looked-at-will+lab-dock-looked-at-shannon
+  Main Exec LeaveDock ? lab-dock-looked-at-will+lab-dock-looked-at-shannon
+
+@end
+
+@func LeaveDock
+
+  Main Marker Unlock # removing extra marker lock from GotoDockone
+  @inline DisableInteraction
+  Main Walk* Shannon LabDock/ShannonPosition1
+  Main Wait 0.5
+  Main Walk* Will LabDock/WillPosition1
+  Main Fork Ezra
+  Ezra Look Ezra Conway
+  Ezra Look Conway Ezra
+  Ezra Walk Ezra LabDock/EzraPosition1
+  Ezra Wait 4
+  Ezra Unlook Ezra
+  Ezra Run* Ezra LabDock/EzraPosition2
+  Ezra Wait 4
+  Ezra Unlook Conway
+  Main Wait 2
+  Main Sync Ezra
+  @inline EnableInteraction
+  Main Dialog LabDockArrivalSummary ScreenPlacement &0.5,0.2,0
+  @inline DisableInteraction
+  Main Wait 2
+  Main Audio* FadeOut dock-ambience 0.125
+  Main Audio* FadeOut dock-fan 0.125
+  @inline EnableInteraction
+  @inline GotoControlTest
+
+@end
+
+@func GotoControlTest
+
+  Main Set lab-bookmark control-test
+  Main Event save
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  Main Set lab-doorways-sub-scene control
+  Main Message LabDoorways SetupFurnitureCurtainOpen
+  @inline PlayInsertSound
+  @inline EnterDoorwaysSeatedAtTable
+  Main Wait 2
+  @inline EnableInteraction
+  @inline DisableAllActors
+
+  # Extra marker lock because a player managed to get here with the
+  # marker unlocked somehow. Unlocked below just before SetBlank.
+  Main Marker Lock
+  Main Dialog LabControlTest
+    
+  @inline DisableInteraction
+  Main Wait 2
+  @inline PlayEjectSound
+  Main Marker Unlock
+  Main Message LabVideoCamera SetBlank
+
+  Main Gesture Shannon ResetAll
+  Main Set temp:player-sitting false  
+  Main Set temp:player-at-table false
+  
+  Main Wait 2
+  @inline PlayInsertSound
+
+  Main Exec GotoCurtains ? three:xanadu-shannon-story=wordy
+  Main Exec GotoDoor ? three:xanadu-shannon-story=vain
+
+@end
+
+@func GotoCurtains
+
+  Main Set lab-bookmark curtains
+  Main Set temp:completed-exam true
+  Main Set lab-doorways-sub-scene curtains
+  Main Event save
+  Main Message LabDoorways SetupFurnitureCurtainDrawn
+  @inline EnterDoorways LabDoorways/SubjectStartPosition
+  @inline EnableInteraction
+
+@end
+
+@func GotoDoor
+
+  Main Set lab-bookmark door
+  Main Set temp:completed-exam true
+  Main Set lab-doorways-sub-scene door
+  Main Event save
+  Main Message LabDoorways SetupDoorway
+  @inline EnterDoorways LabDoorways/SubjectStartPosition
+  @inline EnableInteraction
+
+@end
+
+@func GotoCarryObject
+
+  Main Set lab-bookmark carry-object
+  Main Event save  
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabDoorways/CameraTransform/Camera SetFovOverlay -14
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  Main Set temp:completed-exam true
+  Main Set lab-doorways-sub-scene cat
+  Main Gesture Shannon ResetAll
+  Main Message LabDoorways SetupCat
+  @inline PlayInsertSound
+  @inline EnterDoorways LabDoorways/SubjectStartPositionCat
+  Main Turn Shannon LabDoorways/LabCatGroup/LabCat
+  Main Audio* FadeIn meows 2
+  Main Wait 2
+  Main Fork ZoomOut
+  ZoomOut Wait 1
+  ZoomOut Message LabDoorways/CameraTransform/Camera SetFovOverlay 0
+  @inline EnableInteraction
+  Main Dialog LabCarryObjectTestFirstConversation
+
+@end
+
+@func GotoTapePlayer
+
+  Main Set lab-bookmark tape-player
+  Main Event save  
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  @inline PlayInsertSound
+  @inline EnterTapePlayer
+  @inline EnableInteraction
+
+@end
+
+@func GotoWaitingRoom
+
+  Main Set lab-bookmark waiting-room
+  Main Event save  
+  @inline DisableInteraction
+  Main Wait 2
+  Main Audio* FadeOut tape-loop 0.125
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  Main Set temp:player-sitting false
+  Main Gesture Shannon ResetAll
+  @inline PlayInsertSound
+  Main Audio* FadeIn waiting-room 2
+  @inline EnterWaitingRoom
+  Main Wait 4
+  @inline EnableInteraction
+  Main Dialog LabWaitingRoom
+  @inline DisableInteraction
+  Main Wait 2
+  Main Audio* FadeOut waiting-room 0.125
+  @inline EnableInteraction
+
+  Main Exec GotoCalendar ? lab-final-route=calendar
+  Main Exec GotoVideoRoom ? lab-final-route=video
+  Main Exec GotoBooks ? lab-final-route=books
+
+@end
+
+@func GotoVideoRoom
+
+  Main Set lab-bookmark video-room
+  Main Event save  
+  Main Set temp:completed-exam false
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  @inline PlayInsertSound
+  @inline EnterVideoRoom
+  Main Wait 2
+  @inline EnableInteraction
+  Main Dialog LabVideoIntro
+
+@end
+
+@func GotoBooks
+
+  Main Set lab-bookmark books
+  Main Event save  
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  @inline PlayInsertSound
+  @inline EnterBooks
+  Main Wait 2
+  @inline EnableInteraction
+  Main Dialog LabTestBooks
+  Main Gesture Shannon ResetAll
+
+  @inline GotoOrSkipPhoneCall
+
+@end
+
+@func GotoPhoneCall
+
+  Main Set lab-bookmark phone-call
+  Main Event save  
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Gesture Shannon ResetAll  
+  Main Wait 2
+  @inline PlayInsertSound
+  @inline EnterPhoneCall
+  Main Wait 2
+  @inline EnableInteraction
+  Main Dialog LabPhoneTestIntro
+
+@end
+
+@func GotoCalendar
+
+  Main Gesture Shannon ResetAll
+  Main Set lab-bookmark calendar
+  Main Event save  
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  @inline PlayInsertSound
+  @inline EnterCalendar
+  @inline EnableInteraction
+
+@end
+
+@func GotoMonitoringEnd
+
+  Main Set lab-bookmark monitoring
+  Main Event save  
+  Main Enable Coconut
+  Main Warp Ezra LabMonitoring/EzraStart
+
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  @inline PlayInsertSound
+  @inline EnterMonitoring
+  Main Wait 2
+  Main Look Ezra Coconut
+  Main Look Coconut Ezra
+  Main Walk Ezra LabMonitoring/EzraPosition1
+  Main Wait 3
+  Main Walk* Ezra LabMonitoring/EzraPosition2
+  Main Wait 3
+  Main Walk* Coconut LabMonitoring/CatPosition1
+  @inline EnableInteraction
+  Main Wait 1  
+  Main Dialog LabCatInMonitoringRoom
+  @inline DisableInteraction
+
+  @inline GotoDockEnding
+
+@end
+
+@func GotoDockEnding
+
+  Main Set lab-bookmark dock-ending
+  Main Event save  
+  @inline DisableInteraction
+  @inline PlayEjectSound
+  Main Message LabVideoCamera SetBlank
+  Main Wait 2
+  Main Enable Skeleton1
+  Main Enable Skeleton2
+  Main Enable Skeleton3
+  Main Warp Ezra LabDock/EzraPosition2
+  Main Warp Shannon LabDock/ShannonPosition1
+  Main Warp Will LabDock/WillPosition1
+  Main Enable Coconut
+  Main Warp Coconut LabDock/CoconutPosition1
+  @inline PlayInsertSound
+  @inline EnterDock
+  Main Message LabVideoTitler SetTimeSinceSceneStart
+  Main Set lab-dock-intro-done true
+  Main Audio* FadeIn dock-ambience 1
+  Main Audio* FadeIn dock-fan 2
+  Main Wait 2
+  @inline EnableInteraction
+  Main Dialog LabDockEnding ScreenPlacement &0.5,0.2,0
+  @inline DisableInteraction
+  Main Run* Ezra LabDock/EzraPosition1
+  Main Run* Coconut LabDock/CoconutPosition2
+  Main Wait 2
+  #Main Message _AnalogVideo HsyncGlitch
+  Main Message LabVideoCamera NoSignal
+  Main Disable Skeleton1
+  Main Disable Skeleton2
+  Main Disable Skeleton3
+  Main Wait 0.125
+  Main Message LabVideoCamera SetReference LabDock/CameraTransform/Camera
+  Main Wait 2
+  Main Walk* Shannon LabDock/ShannonStart
+  Main Wait 1  
+  Main Walk* Will LabDock/WillEnd
+  @inline EnableInteraction
+  Main Dialog LabDockEndingAfterCat ScreenPlacement &0.5,0.2,0
+  @inline DisableInteraction
+  Main Audio* FadeOut dock-ambience 1
+  Main Audio* FadeOut dock-fan 2
+  Main Message LabVideoTitler PauseTime
+  Main Wait 3
+  Main SceneChange Overworld
+
+@end
+
+@func PlayPaperSound
+  Sound Audio* PlayRandom paper1,paper2,paper3,paper4,paper5,paper6,paper7,paper8,paper9,paper10,paper11 0.5
+@end
+
+@func PlayEjectSound
+  Main Audio* Play tape-stop
+  Main Event hum-off
+  Main Audio* Play eject-tape 0.5
+@end
+
+@func PlayInsertSound
+  Main Audio* Play insert-tape 0.5
+  Main Wait 2
+  Main Audio* Play tape-start
+  Main Wait 0.5
+  Main Event hum-on
+@end
+
+@func GotoOrSkipPhoneCall
+
+  Main Exec GotoPhoneCall ? two:bureau-listened-to-organist
+  Main Exec GotoCalendar ? !two:bureau-listened-to-organist
+
+@end
+
+@func LoadBookmark
+
+  Main Exec GotoIntroduction ? lab-bookmark=introduction
+  Main Exec GotoFirstTest ? lab-bookmark=first-test
+  Main Exec GotoDockOne ? lab-bookmark=dock-one
+  Main Exec GotoControlTest ? lab-bookmark=control-test
+  Main Exec GotoCurtains ? lab-bookmark=curtains
+  Main Exec GotoDoor ? lab-bookmark=door
+  Main Exec GotoCarryObject ? lab-bookmark=carry-object
+  Main Exec GotoTapePlayer ? lab-bookmark=tape-player
+  Main Exec GotoWaitingRoom ? lab-bookmark=waiting-room
+  Main Exec GotoVideoRoom ? lab-bookmark=video-room
+  Main Exec GotoBooks ? lab-bookmark=books
+  Main Exec GotoPhoneCall ? lab-bookmark=phone-call
+  Main Exec GotoCalendar ? lab-bookmark=calendar
+  Main Exec GotoMonitoringEnd ? lab-bookmark=monitoring
+  Main Exec GotoDockEnding ? lab-bookmark=dock-ending
+
+@end
+
+# Init
+
+@SetupInitialState
+@LoadBookmark
+

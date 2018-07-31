@@ -1,0 +1,54 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="shannon">`(To EZRA.)` Don't you go diving in, too — it's actually really cold. And kind of dangerous. Did he say where he was going?</line>
+    <option goto="good-stuff" speaker="ezra">He's looking for the good stuff.</option>
+    <option goto="medicine" speaker="ezra">He went to get some medicine.</option>
+  </scene>
+
+  <scene name="good-stuff" nextScene="messages">
+    <setGameVar name="phone-room-ezra-conway-explanation" value="good-stuff" />
+    <line speaker="shannon">I see. Still thirsty ...</line>
+    <line speaker="will">Cate keeps some diet soda in the broom closet, but you didn't hear it from me. It's next to the bleach. Bring a flashlight!</line>
+    <line speaker="shannon">Oh, no, I don't think that's what he's looking for.</line>
+    <line speaker="shannon">So, any important messages?</line>    
+  </scene>
+
+  <scene name="medicine" nextScene="messages">
+    <setGameVar name="phone-room-ezra-conway-explanation" value="medicine" /> 
+    <line speaker="shannon">Oh, maybe his leg is still bothering him — or an early hangover ... I'll have to tell him I have some more painkillers in the truck.</line>
+    <line speaker="shannon">`(To WILL.)` So, any important messages?</line>
+  </scene>
+
+  <scene name="messages">
+    <line speaker="will">Every single one.</line>
+    <line speaker="will">`(To EZRA.)` Where are `you` headed tonight, small man?</line>
+    <option goto="ezra-looking-for-family" speaker="ezra">I'm looking for my family.</option>
+    <option goto="ezra-following-friends" speaker="ezra">I'm just following my friends.</option>
+    <option goto="ezra-dont-know" speaker="ezra">I don't know.</option>
+  </scene>
+
+  <scene name="ezra-looking-for-family">
+    <line speaker="will">Hm. Looking for a new family, or a family you lost track of?</line>
+    <option goto="shannon-ezra-summary" speaker="ezra" variableChange="phone-room-ezra-stated-goal=new-family">A new family, I think.</option>
+    <option goto="shannon-ezra-summary" speaker="ezra" variableChange="phone-room-ezra-stated-goal=lost-family">My folks disappeared.</option>
+    <option goto="shannon-ezra-summary" speaker="ezra" variableChange="phone-room-ezra-stated-goal=uncertain">I don't know.</option>
+  </scene>
+
+  <scene name="ezra-following-friends" nextScene="shannon-ezra-summary">
+    <setGameVar name="phone-room-ezra-stated-goal" value="friends" />
+    <line speaker="will">Is this young woman your friend?</line>
+  </scene>
+
+  <scene name="ezra-dont-know" nextScene="shannon-ezra-summary">
+    <setGameVar name="phone-room-ezra-stated-goal" value="uncertain" />    
+    <line speaker="will">Good for you.</line>
+  </scene>
+
+  <scene name="shannon-ezra-summary" nextScene="end">
+    <line speaker="shannon" blocking="Ezra Run Ezra [Platform]/EzraExitPosition">We met Ezra earlier tonight, and he's been very helpful. I'm hoping we can return the favor once we get back above ground. Poor kid was sleeping at the bus station, and just lost track of his folks.</line>
+    <line speaker="will">He'll be alright. He's more at home down here than any of us. Trust me, I have an eye for it.</line>
+  </scene>
+
+</conversation>
+

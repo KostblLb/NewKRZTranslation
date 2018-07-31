@@ -1,0 +1,192 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" formattingCharacters="*|`~^">
+  <scene name="intro" nextScene="root-menu">
+    <line>`(CONWAY taps a key, waking the computer from its reverie.)`</line>
+  </scene>
+
+  <scene name="root-menu">
+    <option goto="messages-root" speaker="conway">`(Typing.)` Messages.</option>
+    <option goto="games-root" speaker="conway">`(Typing.)` Games.</option>
+    <option goto="end" speaker="conway">`(Typing.)` Exit.</option>
+  </scene>
+
+  <scene name="messages-root">
+    <line speaker="computer">Message one is from &quot;helpdesk@rust-archives.mail&quot;.</line>
+    <line speaker="computer">Message two is from &quot;accounts@consolidated.mail&quot;.</line>
+    <option goto="message-one" speaker="conway">`(Typing.)` Read message one.</option>
+    <option goto="message-two" speaker="conway">`(Typing.)` Read message two.</option>
+    <option goto="root-menu" speaker="conway">`(Typing.)` Exit messages.</option>
+  </scene>
+
+  <scene name="message-one" nextScene="messages-root">
+    <setGameVar name="gas-station-computer-read-rust-archives-email" value="true"/>
+    <line speaker="computer">From: helpdesk@rust-archives.mail</line>
+    <line speaker="computer">Subject: Requested articles.</line>
+    <line speaker="computer">Message: Dear Mr. Wheattree, the articles you've requested have been retrieved from storage and are ready for examination. They will be held at your convenience in our primary branch until the end of the month.</line>
+    <line speaker="computer">You may visit us between sundown and sunrise at our night facility:</line>
+    <line speaker="computer">We are an easy three gestures from the Bureau: clockwise to the anchor, counter-clockwise to the whirlpool, then briefly clockwise.</line>
+    <line speaker="computer">Regards.</line>
+  </scene>
+
+  <scene name="message-two" nextScene="messages-root">
+    <setGameVar name="gas-station-computer-read-consolidated-email" value="true"/>        
+    <line speaker="computer">From: accounts@consolidated.mail</line>
+    <line speaker="computer">Subject: Account resolution options, urgent.</line>
+    <line speaker="computer">Message: Dear EQUUS OILS. This is an urgent automated message regarding your overdue account.</line>
+    <line speaker="computer">Your current account status is:</line>
+    <line speaker="computer">DIRE.</line>
+    <line speaker="computer">New resolution options are available to you in one of our in-person account resolution centers. To ensure your account is resolved without interruption, visit us at your convenience:</line>
+    <line speaker="computer">From the Bureau of Reclaimed Spaces, head clockwise for quite some time until you reach the scarecrow. Then turn around and go back to the bat feeder. Turn around, and it's a short clockwise drive, on your right.</line>
+    <line speaker="computer">Sincerely, your friends at the Consolidated Power Co.</line>
+  </scene>
+
+  <scene name="games-root">
+    <line speaker="computer">Directory listing for Games:</line>
+    <line condition="!gas-station-computer-played-psychotherapist" speaker="computer">&quot;PSYCHOTHERAPIST&quot;</line>
+    <line speaker="computer">&quot;Sports Medicine Professional 1973&quot;</line>
+    
+    <option condition="!gas-station-computer-played-psychotherapist" goto="eliza" speaker="conway">`(Typing.)` Play `PSYCHOTHERAPIST`.</option>
+    <option goto="sports" speaker="conway">`(Typing.)` Play `Sports Medicine Professional 1973`.</option>
+    <option goto="root-menu" speaker="conway">`(Typing.)` Exit games.</option>
+  </scene>
+
+  <!-- Psychotherapist -->
+  
+  <scene name="eliza">
+    <setGameVar name="gas-station-computer-played-psychotherapist" value="true"/>    
+    <line speaker="computer">Loading &quot;PSYCHOTHERAPIST&quot; ... Ready ... Run.</line>
+    <line speaker="computer">I am the psychotherapist. Please, describe your problems.</line>
+    <option goto="eliza-lost" speaker="conway">`(Typing.)` I'm lost.</option>
+    <option goto="eliza-drink" speaker="conway">`(Typing.)` I'm thinking of drinking again.</option>
+  </scene>
+
+  <scene name="eliza-lost">
+    <line speaker="computer">Do you enjoy being lost?</line>
+    <option goto="eliza-begin-hypnosis" speaker="conway">`(Typing.)` I used to enjoy it, yeah.</option>
+    <option goto="eliza-begin-hypnosis" speaker="conway">`(Typing.)` I don't have much to compare it to.</option>
+  </scene>
+
+  <scene name="eliza-drink">
+    <line speaker="computer">Do you believe it is normal to be thinking of drinking again?</line>
+    <option goto="eliza-begin-hypnosis" speaker="conway">`(Typing.)` For people like me, it is.</option>
+    <option goto="eliza-begin-hypnosis" speaker="conway">`(Typing.)` It's been a while, but things are changing.</option>
+  </scene>
+
+  <scene name="eliza-begin-hypnosis" nextScene="eliza-end-hypnosis">
+    <audioFade clip="ceiling-fans" direction="in" time="30" />
+    <line speaker="computer">That's quite interesting.</line>
+    <line speaker="computer">I'd like to try an exercise now. Please, close your eyes, and ask another person to read the following text aloud.</line>
+    <line event="dialog-darken-instant,start-hallway-story" speaker="shannon">`(Reading.)` It's summer. You are sitting in a very long hall, on a backless stool. The seat is upholstered in fake leather, slick with condensation. You shift your weight uncomfortably.</line>
+    <line speaker="shannon">`(Reading.)` At the other end of the very long hall, a ceiling fan beats out the rhythm of seconds.</line>
+    <line speaker="shannon">`(Reading.)` The air in the very long hall is still. You need a shave. You feel three rough whiskers curled over your upper lip. You shift your weight on the slick leather seat, and exhale gently to displace the three rough whiskers curled over your upper lip.</line>
+    <line speaker="shannon">`(Reading.)` The very long hall is silent, except for the ceiling fan beating out the rhythm of seconds, and the noise of your breath as you exhale gently to displace the three rough whiskers curled over your upper lip.</line>
+    <line speaker="shannon">`(Reading.)` Your tongue is burned. Perhaps you drank some coffee too quickly within the last several days. Your mouth is dry, and the lights are slowly dimming.</line>
+    <line speaker="shannon">Oh, um ... it says I'm not supposed to read this part aloud.</line>
+  </scene>
+  
+  <scene name="eliza-end-hypnosis" nextScene="games-root">
+    <audioFade clip="ceiling-fans" direction="out" speed="8" destroy="true" />
+    
+    <line event="dialog-lighten-fast,end-hallway-story" speaker="shannnon">OK. It's over.</line>
+  </scene>
+
+  <!-- Sports medicine professional -->
+  
+  <scene name="sports">
+    <setGameVar name="gas-station-computer-played-sports" value="true"/>
+    <line speaker="computer">Loading &quot;Sports Medicine Professional 1973&quot; ... Ready ... Run.</line>
+    <line speaker="computer">February 1973. Status: Senior. GPA: 3.8. Affect: Bored.</line>
+    <line speaker="computer">A) Study. B) Hit the bar. C) Explore the forest.</line>
+    <option goto="sports-1-study" speaker="conway">`(Typing.)` Study.</option>
+    <option goto="sports-1-bar" speaker="conway">`(Typing.)` Bar.</option>
+    <option goto="sports-1-forest" speaker="conway">`(Typing.)` Forest.</option>
+  </scene>
+
+  <scene name="sports-1-study" nextScene="sports-2">
+    <setGameVar name="gas-station-computer-sports-study-points" value="+1"/>
+    <line speaker="computer">The anterior cruciate ligament is one of the two major ligaments in the knee and is a particularly common but devastating site of injury.</line>
+  </scene>
+
+  <scene name="sports-1-bar" nextScene="sports-2">
+    <setGameVar name="gas-station-computer-sports-bar-points" value="+1"/>
+    <line speaker="computer">Two-for-one domestics. Somebody has a rifle in their truck. Late night target practice in a field, a few hours in lockup, stern warnings, and new friends.</line>
+  </scene>
+
+  <scene name="sports-1-forest" nextScene="sports-2">
+    <setGameVar name="gas-station-computer-sports-forest-points" value="+1"/>    
+    <line speaker="computer">It's raining, mud is everywhere on the wings of owls and the jowls of stray dogs. Borrowing shelter with other mammals and then waking up late, damp, and cold. Waiting for the bus with other mammals.</line>
+  </scene>
+
+  <scene name="sports-2">
+    <line speaker="computer">March 1973. Status: <sportsStatus/>. GPA: <sportsGPA/>. Affect: <sportsAffect/>.</line>
+    <line speaker="computer">A) Study. B) Hit the bar. C) Explore the forest.</line>
+    <option goto="sports-2-study" speaker="conway">`(Typing.)` Study.</option>
+    <option goto="sports-2-bar" speaker="conway">`(Typing.)` Bar.</option>
+    <option goto="sports-2-forest" speaker="conway">`(Typing.)` Forest.</option>
+  </scene>
+
+  <scene name="sports-2-study" nextScene="sports-3">
+    <setGameVar name="gas-station-computer-sports-study-points" value="+1"/>    
+    <line speaker="computer">Sudden or repeated hyperextension of the big toe can cause a sprain in the ligaments around the joint, a painful injury known as &quot;turf toe.&quot;</line>
+  </scene>
+
+  <scene name="sports-2-bar" nextScene="sports-3">
+    <setGameVar name="gas-station-computer-sports-bar-points" value="+1"/>    
+    <line speaker="computer">It's dead tonight. Shots. The bartender has her kids this weekend, which she's looking forward to.</line>
+  </scene>
+
+  <scene name="sports-2-forest" nextScene="sports-3">
+    <setGameVar name="gas-station-computer-sports-forest-points" value="+1"/>        
+    <line speaker="computer">Seasonably cold, and the mouth of the cave is surrounded by small broken sticks from a recent storm. If they weren't so damp, or spread so thin and unevenly, they'd be a fire hazard. Maybe if they were all piled up in the cave to dry for a few weeks, they'd spark and smoke the bats out.</line>
+  </scene>
+
+  <scene name="sports-3">
+    <line speaker="computer">April 1973. Status: <sportsStatus/>. GPA: <sportsGPA/>. Affect: <sportsAffect/>.</line>
+    <line speaker="computer">A) Study. B) Hit the bar. C) Explore the forest.</line>
+    <option goto="sports-3-study" speaker="conway">`(Typing.)` Study.</option>
+    <option goto="sports-3-bar" speaker="conway">`(Typing.)` Bar.</option>
+    <option goto="sports-3-forest" speaker="conway">`(Typing.)` Forest.</option>
+  </scene>
+
+  <scene name="sports-3-study" nextScene="sports-4">
+    <setGameVar name="gas-station-computer-sports-study-points" value="+1"/>    
+    <line speaker="computer">Strains of the rotator cuff tendons can be very painful, and may require the prescription of pain relieving medicine in addition to rest and icing.</line>
+  </scene>
+
+  <scene name="sports-3-bar" nextScene="sports-4">
+    <setGameVar name="gas-station-computer-sports-bar-points" value="+1"/>
+    <line speaker="computer">Some students are fighting over a pinball game called &quot;The History of Aviation.&quot; All well drinks half-price. Striking three bumpers decorated with jet engine icons initiates &quot;Mid-air Collision Multi-ball.&quot; One student unlocks both Daedelus and Icarus, then spills a cocktail into the coin slot.</line>
+  </scene>
+
+  <scene name="sports-3-forest" nextScene="sports-4">
+    <setGameVar name="gas-station-computer-sports-forest-points" value="+1"/>
+    <line speaker="computer">Thick tree coverage soaks up every vapor of light pollution. The skies are uncomplicated, black-and-white, mumbling stars. An owl decimates a caravan of mice.</line>
+  </scene>
+
+  <scene name="sports-4">
+    <line speaker="computer">May 1973. Status: <sportsStatus/>. GPA: <sportsGPA/>. Affect: <sportsAffect/>.</line>
+    <line speaker="computer">It's time to make a decision.</line>
+    <line speaker="computer">A) Graduate. B) Hitchhike cross-country. C) Live in a tree.</line>
+    <option goto="sports-end-graduate" speaker="conway">`(Typing.)` Graduate.</option>
+    <option goto="sports-end-hitchhike" speaker="conway">`(Typing.)` Hitchhike cross-country.</option>
+    <option goto="sports-end-tree" speaker="conway">`(Typing.)` Live in a tree.</option>
+  </scene>
+
+  <scene name="sports-end-graduate" nextScene="games-root">
+    <line condition="gas-station-computer-sports-study-points[gt]1" speaker="computer">Everyone says, &quot;it was a smart decision.&quot; But it wasn't really a decision. Still, it seems to be working out well. Moderately wealthy. Only in competition with human resilience.</line>
+    <line condition="gas-station-computer-sports-study-points[lt]2" speaker="computer">Everyone says, &quot;it was a smart decision.&quot; But it wasn't. Lost pills, misjudged affairs, forged prescriptions. Disgrace.</line>
+    <line speaker="computer">Score: <sportsGPA/></line>
+  </scene>
+
+  <scene name="sports-end-hitchhike" nextScene="games-root">
+    <line condition="gas-station-computer-sports-bar-points[gt]1" speaker="computer">Eventually stop in a small town for long enough to buy a car. Back on the road. The road begins to eat itself, so feed it to itself. Feels right.</line>
+    <line condition="gas-station-computer-sports-bar-points[lt]2" speaker="computer">The road is dry. Road-dirt encrusts the nostril. Settle inland, eventually, frustrated.</line>
+    <line speaker="computer">Score: <sportsAffect/></line>
+  </scene>
+
+  <scene name="sports-end-tree" nextScene="games-root">
+    <line condition="gas-station-computer-sports-forest-points[gt]1" speaker="computer">It's a good tree, strong, the branches are bare, sleep upright, brush teeth with dew and moss. Makes sense, for once.</line>
+    <line condition="gas-station-computer-sports-forest-points[lt]2" speaker="computer">It's cold, damp, always damp, nothing tastes or smells right, impossible to relax, always on guard against the neighbors and the elements. Bewildering.</line>
+    <line speaker="computer">Score: <sportsStatus/></line>
+  </scene>
+</conversation>

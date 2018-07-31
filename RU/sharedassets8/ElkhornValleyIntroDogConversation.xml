@@ -1,0 +1,47 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <line>`(CONWAY brushes some dirt off {if}[dog-nameless]the dog{end}{if}[!dog-nameless]${dog-name}{end}'s hat.)`</line>
+
+    <option goto="hows-it-going" speaker="conway">How's it going, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}?</option>
+    <option goto="end" speaker="conway">Take it easy, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}.</option>
+  </scene>
+
+  <scene name="hows-it-going">
+    <setGameVar name="elkhorn-mine-intro-talked-to-dog" value="true"/>
+    
+    <option goto="onramp" speaker="conway">Huh. Not sure that lady was right about the on-ramp to the |Zero| being here.</option>
+    <option goto="hat" speaker="conway">Hey, you got something on your hat.</option>
+  </scene>
+
+  <scene name="onramp">
+    <option goto="runaround" speaker="conway">I guess you just can't tell with some folks. They're liable to run you around just for kicks.</option>
+    <option goto="somewhere" speaker="conway">Better look around, though. Must be down here somewhere.</option>
+  </scene>
+
+  <scene name="runaround">
+    <option goto="end" speaker="conway">Well, try not to get frustrated.</option>
+    <option goto="end" speaker="conway">Should we look around? Or get back on the road? Oh, I don't know.</option>
+  </scene>
+
+  <scene name="somewhere">
+    <option goto="end" speaker="conway">Better hurry, though. Weather's about to turn.</option>
+    <option goto="end" speaker="conway">Let's take our time and check this out thorough, OK?</option>
+  </scene>
+
+  <scene name="hat">
+    <option goto="flowers" speaker="conway">Been digging in Lysette's flowers again?</option>
+    <option goto="road" speaker="conway">Did you pick that up on the road?</option>
+  </scene>
+
+  <scene name="flowers">
+    <option goto="end" speaker="conway">She just can't keep you out of there, can she?</option>
+    <option goto="end" speaker="conway">The way Ira used to yell at you, you'd think he was losing his mind.</option>
+  </scene>
+
+  <scene name="road">
+    <option goto="end" speaker="conway">Don't you ever get tired of nosing around strange places?</option>
+    <option goto="end" speaker="conway">You like it out here don't you. Picking up strange dirt on the road.</option>
+  </scene>
+  
+</conversation>

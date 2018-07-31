@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="elkhorn-mine-found-tram-tape-reels" value="true"/>
+    
+    <line>A pile of tape reels is jammed into the top of the tram. They must have been thrown on in a rush. The reels are unlabeled. The tape is decayed.</line>
+    <line>Lysette and Ira's son, Charlie, talked about a piece of music he liked made with old decaying tapes. What was it called ... something about ...</line>
+    <line>Charlie had the most bizarre taste in music. Weird, noisy, computer music. Where did he even hear that stuff? Louisville, probably. Or college.</line>
+    <line>He was a smart kid. Damned pity.</line>
+  </scene>
+</conversation>

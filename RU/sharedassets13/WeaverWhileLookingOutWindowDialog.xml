@@ -1,0 +1,36 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="marquez-farm-weaver-gone">
+  <!-- While looking out window -->
+  <scene name="intro">
+    <line speaker="weaver">Hey. Hey, wake up. You spaced out for a minute there.</line>
+
+    <option goto="weaver-complains-about-tv" speaker="conway">The picture on the TV ...</option>
+    <option goto="whats-in-barn" speaker="conway">What do you keep out in that barn?</option>
+  </scene>
+
+  <scene name="weaver-complains-about-tv">
+    <line speaker="weaver">That TV is picking up the wrong signal. My cousin Shannon would know more about it. She fixes TVs for a living. Well, she used to ... I think the new models are giving her some trouble.</line>
+
+    <option goto="the-zero" speaker="conway">So ... I really just need to get to the |Zero|.</option>
+    <option goto="cousin" speaker="conway">Your cousin?</option>
+  </scene>
+
+  <scene name="cousin" nextScene="the-zero">
+    <setGameVar name="got-shannons-workshop-directions" value="true"/>
+    
+    <line speaker="weaver">That's my father's brother's daughter, Shannon. We're about the same age. Well, we used to be. She's older now.</line>
+    <line speaker="weaver">She has a workshop up north a ways, by the lake. Right where Peonia and Wax road meet. It's a big bait and tackle shop, and she fixes TVs in the back. Do you like fishing?</line>
+  </scene>
+  
+  <scene name="whats-in-barn" nextScene="weaver-complains-about-tv">
+    <line speaker="weaver">Used to be tools and feed. Then books. Now, I think it's mostly spiders.</line>
+  </scene>
+  
+  <scene name="the-zero" nextScene="end">
+    <setGameVar name="got-mines-directions" value="true"/>
+    
+    <line speaker="weaver">Honestly, I'm not convinced you should bother with the |Zero|; I'd much rather you find my cousin and fix my TV. But I'll get you headed the right way.</line>
+    <line speaker="weaver">So, it's pretty easy: get back on sixty-five heading north, then take the first right after the artificial limb factory. From there, your arrival at the |Zero| is basically inevitable.</line>
+    <line speaker="weaver">Nice to know you, Conway. Keep your eyes open. Especially in the dark!</line>
+  </scene>
+</conversation>

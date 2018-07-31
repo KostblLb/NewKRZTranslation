@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="bureau-looked-at-grotesque-5" value="true"/>    
+    <line>The television is playing a silent video of an empty theater. A microphone sits in the middle of the stage. The lights are slightly dimmed. The speakers hum impatiently.</line>
+  </scene>
+</conversation>

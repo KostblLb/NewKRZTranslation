@@ -1,0 +1,62 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="clara">What's this place like? "Dogwood Drive," it's in a small town, or ... ?</line>
+    <line speaker="shannon">It ... I really don't know. Ha ha. I've got the manifest the old man had in his truck, here:</line>
+    <line speaker="shannon">`(Reading.)` Lysette's Antiques ... Mail-order delivery ... No return address ... Shipping address "5 Dogwood Drive." Packing list ...</line>
+    <line speaker="shannon">And then it's just numbers. I guess the inventory numbers of the antiques he was supposed to be delivering.</line>
+    <line speaker="shannon">Anyway, I'm glad you're coming with us.</line>
+    <line speaker="clara">Yes. I'm always eager to see more of the country. And I enjoy the company. I will have to find a bus or a train to get on to Nashville by evening.</line>
+    <line speaker="shannon">Well, they have buses everywhere, right?</line>
+    <line speaker="shannon">Or, hey — `I` could drive you to Nashville. Seems I have a truck now. Only ...</line>
+    <line speaker="shannon" blocking="Shannon Look Shannon LookUpTarget">How are we going to get it up these stairs?</line>
+    <line speaker="junebug" blocking="Junebug Look Junebug LookUpTarget">That's quite a staircase.</line>
+    <option goto="route" speaker="shannon">Is there another route? A tunnel or something?</option>
+    <option goto="rope" speaker="shannon">Is there something we could do with rope?</option>
+    <option goto="hopeless" speaker="shannon">There's no way to get this truck up these stairs, is there?</option>
+  </scene>
+
+  <scene name="route" nextScene="carry">
+    <line speaker="junebug">No way out but up.</line>
+    <line speaker="junebug">I guess we could wait for the `Mammoth` to come back around and take us a little further down, but that won't be until late afternoon.</line>
+  </scene>
+
+  <scene name="rope" nextScene="carry">
+    <line speaker="junebug">Sure, I can think of a few things. Nothing that'll get that truck up the staircase, though.</line>
+  </scene>
+
+  <scene name="hopeless" nextScene="carry">
+    <line speaker="junebug">Not with that attitude.</line>
+    <line speaker="junebug">No, there isn't.</line>
+  </scene>
+
+  <scene name="carry">
+    <blocking>Shannon Look Shannon LookDownTarget</blocking>
+    <line speaker="junebug">Looks like we're making the rest of this trip on foot.</line>
+    <option goto="safe-to-leave-truck" speaker="shannon">Is it safe to just leave the truck here?</option>
+    <option goto="too-much" speaker="shannon">I don't even know what's in there. What if it's too much to carry?</option>
+  </scene>
+
+  <scene name="safe-to-leave-truck" nextScene="final">
+    <blocking>Junebug Look Junebug LookDownTarget</blocking>    
+    <line speaker="junebug">Sure; I don't think anyone but us could get it started again.</line>
+  </scene>
+
+  <scene name="too-much" nextScene="final">
+    <blocking>Junebug Look Junebug LookDownTarget</blocking>
+    <line speaker="junebug">Naw. We've been loading and unloading gear since the stars were young. We're our own roadies, right? We've got `expertise`.</line>
+  </scene>
+
+  <scene name="final" nextScene="end">
+    <line speaker="junebug">`(To JOHNNY.)` Alright, cricket, let's get this delivery packed and tied into bundles. We're hiking it upstairs.</line>
+    <line speaker="ezra">What's in there?</line>
+    <line speaker="johnny">Antiques, I guess.</line>
+    <line speaker="ezra">"Antiques."</line>
+    <line speaker="johnny">Yeah, antiques are ... It's like junk, but people will pay for it.</line>
+    <line speaker="ezra">Oh.</line>
+    <line speaker="shannon">`(To CLARA.)` Sorry, I guess you'll be taking the bus after all.</line>
+    <line speaker="clara">It's OK. It will be an adventure.</line>
+    <line>`(SHANNON sighs and stretches.)`</line>
+    <line speaker="junebug">Tired? Don't worry, lady. We're almost there.</line>
+  </scene>
+</conversation>

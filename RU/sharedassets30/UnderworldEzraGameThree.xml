@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="children" destroy="true" direction="out" time="2" />
+  </endingAudioEvents>
+
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    
+    <audioFade clip="children" direction="in" time="4" />
+    <setGameVar name="underworld-saw-ezra-game-3" value="true"/>
+    
+    <line>Four children roam the shore of an underground river, collecting handfuls of mud and rocks, and depositing them in a metal bowl close to the water.</line>
+    <option goto="water" insertedText="Ezra fills his hands with water and brings it to the bowl.">Contribute some water.</option>
+    <option goto="sticks" insertedText="Ezra gathers some sticks and puts them in the bowl.">Contribute some sticks.</option>
+  </scene>
+
+  <scene name="water" nextScene="meal">
+    <line>One of the children smiles gratefully, and washes some of the stones. Another leans over the bowl, pretending to smell it, and nods in satisfaction.</line>
+  </scene>
+
+  <scene name="sticks" nextScene="meal">
+    <line>One of the children stops Ezra before he can add the sticks. She looks the sticks over with mock scrutiny, wipes one off on her skirt, and then enthusiastically dashes them into the bowl.</line>
+  </scene>
+
+  <scene name="meal" nextScene="end">
+    <line>The children sit cross-legged around the bowl. They fold their hands, bow their heads, and mumble some nonsense. One of them looks up, and waves Ezra to sit nearby.</line>
+  </scene>
+</conversation>

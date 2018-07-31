@@ -1,0 +1,21 @@
+# -*- mode: blocking -*-
+
+@set Stop riverworld-dockyard
+
+@func PostScene
+
+  Tugboat Message RiverworldManager QueueState Closing
+
+@end
+
+@func PreScene
+
+  Tugboat Listen boat-stop
+  Tugboat Dialog RiverDisembarkDockyard
+  Tugboat Message RiverworldManager LoadScene DockyardPort ? [Stop]=disembarked
+  Tugboat Message RiverworldManager LoadScene DockyardStarboard ? [Stop]=aboard
+
+@end
+
+Tugboat Exec PreScene ? [Stop]=uncharted
+Tugboat Exec PostScene ? !([Stop]=uncharted)

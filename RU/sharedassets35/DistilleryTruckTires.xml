@@ -1,0 +1,95 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="truck-tour-zoom"/>
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="distillery-truck-examined-tires" value="true" />
+    
+    <line speaker="doolittle" style="skeleton">Oh, sure, I know you'll want to look. "Kick the tires" — that's a thing we do, isn't it?</line>
+    <line speaker="doolittle" style="skeleton">As though our knees could exert the kind of force these tires see out there on the road. We're more likely to hurt ourselves. Isn't it the way? Eh?</line>
+    <option goto="tires-ok" speaker="conway">Tires look fine.</option>
+    <option goto="fragile" speaker="conway">Sure, they're big machines, but they can be fragile.</option>
+  </scene>
+
+  <scene name="tires-ok" nextScene="miguel-options">
+    <line speaker="doolittle" style="skeleton">Oh, I'm sure. It wasn't the tires that failed our dear Miguel, we are quite sure.</line>
+  </scene>
+
+  <scene name="fragile" nextScene="miguel-options">
+    <line speaker="doolittle" style="skeleton">Absolutely. A truck deserves care and fearful respect, like a glass elephant. Miguel was a good driver, but he didn't have that quality of deference.</line>
+  </scene>
+
+  <scene name="miguel-options">
+    <option goto="about-miguel" speaker="conway">What kind of man was Miguel?</option>
+    <option goto="aa-vignette">`Conway sat in a dim room full of folding chairs.`</option>
+  </scene>
+
+  <scene name="about-miguel" nextScene="end">
+    <line speaker="doolittle" style="skeleton">As I always say of him, he was good company. Many of us have found ourselves in his position, arrogantly grasping at personal sovereignty when our lives had become unmanageable — there's no shame in it, only condolence.</line>
+    <line speaker="doolittle" style="skeleton">Now, what else can we show you?</line>
+  </scene>
+
+  <scene name="aa-vignette">
+    <triggerEvent name="dialog-darken-fast" />
+    <triggerEvent name="stop-tape" />
+    <triggerEvent name="vignette-darken" />
+    
+    <audioFade clip="truck-engine" direction="to" target="0.25" time="3" />
+    <audioFade clip="memory-aa" direction="in" time="3" />    
+    <setGameVar name="distillery-truck-saw-aa-vignette" value="true" />
+
+    <line>`The walls and ceiling were painted with old smoke. Someone read from the book. He drank coffee, <if condition="coffee-sugar">as it is<else>with a little sugar</else></if>.`</line>
+    <option goto="listen">`He listened.`</option>
+    <option goto="wait">`He was just waiting for it to be over.`</option>
+  </scene>
+
+  <scene name="listen" nextScene="wait">
+    <line>`The speaker listed all the things "we" tried. That "we" ... most people in the room were probably there by court order.`</line>
+  </scene>
+
+  <scene name="wait">
+    <line>`A few others shared. They spoke in abstractions like "a program of action," a "good orderly direction," "spiritual but not religious," "religious but not spiritual" ... all the things "we" tried.`</line>
+    <line>`Then it was over, they clasped sweaty hands through a short prayer, and stepped back out into the morning.`</line>
+    <option goto="bar">`He knew it was time to hit the bar.`</option>
+    <option goto="walk">`He started walking.`</option>
+  </scene>
+
+  <scene name="bar">
+    <audioFade clip="memory-aa" direction="out" time="3" destroy="true" />
+    <audioFade clip="memory-bar" direction="in" time="3" />
+    
+    <line>`It was good to get out of the heat, away from the mendacity. He settled into it. Someone else from the meeting was here, looking rough.`</line>
+    <option goto="talk">`He started a conversation.`</option>
+    <option goto="watch">`He focused on the television.`</option>
+  </scene>
+
+  <scene name="talk" nextScene="vignette-end">
+    <line>`She was on a bender; a week and counting. She'd arrived at the meeting drunk and sat in the back, because she didn't believe in it.`</line>
+    <line>`She read a lot of French books, and didn't believe in anything but "the benign indifference of the universe." It was comforting, in its way. She didn't have to prefer one thought or day over any other.`</line>
+    <line>`All she had to do was drink, and stay indifferent.`</line>
+  </scene>
+
+  <scene name="watch" nextScene="vignette-end">
+    <line>`A nature show was playing. Something about river dolphins. They cruised the Amazon, eating psychedelic frogs and having weird adventures.`</line>
+    <line>`At night, they transformed into attractive young party-goers, and wore hats to cover their blowholes.`</line>
+  </scene>
+
+  <scene name="walk" nextScene="vignette-end">
+    <audioFade clip="memory-woods" direction="in" time="3" />
+    <audioFade clip="memory-aa" direction="out" time="3" destroy="true" />
+    
+    <line>`He was always walking, these days. It was good to slow down. It felt clarifying, like a walking meditation. The road ran by a creek for a while.`</line>
+    <line>`He took an unforeseen detour where the creek and road parted, following the edge of the water. He skipped a few stones, alone, then stopped to consider an overturned boat.`</line>
+    <line>`It was a kind of serenity, that wandering and looking without purpose.`</line>
+    <line>`He was coming to rely on those moments.`</line>
+  </scene>
+
+  <scene name="vignette-end" nextScene="end">
+    <audioFade clip="memory-bar" direction="out" speed="4" destroy="true" />
+    <audioFade clip="memory-woods" direction="out" speed="4" destroy="true" />
+    <audioFade clip="truck-engine" direction="in" time="1" />
+    
+    <triggerEvent name="start-tape,dialog-lighten-fast" />
+    <line speaker="doolittle" style="skeleton">Now, what else can we show you?</line>
+  </scene>
+</conversation>

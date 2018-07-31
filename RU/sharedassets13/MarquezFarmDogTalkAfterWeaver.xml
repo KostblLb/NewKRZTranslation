@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <setGameVar name="marquez-farm-leaving-talked-to-dog" value="true"/>
+    
+    <option goto="horses" speaker="conway">There are some horses out there behind the house.</option>
+    <option goto="weaver" speaker="conway">I just met the strangest lady.</option>
+  </scene>
+
+  <scene name="horses">
+    <option goto="ira-horses" speaker="conway">Remember the horses you and Lysette and Ira had?</option>
+    <option goto="horses-barn" speaker="conway">I guess they don't sleep in the barn.</option>
+  </scene>
+
+  <scene name="ira-horses">
+    <option goto="end" speaker="conway">I miss them sometimes. The horses.</option>
+    <option goto="end" speaker="conway">Yours didn't like to sleep in the barn either.</option>
+  </scene>
+  
+  <scene name="horses-barn">
+    <option goto="end" speaker="conway">It's too spooky for a horse.</option>
+    <option goto="end" speaker="conway">Must be full of gear.</option>
+  </scene>
+  
+  <scene name="weaver">
+    <option goto="weaver-nice" speaker="conway">She seemed pretty nice.</option>
+    <option goto="weaver-creepy" speaker="conway">She kinda creeped me out, {if}[dog-nameless]buddy{end}{if}[!dog-nameless]${dog-name}{end}.</option>
+  </scene>
+
+  <scene name="weaver-nice">
+    <option goto="end" speaker="conway">&quot;Márquez&quot; ... I wonder where her folks are from ...</option>
+    <option goto="end" speaker="conway">I hope we see her again.</option>
+  </scene>
+
+  <scene name="weaver-creepy">
+    <option goto="end" speaker="conway">Just had a weird ... energy ...</option>
+    <option goto="end" speaker="conway">But that's not her fault, I guess. Some folks are just like that.</option>
+  </scene>
+</conversation>

@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-talked-to-walker" value="true"/>
+    <setGameVar name="museum-location" value="overpass"/>    
+    <line speaker="walker">Sure, I talked to them for a bit. Actually, we talked for quite a while. I wasn't busy. I was happy for the company. Can't sleep in a storm like that; I never could.</line>
+    <option goto="how-they-got-in" speaker="museum staff">Did you see how they got in?</option>
+    <option goto="talk-about" speaker="museum staff">What did you talk about?</option>
+    <option goto="sleep-in-storm" speaker="museum staff">Why can't you sleep in a storm?</option>
+  </scene>
+
+  <scene name="how-they-got-in">
+    <line speaker="walker">They came right in the front door, it wasn't locked. Your security here is kind of ... kind of shitty. I wasn't going to say, but ...</line>
+    <option goto="talk-about" speaker="museum staff">What did you talk about?</option>
+    <option goto="security" speaker="museum staff">It's a work in progress.</option>
+  </scene>
+
+  <scene name="security" nextScene="roof">
+    <line speaker="walker">Hey, doesn't bother me. I don't think it really bothers anyone: a locked door on your neighborhood is a pretty weird idea anyway. I'd like to see a bit more work done on that roof, though!</line>
+  </scene>
+
+  <scene name="sleep-in-storm" nextScene="roof">
+    <line speaker="walker">Bad memories. Besides, it leaks back here! You have got to fix that roof.</line>
+  </scene>
+
+  <scene name="roof" nextScene="end">
+    <line speaker="walker">There was a steady stream running down the back wall and right through my, uh ... this little exhibit thing ... anyway it was just going like a river all night!</line>
+    <line speaker="walker">It's a damn hazard; you've got wires everywhere! Don't you people have anyone to look at this stuff?</line>
+  </scene>
+
+  <scene name="talk-about" nextScene="end">
+    <line condition="museum-umbrella-is-open" speaker="walker">I told him to put his umbrella away: I get great shelter right here.</line>
+    <line speaker="walker">I had a bottle in my coat, and I could see the old guy looking at it, and his leg was hurt pretty bad so I offered him some. He got real awkward about it. I bet he's in a program.</line>
+    <line speaker="walker">Anyway, they were asking about Dr. Truman. I remember him: he was here for a bit, and then he left.</line>
+    <line speaker="walker">So that's what I told them.</line>
+  </scene>
+
+</conversation>

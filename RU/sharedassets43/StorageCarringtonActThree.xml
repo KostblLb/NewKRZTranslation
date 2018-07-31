@@ -1,0 +1,100 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="carrington-talked" value="true"/>    
+    <line speaker="carrington">Ah! So glad you stopped by. I've been standing here alone, waiting for my cast and crew, and I'm afraid very little can be done in their absence.</line>
+    <line speaker="carrington">I've just been thinking. The narrow constraints of this space will make for quite an introspective stage. Even trying to visualize the performance here, I find my own thoughts drawn inward ...</line>
+    <line speaker="carrington">Well, I suppose it is the business of a cast and crew to be late, just as it is the business of a director to visualize.</line>
+    <line speaker="carrington">It's all becoming very clear to me. This venue will be perfect, a triumph ...</line>
+    <line speaker="carrington">I wonder, do you ever feel as though you've arrived after ...</line>
+    <option goto="after" speaker="shannon">After what?</option>
+    <option goto="late" speaker="shannon">I've been running late all day.</option>
+  </scene>
+
+  <scene name="late" nextScene="stage">
+    <line speaker="carrington">Exactly. Standing at the end of history, too late for masterpieces. Too late for an `Oresteia`, for a `Faustus`, for an `Iceman` ...</line>
+  </scene>
+
+  <scene name="after" nextScene="stage">
+    <line speaker="carrington">Just `after`, I suppose. After `Oresteia`. After `Faustus`. After `Iceman` ...</line>
+    <line speaker="carrington">What's your most treasured stage production, my friend?</line>
+  </scene>
+
+  <scene name="stage">
+    <option goto="glass-menagerie" speaker="shannon">I saw `The Glass Menagerie` once.</option>
+    <option goto="never-seen-a-play" speaker="ezra">I've never seen a play.</option>
+  </scene>
+
+  <scene name="glass-menagerie">
+    <line speaker="carrington">Oh? Tell me about it.</line>
+    <option goto="gm-on-tv" speaker="shannon" variableChange="carrington-conway-play=tv">It was on TV.</option>
+    <option goto="gm-on-stage" speaker="shannon" variableChange="carrington-conway-play=school">They let us out of school to see it.</option>
+  </scene>
+
+  <scene name="gm-on-tv">
+    <option goto="make-up" speaker="shannon">They all had lots of make-up, and the camera was too close so you could really see it caked on there.</option>
+    <option goto="pointed-a-camera" speaker="shannon">I think they just pointed a camera at the stage and let it run.</option>
+    <option goto="sound-off" speaker="shannon" variableChange="carrington-conway-play=bar">It was playing in a bar with the sound off.</option>
+  </scene>
+
+  <scene name="make-up" nextScene="staging">
+    <line speaker="carrington">I suppose all tragedies become brittle and uncanny when viewed from the wrong distances ...</line>
+  </scene>
+
+  <scene name="pointed-a-camera" nextScene="staging">
+    <line speaker="carrington">The view from the peanut gallery!</line>
+  </scene>
+
+  <scene name="sound-off" nextScene="staging">
+    <line speaker="carrington">Well, I'm sure there was plenty of ambient tragedy to fill in the gaps.</line>
+  </scene>
+
+  <scene name="gm-on-stage">
+    <option goto="sat-in-back" speaker="shannon">We had to sit near the back, and I could only hear a few parts.</option>
+    <option goto="fell-asleep" speaker="shannon">I think I fell asleep.</option>
+  </scene>
+
+  <scene name="sat-in-back">
+    <line speaker="carrington">What do you remember?</line>
+    <option goto="plastic-theater" speaker="shannon">They played this strange music through the whole thing.</option>
+    <option goto="plastic-theater" speaker="shannon">They had a screen with words and pictures projected on it.</option>
+  </scene>
+
+  <scene name="plastic-theater" nextScene="staging">
+    <line speaker="carrington">Hm. Yes. Quite an experimental production, really — did you know? Plastic theater.</line>
+  </scene>
+
+  <scene name="fell-asleep" nextScene="staging">
+    <line speaker="carrington">Hm. Uncomfortable dreams, I can only guess ...</line>
+  </scene>
+
+  <scene name="never-seen-a-play" nextScene="staging">
+    <line speaker="carrington">Ah! Then let this be your first. I can't promise it will be an ideal introduction to the form — it is, as I say, an `experimental` production, conceived in response to the full history of the stage ...</line>
+  </scene>
+
+  <scene name="staging">
+    <line speaker="carrington">So, that said ... I have my vision for the transformation of this venue. But it's all still unsettled and potential, while we wait for the cast and crew to arrive.</line>
+    <line speaker="carrington">So tell me, what do you think? Where in this cavernous storage facility shall we stage the production?</line>
+    <line speaker="carrington">Where is there room for an audience to get that crucial dramatic distance from the performers?</line>
+    <option goto="closed-circuit" speaker="shannon">You could connect the audience and performers with a closed-circuit TV?</option>
+    <option goto="no-audience" speaker="ezra">You don't need an audience.</option>
+  </scene>
+
+  <scene name="no-audience" nextScene="bye-for-now">
+    <setGameVar name="carrington-storage-audience" value="none"/>
+    <line speaker="carrington">How unorthodox ... an intimate performance, for the performers alone. And how lonely it would be — a theater of the dispossessed!</line>
+  </scene>
+
+  <scene name="closed-circuit" nextScene="bye-for-now">
+    <setGameVar name="carrington-storage-audience" value="tv"/>    
+    <line speaker="carrington">Ah! Dramatic distance, indeed! It's certainly a modern take, and certainly within the realm of the possible ... In fact, we may be able to repurpose this facility's own security camera network!</line>
+  </scene>
+
+  <scene name="bye-for-now" nextScene="end">
+    <line speaker="carrington">You've given me a great deal to think about, friends. And it seems I'll have some time yet to consider it all.</line>
+    <line speaker="carrington">Well, surely the cast and crew will arrive within the hour, and we'll begin constructing the set and arranging the lights.</line>
+    <line speaker="carrington">I hope you can come by again to see me before the show, but I understand you have your own tasks to carry out.</line>
+    <line speaker="carrington">Just remember: `The Death of the Hired Man`! Random Access Storage Facility! Dawn!</line>
+  </scene>
+
+</conversation>

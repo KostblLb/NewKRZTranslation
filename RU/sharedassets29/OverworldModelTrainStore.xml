@@ -1,0 +1,82 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" time="2"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <setGameVar name="overworld-saw-model-train-store" value="true"/>
+    <triggerEvent name="fade-out-radio"/>
+    <triggerEvent name="fade-out-road-sounds"/>
+    
+    <audioFade clip="train-shop-exterior" direction="in" time="2"/>
+    <audioFade clip="train-shop-interior" direction="to" target="0.125" time="2"/>
+    
+    <line>This isolated stretch of railroad track is overgrown with wildflowers. It spans only a few hundred yards, and is bracketed on each side by a pile of rotting wooden ties.</line>
+    <line>The only visible stop on the railway is a squat, wooden station building, brightly lit from within.</line>
+    <option goto="enter" insertedText="Conway and Ezra enter the building.">Enter the building.</option>
+    <option goto="end" insertedText="Conway drives off.">Drive away.</option>
+  </scene>
+
+  <scene name="enter">
+    <audioFade clip="train-shop-exterior" direction="out" time="2"/>
+    <audioFade clip="train-shop-interior" direction="to" target="0.3" time="4"/>
+    <line>The station interior is `warm`: soft orange light from a few antique fixtures, worn but finished wood floors and counters, and a compact space heater left conspicuously in the middle of the room.</line>
+    <line>Train memorabilia hangs from racks on the wall. A model steam engine pulls boxcars steadily along a track threaded through the rafters.</line>
+    <line>A teenager in a kitschy engineer's cap is slumped behind a cash register, asleep.</line>
+    <option goto="conway-magazines" insertedText="Conway flips through some magazines.">Flip through magazines.</option>
+    <option goto="ezra-engine" insertedText="Ezra strains to examine the steam engine.">Examine the model train.</option>
+  </scene>
+
+  <scene name="conway-magazines">
+    <setGameVar name="overworld-model-train-store-read-magazines" value="true"/>
+    <line>They all seem to be train-related magazines, but ...</line>
+    <option goto="train-hopping" insertedText="Conway opens a magazine with a photo of a homeless teenager on the cover.">Read `Life on the Rails`.</option>
+    <option goto="advertisement" insertedText="Conway looks at an advertisement on the back of `Model Painter's Monthly`.">Read `Model Painter's Monthly`.</option>
+  </scene>
+
+  <scene name="train-hopping" nextScene="end">
+    <line>&quot;Life on the Rails: How a New Generation Is Reclaiming Hobo Culture.&quot;</line>
+    <line>It's pretty argumentative. Kind of a manifesto or something.</line>
+    <line>Parts of it are interviews with cops or security guards about chasing kids away from rail yards, with a lot of editorializing on the part of the interviewer ...</line>
+    <line>The kids look hungry. Charlie's school had this big cafeteria — he sneaked Conway in there when he was in the area once, and they had big meal.</line>
+    <line>It was late morning, and they were just closing up breakfast, so they gave Conway extra eggs — looked like almost three servings.</line>
+    <line>These kids should think about going to college. Better food than a damned lonely train car.</line>
+  </scene>
+
+  <scene name="advertisement" nextScene="end">
+    <line>&quot;Corrostain is Your New Solution for Instant Rust!&quot;</line>
+    <line>They're selling some kind of paint for train models.</line>
+    <line>It sounds like you put a little of it on for detail after you have the car painted how you want it, then let it sit for a few hours and it makes realistic rust patterns.</line>
+    <line>Once, in the bad old days, some customer accused Lysette of falsifying an antique. Soaking a reprinted illustration in iced tea.</line>
+    <line>She said, &quot;why would I go to all that work when I can just find these old drawings at estate sales?&quot;</line>
+    <line>It turned out the illustration was a reprint, but it had aged really fast the way it was stored in some family's basement, before Lysette ever saw it.</line>
+    <line>She was pretty embarrassed. But it wasn't her fault.</line>
+    <line>What's the difference if a piece of paper is forty years old or if it's twenty years old but it's been aging twice as fast?</line>
+    <line>If what you want is something old, anyway.</line>
+  </scene>
+
+  <scene name="ezra-engine">
+    <setGameVar name="overworld-model-train-store-examined-train" value="true"/>
+    <line>It's too high up to get a good look at.</line>
+    <option goto="engine-lift" insertedText="Conway lifts Ezra up onto his shoulders.">Ask for help.</option>
+    <option goto="engine-climb" insertedText="Ezra climbs up a pile of train-related jigsaw puzzles.">Climb higher.</option>
+  </scene>
+
+  <scene name="engine-lift" nextScene="in-rafters">
+    <line>The train speeds by, just out of reach. Ezra shifts his weight, lifts his left knee to chin height and, before Conway can stop him, vaults off the older man's shoulder and up into the rafters.</line>
+  </scene>
+
+  <scene name="engine-climb" nextScene="in-rafters">
+    <line>It takes a few goes, and a bit of engineering, but he's able to get within several feet of the rafters. From there, it's a matter of faith and athleticism.</line>
+  </scene>
+
+  <scene name="in-rafters" nextScene="end">
+    <audioFade clip="train-shop-interior" direction="in" time="4"/>
+    <line>The view from the rafters is not much different: piles of boxed trains and train memorabilia, the clerk asleep behind the desk, Conway looking awkwardly around the room and occasionally scratching the nape of his neck.</line>
+    <line>Does he know he does that? Is it just one of those things he does, like the way Ezra's mother half-sings &quot;hello&quot; and &quot;good-bye?&quot;</line>
+    <line>It almost sounds like a joke, or a question, when she does it.</line>
+    <line>Conway scratching his neck seems like a question, too. &quot;Are we really here?&quot; maybe. Or maybe, &quot;is this it?&quot;</line>
+    <line>The train isn't very interesting up close. After all, it's only a toy.</line>
+  </scene>
+</conversation>

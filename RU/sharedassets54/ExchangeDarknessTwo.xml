@@ -1,0 +1,69 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="conway">Better hang on a minute, it feels like there's one kind of `hovering` right over me ...</line>
+    
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=aviation">They don't really hover though, do they? I mean, how could they ... I guess a hummingbird will hover by beating its wings really fast, maybe they can do that too.</line>
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=aviation">I used to watch hummingbirds in the afternoon, at the kitchen window. Lysette's kid Charlie, he loved them — you know, he studied aviation ... He set up a bunch of hummingbird feeders that last summer he was home. Big sugar-water buffet! But those dumb birds didn't find it until he was gone.</line>
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=aviation">Anyway, me and Lys, sometimes we'd try to see one of them up close. You get up to the window and then you have to stand totally still for a while, like one of those wax sculptures, don't even move your eyes, like `this` ...</line>
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=aviation">Oh, you can't see me. Ha ha. I was doing the "watching hummingbirds close-up" face.</line>
+
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=astronomy">They don't really hover though, do they? I mean how could they ... I guess a lightning bug will hover by beating its wings really fast, maybe they can do that too.</line>
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=astronomy">I used to watch lightning bugs in the evening, out at the edge of the woods. Lysette's kid Charlie, he loved them — you know, he ended up going to college and studying astronomy, and I like to think he got his love for stars from those nights watching bugs.</line>
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=astronomy">Anyway, me and Charlie, sometimes we'd try to see one of them up close — you lay in the grass and you have to be totally still for a while, like one of those wax sculptures, don't even breathe, like `this` ...</line>
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=astronomy">Oh, you can't see me. Ha ha. I was doing the "watching lightning bugs in the grass" face.</line>
+
+    <option goto="imagine-face" speaker="shannon">I think I can imagine it.</option>
+    <option goto="talking-on-the-phone" speaker="shannon">Feels like we're talking on the phone or something.</option>
+  </scene>
+
+  <scene name="imagine-face" nextScene="talking-on-the-phone">
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=aviation">Yeah, you've seen it already; it's my driving face, too. Lys told me that once and now I can't ever help but think of it, when I'm driving or when I see a hummingbird. Ha ha.</line>
+    <line speaker="conway" condition="three:lysettes-kitchen-charlie-studied=astronomy">Yeah, you've seen it already, when I fell in the mine. Kind of stunned, in shock. Ha ha.</line>
+  </scene>
+
+  <scene name="talking-on-the-phone">
+    <line speaker="conway">Hey, who were you talking to earlier? When we met, in the mine, you were on the phone with someone. I forgot about that.</line>
+    <option goto="phone-details-1" speaker="shannon" variableChange="exchange-shannons-interlocutor-relationship=ex">My ex.</option>
+    <option goto="phone-details-1" speaker="shannon" variableChange="exchange-shannons-interlocutor-relationship=friend">Just a friend.</option>
+  </scene>
+
+  <scene name="phone-details-1">
+    <option goto="phone-details-2" speaker="shannon" variableChange="exchange-shannons-interlocutor-pronoun=she">Alejandra.</option>
+    <option goto="phone-details-2" speaker="shannon" variableChange="exchange-shannons-interlocutor-pronoun=he">Mark.</option>
+  </scene>
+
+  <scene name="phone-details-2">
+    <option goto="phone-details-3" speaker="shannon">We met in school, and we're still pretty close.</option>
+    <option goto="phone-details-3" speaker="shannon"><filter name="capitalize"><variable name="exchange-shannons-interlocutor-pronoun" /></filter> has kids now so we don't talk as much.</option>
+  </scene>
+
+  <scene name="phone-details-3">
+    <option goto="phone-details-venting" speaker="shannon">I was just venting on the phone about my landlord situation.</option>
+    <option goto="phone-details-chat" speaker="shannon"><filter name="capitalize"><variable name="exchange-shannons-interlocutor-pronoun" /></filter> called me to chat about something ...</option>
+  </scene>
+
+  <scene name="phone-details-venting">
+    <option goto="phone-details-wrapup" speaker="shannon"><filter name="capitalize"><variable name="exchange-shannons-interlocutor-pronoun" /></filter> didn't really have time for it ... busy doing other things.</option>
+    <option goto="phone-details-wrapup" speaker="shannon"><filter name="capitalize"><variable name="exchange-shannons-interlocutor-pronoun" /></filter> was very patient, but I could tell <variable name="exchange-shannons-interlocutor-pronoun" /> had no idea what I was talking about ...</option>
+  </scene>
+
+  <scene name="phone-details-chat">
+    <option goto="phone-details-wrapup" speaker="shannon">I was preoccupied with my landlord trouble, and Weaver ... I did my best to listen, but I was distracted.</option>
+    <option goto="phone-details-wrapup" speaker="shannon">I think I was kind of rude, actually; in a hurry to get into the mines. I feel bad.</option>
+  </scene>
+
+  <scene name="phone-details-wrapup">
+    <option goto="phone-reconnect" speaker="shannon">It gets harder and harder to reconnect.</option>
+    <option goto="phone-hate-talking" speaker="shannon">I actually hate talking on the phone.</option>
+  </scene>
+
+  <scene name="phone-reconnect" nextScene="end">
+    <line speaker="conway">Yeah, I know that's true.</line>
+  </scene>
+
+  <scene name="phone-hate-talking" nextScene="end">
+    <line speaker="conway">Yeah, I try not to use it. I like to see someone's hands when they talk. Most people never learn how to `lie` with their hands, so anything you see there you can pretty much take for the truth.</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="bureau-got-storage-directions" value="true"/>
+    <line speaker="mary ann">Get what you need?</line>
+    <option goto="church" speaker="conway">Lula said you could direct us to the ... church?</option>
+    <option goto="what-is-this-place" speaker="shannon">Be straight with me. What is this place?</option>
+  </scene>
+
+  <scene name="what-is-this-place">
+    <line speaker="mary ann">Just another office, lady. Just another job.</line>
+    <option goto="congregation" speaker="shannon">But you kicked out a congregation to set up your office?</option>
+    <option goto="church" speaker="conway">Lula said you could direct us to the church?</option>
+  </scene>
+
+  <scene name="congregation" nextScene="church-directions">
+    <line speaker="mary ann">I wasn't here for that. But, yeah, I get where you're coming from. Still, I wouldn't judge until I'd seen everything. They've got a new church now, the Bureau set it up for them out of some of their old storage space. I'm sure it's very nice.</line>
+    <line speaker="mary ann">Go see it for yourself.</line>
+  </scene>
+
+  <scene name="church" nextScene="church-directions">
+    <line speaker="mary ann">Oh, sure. The old storage lot.</line>
+  </scene>
+
+  <scene name="church-directions" nextScene="end">
+    <line speaker="mary ann">Just get back on the |Zero| and drive until you hit the crystal. Then turn around.</line>
+    <line speaker="mary ann">It'll make sense once you get on the road. You can handle it.</line>
+  </scene>
+
+</conversation>

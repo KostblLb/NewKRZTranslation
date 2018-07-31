@@ -1,0 +1,26 @@
+# -*- mode: blocking -*-
+
+@set Stop riverworld-grove
+
+@func CircleOfRocksVignette
+
+  Tugboat Wait 5
+  Tugboat Message RiverworldManager EnableDialogThrottle
+  Tugboat Dialog RiverVignetteCircleOfRocks
+  Tugboat Message RiverworldManager DisableDialogThrottle
+
+@end
+
+@func FloatingGasStationRecap
+
+  Tugboat Message RiverworldManager EnableDialogThrottle
+  Tugboat Dialog RiverRecapGrove
+  Tugboat Message RiverworldManager DisableDialogThrottle
+
+@end
+
+Tugboat Message RiverworldManager QueueState Exchange
+Tugboat Message RiverworldManager SetDestination Exchange
+
+Tugboat Exec CircleOfRocksVignette ? [Stop]=disembarked
+Tugboat Exec FloatingGasStationRecap ? [Stop]=aboard

@@ -1,0 +1,17 @@
+# -*- mode: blocking -*-
+
+Tugboat Listen segment-change
+
+Tugboat Message RiverworldManager QueueState Silo
+Tugboat Message RiverworldManager SetDestination Silo
+
+Tugboat Message RiverworldManager EnableDialogThrottle
+Tugboat Dialog RiverVignetteWillClosing
+Tugboat Message RiverworldManager DisableDialogThrottle
+
+Vignette Listen on-silo
+Vignette Set riverworld-reached-silo true
+Vignette Dialog RiverVignetteWillClosing ? !riverworld-wills-last-line+!temp:dialog-running
+
+Silo Listen boat-stop
+Silo Message RiverworldManager LoadScene Silo

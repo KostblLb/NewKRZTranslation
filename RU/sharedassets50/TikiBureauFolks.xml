@@ -1,0 +1,60 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-shannon-talked-to-bureau-folks" value="true" />
+    <line speaker="luis">`(Yelling.)` The water is fine! Invigorating. It makes me want to run. I could gallop up and down this beach like a horse!</line>
+    <line speaker="clerk böhm">`(To METZSTEIN.)` What's he yelling about?</line>
+    <line speaker="clerk metzstein">He wants to run on the beach. Like a horse, he says.</line>
+    <line speaker="clerk metzstein">`(To SHANNON.)` Oh dear, what's in these drinks? Ha ha.</line>
+    <option goto="drinks" speaker="shannon">Pretty strong, huh?</option>
+    <option goto="bureau" speaker="shannon">You folks work at the Bureau.</option>
+    <option goto="rick" speaker="shannon">Your friend's laying in the sand over there; I think he's asleep.</option>
+  </scene>
+
+  <scene name="drinks" nextScene="luis-interruption">
+    <line speaker="clerk metzstein">But deceptively sweet.</line>
+    <line speaker="clerk böhm">Mine's not very sweet at all, actually. It's just sort of ... pleasant.</line>
+    <line speaker="clerk metzstein">I really meant "rich," I think. With a sweet aroma.</line>
+  </scene>
+
+  <scene name="bureau" nextScene="luis-interruption">
+    <line speaker="clerk böhm">We're celebrating!</line>
+    <line speaker="clerk metzstein">We just hit a big milestone, you know.</line>
+    <line>`(THE CLERKS both pause, waiting for the other to speak.)`</line>
+    <line speaker="clerk böhm">Well? Tell her about it!</line>
+    <line speaker="clerk metzstein">But I don't know anything more than you do. It wasn't part of my caseload.</line>
+    <line speaker="clerk böhm">Well it wasn't part of `mine`. I wonder just what we're celebrating.</line>
+    <line speaker="clerk metzstein">It doesn't matter.</line>
+  </scene>
+
+  <scene name="rick" nextScene="luis-interruption">
+    <line speaker="clerk böhm">Poor Rick. He's a lightweight.</line>
+    <line speaker="clerk metzstein">I think he just drank too fast. It's easy to get carried away. Oh, he always gets so `melancholy` when he drinks.</line>
+    <line speaker="clerk metzstein">Remember? The office picnic at that big, flat rock ...</line>
+    <line speaker="clerk böhm">Oh, I remember. He was talking Lula's ear off. She slipped away, and he sat on the ground, nursing that brown bottle, crying! Sobbing about "the days that are no more."</line>
+    <line speaker="clerk metzstein">Poor Rick. It'll never be.</line>
+  </scene>
+
+  <scene name="luis-interruption">
+    <line speaker="luis">`(Yelling.)` Invigorating!</line>
+    <line speaker="clerk böhm">`(Yelling to LUIS.)` Catch anything, Luis?</line>
+    <line speaker="clerk metzstein">So. Did you find what you were looking for? With Lula, I mean.</line>
+    <option goto="is-lula-here" speaker="shannon">Is she here?</option>
+    <option goto="work-in-progress" speaker="shannon">It's a work in progress.</option>
+  </scene>
+
+  <scene name="work-in-progress" nextScene="luis-second-interruption">
+    <line speaker="clerk metzstein">I know what you mean. I've been working on —</line>
+  </scene>
+
+  <scene name="is-lula-here" nextScene="luis-second-interruption">
+    <line speaker="clerk metzstein">I'm not sure `where` she is, now that you mention it. Before we left the office, she —</line>
+  </scene>
+
+  <scene name="luis-second-interruption" nextScene="end">
+    <line speaker="luis">`(Yelling.)` I think I `will` go for a run along the beach. As soon as I'm finished with this drink.</line>
+    <line speaker="clerk böhm">Try not to yell so loud, Luis, I'm afraid you'll shake the ceiling loose!</line>
+  </scene>
+
+</conversation>
+

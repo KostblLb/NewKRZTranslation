@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="lower-depths-talked-about-jukebox" value="true"/>
+    
+    <line>`(EZRA flips eagerly through the jukebox's catalog of songs.)`</line>
+    <line speaker="shannon">What do you think?</line>
+    <line speaker="ezra">I don't know how to play this game.</line>
+  </scene>
+</conversation>

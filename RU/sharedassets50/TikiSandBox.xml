@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-sand-box" value="true" />
+    <line>Shannon finds a small box, about the right size for an injured baby bird or a couple of mice. This box is only full of sand. She rolls a few grains in her fingertips. It feels different from the sand under her toes: finer, and slicker. She has the feeling this is sand from a different beach.</line>
+  </scene>
+</conversation>

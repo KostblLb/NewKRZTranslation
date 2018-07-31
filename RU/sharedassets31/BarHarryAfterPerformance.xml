@@ -1,0 +1,74 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="lower-depths-talked-to-harry-after-song" value="true"/>
+
+    <blocking>
+      @BandMovesToBarAfterSet
+      @ShannonWalksToBar
+    </blocking>
+
+    <line speaker="junebug">Well, Harry, I think that went pretty well.</line>
+    <line speaker="johnny">I'd say the crowd was into it ... reverential!</line>
+    <line speaker="junebug">Rapt!</line>
+    <line speaker="junebug">I guess the usual fee is about right, and we'll let you get back to your ... business.</line>
+    <line speaker="harry">Well, that's just the ... dammit, I was trying to tell you two, I can't pay! They cleaned me out. I've got nothing left but a G.D. I.O.U. from the distillery.</line>
+    <line speaker="johnny">An I.O.U.</line>
+    <line speaker="harry">Yeah, I traded them some ... I traded them for some whiskey, and I guess I had some surplus credit, so I got this note to get some more from them later on.</line>
+    <line speaker="johnny">Must have been a hell of a trade.</line>
+    <line speaker="harry">I had to! Got to keep this place open somehow, God dammit.</line>
+    <line speaker="johnny">Watch your language, Harry.</line>
+    
+    <option goto="iou" speaker="conway">Could you pay them with your I.O.U.?</option>
+    <option goto="zero" speaker="conway">Say, we just need to get pointed toward the |Zero|.</option>
+  </scene>
+
+  <scene name="iou" nextScene="directions">
+    <setGameVar name="lower-depths-junebug-took-iou" value="true"/>
+    
+    <line speaker="harry">Well, I ...</line>
+    <line speaker="junebug">Very contemporary, very astute! How about it, Harry? Let's push some paper around.</line>
+    <line speaker="harry">Well, it's just ... I can collect on it here when they bring more whiskey up. But for you to cash in, you'd have to go down to ... you know ...</line>
+    <line speaker="harry">Down to the distillery. Down to Hard Times. And, you know, it's ... you've got to take the |Zero|.</line>
+    <line speaker="junebug">So that's what we'll do. How do we get there?</line>
+  </scene>
+
+  <scene name="zero" nextScene="directions">
+    <line speaker="harry">Oh, God ...</line>
+    <line speaker="junebug">What's that? You know what they're talking about? Tell you what: you point my friends and I to the |Zero|, and we'll call it even.</line>
+  </scene>
+
+  <scene name="directions">
+    <line condition="breakdown-assistance-offered=zero" speaker="shannon">`(To JUNEBUG.)` You said you knew how to get there.</line>
+    <line condition="breakdown-assistance-offered=zero" speaker="junebug">No, I don't believe that's exactly what I said ...</line>
+    <line condition="breakdown-assistance-offered=zero" speaker="shannon">It is `exactly` what you said.</line>
+    <line speaker="harry">Are you folks sure you want to head down there? I've never been myself, but I hear ... people hear things. Rumors.</line>
+    <option goto="must-go" speaker="conway">It's where we've got to go.</option>
+    <option goto="dogwood" speaker="conway">Do you know another way to Dogwood Drive?</option>
+  </scene>
+
+  <scene name="must-go" nextScene="final-directions">
+    <line speaker="harry">Well. I'll tell you, then. `(To JUNEBUG.)` But this is it, right? We're square?</line>
+  </scene>
+
+  <scene name="dogwood" nextScene="final-directions">
+    <line speaker="harry">Dogwood? Got a letter, did you? I've got a stack of them ...</line>
+    <line speaker="harry">Well, OK. Sounds like the |Zero|'s your only course, now.</line>
+  </scene>
+
+  <scene name="final-directions" nextScene="end">
+    <setGameVar name="lower-depths-harry-gave-zero-directions" value="true" />
+    <line speaker="junebug">Harry, you're alright.</line>
+    <line speaker="harry">If only.</line>
+    <line speaker="harry">You got a radio in your car?</line>
+    <line speaker="shannon">Yep.</line>
+    <line speaker="harry">Well, here's what you've got to do: take a left out of the parking lot, and then just fiddle around on your dial until you hear something familiar, but ...</line>
+    <line speaker="harry">I mean ... familiar, but `strange`. You know the feeling? Like ... I used to go hunt with my uncle, out in the mountains, and now I watch these nature programs.</line>
+    <line speaker="harry">They're filmed in the mountains, and there's the deer, and I know all the plants and every kind of tree, but something just doesn't look right.</line>
+    <line speaker="harry">And it's even `stranger` for being so close to `familiar`. Something like that. You'll know it when you hear it.</line>
+    <line speaker="harry">Fix that strange but familiar station on your dial, drive for a bit, and then turn around when the station cuts out. I mean `right then`.</line>
+    <line speaker="harry">Hope you folks find what you're looking for ... eventually.</line>
+    <line speaker="johnny">Always a pleasure, Harry.</line>
+    <line speaker="harry">`(Sardonic.)` Is it?</line>
+  </scene>
+</conversation>

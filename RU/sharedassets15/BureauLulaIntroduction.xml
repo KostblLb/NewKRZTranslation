@@ -1,0 +1,212 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="end-lula-intro">
+  <!-- Intro -->
+
+  <scene name="intro">
+    <line speaker="letter">ATTN: Lula Chamberlain, RE: Your application.</line>
+    <line speaker="letter">Thank you for your application to the `Gaston Trust for Imagined Architecture`'s annual fellowship. We received a record number of applications this year — over 100 in total — and regrettably we can award only one fellowship position per year. As you know, our review process includes a multiphase blind committee analysis of portfolio submissions, as well as a careful review by a panel of subject matter experts on each applicant's notability and relevance in the field.</line>
+    <line speaker="letter">We must be extremely selective in our process so as to maintain the standards we have established over our thirty-five years in operation. Our panel did not select your application.</line>
+    <line speaker="letter">We encourage you to consider re-applying next year. Many young artists and architects re-apply for a few successive years before being accepted.</line>
+    <line speaker="letter">Sincerely, Dr. Karl Stone-Norden, Architect, Gaston Trust for Imagined Architecture</line>
+    <line>`(Below the printed text is a hastily-handwritten note.)`</line>
+    <line speaker="note">sorry for the condescending form letter. love your work. unfortunately, i just do the mail here.</line>
+    <line speaker="note">- your obt. svt., robert</line>
+    <option goto="after-letter" variableChange="bureau-lula-threw-away-rejection-letter=true">`(LULA throws the letter in the wastebasket.)`</option>
+    <option goto="after-letter" variableChange="bureau-lula-kept-rejection-letter=true">`(LULA folds the letter up and puts it in her handbag.)`</option>
+  </scene>
+  
+  <scene name="after-letter">
+    <triggerEvent name="lula-put-away-letter"/>
+    <option goto="proposals">`(LULA opens a folder on her desk labeled &quot;Proposals.&quot;)`</option>
+    <option goto="sketchbook">`(LULA opens a folder of writing paper on her desk.)`</option>
+  </scene>
+
+  <!-- Proposals -->
+  
+  <scene name="proposals">
+    <triggerEvent name="lula-stamp"/>
+    <triggerEvent name="lula-open-folder"/>
+    <goto condition="bureau-proposal-count-read=2" sceneName="proposals-interruption"/>
+    <triggerEvent condition="bureau-proposal-count-read=2" name="lula-intro-camera-out"/>
+    
+    <line condition="bureau-proposal-count-read=0">`(LULA sorts through documents, all printed on a fading letterhead reading &quot;Bureau of Reclaimed Spaces.&quot;)`</line>
+    <line condition="!bureau-proposal-1-read" speaker="proposal #1">SITE: Hospital. PROPOSED USE: Auto dealership.</line>
+    <line condition="!bureau-proposal-2-read" speaker="proposal #2">SITE: Distillery. PROPOSED USE: Graveyard.</line>
+    <line condition="!bureau-proposal-3-read" speaker="proposal #3">SITE: Basketball court. PROPOSED USE: Kennel.</line>
+    <option condition="!bureau-proposal-1-read" goto="proposal-1">`(LULA reviews Proposal #1.)`</option>
+    <option condition="!bureau-proposal-2-read" goto="proposal-2">`(LULA reviews Proposal #2.)`</option>
+    <option condition="!bureau-proposal-3-read" goto="proposal-3">`(LULA reviews Proposal #3.)`</option>
+  </scene>
+
+  <scene name="proposal-1">
+    <setGameVar name="bureau-proposal-count-read" value="+1"/>
+    <setGameVar name="bureau-proposal-1-read" value="true"/>
+    <line speaker="proposal #1">Hospital closed due to repeated sanitation violations. Auto Dealership sanitation requirements comparatively lax. Small operating rooms could be repurposed into offices. Large cubicle-style administrative offices could be repurposed into showrooms.</line>
+    <option goto="proposals" variableChange="bureau-proposal-1-approved=true">`(LULA stamps the proposal &quot;Endorsed.&quot;)`</option>
+    <option goto="proposals" variableChange="bureau-proposal-1-approved=false">`(LULA stamps the proposal &quot;Opposed.&quot;)`</option>
+  </scene>
+
+  <scene name="proposal-2">
+    <setGameVar name="bureau-proposal-count-read" value="+1"/>
+    <setGameVar name="bureau-proposal-2-read" value="true"/>    
+    <line speaker="proposal #2">Distillery still active, but scaling down operation to less than half of site. Distillery built on top graveyard originally. Hybrid distillery/graveyard could share resources. Chapel once repurposed into bottling facility could be repurposed into chapel.</line>
+    <option goto="proposals" variableChange="bureau-proposal-2-approved=true">`(LULA stamps the proposal &quot;Endorsed.&quot;)`</option>
+    <option goto="proposals" variableChange="bureau-proposal-2-approved=false">`(LULA stamps the proposal &quot;Opposed.&quot;)`</option>
+  </scene>
+
+  <scene name="proposal-3">
+    <setGameVar name="bureau-proposal-count-read" value="+1"/>
+    <setGameVar name="bureau-proposal-3-read" value="true"/>
+    <line speaker="proposal #3">Basketball court abandoned due to hazardous increase in stray dog population. Already full of dogs.</line>
+    <option goto="proposals" variableChange="bureau-proposal-3-approved=true">`(LULA stamps the proposal &quot;Endorsed.&quot;)`</option>
+    <option goto="proposals" variableChange="bureau-proposal-2-approved=false">`(LULA stamps the proposal &quot;Opposed.&quot;)`</option>
+  </scene>
+
+  <!-- Proposal interruption routing -->
+  <scene name="proposals-interruption">
+    <triggerEvent name="lula-look-at-rick"/>
+    <goto condition="one:met-carrington" sceneName="proposal-carrington-appears"/>
+    <goto condition="!one:met-carrington" sceneName="rick-appears"/>    
+  </scene>
+  
+  <!-- Sketchbook -->
+  
+  <scene name="sketchbook">
+    <triggerEvent name="lula-open-folder"/>
+    <option goto="sketchbook-to-robert" speaker="lula" variableChange="bureau-lula-responded-to-robert=true">`(To herself, quietly.)` Dearest Robert, thank you for your kind note.</option>
+    <option goto="sketchbook-to-karl" speaker="lula" variableChange="bureau-lula-responded-to-karl=true">`(To herself, quietly.)` ATTN Dr. Stone-Norden, RE Your own imagination.</option>
+  </scene>
+
+  <scene name="sketchbook-to-robert" nextScene="sketchbook-interruption">
+    <triggerEvent name="lula-intro-camera-out"/>
+    <triggerEvent name="lula-write"/>
+    
+    <line speaker="lula">Though it has been years since my name appeared in a gallery program, except as an occasional, dusty curiosity in a group show or as the impertinent subject of some misguided retrospective, I continue to ...</line>
+    <line speaker="lula">... something, something, gratitude ... yours in situ, Lula.</line>
+  </scene>
+
+  <scene name="sketchbook-to-karl" nextScene="sketchbook-interruption">
+    <triggerEvent name="lula-intro-camera-out"/>
+    <triggerEvent name="lula-write"/>
+    
+    <line speaker="lula">Thank you for your most informative letter. I was ecstatic to hear of your record-breaking success in receiving over 100 applications. What a triumph.</line>
+    <line speaker="lula">As you know, my application process includes several minutes of photocopying, undertaken on my lunch break. Regrettably, I must be extremely selective in my fellowship applications so as to leave enough time in which to eat my lunch, and in the successive years I will no longer be contributing to your illustrious submission count.</line>
+    <line speaker="lula">Yours, etc., Lula Chamberlain, Artist, Bureau of Reclaimed Spaces.</line>
+  </scene>
+
+  <!-- Sketchbook interruption routing -->
+  <scene name="sketchbook-interruption">
+    <triggerEvent name="lula-look-at-rick"/>
+    <goto condition="one:met-carrington" sceneName="sketchbook-carrington-appears"/>
+    <goto condition="!one:met-carrington" sceneName="rick-appears"/>    
+  </scene>
+  
+  <!-- Rick (coworker) -->
+  <scene name="rick-appears">
+    <line>`(RICK clears his throat.)`</line>
+    <line speaker="rick">Busy?</line>
+    <option goto="rick-not-important" speaker="lula">It's not important.</option>
+    <option goto="rick-buried" speaker="lula" variableChange="bureau-lula-busy=true">Buried.</option>
+    <option goto="rick-how-are-you" speaker="lula">How are you, Rick?</option>
+  </scene>
+
+  <scene name="rick-not-important" nextScene="rick-note">
+    <line speaker="rick">Oh OK. Great. Really great. I mean, sorry, that's not what I meant ...</line>
+  </scene>
+
+  <scene name="rick-buried" nextScene="rick-note">
+    <line speaker="rick">Yikes. Um ... Hey, Lula ...</line>
+  </scene>
+
+  <scene name="rick-how-are-you" nextScene="rick-note">
+    <line speaker="rick">I shouldn't complain. So ...</line>
+  </scene>
+
+  <scene name="rick-note">
+    <line speaker="rick">Um. Did you get my note?</line>
+    <option goto="rick-office-party" speaker="lula" variableChange="bureau-lula-acknowledged-ricks-invitation=true">About the office party? I'm going stag.</option>
+    <option condition="bureau-proposal-count-read&gt;0" goto="rick-proposals-finished" speaker="lula">About the proposals? I've just finished them.</option>
+    <option condition="bureau-proposal-count-read=0" goto="rick-proposals-working" speaker="lula">About the proposals? I'm still working on them.</option>
+  </scene>
+
+  <scene name="rick-office-party" nextScene="rick-goodbye">
+    <line speaker="rick">Oh, yeah, that's — I didn't mean ... Hey, I'm probably not going anyway. Lots to do, you know. A lot of new drafts, so ...</line>
+  </scene>
+
+  <scene name="rick-proposals-finished" nextScene="rick-goodbye">
+    <line speaker="rick">Oh, great, OK. I'll tell Diane. I think she was waiting on ... I don't know ...</line>
+  </scene>
+
+  <scene name="rick-proposals-working" nextScene="rick-goodbye">
+    <line speaker="rick">OK. Gotcha. Well.</line>
+    <line speaker="rick">Hey, I'm not here to rush you.</line>
+    <line speaker="rick">So ...</line>
+  </scene>
+
+  <scene name="rick-goodbye" nextScene="end">
+    <triggerEvent name="lula-look-at-desk"/>
+    <line speaker="rick">So ... how did your application go? I was in the mail room and I saw you got a letter back ...</line>
+    <line speaker="rick">Sorry, I don't mean to pry, I just ... saw.</line>
+    <line speaker="lula">It's fine, Rick. I'm not going anywhere.</line>
+    <line speaker="lula">How's your goldfish?</line>
+  </scene>
+
+  <!-- Carrington -->
+  
+  <scene name="proposal-carrington-appears">
+    <line>`(CARRINGTON clears his throat.)`</line>
+    <line speaker="carrington">Busy?</line>
+    <option goto="carrington-not-important" speaker="lula">It's not important.</option>
+    <option goto="carrington-buried" speaker="lula">Buried.</option>
+  </scene>
+
+  <scene name="sketchbook-carrington-appears">
+    <line>`(CARRINGTON clears his throat.)`</line>
+    <line speaker="carrington">I apologize; I thought you were on the telephone. Are you busy?</line>
+    <option goto="carrington-not-important" speaker="lula">It's not important.</option>
+    <option goto="carrington-thinking-out-loud" speaker="lula">Just thinking out loud.</option>
+  </scene>
+
+  <scene name="carrington-not-important" nextScene="carrington-intro-play">
+    <line speaker="carrington">I doubt that. You do important work here now. Maybe it's not sublime art, but it's ... do you know the famous dramatist who visited Mexico and said, &quot;here there is no art: things are made for use&quot;? You've been to Mexico, you've seen the murals, you know about all that ...</line>
+  </scene>
+
+  <scene name="carrington-buried" nextScene="carrington-intro-play">
+    <line speaker="carrington">Colorful. The death motif is so common in our speech at this age; we always seem to become morbid whenever we bring up work, home life, the weather ...</line>
+  </scene>
+
+  <scene name="carrington-thinking-out-loud" nextScene="carrington-intro-play">
+    <line speaker="carrington">There's no shame in it. After all, speech is a kind of thought ... at our best, we think `before` speaking, but we rarely think `while` speaking, so where do our thoughts go then? It may be that they reverberate out into the room, dissipating in hallways or getting trapped in some resonant corner of ...</line>
+  </scene>
+
+  <scene name="carrington-intro-play">
+    <line speaker="carrington">So, my own thoughts are wandering, clearly. I've got a lot on my mind. Clearly. Well. I'll come straight to it, then:</line>
+    <line speaker="carrington">The clerk upstairs tells me you've been assigned to my proposal. I've heard nothing in weeks, and I assumed it had been swallowed up by some dragon of administration, but ...</line>
+    <option goto="carrington-proposal-no" speaker="lula">`(Interrupting.)` I've received your proposal, and I'm afraid it's impossible.</option>
+    <option goto="carrington-play-continue" speaker="lula">`(Silence.)`</option>
+  </scene>
+
+  <scene name="carrington-play-continue">
+    <line speaker="carrington">Lula, my situation is desperate. I have hours. `Hours`. I must find a suitable venue for my play in time for its sunrise debut, or the last decade of my life will have been a vision within a dream. A fragment.</line>
+    <option goto="carrington-proposal-no" speaker="lula">I've received your proposal, and I'm afraid it's impossible.</option>
+    <option goto="carrington-proposal-maybe-later" speaker="lula">I ... haven't had a chance to review it, to be honest ...</option>
+  </scene>
+
+  <scene name="carrington-proposal-no" nextScene="carrington-leaves">
+    <triggerEvent name="lula-look-at-desk"/>
+    <line speaker="carrington">Of course.</line>
+    <line speaker="carrington">I'm ... sorry to have bothered you, Lula. I'll go now.</line>
+  </scene>
+
+  <scene name="carrington-proposal-maybe-later" nextScene="carrington-leaves">
+    <triggerEvent name="lula-look-at-desk"/>
+    <line speaker="carrington">I see. Of course, you're quite busy. I ... understand completely.</line>
+    <line speaker="carrington">I'm sorry to have bothered you, Lula. I'll go now.</line>
+  </scene>
+
+  <scene name="carrington-leaves" nextScene="end">
+    <line speaker="carrington">Oh, Lula. I thought you might like to know, I saw Joseph this evening just after sunset. We sat for a bit, drank some cold coffee, and talked about university days. Better days.</line>
+    <line speaker="lula">Maybe for him.</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-tape-recorder" value="true"/>
+    <line>Someone has left a portable tape recorder on the path. It doesn't appear damaged, but there's no tape to play or record.</line>
+  </scene>
+</conversation>

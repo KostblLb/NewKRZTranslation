@@ -1,0 +1,134 @@
+# -*- mode: blocking -*-
+
+@set Root VignetteMushroomStew
+@ref TvGlow Tugboat/*/TvGlow
+
+Main Set temp:tugboat-inside true
+Main Set temp:tugboat-peeled true
+Main Set temp:tugboat-side port
+
+Main Message TugboatMotion SetAmplitude 0.1
+Main Message TugboatStaging SetMistSpeed 0.1
+Main Message TugboatCameraRig SetSpeedFactor 0.2
+Main Message TugboatCameraRig SetZoom -4
+Main Message TugboatCameraRig SetOffsetY -0.5
+
+@inline SetupInsideSound
+
+@LockDoors
+
+Main Enable [Root]
+Main Enable Tugboat/*/Stew
+Main Disable Shannon/*/VhsTape
+Main Disable Cat
+Main Disable [Root]/BlockUpper
+Main Interact* ActorLightswitchMailroom Off
+Main Interact* [Root]/ActorWill Off
+Main Interact Off
+
+Main Marker Lock
+Main Message TugboatCameraRig SetPlayer [Root]/KitchenPlayer
+Main Exec SnapStaging
+Main Sync Staging
+Main Message TugboatCameraRig SetZoom 0
+Main Wait 5
+Main Fork Shannon
+Main Message TugboatCameraRig SetOffsetY 0
+Main Dialog TugboatStewWillAndEzra_1 Arrow
+Main Walk* Cate [Root]/ShannonStartPosition
+Main Interact On
+Main Marker Unlock
+
+Will Message Will DisableNavigation
+Will Transform Will [Root]/WillStartPosition
+Will Gesture Will Snap Stirring
+Will Parent [Root]/Ladel Will/*/LadelOffset
+Will Transform Will/*/Ladel $Local &0,0,0
+
+Shannon Warp Shannon [Root]/ShannonStartPosition
+Shannon Walk Shannon [Root]/ShannonPausePosition
+Shannon Wait 3
+Shannon Walk Shannon [Root]/VcrPosition
+Shannon Enable [Root]/BlockUpper
+Shannon Gesture Shannon Enter InsertTape
+Shannon Message TvGlow* TurnOn
+Shannon Walk Shannon [Root]/SitPosition
+Shannon Align* Shannon [Root]/SitPosition
+Shannon Gesture Shannon Enter Sit
+
+Tv Wait temp:unpause-cooking-show
+Tv Message TvGlow* TurnOn
+
+Ezra Player Ezra Player
+Ezra Warp Ezra [Root]/EzraStartPosition
+Ezra Message Ezra EnableLayer Recorder
+
+Cate Warp Cate [Root]/CateStartPosition
+
+Mess Message Johnny DisableNavigation
+Mess Transform Johnny [Root]/JohnnyPositionPort
+Mess Gesture Johnny Snap MessTable
+Mess Message Junebug DisableNavigation
+Mess Transform Junebug [Root]/JunebugPositionPort
+Mess Gesture Junebug Snap MessTable
+Mess Message Clara DisableNavigation
+Mess Transform Clara [Root]/ClaraPositionPort
+Mess Gesture Clara Snap MessTable
+
+Conway Message Conway FreeRotate
+Conway Warp Conway [Root]/ConwayStartPosition
+Conway Message Conway EnableLayer Beer
+
+Hound Transform Hound [Root]/HoundStartPosition
+Hound Gesture Hound Snap Sit
+Hound Disable Hound CharacterPointOfInterest
+
+Val Transform Val [Root]/ValStartPosition
+Val Look Val Conway
+
+@func ShannonGetsUp
+
+  Shannon Look Shannon Ezra
+  Shannon Look Ezra Shannon
+  Shannon Listen actor-release
+  Shannon Marker Lock
+  Shannon Interact Off
+  Shannon Message Ezra DisableNavigation
+  Shannon Unlook Shannon
+  Shannon Unalign* Shannon
+  Shannon Gesture Shannon Exit Sit
+  Shannon Fork End
+  Shannon Wait 3
+  Shannon Unlook Ezra
+  Shannon Message Ezra EnableNavigation
+  Shannon Interact On
+
+  End Walk Shannon [Root]/ShannonWillPosition
+  End Look Shannon Will
+  End Disable [Root]/BlockUpper
+  End Interact [Root]/ActorWill On
+
+@end
+
+@func CateEnters
+
+  Cate Walk Cate [Root]/CateKitchenPosition
+
+@end
+
+@func WillLooksAtShannon
+
+  Will Look Will $Left
+
+@end
+
+@func EndScene
+  End Cursor Hide
+  End Interact Off
+  End Marker Lock
+  End Wait 2
+  End SceneChange Exchange ? !debug-run-all-tugboat-vignettes
+  End SceneChange DockyardStarboard ? debug-run-all-tugboat-vignettes
+
+@end
+

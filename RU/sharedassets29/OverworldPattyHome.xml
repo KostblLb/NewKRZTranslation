@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="overworld-bus-stop-dropped-off-patty" value="true"/>
+    <triggerEvent name="fade-out-radio"/>    
+    <line>Patty has an idea for a new kind of chair. Not really the whole chair, just the part on the chair that lets you adjust the height or the tilt. It could be adapted to fit almost any chair design, and it doesn't take up much space. It could be flat-packed, even.</line>
+    <line>It's really a much more reliable design in the long term, and using the current crop of seat adjustment mechanisms you're always running the risk of pinching your fingers fumbling around down under your chair. Not so with Patty's new design.</line>
+    <line>But it's not cheap to get a prototype fabricated for such a thing. Too many moving parts. That much is unavoidable! Patty's been doing some freelance technical writing to pay the bills, and setting aside as much as she can towards the project. She calls it &quot;the project&quot; when talking to friends and family, and by now everyone knows what she means.</line>
+    <line>In school, she was easily distracted. Her teachers never thought she'd really &quot;command her full potential,&quot; and so on. But it won't be long now. Patty's staying here, in that ugly amber bungalow. Again, it's only temporary.</line>
+  </scene>
+</conversation>

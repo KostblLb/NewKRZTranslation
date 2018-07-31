@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-equus-oils" value="true"/>
+
+    <line>From this angle, the building looks strange and abstract, like a pile of intersecting boxes and triangles.</line>
+  </scene>
+</conversation>

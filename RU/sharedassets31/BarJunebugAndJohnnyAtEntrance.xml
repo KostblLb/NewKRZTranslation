@@ -1,0 +1,46 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="lower-depths-talked-to-junebug-at-entrance" value="true"/>
+    
+    <line speaker="johnny">Ma'am, I hate to say it, but the cupboard is bare.</line>
+    <line speaker="junebug">Have some vision, cricket. We've got — one, two ... four patrons.</line>
+    <line speaker="johnny">Harry doesn't count.</line>
+    <line speaker="junebug">Well, we've done more with less.</line>
+    <option goto="about-music" speaker="conway">What kind of music do you play?</option>
+    <option goto="play-often" speaker="conway">Do you play here often?</option>
+    <option goto="conway-bar" speaker="conway">I haven't been in a bar like this since ...</option>
+  </scene>
+
+  <scene name="about-music">
+    <setGameVar name="lower-depths-junebug-described-music" value="true"/>
+    <line speaker="junebug">It's like Cyrano Cole meets Ike Towner, but with a woman lead, and the keyboards are kind of ambient whisperwave.</line>
+    <line speaker="johnny">Little bit more reverb.</line>
+    <line speaker="junebug">There's some Dolly Crown in there, too. Like the early stuff before she joined the Sheet Swingers.</line>
+    <line speaker="johnny">Better drum programming, though.</line>
+    
+    <option goto="music-get-it" speaker="conway">Whisperwave, got it.</option>
+    <option goto="music-confused" speaker="conway">I don't know who those people are.</option>
+  </scene>
+
+  <scene name="music-get-it" nextScene="end">
+    <setGameVar name="lower-depths-conway-gets-music-description" value="true"/>
+    
+    <line speaker="johnny">I think he gets it, ma'am.</line>
+    <line speaker="junebug">Oh, he gets it.</line>
+  </scene>
+
+  <scene name="music-confused" nextScene="end">
+    <line speaker="junebug">Well, you'll hear it in a minute.</line>
+  </scene>
+
+  <scene name="play-often" nextScene="end">
+    <line speaker="junebug">We have a regular thing here. Harry likes to just book it all up and forget about it. He's not really a music lover, I wouldn't say, but I guess his wife was. She had this stage put in, I know that. So he keeps it going. In her memory or out of habit.</line>
+  </scene>
+
+  <scene name="conway-bar" nextScene="end">
+    <line speaker="junebug">Gave it up, huh? Well I bet Harry has some coffee on back there, but I won't vouch for quality.</line>
+    <line speaker="johnny">She's a `connoisseur`.</line>
+    <line speaker="junebug">Johnny's favorite regional cuisine is &quot;gas station.&quot;</line>
+  </scene>
+</conversation>

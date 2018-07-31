@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-octodad" value="true"/>
+    <line>A shadowy figure drags itself out of the lake, stuffs its limbs into a smart blue suit, and trudges slackly out of view.</line>
+  </scene>
+</conversation>

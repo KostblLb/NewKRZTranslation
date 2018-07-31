@@ -1,0 +1,34 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-talked-to-hudson" value="true"/>
+    <setGameVar name="museum-location" value="sailboat"/>    
+    <line speaker="hudson">Difficult to see or even hear, storm like that. But I was awake and alert, studying the week's forecast. It should even out shortly, I'd say.</line>
+    <option goto="did-you-talk" speaker="museum staff">Did you talk to them?</option>
+    <option goto="weather" speaker="museum staff">You pay close attention to the weather.</option>
+  </scene>
+
+  <scene name="did-you-talk">
+    <line speaker="hudson">Yes, we had a short conversation. The young woman heard my radio crackling from the cabin and asked about it. The old man was a bit disoriented.</line>
+    <option goto="radio" speaker="museum staff">What did she want to know about your radio?</option>
+    <option goto="disoriented" speaker="museum staff">Disoriented how?</option>
+  </scene>
+
+  <scene name="radio" nextScene="they-left">
+    <line speaker="hudson">She thought she recognized the model, just from the noise it was making! I didn't even know the model myself. She told me many old radios from the period had badly-designed tuning circuits that caused a kind of resonant feedback in certain spots on the dial. Easy to pick out, if you have the ear for it. Smart young woman, and I always love to chat with an artisan.</line>
+  </scene>
+
+  <scene name="disoriented" nextScene="they-left">
+    <line speaker="hudson">He asked the most inane questions about my boat. Whether I took it out fishing often ... nonsense like that. I tried to explain to him that I lived aboard, that I'd lived in a small apartment on this land before and been kindly offered an opportunity to live here in a sailboat when the neighborhood was razed, and so on ... difficult to communicate in a noisy storm like that. I think he may have been a bit hard of hearing, to boot.</line>
+  </scene>
+
+  <scene name="weather" nextScene="they-left">
+    <line speaker="hudson">Hard not to, up here. The strangers wanted to know how I coped with the exposure. I guess some people will never understand the appeal of life on a sailboat. It's tragic, I'd say.</line>
+  </scene>
+
+  <scene name="they-left" nextScene="end">
+    <line speaker="hudson">Well, then they had to leave. Looking for a doctor, I think — the old man was having a bad time. It was a short conversation.</line>
+  </scene>
+
+</conversation>

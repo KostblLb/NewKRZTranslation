@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-ruben" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Ruben here was once a `serial entrepreneur` — do you know what that is? He created and sold a bunch of businesses, one after another. Creative bookkeeping caught up with him, and he had to borrow against some empty promises to keep his licenses intact. Now he's here, in shipping.</line>
+  </scene>
+</conversation>

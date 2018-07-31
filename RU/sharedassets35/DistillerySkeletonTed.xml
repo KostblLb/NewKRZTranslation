@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-ted" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">How's it looking, Ted? Get that new fan installed?</line>
+    <line speaker="doolittle" style="skeleton">Ted met one of our engineers at a bar some years ago, and they just `clicked`.</line>
+    <line speaker="doolittle" style="skeleton">Our engineer told him about some trouble with the equipment here, and he felt compelled to take a crack at it.</line>
+    <line speaker="doolittle" style="skeleton">Ted's been obsessively tuning, replacing, and upgrading ever since. Quite a project, Ted! You'll get ahead of it one day, I'm sure.</line>
+  </scene>
+</conversation>

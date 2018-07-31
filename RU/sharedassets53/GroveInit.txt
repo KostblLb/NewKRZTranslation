@@ -1,0 +1,77 @@
+# -*- mode: blocking -*-
+
+@set Root BlockingPositions
+
+Main Interact LeaveSceneActor Off
+Main Message Cate EnableLayerImmediately Lamp
+Main Message Ezra EnableLayerImmediately Lamp
+Main Cursor Hide
+Main Set temp:ezra-crouching false
+Main Set temp:cate-crouching false
+
+Ending Listen grove-conversation-complete
+Ending Wait 3
+Ending Interact LeaveSceneActor On
+
+@func CateCrouch
+  Cate Gesture Cate Enter Crouch ? !temp:cate-crouching
+  Cate Set temp:cate-crouching true
+@end
+
+@func CateStand
+  Cate Gesture Cate Exit Crouch ? temp:cate-crouching
+  Cate Set temp:cate-crouching false
+@end
+
+@func EzraCrouch
+  Ezra Gesture Ezra Enter Crouch ? !temp:ezra-crouching
+  Ezra Set temp:ezra-crouching true
+@end
+
+@func EzraStand
+  Ezra Gesture Ezra Exit Crouch ? temp:ezra-crouching
+  Ezra Set temp:ezra-crouching false
+@end
+
+@func EnterIronPariah
+  Iron Audio* Play iron-pariah
+  Iron Wait 40
+  Iron Message IronPariah StartPass
+@end
+
+# Bookmarks
+@func StartSceneBookmark
+
+  Cate Wait 3
+  
+  Cate Walk Cate [Root]/CateStartPosition
+  Cate Set temp:cate-at-start true
+
+  Ezra Wait 3
+  
+  Ezra Walk Ezra [Root]/EzraStartPosition
+  Ezra Set temp:ezra-at-start true
+
+  Conversation Wait temp:cate-at-start+temp:ezra-at-start
+  Conversation Wait 3
+  Conversation Cursor Show
+  Conversation Message GroveDialogManager StartConversation
+
+@end
+
+@func IronPariahBookmark
+
+  Cate Warp Cate [Root]/CateStartPosition
+  Ezra Warp Ezra [Root]/EzraStartPosition
+
+  @EnterIronPariah  
+  
+  Conversation Wait 2
+  Conversation Cursor Show
+  Conversation Message GroveDialogManager StartConversation
+
+@end
+
+# Load bookmark
+Main Exec StartSceneBookmark ? grove-bookmark-cate=start
+Main Exec IronPariahBookmark ? grove-bookmark-cate=iron-pariah-appears

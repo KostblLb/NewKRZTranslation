@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="mimi">Ha, I guess the old man is on dinghy guard duty.</line>
+    <line speaker="jenn">A noble assignment.</line>
+    <line speaker="jenn">So, who was this lady?</line>
+    <line speaker="mimi">Oh, right ... well, do you remember WEVP-TV?</line>
+    <line speaker="jenn">No.</line>
+    <line speaker="mimi">OK. It was a community television station. The Consolidated Power Company had to fund it as, like, a punishment for owning too much of the broadcast spectrum or something.</line>
+    <line speaker="jenn">Oh! They used to screen your videos, right?</line>
+    <line speaker="mimi">Yeah. It was like a co-op — I did some maintenance, and they gave me a slot to show my work.</line>
+    <line speaker="jenn">And they had that naked banjo guy, late at night.</line>
+    <line speaker="mimi">... yeah, that's mainly what everyone remembers. I guess their whole mandate was "community expression."</line>
+    <line speaker="jenn">He was certainly `expressive`.</line>
+    <line speaker="jenn">Oh, wait — was WEVP the one that ... the flood, right?</line>
+    <line speaker="mimi">Yeah.</line>
+    <line speaker="jenn">Damn ...</line>
+    <line speaker="jenn">So, Shannon Márquez ... did she have a naked banjo show, too?</line>
+    <line speaker="mimi">What? No.</line>
+    <line speaker="jenn">Let me guess ...</line>
+    
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">Which of the following sentences best describes you?</line>
+    <option goto="forgetful" speaker="response" style="questionnaire">I grieve for fading memories.</option>
+    <option goto="haunted" speaker="response" style="questionnaire">I am haunted, unable to forget.</option>
+  </scene>
+
+  <scene name="forgetful" nextScene="weaver">
+    <line speaker="jenn">She did the weather?</line>
+  </scene>
+
+  <scene name="haunted" nextScene="weaver">
+    <line speaker="jenn">She had an exercise show?</line>
+  </scene>
+
+  <scene name="weaver" nextScene="end">
+    <line speaker="mimi">No, I've never heard of Shannon Márquez. It was a `Weaver` Márquez I knew. She worked at the station, for a bit, and then ... she left on kind of weird terms, actually.</line>
+    <line speaker="mimi">Anyway. Where were we?</line>
+  </scene>
+
+</conversation>

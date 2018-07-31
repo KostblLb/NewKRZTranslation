@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="fade-out-radio"/>    
+    <setGameVar name="overworld-saw-marquez-farm" value="true"/>
+
+    <line>The farmhouse is silent and empty. The barn is still gone. So is the cave. A few horses graze in the empty field.</line>
+  </scene>
+
+</conversation>

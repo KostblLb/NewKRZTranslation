@@ -1,0 +1,42 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="mosaic" destroy="true" direction="out" time="2" />
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    
+    <audioFade clip="mosaic" direction="in" time="4" />
+    
+    <setGameVar name="underworld-saw-mosaic" value="true"/>
+    <line>The cave wall is uncommonly flat here. A tall ladder leans against the wall. At the top, a small figure taps away at something.</line>
+    <option goto="approach" insertedText="Junebug pulls the bike next to the ladder.">Approach the ladder.</option>
+    <option goto="end" insertedText="Junebug stays on the highway, following the truck.">Drive on.</option>
+  </scene>
+
+  <scene name="approach">
+    <line>The woman at the top of the ladder seems unperturbed, focused on her work.</line>
+    <option goto="record" insertedText="Johnny starts the field recorder.">Start the field recorder.</option>
+    <option goto="telescope" insertedText="Johnny switches to a telescopic lens.">Switch to telescopic lens.</option>
+  </scene>
+
+  <scene name="record">
+    <line>The woman repeats a cycle of noisy gestures: shuffle, glob, scrape, silence, tap, tap, tap, tap, shuffle ...</line>
+    <option goto="record-longer" insertedText="Johnny sits and records.">Record.</option>
+    <option goto="telescope" insertedText="Johnny switches to a telescopic lens.">Switch to telescopic lens.</option>
+  </scene>
+
+  <scene name="telescope" nextScene="end">
+    <line>She has a pile of small, brightly-painted clay tiles next to her on the ladder. She sticks each one to the wall with some kind of mortar or glue, inspects it, then taps gently at its edges with a small hammer until it is fixed in place.</line>
+    <line>She's only a few dozen tiles along. Too early to guess what kind of image might be taking shape.</line>
+    <line>This recording can go in the &quot;art and artists&quot; drawer.</line>
+  </scene>
+
+  <scene name="record-longer" nextScene="end">
+    <line>Johnny closes his eyes. This is the best part: statically listening while recording. Empathy with the machine.</line>
+    <line>This recording can go in the &quot;art and artists&quot; drawer.</line>
+  </scene>
+</conversation>

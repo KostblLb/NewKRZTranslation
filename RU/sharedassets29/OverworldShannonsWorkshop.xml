@@ -1,0 +1,17 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <triggerEvent name="fade-out-radio"/>
+    <setGameVar name="overworld-saw-workshop" value="true"/>
+    <line>The truck pulls into the bait shop parking lot.</line>
+    <line>The bait shop is closed.</line>
+    <option goto="shop" insertedText="Conway and Shannon walk around to the side of the building.">Enter workshop.</option>
+    <option goto="end" insertedText="The trucks pulls away.">Drive away.</option>
+  </scene>
+
+  <scene name="shop" nextScene="end">
+    <line>Shannon fumbles with her key for a bit and then looks down at her feet. The locks have been changed.</line>
+    <line>She writes a short but stern note about tenant's rights, and pins it to the door.</line>
+  </scene>
+
+</conversation>

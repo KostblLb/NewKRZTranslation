@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="grab-d20"/>
+    
+    <line>Conway picks up the glowing twenty-sided die and inspects it. The number &quot;five&quot; is facing up. It's just a small piece of plastic, but it has a reassuring, almost comforting weight.</line>
+    <line>He places the object in his jacket pocket.</line>
+  </scene>
+</conversation>

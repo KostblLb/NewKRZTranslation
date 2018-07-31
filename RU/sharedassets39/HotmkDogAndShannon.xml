@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="hotmk-talked-to-dog-ending" value="true"/>
+    
+    <option goto="waiting" speaker="shannon">Thanks for waiting, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>.</option>
+    <option goto="turned-around" speaker="shannon">I got so turned around up there ...</option>
+  </scene>
+
+  <scene name="waiting">
+    <option goto="gone-long" speaker="shannon">We were gone a bit longer than expected.</option>
+    <option goto="dog-doing" speaker="shannon">What have you been doing?</option>
+  </scene>
+
+  <scene name="gone-long">
+    <option goto="end" speaker="shannon">Ran into some trouble, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>, I won't to lie to you.</option>
+    <option goto="end" speaker="shannon">It'll be OK, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>.</option>
+  </scene>
+
+  <scene name="dog-doing">
+    <option goto="end" speaker="shannon">Sleeping, I bet. Take it if you can get it.</option>
+    <option goto="end" speaker="shannon">Keeping Johnny here company?</option>
+  </scene>
+
+  <scene name="turned-around">
+    <option goto="truck" speaker="shannon">But here's the truck ...</option>
+    <option goto="you-and-johnny" speaker="shannon">But here's you and Johnny ...</option>
+  </scene>
+
+  <scene name="truck">
+    <option goto="end" speaker="shannon">Always back to this truck.</option>
+    <option goto="end" speaker="shannon">Well, no reason to get caught up in it.</option>
+  </scene>
+
+  <scene name="you-and-johnny">
+    <option goto="end" speaker="shannon">You're about the most stable thing down here.</option>
+    <option goto="end" speaker="shannon">You two are like kindred souls, you know that?</option>
+  </scene>
+</conversation>

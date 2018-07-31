@@ -1,0 +1,28 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="warp-back-to-distillery">
+  <scene name="intro">
+    <setGameVar name="bureau-returned-to-distillery" value="true"/>
+    
+    <line speaker="ezra">How long do we have to wait?</line>
+    <line speaker="conway">Oh, who knows ...</line>
+    <line speaker="junebug">Alright, what happened?</line>
+    <option goto="what" speaker="shannon">What?</option>
+    <option goto="nothing" speaker="shannon">Nothing.</option>
+    <option goto="up-to-you" speaker="shannon">`(To CONWAY.)` Up to you.</option>
+  </scene>
+
+  <scene name="what" nextScene="up-to-you">
+    <line speaker="junebug">In the church, at the graveyard. You two came out of there all weird. What happened?</line>
+  </scene>
+
+  <scene name="nothing" nextScene="up-to-you">
+    <line speaker="junebug">Hear that, cricket? Nothing happened.</line>
+    <line speaker="johnny">Slow night.</line>
+  </scene>
+
+  <scene name="up-to-you" nextScene="end">
+    <line speaker="conway">It's OK. You can tell them. It doesn't matter anymore.</line>
+    <line speaker="shannon">Fine.</line>
+    <line speaker="shannon">So, we were in that graveyard ...</line>
+  </scene>
+</conversation>

@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="start-driving">
+  <scene name="intro">
+    <setGameVar name="underworld-saw-elkhorn-zero" value="true"/>
+    
+    <line speaker="shannon">That's odd ...</line>
+
+    <option goto="whats-odd" speaker="conway">What?</option>
+    <option goto="end" speaker="conway">Let's keep moving.</option>    
+  </scene>
+
+  <scene name="whats-odd">
+    <line speaker="shannon">Just ... you know, deja vu.</line>
+    
+    <option goto="me-too" speaker="conway">Same here.</option>
+    <option goto="weird-road" speaker="conway">It's just this weird road.</option>
+    <option goto="end" speaker="conway">Let's keep moving.</option>
+  </scene>
+
+  <scene name="me-too" nextScene="end">
+    <setGameVar name="underworld-stopped-at-elkhorn-zero" value="true"/>
+    <line speaker="shannon">I always feel kind of embarrassed when that happens. Like I'm in a play, but I don't know my lines.</line>
+    <line speaker="shannon">Oh well.</line>
+  </scene>
+  
+  <scene name="weird-road" nextScene="end">
+    <setGameVar name="underworld-stopped-at-elkhorn-zero" value="true"/>
+    
+    <line speaker="shannon">No, you're right. Just this weird road.</line>
+  </scene>
+</conversation>

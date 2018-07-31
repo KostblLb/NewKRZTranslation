@@ -1,0 +1,58 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="johnny">Hey, did you see this? They keep a table full of fake food over here. I've never known why.</line>
+    <line speaker="johnny">Actually, I think it might be `real` food coated with shellac or something. Preserved. Oh, and — look, this tentacle-looking thing is half-eaten! This is someone's meal that they didn't finish?</line>
+    <option goto="gross-tentacle" speaker="ezra">Tentacle? Gross.</option>
+    <option goto="dare" speaker="ezra">I dare you to take a bite.</option>
+  </scene>
+
+  <scene name="gross-tentacle" nextScene="important-food">
+    <line speaker="johnny">Man, I don't know; some people really like that stuff. I had some fried `calamari` once at a gas station. It was pretty good, but I stripped a gear trying to chew the "beak." They're supposed to take that out!</line>
+  </scene>
+
+  <scene name="dare">
+    <line speaker="johnny">Ha ha ... you first.</line>
+    <option goto="dare-yes" speaker="ezra">OK.</option>
+    <option goto="dare-no" speaker="ezra">No.</option>
+  </scene>
+
+  <scene name="dare-yes" nextScene="important-food">
+    <line speaker="johnny">Whoa, hold on — I'm just kidding!</line>
+  </scene>
+
+  <scene name="dare-no" nextScene="important-food">
+    <line speaker="johnny">Yeah, I don't blame you.</line>
+  </scene>
+
+  <scene name="important-food">
+    <line speaker="johnny">If Sam and Ida preserved this half-eaten meal, it must have been pretty important to them, right? Maybe it belonged to someone they care about, like a beloved uncle had a mid-meal stroke, so they kept it in his memory.</line>
+    <option goto="kept-seeds" speaker="ezra">Yeah, like these sunflower seeds my folks left behind.</option>
+    <option goto="threw-away-seeds" speaker="ezra">My folks left behind a bag of sunflower seeds, but I threw it away ... I should have kept it, right?</option>
+  </scene>
+
+  <scene name="kept-seeds" nextScene="worried">
+    <line speaker="johnny">Oh. I'm sure your folks are fine, though ...</line>
+  </scene>
+
+  <scene name="threw-away-seeds" nextScene="worried">
+    <line speaker="johnny">Oh, uh ... no, I didn't mean that, kid. You don't need to hang onto every little memento. I'm sure you still remember them just fine.</line>
+  </scene>
+
+  <scene name="worried">
+    <line speaker="johnny">Are you worried about them?</line>
+    <option goto="yes-worried" speaker="ezra">Yes. It's weird that they just disappeared.</option>
+    <option goto="not-worried" speaker="ezra">No, they're gone. There's nothing to worry about, I just miss them.</option>
+  </scene>
+
+  <scene name="yes-worried" nextScene="end">
+    <setGameVar name="restaurant-ezra-parents-feeling" value="worried" />        
+    <line speaker="johnny">Yeah. Listen, that's OK, to be worried. You're doing fine.</line>
+  </scene>
+
+  <scene name="not-worried" nextScene="end">
+    <setGameVar name="restaurant-ezra-parents-feeling" value="miss" />    
+    <line speaker="johnny">OK. Well, I don't know what the deal is with this table, but sometimes people do weird stuff because they miss someone ...</line>
+  </scene>
+
+</conversation>

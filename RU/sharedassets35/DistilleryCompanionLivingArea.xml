@@ -1,0 +1,37 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="distillery-discussed-living-area" value="true" />
+    <line speaker="shannon">Do you think you could ever live somewhere like this?</line>
+    <option goto="comfortable" speaker="conway">Seems comfortable enough.</option>
+    <option goto="lonely" speaker="conway">Seems lonely.</option>
+  </scene>
+
+  <scene name="comfortable">
+    <line speaker="shannon">Sure, OK. Just as good as ... wait, where do you live now?</line>
+    <option goto="barn" speaker="conway">I stayed in a barn on Lysette's property.</option>
+    <option goto="truck" speaker="conway">Truck, I guess.</option>
+  </scene>
+
+  <scene name="lonely">
+    <line speaker="shannon">Yeah. I guess you don't ... where `do` you live?</line>
+    <option goto="barn" speaker="conway">I stayed in a barn on Lysette's property.</option>
+    <option goto="truck" speaker="conway">Truck, I guess.</option>
+  </scene>
+
+  <scene name="barn" nextScene="homeless">
+    <line speaker="shannon">Oh, damn. Hey, I was living in my workshop, right?</line>
+    <line speaker="shannon">Now that your shop is closing, I guess you're ...</line>
+  </scene>
+
+  <scene name="truck" nextScene="homeless">
+    <line speaker="shannon">Oh. OK.</line>
+  </scene>
+
+  <scene name="homeless" nextScene="end">
+    <line speaker="shannon">Yeah, I guess that's me too, now. If I can't get my landlord to change the locks back.</line>
+    <line speaker="shannon">Just a couple of vagrants, huh? Ha ha. We'll ... figure it out.</line>
+  </scene>
+
+</conversation>
+

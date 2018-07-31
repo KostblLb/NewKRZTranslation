@@ -1,0 +1,36 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-call-received-flooding" value="true" />
+    
+    <line speaker="caller">Yeah, uh, listen — we got a problem down here.</line>
+    <option goto="describe-problem" speaker="patch" insertedText="*PATCH*: Wh—">What's the problem?</option>
+    <option goto="describe-problem" speaker="patch" insertedText="*PATCH*: O—">OK — how can I help?</option>
+    <option goto="describe-problem" speaker="patch" insertedText="*PATCH*: Wh—">Who is this?</option>
+  </scene>
+
+  <scene name="describe-problem">
+    <line speaker="caller">Man, it's all messed up! I tried realigning that big sewer grate under the livestock pen like you said, right?</line>
+    <option goto="flood" speaker="patch" insertedText="*PATCH*: Sew—">Sewer grate?</option>
+    <option goto="flood" speaker="patch" insertedText="*PATCH*: Liv—">Livestock?</option>
+    <option goto="flood" speaker="patch" insertedText="*PATCH*: Wh—">Who is this?</option>
+  </scene>
+
+  <scene name="flood">
+    <line speaker="caller">Damn thing flooded, man! It's even worse than before. All I'm saying is, we've got to get these computers out of here.</line>
+    <option goto="last-question" speaker="patch" insertedText="*PATCH*: Sl—">Slow down.</option>
+    <option goto="last-question" speaker="patch" insertedText="*PATCH*: Wh—">Who is this?</option>
+  </scene>
+
+  <scene name="last-question">
+    <line speaker="caller">I mean we're running out of time here, man! Hey, I forget — does that big green valve dump water or sewage? You told me earlier but I've been so stressed it just kind of flew out of my mind.</line>
+    <line speaker="caller">So, should I turn that valve?</line>
+    <option goto="bye" speaker="patch">... Yes.</option>
+    <option goto="bye" speaker="patch">... No.</option>
+  </scene>
+
+  <scene name="bye" nextScene="end">
+    <line speaker="caller">Alright, you're the boss.</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-luis" value="true" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>In his own little orbit ... he ought to stop and think about who's creating all the atmosphere!</line>
+    <line>They think it's natural or something. Like it's just what this place `sounds like`. A cheap illusion ...</line>
+    <line>He's way gone, reflecting. Or pretending he doesn't see the tip jar.</line>
+  </scene>
+</conversation>

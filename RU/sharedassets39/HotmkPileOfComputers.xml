@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-computer-pile" value="true"/>
+    <line>Broken computer monitors are heaped precariously among the rocks.</line>
+  </scene>
+</conversation>

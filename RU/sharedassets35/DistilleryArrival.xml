@@ -1,0 +1,36 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-arrival-conversation, save">
+  <scene name="intro">
+    <line speaker="shannon">Well, this can't be right. Looks like an old church.</line>
+    <option goto="look-inside" speaker="conway">Worth a look inside.</option>
+    <option goto="mud" speaker="conway">It's muddy.</option>
+  </scene>
+
+  <scene name="look-inside" nextScene="ezra-stay">
+    <line speaker="shannon">I guess.</line>
+  </scene>
+
+  <scene name="ezra-stay">
+    <line speaker="ezra">I want to stay outside.</line>
+    <option goto="ezra-stay-why" speaker="conway">Why?</option>
+    <option goto="ezra-stay-ok" speaker="conway">OK.</option>
+  </scene>
+
+  <scene name="mud" nextScene="ezra-stay">
+    <line speaker="shannon">Yeah, that's what he said. Crystals and then mud ... OK.</line>
+  </scene>
+
+  <scene name="ezra-stay-why" nextScene="conway-and-shannon-enter">
+    <line speaker="ezra">I ... I think I saw a lizard.</line>
+    <line speaker="junebug">I'll stay with him.</line>
+  </scene>
+
+  <scene name="ezra-stay-ok" nextScene="conway-and-shannon-enter">
+    <line speaker="junebug">I'll stay with him.</line>
+    <line speaker="ezra">We can look for lizards.</line>
+  </scene>
+
+  <scene name="conway-and-shannon-enter" nextScene="end">
+    <line speaker="shannon">OK. We'll make it quick.</line>
+  </scene>
+</conversation>

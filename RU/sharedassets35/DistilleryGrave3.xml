@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-saw-grave-3" value="true"/>    
+    <line>`(An epitaph is engraved on the stone grave marker.)`</line>
+    <line speaker="engraving">`<randomName/>`. Always had a far-off look. Probably still does.</line>
+    <line>`(Below the inscription, a note is written in white chalk.)`</line>    
+    <line speaker="chalk">(HT-8192-E, fill date Aug 1, aftertaste of rain-water.)</line>
+  </scene>
+</conversation>

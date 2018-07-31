@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="overworld-saw-petting-zoo" value="true" />
+    <line>The petting zoo is closed.</line>
+  </scene>
+</conversation>

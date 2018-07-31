@@ -1,0 +1,140 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    
+    <line speaker="cate">What a relief. Thanks for taking the wheel. Our secret, OK?</line>
+    <option goto="which-way-to-turn" speaker="ezra">How do you know which way to turn?</option>
+    <option goto="what-does-dial-mean" speaker="ezra">What does this dial mean?</option>
+    <option goto="what-does-lever-do" speaker="ezra">What does this lever do?</option>
+    <option goto="kombucha" speaker="ezra">What's in that jug? It smells like eggs and fruit.</option>
+  </scene>
+
+  <scene name="kombucha">
+    <line speaker="cate">Oh! That's homemade: fermented green tea, pomegranate seeds, and a little bit of barley ergot. I call it "Kykeon Kombucha." It helps keep me awake.</line>
+    <line speaker="cate">Want to try some? No, I guess you probably don't ... The smell is off-putting, but it's actually sweet and lightly carbonated. I'm trying to kick a diet soda habit. Ha ha.</line>
+    <line speaker="cate">So, how'd you do with the helm?</line>
+    <option goto="which-way-to-turn" speaker="ezra">How do you know which way to turn?</option>
+    <option goto="what-does-dial-mean" speaker="ezra">What does this dial mean?</option>
+    <option goto="what-does-lever-do" speaker="ezra">What does this lever do?</option>
+  </scene>
+  
+  <scene name="which-way-to-turn" nextScene="ezras-interest">
+    <line speaker="cate">I just keep my eyes open! That's the most important part.</line>
+    <line speaker="cate">Speaking of which ...</line>
+  </scene>
+
+  <scene name="what-does-dial-mean" nextScene="ezras-interest">
+    <line speaker="cate">That shows how deep the water is. The Echo River is fairly deep, but Lake Lethe pretty much buries the needle.</line>
+    <line speaker="cate">I should have probably explained that to you `earlier`, huh? Ha ha.</line>
+  </scene>
+
+  <scene name="what-does-lever-do" nextScene="ezras-interest">
+    <line speaker="cate">That controls the winch, if we need a little more slack on our haul or something.</line>
+    <line speaker="cate">I should have probably explained that to you `earlier`, huh? Ha ha.</line>
+  </scene>
+
+  <scene name="ezras-interest">
+    <line speaker="cate">`(Looking outside.)` Oh, hey — there's the gas station. I was `hoping` we'd cross paths soon! It just kind of drifts around; you never know where you'll meet it.</line>
+    <line speaker="cate">As you can see by this dial right ... `here`, our fuel situation is pretty desperate. I have a bad habit of letting that needle spend a lot of time in the red zone.</line>
+    <line speaker="cate">We should only be docked at the gas station for a few minutes refueling; you might just want to stay aboard.</line>
+    <line speaker="cate">So ... you like boats?</line>
+    <option goto="cartoon-boat" speaker="ezra">I used to watch a cartoon about a boat.</option>
+    <option goto="dad-had-a-boat" speaker="ezra">Yeah, my dad had a boat for a while.</option>
+    <option goto="never-been-on-a-boat" speaker="ezra">I've never been on a boat before.</option>
+  </scene>
+
+  <scene name="cartoon-boat">
+    <option goto="cartoon-pirates" speaker="ezra">It was about pirates.</option>
+    <option goto="cartoon-submarine" speaker="ezra">Actually it was a submarine.</option>
+  </scene>
+
+  <scene name="cartoon-pirates">
+    <option goto="cartoon-done" speaker="ezra">They were lost at sea, and they had a friend who was a squid.</option>
+    <option goto="cartoon-done" speaker="ezra">They were all dogs. Dog pirates. And one of them was a parrot, but he just acted like a normal parrot.</option>
+  </scene>
+
+  <scene name="cartoon-submarine">
+    <option goto="cartoon-done" speaker="ezra">They were all bears, in the submarine, except the captain was a dog.</option>
+    <option goto="cartoon-done" speaker="ezra">They always found treasure, at the bottom of the ocean, but they couldn't get out of the submarine to pick it up.</option>
+  </scene>
+
+  <scene name="cartoon-done" nextScene="wheelhouse-explanation">
+    <line speaker="cate">That sounds great. I'll have to look out for that one ...</line>
+  </scene>
+
+  <scene name="dad-had-a-boat">
+    <line speaker="cate">Oh, what kind of boat?</line>
+    <option goto="dad-boat-done" speaker="ezra">A small boat, with a motor. You could fish on it at the pay lake.</option>    
+    <option goto="dad-boat-done" speaker="ezra">It had a joystick to drive it. We put it in a pond near our old house.</option>
+  </scene>
+
+  <scene name="dad-boat-done" nextScene="wheelhouse-explanation">
+    <line speaker="cate">Ah, I see. So this one's a `little` bigger. Ha ha. Same idea, though.</line>
+  </scene>
+
+  <scene name="never-been-on-a-boat" nextScene="wheelhouse-explanation">
+    <line speaker="cate">Oh, wow. Well, here you are! I think this is as good a place to start as any.</line>
+  </scene>
+
+  <scene name="wheelhouse-explanation">
+    <line speaker="cate">So, what else did I neglect to explain earlier ...</line>
+    <line speaker="cate">This area here is called the "wheelhouse." All these gauges and controls help me understand what's going on with `The Mucky Mammoth` and her haul. This is a compass, but it doesn't work very well down here, for some reason. I just go by landmarks, basically, and lights.</line>
+    <line speaker="cate">Did you see those two lights on the sides of the boat? A red one and a green one? All the other boats have them, too. Some are different colors, or in different configurations. If we cross paths with someone, right away I can work out what kind of boat they're in and what direction they're going, even in the dark.</line>
+    <line speaker="cate">It's all about `looking`, up here. The other half of piloting this boat happens down in the map room.</line>
+    <line speaker="cate">Speaking of which ... `(CATE peers out the window)` Have we passed the big rock that looks like a dinosaur yet?</line>
+
+    <option speaker="ezra" goto="duck-island">No, but we passed a little island with a bunch of ducks on it.</option>
+    <option speaker="ezra" goto="lighthouse">No, but we passed a tall building, covered in Christmas lights.</option>
+    <option speaker="ezra" goto="story-cliff">No, but we passed a huge cliff with a bunch of words painted on it.</option>    
+  </scene>
+
+  <scene name="duck-island" nextScene="dinosaur-rock">
+    <setGameVar name="tugboat-ezra-landmark" value="Duck Island" />
+    <line speaker="cate">Oh, yeah. "Duck Island." It's named after a nasty old hermit called Edgar Duck who put a claim on it many years ago and tried to build a house there. I heard he didn't have a bed or kitchen, but used all his material on a big fence. He used to blast an air horn if anyone drifted too close!</line>
+    <line speaker="cate">He eventually died, but the name stuck, and at some point the ducks moved in. Maybe people dropped them off there. I don't know.</line>
+  </scene>
+  
+  <scene name="lighthouse" nextScene="dinosaur-rock">
+    <setGameVar name="tugboat-ezra-landmark" value="The Lighthouse" />
+    <line speaker="cate">Ah. River folks call that "The Lighthouse." It used to be an art museum, but their collection went out of fashion, and they had to put it all in storage. I don't know who put those Christmas lights up. Some artist, I guess.</line>
+  </scene>
+  
+  <scene name="story-cliff" nextScene="dinosaur-rock">
+    <setGameVar name="tugboat-ezra-landmark" value="The Story Cliff" />
+    <line speaker="cate">Oh, "The Story Cliff." I don't know who wrote those words up there, but they tell a story about ... well, it's hard to say what exactly it's `about`. It's a story of some people and animals, and their adventures.</line>
+    <line speaker="cate">Sometimes, if I'm running ahead of schedule, I like to drop anchor there and read for a while. The nice thing about the story cliff is you can start reading anywhere you want. There's no `beginning` or `end`, just a bunch of `middle`.</line>
+  </scene>
+
+  <scene name="dinosaur-rock">
+    <line speaker="cate">That's weird. We should have definitely passed Dinosaur Rock by now ...</line>
+    <line>`(CATE looks out the window.)`</line>
+    <line speaker="cate">Oh, wait. There it is, up ahead, see?</line>
+
+    <option speaker="ezra" goto="not-a-dinosaur">That doesn't look like a dinosaur.</option>
+    <option speaker="ezra" goto="favorite-rock">Wow. That's my new favorite rock.</option>
+  </scene>
+
+  <scene name="not-a-dinosaur" nextScene="go-tell-will">
+    <line speaker="cate">No? Well, maybe you're right ... It's worn down a bit since it was first discovered.</line>
+  </scene>
+
+  <scene name="favorite-rock">
+    <setGameVar name="tugboat-ezras-favorite-rock-is-dinosaur-rock" value="true" />
+    <line speaker="cate">It's great, right? What was your old favorite rock?</line>
+
+    <option speaker="ezra" goto="favorite-rock-2" variableChange="tugboat-ezra-old-favorite-rock=big">A big rock in the woods behind my house. I mean really, really big.</option>
+    <option speaker="ezra" goto="favorite-rock-2" variableChange="tugboat-ezra-old-favorite-rock=rainbow">A little rock I found that looked like a rainbow when you held it in the sunlight..</option>
+    <option speaker="ezra" goto="favorite-rock-2" variableChange="tugboat-ezra-old-favorite-rock=green">A rock my aunt got in the mail from Arizona. It was bright green, and she said it had "good energy."</option>
+  </scene>
+
+  <scene name="favorite-rock-2" nextScene="go-tell-will">
+    <line speaker="cate">Cool.</line>
+  </scene>
+
+  <scene name="go-tell-will" nextScene="end">
+    <line speaker="cate">It's strange, though: according to my charts, we should have passed Dinosaur Rock `before` <variable name="tugboat-ezra-landmark" />. But that's OK, sometimes the charts need updating ...</line>
+    <line speaker="cate">Hey, Will is down in the map room right now. Could you run down and help him adjust the charts to move <variable name="tugboat-ezra-landmark" /> so it comes a little earlier on our route than Dinosaur Rock?</line>
+    <line speaker="cate">The map room is down below deck, on the lower level, right next to the sleeping quarters. I'll get on the intercom and let him know you're coming.</line>
+  </scene>
+  
+</conversation>

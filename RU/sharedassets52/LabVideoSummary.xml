@@ -1,0 +1,87 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="after-questionnaire">
+    <line speaker="jenn">OK. `Location-updating effect on emotional memory` ...</line>
+    <line speaker="jenn"><template name="videoSummary" seed="lab-videos-questionnaire-result" /></line>
+    <line speaker="jenn"><template name="videoAside" seed="lab-videos-questionnaire-result" /></line>
+    <line speaker="jenn"><template name="videoResult" seed="lab-videos-questionnaire-result" /></line>    
+  </scene>
+
+  <scene name="after-questionnaire" nextScene="end">
+    <line speaker="jenn">Damn, this is taking a while. Darryl will be heartbroken if this is the only box we get through today.</line>
+    <line speaker="mimi">The poor thing. He is like a paper butterfly.</line>
+    <line speaker="jenn">I would say a moth.</line>
+  </scene>
+
+  <!-- ====================================================== -->  
+  <templates>
+    <videoSummary>
+      <common>
+        <template xml:space="preserve">Subject is <status /> but not <status />, probably just came in a little <status />.</template>
+        <template xml:space="preserve">Subject is measuring near the edge of the useful range for her `<measurement />` ... we may need to reject this data.</template>
+        <template xml:space="preserve">These results are kind of confusing, actually. She's either very <status />, or just not taking it seriously.</template>                
+      </common>
+    </videoSummary>
+    
+    <videoAside>
+      <common>      
+        <template xml:space="preserve">Of course "<emotion /> while recalling <emotion />" <result />. </template>
+        <template xml:space="preserve">This test is so hard to interpret — they're too <status /> by this point. Plus it's hard to account for ambient <emotion /> from the last test.</template>
+        <template xml:space="preserve">This test reminds me of one of your videos, Mimi. <status filter="capitalize" />, but kind of <status />. A portrait of <emotion />.</template>
+      </common>      
+    </videoAside>
+    
+    <videoResult>
+      <common>      
+        <template xml:space="preserve">Just record this whole set as-is, with a note like "<result />."</template>
+        <template xml:space="preserve">Can we just write "too <status />" and go on to the next one?</template>
+        <template xml:space="preserve">So, uh ... "<result />?" That's all that needs saying, I think.</template>        
+      </common>      
+    </videoResult>
+  </templates>
+
+  <templateValues>
+    <status>
+      <common>
+        <value>confused</value>
+        <value>distracted</value>
+        <value>bored</value>
+        <value>sleepy</value>
+        <value>disoriented</value>
+        <value>hurried</value>
+        <value>depressed</value>
+      </common>
+    </status>
+
+    <measurement>
+      <common>
+        <value>introspection index</value>
+        <value>standard units of melancholy</value>
+        <value>forgetfulness index</value>
+      </common>
+    </measurement>
+
+    <emotion>
+      <common>
+        <value>sorrow</value>
+        <value>grief</value>
+        <value>distraction</value>
+        <value>amusement</value>
+        <value>melancholy</value>
+        <value>boredom</value>
+        <value>ennui</value>
+        <value>anxiety</value>
+      </common>      
+    </emotion>
+
+    <result>
+      <common>
+        <value>yielded no new information</value>
+        <value>produced the standard effect on the introspection index</value>
+        <value>produced the standard effect on the forgetfulness index</value>
+        <value>was not yet adjusted for time of day or weather, so it'll need to be thrown out</value>
+      </common>
+    </result>
+  </templateValues>
+  
+</conversation>

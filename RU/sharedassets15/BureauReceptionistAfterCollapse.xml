@@ -1,0 +1,54 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="end-receptionist-after-collapse-conversation">
+  <scene name="intro">
+    <goto condition="!bureau-talked-to-receptionist-after-collapse" sceneName="intro-return"/>
+    <goto condition="bureau-talked-to-receptionist-after-collapse" sceneName="surface-confirm"/>
+  </scene>
+  
+  <scene name="intro-return">
+    <setGameVar name="bureau-talked-to-receptionist-after-collapse" value="true"/>
+    
+    <line speaker="mary ann">Back so soon?</line>
+    
+    <option goto="lula" speaker="conway">Can we talk to Clerk Lula Chamberlain again?</option>
+    <option goto="surface" speaker="shannon">We need to get to the interstate, sixty-five.</option>
+  </scene>
+
+  <scene name="lula">
+    <setGameVar name="bureau-asked-receptionist-about-lula-after-collapse" value="true"/>
+    
+    <line speaker="mary ann">I'm afraid she left. In a big hurry, actually. Something happen with your meeting?</line>
+    
+    <option condition="bureau-mentioned-joseph-to-lula" goto="meeting" speaker="conway">She seemed pretty interested in the gas station attendant.</option>
+    <option condition="bureau-mentioned-weaver-to-lula" goto="meeting" speaker="shannon">She seemed pretty interested in my cousin, Weaver.</option>
+    <option goto="surface" speaker="shannon">We need to get to the interstate, sixty-five.</option>
+  </scene>
+
+  <scene name="meeting" nextScene="surface-confirm">
+    <line speaker="mary ann">I don't know who that is. But she did seem distressed.</line>
+    <line speaker="mary ann">Well. Heading back to the interstate?</line>
+  </scene>
+  
+  <scene name="surface" nextScene="surface-confirm">
+    <line speaker="mary ann">Lula filed your papers, so you're in our system now.</line>
+  </scene>
+
+  <scene name="surface-confirm" nextScene="end">
+    <line speaker="mary ann">I can process you whenever you're ready to go back. Just let me know.</line>
+    <line condition="bureau-receptionist-mentioned-difficult-transition" speaker="mary ann">Just remember: it's a difficult transition, and never symmetrical. It could be tricky to get back.</line>
+    
+    <option goto="end" speaker="conway">We've got a few more things to see down here, I'd say.</option>
+    <option goto="check-out" speaker="shannon">We're ready to be processed.</option>
+  </scene>
+
+  <scene name="check-out" nextScene="end">
+    <setGameVar name="bureau-checked-out" value="true"/>
+
+    <line speaker="shannon">`(She hands the receptionist Lula's card.)` Can you tell us how to get to this address? We're looking for Dr. Truman.</line>
+    
+    <line speaker="mary ann">Of course. This is in a neighborhood just outside of Bowling Green.</line>
+    <line speaker="mary ann">Get on sixty-five going southwest. Take a right just past the observatory, just before the river. If you continue north, you'll be there shortly.</line>
+    
+    <line speaker="mary ann">Happy to help.</line>
+  </scene>
+</conversation>

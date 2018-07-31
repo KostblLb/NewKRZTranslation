@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-matchbook" value="true" />
+    <line>A damp matchbook rests on top of the sand. Shannon flips it open without looking, runs her thumb across the cardboard, and finds one match still intact. She stares ahead, transfixed by the texture on her fingertip, and she wonders if it will flake apart and leave her hands smelling and feeling like fire for the rest of the night, or if the cold lake water has already washed away that part of the match — the part that smells and feels like fire.</line>
+  </scene>
+</conversation>

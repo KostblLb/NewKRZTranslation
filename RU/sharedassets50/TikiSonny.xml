@@ -1,0 +1,243 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="sonny">Hey! Did you hear the ice caps are melting? I mean the `polar` ice caps, the ones all the way at the top!</line>
+    <line speaker="dawn">`(To SHANNON.)` Don't listen to him, hon, he's all doom and gloom tonight.</line>
+    <line speaker="sonny">`"Don't listen!"` That's the answer, Dawn. Well, what else can you do? Some day, all of this ... will be under water. We'll all be drowned! What can you do?</line>
+    
+    <option goto="recycle" speaker="shannon">You can ... recycle?</option>
+    <option goto="better-that-way" speaker="shannon">Maybe it's better that way.</option>
+  </scene>
+
+  <scene name="recycle" nextScene="pessimist">
+    <line speaker="sonny">Half measures avail us nothing!</line>
+  </scene>
+
+  <scene name="better-that-way" nextScene="disaster">
+    <line speaker="dawn">Great, another pessimist. You two have fun, I'll be drowning in this Mai Tai.</line>
+  </scene>
+
+  <scene name="pessimist" nextScene="disaster">
+    <line speaker="dawn">Don't be a pessimist, Sonny. Have another Mai Tai.</line>
+  </scene>
+
+  <scene name="disaster">
+    <line speaker="dawn">`(To SHANNON.)` He's just in a dark mood because the bar is crowded tonight. He likes to `spread out`.</line>
+    <line speaker="sonny"><template name="disasterIntroduction" seed="three:xanadu-resources-mold" /></line>
+
+    <option speaker="shannon" goto="disaster-elaborate"><template name="leadingQuestion" seed="three:xanadu-resources-mold" /></option>
+    <option speaker="shannon" goto="done-with-disasters">I should go.</option>
+  </scene>
+
+  <scene name="disaster-elaborate" nextScene="done-with-disasters">
+    <line speaker="sonny"><template name="disasterElaboration" seed="three:xanadu-resources-mold" /></line>
+    <line speaker="sonny"><template name="disasterFollowup" seed="three:xanadu-resources-mold" /></line>    
+    <line speaker="sonny"><template name="disasterConclusion" seed="three:xanadu-resources-mold" /></line>
+  </scene>
+  
+  <scene name="done-with-disasters" nextScene="end">
+    <setGameVar name="tiki-shannon-talked-to-sonny" value="true" />
+    <line speaker="dawn" condition="meteor-sighting-conversation=none|meteor-sighting-conversation=bad-date">Sonny, you're insufferable.</line>
+    <line speaker="dawn" condition="meteor-sighting-conversation=good-date">Sonny, you're insufferable `(Kisses SONNY's cheek)`.</line>
+    <line speaker="dawn" condition="meteor-sighting-conversation=thats-a-start|meteor-sighting-conversation=better-nights">`(To SHANNON.)` Sorry you asked?</line>
+  </scene>
+  
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <disasterIntroduction>
+      <common>
+        <template xml:space="preserve">You know <badThing capture="tiki-sonny-rant-subject" /> has decimated the <animal /> population, right?</template>
+        <template xml:space="preserve">They said <informationSource /> that <preciousThing capture="tiki-sonny-rant-subject" /> will be <ruinousCondition /> <timeFrame />!</template>
+        <template xml:space="preserve">Have you been observing the death of <preciousThing capture="tiki-sonny-rant-subject" />?</template>
+        <template xml:space="preserve">Are you aware that <preciousThing capture="tiki-sonny-rant-subject" /> is full of <badThing />?</template>
+      </common>
+    </disasterIntroduction>
+
+    <disasterElaboration>
+      <common>
+        <template xml:space="preserve">Well, what would you expect — <preciousThing /> is `already` <ruinousCondition />!</template>
+        <template xml:space="preserve">That's what they say <informationSource />, anyway. And I believe them. <badThing filter="capitalize" />, you know? <ruinousCondition filter="capitalize"/> <timeFrame />.</template>
+        <template xml:space="preserve">Well. I heard <informationSource /> that <badThing />, <badThing />, and <badThing /> all contribute to the <ruinousCondition /> state of <preciousThing />.</template>
+      </common>
+    </disasterElaboration>
+
+    <disasterFollowup>
+      <common>
+        <template xml:space="preserve">And I'm certain that the government is `fully aware` <preciousThing /> is <ruinousCondition />!</template>
+        <template xml:space="preserve">Sure. I heard it <informationSource />, so I take it as gospel. <ruinousCondition filter="capitalize" /> gospel, but gospel nonetheless.</template>
+        <template xml:space="preserve">Well, I was raised never to trust <badThing />, at least not when <preciousThing /> is concerned, but that's another story ...</template>
+      </common>
+    </disasterFollowup>
+    
+    <disasterConclusion>
+      <common>
+        <template xml:space="preserve">It's a <summarySituation />, really. And that's why I'm <feelingAboutSituation />.</template>
+        <template xml:space="preserve">Yeah, I'm <feelingAboutSituation />. Everyone should be.</template>
+        <template xml:space="preserve"><summarySituation filter="capitalize" />. <timeFrame filter="capitalize" />.</template>
+      </common>
+    </disasterConclusion>
+    
+    <leadingQuestion>
+      <common>
+        <template xml:space="preserve">That's alarming.</template>        
+        <template xml:space="preserve">I hadn't heard that.</template>
+        <template xml:space="preserve">Really?</template>
+        <template xml:space="preserve">What?</template>
+        <template xml:space="preserve">Oh no.</template>
+        <template xml:space="preserve">Hm.</template>
+      </common>
+    </leadingQuestion>
+    
+  </templates>
+  
+  <templateValues>
+    <badThing>
+      <common>
+        <value>pollution</value>
+        <value>mercury</value>
+        <value>toxic runoff</value>
+        <value>acid rain</value>        
+      </common>
+      
+      <rare>
+        <value>an unidentified toxin</value>
+        <value>broken glass</value>        
+      </rare>
+      
+      <esoteric>
+        <value>the soggy pulp of discarded telephone books</value>
+      </esoteric>
+    </badThing>
+
+    <animal>
+      <common>
+        <value>deer</value>
+        <value>honey bee</value>
+        <value>frog</value>
+        <value>owl</value>        
+      </common>
+      
+      <rare>
+        <value>cockroach</value>
+        <value>bear</value>
+        <value>crow</value>
+      </rare>
+      
+      <esoteric>
+        <value>panther</value>
+      </esoteric>
+    </animal>
+
+    <informationSource>
+      <common>
+        <value>on TV</value>
+        <value>on the radio</value>
+      </common>
+      
+      <rare>
+        <value>in a recent study</value>        
+      </rare>
+      
+      <esoteric>
+        <value>down at the Bureau</value>
+      </esoteric>
+    </informationSource>
+
+    <preciousThing>
+      <common>
+        <value>the American dollar</value>
+        <value>the Ohio River</value>
+        <value>the ocean</value>
+        <value>gold</value>
+        <value>oil</value>
+      </common>
+      
+      <rare>
+        <value>cotton</value>
+        <value>latex</value>        
+      </rare>
+      
+      <esoteric>
+        <value>every ounce of honey</value>
+        <value>poetry</value>        
+      </esoteric>
+    </preciousThing>
+
+    <ruinousCondition>
+      <common>
+        <value>worthless</value>
+        <value>depleted</value>
+        <value>useless</value>
+        <value>corrupted</value>
+      </common>
+      
+      <rare>
+        <value>rotten</value>
+        <value>ineffectual</value>
+      </rare>
+      
+      <esoteric>
+        <value>hollow</value>
+        <value>haunted</value>        
+      </esoteric>
+    </ruinousCondition>
+
+    <timeFrame>
+      <common>
+        <value>in under a decade</value>
+        <value>any day now</value>
+        <value>pretty damned soon</value>
+        <value>by next year</value>
+        <value>within months</value>
+      </common>
+      
+      <rare>
+        <value>before our kids are grown</value>
+        <value>before I'm in the ground</value>
+      </rare>
+      
+      <esoteric>
+        <value>by March of next year</value>
+      </esoteric>
+    </timeFrame>
+
+    <summarySituation>
+      <common>
+        <value>perfect storm</value>
+        <value>worst case scenario</value>
+        <value>desperate situation</value>
+        <value>mess</value>
+        <value>disaster</value>        
+      </common>
+      
+      <rare>
+        <value>total collapse</value>
+      </rare>
+      
+      <esoteric>
+        <value>shit storm</value>        
+      </esoteric>
+    </summarySituation>
+
+    <feelingAboutSituation>
+      <common>
+        <value>depressed</value>
+        <value>resigned to it</value>
+        <value>trying not to think about it</value>
+        <value>mad as hell</value>        
+      </common>
+      
+      <rare>
+        <value>unhappy</value>
+        <value>bummed out</value>        
+      </rare>
+      
+      <esoteric>
+        <value>bewildered and indignant</value>
+      </esoteric>
+    </feelingAboutSituation>      
+    
+  </templateValues>
+</conversation>

@@ -1,0 +1,47 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="children" destroy="true" direction="out" time="2" />
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    
+    <audioFade clip="children" direction="in" time="4" />
+    <setGameVar name="underworld-saw-ezra-game-1" value="true"/>
+    
+    <line>Six children dance in pairs on a large, flat, mossy rock. A seventh child — a girl in a long, gray shirt — plays with some colored string.</line>
+    <option goto="dance" insertedText="Ezra dances with the girl.">Dance.</option>
+    <option goto="string" insertedText="Ezra asks about the string.">Ask about string.</option>
+  </scene>
+
+  <scene name="dance">
+    <line>She takes his arm. The other children sing about the weather, and a drunk old farmer.</line>
+    <option goto="ask-name" insertedText="Ezra asks the girl's name.">Ask her name.</option>
+    <option goto="watch-movements" insertedText="Ezra pays close attention to the other children's movements.">Watch the others.</option>
+  </scene>
+
+  <scene name="ask-name" nextScene="dance-end">
+    <line>She pinches his elbow. He slips a bit on the moss, but she catches him.</line>
+  </scene>
+
+  <scene name="watch-movements" nextScene="dance-end">
+    <line>He matches their steps perfectly, but a bit too quickly. She grips his elbow to keep up.</line>
+  </scene>
+
+  <scene name="dance-end" nextScene="end">
+    <line>She lets go of Ezra's arm, and all the children switch partners. They sing about the weather and the drunk old farmer. After a while, Ezra walks back to the truck, leaving his new partner to play with the colored string.</line>
+  </scene>
+
+  <scene name="string">
+    <line>She says she's weaving. The other children are singing about the weather, and a drunk old farmer. She says the next part of the verse is about weaving, so she's getting ready.</line>
+    <option goto="dance" insertedText="Ezra asks to dance with the girl.">Dance.</option>
+    <option goto="watch" insertedText="Ezra watches the other children.">Watch the others.</option>
+  </scene>
+
+  <scene name="watch" nextScene="end">
+    <line>Soon, the children switch partners. Now a different girl is playing with the string. They do sing about weaving, but just for a line or two. Then it's back to the weather and the drunk old farmer.</line>
+  </scene>
+</conversation>

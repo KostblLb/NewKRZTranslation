@@ -1,0 +1,38 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="questions">
+    <line speaker="mimi">How many pictures did she remember?</line>
+    <line speaker="jenn">Two. Or ... actually, maybe three.</line>
+    <line speaker="mimi">What?</line>
+    <line speaker="jenn">She wrote down "Orange, Strawberry, Guava."</line>
+    <line speaker="mimi">"Guava?"</line>
+    <line speaker="jenn">I think she meant the pear. See, that's why I hate this test: there's so much fruit that basically looks just like other fruit.</line>
+    <line speaker="mimi">Oh, `guava`. Does a guava even look like a pear, though? I don't think I've ever seen a guava. I thought they were pink.</line>
+    <line speaker="jenn">They're just pink on the inside. You wouldn't confuse a real guava for a real pear, but in one of Darryl's crude watercolors ...</line>
+    <line speaker="mimi">But `I` can still clearly tell that's a pear, even on video.</line>
+    <line speaker="jenn">Yeah, you and I can, but we already know it's a pear. She could be remembering wrong, or just identifying what — to her — is a much more likely fruit to appear in a painting, based on any number of cultural, social, geographic, um ... you know?</line>
+    <line speaker="mimi">She didn't say anything in her response to help clarify?</line>
+    <line speaker="jenn">Let's see ...</line>
+  </scene>
+
+  <scene name="questions">
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">Please describe in detail any sensations that accompany your memory of the pictures.</line>
+    <option goto="memory-2" speaker="response" style="questionnaire">It makes me think of being a kid.</option>
+    <option goto="memory-2" speaker="response" style="questionnaire">I remember the way the fruit tastes.</option>
+  </scene>
+
+  <scene name="memory-2">
+    <option goto="end-questions" speaker="response" style="questionnaire">The guava is just like candy. It's almost unnatural.</option>
+    <option goto="end-questions" speaker="response" style="questionnaire">My mother gave me some mushed up guava once to cure a tooth ache.</option>
+  </scene>
+
+  <scene name="end-questions" nextScene="end">
+    <line speaker="jenn">Not really. Just some sensory memories of guava.</line>
+    <line speaker="mimi">I guess we should just skip the pictures ... That's a shame. It's really hard to measure memory degradation in some of the later tests without this one as a baseline location-updating scenario.</line>
+    <line speaker="jenn">I've been saying we should just use photographs. Watercolor paintings already have the quality of a half-remembered dream, anyway. Like they're inviting you to forget them, or somebody else already forgot them for you; like a mama-bird feeding her chicks cotton candy.</line>
+    <line speaker="jenn">Photographs are ... it's not that they're really more accurate or true, but we `think` they are. They put you in that mindset. They have `authority`.</line>
+    <line speaker="jenn">So, yeah: out with the watercolors, I say.</line>
+    <line speaker="mimi">But then poor Darryl would have nowhere to `exhibit his work` ...</line>
+    <line>`(JENN makes a noise.)`</line>
+  </scene>
+</conversation>

@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="use-pdp">
+  <scene name="intro" nextScene="end">
+    <line speaker="shannon">How do you think we get it started?</line>
+    <line speaker="junebug">This old thing? Maybe there's a hand crank around ... oh, it has a `run` key.</line>
+  </scene>
+</conversation>

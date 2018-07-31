@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-junebug-johnny-conversation">
+  <scene name="intro">
+    <triggerEvent name="junebug-walk-to-johnny-ending" />
+    <setGameVar name="hotmk-junebug-and-johnny-talked-ending" value="true" />    
+    <line speaker="johnny">What happened up there?</line>
+    <option goto="mystery" speaker="junebug">I'm actually not sure.</option>
+    <option goto="computers" speaker="junebug">Just a bunch of computers.</option>
+  </scene>
+
+  <scene name="mystery" nextScene="end">
+    <line speaker="johnny">Very mysterious, ma'am.</line>
+  </scene>
+
+  <scene name="computers" nextScene="end">
+    <line>`(JOHNNY yawns.)`</line>
+  </scene>
+</conversation>

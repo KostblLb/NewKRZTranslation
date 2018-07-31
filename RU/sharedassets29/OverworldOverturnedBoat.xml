@@ -1,0 +1,16 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" time="2"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    <setGameVar name="overworld-saw-overturned-boat" value="true" />
+    <audioFade clip="creek" direction="in" time="4" />
+    <line>Conway leaves the truck to stretch his legs by the creek. He follows the edge of the road, then wanders a bit into the woods where the creek and road part.</line>
+    <line>The creek bed is nearly dry this time of year, but a few thin channels still run through the rocks.</line>
+    <line>He can barely make out the moonlit silhouette of an overturned boat, a few dozen yards down the creek. He reaches habitually into his jacket pocket, then remembers he doesn't carry a flask anymore.</line>
+  </scene>
+</conversation>

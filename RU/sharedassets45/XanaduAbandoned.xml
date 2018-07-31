@@ -1,0 +1,42 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue,camera-close">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="1"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <setGameVar name="xanadu-next-scene" value="hotmk"/>
+    <line speaker="xanadu" style="xanadu">Abandoned by your collaborators, your confidants, your companions, the only two among your colleagues with whom you've ever trusted the gift of your friendship —</line>
+    <line event="camera-full" speaker="junebug">Pretty thick. Sounds like beard-o had his heart broken.</line>
+    <line speaker="xanadu" style="xanadu">— you wander the tunnels alone, dragging along the components of your unrealized masterpiece, combing the underground passages for a new site in which to realize your vision.</line>
+    <line speaker="junebug">`(Sardonic.)` Sounds like a &quot;genius.&quot;</line>
+    <line speaker="shannon">How do you mean?</line>
+    
+    <option goto="geniuswordy" speaker="junebug">Wordy.</option>
+    <option goto="geniusvain" speaker="junebug">Vain.</option>
+  </scene>
+
+  <scene name="geniuswordy" nextScene="end">
+    <setGameVar name="xanadu-shannon-story" value="wordy" />
+    
+    <line speaker="shannon">Ha.</line>
+    <line speaker="shannon">I had a guy who came into the shop once with a bunch of old radios and computers and stuff, real junk — I think he collected it going down alleys or something. Anyway, it was all broken. He asked me if I could get the tubes out and clean them up. The vacuum tubes.</line>
+    <line speaker="shannon">So I pulled every vacuum tube I could find, and threw the rest out, and I went over them with some rubbing alcohol and cleaned the leads. I used some nail polish remover on the glass. I did a pretty good job.</line>
+    <line speaker="shannon">He came back in the next day, and I laid it all out on a towel for him so he could check it out. I got the towel from my aunt Remedios, and like everything with her it's really kind of &quot;nice,&quot; you know? It's red and it has this gold embroidery around the edges.</line>
+    <line speaker="shannon">I guess it was a little `too` nice. This guy got all excited by the presentation, kind of circled it and observed each tube from a distance, moving his head around in weird, quick bobs, like a pigeon.</line>
+    <line speaker="shannon">And then he started just `lecturing` at nobody in particular about the history of vacuum tubes. He talked for an hour.</line>
+    <line speaker="shannon">We went on a few dates, but nothing really came of it. Turns out he was kind of boring.</line>
+  </scene>
+
+  <scene name="geniusvain" nextScene="end">
+    <setGameVar name="xanadu-shannon-story" value="vain" />
+    
+    <line speaker="shannon">Vanity. Ain't it the truth.</line>
+    <line speaker="shannon">My aunt Remedios, before she got into the whole ethnomusicography thing, she was a painter. Mostly nudes in oil. She had this model — I'll never forget him. Big, classically physical guy, looked like he was about to storm Troy. He made everyone call him &quot;The Colonel.&quot;</line>
+    <line speaker="shannon">Weaver and I saw this guy naked a lot — you couldn't help it! He was always posing somewhere in the house, chasing the light from room to room while Aunt Remedios made a sketch of his profile or worked on the right mix of pigments for his abdomen.</line>
+    <line speaker="shannon">The Colonel had this magnificent hair. Long, black hair that ran down just to the bottom of his shoulder blades. One evening, he was standing next to an open window in the back of the house. The sun was setting. Early spring, I think — it was kind of windy.</line>
+    <line speaker="shannon">Aunt Remedios was trying to get his hair right. She kept arranging it — like half in front and half behind, running over his shoulder and laying across his chest in this very specific way.</line>
+    <line speaker="shannon">But it itched him or something, and he'd do this weird indignant shuffle thing, or the wind from the open window would push it around, or he'd start and turn his neck when Weaver or I ran by, and everything would be tangled again.</line>
+    <line speaker="shannon">The final product was a swirl of black lines, billowing around the top of his neck. Weird thing is I don't even remember his face now. Just that black swirl. Probably the best one she ever painted.</line>
+  </scene>
+</conversation>

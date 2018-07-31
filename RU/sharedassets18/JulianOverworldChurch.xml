@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-church" value="true"/>
+    
+    <line>A country church with a pitched roof and a three-story spire. A large LED display glows in the parking lot.</line>
+    <line condition="one:overworld-visited-country-church">Behind the church are several dusty metal trash cans, a few of which are opened.</line>
+    <line condition="!one:overworld-visited-country-church">Behind the church are several dusty metal trash cans, all closed.</line>
+  </scene>
+</conversation>

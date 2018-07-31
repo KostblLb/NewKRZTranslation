@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-cask-charring" value="true"/>
+    <triggerEvent name="start-tape"/>
+    
+    <line speaker="doolittle" style="skeleton">Here's the charring yard. Vents pretty well, considering.</line>
+    <line speaker="doolittle" style="skeleton">This smell ... this is why they call Bourbon a comfort food.</line>
+    <option goto="smells-nice" speaker="conway">Smells nice.</option>
+    <option goto="empty-coffins" speaker="shannon">Those are ... empty, right?</option>
+  </scene>
+
+  <scene name="smells-nice">
+    <line speaker="doolittle" style="skeleton">Have you ever been in a forest after a fire?</line>
+    <option goto="drove-by" speaker="conway">Just driven past.</option>
+    <option goto="house-fire" speaker="conway">I've been in a house after a fire.</option>
+  </scene>
+
+  <scene name="drove-by" nextScene="end">
+    <line speaker="doolittle" style="skeleton">You may have had the windows up. You'd remember. When live trees burn, the air is laden with a syrupy ash. If you touch it, it breaks apart like a snowflake.</line>
+  </scene>
+
+  <scene name="house-fire" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Well, every narcotic has a breath of homesickness on it. That's what makes it so damned compelling.</line>
+  </scene>
+
+  <scene name="empty-coffins" nextScene="end">
+    <line speaker="doolittle" style="skeleton">What? Oh, of course. We don't really exhume them anymore. We tapped that source years ago.</line>
+  </scene>
+
+</conversation>

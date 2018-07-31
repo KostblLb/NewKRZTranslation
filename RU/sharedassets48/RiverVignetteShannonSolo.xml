@@ -1,0 +1,260 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro" nextScene="encounter-options">
+    <triggerEvent name="start-story" />    
+    <line>She returned on the dinghy, alone. She had a strong and sudden urge to shut the motor off and let the current take her, but she couldn't work out where that impulse came from, so she did her best to resist it.</line>
+  </scene>
+
+  <scene name="encounter-options">
+    <goto condition="riverworld-shannon-encounter-count[gt]2" sceneName="closing" />
+    <option goto="family" condition="!riverworld-shannon-met-family">She met a family of five on a flat-bottomed skiff.</option>
+    <option goto="guitar-player" condition="!riverworld-shannon-met-guitar-player">She met a guitar player pedaling a floating bicycle, with his dog in tow.</option>
+    <option goto="flowers" condition="!riverworld-shannon-met-carl">She met a flower salesman on a raft.</option>
+    <option goto="painter" condition="!riverworld-shannon-met-painter">She met a painter of shipwrecks.</option>
+  </scene>
+  
+  <!-- family -->
+  <scene name="family" nextScene="encounter-options">
+    <setGameVar name="riverworld-shannon-met-family" value="true" />
+    <setGameVar name="riverworld-shannon-encounter-count" value="+1" />
+    <triggerEvent name="enter-skiff" />
+    
+    <line>The boat was loaded to capacity with black plastic bags and a few larger pieces of furniture wrapped in a blue tarp. Three paddled — the two adults and the older child. The two younger children slept.</line>
+    <line>They'd been traveling all night, first by car and then for the last few hours by boat. Hungry and tired, they didn't plan to stop until they reached West Virginia, where a relative had offered to take them in.</line>
+    <line>But the adults were happy to take a break from paddling in weary silence. They asked her about her river journey.</line>
+    
+    <option goto="restaurant">She said she was on the way to Sam &amp; Ida's.</option>
+    <option goto="memorial">She told them about the memorial.</option>
+  </scene>
+
+  <scene name="restaurant" nextScene="family-move-on">
+    <line>They'd brought some food. The kids had picked the garden clean earlier in the day, so they'd been snacking on fresh bell peppers and tomatoes, and some crackers, rationed carefully for the trip.</line>
+  </scene>
+
+  <scene name="memorial" nextScene="family-move-on">
+    <line>They were sympathetic. No miners in their family, but he was once injured at a warehouse job, and had to fight for disability pay — they knew what these companies were like, and what it was like to have to assert your humanity to them.</line>
+  </scene>
+
+  <scene name="family-move-on" nextScene="encounter-options">
+    <line>They wished her well, and paddled on toward West Virginia.</line>
+  </scene>
+
+  <!-- flowers -->
+  <scene name="flowers" nextScene="encounter-options">
+    <setGameVar name="riverworld-shannon-met-carl" value="true" />
+    <setGameVar name="riverworld-shannon-encounter-count" value="+1" />
+    <triggerEvent name="enter-raft" />
+
+    <line>They floated alongside in buoyant pots, bobbing untethered. He corralled them with a long pole in a stream of small adjustments.</line>
+    
+    <option goto="look-closer">She leaned out over the water, to get a closer look.</option>
+    <option goto="small-talk">She made small talk.</option>
+  </scene>
+
+  <scene name="look-closer" nextScene="flowers-move-on">
+    <line>He'd just started work for the day, so his stock was full. He pushed a few bouquets her way —</line>
+    <line xml:space="preserve">First was <template name="bouquet" seed="flowers" seed-offset="riverworld-flowers-offset" /> <template name="bouquetOccasion" seed="flowers" seed-offset="riverworld-flowers-offset" /></line>
+    <line xml:space="preserve">Next, <template name="bouquet" seed="flowers" seed-offset="riverworld-flowers-offset" /> <template name="bouquetOccasion" seed="flowers" seed-offset="riverworld-flowers-offset" /></line>
+    <line xml:space="preserve">Finally, <template name="bouquet" seed="flowers" seed-offset="riverworld-flowers-offset" /> <template name="bouquetOccasion" seed="flowers" seed-offset="riverworld-flowers-offset" /></line>
+  </scene>
+
+  <scene name="small-talk" nextScene="flowers-move-on">
+    <line>He was alert and easygoing. His day was just beginning. He used to work at `<variable name="tiki-bar-carl-failed-business" />`, but it closed down. When he wasn't selling flowers, he'd hang out by the highway and listen to the sounds the cars made, study them carefully, and then learn to reproduce them with his own voice. He was working on a record.</line>
+  </scene>
+
+  <scene name="flowers-move-on" nextScene="encounter-options">
+    <line>He drifted away with the current, pushing his flowers along with the raft.</line>
+  </scene>
+  
+  <!-- guitar player -->
+  <scene name="guitar-player">
+    <setGameVar name="riverworld-shannon-met-guitar-player" value="true" />
+    <setGameVar name="riverworld-shannon-encounter-count" value="+1" />
+    <triggerEvent name="enter-waterbike" />
+    
+    <line>He said they took turns. The water was cold and the floating bicycle, while technically marvelous, wasn't quite buoyant enough for the both of them. Swimming is hard work — the hardest work that dog had ever done, he expected.</line>
+    <line>They'd been traveling this way for most of the night: struggling through the icy water, stopping to recover when they could find a rock large enough to start a small campfire. He had his belongings stuffed into a weathered guitar case at the end of a thin rope. It floated pretty well, so he only had to keep an eye on it and occasionally free it from a rock or some driftwood it was caught on.</line>
+    <option goto="guitar">She asked if he had a guitar in his case, or just clothes.</option>
+    <option goto="dinghy-ride">She invited him to ride a ways on the dinghy.</option>
+  </scene>
+
+  <scene name="guitar" nextScene="encounter-options">
+    <line>He would have played her something, but the case leaked a bit, and he didn't think it would sound right until it had time to dry out.</line>
+  </scene>
+
+  <scene name="dinghy-ride" nextScene="encounter-options">
+    <line>He appreciated the offer, but they weren't in a hurry.</line>
+  </scene>
+
+  <!-- painter -->
+  <scene name="painter" nextScene="encounter-options">
+    <setGameVar name="riverworld-shannon-met-painter" value="true" />
+    <setGameVar name="riverworld-shannon-encounter-count" value="+1" />
+    <triggerEvent name="enter-houseboat" />
+    
+    <line>He never worked from photographs, so his paintings could be divided into two categories:</line>
+    <line>There were the ones he painted from life, and the Echo River was a very good source for these because its currents were so unpredictable and the tunnels so dark. He rendered these in oil paint, by lamplight, working for hours cross-legged on the porch of his houseboat-slash-studio.</line>
+    <line>Then there were the ones he painted from memory — mostly the memory of a single wreck he encountered as a much younger man, picking up litter where the coastal highway cleaves to the rocky beaches of northern California. These were done in watercolor. He preferred to work on them in the morning, in a room he rented near the airport in Louisville.</line>
+    <line>He had some postcard-sized sketches in charcoal, too, of `The Iron Pariah`. It wasn't a wreck, exactly, but it felt right. He tried to scribble one down every time he encountered it, though it was so unpredictable, and he was so focused on details, he usually just ended up with a handful of inscrutable marks.</line>
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line>She gave in, shut off the motor and floated for a while. Then, she knew what she'd been craving: a moment of silence.</line>
+  </scene>
+  
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  
+  <templates>
+    <bouquet>
+      <common>
+        <template xml:space="preserve" once="true"><adjectiveWithArticle /> <shape /> of <flowerPlural />.</template>
+        <template xml:space="preserve" once="true"><adjectiveWithArticle /> <shape /> of <color />-petaled flowers of many different types.</template>
+        <template xml:space="preserve" once="true"><adjectiveWithArticle /> <shape /> of <flowerPlural />, made to look <appearance />.</template>
+        <template xml:space="preserve" once="true"><adjectiveWithArticle /> <shape /> of <flowerPlural />, arranged in the `<tradition />` style.</template>
+      </common>
+    </bouquet>
+
+    <bouquetOccasion>
+      <common>
+        <template xml:space="preserve" once="true">He suggested it would make an appropriate <occasion /> bouquet.</template>
+        <template xml:space="preserve" once="true">She thought it looked <feeling />, and he agreed.</template>
+        <template xml:space="preserve" once="true">He was feeling <feeling /> when he first designed it, but some customers found it <feeling />.</template>
+        <template xml:space="preserve" once="true">He said it was for a particular kind of person — if it didn't remind her of anyone in specific, she'd better move on.</template>
+      </common>
+    </bouquetOccasion>
+  </templates>
+
+  <templateValues>
+    <adjectiveWithArticle>
+      <common>
+        <value>a simple</value>
+        <value>an elaborate</value>
+        <value>a rustic</value>
+        <value>a haunting</value>
+        <value>a delicate</value>
+      </common>
+    </adjectiveWithArticle>
+    
+    <shape>
+      <common>
+        <value>mixture</value>
+        <value>mass</value>
+        <value>bundle</value>
+      </common>
+    </shape>
+
+    <color>
+      <common>
+        <value>yellow</value>
+        <value>blue</value>
+        <value>red</value>
+        <value>white</value>
+      </common>
+      <rare>
+        <value>translucent</value>
+        <value>gray</value>
+      </rare>
+      <esoteric>
+        <value>ghost</value>
+      </esoteric>
+    </color>
+    
+    <flowerPlural>
+      <common>
+        <value>peonies</value>
+        <value>pomegranates</value>
+        <value>pine needles</value>
+        <value>roses</value>
+        <value>lilies</value>
+        <value>dandelions</value>
+        <value>pansies</value>
+        <value>coral bells</value>
+        <value>dead nettles</value>
+        <value>mums</value>
+        <value>marigolds</value>
+        <value>daisies</value>
+        <value>snapdragons</value>
+        <value>summer orchids</value>
+        <value>dutch tulips</value>
+      </common>
+      <rare>
+        <value>bamboo strips</value>        
+        <value>paper blossoms</value>
+        <value>shade-grown mushrooms</value>
+      </rare>
+      <esoteric>
+        <value>stolen orchids</value>
+      </esoteric>
+    </flowerPlural>
+
+    <appearance>
+      <common>
+        <value>thrown-together</value>
+        <value>messy</value>
+        <value>precisely-arranged</value>
+        <value>wild</value>
+        <value>domestic</value>
+        <value>artificial</value>
+        <value>natural</value>
+      </common>
+    </appearance>
+
+    <tradition>
+      <common>
+        <value>Egyptian</value>
+        <value>Byzantine</value>
+        <value>Greek</value>
+        <value>Roman</value>
+        <value>Georgian</value>        
+        <value>Victorian</value>
+        <value>Colonial</value>
+        <value>Chinese Classical</value>
+        <value>French Baroque</value>        
+      </common>
+      
+      <rare>
+        <value>Subterranean</value>
+        <value>Naturalist</value>
+        <value>Literati</value>        
+      </rare>
+    </tradition>
+
+    <feeling>
+      <common>
+        <value>sad</value>
+        <value>melancholy</value>
+        <value>distracted</value>
+        <value>eager</value>
+        <value>hopeful</value>
+        <value>wistful</value>
+        <value>joyful</value>
+        <value>serene</value>
+      </common>
+      <rare>
+        <value>funereal</value>
+        <value>nostalgic</value>
+        <value>overworked</value>
+      </rare>
+    </feeling>
+
+    
+    <occasion>
+      <common>
+        <value>apology</value>
+        <value>"missing you"</value>
+        <value>"thinking of you"</value>
+        <value>wedding</value>
+        <value>"first car"</value>
+        <value>"secret admirer"</value>
+        <value>"sorry I forgot"</value>
+        <value>"don't forget"</value>
+      </common>
+       
+    </occasion>
+  </templateValues>
+
+
+  
+</conversation>

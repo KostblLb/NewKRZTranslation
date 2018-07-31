@@ -1,0 +1,10 @@
+15 ActorTruckRepaired
+14 ActorJohnnyEnding
+10 ActorLantern, ActorBookshelf, ActorTapeRecorder, ActorLulasBackpack
+ 5 ActorDonald
+ 2 ActorFireInitial
+ 1 ActorAmy.Talk, ActorAndrew.Talk, ActorRoberta.Talk
+ 0 ActorBrokenBridge
+-1 ActorAmy.Look, ActorAndrew.Look, ActorRoberta.Look
+-1 ActorJohnnyBeginning
+-2 ActorFire, ActorDogBeginning

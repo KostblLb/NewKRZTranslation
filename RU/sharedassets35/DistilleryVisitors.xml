@@ -1,0 +1,38 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="pew-release-passengers,stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-met-doolittle" value="true"/>    
+    <triggerEvent name="start-tape"/>
+    <line>`(The stranger activates the tape player slung on his shoulder. A crackly drawl echoes in the room. It is patient, and sounds like it should be smiling.)`</line>
+    <line speaker="doolittle" style="skeleton">My regrets. I hope I didn't keep you waiting long; we don't see a lot of foot traffic these days.</line>
+    <line speaker="doolittle" style="skeleton">I guess you're here about the job. I'm afraid we only have one opening at the moment. Horrible business ...</line>
+    <option goto="question" speaker="conway">What's this job?</option>
+    <option goto="question" speaker="conway">We're actually looking for some information about an old computer.</option>
+    <option goto="question" speaker="conway">Do you know how to get to the Bureau from here?</option>
+  </scene>
+
+  <scene name="question">
+    <line speaker="doolittle" style="skeleton">Certainly, I'll tell you everything you need to know.</line>
+    <line speaker="doolittle" style="skeleton">I've only just met you, but I feel certain there's a place for you here.</line>
+    <line speaker="doolittle" style="skeleton">I'll just take you over to meet the dispatcher. Show you the trucks. Get you familiarized.</line>
+    <line speaker="doolittle" style="skeleton">We can converse as we go.</line>
+    
+    <line speaker="shannon">`(To CONWAY.)` What `is` this place?</line>
+    
+    <option goto="not-church" speaker="conway">Well, it's not an old church.</option>
+    <option goto="factory" speaker="conway">Some kind of factory?</option>
+  </scene>
+
+  <scene name="not-church" nextScene="embark">
+    <line speaker="shannon">No, I guess not. But, still, it all has a kind of ... reverence to it.</line>
+  </scene>
+
+  <scene name="factory" nextScene="embark">
+    <line speaker="shannon">Yeah, maybe. But for what? Why hidden away like this?</line>
+  </scene>
+
+  <scene name="embark" nextScene="end">
+    <line speaker="shannon">And what's that smell? Like bread ... baking bread?</line>
+    <line speaker="doolittle" style="skeleton">Please, follow me.</line>
+  </scene>
+</conversation>

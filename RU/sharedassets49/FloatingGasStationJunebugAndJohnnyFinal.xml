@@ -1,0 +1,102 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-scene">
+  <scene name="intro">
+    <line speaker="johnny">That guy's a trip, that gas station attendant. Did you talk to him? It's funny, he actually reminds me of that frog we had for a bit.</line>
+    <option goto="frog-you-had" speaker="junebug">That frog `you` had.</option>
+    <option goto="was-a-toad" speaker="junebug">I thought it was a toad.</option>
+  </scene>
+
+  <scene name="frog-you-had" nextScene="junebug-question">
+    <line speaker="johnny">Aw, I like to think he was part of the family, you know?</line>
+  </scene>
+
+  <scene name="was-a-toad">
+    <setGameVar name="floating-gas-station-pet-was-toad" value="true" />
+    <line speaker="johnny">Oh, is there a difference?</line>
+    <option goto="toad-fact" speaker="junebug" variableChange="floating-gas-station-toad-fact=bigger">Yeah, toads are bigger.</option>
+    <option goto="toad-fact" speaker="junebug" variableChange="floating-gas-station-toad-fact=habitat">Toads live in the mud, frogs live in trees.</option>
+    <option goto="toad-fact" speaker="junebug" variableChange="floating-gas-station-toad-fact=warts">Toads have warts.</option>
+  </scene>
+
+  <scene name="toad-fact" nextScene="junebug-question">
+    <line speaker="johnny">Huh. I never knew.</line>
+  </scene>
+
+  <scene name="junebug-question">
+    <option goto="frog-memory" speaker="junebug">OK. So how does that gas station attendant remind you of a frog?</option>
+    <option goto="cat-memory" speaker="junebug">He seemed more like a cat to me. The attendant, I mean.</option>
+  </scene>
+
+  <scene name="frog-memory" nextScene="another-pet">
+    <line speaker="johnny">Oh, I don't know. Because he liked to talk, I guess ...</line>
+  </scene>
+
+  <scene name="cat-memory" nextScene="another-pet">
+    <line speaker="johnny">Oh yeah, I can see that, too. `Aloof`. But strangely chatty.</line>
+  </scene>
+
+  <scene name="another-pet">
+    <line speaker="johnny">Maybe we should pick up another one? A frog, or a cat, or an iguana ... or something ...</line>
+    <option goto="why-a-pet" speaker="junebug">What do you want a pet for?</option>
+    <option goto="lonely" speaker="junebug">Feeling lonely, cricket?</option>
+    <option goto="another-person" speaker="junebug">Or maybe a third person to travel with?</option>
+  </scene>
+
+  <scene name="why-a-pet">
+    <line speaker="johnny">I was just thinking about that old man and his dog — you ever notice how he talks to his dog?</line>
+    <option goto="conway-talks-to-himself" speaker="junebug">Sort of like he's talking to himself.</option>
+    <option goto="cant-hear-conway" speaker="junebug">I can't make out what he's saying.</option>
+  </scene>
+
+  <scene name="conway-talks-to-himself" nextScene="lonely">
+    <line speaker="johnny">Yeah, exactly like that. But that's how I feel when I'm talking to you, ma'am — liking I'm talking to myself. And when you're talking to me, I feel like you're talking to yourself.</line>
+    <line speaker="johnny">I mean, not `literally`, but like ... that's how we are who we are, you and me.</line>
+  </scene>
+
+  <scene name="cant-hear-conway">
+    <line speaker="johnny">Right, he's just sort of mumbling and humming, thinking out loud. It doesn't matter if he speaks clearly because the dog's only listening to his tone and his hand behind <variable name="dog-possessive-pronoun" /> ear, and <variable name="dog-possessive-pronoun" /> memory of all their time together. I think that's how it is for the old man, too ...</line>
+    <option goto="lonely" speaker="junebug">Feeling lonely, cricket?</option>
+    <option goto="another-person" speaker="junebug">You're wondering what it would be like to travel with a third person.</option>
+  </scene>
+
+  <scene name="lonely" nextScene="junebug-plan">
+    <line speaker="johnny">Not exactly ...</line>
+    <line speaker="johnny">Not like that guy in the gas station. That guy lets the world wash over him, static like a rock, but I — you and me both, together, I mean — we're always moving, always changing.</line>
+    <line speaker="johnny">I think it's because we feel safe with each other, you know? Free. We can try stuff out — change our clothes, swap parts around, just ... `play`.</line>
+    <line speaker="johnny">I'm not lonely, just curious — with another person to play with, what else could we be?</line>
+  </scene>
+
+  <scene name="another-person" nextScene="junebug-plan">
+    <line speaker="johnny">Huh. Now `that` would be a whole new adventure, wouldn't it?</line>
+    <line speaker="johnny">You and me, we're good together. Safe. Free. You know what I mean? We can try stuff out — change our clothes, swap parts around, just ... `play`.</line>    
+    <line speaker="johnny">I'm not lonely, just curious — with another person to play with, what else could we be?</line>
+  </scene>
+
+  <scene name="junebug-plan">
+    <option goto="junebug-positive" speaker="junebug">You may be right, cricket.</option>
+    <option goto="junebug-negative" speaker="junebug">I don't think it's a good idea.</option>
+    <option goto="junebug-hesitant" speaker="junebug">We can keep it in mind — let's not rush into anything.</option>
+  </scene>
+
+  <scene name="junebug-positive" nextScene="head-back">
+    <setGameVar name="floating-gas-station-junebug-third-person-reaction" value="positive" />
+    <line speaker="johnny">You really think so? Wow. I thought I'd have to wear you down a little, like I did with the gerbils ...</line>
+  </scene>
+
+  <scene name="junebug-negative" nextScene="head-back">
+    <setGameVar name="floating-gas-station-junebug-third-person-reaction" value="negative" />    
+    <line speaker="johnny">Yeah, you're probably right. Why mess with a good thing?</line>
+  </scene>
+
+  <scene name="junebug-hesitant" nextScene="head-back">
+    <setGameVar name="floating-gas-station-junebug-third-person-reaction" value="hesitant" />    
+    <line speaker="johnny">Yeah, you're right about that, ma'am. No rush.</line>
+  </scene>
+
+  <scene name="head-back" nextScene="end">
+    <blocking>Foghorn Audio Play foghorn</blocking>
+    <line speaker="johnny">Oh, that's Cate. Time to hit the road!</line>
+    <line speaker="johnny">River, I mean!</line>
+  </scene>
+
+</conversation>

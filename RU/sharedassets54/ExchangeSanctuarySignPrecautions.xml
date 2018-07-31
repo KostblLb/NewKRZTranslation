@@ -1,0 +1,90 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="start-following-dinghy">
+  <scene name="intro" nextScene="end">
+    <blocking>Sign Message [DinghyFlashlight] SetScriptedTarget FlashlightHintEntranceSign/Target</blocking>
+    <line speaker="sign">Visitors to the `Echo River <template name="batSpecies" seed="bat-species" capture="exchange-bat-species" /> Artificial Hibernaculum and Sanctuary` are asked to take extra precautions in order to prevent the introduction of foreign fungal contaminants and the spread of `white nose syndrome`.</line>
+    <line speaker="sign">Please do not visit the sanctuary during the same day in which you've visited any cave known or suspected to host bats infected with `white nose syndrome`.</line>
+    <line speaker="sign">Please do not leave your vehicle. If you must leave your vehicle, please remove shoes, clothes, jewelry, headwear, and eyeglasses to ensure you do not bring any foreign spores ashore with you.</line>
+    <line speaker="sign">Please do not touch any bats or structures.</line>
+    <line speaker="sign">The <variable name="exchange-bat-species" /> is confused by light. If you are using a lantern or other artificial light source, be aware that it may attract and confuse bats. If you are approached by bats, do not panic. Relax. Stop your vehicle and switch off your light. Never touch a bat.</line>
+  </scene>
+
+  <!-- template stuff -->
+  <templates>
+    <batSpecies>
+      <common>
+        <template xml:space="preserve"><region /> <color /> Bat</template>
+        <template xml:space="preserve"><region /> <adjective /> Bat</template>
+        <template xml:space="preserve"><region /> <habitat /> Bat</template>
+        <template xml:space="preserve"><adjective /> <color /> Bat</template>
+        <template xml:space="preserve"><adjective /> <color /> Bat</template>
+        <template xml:space="preserve"><adjective /> <color /> <habitat /> Bat</template>
+      </common>
+    </batSpecies>
+  </templates>
+
+  <templateValues>
+    <region>
+      <common>
+        <value>American</value>
+        <value>Kentucky</value>
+        <value>Ohio Valley</value>        
+        <value>Central Kentucky</value>
+        <value>Southern</value>
+        <value>North American</value>
+        <value>Kentuckiana</value>        
+      </common>
+      <rare>
+        <value>Nomadic</value>
+        <value>Transitional</value>
+      </rare>
+    </region>
+
+    <color>
+      <common>
+        <value>Brown</value>
+        <value>Gray</value>
+        <value>Silver</value>        
+        <value>Red</value>
+        <value>Black</value>
+      </common>
+      <rare>
+        <value>Striped</value>
+        <value>Spotted</value>
+      </rare>
+      <esoteric>
+        <value>Iridescent</value>
+      </esoteric>
+    </color>
+
+    <adjective>
+      <common>
+        <value>Small-footed</value>
+        <value>Long-eared</value>
+        <value>Long-legged</value>
+        <value>Split-nosed</value>
+        <value>Slow</value>        
+      </common>
+      <rare>
+        <value>Stern-faced</value>
+        <value>Lopsided</value>
+      </rare>
+      <esoteric>
+        <value>Weeping</value>
+      </esoteric>
+    </adjective>
+
+    <habitat>
+      <common>
+        <value>Cave</value>
+        <value>River</value>
+        <value>Tomb</value>        
+      </common>
+      <rare>
+        <value>Border</value>
+      </rare>
+    </habitat>
+  </templateValues>
+  
+</conversation>
+

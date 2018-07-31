@@ -1,0 +1,30 @@
+# -*- mode: blocking -*-
+
+@set Stop riverworld-research-lab
+
+@func PhotoExhibitVignette
+
+  Tugboat Listen on-photo-exhibit
+  Tugboat Message RiverworldManager SetBoatSpeed 0.1
+  Tugboat Message RiverworldManager SetDialogTrigger 10
+  Tugboat Message RiverworldManager QueueState Grove
+  Tugboat Message RiverworldManager SetDestination Grove
+  Tugboat Dialog RiverVignettePhotoExhibit
+
+  Vignette Listen conversation-closing
+  Vignette Message RiverworldManager SetBoatSpeed 1
+
+@end
+
+@func ResearchLabRecap
+
+  Tugboat Message RiverworldManager QueueState Generic
+  Tugboat Wait 3
+  Tugboat Dialog RiverRecapResearchLab
+  Tugboat Message RiverworldManager QueueState Grove
+  Tugboat Message RiverworldManager SetDestination Grove
+
+@end
+
+Tugboat Exec PhotoExhibitVignette ? [Stop]=disembarked
+Tugboat Exec ResearchLabRecap ? [Stop]=aboard

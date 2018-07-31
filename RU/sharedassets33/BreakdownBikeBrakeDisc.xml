@@ -1,0 +1,35 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-second-bike-conversation">
+  <scene name="intro">
+    <setGameVar name="breakdown-bike-talked-about-brake-disc" value="true"/>
+    
+    <line speaker="johnny">They looked like they could use some help.</line>
+    <option goto="repair" speaker="junebug">You going to fix it up for them, Johnny?</option>
+    <option goto="tow-truck" speaker="junebug">So they can call a tow truck.</option>
+  </scene>
+
+  <scene name="repair" nextScene="decision">
+    <line speaker="johnny">Oh, I don't know a wrench from a cattle prod. I thought maybe you ...</line>
+    <line pause="false" speaker="johnny">I guess it's up to some good Samaritan ...</line>
+  </scene>
+
+  <scene name="tow-truck" nextScene="decision">
+    <line condition="breakdown-tow-company-name=lucky-boot" speaker="johnny">Around here? They're just going to end up with Lucky Boot; they'll be waiting there all night.</line>
+    <line condition="breakdown-tow-company-name=mercadet" speaker="johnny">Around here? They're just going to end up with Mercadet; they'll be waiting there all night.</line>
+    <line condition="breakdown-tow-company-name=nameless" speaker="johnny">I don't know any tow companies that'd come all the way out here.</line>
+    <line pause="false" speaker="johnny">I guess it's up to some good Samaritan ...</line>
+  </scene>
+
+  <scene name="decision">
+    <option goto="end-stop" speaker="junebug">OK. We'll help them.</option>
+    <option goto="end" speaker="junebug">Someone will stop eventually. Someone with nowhere else to be.</option>
+  </scene>
+
+  <scene name="end-stop" nextScene="end">
+    <setGameVar name="breakdown-reason-for-stopping" value="help"/>
+    <setGameVar name="breakdown-agreed-to-stop" value="true"/>
+    
+    <line speaker="johnny">You're the best. And, hey, maybe if they're not busy they can fill some seats at the gig. You know if no one's there Harry'll try and bilk us on our fee.</line>
+  </scene>
+
+</conversation>

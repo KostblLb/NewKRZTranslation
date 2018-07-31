@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="jenn">See, told you he was one of those distillery guys.</line>
+    <line speaker="mimi">I guess you were right. These other guys came to pick him up for work maybe? I don't like how they all hang out together, it's creepy.</line>
+    <line speaker="jenn">`We` hang out together, and work together.</line>
+    <line speaker="mimi">Yeah, but it's not ... They're like more than co-workers. I don't know. I just get this awful feeling whenever I see them. Like I knew them once, but not anymore ... like when they make up a dead person to look like an old photograph of themselves.</line>
+    <line speaker="jenn">Sort of familiar, sort of strange.</line>
+    <line speaker="mimi">Yeah, exactly. There ought to be a word for that.</line>
+  </scene>
+</conversation>

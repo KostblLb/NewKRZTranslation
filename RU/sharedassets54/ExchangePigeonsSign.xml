@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="exchange-saw-pigeon-sign" value="true" />
+    <line speaker="plaque">`Abel &amp; Eloise`, "The Lovers' Couriers."</line>
+    <line speaker="plaque">Bred for racing, Abel and Eloise spent most of their lives as carrier pigeons in the employ of the Echo River Avian Post.</line>
+    <line speaker="plaque">They retired here after Abel was disfigured in an accident with a light aircraft. But old habits were hard to die: Abel and Eloise would pick up scraps of paper from the ground, the trash, even pull them out of pockets, and deliver them to other people nearby, to delight or embarrassment.</line>
+    <line speaker="plaque">Word spread, and travelers passing through this tunnel began to come prepared with love letters, poems, and other written desires to pass along indirectly through these pigeons.</line>
+    <line speaker="plaque">After a hard day's work, Abel and Eloise would always be found nestled closely together in a disused newspaper stand set aside for their habitation, and that's where we left them.</line>
+  </scene>
+
+</conversation>
+

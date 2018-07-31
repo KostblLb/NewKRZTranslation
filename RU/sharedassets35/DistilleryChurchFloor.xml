@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-saw-church-floor" value="true"/>
+    <line>The church floor is cold metal, scuffed in flecks by unknown boot heels.</line>
+  </scene>
+</conversation>

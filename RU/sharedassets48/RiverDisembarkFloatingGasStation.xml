@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <option goto="aboard" center="true" dividerAfter="true">Ezra stayed on the tugboat, and looked around the map room.</option>
+    <option goto="end" center="true" variableChange="riverworld-floating-gas-station=disembarked">Ezra followed Junebug and Johnny into the gas station.</option>
+  </scene>
+
+  <scene name="aboard" nextScene="end">
+    <setGameVar name="riverworld-floating-gas-station" value="aboard" />
+    <setGameVar name="tugboat-vignette" value="MapRoom" />
+  </scene>
+</conversation>
+

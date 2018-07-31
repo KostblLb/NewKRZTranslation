@@ -1,0 +1,27 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="video" style="skeleton">... crushed tomatoes, salsa, or even a little ketchup; here's the thing: nobody has to know. Throw in some more of that spice blend we threw together earlier. Stir all that up and crack a beer, baby; you'll be here for a while ...</line>
+    <line speaker="ezra">What did she just say to do? Will's trying to make this stew right now.</line>
+    <option goto="last-step" speaker="shannon">What was the last step he did?</option>
+    <option goto="red" speaker="shannon">She just said to add something red.</option>
+    <option goto="mushroom" speaker="shannon">Before this, she was talking about the type of mushroom to use.</option>
+  </scene>
+
+  <scene name="last-step" nextScene="shannon-returns">
+    <line speaker="ezra">He put a couple mushrooms in. Then I think he forgot what he was doing for a little while?</line>
+  </scene>
+
+  <scene name="red" nextScene="shannon-returns">
+    <line speaker="ezra">I saw some maraschino cherries in there ...</line>
+  </scene>
+
+  <scene name="mushroom" nextScene="shannon-returns">
+    <line speaker="ezra">Don't tell me. Will says it's better not to know their names.</line>
+  </scene>
+
+  <scene name="shannon-returns" nextScene="end">
+    <line speaker="shannon">Hm. Maybe I can help him figure it out; I got kind of sucked into this program.</line>
+  </scene>
+
+</conversation>

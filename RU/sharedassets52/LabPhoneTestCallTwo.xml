@@ -1,0 +1,213 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <endingAudioEvents>
+    <audioFade clip="tape-run" destroy="true" direction="out" time="0.5" />
+    <audioFade clip="tape-stop" direction="in" time="0.01" />
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <audioFade clip="tape-start" direction="in" time="0.01" />
+    <audioFade clip="tape-run" direction="in" time="0.25" />
+    
+    <setGameVar name="lab-did-second-phone-call" value="true" />
+    <line speaker="voice" style="skeleton">Yep. Hello. You got me again. I'll tell you what, suits me just fine. My delts are cooling, and the coffee's brewing, I'm just sitting here looking out the window anyway — into the dark, I mean! The sun ain't even up.</line>
+    <option goto="lonely" speaker="shannon" style="skeleton">Sounds lonely.</option>
+    <option goto="sorry-bother" speaker="shannon" style="skeleton">Sorry to bother you — I should go.</option>
+  </scene>
+
+  <scene name="sorry-bother" nextScene="voice">
+    <line speaker="voice" style="skeleton">It's no bother.</line>
+  </scene>
+
+  <scene name="lonely" nextScene="voice">
+    <line speaker="voice" style="skeleton">Well, not so lonely at the moment, is it?</line>
+  </scene>
+
+  <scene name="voice">
+    <line speaker="voice" style="skeleton">I'll tell you what, it's nice to hear another voice before the sun's up, and one that isn't making excuses or demands. You may have guessed by now, but I'm a ...</line>
+    <line speaker="voice" style="skeleton">Say, why don't you guess? Not guess; deduce. Take a closer listen to my voice, and let's see what you think you can know about me. I mean: what do I look like, what do I like to do, and so on. Then I'll try you.</line>
+    <line speaker="voice" style="skeleton">Let me give you something to work with. What should I say? A phrase you can listen to and analyze.</line>
+    <option goto="voice-sample-1" speaker="shannon" style="skeleton">How about, 'I like birds. Birds like trees.'</option>
+    <option goto="voice-sample-2" speaker="shannon" style="skeleton">Say, 'I owe some people some apologies.'</option>
+    <option goto="voice-sample-3" speaker="shannon" style="skeleton">Try, 'It's better than being in a ditch.'</option>
+  </scene>
+
+  <scene name="voice-sample-1" nextScene="after-voice-sample">
+    <line speaker="voice" style="skeleton">I like birds. Birds like trees.</line>
+  </scene>
+
+  <scene name="voice-sample-2" nextScene="after-voice-sample">
+    <line speaker="voice" style="skeleton">I owe some people some apologies.</line>
+  </scene>
+
+  <scene name="voice-sample-3" nextScene="after-voice-sample">
+    <line speaker="voice" style="skeleton">It's better than being in a ditch.</line>
+  </scene>
+
+  <scene name="after-voice-sample">
+    <line speaker="voice" style="skeleton">Got it? OK. What do you think? What kind of body makes a voice like that?</line>
+    <option goto="voice-id-strong" speaker="shannon" style="skeleton">You're strong, about six feet tall.</option>
+    <option goto="voice-id-quick" speaker="shannon" style="skeleton">You're fast and thin, you sound like your heart rate is up.</option>
+    <option goto="voice-id-solid" speaker="shannon" style="skeleton">You're solid, your voice sounds like it could stop a truck.</option>
+  </scene>
+
+  <scene name="voice-id-strong" nextScene="voice-question-2">
+    <setGameVar name="lab-phone-voice-body" value="strong" />
+    <line speaker="$lab-phone-voice-description" style="skeleton">Yes, yes.</line>
+  </scene>
+
+  <scene name="voice-id-quick" nextScene="voice-question-2">
+    <setGameVar name="lab-phone-voice-body" value="quick" />    
+    <line speaker="$lab-phone-voice-description" style="skeleton">Like an eel! That's the truth.</line>
+  </scene>
+
+  <scene name="voice-id-solid" nextScene="voice-question-2">
+    <setGameVar name="lab-phone-voice-body" value="solid" />
+    <line speaker="$lab-phone-voice-description" style="skeleton">I hope I never have to find out!</line>
+  </scene>
+
+  <scene name="voice-question-2">
+    <line speaker="$lab-phone-voice-description" style="skeleton">Can you hear what my teeth are like? You should be able to hear that; every word I say has got to go right by them.</line>
+    <option goto="voice-warm-smile" speaker="shannon" style="skeleton">You have a warm smile.</option>
+    <option goto="voice-healthy-teeth" speaker="shannon" style="skeleton">Your teeth are meticulously cared for.</option>
+    <option goto="voice-sharp-teeth" speaker="shannon" style="skeleton">Your teeth are sharp, and your jaw is strong.</option>
+  </scene>
+
+  <scene name="voice-warm-smile" nextScene="voice-job">
+    <setGameVar name="lab-phone-voice-teeth" value="warm" />
+    <line speaker="$lab-phone-voice-description" style="skeleton">Warm like the noon sun!</line>
+  </scene>
+
+  <scene name="voice-healthy-teeth" nextScene="voice-job">
+    <setGameVar name="lab-phone-voice-teeth" value="meticulous" />
+    <line speaker="$lab-phone-voice-description" style="skeleton">That's the word for it. `Meticulous`.</line>
+  </scene>
+
+  <scene name="voice-sharp-teeth" nextScene="voice-job">
+    <setGameVar name="lab-phone-voice-teeth" value="sharp" />    
+    <line speaker="$lab-phone-voice-description" style="skeleton">You can probably tell by my clear, precise `enunciation`. No awkward breaks mid-word to catch my breath, and so on.</line>
+  </scene>
+
+  <scene name="voice-job">
+    <line speaker="$lab-phone-voice-description" style="skeleton">What about a job? What do you guess my job is?</line>
+
+    <option goto="job-guess" speaker="shannon" style="skeleton">You're a stage magician.</option>
+    <option goto="job-guess" speaker="shannon" style="skeleton">You're an auto mechanic.</option>
+    <option goto="job-guess" speaker="shannon" style="skeleton">You're a copywriter.</option>
+  </scene>
+
+  <scene name="job-guess" nextScene="speculation">
+    <line speaker="$lab-phone-voice-description" style="skeleton">Well ...</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">Two out of three ain't bad!</line>
+  </scene>
+  
+  <!-- after questions -->
+  <scene name="speculation">
+    <line speaker="$lab-phone-voice-description" style="skeleton"><template name="characterSpeculation" seed="shannonCharacter" /></line>
+    <line speaker="$lab-phone-voice-description" style="skeleton"><template name="jobSpeculation" seed="shannonJob" /></line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">How'd I do?</line>
+
+    <option speaker="shannon" goto="speculation-correct">You got me.</option>
+    <option speaker="shannon" goto="speculation-mixed">You got a couple parts right.</option>    
+    <option speaker="shannon" goto="speculation-wrong">Not even close.</option>    
+  </scene>
+
+  <scene name="speculation-correct" nextScene="voice-after-questions">
+    <line speaker="$lab-phone-voice-description" style="skeleton">Yeah, I've got a knack for it. And years of practice.</line>
+  </scene>
+  
+  <scene name="speculation-wrong" nextScene="voice-after-questions">
+    <line speaker="$lab-phone-voice-description" style="skeleton">No? Well, I'll be damned. I usually have a pretty good ear for it. Must be a bad connection ...</line>
+  </scene>
+  
+  <scene name="speculation-mixed" nextScene="voice-after-questions">
+    <line speaker="$lab-phone-voice-description" style="skeleton">Well, it ain't a science; we're just trying to get in the neighborhood.</line>
+  </scene>
+  
+  <scene name="voice-after-questions" nextScene="end">
+    <line speaker="$lab-phone-voice-description" style="skeleton">I'm an orthopedic physical therapist by trade, specializing in post-surgical rehabilitation, and I do all my intake interviews over the phone because I believe you can get a pretty damned accurate picture of someone's general health just by interfacing with them `verbally`.</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">Now, many of my colleagues disagree: they think that the `body` is the `body`, and the `mind` is the `mind`. Well, I'll tell you what, having worked in this field for nearly three decades, and seen all manner of evidence, I'm no longer sure I believe in the `mind` at all!</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">Let me give you an example:</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">I had a patient who lost his right hand to misadventure and infection. He worked in a factory, operating a delicate machine that required years of specialized training, so we focused on coordination and getting his left hand up to the speed and accuracy required for the work.</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">I'll tell you what, after a couple weeks he was writing, throwing darts, you name it — all left-handed. A triumph of physical therapy. Back to work!</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">The next day, he was unemployed.</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">Seems he sat in front of that delicate machine, reached out with his left hand, and just froze. Had no idea what to do with the thing. Next time he was in my office, he said to me, "Doc, when I lost that hand, all my memory of working that machine went along with it."</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">He said, "I'll tell you what, Doc, if I ever learn a trade again, I'll learn it in my gut. I won't ever again put something so precious as a memory in a place so vulnerable as a hand."</line>
+    <line speaker="$lab-phone-voice-description" style="skeleton">Well, my coffee's done brewing. I'll let you go!</line>
+  </scene>
+
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <characterSpeculation>
+      <common>
+        <template xml:space="preserve">I'll tell you what, I'll do a little deduction of my own, and speculate that <characterDescription />. At the very least, I'd say <characterDescription />.</template>
+        <template xml:space="preserve">My turn. I can tell by <analyzedFeature /> that <characterDescription />. <characterDescription filter="capitalize" />. <characterDescription filter="capitalize" />. If we ever were to meet in person, I believe that I'd enjoy your company.</template>
+        <template xml:space="preserve">Alright, well, it's clear to me that <characterDescription />. <characterDescription filter="capitalize" />. <characterDescription filter="capitalize" />.</template>
+      </common>
+    </characterSpeculation>
+
+    <jobSpeculation>
+      <common>
+        <template xml:space="preserve">I'm certain you're <job />. If you aren't, then I don't know a thing.</template>
+        <template xml:space="preserve">I believe you must be <job />.</template>
+      </common>
+      <rare>
+        <template xml:space="preserve">I suspect you're <job />. No offense.</template>
+      </rare>
+    </jobSpeculation>
+
+  </templates>
+
+  <templateValues>
+    <characterDescription>
+      <ubiquitous>
+        <value condition="meteor-sighting-conversation=good-date">you're a romantic</value>
+        <value condition="meteor-sighting-conversation=bad-date">you're a cynic, or at least a skeptic</value>
+        <value condition="three:xanadu-shannon-story=wordy">you have a respect for craftsmanship that borders on admiration</value>
+        <value condition="three:xanadu-shannon-story=vain">you love art — or, anyway, you tolerate it</value>
+      </ubiquitous>
+      
+      <common>
+        <value>you are in excellent health</value>
+        <value>you're well educated</value>
+        <value>you're clever</value>
+        <value>you eat well and exercise daily</value>
+        <value>you're sharp</value>
+        <value>you're hardworking</value>
+        <value>you're clever, but short-tempered</value>
+      </common>
+    </characterDescription>
+    
+    <analyzedFeature>
+      <common>
+        <value>your diction</value>
+        <value>the steady tone of your voice</value>
+        <value>the way you flatten your vowels</value>
+      </common>
+    </analyzedFeature>
+
+    <job>
+      <ubiquitous>
+        <value condition="three:breakdown-shannon-talked-about-maps">a cartographer, or some other collector of maps</value>
+      </ubiquitous>
+      
+      <common>
+        <value>unemployed</value>
+        <value>a line cook</value>
+        <value>some kind of professional driver</value>
+        <value>a librarian</value>
+        <value>a midwife</value>
+        <value>a cabinetmaker</value>
+      </common>
+
+      <rare>
+        <value>the hat check clerk at an ice rink</value>        
+        <value>a wandering poet</value>
+        <value>what they used to call an 'apiarist' — that is, you keep bees</value>
+      </rare>
+    </job>
+  </templateValues>
+
+</conversation>

@@ -1,0 +1,23 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <setGameVar name="shannon-talked-about-graveyard" value="true"/>
+    
+    <line speaker="shannon">There's nobody buried here, you know. It's decorative, I guess ...</line>
+    <line speaker="shannon">Or it's art or something, I don't know.</line>
+    <option goto="decorative-graveyard" speaker="conway">A decorative graveyard?</option>
+    <option goto="headstone-names" speaker="conway">What are the names on the headstones?</option>
+  </scene>
+
+  <scene name="decorative-graveyard" nextScene="marquez-headstone">
+    <line speaker="shannon">Weaver's folks were like that. Not morbid, I mean, but strange. Careless with tragic ideas.</line>
+  </scene>
+
+  <scene name="headstone-names" nextScene="marquez-headstone">
+    <line speaker="shannon">&quot;Nowakowski,&quot; &quot;Padilla&quot; ... I don't know those names. Maybe the people who lived here before? I know when they bought this property it already had a house and everything. Or maybe they have some other symbolic meaning.</line>
+  </scene>
+
+  <scene name="marquez-headstone" nextScene="end">
+    <line speaker="shannon">Oh, and look at that headstone: &quot;Márquez.&quot; I used to think that was for my parents. Now I don't know.</line>
+  </scene>
+</conversation>

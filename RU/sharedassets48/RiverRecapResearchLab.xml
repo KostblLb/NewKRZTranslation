@@ -1,0 +1,53 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />
+    <line>Cate likes to give her passengers the opportunity to make some floating-around money, and that lab pays cash in small envelopes upon completion of their little gauntlet of non-invasive tests. It's a project of the university. I think they're studying ... I don't remember.</line>
+    <line>The `Mammoth` also collects their trash — mostly shredded paper, though Cate says once they left half a vending machine on the dock.</line>
+    <line>But nobody seemed too interested in the lab stop that night. They stayed aboard and played a card game. I read a book. Let me tell you about it:</line>
+    <option goto="setting-pacific-northwest">It's set in a small town in the Pacific Northwest.</option>
+    <option goto="setting-castle">It takes place in a castle.</option>
+    <option goto="setting-office-building">The setting is an office building.</option>
+  </scene>
+
+  <scene name="setting-pacific-northwest" nextScene="characters">
+    <line>The town is never named, but it's colorfully described — "woolly" fog, "broken" coastline, "provincial" shopkeepers.</line>
+    <line>The main characters are mail carriers.</line>
+  </scene>
+
+  <scene name="setting-castle" nextScene="characters">
+    <line>It's some historic landmark being maintained by a bunch of college kids and aging social misfits.</line>
+    <line>The main characters work in the gift shop.</line>
+  </scene>
+
+  <scene name="setting-office-building" nextScene="characters">
+    <line>The building is drab, anonymous, dull ... I think? It's not really described — the book focuses on the people who work there.</line>
+    <line>The main characters both answer phones.</line>
+  </scene>
+
+  <scene name="characters">
+    <line>They're co-workers — Mimi and Jenn. Mimi is older than Jenn, but they seem to be at the same point in their lives. They like their work. They have a playfully antagonistic relationship with their boss.</line>
+    <line>I actually only read a bit from the middle ...</line>
+    <option goto="mimi-trauma">Mimi confides in her friend about a traumatic event from her past.</option>
+    <option goto="jenn-cat">Jenn reminisces about a cat she'd lost track of.</option>
+    <option goto="work-history">The two had cause to reflect on the history of their work together.</option>
+  </scene>
+
+  <scene name="mimi-trauma" nextScene="closing">
+    <line>I don't know what the event was, exactly — I guess I `would` know, if I'd started at the beginning like the writer probably meant me to, but I've never found that way of reading suited me very well. Death of a loved one, I think — something like that.</line>
+  </scene>
+
+  <scene name="jenn-cat" nextScene="closing">
+    <line>It's a sweet and uncomplicated passage. Human affection for animals is a good model for pure compassion.</line>
+  </scene>
+
+  <scene name="work-history" nextScene="closing">
+    <line>Something got messed up — a document misplaced or filed under the wrong heading ... I wasn't really paying close attention to that part, but the event prompted a long conversation about the procedural history of their work together, and that illustrated a history of their friendship in broad, suggestive strokes.</line>
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line>In my life's work as the Echo River's premier anecdotalist, I've always found that a carefully excerpted moment is more powerful than any epic history. That's my excuse, anyway, for reading books from the inside out.</line>
+    <line>So I stopped there. My eyelids were getting heavy. We were headed back to the lake, and a chance encounter with `The Iron Pariah`.</line>
+  </scene>
+
+</conversation>

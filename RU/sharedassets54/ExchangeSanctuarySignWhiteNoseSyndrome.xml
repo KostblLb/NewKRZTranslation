@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <blocking>Sign Message [DinghyFlashlight] SetScriptedTarget ActorBatFacts3/FlashlightHint</blocking>
+    <line speaker="sign">White Nose Syndrome is still largely a mystery. We suspect that the white fungal growth which appears on bats' faces and wings irritates and confuses them, causing them to awaken early from hibernation and venture outside, depleting stored energy they need to survive through winter.</line>
+    <line speaker="sign">But biologists are nowhere near curing the disease, it spreads quickly, and it is highly fatal. In this way, White Nose Syndrome has drawn some comparisons to "Colony Collapse Disorder," as suffered by bees.</line>
+    <line speaker="sign">White Nose Syndrome and Colony Collapse Disorder are sudden, violent, and mysterious. Will honey bees and the <variable name="exchange-bat-species" /> be two more lost species, wiped out in a geological blink and forgotten to natural history? It's possible that a cure won't be identified in time, so the sanctity of this artificial hibernaculum is our best hope of preserving them.</line>
+    <line speaker="sign">As you leave the `Echo River <variable name="exchange-bat-species" /> Hibernaculum and Sanctuary`, please make sure your vehicle and clothing are free of "hitchhikers."</line>
+  </scene>
+</conversation>

@@ -1,0 +1,45 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="cate">Hey, Sam. Good haul tonight?</line>
+    <line speaker="sam">We'll see what she can make of it ... Yeah, pretty good I think. I hit some trouble down by the narrow tunnel: some kind of fast-growing freshwater barnacles just about sealed it up. I picked away for half an hour before I gave up and went around the other way.</line>
+    <line speaker="sam">But I got the `catch of the day`, that's the important part. That's what people travel for.</line>
+    <option goto="catch-of-the-day" speaker="shannon">What's the catch today?</option>
+    <option goto="cold" speaker="shannon">Pretty cold here for diving, right?</option>
+    <option goto="quiet" speaker="shannon">Are there a lot of fish in this lake? It seems so quiet.</option>
+  </scene>
+
+  <scene name="catch-of-the-day" nextScene="drink">
+    <line speaker="sam">This here's a `<variable name="restaurant-catch-name" />` — <variable name="restaurant-catch-emotion" />, <variable name="restaurant-catch-feel" /> old <filter name="lowercase"><variable name="restaurant-catch-species" /></filter>.</line>
+    <line speaker="sam">I don't know how she'll fix him, but that <variable name="restaurant-catch-feel" /> quality ought to do something for, uh ... what do they call it ... "mouthfeel?"</line>
+  </scene>
+
+  <scene name="cold" nextScene="drink">
+    <line speaker="sam">The cold I can handle. I've got an oil heater in the diving bell, and if it's really bad I might take a nip of something here and there.</line>
+  </scene>
+
+  <scene name="quiet" nextScene="drink">
+    <line speaker="sam">Yeah, there's a fish or two ... not too many. It's not like a surface lake, where you've got sunlight propping up the food chain. Life down here grows slowly, patiently, quietly.</line>
+  </scene>
+
+  <scene name="drink">
+    <line speaker="sam">Will you stay for a drink? I've got a dark rum that goes well with coffee. Ha ha.</line>
+
+    <option speaker="shannon" goto="too-early">It's a bit early for me ...</option>
+    <option speaker="shannon" goto="passing-through">I think we're about to leave, but thanks.</option>
+  </scene>
+
+  <scene name="too-early" nextScene="food-ready">
+    <line speaker="sam">Yeah, seems like it's `always` too early.</line>
+  </scene>
+  
+  <scene name="passing-through" nextScene="food-ready">
+    <line speaker="sam">Just passing through. Hey, aren't we all?</line>
+  </scene>
+  
+  <scene name="food-ready" nextScene="end">
+    <blocking>Ida Exec IdaReturnsWithFood;</blocking>
+    <line speaker="sam">Oh, she's got your food ready. You all enjoy your meal, alright?</line>
+  </scene>
+  
+</conversation>

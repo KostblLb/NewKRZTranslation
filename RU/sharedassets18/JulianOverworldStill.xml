@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-still" value="true"/>
+    
+    <line>A light in the hills, probably a small fire. A few figures are clustered around a crude network of tanks and pipes.</line>
+  </scene>
+</conversation>

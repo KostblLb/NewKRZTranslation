@@ -1,0 +1,75 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="end-church-scene">
+  <scene name="intro" nextScene="outside-church">
+    <triggerEvent name="play-church-sound"/>
+    
+    <setGameVar name="overworld-visited-country-church" value="true"/>
+  </scene>
+
+  <scene name="outside-church" nextScene="outside-church-options">
+    <line>A singing chorus echoes from within the church. The building is one story tall with a pitched roof, and a three-story spire rising from the front. The top section of the spire is made of stained glass. An interior light illuminates the pines in red, green and blue.</line>
+    
+    <line>A large LED display glows in the parking lot:</line>
+    <line pause="false">&quot;LIGHT OF THE LAST GREAT AWAKENING BAPTIST CHURCH&quot;</line>
+  </scene>
+  
+  <scene name="outside-church-options">
+    <option condition="!overworld-country-church-checked-doors" goto="enter-church" insertedText="Conway approaches the Church doors.">Enter the church.</option>
+    <option condition="overworld-country-church-checked-doors" goto="building-rear" insertedText="Conway walks to the rear of the building.">Walk around to the rear of the building.</option>
+    <option goto="outside-listen" insertedText="Conway stands and listen to the chorus.">Listen.</option>
+    <option goto="end" insertedText="Conway drives away.">Drive away.</option>        
+  </scene>
+
+  <scene name="enter-church" nextScene="outside-church-options">
+    <setGameVar name="overworld-country-church-checked-doors" value="true"/>
+    
+    <line pause="false">The front doors of the church are modest and worn. They are locked.</line>
+  </scene>
+
+  <scene name="outside-listen" nextScene="outside-church-options">
+    <line pause="false">The muffled chorus drones at a steady volume, repeating the same two verses without rest.</line>
+  </scene>
+  
+  <scene name="building-rear" nextScene="building-rear-options">
+    <triggerEvent name="restore-road-sounds"/>
+    
+    <line pause="false">A ramp leads up from a few dusty metal trash cans to the church's back door.</line>
+  </scene>
+
+  <scene name="building-rear-options">
+    <option goto="trash" insertedText="Conway opens a few of the trash cans and looks in.">Look in the trash cans.</option>
+    <option goto="inside-kitchen" insertedText="Conway pushes open the back door.">Enter the church's back door.</option>    
+    <option goto="outside-church" insertedText="Conway returns to the front of the building.">Go back to the front of the building.</option>
+  </scene>
+  
+  <scene name="trash" nextScene="building-rear-options">
+    <line pause="false">One has a bit of something leafy and rotten stuck to the bottom of it. Another is full of unlabeled videotapes.</line>
+  </scene>
+
+  <scene name="inside-kitchen">
+    <triggerEvent name="church-crossfade-to-chorus"/>    
+    <triggerEvent name="fade-out-road-sounds"/>
+    
+    <line>He finds himself in a kitchen lit by a buzzing fluorescent ceiling fixture. On the counter are a plate of moldy bread and an empty dixie cup flecked red around its waxy rim. A set of swinging plastic doors on the far wall lead out of the kitchen.</line>
+
+    <option goto="nave" insertedText="Conway pushes open the plastic doors and walks through.">Walk through plastic doors.</option>
+    <option goto="building-rear" insertedText="Conway walks out the back door.">Walk back outside.</option>
+  </scene>
+
+  <scene name="nave">
+    <triggerEvent name="church-crossfade-to-tape"/>
+    
+    <line>Vacant pews sprawl unevenly into the church. A small raised stage lies to Conway's right, bare except for a tape recorder.</line>
+    <line>The tape recorder's power cord runs to an outlet near Conway's feet.</line>
+    
+    <option goto="unplug-tape-recorder" insertedText="Conway unplugs the tape recorder.">Unplug the tape recorder.</option>    
+    <option goto="inside-kitchen" insertedText="Conway walks back into the kitchen.">Go back to the kitchen.</option>
+  </scene>
+
+  <scene name="unplug-tape-recorder" nextScene="end">
+    <setGameVar name="overworld-completed-country-church" value="true"/>    
+    <triggerEvent name="church-stop-tape"/>
+    
+    <line>The singing stops. The lights fail.</line>
+  </scene>
+</conversation>

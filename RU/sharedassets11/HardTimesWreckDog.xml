@@ -1,0 +1,42 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <setGameVar name="hard-times-wreck-talked-to-dog" value="true"/>
+
+    <line>`(CONWAY shakes his head.)`</line>
+    
+    <option goto="mess" speaker="conway">What a mess, huh?</option>
+    <option goto="waste" speaker="conway">What a waste, right?</option>
+  </scene>
+
+  <scene name="mess">
+    <option goto="gas-station" speaker="conway">That gas station attendant was right.</option>
+    <option goto="hurt" speaker="conway">Do you think anyone was hurt?</option>
+  </scene>
+
+  <scene name="gas-station">
+    <option goto="end" speaker="conway">Booze and glass all over the interstate.</option>
+    <option goto="end" speaker="conway">I bet he could hear each bottle break.</option>
+  </scene>
+
+  <scene name="hurt">
+    <option goto="end" speaker="conway">Looks like a tough one to walk away from.</option>
+    <option goto="end" speaker="conway">Well, I'm glad we weren't caught in it, at least.</option>
+  </scene>
+
+  <scene name="waste">
+    <option goto="liked-whiskey" speaker="conway">Guess you never liked the stuff anyway, did you?</option>
+    <option goto="for-the-best" speaker="conway">Eh, it's probably for the best.</option>
+  </scene>
+
+  <scene name="for-the-best">
+    <option goto="end" speaker="conway">I'm sure a lot of that whiskey would have ended up spilled somewhere else.</option>
+    <option goto="end" speaker="conway">That stuff is dangerous, that hard stuff.</option>
+  </scene>
+
+  <scene name="liked-whiskey">
+    <option goto="end" speaker="conway">Not the way I liked it.</option>
+    <option goto="end" speaker="conway">Good for you.</option>
+  </scene>
+
+</conversation>

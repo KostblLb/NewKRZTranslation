@@ -1,0 +1,15 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <line condition="!bureau-found-secret-tourism">Three books are piled on the table: a service manual for a sewage pump, some architectural plans for a bungalow, and a slim collection of Japanese death haiku. An envelope is protruding from the bottom of the stack.</line>
+    <line condition="bureau-found-secret-tourism">Three books are piled on the table: a service manual for a sewage pump, some architectural plans for a bungalow, and a slim collection of Japanese death haiku.</line>
+
+    <option condition="!bureau-found-secret-tourism" goto="envelope">Conway picks up the envelope.</option>
+    <option goto="end">Conway leaves the books.</option>    
+  </scene>
+
+  <scene name="envelope" nextScene="end">
+    <setGameVar name="bureau-found-secret-tourism" value="true"/>
+    <line>The envelope reads *BUREAU OF SECRET TOURISM*. It contains several small, handwritten brochures with ritualistic directions to bizarre locations.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="dialog-lighten-fast">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="underworld-saw-pit-with-lights" value="true"/>
+    <triggerEvent name="dialog-darken-fast"/>    
+    <line>What the brochure calls an &quot;`epic laceration to the very heart of the world, certainly left by some great power — perhaps a casualty in a battle between god and dinosaur`&quot; is more of a rocky valley separating the road from a sheer cliff-face.</line>
+    <line>It's difficult to see how deep it runs, as the rock slopes into shadow, but the few dozen lanterns strung across at an interval suggest its scale: larger than a basketball court, but smaller than a financial district.</line>
+  </scene>
+
+</conversation>

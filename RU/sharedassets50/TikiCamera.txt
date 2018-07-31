@@ -1,0 +1,23 @@
+# -*- mode: blocking -*-
+
+@func CameraDialogStart [Transform]
+
+  Main Message TikiCamera ZoomIn
+  Main Message TikiCamera LookAt [Transform]
+
+@end
+
+@func CameraDialogStartFast [Transform]
+
+  Main Message TikiCamera ZoomIn
+  Main Message TikiCamera LookAtFast [Transform]
+
+@end
+
+@func CameraDialogEnd
+
+  Main Message TikiCamera SetNormalZoom
+  Main Message TikiCamera ZoomOut
+  Main Message TikiCamera Clear
+
+@end

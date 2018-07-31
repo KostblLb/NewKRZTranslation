@@ -1,0 +1,86 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="museum-parking-talked-to-shannon" value="true"/>
+    <line speaker="shannon">How are the drugs treating you?</line>
+    <option goto="distracted" speaker="conway">I feel a little distracted.</option>
+    <option goto="lights" speaker="conway">Streetlights seem a bit brighter.</option>
+    <option goto="medicine" speaker="conway">I don't like to take medicine.</option>
+  </scene>
+
+  <scene name="distracted">
+    <setGameVar name="museum-parking-drug-effect" value="distracted"/>
+    <line speaker="shannon">You're probably pretty tired, too. I usually feel more tired after a late night nap.</line>
+    <line speaker="shannon">Hey, you ever take anything for that? Caffeine pills, or ...</line>
+    <option goto="pills-never" speaker="conway">Never.</option>
+    <option goto="pills-drinking" speaker="conway">It's all or nothing, for me ...</option>
+  </scene>
+
+  <scene name="pills-never" nextScene="shannon-parents-medicine">
+    <line speaker="shannon">Well, it's ... common in your line of work, right? The company store had some pills the miners used to stay awake.</line>
+  </scene>
+
+  <scene name="pills-drinking" nextScene="shannon-parents-medicine">
+    <line speaker="shannon">Oh, right. They probably tell you to steer clear of all that stuff, huh? Yeah, I guess you never know ...</line>
+  </scene>
+
+  <scene name="lights">
+    <setGameVar name="museum-parking-drug-effect" value="lights"/>    
+    <line speaker="shannon">Oh, like trails and tracers?</line>
+    <option goto="trails-yes" speaker="conway">Something like that.</option>
+    <option goto="trails-no" speaker="conway">What do you mean?</option>
+  </scene>
+
+  <scene name="trails-yes" nextScene="shannon-parents-medicine">
+    <line speaker="shannon">My mom used to get that ... she had migraines.</line>
+  </scene>
+
+  <scene name="trails-no" nextScene="shannon-parents-medicine">
+    <line speaker="shannon">Oh, never mind. Your pupils are probably just dilated or something.</line>
+    <line speaker="shannon">My dad got a hold of these eye drops once; they stimulate the muscles in your eyeball and dilate the pupils. I guess they have some medical use, but one of the other miners said they'd help him see in the dark.</line>
+    <line speaker="shannon">But then he had to wear sunglasses all day. The drops lasted too long. Ha ha.</line>
+  </scene>
+
+  <scene name="medicine" nextScene="shannon-parents-medicine">
+    <setGameVar name="museum-parking-drug-effect" value="medicine"/>
+    <line speaker="shannon">Naw, it's good for you. He's a doctor, right?</line>
+    <line speaker="shannon">I know what you mean, though ...</line>
+  </scene>
+
+  <scene name="shannon-parents-medicine">
+    <line speaker="shannon">My folks had a peculiar relationship with medicine. We almost never had a regular doctor, or health insurance, or anything like that. Our immigration stuff was a mess for most of my childhood, so we only qualified for state programs in small patches before something or other would get contested, and we learned to just pile on dentists appointments and stuff in those short windows.</line>
+    <line speaker="shannon">If a cut got infected or her migraines were too much to handle, mom would talk to so-and-so who knew so-and-so — usually another miner — and end up with some pills. And instead of medical advice, every pill came with gossipy anecdotal warnings and superstitions. Like all this `lore` that came with it.</line>
+    <line speaker="shannon">Like magic. Dangerous. Mysterious.</line>
+    <option goto="weaver-help" speaker="conway">Weaver's folks couldn't help?</option>
+    <option goto="shannon-medicine-problems" speaker="conway">Ever run into any problems?</option>
+  </scene>
+
+  <scene name="weaver-help" nextScene="weaver-pills">
+    <line speaker="shannon">Yeah, they had pretty good health care through the university for a while there. A couple times, they'd swing something so I got a bit of whatever Weaver needed ...</line>
+  </scene>
+
+  <scene name="shannon-medicine-problems" nextScene="weaver-pills">
+    <line speaker="shannon">Sure, yeah. Stuff would be expired, or mislabeled. Mom was allergic to penicillin, as it turned out. That was scary. And one time ...</line>
+  </scene>
+
+  <scene name="weaver-pills">
+    <line speaker="shannon">In high school, Weaver got these pills to help her focus. She was so smart, but always going off in different directions, mind racing, like five conversations going on in her head at once and you're lucky if even one of them is with someone in the room ... you know.</line>
+    <line speaker="shannon">So she had these pills, and they seemed to help. I was struggling in school too. Failing my history class. She offered to share the pills.</line>
+    <option goto="weaver-pills-help" speaker="conway">Did it help?</option>
+    <option goto="weaver-pills-dangerous" speaker="conway">Sounds dangerous.</option>
+  </scene>
+
+  <scene name="weaver-pills-help" nextScene="weaver-pills-final">
+    <line speaker="shannon">At first, yeah. It helped a lot. I had a kind presence and clarity of purpose that ... I've never really had otherwise. I didn't want to stop taking them.</line>
+  </scene>
+
+  <scene name="weaver-pills-dangerous" nextScene="weaver-pills-final">
+    <line speaker="shannon">Yeah. They seemed pretty harmless at first. I guess that's why I kept going with it.</line>
+  </scene>
+
+  <scene name="weaver-pills-final" nextScene="end">
+    <line speaker="shannon">One day I was sitting on my bed, my notebook was open next to me on top of a textbook, and I was holding a pen in my hand. I remembered this moment from several years before. It came up so suddenly, with such precision, I couldn't put it out of my mind. I felt I had to stay with it until I'd recalled the whole thing perfectly.</line>
+    <line speaker="shannon">It was just a tiny nothing moment — my mom patching up the side of a birdcage, winding some spare wire around the frame to reinforce it. I was fixated on that image, and that sound. The cage kind of bending and twanging as she worked on it, wrapping and knotting, scraping copper against paint like bowing a rubber violin with a railroad tie.</line>
+    <line speaker="shannon">My parents came back from a triple shift and found me still sitting there on the edge of the bed, pen in my hand, delirious with thirst, patching that birdcage with a thousand-yard stare.</line>
+  </scene>
+</conversation>

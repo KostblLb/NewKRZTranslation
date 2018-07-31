@@ -1,0 +1,16 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="music-start">
+    <line speaker="cate">Thanks again for your help. This is about as far as the tugboat can go. You know, noise and lights disturb the bats.</line>
+    <line speaker="cate" condition="!(riverworld-exchange=aboard)+shannon-saw-weaver-video">I usually send Will, but I thought you'd like the chance to meet Dashiell; he's the guy who worked at the TV station, WEVP.</line>
+    <line speaker="cate" condition="!(riverworld-exchange=aboard)+!shannon-saw-weaver-video">I usually send Will, but he's up to his elbows in mammoth grease right now.</line>
+    <line speaker="cate">So, you'll pass through the bat sanctuary ... which is really nice, by the way; be sure to check out all the plaques and stuff for, um, cool `bat facts`. Plenty of time.</line>
+    <line speaker="cate">Anyway, the Echo River Central Exchange — or, excuse me, "Consolidated Auxiliary Switch Number 30," they changed the name when the power company took over ... anyway, it's just on the other side of the bat sanctuary. This package is going to Poppy; she's an operator. `The` operator.</line>
+    <line speaker="cate">We'll meet you on the other side at Sam &amp; Ida's for our scheduled early breakfast stop. Just follow the river. Can't miss it!</line>
+  </scene>
+  
+  <scene name="music-start" nextScene="end">
+    <line speaker="cate">Oh! I almost forgot. You may or may not be interested: there's this kind of weird memorial sculpture on your way in, just before the bat sanctuary. I always recommend people at least stop and take a look at it. It's really ... sort of ... I don't know how to say it. You should check it out.</line>
+    <line speaker="cate">OK, bye!</line>
+  </scene>
+</conversation>

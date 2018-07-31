@@ -1,0 +1,53 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="summer">Cate! Thanks for calling.</line>
+    <option goto="how-are-you-feeling" speaker="cate">How are you feeling?</option>
+    <option goto="wake-you" speaker="cate">I hope I didn't wake you up?</option>
+  </scene>
+
+  <scene name="how-are-you-feeling" nextScene="watching-tv">
+    <line speaker="summer">Pregnant.</line>
+  </scene>
+
+  <scene name="wake-you" nextScene="watching-tv">
+    <line speaker="summer">No, I can't really get comfortable enough to sleep anymore, except in the car. Oh, not driving! In the passenger's seat, reclined. Eric drove me around the reservoir this afternoon and I got an hour or two in.</line>
+  </scene>
+
+  <scene name="watching-tv" nextScene="ready">
+    <line speaker="summer">I couldn't get settled in bed, so I was just watching TV; some cooking show about high-concept junk food, and ... everyone from my high school chemistry class was there ... making cupcakes out of ... old bicycle parts ...</line>
+    <line speaker="summer">I think I `might` have dozed off a bit, actually.</line>
+  </scene>
+  
+  <scene name="ready">
+    <line speaker="summer">Honestly, this baby can come out whenever he wants — I'm completely over it!</line>
+    <option goto="dont-rush" speaker="cate">Don't rush it! Just try to get some rest.</option>
+    <option goto="confident" speaker="cate">Good for you — you sound really confident.</option>
+  </scene>
+
+  <scene name="dont-rush" nextScene="interruption">
+    <line speaker="summer">That's what Eric says. Ha ha. I guess it'll happen when it happens. I mean, obviously it —</line>
+  </scene>
+
+  <scene name="confident" nextScene="interruption">
+    <line speaker="summer">Oh, it's all an act. I'm actually —</line>
+  </scene>
+
+  <scene name="interruption">
+    <audioFade clip="phone-glitch" direction="in" time="0" />
+    <line>`(The phone line makes a horrible sound.)`</line>
+    <line speaker="summer">Whoa! God, the phones down here are such a mess.</line>
+    <line speaker="summer">Hey, Cate, I really appreciate you checking in. I have your pager number, and so does Eric, just in case I'm too, um, distracted or whatever.</line>
+    <line speaker="summer">I'll let you go. I should try to eat something.</line>
+    
+    <option goto="food-recommendation" speaker="cate">Reishi will help with your joint pain.</option>
+    <option goto="food-recommendation" speaker="cate">Try some of that lichen oil I left, just to help settle your stomach.</option>
+    <option goto="food-recommendation" speaker="cate">Munch on a "bitter hedgehog" cap. That should relieve some of your intestinal discomfort.</option>
+  </scene>
+
+  <scene name="food-recommendation" nextScene="end">
+    <line speaker="summer">OK, thanks ... maybe I'll just chew on some ice.</line>
+    <line speaker="summer">Talk to you soon, Cate. Hopefully!</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,111 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-shannon-talked-to-rick" value="true" />
+    <line speaker="rick">This music is so `sweet`. Don't you think so? It's like a flower, I think. A delicious, heavy flower. Like this flower in my drink.</line>
+    <line speaker="rick">It makes my eyelids feel like petals, wet with early morning dew ...</line>
+    <line speaker="rick">Have you ever slept on the beach?</line>
+    <option goto="opportunity" speaker="shannon">Can't say I've had the opportunity.</option>
+    <option goto="sand-everywhere" speaker="shannon">Doesn't the sand get all ... everywhere?</option>
+  </scene>
+
+  <scene name="opportunity" nextScene="stressed">
+    <line speaker="rick">No time like the `now`! Come lay in the sand. Have some of this drink, it's ... I forget what it's called, but they put a pale-pink flower in it. Isn't that `tranquil`?</line>
+  </scene>
+
+  <scene name="sand-everywhere" nextScene="stressed">
+    <line speaker="rick">Oh, probably. I'll deal with that tomorrow. I certainly won't deal with it tonight! Tonight, I'm just sipping this ... I forget what it's called. They put a pale-pink flower in it. Isn't that `tranquil`?</line>
+  </scene>
+
+  <scene name="stressed">
+    <line speaker="rick">Oh gosh, I'm so stressed out!</line>
+    <option goto="dont-seem-stressed" speaker="shannon">You don't seem stressed out.</option>
+    <option goto="stressed-about" speaker="shannon">What are you stressed about?</option>
+    <option goto="shannon-stressed" speaker="shannon">You and me both.</option>
+  </scene>
+
+  <scene name="dont-seem-stressed" nextScene="rest-question">
+    <line speaker="rick">I do a good job hiding it. It's this serene beach, this sweet music, and these tranquil drinks. Here my weary nerves can rest, although my soul is heavy with distress.</line>
+  </scene>
+
+  <scene name="stressed-about" nextScene="rest-question">
+    <line speaker="rick">Work. Love. The weight of each approaching day.</line>
+  </scene>
+
+  <scene name="shannon-stressed">
+    <line speaker="rick">No! What's wrong?</line>
+    <option goto="shannon-stress-business" speaker="shannon">My business is falling apart.</option>
+    <option goto="shannon-stress-worried" speaker="shannon">Worried about a friend.</option>
+    <option goto="shannon-stress-drifting" speaker="shannon">I just feel like I'm drifting a little.</option>
+  </scene>
+
+  <scene name="shannon-stress-business">
+    <line speaker="rick">Oh. Work troubles. `That` I can relate to.</line>
+    <line speaker="rick">You know, my colleagues and I are meant to be celebrating something of a milestone here this evening!</line>
+    <option goto="what-celebrating" speaker="shannon">A milestone?</option>
+    <option goto="try-to-leave" speaker="shannon">Well, I don't want to keep you from your celebration ...</option>
+  </scene>
+
+  <scene name="shannon-stress-worried">
+    <line speaker="rick">Hm. I don't have any advice for you there — I don't have many close friendships, myself.</line>
+    <line speaker="rick">I'd like to think of my colleagues as friends. But here I am, detached, while they celebrate! We work at the `Bureau of Reclaimed Spaces`, and —</line>
+    <option goto="already-met" speaker="shannon">Of course, I met you there earlier tonight.</option>
+    <option goto="lula" speaker="shannon">You work with Lula, right?</option>
+  </scene>
+
+  <scene name="shannon-stress-drifting" nextScene="rest-question">
+    <line speaker="rick">From one sorrow to another, right? I know the feeling. I have trouble sleeping — I come home after a day of worry, lay my head down, and all I can do is worry with my eyes shut ...</line>
+  </scene>
+
+  <scene name="rest-question">
+    <line speaker="rick">Everyone deserves to rest, don't you think? Even you and I?</line>
+    <option goto="deserve-to-rest" speaker="shannon">Sure we do.</option>
+    <option goto="rest-here" speaker="shannon">This looks like a good place to rest.</option>
+  </scene>
+
+  <scene name="deserve-to-rest" nextScene="mention-celebration">
+    <line speaker="rick">Sure we do.</line>
+    <line speaker="rick">Some day, the lake and the riverbed will be dry. The shops along it will be bankrupt, the homes empty, the boats abandoned.</line>
+    <line speaker="rick">See? Even the river will rest! Why should we be any different?</line>
+  </scene>
+
+  <scene name="rest-here" nextScene="mention-celebration">
+    <line speaker="rick">I like the music here. I like this drink with the pale-pink flower in it. I like the sand and the dark water, like a deep mirror.</line>
+    <line speaker="rick">I like the whispers of my colleagues from the other side of the beach ...</line>
+  </scene>
+
+  <scene name="mention-celebration">
+    <line speaker="rick">You know, my colleagues and I are meant to be celebrating something of a milestone here this evening!</line>
+    <option goto="what-celebrating" speaker="shannon">A milestone?</option>
+    <option goto="try-to-leave" speaker="shannon">Well, I don't want to keep you from your celebration ...</option>
+  </scene>
+
+  <scene name="what-celebrating">
+    <line speaker="rick">It's true! We, uh ... well.</line>
+    <line speaker="rick">It's kind of hard to explain. `Bureau of Reclaimed Spaces` — ever heard of it?</line>
+    <option goto="already-met" speaker="shannon">Of course, I met you there earlier tonight.</option>
+    <option goto="try-to-leave" speaker="shannon">Well, I don't want to keep you from your celebration ...</option>
+  </scene>
+
+  <scene name="try-to-leave" nextScene="light-headed">
+    <line speaker="rick">You want to keep going. Good for you! I'll stay right here, if you don't mind.</line>
+  </scene>
+
+  <scene name="already-met" nextScene="lula">
+    <line speaker="rick">Oh, we ... uh. `Of course`! Good to see you again ...</line>
+    <line speaker="rick">Oh, wait, now I remember. You came by to see Lula — I mean, Senior Clerk Chamberlain.</line>
+  </scene>
+
+  <scene name="lula" nextScene="light-headed">
+    <line speaker="rick">Oh, our dear Lula — I mean, Ms. Chamberlain.</line>
+    <line speaker="rick">Tragically, she couldn't join us tonight. Jumped ship at the last minute — she said she had "packing" to do. I wonder where she's going.</line>
+  </scene>
+
+  <scene name="light-headed" nextScene="end">
+    <line speaker="rick">`(A profound sigh.)` All this conversation is making me light-headed.</line>
+    <line speaker="rick">I think I'll shut my eyes a bit. Maybe just half-way. I'll listen to the water and this sweet music ... and the whispers of my colleagues — shop talk!</line>
+    <line speaker="rick">Can you believe it? Still `working`, always `working` ... it's better, I think, to sleep.</line>
+    <line speaker="rick">`(Yawns.)` Yes. Better to sleep ...</line>
+  </scene>
+
+</conversation>

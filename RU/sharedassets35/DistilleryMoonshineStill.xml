@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-saw-church-still" value="true"/>
+    <line>A handmade apparatus for the production of moonshine, assembled from scavenged metal and natural materials.</line>
+  </scene>
+</conversation>

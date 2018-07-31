@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="marquez-farm-enter-krz">
+  <scene name="intro" nextScene="tuning">
+    <line speaker="shannon">Oh yeah, these tubes are all messed up. Look like they've been in a swamp, or a cave or something — there's moss growing on this one!</line>
+    <line speaker="shannon">That's OK, I have a few spares in my bag here ... Here, I pulled this one out of an old computer monitor. Just needs to be recalibrated a bit ...</line>
+  </scene>
+
+  <scene name="tuning">
+    <line speaker="shannon">OK, that oughta ... should be seeing something now; are you seeing anything?</line>
+    <option goto="tuning-more" speaker="conway">Hey that looks dangerous, what you're doing there.</option>
+    <option goto="tuning-more" speaker="conway">Uh, little bit to the left ... ?</option>
+  </scene>
+
+  <scene name="tuning-more" nextScene="end">
+    <line speaker="shannon">Damn, OK ... Here, I think the contacts are dirty. Now don't go telling my customers I clean off old vacuum tubes with spit ...</line>
+    <line speaker="shannon">There, just gotta turn it north/south, and —</line>
+  </scene>
+</conversation>

@@ -1,0 +1,20 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="distillery-saw-cask-building" value="true"/>
+
+    <line speaker="doolittle" style="skeleton">We build every cask by hand, right here. It's tradition, but I like to think our application of hands and hammers to the oak gives our stuff a kind of ... life.</line>
+    <line speaker="doolittle" style="skeleton">Well, that's what I like to think.</line>
+    <option goto="craft" speaker="conway">Something to be said for that.</option>
+    <option goto="coffins" speaker="shannon">They look like ... coffins?</option>
+  </scene>
+
+  <scene name="craft" nextScene="end">
+    <line speaker="doolittle" style="skeleton">`Craft`. Well, that's what you call it. Sure, we've grown over the years, but we still consider ourselves a craft distillery.</line>
+  </scene>
+
+  <scene name="coffins" nextScene="end">
+    <line speaker="doolittle" style="skeleton">That's tradition, too, I suppose. And I'm sure it helps avert suspicion if a satellite catches us burying them upstairs ...</line>
+  </scene>
+</conversation>

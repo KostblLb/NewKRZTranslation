@@ -1,0 +1,159 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="elkhorn-mine-portal-met-shannon">
+  <scene name="intro">
+    <setGameVar name="met-shannon" value="true"/>
+    
+    <line speaker="conway">Excuse me, ma'am, I saw the light was on and I'm looking for the on-ramp to —</line>
+    <option goto="kick-off-property" speaker="shannon">Are you here to kick me off the property?</option>
+    <option goto="believe-in-ghosts" speaker="shannon">Do you believe in ghosts?</option>
+  </scene>
+
+  <scene name="kick-off-property">
+    <line speaker="conway">Oh, no, no ... I guess you don't belong here either, do you?</line>
+    <option goto="power-company" speaker="shannon">Do you work for the power company?</option>
+    <option goto="wandering" speaker="shannon">Are you just out wandering?</option>
+  </scene>
+
+  <scene name="power-company">
+    <line speaker="conway">The power company? Oh, no, no. I once worked for an electrician for a few weeks, but I sort of drifted on before I really learned anything.</line>
+    <option goto="wandering" speaker="shannon">I get it. You're a nomad.</option>
+    <option goto="drunk" speaker="shannon">I get it. You're a drunk.</option>
+  </scene>
+
+  <scene name="wandering">
+    <line speaker="conway">Ha. Well, I do drive a lot. Just me and the road mostly, when the sun is out.</line>
+    
+    <option goto="lonely" speaker="shannon">You sound lonely.</option>
+    <option goto="conway-business-in-mine" speaker="shannon">Is that your job? Driving?</option>
+  </scene>
+
+  <scene name="lonely" nextScene="conway-business-in-mine">
+    <line speaker="conway">Nah, I get by.</line>
+  </scene>
+
+  <scene name="drunk" nextScene="conway-business-in-mine">
+    <line speaker="conway">Nah, I do a pretty good job now, I keep sober. I've got a gig.</line>
+  </scene>
+
+  <scene name="believe-in-ghosts">
+    <line speaker="conway">Well, let's see ... I do believe a place can be haunted, if that's what you mean.</line>
+    
+    <option goto="person-be-haunted" speaker="shannon">What about a person? Can a person be haunted?</option>
+    <option goto="not-place-haunted" speaker="shannon">No, that's not what I mean.</option>
+  </scene>
+
+  <scene name="person-be-haunted">
+    <line speaker="conway">Sure, I guess a person could. Sometimes I feel haunted myself.</line>
+    
+    <option goto="what-haunts-conway" speaker="shannon">What haunts you?</option>
+    <option goto="shannon-haunted-too" speaker="shannon">Me too.</option>
+  </scene>
+
+  <scene name="what-haunts-conway" nextScene="conway-business-in-mine">
+    <line speaker="conway">Uh ... bad decisions, I guess. Wasted youth. Ha. Well, look ...</line>
+  </scene>
+
+  <scene name="not-place-haunted">
+    <line speaker="conway">Well, OK, I've run across a few people who acted like ghosts. Kinda there, kinda ... somewhere else.</line>
+    
+    <option goto="shannon-haunted-too" speaker="shannon">Me too.</option>
+    <option goto="conway-business-in-mine" speaker="shannon">So what brings you to this old mine tonight?</option>
+  </scene>
+
+  <scene name="shannon-haunted-too">
+    <line speaker="conway">Oh yeah? Did, uh ... is that what lead you down here?</line>
+    <option goto="shannon-ghosts-led-down" speaker="shannon">Yes.</option>
+    <option goto="shannon-doesnt-want-to-talk-about-ghosts" speaker="shannon">I don't want to talk about it anymore.</option>
+  </scene>
+
+  <scene name="shannon-ghosts-led-down" nextScene="conway-business-in-mine">
+    <line speaker="conway">So. I guess this place must be pretty important. Maybe I'm in the right place after all.</line>
+  </scene>
+
+  <scene name="shannon-doesnt-want-to-talk-about-ghosts" nextScene="conway-business-in-mine">
+    <line speaker="conway">OK. You seem like you've got a lot on your mind. I don't mean to bother you. It's just ...</line>
+  </scene>
+
+  <scene name="conway-business-in-mine">
+    <line speaker="conway">Here's what it is: I drive deliveries for a shop called Lysette's Antiques, and I'm out trying to finish this job.</line>
+    <option goto="deliver-to-mine" speaker="shannon">You're making a delivery to the mine?</option>
+    <option goto="whats-in-delivery" speaker="shannon">What kind of stuff are you hauling?</option>
+  </scene>
+
+  <scene name="deliver-to-mine" nextScene="looking-for-dogwood">
+    <line speaker="conway">Oh, uh ... no.</line>
+  </scene>
+
+  <scene name="looking-for-dogwood" nextScene="switch">
+    <line speaker="conway">I have a delivery for &quot;5 Dogwood Drive,&quot; and I can't remember ever seeing that address before. Now I heard I need to take a highway called the |Zero|.</line>
+    <line speaker="conway">So I met this young lady, name of Weaver Márquez, and she sent me this way, and so here I am. Uncommon kind of place for an on-ramp, but that's what it's been like so far anyway with —</line>
+  </scene>
+
+  <scene name="whats-in-delivery" nextScene="looking-for-dogwood">
+    <line speaker="conway">Antiques. Good stuff. Lysette has a sharp eye, for the little good it's done her lately. You know, it's just one recession after another, everybody's selling their old stuff cheap but nobody's really buying ...</line>
+  </scene>
+
+  <scene name="switch">
+    <line speaker="shannon">What?</line>
+    
+    <option goto="know-weaver" speaker="conway">Weaver Márquez. Do you know her?</option>
+    <option goto="zero-nearby" speaker="conway">The |Zero|, is that around here?</option>
+  </scene>
+
+  <scene name="know-weaver">
+    <line speaker="shannon">So you saw her. Tonight. I know Weaver. She was ... she's my cousin. I'm Shannon Márquez.</line>
+    
+    <option goto="fixes-televisions" speaker="conway">Oh, you're the one who fixes televisions.</option>
+    <option goto="weaver-doesnt-lie" speaker="conway">I get it. She tricked me.</option>
+  </scene>
+
+  <scene name="fixes-televisions" nextScene="weaver-doesnt-lie">
+    <line speaker="shannon">That's right. Did she tell you that, too? Of course she did.</line>
+  </scene>
+
+  <scene name="zero-nearby" nextScene="weaver-doesnt-lie">
+    <line speaker="shannon">I've never heard of the damned &quot;|Zero|.&quot; That doesn't sound like a real highway. But I know Weaver. I've known her all my life, she was ... she's my cousin. I'm Shannon Márquez.</line>
+  </scene>
+
+  <scene name="weaver-doesnt-lie">
+    <line speaker="shannon">Weaver doesn't lie. One time, when we were younger, she told me my dad had been in a terrible car wreck. There was crushed metal everywhere, and we'd be hearing it echo through the house for years, she said. I was very upset, crying, and then my dad walked in the door, just come back from a trip to the junkyard collecting scrap metal to fashion into wind chimes.</line>
+    <line speaker="shannon">I was angry, but she said it wasn't a joke, and it wasn't a lie. At the time I thought she meant it as a riddle or a puzzle.</line>
+    <line speaker="shannon">But Weaver's not a puzzle. She's a mystery.</line>
+    
+    <option goto="zero-somewhere" speaker="conway">So, maybe the |Zero| `is` down here somewhere.</option>
+    <option goto="shannon-business" speaker="conway">So, what are `you` doing down here, Shannon?</option>
+  </scene>
+
+  <scene name="zero-somewhere" nextScene="shannon-business">
+    <line speaker="shannon">Maybe it is. Well, I won't mind the company. I've got business down here, myself.</line>
+  </scene>
+
+  <scene name="shannon-business">
+    <line speaker="shannon">I talked to Weaver earlier this evening, too. Or anyway, she talked to me; it's hard to tell if she's listening sometimes.</line>
+    <line speaker="shannon">Weaver told me I had to come down here to the old Elkhorn Mine. She said I'd find ... something I've been looking for.</line>
+    
+    <option goto="where-was-weaver" speaker="conway">Where did you see Weaver?</option>
+    <option goto="what-shannon-is-looking-for" speaker="conway">What are you looking for?</option>
+  </scene>
+
+  <scene name="where-was-weaver" nextScene="next-steps">
+    <line speaker="shannon">At my workshop. She just appeared. I hadn't seen her since ... a long time.</line>
+  </scene>
+
+  <scene name="what-shannon-is-looking-for" nextScene="next-steps">
+    <line speaker="shannon">I'm not exactly sure. I have a few ideas ... I'll know it when I see it.</line>
+  </scene>
+
+  <scene name="next-steps">
+    <line speaker="shannon">It's not such a bad thing, you showing up now. All told, I'd rather not go down there alone. Your dog should stay up here, though. It's no place for a dog.</line>
+    <line speaker="shannon">This is an old mine. It runs pretty deep and tangled. If we're going to go down into it, find your on-ramp and whatever else, we've got to keep our bearings. I don't want to get turned around.</line>
+    <line speaker="shannon">I've got some gear here to measure conductivity, frequency response, stuff like that. Maybe we can find a way to put a signal out ahead, do some analysis and figure out what kind of topology we're up against.</line>
+    
+    <option goto="topology" speaker="conway">Topology. OK.</option>
+    <option goto="end" speaker="conway">Sure, let's look around.</option>
+  </scene>
+
+  <scene name="topology" nextScene="end">
+    <line speaker="shannon">Topology. That's the science of continuous space, my friend. The way this twisty maze of passages fits together.</line>
+  </scene>
+</conversation>

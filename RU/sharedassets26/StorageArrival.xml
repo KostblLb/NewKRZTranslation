@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="storage-talked-to-shannon-on-arrival" value="true"/>
+    <line speaker="shannon">Is that it ... over there?</line>
+    <option goto="congregation" speaker="conway">I don't see any congregation.</option>
+    <option goto="dusty" speaker="conway">It's dusty in here.</option>
+  </scene>
+
+  <scene name="congregation" nextScene="end">
+    <line speaker="shannon">Maybe it's after-hours. Let's see what the janitor knows, I guess.</line>
+  </scene>
+
+  <scene name="dusty" nextScene="end">
+    <line speaker="shannon">You work with antiques, you should be used to a little dust, right?</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,191 @@
+# -*- mode: blocking -*-
+
+@set MainPlatform FloatingGasStation/Derotate/MainPlatform
+@set SubPlatform FloatingGasStation/Derotate/SubPlatform
+
+@func DisableInteraction
+  Main Marker Lock
+  Main Cursor Hide
+  Main Interact Off
+@end
+
+@func EnableInteraction
+  Main Marker Unlock
+  Main Cursor Show
+  Main Interact On
+@end
+
+@func EnterSailboat
+  Sailboat Message FloatingGasStationSailboat Enter
+  Sailboat Event sailboat-arrive-sound
+  Sailboat Listen sailboat-docked
+  Sailboat Exec SailboatCaptainEnter ? floating-gas-station-section=junebug-inside
+  Sailboat Message FloatingGasStationSailboat Exit ? !(floating-gas-station-section=junebug-inside)
+  Sailboat Exec ExitSailboat ? !(floating-gas-station-section=junebug-inside)
+@end
+  
+@func SailboatCaptainEnter
+  Sailboat Enable SailboatCaptain
+  Sailboat Walk SailboatCaptain [MainPlatform]/WaypointMotorboatCaptainInside
+  Sailboat Set temp:sailboat-captain-inside true
+  Sailboat Event refresh-actors
+@end
+
+@func SailboatCaptainExit
+  Sailboat Set temp:sailboat-captain-inside false
+  Sailboat Walk SailboatCaptain [MainPlatform]/WaypointMotorboatCaptainOutside
+  Sailboat Disable SailboatCaptain
+  Sailboat Exec ExitSailboat
+@end
+
+@func ExitSailboat
+  Sailboat Audio* Play sailboat-depart  
+  Sailboat Message FloatingGasStationSailboat Exit
+@end
+
+@func EnterMotorboat
+  Main Exec SailboatCaptainExit ? temp:sailboat-captain-inside
+  Motorboat Message FloatingGasStationMotorboat Enter
+  Motorboat Event motorboat-enter-sound
+  Motorboat Listen motorboat-docked
+  Motorboat Event motorboat-stop-sound  
+  Motorboat Enable MotorboatCaptain
+  Motorboat Walk MotorboatCaptain [MainPlatform]/WaypointMotorboatCaptainInside
+  Motorboat Set temp:motorboat-captain-inside true
+  Motorboat Event refresh-actors
+@end
+
+@func MotorboatCaptainExit
+  Motorboat Set temp:motorboat-captain-inside false
+  Motorboat Walk MotorboatCaptain [MainPlatform]/WaypointMotorboatCaptainOutside
+  Motorboat Disable MotorboatCaptain
+  Motorboat Event motorboat-leave-sound
+  Motorboat Message FloatingGasStationMotorboat Exit
+@end
+
+@func EnterMotortable
+  Motortable Message FloatingGasStationMotortable Enter
+@end
+
+@func EnterPaperBoat
+  PaperBoat Message FloatingGasStationPaperboat Enter ? three:museum-parking-completed-boat-watch
+@end
+
+@func EnterPlane
+  Plane Message FloatingGasStationPlane Enter
+@end
+
+@func IntroConversation
+  @inline DisableInteraction
+  Main Wait 2
+  @inline EnableInteraction
+  Main Dialog FloatingGasStationArrival
+  Main Event save
+  Main Exec CateReturnsToTugboat
+  Main Exec EnterSailboat
+@end
+
+@func JunebugEnterGasStation
+  @inline DisableInteraction
+  Main Walk Junebug [MainPlatform]/WaypointInside
+  @inline EnableInteraction
+@end
+
+@func JunebugExitGasStation
+  @inline DisableInteraction
+  Main Walk Junebug [MainPlatform]/WaypointOutside
+  @inline EnableInteraction
+@end
+
+@func JohnnyEnterGasStation
+  @inline DisableInteraction
+  Main Walk Johnny [MainPlatform]/WaypointInside
+  @inline EnableInteraction
+@end
+
+@func JohnnyExitGasStation
+  @inline DisableInteraction
+  Main Walk Johnny [MainPlatform]/WaypointOutside
+  @inline EnableInteraction
+@end
+
+@func EndScene
+  @inline DisableInteraction
+@end
+
+@func ForegroundBoats
+  ForegroundBoats Wait 120
+  ForegroundBoats Exec EnterPlane ? one:overworld-visited-airplane
+  ForegroundBoats Wait 200
+  ForegroundBoats Exec EnterMotortable
+  ForegroundBoats Wait 60
+  ForegroundBoats Exec EnterPaperBoat ? three:museum-parking-watched-boat-with-flora
+@end
+
+@func EzraReturnsToTugboat
+  Ezra Run Ezra [SubPlatform]/EzraPosition
+  Ezra Wait 4
+  Ezra Walk Ezra FloatingGasStationTugboat/EzraPosition
+  Ezra Disable Ezra
+@end
+
+@func CateReturnsToTugboat
+  Cate Walk Cate FloatingGasStationTugboat/CatePosition
+  Cate Disable Cate
+@end
+
+@func EzraRunsAroundBack
+  Ezra Run* Ezra [MainPlatform]/WaypointEzraBack
+@end
+
+# Bookmarks
+@func SceneStartBookmark
+  @IntroConversation
+  @ForegroundBoats
+  @EzraRunsAroundBack
+@end
+
+@func JunebugInsideBoookmark
+  Main Disable Ezra
+  Main Disable Cate
+  Main Warp Junebug [MainPlatform]/WaypointInside
+  Main Message [MainPlatform]/Interior JunebugEnters  
+  Main Exec EnterSailboat ? !floating-gas-station-junebug-talked-to-norm
+  Main Exec ForegroundBoats  
+@end
+
+@func JohnnyInsideBoookmark
+  Main Disable Ezra
+  Main Disable Cate
+  Main Warp Johnny [MainPlatform]/WaypointInside
+  @inline PlayerJohnny
+  Main Message [MainPlatform]/Interior JohnnyEnters
+  Main Exec EnterMotorboat ? !floating-gas-station-johnny-talked-to-al
+  Main Exec ForegroundBoats
+@end
+
+@func LoadBookmark
+  Main Exec SceneStartBookmark ? floating-gas-station-section=arrival
+  Main Exec JunebugInsideBoookmark ? floating-gas-station-section=junebug-inside
+  Main Exec JohnnyInsideBoookmark ? floating-gas-station-section=johnny-inside
+@end
+
+@func PlayerJohnny
+  Main Player Johnny
+  Main Message Johnny RemoveWalkableLayer NoPlayer
+  Main Message Junebug AddWalkableLayer NoPlayer
+@end
+
+# Init
+
+Main Disable SailboatCaptain
+Main Disable MotorboatCaptain
+
+@LoadBookmark
+
+Ending Listen end-scene
+Ending Cursor Hide
+Ending Marker Lock
+Ending Interact Off
+Ending Wait 3
+Ending SceneChange Overworld

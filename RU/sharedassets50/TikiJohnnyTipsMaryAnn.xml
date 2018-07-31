@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-mary-ann" value="true" />
+    <setGameVar name="tiki-johnny-tips-total" value="+315" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>She had some work in Kelly's show ... paintings, maybe? That's a tough gig, too. You can't make a scratch without a pigment, a medium, and a surface, and not one of those is cheap!</line>
+    <line>Maybe you could make your own to start. Charcoal, blood, and rock. D.I.Y.</line>
+  </scene>
+</conversation>

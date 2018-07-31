@@ -1,0 +1,42 @@
+# -*- mode: blocking -*-
+
+@func TakeCatfood
+
+  Cat Marker Lock
+  Cat Walk [PLAYER] LabDoorways/CatfoodStandPosition
+  Cat Message [PLAYER] GrabCatfood
+  Cat Audio* Play can-on-floor  
+  Cat Disable LabDoorways/CatfoodTable Renderer
+  Cat Set temp:took-catfood true
+  Cat Event took-catfood
+  Cat Marker Unlock
+
+@end
+
+@func FeedCat
+
+  Cat Marker Lock
+  Cat Walk [PLAYER] LabDoorways/CatFeedPosition
+  Cat Gesture [PLAYER] Enter Crouch
+  Cat Message [PLAYER] DropCatfood
+  Cat Audio* Play can-on-floor
+  Cat Enable LabDoorways/CatfoodEating Renderer
+  Cat Wait 1
+  Cat Message LabDoorways/LabCatGroup/LabCat StartEating
+  Cat Audio FadeOut meows 0.125
+  Cat Audio* FadeIn cat-eating 2
+  Cat Wait 1
+  Cat Gesture [PLAYER] Exit Crouch
+  Cat Walk [PLAYER] LabDoorways/CatFeedPositionAfter
+  Cat Set lab-fed-cat true
+  Cat Set temp:allow-exam true
+  Cat Event fed-cat
+  Cat Dialog LabCarryObjectTestAfterFeedingCat
+  Cat Wait 2
+  Cat Marker Unlock
+  Cat Audio* FadeOut cat-eating 0.5
+  
+  Cat Exec GotoTapePlayer ? one:elkhorn-mine-found-tape-player
+  Cat Exec GotoWaitingRoom ? !one:elkhorn-mine-found-tape-player
+  
+@end

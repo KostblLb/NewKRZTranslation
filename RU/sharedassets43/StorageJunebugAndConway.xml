@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="storage-talked-to-junebug" value="true"/>
+    <option goto="feeling-alright" speaker="junebug">You feeling alright, there? You look a little woozy.</option>
+    <option goto="leg" speaker="junebug">Good to stretch a bit. How's your leg?</option>
+  </scene>
+
+  <scene name="feeling-alright">
+    <line speaker="conway">They give you a free drink when you play a show?</line>
+    <option goto="harry-spots" speaker="junebug">Sure, Harry usually spots the band a glass of something.</option>
+    <option goto="dont-drink" speaker="junebug">We don't really drink.</option>
+  </scene>
+
+  <scene name="harry-spots" nextScene="end">
+    <line speaker="conway">`Shift drink`. Right? Aw, never mind.</line>
+  </scene>
+
+  <scene name="dont-drink" nextScene="end">
+    <line speaker="conway">Me neither. Fifteen months. How do you like that?</line>
+  </scene>
+
+  <scene name="leg" nextScene="end">
+    <line condition="leg-problem=looks-wrong" speaker="conway">Yeah, you can tell it's all messed up. Broken, or ... yeah, not like a broken bone. Just broken.</line>
+    <line condition="leg-problem=doesnt-belong-to-me" speaker="conway">Not my leg.</line>
+    <line condition="leg-problem=not-worth-it" speaker="conway">Does what it needs to. Guess I'll still need a clutch foot, after all.</line>
+    <line condition="leg-problem=memory" speaker="conway">Just another reminder I don't belong here.</line>
+    <line speaker="johnny">Huh. OK.</line>
+  </scene>
+</conversation>

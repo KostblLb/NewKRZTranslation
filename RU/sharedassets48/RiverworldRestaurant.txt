@@ -1,0 +1,25 @@
+# -*- mode: blocking -*-
+
+@set Scene Restaurant
+@set Stop riverworld-restaurant
+
+@func PostScene
+
+  Tugboat Message RiverworldManager QueueState ClutteredPlace
+
+@end
+
+@func PreScene
+
+  Tugboat Listen boat-stop
+  Tugboat Wait 3
+  Tugboat Set [Stop] disembarked
+  Tugboat Message RiverworldManager LoadScene [Scene]
+
+  Restaurant Listen on-lake
+  Restaurant Message RiverworldLake/Destinations/Restaurant DockTugboat
+
+@end
+
+Tugboat Exec PreScene ? [Stop]=uncharted
+Tugboat Exec PostScene ? !([Stop]=uncharted)

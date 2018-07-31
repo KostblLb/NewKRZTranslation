@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-saw-barrel-dump" value="true"/>
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">And here's the first moment you could really call it bourbon. The barrel dump.</line>
+    <line speaker="doolittle" style="skeleton">We cut it here with water from the middle of Lake Lethe. Has to be right in the middle, at the deepest, coldest point.</line>
+    <line speaker="doolittle" style="skeleton">They dive with sealed jugs, and only stop to fill them once they've reached total darkness.</line>
+    <line speaker="doolittle" style="skeleton">Pageantry? Ritual? Who can say? Tradition, maybe.</line>
+  </scene>
+</conversation>

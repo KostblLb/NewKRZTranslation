@@ -1,0 +1,68 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="lower-depths-met-harry" value="true"/>
+    <line speaker="harry">All I'm pouring tonight is Hard Times Whiskey.</line>
+    <option goto="coffee" speaker="conway">Got any coffee going?</option>
+    <option goto="whiskey" insertedText="*CONWAY*: Su-" speaker="conway">Sure, I'll have a whiskey.</option>
+  </scene>
+
+  <scene name="whiskey" nextScene="yell">
+    <setGameVar name="lower-depths-conway-tried-to-ask-for-whiskey" value="true"/>
+    <line speaker="shannon">Coffee. Right, old man? And I'll have a coke.</line>
+    <line speaker="harry">No coke, no coffee. Hard Times Whiskey.</line>
+    <line speaker="shannon">Forget it.</line>
+  </scene>
+
+  <scene name="coffee" nextScene="yell">
+    <line speaker="harry">No coffee. Hard Times Whiskey.</line>
+  </scene>
+
+  <scene name="yell">
+    <blocking>@BandMovesToBarInitial</blocking>
+    <line speaker="harry">`(Yelling towards exit.)` Say, shut the G.D. door, would you! I can't afford to run the A.C. all night.</line>
+    <line speaker="johnny">Sorry, Harry.</line>
+    <line speaker="harry">Oh, it's you two. Where have you been?</line>
+    <line speaker="harry">Never mind. Listen, I can't keep this place open through the small hours of the night just waiting for musicians!</line>
+    <option goto="lonely" speaker="junebug">Gets lonely, doesn't it?</option>
+    <option goto="clientele" speaker="junebug">Where is everyone?</option>
+  </scene>
+
+  <scene name="lonely">
+    <line speaker="harry">It ... yeah, kinda.</line>
+    <option goto="play-music" speaker="junebug">How about some music?</option>
+    <option goto="clientele" speaker="junebug">Been like this all night?</option>
+  </scene>
+
+  <scene name="clientele" nextScene="play-music">
+    <line speaker="harry">Everybody had to, uh ... clear out.</line>
+    <line speaker="johnny">Let's get set up, huh?</line>
+  </scene>
+
+  <scene name="play-music">
+    <line speaker="harry">There's nobody here to listen to it! I can't pay for —</line>
+    <line speaker="johnny">We brought some people, Harry!</line>
+    <line speaker="johnny">A `crowd` is forming.</line>
+    <line speaker="harry">Yeah, but also I —</line>
+    <option goto="harry-break" speaker="junebug">Couldn't you use a break, Harry?</option>
+    <option goto="harry-music" speaker="junebug">Don't you want to hear some music, Harry?</option>
+    <option goto="harry-trust" speaker="junebug">Don't you trust me, Harry?</option>
+  </scene>
+
+  <scene name="harry-break" nextScene="set-up">
+    <line speaker="harry">Been on my feet all day ...</line>
+  </scene>
+
+  <scene name="harry-music" nextScene="set-up">
+    <line speaker="harry">That does sound nice, after the day I've had ...</line>
+  </scene>
+
+  <scene name="harry-trust" nextScene="set-up">
+    <line speaker="harry">Well, sure I trust you, Junebug ...</line>
+  </scene>
+
+  <scene name="set-up" nextScene="end">
+    <blocking debug="true">@PerformersWalkToStage</blocking>
+    <line speaker="harry">But I —</line>
+  </scene>
+</conversation>

@@ -1,0 +1,117 @@
+<conditionExpansions>
+  <expansion name="dog-pronoun">
+    <subCondition condition="one:dog-name=Blue" value="she" />
+    <subCondition condition="true" value="he" />
+  </expansion>
+    
+  <expansion name="dog-object-pronoun">
+    <subCondition condition="one:dog-name=Blue" value="her" />
+    <subCondition condition="true" value="him" />
+  </expansion>
+    
+  <expansion name="dog-possessive-pronoun">
+    <subCondition condition="one:dog-name=Blue" value="her" />
+    <subCondition condition="true" value="his" />
+  </expansion>
+    
+  <expansion name="dog-name-or-pronoun">
+    <subCondition condition="one:dog-name=Blue" value="Blue" />
+    <subCondition condition="one:dog-name=Homer" value="Homer" />
+    <subCondition condition="true" value="he" />    
+  </expansion>
+    
+  <expansion name="dog-name-or-the-dog">
+    <subCondition condition="one:dog-name=Blue" value="Blue" />
+    <subCondition condition="one:dog-name=Homer" value="Homer" />
+    <subCondition condition="true" value="the dog" />    
+  </expansion>
+    
+  <expansion name="left-d20"
+             condition="one:returned-d20-to-gamers+!one:kept-d20" />
+
+  <expansion name="meteor-sighting-conversation">
+    <subCondition condition="two:meteor-conway-thats-a-start"
+                  value="thats-a-start" />
+    <subCondition condition="two:meteor-conway-better-nights"
+                  value="better-nights" />
+    <subCondition condition="two:meteor-shannon-good-date"
+                  value="good-date" />
+    <subCondition condition="two:meteor-shannon-bad-date"
+                  value="bad-date" />
+    <subCondition condition="true" value="none" />
+  </expansion>
+
+  <expansion name="jerky-holdout"
+             condition="one:met-joseph+!one:josephs-jerky-fed-to-dog" />
+
+  <expansion name="lab-phone-voice-description">
+    <subCondition condition="four:lab-phone-voice-body=none+four:lab-phone-voice-teeth=none"
+                  value="voice" />
+    
+    <subCondition condition="four:lab-phone-voice-body=strong+four:lab-phone-voice-teeth=none"
+                  value="strong voice" />
+    <subCondition condition="four:lab-phone-voice-body=quick+four:lab-phone-voice-teeth=none"
+                  value="quick voice" />
+    <subCondition condition="four:lab-phone-voice-body=solid+four:lab-phone-voice-teeth=none"
+                  value="solid voice" />
+
+    <subCondition condition="four:lab-phone-voice-body=strong+four:lab-phone-voice-teeth=warm"
+                  value="strong, warm voice" />
+    <subCondition condition="four:lab-phone-voice-body=quick+four:lab-phone-voice-teeth=warm"
+                  value="quick, warm voice" />
+    <subCondition condition="four:lab-phone-voice-body=solid+four:lab-phone-voice-teeth=warm"
+                  value="solid, warm voice" />
+
+    <subCondition condition="four:lab-phone-voice-body=strong+four:lab-phone-voice-teeth=meticulous"
+                  value="strong, meticulous voice" />
+    <subCondition condition="four:lab-phone-voice-body=quick+four:lab-phone-voice-teeth=meticulous"
+                  value="quick, meticulous voice" />
+    <subCondition condition="four:lab-phone-voice-body=solid+four:lab-phone-voice-teeth=meticulous"
+                  value="solid, meticulous voice" />
+
+    <subCondition condition="four:lab-phone-voice-body=strong+four:lab-phone-voice-teeth=sharp"
+                  value="strong, sharp voice" />
+    <subCondition condition="four:lab-phone-voice-body=quick+four:lab-phone-voice-teeth=sharp"
+                  value="quick, sharp voice" />
+    <subCondition condition="four:lab-phone-voice-body=solid+four:lab-phone-voice-teeth=sharp"
+                  value="solid, sharp voice" />
+
+  </expansion>
+
+  <expansion name="can-watch-lab-video"
+             condition="four:lab-videos-claimed=forget|four:lab-videos-claimed=all|(four:lab-videos-claimed=one+four:lab-videos-watched=0)" />
+  <expansion name="can-take-lab-video-test"
+             condition="four:lab-videos-claimed=forget|(four:lab-videos-claimed=one+four:lab-videos-watched=1)|four:lab-videos-watched=6" />
+
+  <expansion name="claw-full-strength"
+             condition="four:restaurant-dotw=tuesday" />
+
+  <expansion name="shannon-saw-weaver-video"
+             condition="four:riverworld-rum-colony=aboard" />
+
+  <expansion name="watched-all-tugboat-videos"
+             condition="four:tugboat-videos-count=10" />
+
+  <expansion name="ezra-wants-to-join-robots"
+             condition="(four:restaurant-ezra-plan=musicians)|(three:distillery-ezra-self=musician)" />
+    
+  <expansion name="junebug-wants-ezra-to-join"
+             condition="four:floating-gas-station-junebug-third-person-reaction=positive" />
+    
+
+  <expansion name="lab-final-route">
+    <subCondition condition="one:overworld-completed-shannons-workshop"
+                  value="video" />
+    <subCondition condition="one:overworld-visited-museum"
+                  value="books" />
+    <subCondition condition="true"
+                  value="calendar" />
+  </expansion>
+
+  <!-- if ezra has more than just the cat recording to play at clara's show -->
+  <expansion name="ezra-has-recordings-to-play"
+             condition="four:tugboat-ezra-recorded-kombucha|four:tugboat-ezra-recorded-diesel-tank|four:tugboat-ezra-recorded-stew|four:tugboat-ezra-recorded-pots|four:tugboat-ezra-recorded-tv|four:tugboat-ezra-recorded-river|four:tugboat-ezra-recorded-mammoth|four:tugboat-ezra-recorded-tape" />
+
+  <expansion name="met-flora"
+             condition="two:museum-talked-to-flora|three:museum-parking-talked-to-flora" />
+</conditionExpansions>

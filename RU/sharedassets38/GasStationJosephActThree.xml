@@ -1,0 +1,74 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <goto condition="gas-station-talked-to-joseph" sceneName="joseph-root"/>
+    <goto sceneName="intro-first-conversation"/>    
+  </scene>
+
+  <scene name="intro-first-conversation">
+    <setGameVar name="gas-station-talked-to-joseph" value="true"/>
+    <line speaker="joseph">Truck sounds like it's running kinda rough, there! Better keep an eye on it.</line>
+    
+    <option goto="conway-rough" speaker="conway">We're all running a little rough, these days.</option>
+    <option goto="ezra-why" speaker="ezra">Why do you work here?</option>
+    <option condition="breakdown-happened" goto="shannon-sorted" speaker="shannon">We had a little engine trouble, but it's sorted out now.</option>
+    <option condition="breakdown-happened" goto="junebug-repair" speaker="junebug">Nothing we couldn't handle.</option>
+  </scene>
+
+  <scene name="shannon-sorted" nextScene="joseph-root">
+    <line speaker="joseph">Glad to hear it. Electrical problem?</line>
+    <line speaker="shannon">Not really sure, actually. Our new friends here helped us get it running again.</line>
+  </scene>
+
+  <scene name="conway-rough" nextScene="joseph-root">
+    <line speaker="joseph">Well, that's you and me, anyway ... closer to the finish than the start. Seems it gets a little bumpier as you go. Ha!</line>
+  </scene>
+
+  <scene name="ezra-why" nextScene="joseph-root">
+    <line speaker="shannon">Ezra, that's not really —</line>
+    <line speaker="joseph">You can't help where you end up, kid. You just end up there.</line>
+  </scene>
+
+  <scene name="junebug-repair" nextScene="joseph-root">
+    <line speaker="joseph">`(To CONWAY.)` I think you left the radio on.</line>
+    <line speaker="junebug">This is the real thing. Live.</line>
+    <line speaker="joseph">Well, damn! You sound just like you do on the radio. I've got one of your tapes I picked up at a truck stop ... somewhere in the back there.</line>
+  </scene>
+
+  <scene name="joseph-root">
+    <option condition="two:bureau-mentioned-joseph-to-lula+!gas-station-asked-joseph-about-lula" goto="lula" speaker="shannon">We met a friend of yours, named Lula.</option>
+    <option condition="!two:bureau-mentioned-joseph-to-lula+!gas-station-asked-joseph-about-zero" goto="zero" speaker="shannon">We've been to the |Zero|.</option>
+    <option condition="!gas-station-asked-joseph-about-games" goto="games" speaker="ezra">Do you have any games on your computer?</option>
+    <option condition="one:met-carrington+two:carrington-play-location=gasstation+!gas-station-asked-joseph-about-play" goto="show" speaker="conway">I hear there's going to be a show in the morning.</option>
+    <option goto="end" speaker="conway">Better get going.</option>
+  </scene>
+
+  <scene name="lula">
+    <setGameVar name="gas-station-asked-joseph-about-lula" value="true"/>
+    <line speaker="joseph">Oh, uh ... Yeah, I should have guessed you would.</line>
+    <line speaker="joseph">Did she say anything about me?</line>
+    <option goto="lula-long-time-ago" speaker="shannon">Not really.</option>
+    <option goto="lula-long-time-ago" speaker="shannon" variableChange="gas-station-told-joseph-lula-mentioned-relationship=true">She said you used to be lovers.</option>
+  </scene>
+
+  <scene name="lula-long-time-ago" nextScene="joseph-root">
+    <line speaker="joseph">Oh. Well. I guess that was a long time ago.</line>
+  </scene>
+
+  <scene name="zero" nextScene="joseph-root">
+    <setGameVar name="gas-station-asked-joseph-about-zero" value="true"/>    
+    <line speaker="joseph">I figured. Well, listen, I wish you luck. But I don't really want to talk any more about that. Bad memories.</line>
+    <line speaker="joseph">Glad to hear you're on your way, though.</line>
+  </scene>
+
+  <scene name="games" nextScene="joseph-root">
+    <setGameVar name="gas-station-asked-joseph-about-games" value="true"/>    
+    <line speaker="joseph">Hey, you know what, I might! My niece works nights at the hospital, and she swung by for her lunch break an hour or two ago. She's kind of a ... she doesn't talk a whole lot. But I like her company.</line>
+    <line speaker="joseph">I heard her typing away in there. You might take a look!</line>
+  </scene>
+
+  <scene name="show" nextScene="joseph-root">
+    <setGameVar name="gas-station-asked-joseph-about-play" value="true"/>
+    <line speaker="joseph">So there is. I'll have to put on some more coffee.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,51 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="poppy">Just set it right over there by the lamp, sweetie, thanks —</line>
+    <line speaker="poppy">— actually, just a minute, who does that parcel claim to be from?</line>
+    <option goto="package-power-co" speaker="shannon">`(Reading label.)` 'Consolidated Power Co.'</option>
+    <option goto="package-electronics" speaker="shannon">`(Reading label.)` 'Laszlo Electronics'</option>
+    <option goto="no-label" speaker="shannon">That's weird, there's no label on it.</option>
+  </scene>
+
+  <scene name="package-power-co" nextScene="shannon-introduction">
+    <line speaker="poppy">Oh dear, I'm afraid to open it.</line>
+  </scene>
+
+  <scene name="package-electronics" nextScene="shannon-introduction">
+    <line speaker="poppy">Ooh, must be my new patch cables, and not a minute too soon. This one here is hanging on by a fiber!</line>
+  </scene>
+
+  <scene name="no-label" nextScene="shannon-introduction">
+    <line speaker="poppy">Well, if we're lucky, it's chocolates from a secret admirer, and not a snake from an assassin.</line>
+  </scene>
+
+  <scene name="shannon-introduction">
+    <line speaker="poppy">So, who are you? Do you work for the post office? Or the tugboat? I only ask because I haven't seen you before. Was that you I heard chatting down the hall?</line>
+    <option goto="dashiell" speaker="shannon">Yeah, I just met Dashiell.</option>    
+    <option goto="cate" speaker="shannon">I'm just doing Cate a favor, dropping off this package.</option>
+  </scene>
+
+  <scene name="dashiell" nextScene="fall-of-exchange">
+    <setGameVar name="exchange-asked-poppy-about-dashiell" value="true" />
+    <line speaker="poppy">He's been working on that obsolete ringer, hasn't he? Poor Dashiell.</line>
+    <line speaker="poppy">You know, he's not really ... He was `let go` a while back. A `long` while, actually. When they started restructuring, he was one of the first to go. But he talked them into letting him come every day and fiddle with some interminable project.</line>
+    <line speaker="poppy">He says it's to keep a long gap from growing his resume, but I think he just has nothing better to do. One of those old men who `needs` to work. You know? Doesn't know how to `be` any other way. Well, there are no real jobs here, but there are `fake` jobs, I guess.</line>
+  </scene>
+
+  <scene name="cate" nextScene="fall-of-exchange">
+    <line speaker="poppy">Cate! I love Cate. She helped deliver both my nieces: one in a hospital, and one at the base of a mossy, moonlit oak. It was beautiful. I love Cate.</line>
+    <line speaker="poppy">I think Loretta's granddaughter used her, too ... Oh, Loretta used to work here. Actually, I think quite a few of our former operators have relied at some time on Cate's services.</line>
+    <line speaker="poppy">Well, now I guess they'll have more time with their little ones; as you can see, all their chairs are empty!</line>
+  </scene>
+
+  <scene name="fall-of-exchange" nextScene="end">
+    <line speaker="poppy">It wasn't always like this. When I came to work at the Echo River Central Exchange, there were twelve of us: Loretta, Edna, Meg, Cara, Marie, Lois, Liz, Hester, Angie, Wilma, Connie. I was number twelve; Connie and I were hired on the same day, but she showed up early.</line>
+    <line speaker="poppy">Marie finished college, and Hester was fired for snapping at a rude caller — but he had it coming, and I hear she did just fine on her own — so they hired Beryl, Jana, and Sachiko, which brought us up to thirteen, and that was as many operators as we ever had here at one time.</line>
+    <line speaker="poppy">The power company came along, buying up all the lines, and one day they took the exchange as a throw-in, like it was nothing. Nothing! And they started phasing us out.</line>
+    <line speaker="poppy">Edna, Meg, Cara, and Lois left one Friday evening, and were asked not to come back on Monday morning. Beryl saw the writing on the wall and quickly found employment at a private PBX. They had Jana and Liz stop routing calls, and write up some kind of "best practices" document instead. It was their final task as Exchange employees.</line>
+    <line speaker="poppy">Some of the girls were reassigned to other divisions. Connie, I think, was checking residential meters. Sachiko and Wilma were moved into energy sales, cold-calling businesses to see if they needed to upgrade their electricity plan. At least they were still on the phone.</line>
+    <line speaker="poppy">Then it was just Loretta, Angie, and me. We were swamped. The hours were hell, and hard on the throat. The "voice with a smile" became a croak. I was gargling warm salt water in the break room, sipping from a thermos full of hot honey broth stashed under my chair. Oh, I brought a lot of "extended technique" to the switchboard in those days —</line>
+  </scene>
+
+</conversation>

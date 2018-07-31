@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="bureau-looked-at-barrier" value="true"/>
+    <line speaker="shannon">End of the line?</line>
+
+    <option goto="seems-end" speaker="conway">Seems that way.</option>
+    <option goto="construction" speaker="conway">Maybe it's still under construction.</option>    
+  </scene>
+
+  <scene name="seems-end" nextScene="end">
+    <line speaker="shannon">Not for us. I hope.</line>
+  </scene>
+  
+  <scene name="construction" nextScene="end">
+    <line speaker="shannon">We can hope.</line>
+  </scene>
+</conversation>

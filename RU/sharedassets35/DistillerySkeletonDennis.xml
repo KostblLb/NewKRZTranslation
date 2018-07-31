@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-dennis" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Dennis. We love Dennis, truly. But ...</line>
+    <line speaker="doolittle" style="skeleton">Dennis cost all of us a great deal of time and money, you see, many years ago, and it continues to `sting`. His family owned a logging company once. They accidentally floated an uninspected log infested with termites down the river, and it ended up in our yard to spread its pestilence.</line>
+    <line speaker="doolittle" style="skeleton">Devastation! We didn't catch it until the porous casks had already been filled. "The Great Warehouse Spillage Disaster," we still call it ...</line>
+    <line speaker="doolittle" style="skeleton">Yes, Dennis will be here for a while. We're just lucky he's such an agreeable fellow.</line>
+  </scene>
+</conversation>

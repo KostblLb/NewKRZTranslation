@@ -1,0 +1,33 @@
+# -*- mode: blocking -*-
+
+@func HideSkeletons
+
+  Main Disable Skeleton1
+  Main Disable Skeleton2
+  Main Disable Skeleton3
+  Main Disable SkeletonLight
+  Main Disable TikiSkeletons
+  Main Disable TikiBeach/DrinksSkeletons
+  Main Disable TikiBeach/DrinksSkeletons_Lines
+  Main Disable TikiBeach/SkeletonSurfaceGlow
+
+@end
+
+@func ShowSkeletons
+
+  Main Enable Skeleton1
+  Main Enable Skeleton2
+  Main Enable Skeleton3
+  Main Enable SkeletonLight
+  Main Enable TikiSkeletons
+  Main Enable TikiBeach/DrinksSkeletons
+  Main Enable TikiBeach/DrinksSkeletons_Lines
+  Main Enable TikiBeach/SkeletonSurfaceGlow
+  Main Event play-skeletons-chatter
+
+  Main Disable Johnny
+  Main Disable TikiJunebug
+  
+@end
+
+@HideSkeletons

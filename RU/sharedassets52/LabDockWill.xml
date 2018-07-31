@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="lab-dock-looked-at-will" value="true" />
+    <line speaker="mimi">Oh! It's ... wait, who is that? That guy in the hoodie.</line>
+    <line speaker="jenn">What? I've never seen him before.</line>
+    <line speaker="mimi">Really? He looks so damn familiar. I thought maybe he was a former intern or something.</line>
+    <line speaker="jenn">He's a little old for that, right? No, I don't recognize him. Sorry. You're all `deja vu` this morning. It's spooky.</line>
+    <line speaker="mimi">Sorry, just one of those days, I guess.</line>
+  </scene>
+</conversation>

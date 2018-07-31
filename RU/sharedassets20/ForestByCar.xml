@@ -1,0 +1,69 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="car-conversation-finished">
+  <scene name="intro">
+    <setGameVar name="forest-talked-by-car" value="true"/>
+    
+    <line speaker="shannon">Do you have any family you're close with? Brother or sister? Kids?</line>
+    <option goto="brother" speaker="conway">I have a brother, but I wouldn't say we're close.</option>
+    <option goto="lysette" speaker="conway">Just Lysette's family, I guess.</option>
+  </scene>
+
+  <scene name="brother">
+    <line speaker="shannon">What does he do?</line>
+    <option goto="banker" speaker="conway">Some kind of banker. Kind of a jerk sometimes.</option>
+    <option goto="retired" speaker="conway">He's about my age. Retired.</option>
+    <option goto="dont-know" speaker="conway">I don't know. Just another drifter.</option>
+  </scene>
+
+  <scene name="banker" nextScene="talk-to-brother">
+    <line speaker="shannon">Yeah, I know the type.</line>
+  </scene>
+
+  <scene name="retired" nextScene="talk-to-brother">
+    <line speaker="shannon">Retired. I can't imagine ... Well, I'd probably hate it anyway.</line>
+  </scene>
+
+  <scene name="dont-know" nextScene="talk-to-brother">
+    <line speaker="shannon">Lot of that going around, these days.</line>
+  </scene>
+
+  <scene name="talk-to-brother">
+    <line speaker="shannon">You never talk to him?</line>
+    <option goto="too-good" speaker="conway">He's too good for me, I guess.</option>
+    <option goto="bridge" speaker="conway">Nah, I burned that bridge pretty bad.</option>
+  </scene>
+
+  <scene name="too-good" nextScene="weaver">
+    <line speaker="shannon">I doubt that.</line>
+  </scene>
+
+  <scene name="bridge" nextScene="weaver">
+    <line speaker="shannon">Who knows.</line>
+  </scene>
+
+  <scene name="lysette">
+    <line speaker="shannon">Oh yeah? Husband? Bunch of kids?</line>
+    <option goto="ira" speaker="conway">Her husband Ira and I were friends.</option>
+    <option goto="charlie" speaker="conway">She had this great kid named Charlie, but ...</option>
+    <option goto="just-lysette" speaker="conway">Well ... I guess it's just me and her now.</option>
+  </scene>
+
+  <scene name="ira" nextScene="weaver">
+    <line speaker="shannon">Oh yeah, you mentioned him. Your old boss. Fierce-tempered, hard-working, up-by-his-bootstraps kind of guy, right? Sounds pretty intense.</line>
+  </scene>
+
+  <scene name="charlie" nextScene="weaver">
+    <line speaker="shannon">Sorry.</line>
+  </scene>
+
+  <scene name="just-lysette" nextScene="weaver">
+    <line speaker="shannon">Oh. Well, two is still a family, right?</line>
+  </scene>
+
+  <scene name="weaver" nextScene="end">
+    <line speaker="shannon">I guess I was always closest with Weaver. As close as someone can be with a girl like that. She was always on her own wavelength, but we were the same age growing up, and everyone else was so busy.</line>
+    <line speaker="shannon">When she disappeared, I got pretty angry, and I guess I just stayed that way. I never really `understood` her, but I `knew` her. It's lonely without someone like that around.</line>
+    <line speaker="shannon">Sorry, I'm ... you're a good listener.</line>
+  </scene>
+
+</conversation>

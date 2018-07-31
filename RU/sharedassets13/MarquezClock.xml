@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <line>A clock hangs on the rear wall. The markings are faded, but it seems to have finally stopped just before a quarter past eleven. Morning or night; who can say?</line>
+  </scene>
+</conversation>

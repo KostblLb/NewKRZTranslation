@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-story" />    
+    <line>While those two gentle beasts kept things under control aboard `The Mucky Mammoth`, I went ashore with the rest of the crew to make use of a public telephone.</line>
+    <line>I called into my answering machine, which I routinely neglect for intervals of months, to chip away at the pile. Cate checked in on a client of hers. She's a birth doula, in addition to being a tugboat captain. Did you know that?</line>
+    <line>Clara talked to her sister in Lithuania ... illness in the family, I gather.</line>
+    <line>Anyway, the evening hit a low point not much later on, so let's take a quiet moment here to listen to the river and reflect on the unburdened sleep of dogs.</line>
+  </scene>
+
+</conversation>

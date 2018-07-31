@@ -1,0 +1,24 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-spirit-safe" value="true"/>
+    <triggerEvent name="start-tape"/>    
+    
+    <line speaker="doolittle" style="skeleton">`(Confidentially.)` Don't let them catch you looking too closely, here. Not within our purview.</line>
+    <option goto="spirit-safe" speaker="conway">What's it for?</option>
+    <option goto="look-away" speaker="shannon">We can look at something else.</option>
+  </scene>
+
+  <scene name="spirit-safe" nextScene="engineering">
+    <line speaker="doolittle" style="skeleton">Keeps us honest in the eyes of the state. Well, in the eyes of the management, anyway ... we keep pretty well out of view down here. Not much chance of being spotted by helicopter. Hey?</line>
+    <line speaker="doolittle" style="skeleton">But if the law came knocking, we could say we were logging and securing our virgin spirits. We could `say`.</line>
+  </scene>
+
+  <scene name="look-away" nextScene="engineering">
+    <line speaker="doolittle" style="skeleton">Sure, plenty else to see.</line>
+  </scene>
+
+  <scene name="engineering" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Marvelous engineering though, isn't it?</line>
+  </scene>
+</conversation>

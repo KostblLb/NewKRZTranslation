@@ -1,0 +1,12 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="dialog-lighten-fast">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="dialog-darken-fast"/>    
+    <setGameVar name="underworld-saw-dymaxion-graveyard" value="true"/>
+    
+    <line>The brochure describes this place as a &quot;`gallery of mislaid futures, abandoned on lonely highways as American industrial design shifted its gaze to the intangible.`&quot;</line>
+    <line>It is a large warehouse, full of oddly-shaped vehicles. Blimp-like, rusted vessels, mostly painted in a dull green that has now faded toward brown. No path has been carved to navigate between them, and many have been damaged enough to leave menacing bits of metal running jaggedly through their small open spaces.</line>
+    <line>It's all a visitor can do to stand at the edge of the building, neck craned, trying to get a glimpse of something.</line>
+  </scene>
+
+</conversation>

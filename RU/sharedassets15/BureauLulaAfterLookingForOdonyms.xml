@@ -1,0 +1,16 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="bureau-completed-lula-document-search" value="true"/>
+    <setGameVar name="bureau-current-floor-goal" value="0"/>
+    
+    <line speaker="lula">Nothing? That's unfortunate. Well, they must still be in transit.</line>
+    <line speaker="lula">You see, we've only moved into this new venue somewhat recently, and it's all a bit in-progress. This was a cathedral not so long ago, can you believe it?</line>
+    <line speaker="lula">And then the Bureau reclaimed it. The old congregation has been directed to one of our storage facilities for their activity.</line>
+    <line speaker="lula">That's where you'll find the street name records, I expect. At the church. Mary Ann at reception can give you directions. Just come back here when you have the files, and we'll begin the necessary paperwork to have the information analyzed.</line>
+    <line speaker="lula">Oh, and while you're out on the road, you might want to stop and see Dr. Truman about your leg. He's a specialist regarding ailments of the joints and limbs, and I know he works at night. His home office is in a small neighborhood on the east edge of Bowling Green.</line>
+    <line speaker="lula">Here's his card. Do stop and see him. That leg is a miserable sight.</line>
+    <line speaker="lula">Take care of each other.</line>
+  </scene>
+
+</conversation>

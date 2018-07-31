@@ -1,0 +1,123 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="met-donald">
+  <scene name="intro">
+    <setGameVar name="hotmk-met-donald" value="true"/>
+    <line>`(DONALD puffs on a smoldering pipe while half-mumbling, half-singing an old country tune.)`</line>
+    <line speaker="donald">`(Softly.)` ... where the old green river runs, through hills and caves not known to us, down to that sunless sea ...</line>
+    <line speaker="donald">Oh! Who are you?</line>
+    <option goto="startle" speaker="conway">Sorry, did we startle you?</option>
+    <option goto="whats-that-song" speaker="junebug">What's that song?</option>
+  </scene>
+
+  <scene name="startle" nextScene="donald-lost-one">
+    <line speaker="donald">I might say you did! I thought you might be one of them ...</line>
+    <line speaker="donald">Oh, no. You can't be. We've been patching all their spy-holes. We keep the lights dim and the motors running softly, and we route the smoke out through ... out through ...</line>
+  </scene>
+
+  <scene name="whats-that-song" nextScene="donald-lost-one">
+    <setGameVar name="hotmk-asked-donald-about-song" value="true"/>
+    <line speaker="donald">Oh, you've caught a verse of my absent-minded warbling. It's just a song from my ... youth. Something a dear friend used to sing to herself as we hacked on crystal radios in the boiler room.</line>
+    <line speaker="donald">`(Singing.)` &quot;In old Kentucky, where my love / a lovely home did build for me / and where the old green river runs / through hills and caves not known to us / down to that sunless sea ... &quot;</line>
+    <line speaker="donald">From there on, it's all meandering rivers and romantic greenery, and ...</line>
+  </scene>
+
+  <scene name="donald-lost-one">
+    <line speaker="donald">... that is ... what were we talking about?</line>
+    <option condition="!hotmk-asked-donald-about-song" goto="whats-that-song" speaker="junebug">You were singing.</option>
+    <option goto="computer" speaker="shannon">What's that computer over there? Looks pretty vintage.</option>
+    <option goto="the-road" speaker="conway">We're a bit lost, actually.</option>
+  </scene>
+
+  <scene name="the-road">
+    <line speaker="donald">Ah, you came from the road. The |Zero|. No, you should stay off that road. Not safe. Bizarre topology. You'll never get anywhere. It just brings you right back here.</line>
+    <option goto="zero-back-to-cave" speaker="conway">Back to this cave?</option>
+    <option goto="bridge-out" speaker="conway">The bridge is out down there.</option>
+    <option goto="computer" speaker="shannon">What's that you're working on? Looks pretty vintage.</option>
+  </scene>
+
+  <scene name="zero-back-to-cave" nextScene="donald-trapped">
+    <line speaker="donald">Always back to this spot. It's a prison. An irrational prison ...</line>
+  </scene>
+
+  <scene name="bridge-out" nextScene="donald-trapped">
+    <line speaker="donald">Hm. Yes. We're quite `marooned` in this moment ...</line>
+  </scene>
+
+  <scene name="donald-trapped" nextScene="computer">
+    <line speaker="donald">But I don't mind. Not anymore. This is where my life's work is. The computer. Right on the other side of the spire.</line>
+  </scene>
+
+  <scene name="computer">
+    <line speaker="donald">It looks like a harmless old computer, doesn't it? Like some beat-up mainframe exhumed from a university basement and left in this cave to rot ... or to flower!</line>
+    <line speaker="donald">No, it's no ordinary computer. I've modified it extensively, and in some pretty `experimental` ways, believe you me! And that's to say nothing of the software, but ...</line>
+    <line speaker="donald">`(To SHANNON.)` You look like a technically-minded sort of person. Tell me: do you know the effects of mold growth on diffused-base transistor circuitry?</line>
+    <option goto="computer-mold-short-circuit" speaker="shannon">Sounds like it would short circuit.</option>
+    <option goto="computer-mold-burn" speaker="shannon">The mold would burn up.</option>
+  </scene>
+
+  <scene name="computer-mold-short-circuit" nextScene="computer-entropy">
+    <setGameVar name="hotmk-mold-short-circuit" value="true"/>
+    <line speaker="donald">Certainly, certainly ... but not all of it. Some moldy filaments are more or less conductive than others, and it grows in non-linear, chaotic patterns. We can guide it a bit, through a simple application of classical horticulture, but we can't produce specific results, only `tendencies`.</line>
+  </scene>
+
+  <scene name="computer-mold-burn" nextScene="computer-entropy">
+    <setGameVar name="hotmk-mold-burn" value="true"/>
+    <line speaker="donald">Exactly. It burns, and oh the sweet smoke that issues from it! But it also leaves a sticky residue to seep through the machine, forming new connections and creating new circuits. The computer is no longer the pure domain of language or mathematics, but entropy.</line>
+  </scene>
+
+  <scene name="computer-entropy" nextScene="xanadu-start">
+    <line speaker="donald">Thwarted and feeble, we hammer on this derelict keyboard: `&quot;MY NAME IS REASON, KING OF KINGS!&quot;`</line>
+    <line speaker="donald">But we are mere <if condition="hotmk-mold-burn">tourists<else>gardeners</else></if> in the ruins. Our keystrokes echo off into the tunnels ... boundless and bare, the caves stretch far away. We are too late. Always too late ...</line>
+  </scene>
+
+  <scene name="xanadu-start">
+    <line speaker="donald">... what? Did you say something?</line>
+    <option goto="xanadu-software" speaker="shannon">You were about to tell us about the software.</option>
+    <option goto="xanadu-mold" speaker="shannon">I'm just interested in the mold computer.</option>
+  </scene>
+
+  <scene name="xanadu-software" nextScene="heard-about-xanadu">
+    <setGameVar name="hotmk-asked-about-software" value="true"/>
+    <line speaker="donald">Oh, the software! My life's work ... `XANADU`. You've heard of it?</line>
+  </scene>
+
+  <scene name="xanadu-mold" nextScene="heard-about-xanadu">
+    <setGameVar name="hotmk-asked-about-mold" value="true"/>
+    <line speaker="donald">The &quot;mold computer&quot; ... the ... ? Oh, `XANADU`! You've heard about it!</line>
+  </scene>
+
+  <scene name="heard-about-xanadu">
+    <line speaker="donald">Perhaps you've read about it in a journal? It's been years since I published anything. `XANADU` has evolved significantly since I explained its data structures in my article `Literary Multitudes: Hypertextual Narrative as Poststructural Witness`.</line>
+    <line speaker="donald">Evolved ... and then deteriorated. `(DONALD sighs dramatically, and takes a puff from his pipe.)` I'm afraid you are too late, fellow hypertext enthusiast. As the mold accumulated on the circuitry, `XANADU` blossomed for a moment into something holy and enchanted ... then all the charm was broken.</line>
+    <line speaker="donald">Do you have any idea what it's like to spend your life building something, and then sit powerlessly as your work declines into ruin?</line>
+    
+    <option goto="antique-shop" speaker="conway">I drive deliveries for a small antique shop, and we're closing down.</option>
+    <option goto="tv-shop" speaker="shannon">I fix TVs and I'm about to lose the lease on my workshop.</option>
+    <option goto="family" speaker="ezra">My family disappeared; Julian and me don't know what to do.</option>
+    <option goto="not-really" speaker="junebug">Not really.</option>
+  </scene>
+
+  <scene name="antique-shop" nextScene="xanadu-description">
+    <setGameVar name="hotmk-told-donald-about-antique-shop" value="true"/>    
+    <line speaker="donald">Ah, shuffling around the dusty ghosts of antiquity ...</line>
+  </scene>
+
+  <scene name="tv-shop" nextScene="xanadu-description">
+    <setGameVar name="hotmk-told-donald-about-tv-shop" value="true"/>
+    <line speaker="donald">Oh! They are not long, the days of electron guns and cathode rays. Out of a glowing dream, a ghostly light emerges for a while, then fades ...</line>
+  </scene>
+
+  <scene name="family" nextScene="xanadu-description">
+    <setGameVar name="hotmk-told-donald-about-ezras-family" value="true"/>
+    <line speaker="donald">So! Wandering without the ones who give us purpose ... like a ghost ...</line>
+  </scene>
+
+  <scene name="not-really" nextScene="xanadu-description">
+    <setGameVar name="hotmk-told-donald-about-junebug" value="true"/>
+    <line speaker="donald">Ah! Then I hope you never have occasion to be haunted by the ghosts of missed opportunities ...</line>
+  </scene>
+
+  <scene name="xanadu-description" nextScene="end">
+    <line speaker="donald">Well. I have my own ghosts. And I keep them in `there`. In `XANADU`. It's running on that glorious, dusty machine. Take a look if you'd like. Too late to do anything but smoke and reminisce, anyway ... far too late to do anything ...</line>
+  </scene>
+</conversation>

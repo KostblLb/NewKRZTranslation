@@ -1,0 +1,20 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-tour-end-conversation,stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-tour-completed" value="true"/>
+    <triggerEvent name="start-tape,total-darkness,tour-completed"/>
+    
+    <line speaker="doolittle" style="skeleton">Let's head back upstairs, eh? I have one more thing to show you.</line>
+    <line speaker="shannon">Wait, we ... We only came here looking for some answers about this stupid moldy computer —</line>
+    <line speaker="doolittle" style="skeleton">Oh! The old man in the cave, with the moldy computer.</line>
+    <line speaker="doolittle" style="skeleton">That black `mold`, it's drawn to whiskey. It feeds on ethanol fumes, you see? As we age the whiskey, some of it inevitably evaporates into the air. The `angel's share`.</line>
+    <line speaker="doolittle" style="skeleton">It goes through the vents here, and out into the caves. If we can scrape up that mold, we can usually apply some pressure and cold to it — squeeze and condense the angel's share back into drinkable whiskey.</line>
+    <line speaker="doolittle" style="skeleton">Every drop counts when you're making a living on the stuff! So we'd go down and scrape it off his equipment, just like any other place it grows.</line>
+    <line speaker="doolittle" style="skeleton">He kept sending his people here to drive us away! Paranoid. Truly paranoid. Well, now we have The Formula, so we don't need to go collecting mold.</line>
+    <line condition="hotmk-xanadu-repair-solution=phrase" speaker="doolittle" style="skeleton">But we didn't do anything to his moldy computer. He just forgot the password. One of his assistants shared it with me: `dome in air`. That'll get you going, I'm sure of it.</line>
+    <line condition="hotmk-xanadu-repair-solution=mold" speaker="doolittle" style="skeleton">Since we stopped going down there, I'm sure the mold's gotten pretty thick. Try cleaning off the timing crystal. That'll get you going, I'm sure of it.</line>
+    <line condition="hotmk-xanadu-repair-solution=unplug" speaker="doolittle" style="skeleton">One thing I know: that computer's been running for `decades`. Switch it off for a minute and let it rest! That'll get you going, I'm sure of it.</line>
+
+    <line speaker="doolittle" style="skeleton">So. Join me upstairs?</line>
+  </scene>
+</conversation>

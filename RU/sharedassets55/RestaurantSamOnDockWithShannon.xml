@@ -1,0 +1,24 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="restaurant-shannon-met-sam-on-dock" value="true" />
+    <blocking>@StopSamHumming</blocking>
+    <line speaker="sam">Hello, out there! Headed up or down?</line>
+    <option goto="unsure" speaker="shannon">Sometimes I wonder myself.</option>
+    <option goto="crew" speaker="shannon">I'm just looking for the crew of `The Mucky Mammoth`.</option>
+  </scene>
+
+  <scene name="unsure" nextScene="bye">
+    <line speaker="sam">Hm. Best never to dive with doubt in your heart, though it can't always be helped.</line>
+  </scene>
+
+  <scene name="crew" nextScene="bye">
+    <line speaker="sam">Yes, ma'am, they stop here every morning. I expect they're upstairs now, and Ida's got the coffee going. I could use a cup myself; it's cold down there!</line>
+  </scene>
+
+  <scene name="bye" nextScene="end">
+    <line speaker="sam">Well, head on upstairs, and she'll take care of you. I'll be along in a minute.</line>
+  </scene>
+
+</conversation>
+

@@ -1,0 +1,124 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-theater-conversation">
+  <scene name="intro">
+    <setGameVar name="overworld-saw-theater" value="true"/>
+    
+    <line speaker="junebug">This must be near the end.</line>
+    <line speaker="johnny">You think?</line>
+    <line speaker="junebug">Sure, you can tell they're all in crisis.</line>
+    <option goto="happy-ending" speaker="conway">You don't think it's a happy ending?</option>
+    <option goto="crisis" speaker="conway">What makes you think they're in crisis?</option>
+    <option goto="film-title" speaker="conway">What's the title of this film?</option>
+  </scene>
+
+  <scene name="happy-ending" nextScene="ending">
+    <line speaker="junebug">Sure, most of them are. But first everyone gets in a crisis, and that makes it more satisfying.</line>
+    <line speaker="johnny">Excellent observation, ma'am.</line>
+    <line speaker="junebug">I manage.</line>
+  </scene>
+
+  <scene name="crisis" nextScene="ending">
+    <line speaker="junebug">It's in their posture. See how the big one is all slumped there? If they were just introducing him, they'd want him to look tall and powerful. Now you see him worn down to almost nothing.</line>
+    <line speaker="johnny">It's pathetic.</line>
+    <line speaker="junebug">That's the idea, cricket.</line>
+  </scene>
+
+  <scene name="film-title" nextScene="ending">
+    <line speaker="shannon">I have the ticket here ...</line>
+    <line speaker="shannon">Huh, it doesn't list the title.</line>
+  </scene>
+
+  <scene name="ending">
+    <line speaker="ezra">Do you think they'll start it over after the ending?</line>
+    <line speaker="shannon">Yeah, they do that sometimes.</line>
+    <line speaker="ezra">Good, I want to know how it starts.</line>
+    <option goto="flip-ending" speaker="conway">You want to see the beginning after the ending?</option>
+    <option goto="ask-truck-about-beginning" speaker="conway">Maybe we can ask those folks in the pickup.</option>
+  </scene>
+
+  <scene name="flip-ending" nextScene="people">
+    <line speaker="ezra">Maybe it's better that way.</line>
+  </scene>
+
+  <scene name="ask-truck-about-beginning" nextScene="people">
+    <line speaker="shannon">They look like they're sleeping.</line>
+  </scene>
+
+  <scene name="people">
+    <line speaker="ezra">Do all these people know each other?</line>
+    <option goto="people-coworkers" speaker="conway">I think they work together.</option>
+    <option goto="people-strangers" speaker="conway">No, they just met.</option>
+  </scene>
+
+  <scene name="people-strangers">
+    <option goto="people-big-guy" speaker="conway">The big guy just arrived.</option>
+    <option goto="people-lady" speaker="conway">The dark-haired lady doesn't trust anyone.</option>
+  </scene>
+
+  <scene name="people-coworkers">
+    <option goto="people-big-guy" speaker="conway">The big guy is new.</option>
+    <option goto="people-lady" speaker="conway">The dark-haired lady is the boss.</option>
+  </scene>
+
+  <scene name="people-big-guy">
+    <option goto="people-final" speaker="conway">He's troubled.</option>
+    <option goto="people-final" speaker="conway">He's trying to fit in.</option>
+  </scene>
+
+  <scene name="people-lady">
+    <option goto="people-final" speaker="conway">She's troubled.</option>
+    <option goto="people-final" speaker="conway">She's just looking out for business.</option>
+  </scene>
+
+  <scene name="people-final">
+    <line speaker="ezra">Oh. OK.</line>
+    <line speaker="ezra">How come nobody talks?</line>
+    <line speaker="shannon">It's silent. Before your time.</line>
+    <line speaker="shannon">`(To CONWAY.)` Do they just play old movies here?</line>
+    <option goto="speakers" speaker="conway">Probably so they don't have to give you speakers for your car.</option>
+    <option goto="dont-know-about-movies" speaker="conway">I don't know much about movies.</option>
+  </scene>
+
+  <scene name="speakers" nextScene="something-happens">
+    <line speaker="junebug">The car speakers are my favorite part. You know they use radio? Just regular radio, I mean. Sometimes people bring a little transmitter in and jam the signal with some circus music or something.</line>
+    <line speaker="junebug">Something loud and garish, that's what makes the best jamming signal. Hit all the frequencies. Ha!</line>
+  </scene>
+
+  <scene name="dont-know-about-movies" nextScene="something-happens">
+    <line speaker="shannon">No? That's funny, you seem like the type ... sitting in a theater watching some old cowboy movie ... big old bag of popcorn. Ha ha.</line>
+    <line speaker="shannon">For what it's worth, I don't know much about movies either. I like TV ...</line>
+    <line speaker="shannon">You know the difference between film and TV? A film is projected light that gets bounced off a screen. You see the reflection. With a TV, you look straight at the light.</line>
+  </scene>
+
+  <scene name="something-happens">
+    <line speaker="junebug">Damn, did you see that?!</line>
+    <line speaker="shannon">`(To EZRA.)` I'm not sure you should be watching this, kid.</line>
+    <line speaker="ezra">I'm not watching.</line>
+    <option goto="hes-ok" speaker="conway">Think he's OK?</option>
+    <option goto="surprise" speaker="conway">I didn't see `that` coming.</option>
+    <option goto="near-end" speaker="conway">Got to be near the end.</option>
+  </scene>
+
+  <scene name="hes-ok" nextScene="final">
+    <line speaker="junebug">Oh, sure. He can come back from that. Big guy like him ...</line>
+  </scene>
+
+  <scene name="surprise" nextScene="final">
+    <line speaker="shannon">Took a violent turn, there.</line>
+  </scene>
+
+  <scene name="near-end" nextScene="final">
+    <line speaker="junebug">Oh, yeah. It's almost over.</line>
+    <line speaker="johnny">Definitely.</line>
+  </scene>
+  
+  <scene name="final">
+    <line speaker="shannon">We should get back on the road.</line>
+    <option speaker="conway" goto="end">Yup.</option>
+    <option speaker="conway" goto="watch-more">Let's just watch. See how it ends.</option>
+  </scene>
+  
+  <scene name="watch-more" nextScene="end">
+    <setGameVar name="overworld-theater-one-stay" value="true"/>
+  </scene>
+</conversation>

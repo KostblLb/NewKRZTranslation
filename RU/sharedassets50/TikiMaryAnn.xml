@@ -1,0 +1,60 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tiki-shannon-talked-to-maryann" value="true" />
+    <line speaker="mary ann">Can you believe this? I pulled a double shift at the Bureau this morning, since they were having all that elevator trouble. Stop off at my studio for a bit, and then I think I'm free to drink in peace ...</line>
+    <line speaker="mary ann">Naturally, the rest of the office rolls in before I'm more than a sip or two into this delightful cocktail.</line>
+    <line speaker="mary ann">Greg even asked me to fax something for him! I should write this up as overtime. Oh well — if I have one true talent, it's tuning out my colleagues. Ha ha.</line>
+    <option goto="party" speaker="shannon">So they moved the office party down here?</option>
+    <option goto="drink" speaker="shannon">What are you drinking?</option>
+  </scene>
+
+  <scene name="party" nextScene="my-bar">
+    <line speaker="mary ann">They did. Remember that shipment of bourbon I mentioned, from Hard Times? I actually mistook `you` for the delivery driver, back at the Bureau ...</line>
+    <line speaker="mary ann">Anyway — I guess it never came. The driver was in an accident `en route`. Terrible, actually.</line>
+  </scene>
+
+  <scene name="drink" nextScene="my-bar">
+    <line speaker="mary ann">Oh, something Patch mixed up. He's the bartender. It's called a ... "`Something` Smoke." Oh, "Downward Smoke," I think. No clue what's in it. Ha ha. I trust him.</line>
+    <line speaker="mary ann">My esteemed colleagues are in for a surprise — Patch mixes them pretty strong! I guess that's the culture. I'm sure they'll enjoy it.</line>
+  </scene>
+
+  <scene name="my-bar">
+    <line speaker="mary ann">Still — between us — I wish those busybodies had found `any` other venue ... I've always thought of this is as `my bar`. My colorful, tranquil "third place." You know what I mean, right?</line>
+    <option goto="dad" speaker="shannon">My dad used to hang out at a barber shop.</option>
+    <option goto="mom" speaker="shannon">My mom would always stop by a pet shop on the way home.</option>
+  </scene>
+
+  <scene name="dad" nextScene="ask-shannon-about-third-place">
+    <line speaker="mary ann">Exactly. Plenty of seating, people from the neighborhood drifting in and out ... and men's haircuts are so cheap and simple — it's no financial burden, no big production.</line>
+    <line speaker="mary ann">I'd be at a salon every weekend, but my hair needs special treatment. Sensitive scalp. That's my cross to bear. Ha ha.</line>
+  </scene>
+
+  <scene name="mom" nextScene="ask-shannon-about-third-place">
+    <line speaker="mary ann">Oh, checking in with the turtles and parakeets? I can relate. My apartment neighbors a vibrant bat community ... but I'm always on the outside looking in.</line>
+  </scene>
+
+  <scene name="ask-shannon-about-third-place">
+    <line speaker="mary ann">What about you?</line>
+    <option goto="third-place-shop" speaker="shannon" variableChange="tiki-shannon-third-place=shop">I live, work, and relax at my shop ... or anyway I `did` until today.</option>
+    <option goto="third-place-none" speaker="shannon" variableChange="tiki-shannon-third-place=none">I guess I don't have one.</option>
+    <option goto="third-place-zero" speaker="shannon" variableChange="tiki-shannon-third-place=zero">I'm starting to wonder if the |Zero| could be my 'third place' now ...</option>
+  </scene>
+
+  <scene name="third-place-shop" nextScene="closing">
+    <line speaker="mary ann">Surely you don't want to die alone at your workbench? Or do you? I guess that could be sort of romantic in itself. Sort of a "tortured genius craftswoman" thing. OK, I can see it.</line>
+  </scene>
+
+  <scene name="third-place-none" nextScene="third-place-shop">
+    <line speaker="mary ann">Get one. That's my unsolicited, but well-meaning advice. Ha ha.</line>
+  </scene>
+
+  <scene name="third-place-zero" nextScene="third-place-shop">
+    <line speaker="mary ann">Oh. Well, it `might` be ... if you're not careful.</line>
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line speaker="mary ann">Sounds like you've got some reflecting to do. That's OK. This is a good place for it. Here on the lake, I mean.</line>
+  </scene>
+
+</conversation>

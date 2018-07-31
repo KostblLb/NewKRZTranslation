@@ -1,0 +1,36 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="advance-camera,kitchen-sounds">
+  <scene name="intro">
+    <line speaker="ezra">What are they singing about?</line>
+    <option goto="travel" speaker="shannon">They're singing about travel.</option>
+    <option goto="home" speaker="shannon">They're singing about going home.</option>
+    <option goto="hard-times" speaker="shannon">They're singing about hard times.</option>
+  </scene>
+
+  <scene name="travel">
+    <line speaker="ezra">Yeah. They're traveling and they want to go home. It's dark and raining, and they don't know where to go, but they're not scared. Do you think they'll figure it out?</line>
+    <option goto="positive-ending" speaker="shannon">I think so.</option>
+    <option goto="negative-ending" speaker="shannon">Maybe not. But they'll figure `something` out.</option>
+  </scene>
+
+  <scene name="home">
+    <line speaker="ezra">Yeah. They're singing about their home because they're lost right now. It's a scary song.</line>
+    <option goto="positive-ending" speaker="shannon">It's not scary. It's hopeful.</option>
+    <option goto="negative-ending" speaker="shannon">It's scary, but they can still sing about it.</option>
+  </scene>
+
+  <scene name="hard-times">
+    <line speaker="ezra">Yeah. Everybody has it pretty rough right now. Even if you just want to go home, you'll have problems. Like it'll be too dark and you'll get scared.</line>
+    <option goto="positive-ending" speaker="shannon">It's hard sometimes, but things have a way of working out.</option>
+    <option goto="negative-ending" speaker="shannon">Maybe you can just stay lost in the dark. Maybe you'll be OK with that eventually.</option>
+  </scene>
+
+  <scene name="positive-ending" nextScene="end">
+    <line speaker="ezra">Dr. Truman's going to help your friend. He'll be OK.</line>
+  </scene>
+
+  <scene name="negative-ending" nextScene="end">
+    <line speaker="ezra">Your friend's in pretty bad shape, isn't he?</line>
+  </scene>
+
+</conversation>

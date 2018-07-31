@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="museum-front-desk-talked-to-dog" value="true"/>
+    <setGameVar name="museum-location" value="information-desk" />    
+    <line speaker="thomas">Oh yeah, he was talking to his dog. Guy was a weirdo.</line>
+    <option goto="what-did-he-say" speaker="museum staff">What did he say?</option>
+    <option goto="weird" speaker="museum staff">Doesn't seem that weird.</option>
+  </scene>
+
+  <scene name="what-did-he-say" nextScene="stay-long">
+    <line speaker="thomas">Just small talk, you know, like you talk to your buddies or something. Like you talk to a dock worker. Just like: &quot;damn, this is a lot of rain; I haven't seen rain like this since that storm a couple years back that took out Lysette's herb garden.&quot;</line>
+  </scene>
+
+  <scene name="weird" nextScene="stay-long">
+    <line speaker="thomas">You didn't see the guy. Tall, kinda stooped over, limping bad. Looked like an old drunk if you ask me. I bet they were both drunks; breaking in here looking for a place to sleep it off.</line>
+  </scene>
+
+  <scene name="stay-long" nextScene="end">
+    <line speaker="thomas">I just feel bad for that old dog, getting dragged all over by a couple of drunks. Old dog like that should be sleeping on a porch somewhere. But that's loyalty for you.</line>
+    <line speaker="thomas">Well, they didn't stay long anyway.</line>
+  </scene>
+
+</conversation>

@@ -1,0 +1,57 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="venue-options">
+    <setGameVar name="bureau-talked-to-carrington" value="true"/>
+    <line speaker="carrington">Hello, my friends. I'm relieved to run across you again.{if}[!one:dog-nameless] Hello, ${one:dog-name}.{end}{if}[one:dog-nameless]  I see the hound is still following you.{end} No better place than the road for a hound.</line>
+    <line speaker="carrington">I'm afraid I've been unsuccessful in my search for a venue for my play. Have you found anything in your travels?</line>
+  </scene>
+
+  <scene name="venue-options">
+    <option goto="elkhorn" speaker="conway">The old Elkhorn Mine.</option>
+    <option condition="!bureau-suggested-storage-facility-to-carrington" goto="storage" speaker="conway">There's a self-storage facility not far from here.</option>
+    <option goto="gas-station" speaker="conway">I think you should do it back at the gas station.</option>
+  </scene>
+
+  <scene name="elkhorn" nextScene="introduce-psychoacoustics">
+    <setGameVar name="carrington-play-location" value="mine"/>        
+    
+    <line speaker="carrington">Ah, there's an idea. Not `in` the mine, surely — such a constrained space would have dreadfully oppressive acoustics. But at the surface of the mine. Just before sunrise.</line>
+    <line speaker="carrington">The resonances and reverberations of an old mining tipple ... it's tragic even to think.</line>
+  </scene>
+
+  <scene name="storage">
+    <line speaker="carrington">A storage facility? That doesn't sound particularly intimate.</line>
+    <option goto="storage-church" speaker="conway">There's a church inside of it.</option>
+    <option goto="venue-options" speaker="conway">No, probably not.</option>
+  </scene>
+
+  <scene name="storage-church" nextScene="introduce-psychoacoustics">
+    <setGameVar name="carrington-play-location" value="storage"/>
+    <line speaker="carrington">Ah, how desperate. How earnestly spiritual. Just to imagine a choir resonating and reverberating through a concrete storage facility ...</line>
+  </scene>
+
+  <scene name="gas-station" nextScene="introduce-psychoacoustics">
+    <setGameVar name="carrington-play-location" value="gasstation"/>
+    <line speaker="carrington">`Equus Oils`? By the interstate? It had never occurred to me ...</line>
+    <line speaker="carrington">It does sound compellingly desolate: the roar of cars and trucks, resonating and reverberating through nearby overpasses.</line>
+  </scene>
+
+  <scene name="introduce-psychoacoustics">
+    <line speaker="carrington">Yes, the psychoacoustics of the space are of prime concern.</line>
+    <option goto="explain-psychoacoustics" speaker="conway">Psychoacoustics, definitely.</option>
+    <option goto="confirm-choice" speaker="conway">So, you think it'll work?</option>
+  </scene>
+
+  <scene name="explain-psychoacoustics" nextScene="confirm-choice">
+    <line speaker="carrington">Psychoacoustics is a field of perceptual study: how do we `perceive` sound? What does it do to our souls? How do sounds work through us? The play must `resonate` through my actors in their performance. And then it must `reverberate` out from them,  and again `resonate` through the audience. Theater is mostly acoustic, you see.</line>
+  </scene>
+
+  <scene name="confirm-choice" nextScene="end">
+    <line condition="carrington-play-location=mine" speaker="carrington">Yes, I think the exterior of the mine will do wonderfully. Truly, I expect, a tragic vision.</line>
+    <line condition="carrington-play-location=storage" speaker="carrington">Yes, I think the self-storage facility will do wonderfully. A humble and intimate production in the belly of industry.</line>
+    <line condition="carrington-play-location=gasstation" speaker="carrington">Yes, I think Equus Oils will do wonderfully. I can already hear the desolate cry of the road.</line>
+    <line speaker="carrington">You've been immeasurably helpful. If you have time later this evening, I'd love to go over my production notes with you. Just meet me there in a few hours, if you like.</line>
+    <line speaker="carrington">Many thanks.</line>
+  </scene>
+
+</conversation>

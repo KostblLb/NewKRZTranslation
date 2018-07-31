@@ -1,0 +1,18 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="mimi">Wait ... I don't remember this test.</line>
+    <line speaker="jenn">Oh.</line>
+    <line speaker="mimi">Did we cut this one? What's the questionnaire like?</line>
+    <line speaker="jenn">No, this is just ... sometimes, if I can't make it in for a few days, I might leave a note to feed the cats.</line>
+    <line speaker="mimi">For the test subjects? Wow. How do you know they'll do it?</line>
+    <line speaker="jenn">I write it on, um ... university letterhead ...</line>
+    <line speaker="mimi">Jenn, that is `unethical`. Ha ha.</line>
+    <line speaker="jenn">At least I don't use university property and research equipment to make `weird video art`!</line>
+    <line speaker="mimi">Very well then, I contradict myself.</line>
+    <line speaker="jenn">Ha ha.</line>
+    <line speaker="mimi">I wonder which is the nobler transgression ...</line>
+    <line speaker="jenn">I'll settle that question: it's nobler to feed kitties.</line>
+    <line speaker="jenn" condition="!one:elkhorn-mine-found-tape-player">Oh, here's another extended monitoring tape, from the waiting room.</line>
+  </scene>
+</conversation>

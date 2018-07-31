@@ -1,0 +1,28 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <triggerEvent name="fade-out-radio"/>
+    <setGameVar name="overworld-saw-picnic" value="true"/>
+    <line>A blanket is spread in the grass just off the road. It would make a reasonable spot for a picnic, sheltered in the daytime by a coffee tree.</line>
+    <option goto="approach" insertedText="Shannon walks over to the picnic spread.">Walk to the picnic spread.</option>
+    <option goto="end" insertedText="The truck pulls away, back onto the road.">Drive away.</option>
+  </scene>
+
+  <scene name="approach">
+    <line>Five places are set. One plate is piled with ham, another with apples.</line>
+    <option goto="ham" insertedText="Shannon pushes a piece of ham with a stick.">Examine the ham.</option>
+    <option goto="apple" insertedText="Shannon pushes at an apple with a stick.">Examine the apples.</option>
+  </scene>
+
+  <scene name="ham" nextScene="play">
+    <line>It definitely isn't ham. Maybe felt? Dyed and embroidered fabric? Some kind of `toy` ham.</line>
+  </scene>
+
+  <scene name="apple" nextScene="play">
+    <line>The apples are waxy ... no, the apples are wax. Wax apples, for display. Maybe toys?</line>
+  </scene>
+
+  <scene name="play" nextScene="end">
+    <line>Someone must have been here, playing at a picnic. The supplies are weathered. Hard to tell how long ago that happened.</line>
+  </scene>
+</conversation>

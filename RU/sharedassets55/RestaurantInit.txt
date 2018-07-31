@@ -1,0 +1,369 @@
+# -*- mode: blocking -*-
+
+@func ShannonSitDown
+
+  Shannon Walk Shannon ShannonSitPosition
+  Shannon Gesture Shannon Enter Sit
+
+@end
+
+@func JohnnyBeforeClawGame
+
+  Johnny Gesture Johnny Enter Lean
+
+@end
+
+@func JohnnyAfterClawGame
+
+  Johnny Gesture Johnny Exit Lean
+
+@end
+
+@func EzraBeforeClawGame
+
+  Ezra Gesture Ezra Enter ClawGame
+
+@end
+
+@func EzraAfterClawGame
+
+  Ezra Gesture Ezra Exit ClawGame
+  Ezra Message Ezra WithWalkman ? restaurant-won-claw-game
+
+@end
+
+@func BandEnters
+
+  Band Message RestaurantPontoon Enter
+
+@end
+
+@func InsertCoin
+
+  Claw Message RestaurantClawGame SetX 1
+  Claw Message RestaurantClawGame SetY 1
+  Claw Message RestaurantClawGameMusic StartMusic
+
+@end
+
+# Debug
+
+@func DebugRestartCamera
+
+  Main Message RestaurantCamera Restart
+
+@end
+
+@func DebugMoveClaw
+
+  Claw Message RestaurantClawGame SetX -1
+  Claw Message RestaurantClawGame SetY -1
+  Claw Listen claw-game-ready
+  Claw Message RestaurantClawGame Grab
+
+@end
+
+@func DebugSamReturns
+
+  Main Dialog RestaurantSamReturns
+
+@end
+
+@func DebugPlayClawGame
+
+  Main Set temp:skip-to-claw-game true
+  Main Message RestaurantCamera SetHorizontalOffset -5
+  Main Warp Shannon ShannonClawPosition
+  Main Dialog RestaurantArrivalAndClaw
+
+@end
+
+@func DebugRestartAtFinal
+
+  Debug Set restaurant-bookmark final
+  Debug Message _Managers/DebugManager SaveAndReload
+
+@end
+
+@func DebugRestartAtStart
+
+  Debug Set restaurant-bookmark start
+  Debug Message _Managers/DebugManager SaveAndReload
+
+@end
+
+# Upstairs
+
+@func ShannonUpstairs
+
+  Up Set restaurant-bookmark shannon-upstairs
+  Up Event save
+  Up Marker Lock
+  Up Set temp:shannon-went-upstairs true
+  Up Event shannon-went-upstairs
+  Up Walk Shannon ShannonFriendsPosition
+  Up Exec ShannonUpstairsConversation
+  
+@end
+  
+@func ShannonUpstairsConversation
+
+  Up Dialog RestaurantShannonUpstairs
+  Up Exec ClawGameConversation
+  
+@end
+
+@func ClawGameConversation
+
+  Up Set restaurant-bookmark claw-game
+  Up Event save
+  Up Message RestaurantCamera SetHorizontalOffset -5
+  Up Fork UpDepth
+  Up Walk Shannon ShannonClawPosition
+  Up Dialog RestaurantArrivalAndClaw
+
+  Up Message RestaurantCamera SetDepthOffset 0
+  Up Exec EzraAfterClawGame
+  Up Wait 0.5
+  Up Exec JohnnyAfterClawGame
+  Up Wait 0.5
+  Up Run* Ezra EzraSailorTablePosition
+  Up Fork UpJohnny
+
+  Up Walk Johnny JohnnySailorTablePosition
+  Up Dialog RestaurantDiversTableEzraJohnny
+
+  Up Walk* Ezra IdaGuestTablePosition
+  Up Wait 0.5
+  Up Walk Johnny JohnnyFriendsPosition
+  
+  Up Exec PlaceOrder
+  
+  UpDepth Wait 4
+  UpDepth Message RestaurantCamera SetDepthOffset 10
+
+  UpJohnny Wait 6
+  UpJohnny Message RestaurantCamera SetHorizontalOffset 0
+  
+@end
+
+@func PlaceOrder
+
+  # Ezra walks back to sailor table during this conversation
+  Up Set restaurant-bookmark place-order
+  Up Event save
+  Up Dialog RestaurantGuestsTable1
+  Up Walk Ida IdaGuestTablePosition
+  Up Dialog RestaurantPlaceOrder
+  Up Walk Ida IdaSailorTablePosition
+  Up Dialog RestaurantDiversTableEzraAndIda
+  Up Walk* Ida IdaKitchenPosition
+  Up Fork UpEzra
+  Up Exec SamReturns
+  
+  UpEzra Wait 3
+  UpEzra Walk Ezra EzraGuestTablePosition
+
+@end
+
+@func SamReturns
+
+  Up Set restaurant-bookmark sam-returns
+  Up Event save
+  Up Enable Sam
+  Up Disable Restaurant/DivingBellRoot/DivingBellPivot/DivingBell/DivingBellPlatform/SamDivingBell
+  Up Message Sound_BellDripping FadeOut 0.1
+  Up Wait 0.1
+  Up Player Sam
+  Up Message Sound_Radio FadeOut 4
+
+  Up Wait 6
+  Up Fork UpSam
+  Up Walk* Sam SamReturnsEndPosition
+
+  UpSam Wait 11
+  UpSam Message Sam StartReturning
+  UpSam Dialog RestaurantSamReturns
+  UpSam Message Sam DoneReturning
+  UpSam Walk Sam SamGuestTablePosition
+  UpSam Set restaurant-bookmark final
+  UpSam Event save  
+  UpSam Dialog RestaurantSamTalksToGuests
+  UpSam Set temp:met-sam true
+  UpSam Exec Final
+  
+@end
+
+@func SamResumeWalking
+  Sam Walk* Sam SamReturnsEndPosition
+@end
+
+@func Final
+
+  Final Cursor Hide
+  
+  Final Message Sound_BellDripping FadeOut 10
+  Final Message Sound_LakeAmbience FadeOut 10
+  Final Message Sound_StructureCreaking FadeOut 10
+  Final Message Sound_TugboatIdling FadeOut 10
+  
+  Final Wait 3
+  Final Audio* Play this-world-song
+  
+  Final Wait 8
+  Final Message RestaurantCamera TriggerEnding
+  Final Message RestaurantPontoon Enter
+  Final Interact Off
+  Final Wait 5
+  Final Gesture Shannon Exit Sit
+  Final Walk Shannon ShannonDescendPosition
+  Final Message Shannon SetMobility 0
+  Final Player Shannon
+  Final Marker Unlock
+  Final Cursor Show
+  Final Interact On  
+
+  Final Wait 180
+  
+  Final Message Sound_BellDripping FadeIn 10
+  Final Message Sound_LakeAmbience FadeIn 10
+  Final Message Sound_StructureCreaking FadeIn 10
+  Final Message Sound_TugboatIdling FadeIn 10
+  
+@end
+
+UpShannon Listen shannon-leaves-clawgame
+UpShannon Exec ShannonSitDown
+
+@func IdaReturnsWithFood
+  Up Gesture Ida Enter Togo
+  Up Message Ida EnableTogo
+  Up Walk Ida IdaGuestTablePosition
+@end
+
+@func StopSamHumming
+
+  StopHumming Message Sound_SamHumming FadeOut 0.25 ? temp:sam-humming
+  StopHumming Wait 0.25 ? temp:sam-humming
+  StopHumming Event stop-sam-humming ? temp:sam-humming
+  StopHumming Set temp:sam-humming false
+  
+@end
+
+# Bookmarks
+@func LoadBookmark
+
+  Main Exec StartBookmark ? restaurant-bookmark=start
+
+  Main Set temp:shannon-went-upstairs true ? !(restaurant-bookmark=start)
+  
+  Main Exec ShannonUpstairsBookmark ? restaurant-bookmark=shannon-upstairs
+  Main Exec ClawGameBookmark ? restaurant-bookmark=claw-game
+  Main Exec PlaceOrderBookmark ? restaurant-bookmark=place-order
+  Main Exec SamReturnsBookmark ? restaurant-bookmark=sam-returns
+  Main Exec FinalBookmark ? restaurant-bookmark=final
+  
+@end
+
+@func StartBookmark
+
+  @EzraBeforeClawGame
+  @JohnnyBeforeClawGame
+
+  PulleySounds Event play-pulley-sound
+  PulleySounds Message Sound_BellPulley FadeIn 1
+  PulleySounds Event stop-water-dripping
+  PulleySounds Wait 10
+  PulleySounds Set temp:ready-for-dog true
+  PulleySounds Wait 15  
+  PulleySounds Event play-water-dripping
+  PulleySounds Message Sound_BellDripping FadeIn 10
+  PulleySounds Wait 5
+  PulleySounds Event play-sam-humming ? !temp:shannon-went-upstairs
+  PulleySounds Set temp:sam-humming true ? !temp:shannon-went-upstairs
+  PulleySounds Message Sound_SamHumming FadeIn 15 ? !temp:shannon-went-upstairs
+  
+@end
+
+@func ShannonUpstairsBookmark
+
+  Main Set temp:shannon-went-upstairs true
+  Main Set temp:ready-for-dog true
+  Main Marker Lock
+  @EzraBeforeClawGame
+  @JohnnyBeforeClawGame
+  Main Warp Shannon ShannonFriendsPosition
+  Main Event snap-bell-to-top    
+  Main Wait 5
+  @ShannonUpstairsConversation
+  
+@end
+
+@func ClawGameBookmark
+
+  Main Set temp:ready-for-dog true
+  Main Marker Lock
+  @EzraBeforeClawGame
+  @JohnnyBeforeClawGame
+  Main Warp Shannon ShannonFriendsPosition
+  Main Event snap-bell-to-top  
+  @ClawGameConversation
+
+@end
+
+@func PlaceOrderBookmark
+
+  Main Set temp:ready-for-dog true
+  Main Marker Lock
+  Main Warp Shannon ShannonSitPosition
+  Main Warp Johnny JohnnyFriendsPosition
+  Main Warp Ezra IdaGuestTablePosition
+  Main Gesture* Shannon Enter Sit
+  Main Event snap-bell-to-top  
+  Main Wait 5
+  @PlaceOrder
+
+@end
+
+@func SamReturnsBookmark
+
+  Main Set temp:ready-for-dog true
+  Main Marker Lock
+  Main Warp Shannon ShannonSitPosition
+  Main Warp Johnny JohnnyFriendsPosition
+  Main Warp Ezra EzraGuestTablePosition
+  Main Gesture* Shannon Enter Sit
+  Main Event snap-bell-to-top
+  @SamReturns
+
+@end
+
+@func FinalBookmark
+
+  Main Set temp:ready-for-dog true
+  Main Set temp:met-sam true
+  Main Event stop-water-dripping
+  Main Message Sound_Radio Mute
+  Main Marker Lock
+  Main Warp Shannon ShannonSitPosition
+  Main Warp Johnny JohnnyFriendsPosition
+  Main Warp Ezra EzraGuestTablePosition
+  Main Gesture* Shannon Enter Sit
+  Main Event snap-bell-to-top
+  Main Enable Sam
+  Main Disable Restaurant/DivingBellRoot/DivingBellPivot/DivingBell/DivingBellPlatform/SamDivingBell
+  Main Warp Sam SamGuestTablePosition
+  Main Wait 5
+  Main Dialog RestaurantSamTalksToGuests
+  @Final
+  
+@end
+
+# Init
+
+# Just a helper when running in the editor; normally this is set
+# when loading in from another scene:
+Main Set current-scene-name Restaurant
+
+Main Disable Sam
+@LoadBookmark

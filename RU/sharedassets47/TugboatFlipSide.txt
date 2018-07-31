@@ -1,0 +1,19 @@
+# -*- blocking -*-
+
+Main Push [PLAYER] FreeRotate
+Main Clear [PLAYER]
+Main Cursor Hide
+
+Main Disable [Obstacle]
+
+Main Set temp:tugboat-side [TugboatSide]
+Main Event tugboat-side-changed
+
+Main Walk [PLAYER] [ACTOR]/Stand
+Main Wait 6
+
+Main Enable [Obstacle]
+
+Main Event tugboat-flip-side-done
+Main Cursor Show
+Main Pop [PLAYER]

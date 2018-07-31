@@ -1,0 +1,82 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape,truck-tour-wipers-off">  
+  <scene name="intro">
+    <triggerEvent name="truck-tour-zoom"/>
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="distillery-truck-examined-wipers" value="true" />
+    <line speaker="doolittle" style="skeleton">Control the wipers with this knob, here.</line>
+    <line event="truck-tour-wipers-on">`(DOOLITTLE fiddles with the controls.)`</line>
+    <line speaker="doolittle" style="skeleton">They seem to have a decent torque to them, eh? Can't say how they'd fare in an ice storm, but we must never delay a shipment — better to assume the risk.</line>
+    <option goto="watch-weather" speaker="conway">You folks watch the weather closely?</option>
+    <option goto="clear-skies" speaker="conway">Always clear skies down here.</option>
+  </scene>
+
+  <scene name="watch-weather">
+    <line speaker="doolittle" style="skeleton">I wouldn't know it if I saw it. Too many years of climate control — have I mentioned I rarely if ever leave our facility? I wouldn't know the rain if it drowned me.</line>
+    <option goto="wipers-fine" speaker="conway">I'm sure the wipers are fine.</option>
+    <option goto="rain-vignette">`They ditched class for the day to drive in the rain.`</option>
+  </scene>
+
+  <scene name="clear-skies">
+    <line speaker="doolittle" style="skeleton">So I hear. But most of our product is delivered by surface roads, which feel rain quite often, particularly in the Spring months. So I hear!</line>
+    <option goto="wipers-fine" speaker="conway">I'm sure the wipers are fine.</option>
+    <option goto="rain-vignette">`They ditched class for the day to drive in the rain.`</option>
+  </scene>
+
+  <scene name="wipers-fine" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Of course. What else, then?</line>
+  </scene>
+
+  <scene name="rain-vignette">
+    <triggerEvent name="dialog-darken-fast" />
+    <triggerEvent name="stop-tape" />
+    <triggerEvent name="vignette-darken" />
+    
+    <setGameVar name="distillery-truck-saw-rain-vignette" value="true" />
+
+    <audioFade clip="memory-storm" direction="in" time="3" />
+    <audioFade clip="truck-engine" direction="to" target="0.25" time="3" />
+    
+    <line>`It was pointless to stay `—` all review. He was a lost cause, and she didn't need it anyway. She was smart, bored. It was time to cut out.`</line>
+    <line>`Shitty day for it, though. Eighty-three and biblical flood.`</line>
+    <option goto="movie">`They went to see a movie.`</option>
+    <option goto="bar">`They went to a bar.`</option>
+  </scene>
+
+  <scene name="movie" nextScene="parking-lot">
+    <line>`It was some anonymous swashbuckler film, about real men and women. Real tights, real lips, fake blood. They brought a flask.`</line>
+  </scene>
+
+  <scene name="bar" nextScene="parking-lot">
+    <line>`They pulled into a dive bar with an afternoon open mic. It smelled like rosewater.`</line>
+  </scene>
+
+  <scene name="parking-lot">
+    <line>`They smoked cigarettes, drank awful hooch, whistled buckets of rain.`</line>
+    <line>`She sang about someone she wanted once to have loved. Brown hair curled around her ear. She had a voice like scotch whisky.`</line>
+    <option goto="another-drink">`They poured another drink.`</option>
+    <option goto="time-to-go">`It was time to go.`</option>
+  </scene>
+
+  <scene name="another-drink" nextScene="goodbye">
+    <line>`And another and another. She worried it was getting dark out `—` then it was getting light out. They ended up in someone else's field, in someone else's car `—` an early morning joyride, and a sunrise collision.`</line>
+    <line>`She got on the bus, and he hiked back to his car.`</line>
+  </scene>
+
+  <scene name="time-to-go" nextScene="goodbye">
+    <line>`Stiff drinks were wearing on him, and he felt a surge of dejection. He knew she'd keep singing `—` he thought she should sing for someone who deserved to hear it. He knew she'd find a ride, so he slipped out alone.`</line>
+  </scene>
+
+  <scene name="goodbye" nextScene="rain-end">
+    <line>`He sat in his car and went over some options `—` Chicago? Toronto? Barrow? It seemed like a bold and impulsive gesture at the time. As he pulled out of the parking lot, he removed his hands from the steering wheel for a moment and felt the car drift into a decision.`</line>
+    <line>`Years later, he'd think of this as the moment he himself started drifting.`</line>
+  </scene>
+
+  <scene name="rain-end" nextScene="end">
+    <triggerEvent name="start-tape,dialog-lighten-fast" />
+    <audioFade clip="memory-storm" direction="out" speed="2" destroy="true" />
+    <audioFade clip="truck-engine" direction="in" time="1" />    
+    
+    <line speaker="doolittle" style="skeleton">A modest technology, but suited to the job, eh? Plenty good enough.</line>
+  </scene>
+</conversation>

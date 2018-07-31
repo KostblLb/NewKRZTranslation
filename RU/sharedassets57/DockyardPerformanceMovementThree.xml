@@ -1,0 +1,23 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <!-- 3 -->
+  <scene name="intro" nextScene="choose-gesture-3">
+    <option condition="temp:tape-cat" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=cat">`(EZRA selects the tape labeled "cat.")`</option>
+    <option condition="temp:tape-kombucha" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=kombucha">`(EZRA selects the tape labeled "kykeon kombucha.")`</option>
+    <option condition="temp:tape-diesel-tank" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=diesel-tank">`(EZRA selects the tape labeled "diesel tank.")`</option>
+    <option condition="temp:tape-stew" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=stew">`(EZRA selects the tape labeled "stew.")`</option>
+    <option condition="temp:tape-pots" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=pots">`(EZRA selects the tape labeled "pots and pans.")`</option>
+    <option condition="temp:tape-tv" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=tv">`(EZRA selects the tape labeled "cooking show.")`</option>
+    <option condition="temp:tape-river" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=river">`(EZRA selects the tape labeled "river.")`</option>
+    <option condition="temp:tape-mammoth" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=mammoth">`(EZRA selects the tape labeled "mammoth.")`</option>
+    <option condition="temp:tape-tape" goto="choose-gesture-3" variableChange="dockyard-ezra-tape-3=tape">`(EZRA selects the tape labeled "sleeping.")`</option>
+  </scene>
+
+  <scene name="choose-gesture-3">
+    <option goto="end" variableChange="dockyard-ezra-gesture-3=just-play">`(He lets the tape play without interference.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-3=slow-speed-up">`(He plays the tape slowly at first, but gradually speeds up.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-3=restless-volume">`(He fiddles restlessly with the volume knob.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-3=slow-backwards">`(He plays the tape backwards, very slowly.)`</option>
+    <option goto="end" variableChange="dockyard-ezra-gesture-3=rhythmic-volume">`(He flicks the volume knob on and off, rhythmically.)`</option>
+  </scene>
+</conversation>

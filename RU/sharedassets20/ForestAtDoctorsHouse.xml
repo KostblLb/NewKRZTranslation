@@ -1,0 +1,43 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="end-doctors-house-conversation">
+  <scene name="intro">
+    <setGameVar name="forest-talked-by-doctors-house" value="true"/>
+    
+    <option goto="coming-in" speaker="shannon">He's inside, with Dr. Truman. Are you coming in?</option>
+    <option goto="lost" speaker="shannon">Where have you been? We lost sight of you for a minute.</option>
+  </scene>
+
+  <scene name="coming-in">
+    <line speaker="ezra">Sure, I'll come in. Dr. Truman lets me watch TV sometimes. My folks never watched TV, but I like the way it looks.</line>
+    <option goto="lost" speaker="shannon">You said you lost track of your family, earlier?</option>
+    <option goto="fix-tv" speaker="shannon">I like the way it looks, too. I fix TVs, you know.</option>
+  </scene>
+
+  <scene name="lost" nextScene="family-story">
+    <line speaker="ezra">Yep. It's easy to get lost. Especially out in the woods like this. I never really get lost though. I just look out for Julian. He's always around.</line>
+  </scene>
+
+  <scene name="fix-tv" nextScene="family-story">
+    <line speaker="ezra">Whoa, cool! A TV scientist. I bet you make a lot of money.</line>
+  </scene>
+
+  <scene name="family-story">
+    <line speaker="ezra">My folks had a really nice house, bigger than any of these houses. But it made them worried all the time. Then the bank took it back.</line>
+    <line speaker="ezra">We had to sleep at the bus station, but I couldn't ever get to sleep. So I just went out to fly around every night with Julian. We flew really far, and we never got lost, but when we came back in the morning they were all gone.</line>
+    <option goto="left" speaker="shannon">They just left you?</option>
+    <option goto="look-for-them" speaker="shannon">We'll help you look for them.</option>
+  </scene>
+
+  <scene name="left" nextScene="go-inside">
+    <line speaker="ezra">I don't think so. All our stuff was still there. Maybe they got lost somewhere.</line>
+  </scene>
+
+  <scene name="look-for-them" nextScene="go-inside">
+    <line speaker="ezra">Yeah, OK. Maybe we can all go looking again, later tonight.</line>
+  </scene>
+
+  <scene name="go-inside" nextScene="end">
+    <line speaker="ezra">Let's go see what's on TV.</line>
+  </scene>
+
+</conversation>

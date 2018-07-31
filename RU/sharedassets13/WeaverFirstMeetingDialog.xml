@@ -1,0 +1,63 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <!-- First meeting -->
+  <scene name="intro">
+    <line speaker="weaver">I was just thinking what a lovely house we have. Do you like it? Have you been here before? Did you happen to see an owl?</line>
+
+    <option goto="intro-nice-house" speaker="conway">Sure, it's a nice house.</option>
+    <option goto="intro-never-been-here" speaker="conway">No, I've never been here before.</option>
+    <option goto="intro-no-owl" speaker="conway">I didn't see any owl.</option>
+  </scene>
+
+  <scene name="intro-nice-house" nextScene="intro-what-do-you-do">
+    <line speaker="weaver">I know. I like the large beams that run across the ceilings. I like to sit in the house and think of the hills and bluffs surrounding us, like a ... like a cradle.</line>
+  </scene>
+
+  <scene name="intro-never-been-here" nextScene="intro-what-do-you-do">
+    <line speaker="weaver">I know. It must seem very strange to you. I was here when this house was built, so it's never been strange to me.</line>
+  </scene>
+
+  <scene name="intro-no-owl" nextScene="intro-what-do-you-do">
+    <line speaker="weaver">I know. I saw it out the window once. Big, ugly thing. All sound and fury. Well, it's gone now.</line>
+  </scene>
+
+  <scene name="intro-what-do-you-do">
+    <line speaker="weaver">There used to be another house here. But we had it destroyed. And we built this one. It was very expensive and we got quite under water.</line>
+    <line speaker="weaver">What do you do for work? Is it too difficult or do you like it very much? I was once a mathematician. Are you looking for something in particular here?</line>
+
+    <option goto="intro-deliveries" speaker="conway">I drive deliveries for a small antique shop.</option>
+    <option goto="intro-in-a-ditch" speaker="conway">It's better than being in a ditch.</option>
+    <option goto="intro-the-zero" speaker="conway">I'm looking for the |Zero|.</option>
+  </scene>
+
+  <scene name="intro-deliveries" nextScene="intro-stay-here">
+    <line speaker="weaver">I believe it's hard times for a small antique shop. It's hard times everywhere, even out here on our little farm. My parents stopped paying the bank a while back. I shouldn't even be here. But I just stayed.</line>
+  </scene>
+
+  <scene name="intro-in-a-ditch" nextScene="intro-stay-here">
+    <line speaker="weaver">Yes. Just about anything is better than being in a hole in the ground. That's why I stay here.</line>
+  </scene>
+
+  <scene name="intro-stay-here">
+    <line speaker="weaver">I have some notebooks. I'm only a little bored. I might prefer to watch TV occasionally.</line>
+
+    <option goto="intro-too-smart" speaker="conway">Joseph says you're too smart to watch TV.</option>
+    <option goto="intro-return-tv" speaker="conway">Actually, I have a TV here that I think belongs to you.</option>
+  </scene>
+
+  <scene name="intro-the-zero">
+    <line speaker="weaver">Oh, you're lost. And that old blind man sent you, is that right? Of course he did. He's nice. Did he say anything nice about me? Did he send along a gift?</line>
+
+    <option goto="intro-too-smart" speaker="conway">He said you were too smart to watch TV.</option>
+    <option goto="intro-return-tv" speaker="conway">He asked me to return this TV set of yours.</option>
+  </scene>
+
+  <scene name="intro-too-smart" nextScene="intro-return-tv">
+    <line speaker="weaver">That was a nice thing to say. But he was wrong. I'm not as smart as I used to be. Well, actually ... I suppose I am as smart as I used to be, but never any smarter. I don't learn anything new anymore. I write some figures, but nothing radical.</line>
+    <line speaker="weaver">I'll bet he sent that old TV along with you, didn't he? Of course he did. That was clever of him.</line>
+  </scene>
+
+  <scene name="intro-return-tv" nextScene="end">
+    <line speaker="weaver">Will you please set it up? Then I can explain to you how to get where you're going. The |Zero|. I know.</line>
+  </scene>
+</conversation>

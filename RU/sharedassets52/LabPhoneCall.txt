@@ -1,0 +1,58 @@
+# -*- mode: blocking -*-
+
+@func EnterPhoneBooth
+
+  Booth Marker Lock
+  Booth Walk Shannon LabPhoneCall/BoothPositionOutside
+  Booth Message LabPhoneCall/PhoneBooth OpenDoor
+  Booth Audio* Play phone-booth-door
+  Booth Wait 0.5
+  Booth Event enter-phonebooth
+  Booth Walk Shannon LabPhoneCall/BoothPositionInside
+  Booth Message LabPhoneCall/PhoneBooth CloseDoor
+  Booth Set temp:inside-booth true
+  Booth Event inside-booth
+
+@end
+
+@func ExitPhoneBooth
+
+  Booth Walk Shannon LabPhoneCall/BoothPositionInside
+  Booth Message LabPhoneCall/PhoneBooth OpenDoor
+  Booth Audio* Play phone-booth-door
+  Booth Wait 0.5
+  Booth Event exit-phonebooth
+  Booth Walk Shannon LabPhoneCall/BoothPositionOutside
+  Booth Message LabPhoneCall/PhoneBooth CloseDoor
+  Booth Set temp:inside-booth false
+  Booth Marker Unlock
+  Booth Event outside-booth
+
+@end
+
+@func ExitPhoneBoothAndEnd
+
+  Booth Marker Unlock
+  @inline GotoCalendar
+  
+@end
+
+@func PhoneCall
+
+  Booth Walk Shannon LabPhoneCall/PhonePosition
+  Booth Message Shannon GrabHandset  
+  Booth Gesture Shannon Enter PhoneCall
+
+  Booth Audio* Play phone-sequence
+  Booth Wait 15 ? !lab-did-first-phone-call
+  Booth Wait 12 ? lab-did-first-phone-call  
+  
+  Booth Dialog LabPhoneTestCallTwo ? lab-did-first-phone-call
+  Booth Dialog LabPhoneTestCallOne ? !lab-did-first-phone-call
+
+  # after call
+  Booth Gesture Shannon Exit PhoneCall
+  Booth Message Shannon DropHandset
+  Booth Event done-phone-call
+
+@end

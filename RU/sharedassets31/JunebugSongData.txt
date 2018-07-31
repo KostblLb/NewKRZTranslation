@@ -1,0 +1,117 @@
+<song>
+  <!-- Verse 1 -->
+  <verse name="verse-1">
+    <option name="verse-1-1" hint="   When you left me ..." />
+    <option name="verse-1-2" hint="   I never should have met you ..." />
+    <option name="verse-1-3" hint="   I wish we'd met before ..." />
+  </verse>
+
+  <verse name="verse-1-1" hint="   When you left me ...">
+                           When you left me
+                      my heart was broke in two,
+                         but I patched it up
+                  and promised I would wait for you.
+  </verse>
+  
+  <verse name="verse-1-2" hint="   I never should have met you ...">
+                     _I never should have met you
+                          on that awful day.
+             I was happy then, until you stole my heart,
+                        and disappeared again.
+  </verse>
+  
+  <verse name="verse-1-3" hint="   I wish we'd met before ...">
+                           I wish we'd met
+                    before I ever learned to cry.
+                    When someone loved me briefly,
+                        and then said goodbye.
+  </verse>
+
+  <!-- Verse 2 -->
+  <verse name="verse-2">
+    <option name="verse-2-1" hint="   The hurt you left behind ..." />
+    <option name="verse-2-2" hint="   I never thought I'd miss you ..." />
+    <option name="verse-2-3" hint="   As long as you were gone ..." />
+  </verse>
+
+  <verse name="verse-2-1">
+                       The hurt you left behind
+                       _would truly never heal.
+                      A hole where my heart knew
+                   _there should be something real.
+  </verse>
+
+  <verse name="verse-2-2">
+                     I never thought I'd miss you
+                          _but I sorely did.
+                          I kept my hopes up
+                    _when I should've run and hid.
+  </verse>
+  
+  <verse name="verse-2-3">
+                      _As long as you were gone,
+                       _I knew that I was free.
+                         _Free from certainty
+                   that other loves could never be.
+  </verse>
+  
+  <!-- Verse 3 -->
+  <verse name="verse-3">
+    <option name="verse-3-1" hint="   I thought that somehow love would find a way ..." />
+    <option name="verse-3-2" hint="   There were months I wished you'd come back every day ..." />
+    <option name="verse-3-3" hint="   After years I know that I'm bound to my fate ..." />
+  </verse>
+
+  <verse name="verse-3-1">
+                        In time I thought that
+                    somehow love would find a way.
+                       But you waited too long,
+                       _darlin', it's too late.
+                            It's too late.
+  </verse>
+
+  <verse name="verse-3-2">
+                      There were months I wished
+                      you'd come back every day.
+                       But you waited too long,
+                       darlin', it's too late.
+                            It's too late.
+  </verse>
+
+  <verse name="verse-3-3">
+                          After years I know
+                      that I'm bound to my fate.
+                     Because you waited too long,
+                       darlin', it's too late.
+                            It's too late.
+  </verse>
+  
+  <!-- Chorus -->
+  <verse name="chorus-1">
+                            It's too late
+                           to love you now.
+                            It's too late.
+                          I've made my vow.
+  </verse>
+  
+  <verse name="chorus-2">
+                            It's too late
+                           to love you now.
+                            It's too late.
+                          I've made my vow.
+  </verse>
+
+  <verse name="chorus-3">
+                            It's too late
+                           to love you now.
+                            It's too late.
+                          I've made my vow.
+  </verse>
+
+  <verse name="chorus-3-bridge">
+                        Another love came by,
+                       and stole my heart away.
+                  I wish that I could take it back,
+                          but it's too late.
+  </verse>
+</song>

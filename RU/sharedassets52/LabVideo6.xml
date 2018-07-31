@@ -1,0 +1,47 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="lab-videos-watched" value="+1" />
+    <line speaker="question" style="questionnaire">The camera passed through several doors with inscribed labels. Please write down the sounds you heard as the video passed through the doors with the following inscriptions:</line>
+    <line speaker="question" style="questionnaire">"Travel."</line>
+    <option goto="question-2" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-travel=wings">Wings beating.</option>
+    <option goto="question-2" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-travel=engine">A diesel engine, idling.</option>
+    <option goto="question-2" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-travel=footsteps">Footsteps.</option>
+  </scene>
+
+  <scene name="question-2">
+    <line speaker="question" style="questionnaire">"Nourishment."</line>
+    <option goto="question-3" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-nourishment=fish">A fish tank humming.</option>
+    <option goto="question-3" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-nourishment=clink">A sort of `clink`, like coins falling into a cup.</option>
+    <option goto="question-3" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-nourishment=wood">Someone hammering on wood.</option>
+  </scene>
+
+  <scene name="question-3">
+    <line speaker="question" style="questionnaire">"Sleep."</line>
+    <option goto="weaver-story" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-sleep=engine">A diesel engine, idling.</option>
+    <option goto="weaver-story" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-sleep=burning">A fire burning.</option>
+    <option goto="weaver-story" speaker="response" style="questionnaire" variableChange="lab-video-six-sound-sleep=music">Music.</option>
+  </scene>
+
+  <scene name="weaver-story" nextScene="end">
+    <line speaker="mimi" condition="lab-videos-watched=1">Someone would be doing a show in their normal time slot, and then suddenly the feed would cut. We'd still be broadcasting, but our signal was totally jammed.</line>
+    <line speaker="jenn" condition="lab-videos-watched=1">Oh, like interference?</line>
+    <line speaker="mimi" condition="lab-videos-watched=1">I mean total blackout. Then this video would come on, clearly shot in our studio at some point, and it was her — Weaver Márquez. She'd be standing in the middle of the studio, facing the camera.</line>
+
+    <line speaker="mimi" condition="lab-videos-watched=2">It's a bit fuzzy in my memory, but I do remember the sound; this awful hum, like that was how she did it: she made a hum so sinister it drove our signal into hiding.</line>
+
+    <line speaker="mimi" condition="lab-videos-watched=3">Then there were these on-screen captions, exactly the same every time. I don't remember what they said. Something creepy.</line>
+    <line speaker="jenn" condition="lab-videos-watched=3">Wow.</line>
+
+    <line speaker="mimi" condition="lab-videos-watched=4">We had a titlemaker at the station, but it was a different font. I guess she recorded it at WEVP and then took it somewhere else to add the captions? I don't know. We all did a lot of speculating about how she made the video ... `why` she made the video.</line>
+    <line speaker="jenn" condition="lab-videos-watched=4">Yeah, why not just broadcast it normally? It was "community television," right? Couldn't be any worse than naked banjo guy.</line>
+    <line speaker="mimi" condition="lab-videos-watched=4">Yeah, exactly. Some people thought it was a protest or something, but I know she didn't have anything against the station. To me it felt kind of urgent, like she would have done her broadcast through the proper channels, but something came up ... a crisis or something.</line>
+
+    <line speaker="jenn" condition="lab-videos-watched=5">How often did it happen?</line>
+    <line speaker="mimi" condition="lab-videos-watched=5">A lot. Dozens of times. It went on for years. We even thought about asking the police to look into it, but it's so hard to locate a "pirate" signal. I mean, it could come from any direction, you know?</line>
+    <line speaker="jenn" condition="lab-videos-watched=5">It's all just %waves%.</line>
+    <line speaker="mimi" condition="lab-videos-watched=5">Exactly.</line>
+
+    <line speaker="mimi" condition="lab-videos-watched=6">Weaver's video showed up again right before the flood. Actually, I think it might have been the last thing we ever broadcast.</line>
+  </scene>
+</conversation>

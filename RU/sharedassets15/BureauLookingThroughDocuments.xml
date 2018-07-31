@@ -1,0 +1,57 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="logbook-description">
+    <setGameVar name="bureau-checked-for-odonyms" value="true"/>
+    <setGameVar name="bureau-current-floor-goal" value="1"/>
+    
+    <line speaker="shannon">Damn, this place is a mess. OK.</line>
+    <line speaker="shannon">Hmm ... take a look through that logbook, I guess? Maybe there's some kind of system to all these boxes. I'll just start digging.</line>
+  </scene>
+
+  <scene name="logbook-description" nextScene="logbook-options">
+    <triggerEvent name="shannon-walk-to-boxes"/>
+    <line>`(The small logbook has a smart leather cover. A few notes are scribbled on the inside covers. Most pages are just lists of titles, names, and dates.)`</line>
+  </scene>
+
+  <scene name="logbook-options">
+    <option goto="front-cover" speaker="conway">Inside front cover.</option>
+    <option goto="page-1" speaker="conway">Page 1.</option>
+    <option goto="page-14" speaker="conway">Page 14.</option>
+    <option condition="bureau-logbook-read-note-about-antiques" goto="page-63" speaker="conway">Page 63.</option>
+    <option goto="back-cover" speaker="conway">Inside back cover.</option>
+    <option goto="complete-logbook" speaker="conway">Put the logbook away.</option>
+  </scene>
+
+  <scene name="front-cover" nextScene="logbook-options">
+    <line speaker="note in logbook">Document staff: please do not transfer any more records from the storage unit until we get the new file cabinets in. We're up to F, and that will have to do for now.</line>
+    <line speaker="note in logbook">Instruct clerks to focus on activities beginning with the letters A, B, C, D, E, or F — or activities most likely to involve research on subjects beginning with those letters. For example: &quot;cars&quot; is OK because it involves Automotive, Driving, Brakes, etc., but &quot;air quality&quot; is NOT OK because it relates to Health, Safety, Pollution, etc.</line>
+  </scene>
+
+  <scene name="back-cover" nextScene="logbook-options">
+    <setGameVar name="bureau-logbook-read-note-about-antiques" value="true"/>
+    
+    <line speaker="note in logbook">&quot;Failing antique shops&quot; folder missing? Listed checked in on pg. 63, but not present.</line>
+  </scene>
+
+  <scene name="page-1" nextScene="logbook-options">
+    <line>`(Several documents relating to sporting competition venues were quickly checked out and back in over a period of a few days: basketball courts, baseball fields, alleys, and parking lots.)`</line>
+  </scene>
+
+  <scene name="page-14" nextScene="logbook-options">
+    <line>`(A single set of documents relating to coal mining operations was checked out and back in by several different people within a few hours.)`</line>
+  </scene>
+
+  <scene name="page-63" nextScene="logbook-options">
+    <setGameVar name="bureau-logbook-read-about-antique-shop-checkin" value="true"/>
+    
+    <line speaker="logbook">Check-in: Failing antique shops. Monday 3pm. Signee: Ed Böhm.</line>
+  </scene>
+
+  <scene name="complete-logbook" nextScene="end">
+    <triggerEvent name="shannon-return-to-logbook"/>
+    
+    <line speaker="shannon">Nothing? Me neither. Half of these boxes aren't even labeled, and the rest are all from the first few letters of the alphabet. I couldn't find anything with an &quot;O&quot; or a &quot;G&quot; or an &quot;S.&quot;</line>
+    <line speaker="shannon">Maybe that clerk knows somewhere else we can look.</line>
+  </scene>
+
+</conversation>

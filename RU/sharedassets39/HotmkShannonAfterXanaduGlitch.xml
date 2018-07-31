@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-talked-to-shannon-after-xanadu" value="true"/>
+
+    <line speaker="shannon">Bizarre ... and what was that about Lula? Maybe Donald knows how to clear it up a bit.</line>
+  </scene>
+</conversation>

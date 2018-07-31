@@ -1,0 +1,11 @@
+# -*- mode: blocking -*-
+
+@set Root VignetteTest
+
+Main Enable [Root]
+Main Player Conway Player
+Main Message TugboatCameraRig SetPlayer Conway
+Main Warp Conway [Root]/ConwayStartPosition
+Main Exec SnapStaging
+
+@inline SetupOutsideSound

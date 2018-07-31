@@ -1,0 +1,26 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="will">... add a few of these really big caps with the slimy gills. I shouldn't say "slimy" ... moist.</line>
+    <line speaker="will">The lady in the video called for "portobello," but I prefer never to know a mushroom by name.</line>
+    <option goto="restaurant" speaker="ezra">We're stopping at a restaurant soon, right?</option>
+    <option goto="breakfast" speaker="ezra">So is this a breakfast stew?</option>
+  </scene>
+
+  <scene name="restaurant" nextScene="next-step">
+    <line speaker="will">Sure, sure. `Sam &amp; Ida's`. This stew is for `tomorrow`. It has to simmer all day! Some things are just better done slowly.</line>
+  </scene>
+
+  <scene name="breakfast" nextScene="next-step">
+    <line speaker="will">It will be, but not today; this stew is for `tomorrow`. It has to simmer all day! Some things are just better done slowly.</line>
+  </scene>
+
+  <scene name="next-step" nextScene="end">
+    <line speaker="will">We've added the anonymous mushrooms, so `next`, we ... um ...</line>
+    <line speaker="will">Hm. I've got the recipe video on pause next door ...</line>
+    <line speaker="will">I used to follow a recipe I learned from Ida herself; the best cook you're gonna meet on this river. Of course, it had a few secret ingredients; she has the good sense to preserve some mystery around her cooking. Better for business.</line>
+    <line speaker="will">Ida is so shrewd, she swore me not only to secrecy but to `ignorance`! I had to promise to forget the recipe just as soon as I'd cooked it. Let me tell you: it's not so easy to forget something on purpose as you may think, my friend.</line>
+    <line speaker="will">Not so easy ...</line>
+  </scene>
+
+</conversation>

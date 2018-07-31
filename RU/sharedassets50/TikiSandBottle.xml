@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-found-bottle" value="true" />
+    <line>Shannon finds a bottle. Its label is worn away, but the words "HOT HELL RHUM" are legibly embossed on the glass. The bottle is empty, except for a sleeping crab.</line>
+  </scene>
+</conversation>

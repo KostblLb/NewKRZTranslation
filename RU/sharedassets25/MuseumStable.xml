@@ -1,0 +1,20 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-looked-at-stable" value="true"/>
+    <setGameVar name="museum-location" value="sailboat"/>    
+    <line speaker="flora">I think you need to get some real horses in the stable.</line>
+
+    <option goto="like-horses" speaker="museum staff">Do you like horses?</option>    
+    <option goto="into-stable" speaker="museum staff">Did the strangers go in the stable?</option>
+  </scene>
+
+  <scene name="like-horses" nextScene="end">
+    <line speaker="flora">Not anymore. Now I like jungle cats. You should get some real panthers in the stable.</line>
+  </scene>
+  
+  <scene name="into-stable" nextScene="end">
+    <line speaker="flora">No, they just poked around a bit, and talked about barns. They were pretty boring.</line>
+  </scene>
+</conversation>

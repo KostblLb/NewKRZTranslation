@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <line speaker="shannon">Wow, this is harder than it looks.</line>
+    <line speaker="clara">Yeah, it takes a certain kind of ear.</line>
+    <line speaker="shannon">Oh, like `perfect pitch`? Do you have that?</line>
+    <line speaker="clara">Not really that, it's more like ... muscle memory? When I'm playing the theremin, I kind of "hear" with my hands.</line>
+    <line speaker="clara">I must sound ridiculous!</line>
+    <line speaker="shannon">No, no, I think I get it.</line>
+  </scene>
+</conversation>

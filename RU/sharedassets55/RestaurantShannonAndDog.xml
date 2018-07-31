@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="restaurant-talked-to-dog" value="true" />
+    <option goto="ear">Shannon scratches <variable name="dog-name-or-the-dog" /> behind <variable name="dog-possessive-pronoun" /> ear.</option>
+    <option goto="eyes">Shannon inspects <variable name="dog-name-or-the-dog" />'s eyes.</option>
+  </scene>
+
+  <scene name="ear">
+    <option goto="stick">She finds a small twig worked into the hair on <variable name="dog-name-or-the-dog" />'s neck.</option>
+    <option goto="sigh"><filter name="capitalize"><variable name="dog-name-or-the-dog" /></filter> sighs.</option>
+  </scene>
+
+  <scene name="stick">
+    <option goto="end">Shannon gently tugs the twig free, and tosses it into the lake.</option>
+    <option goto="end">Shannon can't get the twig loose, but <variable name="dog-name-or-the-dog" /> doesn't seem to mind.</option>
+  </scene>
+
+  <scene name="sigh">
+    <option goto="end">She smiles at the dog.</option>
+    <option goto="end">She remembers herself, and returns to the task at hand.</option>
+  </scene>
+
+  <scene name="eyes">
+    <option goto="cataract"><filter name="capitalize"><variable name="dog-name-or-the-dog" /></filter>'s left eye is clouded by a dense cataract.</option>
+    <option goto="staring">She can't tell if <variable name="dog-name-or-the-dog" /> is staring back, or just staring.</option>
+  </scene>
+
+  <scene name="cataract">
+    <option goto="end">She wonders if <variable name="dog-name-or-the-dog" /> has any sight at all in that eye, and how that might affect a dog's depth perception.</option>
+    <option goto="end">She pats <variable name="dog-object-pronoun" /> on the side and says something comforting.</option>
+  </scene>
+
+  <scene name="staring">
+    <option goto="end">She looks a bit longer, but can't find any sign of recognition.</option>
+    <option goto="end">She tilts her head a little to the left, but <variable name="dog-name-or-the-dog" /> doesn't track her movement.</option>
+  </scene>
+
+</conversation>
+

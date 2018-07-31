@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <option goto="aboard" center="true" dividerAfter="true">Shannon retreated to the TV room to browse the `Mammoth`'s video collection.</option>
+    <option goto="end" center="true" variableChange="riverworld-rum-colony=disembarked">Shannon followed the other travelers ashore to a drowsy beachside bar called The Rum Colony.</option>
+  </scene>
+
+  <scene name="aboard" nextScene="end">
+    <setGameVar name="riverworld-rum-colony" value="aboard" />
+    <setGameVar name="tugboat-vignette" value="VideoArchive" />
+  </scene>
+</conversation>
+

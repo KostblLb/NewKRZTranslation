@@ -1,0 +1,58 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="mimi">This should be some basic information, and the first control test.</line>
+    <line speaker="mimi">Subject's general disposition?</line>
+    <line blocking="@inline PlayPaperSound">`(JENN looks over the questionnaire document from the envelope.)`</line>
+    <line speaker="question" style="questionnaire">Why are you here?</line>
+    <option goto="disposition-destination" speaker="response" style="questionnaire">It's a scheduled ferry stop, not my final destination.</option>
+    <option goto="disposition-cash" speaker="response" style="questionnaire">The other passengers said we could make some quick cash taking these tests.</option>
+    <option goto="disposition-dont-know" speaker="response" style="questionnaire">I don't know.</option>
+  </scene>
+
+  <scene name="disposition-destination" nextScene="demographics">
+    <line speaker="jenn">Homesick.</line>
+  </scene>
+
+  <scene name="disposition-cash" nextScene="demographics">
+    <line speaker="jenn">Pragmatic.</line>
+  </scene>
+
+  <scene name="disposition-dont-know" nextScene="demographics">
+    <line speaker="jenn">Permissive.</line>
+  </scene>
+
+  <scene name="demographics">
+    <line speaker="mimi">Demographic category?</line>
+    <line speaker="question" style="questionnaire" blocking="@inline PlayPaperSound">What's the first thing you remember?</line>
+    <option goto="demographics-birdcage" speaker="response" style="questionnaire">I remember a birdcage.</option>
+    <option goto="demographics-gears" speaker="response" style="questionnaire">I remember a box of small gears.</option>
+    <option goto="demographics-juice" speaker="response" style="questionnaire">I remember spilled orange juice.</option>
+  </scene>
+
+  <scene name="demographics-birdcage" nextScene="demographics-follow-up">
+    <line speaker="jenn">Mid-twenties.</line>
+  </scene>
+
+  <scene name="demographics-gears" nextScene="demographics-follow-up">
+    <line speaker="jenn">Working class.</line>
+  </scene>
+
+  <scene name="demographics-juice" nextScene="demographics-follow-up">
+    <line speaker="jenn">Immigrant.</line>
+  </scene>
+
+  <scene name="demographics-follow-up" nextScene="end">
+    <line speaker="mimi">Hm ... Do you think we should use the `old` categories, or the `new` categories?</line>
+    <line speaker="jenn">Oh, right ... Will the computer even still take the old ones?</line>
+    <line speaker="mimi">They're still in the menu.</line>
+    <line speaker="jenn">OK. In that case, put in "precarious."</line>
+    <line speaker="mimi">Sure.</line>
+    <line speaker="mimi">Oh, I forgot — name?</line>
+    <line speaker="jenn">It says "Márquez" on the file.</line>
+    <line speaker="mimi">Whoa — Márquez? Are you sure?</line>
+    <line speaker="jenn">That's what it says. Do you know her?</line>
+    <line speaker="mimi">That can't be ... No, that's not her. Did she come alone or with a group?</line>
+    <line speaker="jenn">I don't know ... There's an extended monitoring tape here, too. We could check on the dock when she showed up?</line>
+  </scene>
+</conversation>

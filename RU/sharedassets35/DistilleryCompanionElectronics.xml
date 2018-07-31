@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="distillery-discussed-electronics-1" value="true" />
+    <line speaker="shannon">Wow, check this stuff out. It must be decades old, but it's in perfect condition.</line>
+    <option goto="maintenance" speaker="conway">How do you think they keep it like that?</option>
+    <option goto="like-electronics" speaker="conway">You really like old electronics.</option>
+  </scene>
+
+  <scene name="maintenance" nextScene="shannon-work">
+    <line speaker="shannon">Maintenance, old man. I bet it's someone's job around here. Probably hard to keep all the dust out — you know, underground.</line>
+  </scene>
+
+  <scene name="like-electronics" nextScene="shannon-work">
+    <line speaker="shannon">Yeah, I've got it bad. Ha ha.</line>
+  </scene>
+
+  <scene name="shannon-work" nextScene="end">
+    <line speaker="shannon">That's why I got into this business — to keep old stuff like this running. Seems like such a shame to let it just fall into ruin, you know? Like that computer back in the cave. `XANADU`.</line>
+    <line speaker="shannon">Decades of engineering, thousands of years of mathematics and philosophy, all petrified into living stone. How could you just let that fall apart?</line>
+  </scene>
+</conversation>

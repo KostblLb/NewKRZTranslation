@@ -1,0 +1,25 @@
+# -*- mode: blocking -*-
+
+@func CalendarFlip [Direction]
+
+  Calendar Walk Shannon LabCalendar/CalendarStandPosition
+  Calendar Message LabCalendar Flip[Direction]
+  Calendar Audio* Play calendar-flip
+  Calendar Gesture Shannon Enter CalendarFlip[Direction]
+  Calendar Set lab-calendar-flipped [Direction]
+  Calendar Dialog LabCalendar
+  Calendar Event calendar-flipped
+  
+  Calendar Marker Lock
+  Calendar Cursor Hide
+  Calendar Interact Off
+  
+  Calendar Wait 2
+  
+  Calendar Marker Unlock
+  Calendar Cursor Show
+  Calendar Interact On
+  
+  Calendar Exec GotoMonitoringEnd
+  
+@end

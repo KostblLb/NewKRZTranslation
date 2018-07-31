@@ -1,0 +1,134 @@
+# -*- mode: blocking -*-
+
+@set Root VignetteWillSleeping
+
+Main Enable [Root]
+
+Main Set temp:tugboat-side starboard
+Main Set temp:flip-disabled true
+
+Main Marker Lock
+Main Interact Off
+Main Interact ActorLightswitchCabin Off
+Main Interact ActorLightswitchUtility Off
+Main Message TugboatMotion SetAmplitude 0.1
+Main Message TugboatStaging SetMistSpeed 0.1
+
+Main Player Ezra Player
+Main Message TugboatCameraRig SetPlayer Ezra
+Main Warp Ezra [Root]/EzraStartPosition
+Main Exec SnapStaging
+Main Sync Staging
+
+@inline SetupOutsideSound
+
+Cate Message Cate FreeRotate
+Cate Warp Cate [Root]/CateStartPosition
+Cate Align* Cate [Root]/CateStartPosition
+Cate Gesture Cate Enter Lean
+Cate Message Cate SetLimitedLook
+Cate Sync Main
+Cate Look Cate Ezra
+Cate Turn Ezra Cate
+Cate Look Ezra Cate
+Cate Wait 1
+Cate Dialog TugboatSleepCateOnDeck Arrow
+Cate Unlook Cate
+Cate Unlook Ezra
+Cate Gesture Cate Exit Lean
+Cate Unalign Cate
+Cate Exec GoInside Cate CockpitDoorStarboard Walk
+Cate Sync Door
+Cate Marker Unlock
+Cate Interact On
+Cate Walk Cate [Root]/CateEndPosition
+Cate Disable Cate
+
+Ezra Message Ezra EnableLayer Recorder
+
+Will Message Will DisableNavigation
+Will Transform Will [Root]/WillStartPosition
+Will Gesture Will Snap Sleeping
+Will Gesture Will Snap SittingBunk
+
+Conway Message Conway DisableNavigation
+Conway Message Conway SetLimitedLook
+Conway Transform Conway [Root]/ConwayStartPosition
+Conway Gesture Conway Snap Lean
+
+Clara Message Clara DisableNavigation
+Clara Gesture Clara Enter MessTable
+Clara Transform Clara [Root]/ClaraStartPosition
+Clara Look Clara Shannon
+
+Shannon Message Shannon DisableNavigation
+Shannon Gesture Shannon Snap Sit
+Shannon Transform Shannon [Root]/ShannonStartPosition
+Shannon Look Shannon Clara
+
+Cat Transform Cat [Root]/CatStartPosition ? riverworld-research-lab=disembarked
+
+Coconut Transform Coconut [Root]/CoconutStartPosition
+
+Johnny Message Johnny DisableNavigation
+Johnny Transform Johnny [Root]/JohnnyStartPosition
+Johnny Gesture Johnny Snap Lean
+
+Junebug Message Junebug FreeRotate
+Junebug Warp Junebug [Root]/JunebugStartPosition
+Junebug Look Junebug Johnny
+
+Hound Transform Hound [Root]/HoundStartPosition
+Hound Disable Hound CharacterPointOfInterest
+Hound Gesture Hound Snap IdleFloor
+
+@func EzraRecordsTape
+  Record Marker Lock
+  Record Walk Ezra [Root]/EzraTapePosition
+  Record Event start-recording
+  Record Message TugboatCameraRig SetRecordingOffset 1,-0.5
+  Record Gesture Ezra Enter Record
+
+  Record Audio* Play tape-start
+  Record Audio* FadeOutAll 8
+  Record Audio* FadeIn tape-run 1
+  Record Audio* FadeIn will-snoring-recording 4
+  Record Event fade-out-all
+  Record Wait 1
+  Record Dialog TugboatSleepWillsTapeAndDream
+  Record Exec EndScene
+@end
+
+@func EzraStopsRecordingTape
+  EndRecord Message VignetteWillSleeping/WillSleepingSoundSource Mute
+  EndRecord Audio* FadeInAll 4      
+  EndRecord Audio* FadeOut will-snoring-recording 1 Destroy
+  EndRecord Audio* Play tape-stop
+  EndRecord Audio* FadeOut tape-run 1 Destroy
+  EndRecord Event fade-in-all
+  EndRecord Event stop-recording
+  EndRecord Gesture Ezra Exit Record
+@end
+
+@func WillWakesUp
+  Will Message Will ContinuousRendering
+  Will Message Ezra ContinuousRendering
+  Will Message ActorLightswitchCabin TurnOn
+  Will Gesture* Will Enter WakeUp
+  Will Wait 2
+  Will Gesture* Will Exit Sleeping
+  Will Wait 3
+  Will Message Will PeriodicRendering
+  Will Message Ezra PeriodicRendering
+@end
+
+@func EndScene
+  End Cursor Hide
+  End Interact Off
+  End Marker Lock
+  End Wait 2
+  End SceneChange Overworld ? !debug-run-all-tugboat-vignettes
+  End Set tugboat-vignette MushroomStew ? debug-run-all-tugboat-vignettes
+  End SceneChange Tugboat ? debug-run-all-tugboat-vignettes
+  
+@end

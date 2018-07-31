@@ -1,0 +1,30 @@
+# -*- mode: blocking -*-
+
+Main Push [PLAYER] FreeRotate
+Main Clear [PLAYER]
+Main Cursor Hide
+
+Main Disable [ACTOR]/Obstacle
+
+Main Walk [PLAYER] [ACTOR]/[StartPosition]
+Main Event tugboat-enter ? !temp:tugboat-inside
+Main Event tugboat-exit ? temp:tugboat-inside
+Main Wait 1 ? temp:tugboat-inside
+Main Set temp:tugboat-inside [TugboatInside]
+Main Set temp:tugboat-side [TugboatSide]
+Main Fork MainHunch
+Main Audio* Play door
+Main Message [ACTOR]/Door Open Wait
+Main Walk [PLAYER] [ACTOR]/[EndPosition]
+Main Message [ACTOR]/Door Close Wait
+
+Main Enable [ACTOR]/Obstacle
+
+Main Event used-deck-door
+Main Cursor Show
+Main Pop [PLAYER]
+
+MainHunch Wait 1.5
+MainHunch Message [PLAYER] SetHunch 0.8
+MainHunch Wait 1.5
+MainHunch Message [PLAYER] SetHunch 0

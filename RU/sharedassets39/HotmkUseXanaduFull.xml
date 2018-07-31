@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="use-pdp">
+  <scene name="intro" nextScene="end">
+    <line condition="hotmk-xanadu-repair-solution=phrase" speaker="shannon">OK ... we're supposed to type `dome in air`.</line>
+    <line condition="hotmk-xanadu-repair-solution=unplug" speaker="shannon">OK ... so I'll just unplug it and wait a minute, I guess ...</line>
+    <line condition="hotmk-xanadu-repair-solution=mold" speaker="shannon">Do you see anything that looks like a &quot;timing crystal?&quot;</line>
+    <line condition="hotmk-xanadu-repair-solution=mold" speaker="junebug">Yeah, right here behind the control panel.</line>
+    <line condition="hotmk-xanadu-repair-solution=mold" speaker="junebug">It's filthy!</line>
+    <line condition="hotmk-xanadu-repair-solution=mold" speaker="shannon">Right. We're supposed to scrape off this black moldy stuff ...</line>
+    <line speaker="junebug">Weird.</line>
+    <line speaker="shannon">Just following instructions ... here we go.</line>
+  </scene>
+</conversation>

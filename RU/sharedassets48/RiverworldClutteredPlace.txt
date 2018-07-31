@@ -1,0 +1,15 @@
+# -*- mode: blocking -*-
+
+Tugboat Wait 15
+
+Tugboat Message RiverworldManager QueueState Dockyard
+Tugboat Message RiverworldManager SetDestination Dockyard
+
+Tugboat Message RiverworldManager SetBoatSpeed 0.5
+Tugboat Message RiverworldManager SetDialogTrigger 10
+Tugboat Message RiverworldManager EnableDialogThrottle
+Tugboat Dialog RiverVignetteClutteredPlace
+Tugboat Message RiverworldManager DisableDialogThrottle
+
+Vignette Listen conversation-closing
+Vignette Message RiverworldManager SetBoatSpeed 1

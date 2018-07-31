@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-rope" value="true"/>
+    <line>A loop of decayed rope is coiled on the banister. Some rotted sections have been smoothed over with a fine dust.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,179 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="end-flora-conversation,stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="museum-talked-to-flora" value="true"/>
+    <setGameVar name="museum-location" value="cabin" />    
+    
+    <line speaker="flora">I was playing in that empty cabin, and they came by. They asked about Dr. Truman. I know where he went, but I didn't tell them.</line>
+    <option goto="anything-else" speaker="museum staff">Did you talk about anything else?</option>
+    <option goto="dr-truman" speaker="museum staff">Where did Dr. Truman go?</option>
+  </scene>
+
+  <scene name="dr-truman">
+    <line speaker="flora">It's a secret. Ezra told me, and I can't tell anyone else.</line>
+    <option goto="anything-else" speaker="museum staff">What else did the strangers say?</option>
+    <option goto="ezra" speaker="museum staff">Who is Ezra?</option>
+  </scene>
+
+  <scene name="ezra" nextScene="anything-else">
+    <line speaker="flora">He's my age. He doesn't really live here. He's just passing through with his brother, Julian. First they're going to help us, but I can't say any more about that. We have a lot of secrets.</line>
+  </scene>
+
+  <scene name="anything-else">
+    <line speaker="flora">The lady asked me about my parents and I told them they were upstairs in the greenhouse. Do you want to hear a weird story?</line>
+    <option goto="no-weird-story" speaker="museum staff">I'm a little busy.</option>
+    <option goto="weird-story" speaker="museum staff">Of course I do.</option>
+  </scene>
+
+  <scene name="no-weird-story" nextScene="end">
+    <line speaker="flora">OK. Bye.</line>
+  </scene>
+
+  <scene name="weird-story">
+    <triggerEvent name="dialog-darken-slow"/>
+    <triggerEvent name="conway-enters-cabin"/>
+    <setGameVar name="museum-heard-flora-weird-story" value="true"/>
+    
+    <line speaker="flora">The old man asked me about the cabin. He said it looked like another house he knew, and he wanted to know where it came from. I told him nobody lived there, so he went inside. He took a long time exploring. When he came back out he told me all about it.</line>
+    <option goto="other-house" speaker="museum staff">Where was the other house he knew?</option>
+    <option goto="inside-house" speaker="museum staff">What did he find in the cabin?</option>
+  </scene>
+
+  <scene name="other-house">
+    <line speaker="flora">I don't remember. He seemed sad.</line>
+    <option goto="childhood-home" speaker="museum staff">Was it the home he grew up in?</option>
+    <option goto="friend-home" speaker="museum staff">Was it the home of a friend?</option>
+    <option goto="sad-place" speaker="museum staff">Was it a place where something sad happened?</option>
+  </scene>
+
+  <scene name="childhood-home" nextScene="inside-house">
+    <setGameVar name="museum-cabin-memory" value="home"/>
+    
+    <line condition="one:conway-family-illness=mother+one:conway-family-illness-quality=paranoid" speaker="flora">Yeah, I remember: he lived there with his mom. She was sick. She stayed in her room all the time.</line>
+    <line condition="one:conway-family-illness=mother+one:conway-family-illness-quality=obsessive" speaker="flora">Yeah, I remember: he lived there with his mom. She was sick. She was always sweeping, she said the dust was trying to smother them.</line>
+    <line condition="one:conway-family-illness=mother+one:conway-family-illness-quality=artist" speaker="flora">Yeah, I remember: he lived there with his mom. She was a painter. She only slept in the daytime.</line>
+    
+    <line condition="one:conway-family-illness=father+one:conway-family-illness-quality=paranoid" speaker="flora">Yeah, I remember: he lived there with his dad. His dad was sick. He stayed in his room and always kept the curtains drawn.</line>
+    <line condition="one:conway-family-illness=father+one:conway-family-illness-quality=obsessive" speaker="flora">Yeah, I remember: he lived there with his dad. His dad was sick. He collected things, and all the rooms were full of stuff.</line>
+    <line condition="one:conway-family-illness=father+one:conway-family-illness-quality=artist" speaker="flora">Yeah, I remember: he lived there with his dad. His dad was a writer. He wrote about sad stuff, and slept a lot in the daytime.</line>
+
+    <line condition="one:conway-family-illness=none" speaker="flora">Yeah, I remember: he lived there when he was my age. He was happy then, but now he's sad.</line>
+  </scene>
+
+  <scene name="friend-home" nextScene="inside-house">
+    <setGameVar name="museum-cabin-memory" value="friend"/>
+    <line speaker="flora">Yeah, I remember: his friend lived there when they were younger. He moved away for a while and when he came back she was married and had a new house. He's still friends with her but it makes him sad.</line>
+  </scene>
+
+  <scene name="sad-place" nextScene="inside-house">
+    <setGameVar name="museum-cabin-memory" value="sad"/>
+    <line speaker="flora">Yeah, I remember: he woke up there one morning and he didn't know where he was. He was alone. He waited all day for someone to come and tell him why he was there, but nobody did, so he left at sundown.</line>
+  </scene>
+
+  <scene name="inside-house">
+    <line speaker="flora">He went upstairs and he also looked around the other rooms. I played with the dog.</line>
+    <option goto="upstairs" speaker="museum staff">What did he do upstairs?</option>
+    <option goto="kitchen" speaker="museum staff">What did he do in the kitchen?</option>
+    <option goto="dog" speaker="museum staff">What was the dog like?</option>
+  </scene>
+
+  <scene name="upstairs" nextScene="weird-part">
+    <line speaker="flora">He looked in some boxes. He looked out the window. He could see the museum better than when he was downstairs — he could tell how it was all put together. And the cabin, too, he could see the shape of it better from up there.</line>
+  </scene>
+
+  <scene name="kitchen" nextScene="weird-part">
+    <line speaker="flora">He just stood still for a while. He said he likes kitchens. He feels safe in the kitchen.</line>
+  </scene>
+
+  <scene name="dog" nextScene="weird-part">
+    <line condition="one:dog-name=Homer" speaker="flora">His name is Homer, and you can almost see his skeleton. It's pretty cool.</line>
+    <line condition="one:dog-name=Blue" speaker="flora">Her name is Blue, and I fed her some crackers. She drools a lot.</line>
+    <line condition="one:dog-nameless" speaker="flora">The lady said he just follows them around. I wish I had a dog that followed me around. I'd name him something really cool like `Vladimir` or `Estragon`.</line>
+  </scene>
+
+  <scene name="weird-part">
+    <line speaker="flora">Now, the part that is weird.</line>
+    <line speaker="flora">He said he went into the basement.</line>
+    
+    <line speaker="museum staff">That cabin doesn't have a basement.</line>
+    
+    <option goto="basement" speaker="flora">He said he found a staircase in a closet.</option>
+    <option goto="basement" speaker="flora">He said he found a secret door in the floor.</option>
+    <option goto="basement" speaker="flora">He said he dug through the ground to get there.</option>
+  </scene>
+
+  <scene name="basement">
+    <option goto="pit-rope" speaker="flora">Then he found a rope leading down a long pit, and he climbed down.</option>
+    <option goto="aphids" speaker="flora">He was surrounded by giant aphids.</option>
+  </scene>
+
+  <scene name="pit-rope">
+    <option goto="pit-rope-fell" speaker="flora">It was so long, his arms got very tired, and he fell in the dark.</option>
+    <option goto="pit-rope-moss" speaker="flora">The walls were covered in a glowing moss.</option>
+  </scene>
+
+  <scene name="pit-rope-fell">
+    <option goto="pit-rope-find-ground" speaker="flora">He didn't get hurt, though.</option>
+    <option goto="pit-rope-couldnt-walk" speaker="flora">He hurt his other leg, and he couldn't walk at all.</option>
+  </scene>
+
+  <scene name="pit-rope-find-ground">
+    <option goto="garden" speaker="flora">He crawled through a tunnel, where he found a hidden garden.</option>
+    <option goto="aphids" speaker="flora">But he was surrounded by giant aphids!</option>
+  </scene>
+
+  <scene name="pit-rope-moss">
+    <option goto="pit-rope-eat-moss" speaker="flora">He tried to eat some of the moss.</option>
+    <option goto="rivers" speaker="flora">He used the light of the moss to find a lake at the bottom of the pit.</option>
+  </scene>
+
+  <scene name="pit-rope-couldnt-walk">
+    <option goto="garden" speaker="flora">So he crawled until he found a garden.</option>
+    <option goto="rivers" speaker="flora">So he crawled until he found a river.</option>
+  </scene>
+
+  <scene name="pit-rope-eat-moss">
+    <option goto="weird-story-end-wake-up" speaker="flora">It made him fall asleep.</option>
+    <option goto="garden" speaker="flora">It made him confused, and he wandered around until he found a garden.</option>
+  </scene>
+
+  <scene name="garden">
+    <option goto="garden-beautiful" speaker="flora">The garden was very beautiful.</option>
+    <option goto="garden-dangerous" speaker="flora">The garden was very dangerous.</option>
+  </scene>
+
+  <scene name="garden-beautiful">
+    <option goto="weird-story-end-wake-up" speaker="flora">He felt so calm, he fell asleep.</option>
+    <option goto="weird-story-end-navigated" speaker="flora">He found a tunnel leading back upstairs.</option>
+  </scene>
+
+  <scene name="garden-dangerous">
+    <option goto="weird-story-end-navigated" speaker="flora">But he escaped, because he is very tall.</option>
+    <option goto="weird-story-end-wake-up" speaker="flora">He was trapped for a long time, a prisoner in the garden. He had to sleep there.</option>
+  </scene>
+
+  <scene name="aphids">
+    <option goto="garden" speaker="flora">But the aphids were friendly, and led him to a secret garden.</option>
+    <option goto="rivers" speaker="flora">He ran away from the aphids, into a river to hide.</option>
+  </scene>
+
+  <scene name="rivers">
+    <option goto="weird-story-end-wake-up" speaker="flora">The water swept him around until he didn't know where he was, and finally he fell asleep in the water.</option>
+    <option goto="weird-story-end-navigated" speaker="flora">He was a good swimmer, so he found his way back to the cabin.</option>
+  </scene>
+
+  <scene name="weird-story-end-navigated" nextScene="end">
+    <triggerEvent name="conway-exits-cabin"/>
+    <triggerEvent name="dialog-lighten-fast"/>
+    <setGameVar name="museum-flora-conway-return" value="navigate"/>
+    <line speaker="flora">So then he came back out of the cabin, and we said goodbye, and I didn't talk to them anymore.</line>
+  </scene>
+
+  <scene name="weird-story-end-wake-up" nextScene="end">
+    <triggerEvent name="conway-exits-cabin"/>
+    <triggerEvent name="dialog-lighten-fast"/>    
+    <setGameVar name="museum-flora-conway-return" value="awake"/>    
+    <line speaker="flora">He woke up on the floor of the cabin. He came back outside, and we said goodbye, and I didn't talk to them anymore.</line>
+  </scene>
+</conversation>

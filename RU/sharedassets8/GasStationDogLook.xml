@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+    <scene name="intro" nextScene="end">
+      <line>Старый пёс в соломенной шляпе. Оба видали лучшие дни.</line>
+    </scene>
+</conversation>

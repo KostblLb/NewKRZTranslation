@@ -1,0 +1,36 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="jenn">I don't think I believe in that.</line>
+    <line speaker="mimi">What?</line>
+    <line speaker="jenn">"Acts of God."</line>
+    <line speaker="mimi">Yeah ... but there has to be a word for when something completely shitty happens for no reason, right? I guess it's kind of archaic.</line>
+
+    <line speaker="jenn" blocking="@inline PlayPaperSound">Hm ... `(JENN flips through the questionnaire.)`</line>
+    
+    <line speaker="question" style="questionnaire">First, please use the blank space below to describe your general feelings about television. If you have difficulty summarizing your emotions succinctly, or have too many different feelings to fit in the blank space, you may also use the back of this paper.</line>
+    
+    <option goto="how-many-videos" speaker="response" style="questionnaire" variableChange="lab-television-feelings=positive">Television is my preferred window to the world.</option>
+    <option goto="how-many-videos" speaker="response" style="questionnaire" variableChange="lab-television-feelings=negative">I probably spend too much time watching television.</option>
+    <option goto="how-many-videos" speaker="response" style="questionnaire" variableChange="lab-television-feelings=ambivalent">I have mixed feelings about television.</option>
+  </scene>
+
+  <scene name="how-many-videos">
+    <line speaker="question" style="questionnaire">You were asked to watch several videos. How many of the videos did you watch?</line>
+    
+    <option goto="back-to-weaver" speaker="response" style="questionnaire" variableChange="lab-videos-claimed=one">Just one.</option>
+    <option goto="back-to-weaver" speaker="response" style="questionnaire" variableChange="lab-videos-claimed=all">All of them.</option>
+    <option goto="back-to-weaver" speaker="response" style="questionnaire" variableChange="lab-videos-claimed=forget">I don't remember. Sorry.</option>
+  </scene>
+
+  <scene name="back-to-weaver" nextScene="end">
+    <line speaker="jenn">Speaking of the TV station ... you were saying something earlier about that other Márquez girl.</line>
+    <line speaker="mimi">Oh, right, I was talking about Weaver.</line>
+    <line speaker="jenn">Yeah, what exactly happened with her? You said she left on "weird terms?"</line>
+    <line speaker="mimi">Yes. Well ... so, actually she just stopped showing up. That was pretty normal.</line>
+    <line speaker="jenn">It was all volunteers, right? "Community television."</line>
+    <line speaker="mimi">Yeah. People didn't really give much advance notice; they just got bored and drifted away. It was more like an art project than a job, for most people.</line>
+    <line speaker="mimi">Weaver Márquez helped manage the archives, like filing and sorting old tapes of broadcasts. I think she was pretty smart — she probably could have been more help fixing equipment or something — but she seemed content just to organize tapes.</line>
+    <line speaker="mimi">Nobody ever talked to her much, so when she left ... no big deal. But then, a couple months later, we started getting these bizarre ... `interventions`.</line>
+  </scene>
+</conversation>

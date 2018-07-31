@@ -1,0 +1,50 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="floating-gas-station-johnny-talked-to-val" value="true" />
+    <option goto="hound" speaker="johnny">What do you think of that other dog we've got on board, Val?</option>
+    <option goto="mushroom-hunting" speaker="johnny">Mushroom hunting, huh?</option>
+  </scene>
+
+  <scene name="hound">
+    <option goto="mushroom-hunting" speaker="johnny"><filter name="capitalize"><variable name="dog-name-or-pronoun" /></filter>'s a sleepy old hound dog — I know <variable name="dog-pronoun" /> isn't doing any mushroom hunting, that's for sure.</option>
+    <option goto="conway" speaker="johnny"><filter name="capitalize"><variable name="dog-name-or-pronoun" /></filter> came along with that old man drinking up all your beer.</option>
+  </scene>
+
+  <scene name="mushroom-hunting">
+    <option goto="what-do-you-think" speaker="johnny">I'd like to try my hand at mushroom hunting. I bet I'd be pretty good at it.</option>
+    <option goto="what-do-you-think" speaker="johnny">Weird cave fungus growing on soggy moth wings ... sounds kind of romantic, but also kind of gross, right?</option>
+  </scene>
+
+  <scene name="conway">
+    <option goto="what-do-you-think" speaker="johnny">He's alright though.</option>
+    <option goto="what-do-you-think" speaker="johnny">I'm a little worried about that guy, to be honest. Good thing he seems to be traveling with friends.</option>
+  </scene>
+
+  <scene name="what-do-you-think">
+    <option goto="sidecar-ideas" speaker="johnny">So — could you fit in the sidecar?</option>
+    <option goto="ride-with-us" speaker="johnny">So — would you like to ride with us for a day?</option>
+  </scene>
+
+  <scene name="sidecar-ideas">
+    <option goto="careful" speaker="johnny">If I sat on my legs, you could curl up in the base?</option>
+    <option goto="careful" speaker="johnny">If I rode with one knee draped over the side, you could sit next to me?</option>
+  </scene>
+
+  <scene name="careful">
+    <option goto="last-line" speaker="johnny">I'd hold you tight, I promise it'd be safe.</option>
+    <option goto="last-line" speaker="johnny">She's an excellent driver.</option>
+  </scene>
+
+  <scene name="ride-with-us">
+    <option goto="last-line" speaker="johnny">I bet you would. We're good company.</option>
+    <option goto="last-line" speaker="johnny">I guess you'd miss Cate, even just for a day.</option>
+  </scene>
+
+  <scene name="last-line">
+    <option goto="end" speaker="johnny">Maybe we can still talk her into it.</option>
+    <option goto="end" speaker="johnny">Naw, I guess it's settled anyway. Nice to think about, though.</option>
+  </scene>
+
+</conversation>
+

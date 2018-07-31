@@ -1,0 +1,33 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="distillery-discussed-electronics-2" value="true" />
+    
+    <line speaker="shannon">More of these old computers. Looks like about the same vintage as that stuff in the cave.</line>
+    <option goto="vintage" speaker="conway">How can you tell?</option>
+    <option goto="screen" speaker="conway">What's this little screen for?</option>
+  </scene>
+
+  <scene name="vintage" nextScene="rare">
+    <line speaker="shannon">Oh, I don't know this make or model, but you can tell ... Check out these tubes — nobody uses these anymore. I'm not sure where they'd even get replacements, these days.</line>
+  </scene>
+
+  <scene name="screen" nextScene="rare">
+    <line speaker="shannon">Oh, wow — good eye! This is an X-Y monitor. It's ... they use them in oscilloscopes and arcade games. Or they used to, anyway ...</line>
+  </scene>
+
+  <scene name="rare">
+    <line speaker="shannon">It's rare stuff. Hey, is this like antiquing with Lysette for you? Ha ha.</line>
+    <line speaker="shannon">I probably sound kind of ridiculous, waxing on about vacuum tubes and oscilloscopes ...</line>
+    <option goto="shannon-passion" speaker="conway">It's good to have a passion.</option>
+    <option goto="no-passion" speaker="conway">I don't think I could talk about `anything` like that.</option>
+  </scene>
+
+  <scene name="shannon-passion" nextScene="end">
+    <line speaker="shannon">Yeah, I guess it is. Someday you'll have to tell me what yours is.</line>
+  </scene>
+
+  <scene name="no-passion" nextScene="end">
+    <line speaker="shannon">I bet you could. Someday maybe you'll bend `my` ear about ... whatever.</line>
+  </scene>
+</conversation>

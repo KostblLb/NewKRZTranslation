@@ -1,0 +1,35 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="elevator-select-commit">
+  <scene name="intro">
+    <line condition="bureau-current-floor-goal=1" speaker="shannon">OK, her office is down on the first floor.</line>
+    <line condition="bureau-current-floor-goal=4" speaker="shannon">Archives and records ... so, fourth floor.</line>
+    <line condition="bureau-current-floor-goal=5" speaker="shannon">She's on the fifth floor, right?</line>
+    
+    <line>`(CONWAY scans a column of elevator buttons.)`</line>
+    <option goto="five" speaker="conway">Fifth floor. `(Diagrams and drafts.)`</option>
+    <option goto="four" speaker="conway">Fourth floor. `(Archives and records.)`</option>
+    <option goto="three" speaker="conway">Third floor. `(Bears.)`</option>
+    <option goto="two" speaker="conway">Second floor. `(Conference room.)`</option>
+    <option goto="one" speaker="conway">First floor. `(Clerks' offices.)`</option>
+    <option goto="ground" speaker="conway">Lobby.</option>
+  </scene>
+
+  <scene name="ground" nextScene="end">
+    <triggerEvent name="elevator-select-ground"/>
+  </scene>
+  <scene name="one" nextScene="end">
+    <triggerEvent name="elevator-select-one"/>
+  </scene>
+  <scene name="two" nextScene="end">
+    <triggerEvent name="elevator-select-two"/>
+  </scene>
+  <scene name="three" nextScene="end">
+    <triggerEvent name="elevator-select-three"/>
+  </scene>
+  <scene name="four" nextScene="end">
+    <triggerEvent name="elevator-select-four"/>
+  </scene>
+  <scene name="five" nextScene="end">
+    <triggerEvent name="elevator-select-five"/>
+  </scene>
+</conversation>

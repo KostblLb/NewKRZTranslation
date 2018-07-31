@@ -1,0 +1,33 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-talked-to-ivy" value="true"/>
+    <setGameVar name="museum-location" value="country-home-1" />
+    
+    <line speaker="ivy">They wouldn't come in. Just rushing around — you could tell they were worn, and it was late at night, but ... just rushing around.</line>
+    <line speaker="ivy">Well, there was some urgency to the older man's injury, so it's understandable.</line>
+    <option goto="injury" speaker="museum staff">How was he injured?</option>
+    <option goto="looking-for" speaker="museum staff">What were they looking for?</option>
+  </scene>
+
+  <scene name="injury" nextScene="dont-know">
+    <line speaker="ivy">His leg. It was twisted or something. He held it while he walked, and made these painful little sounds in his throat.</line>
+    <line speaker="ivy">Oh, `how`? I don't know. I didn't ask. It would have been rude, I think.</line>
+  </scene>
+
+  <scene name="looking-for">
+    <line speaker="ivy">They were looking for Dr. Truman, but of course ... I had nothing to say. The man was hurt, you know.</line>
+    <option goto="dr-truman" speaker="museum staff">Where is Dr. Truman?</option>
+    <option goto="injury" speaker="museum staff">How was he hurt?</option>
+  </scene>
+
+  <scene name="dr-truman" nextScene="dont-know">
+    <line speaker="ivy">He ... left, of course. We've talked about it before. He left and we don't know how, or when, or what happened to his charming house.</line>
+  </scene>
+
+  <scene name="dont-know" nextScene="end">
+    <line speaker="ivy">Well, we just don't know. I suppose we never will.</line>
+  </scene>
+
+</conversation>

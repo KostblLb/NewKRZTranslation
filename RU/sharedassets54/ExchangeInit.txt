@@ -1,0 +1,120 @@
+# -*- mode: blocking -*-
+
+@set Shannon ExchangeDinghy/Root/Wobble/Shannon
+@set DinghyFlashlight ExchangeDinghy/Root/Wobble/Shannon
+
+# Setup
+
+Main Disable Hound
+Main Disable ExchangeMotorboat/Root/Wobble/SkeletonConway
+Main Disable TunnelHintMotorboat
+Main Set temp:flashlight-on true
+
+Main Disable Flora ? !met-flora
+Main Disable Flora/*/PaperBoat ? met-flora+!three:museum-parking-completed-boat-watch
+
+Main Message ExchangeMotorboat/*/SkeletonGlow SetIntensity 0.2
+
+# Flotsam
+
+Main Disable Flotsam/ConwayUmbrella ? !two:museum-umbrella-is-open
+Main Disable Flotsam/PaperBoat ? !three:museum-parking-completed-boat-watch
+Main Disable Flotsam/Radio ? !one:asked-bait-shop-cashier-about-basketball
+
+# Events
+
+Dropoff Listen goto-shannon-dropoff
+Dropoff Disable TriggerShannonDropoff
+Dropoff Message ExchangeDinghy Dock 0.762,shannon-disembarks
+Dropoff Message ExchangeMotorboat StopFollowing
+
+Disembark Listen shannon-disembarks
+Disembark Look ExchangeDinghy/Root/Wobble/Conway ExchangeDinghy/Root/Wobble/Shannon
+Disembark Message [Shannon] Disembark
+Disembark Wait 1
+Disembark Disable ExchangeDinghy/Root/WobbleInverse/ReflectionShannon
+Disembark Disable ExchangeDinghy/Root/WobbleInverse/ReflectionShannonSolid
+Disembark Disable ExchangeBatSwarm
+
+Goodbye Listen conway-leaves-shannon
+Goodbye Disable TriggerConwayLeavesShannon
+Goodbye Set exchange-conway-left-shannon true
+Goodbye Message ExchangeStaging FollowShannon
+
+Hound Interact ActorHound Off
+Hound Listen hound-disembark
+Hound Disable ExchangeDinghy/Root/Wobble/Hound
+Hound Enable Hound
+Hound Look Hound Shannon
+
+# Functions
+
+@func Intro
+
+  Gamepad Message ExchangeGamepad OnBoat
+  
+  Cate Message ExchangeDinghy Stop
+  Cate Interact ActorCate Talk
+  Cate Message ExchangeDinghy Go
+  
+@end
+
+@func SanctuaryBookmark
+
+  Gamepad Message ExchangeGamepad OnBoat
+  
+  Main Set temp:skeletons-waved true
+  Main Message ExchangeDinghy JumpToLocation 0.25
+  
+@end
+
+@func SanctuaryEndBookmark
+
+  Gamepad Message ExchangeGamepad OnBoat
+  
+  Main Set temp:skeletons-waved true
+  Main Message ExchangeDinghy JumpToLocation 0.55
+  Main Message ExchangeMusic Snap
+  
+@end
+
+@func TunnelBookmark
+
+  Gamepad Message ExchangeGamepad OnBoat
+
+  Main Set temp:skeletons-waved true
+  Main Message ExchangeDinghy JumpToLocation 0.72
+  Main Message CameraTransform/*/CameraMain AtExchange
+
+@end
+
+@func EnterTunnel
+
+  Tunnel Set exchange-bookmark tunnel
+  Tunnel Event save
+  Tunnel Message ExchangeDinghy/ExchangeDinghySounds ReverbOn
+  Tunnel Audio* FadeIn water-dripping 10
+
+@end
+
+Tunnel Listen goto-shannon-dropoff
+Tunnel Exec EnterTunnel
+
+# Init
+
+@Intro ? exchange-bookmark=start
+@SanctuaryBookmark ? exchange-bookmark=sanctuary
+@SanctuaryEndBookmark ? exchange-bookmark=sanctuary-end
+@TunnelBookmark ? exchange-bookmark=tunnel
+
+# --------- #
+
+
+# Testing
+
+# at tunnel
+# Main Message ExchangeDinghy JumpToLocation 0.72
+
+# Main Message ExchangeDinghy JumpToLocation 0.68
+
+# Main Message ExchangeDinghy JumpToLocation 0.135

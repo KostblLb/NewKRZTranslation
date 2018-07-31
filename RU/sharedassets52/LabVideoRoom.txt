@@ -1,0 +1,22 @@
+# -*- mode: blocking -*-
+
+@func WatchVideo [VideoNo]
+
+  Video Marker Lock
+  Video Walk [PLAYER] LabVideoRoom/SitPosition[VideoNo]
+  Video Message LabVideoRoom/CameraTransform/Camera SetFovOverlay -5
+  Video Audio* FadeIn video[VideoNo] 2
+  Video Gesture [PLAYER] Enter Sit
+  Video Set temp:player-sitting true
+  
+  Video Dialog LabVideo[VideoNo]
+  
+  Video Set lab-watched-video-[VideoNo] true
+  Video Gesture [PLAYER] Exit Sit
+  Video Audio* FadeOut video[VideoNo] 2
+  Video Message LabVideoRoom/CameraTransform/Camera SetFovOverlay 0
+  Video Set temp:player-sitting false
+  Video Event done-watching
+  Video Marker Unlock
+
+@end

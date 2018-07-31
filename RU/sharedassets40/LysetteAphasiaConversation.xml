@@ -1,0 +1,228 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="switch-to-truman">
+  <endingAudioEvents>
+    <audioFade clip="announcer-3" destroy="true" direction="out" speed="1"/>
+    <audioFade clip="daytime-ambience" destroy="true" direction="out" speed="0.5"/>
+    <audioFade clip="drone" direction="in" speed="0.125"/>
+    <audioFade clip="wind" direction="in" speed="0.125"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="intro-2">
+    <audioFade clip="announcer-1" direction="in" speed="4"/>
+    <audioFade clip="radio-noise" destroy="true" direction="out" speed="4"/>
+    <line speaker="radio announcer">~Eighty-three and sunny now, looks like it's gonna get up to about one-oh-one by late afternoon in Louisville and one-oh-three in E-town, not a cloud in sight so get out those ~^parasols^~, ha ha!~</line>
+  </scene>
+
+  <scene name="intro-2">
+    <audioFade clip="announcer-1" destroy="true" direction="out" speed="4"/>
+    <audioFade clip="announcer-2" direction="in" speed="4"/>
+    <line speaker="radio announcer">^Major^~ accident just ahead of the Bardstown exit, so if you're headed to work on thirty-one you are ~^late^~, my friend, ha ha!~</line>
+    
+    <line speaker="lysette">Sugar?</line>
+    <option goto="as-it-is" speaker="conway">As it is.</option>
+    <option goto="yes-sugar" speaker="conway">Just a little.</option>
+  </scene>
+
+  <scene name="as-it-is" nextScene="dream">
+    <setGameVar name="coffee-sugar" value="false" />
+    <audioFade clip="announcer-2" destroy="true" direction="out" speed="4"/>
+    <line speaker="lysette">That's what Ira used to say ... I had a dream about him last night.</line>
+  </scene>
+
+  <scene name="yes-sugar" nextScene="dream">
+    <setGameVar name="coffee-sugar" value="true" />
+    <audioFade clip="announcer-2" destroy="true" direction="out" speed="4"/>
+    <line speaker="lysette">I forgot how you take your coffee ... I'm tired. I didn't sleep well.</line>
+  </scene>
+
+  <scene name="dream">
+    <option goto="horses" speaker="conway">Those old horses of Ira's used to keep me up.</option>
+    <option goto="bad-dream" speaker="conway">I heard you yelling — bad dreams?</option>
+  </scene>
+
+  <scene name="horses">
+    <line speaker="lysette">You thought `they` were having bad dreams, I remember. Ira wouldn't hear it. &quot;They're just horses.&quot;</line>
+    <line speaker="lysette">But those horses were troubled.</line>
+    <option goto="horse-illness" speaker="conway" variableChange="lysettes-kitchen-horse=brownie">Brownie got sick every morning in the stable.</option>
+    <option goto="horse-illness" speaker="conway" variableChange="lysettes-kitchen-horse=alethea">Alethea chewed up the wood in the stalls.</option>
+  </scene>
+
+  <scene name="horse-illness">
+    <line speaker="lysette">That's right.</line>
+    <line speaker="lysette">Charlie loved those horses. He'd sit on the roof and read his textbooks, and watch them.</line>
+    <line speaker="lysette">He was so careful here. Or our roof was just in better shape than the one he fell from ...</line>
+    <option goto="dream-charlie-alone" speaker="conway">Charlie was alone on that roof.</option>
+    <option goto="conway-told-charlie" speaker="conway">I always told him to test each tile with a heel first.</option>
+  </scene>
+
+  <scene name="bad-dream">
+    <line speaker="lysette">We were up on a roof. Ira and I, and Charlie. Eating a light supper. I was drinking sweet tea. Charlie was reading. We were surrounded by other houses, closely packed. Huge sidewalks, it must have been a ... what's that word ...</line>
+    <option goto="dream-guess-word" speaker="conway">A city.</option>
+    <option goto="dream-guess-word" speaker="conway">A subdivision.</option>
+  </scene>
+
+  <scene name="dream-guess-word">
+    <setGameVar name="lysettes-kitchen-heard-about-dream" value="true" />
+    <line speaker="lysette">That's it, I'm sure. Below us, a group of people were gathered, standing quietly. A man was reading from a book.</line>
+    <line speaker="lysette">I asked Ira about the weather. Would it rain on Tuesday or when would the sun set, something like that. He wouldn't answer me. Charlie stood up, and Ira told him to watch his step, and then I remembered ...</line>
+    <line speaker="lysette">I woke up before I could stop him.</line>
+    <option goto="dream-charlie-alone" speaker="conway">Charlie was alone on that roof.</option>
+    <option goto="conway-told-charlie" speaker="conway">I always told him to test each tile with a heel first.</option>
+  </scene>
+
+  <scene name="dream-charlie-alone">
+    <line speaker="lysette">I guess he was.</line>
+    <line speaker="lysette">He was so bright. His teachers said ... what was the word ...</line>
+    <option goto="charlie-studies-word" speaker="conway">Imaginative.</option>
+    <option goto="charlie-studies-word" speaker="conway">Apt.</option>
+  </scene>
+
+  <scene name="conway-told-charlie">
+    <line speaker="lysette">&quot;If it's a heel, you can kick it back and still put your toe on something solid when the tile slips ...&quot;</line>
+    <line speaker="lysette">I remember. Your &quot;lessons.&quot; He just wanted to study his ... what was it called ...</line>
+    <option goto="charlie-studies-word" speaker="conway" variableChange="lysettes-kitchen-charlie-studied=astronomy">Astronomy.</option>
+    <option goto="charlie-studies-word" speaker="conway" variableChange="lysettes-kitchen-charlie-studied=aviation">Aviation.</option>
+  </scene>
+
+  <scene name="charlie-studies-word">
+    <line speaker="lysette">That's it. How could I forget ...</line>
+    <option goto="charlie-didnt-listen" speaker="conway">He didn't listen.</option>
+    <option goto="charlie-not-at-fault" speaker="conway">It wasn't his fault.</option>
+  </scene>
+
+  <scene name="charlie-didnt-listen">
+    <line speaker="lysette">He listened. But he didn't hear what you wanted him to. Charlie always had thoughts somewhere else, and he was fitting your words together with whatever else he was focused on, like a ... what do you ...</line>
+    <option goto="charlie-thoughts-word" speaker="conway">Like a puzzle.</option>
+    <option goto="charlie-thoughts-word" speaker="conway">Like a collage.</option>
+    <option goto="charlie-thoughts-word" speaker="conway">Like a word salad.</option>
+  </scene>
+
+  <scene name="charlie-thoughts-word" nextScene="intro-delivery">
+    <line speaker="lysette">Yes. That's the word.</line>
+  </scene>
+
+  <scene name="charlie-not-at-fault">
+    <line speaker="lysette">It wasn't anyone's fault, Conway. That's what we mean when we say it's ...</line>
+    <option goto="charlie-death-word" speaker="conway">An accident.</option>
+    <option goto="charlie-death-word" speaker="conway">A tragedy.</option>
+    <option goto="charlie-death-word" speaker="conway">A shame.</option>
+  </scene>
+
+  <scene name="charlie-death-word" nextScene="intro-delivery">
+    <line speaker="lysette">Sure.</line>
+  </scene>
+
+  <scene name="intro-delivery">
+    <line speaker="lysette">Well ...</line>
+    <line speaker="lysette">We have a mail-order delivery today. Might be a long drive. I hope the truck can hold up.</line>
+    <option goto="mail-order-long" speaker="conway">Long drive? What makes you think so?</option>
+    <option goto="by-mail" speaker="conway">They sent it in by mail?</option>
+    <option goto="truck" speaker="conway">That truck will outlive us all.</option>
+  </scene>
+
+  <scene name="truck">
+    <line speaker="lysette">I hope you're right. I'm glad you'll keep it. Ira would have wanted you to have it. It's been running since Charlie was born. Ira took me to the hospital in that truck. So did you, once.</line>
+    <option goto="knee" speaker="conway">Your knee.</option>
+    <option goto="fainted" speaker="conway">When you fainted.</option>
+  </scene>
+
+  <scene name="knee">
+    <line speaker="lysette">My new knee. Plastic. It'll be like a souvenir ...</line>
+    <option goto="mail-order-long" speaker="conway">So ... long drive?</option>
+    <option goto="by-mail" speaker="conway">So ... mail-order?</option>
+  </scene>
+
+  <scene name="fainted">
+    <line speaker="lysette">My hero.</line>
+    <option goto="mail-order-long" speaker="conway">So ... long drive?</option>
+    <option goto="by-mail" speaker="conway">So ... mail-order?</option>
+  </scene>
+
+  <scene name="mail-order-long" nextScene="by-mail">
+    <line speaker="lysette">They said they couldn't come in person.</line>
+  </scene>
+
+  <scene name="by-mail">
+    <line speaker="lysette">Maybe just a shut-in. I don't recognize the address. The order is all ...</line>
+    <line speaker="lysette">I'm sure we can fill it.</line>
+    <option goto="not-much" speaker="conway">Not much left back there.</option>
+    <option goto="last-order" speaker="conway">Guess that'll be the last.</option>
+  </scene>
+
+  <scene name="not-much">
+    <line speaker="lysette">That's good. I wouldn't want a disused pile of antiques to be my ... oh, what's the word ...</line>
+    <option goto="not-the-word" speaker="conway">Legacy.</option>
+    <option goto="not-the-word" speaker="conway">Chronicle.</option>
+    <option goto="not-the-word" speaker="conway">Junk.</option>
+  </scene>
+
+  <scene name="last-order">
+    <line speaker="lysette">I guess it will be. The last act of Lysette's Antiques. The ... oh, what's the word ...</line>
+    <option goto="not-the-word" speaker="conway">Finale.</option>
+    <option goto="not-the-word" speaker="conway">Death rattle.</option>
+  </scene>
+
+  <scene name="not-the-word">
+    <line speaker="lysette">... maybe ...</line>
+    <line speaker="lysette">No, that's not the word. I just need to think a bit ...</line>
+    <line speaker="lysette">More coffee or something. Or I've had too much.</line>
+    <option goto="words-getting-harder" speaker="conway">It's getting harder.</option>
+    <option goto="words-will-come" speaker="conway">It'll come to you.</option>
+  </scene>
+
+  <scene name="words-getting-harder" nextScene="boxes">
+    <line speaker="lysette">Yes, it is.</line>
+  </scene>
+
+  <scene name="words-will-come" nextScene="boxes">
+    <line speaker="lysette">Maybe. I'm not sure anymore. It seems inevitable there will start to be words that I lose forever ...</line>
+  </scene>
+
+  <scene name="boxes">
+    <line speaker="lysette">What are those boxes you set in the hallway?</line>
+    <option goto="charlies-books" speaker="conway">Those are Charlie's old books.</option>
+    <option goto="clothes" speaker="conway">Those are your clothes. You packed them yesterday.</option>
+  </scene>
+
+  <scene name="clothes" nextScene="cora-soon">
+    <setGameVar name="lysettes-kitchen-packed-clothes" value="true" />
+    <line speaker="lysette">I ... of course.</line>
+  </scene>
+
+  <scene name="charlies-books">
+    <line speaker="lysette">Oh.</line>
+    <option goto="lysette-look-at-books" speaker="conway">I thought you might like to look at them.</option>
+    <option goto="look-at-books-together" speaker="conway">I thought we could look them together.</option>
+  </scene>
+
+  <scene name="lysette-look-at-books" nextScene="cora-soon">
+    <line speaker="lysette">I'll take them with me. Thank you.</line>
+  </scene>
+
+  <scene name="look-at-books-together" nextScene="cora-soon">
+    <line speaker="lysette">That sounds nice.</line>
+  </scene>
+
+  <scene name="cora-soon">
+    <line speaker="lysette">Cora should be here soon. Will you wait with me?</line>
+    <option goto="wait-delivery" speaker="conway">I should get that delivery out.</option>
+    <option goto="scene-final" speaker="conway" variableChange="waited-with-lysette=true">Sure, Lys. I'll wait with you.</option>
+  </scene>
+
+  <scene name="wait-delivery">
+    <line speaker="lysette">I know. It's just ... what if I don't recognize her?</line>
+    <option goto="know-sister" speaker="conway">You know your own sister.</option>
+    <option goto="scene-final" speaker="conway" variableChange="waited-with-lysette=true">Sure, Lys. I'll wait with you.</option>
+  </scene>
+
+  <scene name="know-sister">
+    <line speaker="lysette">I hope so. These days ... it's going faster than I thought.</line>
+    <option goto="scene-final" speaker="conway" variableChange="waited-with-lysette=false">You'll be OK. She'll take care of you now.</option>
+    <option goto="scene-final" speaker="conway" variableChange="waited-with-lysette=true">Sure, Lys. I'll wait with you.</option>
+  </scene>
+
+  <scene name="scene-final" nextScene="end">
+    <audioFade clip="announcer-3" direction="in" speed="4"/>
+    <line speaker="radio announcer">~There's your traffic and weather on the ~^fives^~ — that's ~^every^~ ten minutes — brought to you by the Consolidated Power Company. Stick around for &quot;Old Kentucky Home&quot; with Kate, helping you turn your humble home into a ~^mansion^~. After this.~</line>
+  </scene>
+</conversation>

@@ -1,0 +1,29 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="talked-to-donald-about-hard-times">
+  <scene name="intro">
+    <setGameVar name="hotmk-talked-to-donald-after-hard-times" value="true"/>
+    
+    <line speaker="donald">`(Singing, softly.)` ... trace an orbit 'round the road / and close your eyes with holy dread / for we on mold and whiskey fed / and drank from rivers down below ...</line>
+    <line speaker="shannon">We found your &quot;strangers.&quot; We know how to fix your damned machine. But I'm not sure it was worth it.</line>
+    <line speaker="donald">Oh! Soon, the visions will return! What have you found?</line>
+    
+    <option goto="phrase" speaker="shannon">They say you need to type in a specific phrase to restore it.</option>
+    <option goto="unplug" speaker="shannon">They say you need to unplug it for a while.</option>
+    <option goto="mold" speaker="shannon">They say you need to scrape the mold off the &quot;timing crystals.&quot;</option>
+  </scene>
+
+  <scene name="phrase" nextScene="end">
+    <setGameVar name="hotmk-xanadu-repair-solution" value="phrase"/>
+    <line speaker="donald">Oh ... a bit of a poem to rally the illustrious spirit! Of course. Well, then: type away! By all means, do not hesitate: type away!</line>
+  </scene>
+
+  <scene name="unplug" nextScene="end">
+    <setGameVar name="hotmk-xanadu-repair-solution" value="unplug"/>
+    <line speaker="donald">Unplug it! Of course ... restore the software to its initial state. Let it course again, through the moldy circuits, fresh and rejuvenated, ready to thrive! Well, then: unplug it! By all means, do not hesitate: unplug the machine!</line>
+  </scene>
+
+  <scene name="mold" nextScene="end">
+    <setGameVar name="hotmk-xanadu-repair-solution" value="mold"/>
+    <line speaker="donald">But the mold ... of course! Too `much` mold on the timing crystal would send the simulation adrift, each moment lived out of sync. By all means, yes: clean the timing crystal!</line>
+  </scene>
+</conversation>

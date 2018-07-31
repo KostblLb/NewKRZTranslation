@@ -1,0 +1,26 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="overworld-saw-traffic-jam" value="true"/>
+    
+    <line>A line of cars extends down the road in a late-night traffic jam. Conway and Shannon can faintly see and hear some construction on the road ahead.</line>
+    <option goto="walk-ahead" insertedText="They get out of the truck and walk ahead.">Get out of the truck and walk ahead.</option>
+    <option goto="end">Drive away.</option>
+  </scene>
+
+  <scene name="walk-ahead">
+    <line>Most of the drivers in line are reading magazines, or lightly dozing.</line>
+    <option goto="walk-ahead-2" insertedText="Conway and Shannon walk further ahead.">Walk ahead.</option>
+    <option goto="conversation" insertedText="Conway and Shannon try to start up a conversation.">Try to start up a conversation.</option>
+    <option goto="end">Return to the truck and drive away.</option>
+  </scene>
+
+  <scene name="conversation" nextScene="walk-ahead-2">
+    <line>Conway taps on a window, trying to get an older woman's attention. She snaps awake suddenly, but ignores him, focusing on a point just ahead on the highway.</line>
+  </scene>
+
+  <scene name="walk-ahead-2" nextScene="end">
+    <line>The road ends abruptly. A small crew of highway maintenance workers have been laying down a ten-foot stretch of road. They complete their project and step out of the way, as traffic briefly resumes. The cars stop again, and the maintenance workers begin on the next section.</line>
+  </scene>
+
+</conversation>

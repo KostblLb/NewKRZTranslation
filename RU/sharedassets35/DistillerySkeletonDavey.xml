@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="distillery-met-skeleton-davey" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <triggerEvent name="start-tape"/>
+    <line speaker="doolittle" style="skeleton">Davey! How goes it?</line>
+    <line speaker="doolittle" style="skeleton">Watch out for Davey — he's a skilled card player! He once played a marvelously protracted game of blackjack against our old floor manager, Jane, in some tiki lounge on the Echo River. His luck ran out, and he couldn't cover his losses, so she offered him a job.</line>
+  </scene>
+</conversation>

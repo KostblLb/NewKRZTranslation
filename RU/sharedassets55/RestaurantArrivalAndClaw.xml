@@ -1,0 +1,209 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <goto condition="temp:skip-to-claw-game" sceneName="claw-game" />
+    
+    <line speaker="johnny">Aw, bad luck. You'll get it next time ... `(To SHANNON.)` Hey, got a quarter? He's almost got this.</line>
+    <line speaker="ezra">It's true.</line>
+    <option goto="yes-quarter" speaker="shannon">Sure, I have `one` quarter.</option>
+    <option goto="no-quarter" speaker="shannon">Don't waste your time, those machines are rigged.</option>
+  </scene>
+
+  <scene name="yes-quarter" nextScene="where-is-conway">
+    <setGameVar name="restaurant-shannon-gave-quarter" value="true" />
+    <line speaker="ezra">Thank you.</line>
+  </scene>
+
+  <scene name="no-quarter">
+    <line speaker="johnny">Oh, definitely. They're still fun, though.</line>
+    <option goto="yes-quarter" speaker="shannon">Fine, here's a quarter. It's my only one, so make it count!</option>
+    <option goto="hate-wasting-money" speaker="shannon">I just hate throwing money away, even just a quarter.</option>
+  </scene>
+
+  <scene name="hate-wasting-money" nextScene="where-is-conway">
+    <line speaker="johnny">Yeah, I hear you.</line>
+  </scene>
+
+  <scene name="where-is-conway">
+    <line speaker="johnny">So, uh. Where's ... ?</line>
+    <option goto="conway-left" speaker="shannon">He left.</option>
+    <option goto="conway-taken" speaker="shannon">They took him.</option>
+  </scene>
+
+  <scene name="conway-left" nextScene="shannon-leaves">
+    <setGameVar name="restaurant-shannon-explanation-for-conway" value="left" />
+    <line speaker="johnny">Oh, OK ...</line>
+    <line speaker="johnny">I have to say: I didn't know him very well, but he seemed like the kind of guy who was always on his way to somewhere else.</line>
+  </scene>
+
+  <scene name="conway-taken" nextScene="shannon-leaves">
+    <setGameVar name="restaurant-shannon-explanation-for-conway" value="taken" /> 
+    <line speaker="johnny">Damn. Yeah, he really got himself in a `situation` there.</line>
+  </scene>
+
+  <scene name="shannon-leaves" nextScene="route-for-claw-game">
+    <line speaker="shannon">Yeah. I'm gonna go sit down.</line>
+    <line speaker="johnny">Cool.</line>
+    <line speaker="johnny">Uh, the food is good here. I think everyone else is finishing up, but you could probably get something to go.</line>
+  </scene>
+
+  <scene name="route-for-claw-game">
+    <triggerEvent name="shannon-leaves-clawgame" debug="true" />
+    <goto condition="restaurant-shannon-gave-quarter" sceneName="claw-game" />
+    <goto condition="!restaurant-shannon-gave-quarter" sceneName="talk-about-conway" />
+  </scene>
+  
+  <scene name="claw-game">
+    <setGameVar name="restaurant-played-claw-game" value="true" />
+    <line speaker="johnny">`(To EZRA.)` Alright, claw maestro, let's give it another shot.</line>
+    <line speaker="johnny">So, let's see what's on the top of the pile, here ... there's a stuffed octopus, a plastic bag full of clam shells, a cowboy hat, and some big headphones.</line>
+    <line speaker="johnny">That octopus has a leg wrapped around the boombox underneath it. The shells are pretty clear, but I don't know if the claw can really grip the bag well. The cowboy hat is in the corner, so it's kind of tricky to tell if it's wedged in or not. Those headphones might be a good bet, but I can't see the cord; it could be wrapped around something.</line>
+    <line speaker="johnny">What are you going to try for?</line>
+    <option goto="choose-prize-octopus" speaker="ezra">I can get the octopus.</option>
+    <option goto="choose-prize-shells" speaker="ezra">Let's go for the clam shells.</option>
+    <option goto="choose-prize-hat" speaker="ezra">I want the cowboy hat.</option>
+    <option goto="choose-prize-headphones" speaker="ezra">I'll try to get the headphones.</option>
+  </scene>
+
+  <scene name="choose-prize-octopus" nextScene="insert-coin">
+    <setGameVar name="restaurant-claw-game-prize" value="octopus" />
+    <setGameVar name="temp:prize-x" value="1" />
+    <setGameVar name="temp:prize-y" value="1" />
+    <line speaker="johnny">Wow, alright. I admire your confidence.</line>
+  </scene>
+
+  <scene name="choose-prize-shells" nextScene="insert-coin">
+    <setGameVar name="restaurant-claw-game-prize" value="shells" />
+    <setGameVar name="temp:prize-x" value="0" />
+    <setGameVar name="temp:prize-y" value="2" />
+    <line speaker="johnny">Worth a shot!</line>
+  </scene>
+
+  <scene name="choose-prize-hat" nextScene="insert-coin">
+    <setGameVar name="restaurant-claw-game-prize" value="hat" />
+    <setGameVar name="temp:prize-x" value="2" />
+    <setGameVar name="temp:prize-y" value="2" />
+    <line speaker="johnny">Sounds good. I hope we can get the claw back far enough to get a grip on it.</line>
+  </scene>
+
+  <scene name="choose-prize-headphones" nextScene="insert-coin">
+    <setGameVar name="temp:prize-x" value="2" />
+    <setGameVar name="temp:prize-y" value="1" />
+    <setGameVar name="restaurant-claw-game-prize" value="headphones" />    
+    <line speaker="johnny">Good call, I think that's our best bet.</line>
+  </scene>
+
+  <scene name="insert-coin" nextScene="claw-game-loop">
+    <line speaker="johnny">OK. When I put this quarter in, you'll have about eight seconds to grab your prize.</line>
+    <line speaker="johnny" condition="restaurant-claw-game-prize=octopus">The octopus is square in the middle.</line>
+    <line speaker="johnny" condition="restaurant-claw-game-prize=shells">The shells are on the left, near the back.</line>
+    <line speaker="johnny" condition="restaurant-claw-game-prize=hat">The hat is in the back-right corner.</line>
+    <line speaker="johnny" condition="restaurant-claw-game-prize=headphones">The headphones are on the right, pretty close to the middle.</line>
+    <line speaker="johnny">Let me know if you need help lining it up; I've got a slightly different view of the field from up here.</line>
+    <line speaker="johnny">Ready? Here we go!</line>
+
+    <setGameVar name="temp:claw-x" value="0" />
+    <setGameVar name="temp:claw-y" value="0" />
+    <setGameVar name="temp:claw-time" value="9" />
+    
+    <line blocking="Claw Exec InsertCoin">`(JOHNNY inserts the coin, and the machine awakens.)`</line>
+  </scene>
+
+  <scene name="claw-game-loop">
+    <setGameVar name="temp:claw-time" value="-1" />
+    <goto condition="temp:claw-time=0" sceneName="drop-claw" />
+    
+    <line speaker="timer">0<variable name="temp:claw-time" /></line>
+    
+    <line condition="temp:claw-x=0+temp:claw-y=0">`(The claw hovers in the front-left corner of the machine.)`</line>
+    <line condition="temp:claw-x=1+temp:claw-y=0">`(The claw hovers halfway across the front of the machine.)`</line>
+    <line condition="temp:claw-x=2+temp:claw-y=0">`(The claw hovers in the front-right corner of the machine.)`</line>
+
+    <line condition="temp:claw-x=0+temp:claw-y=1">`(The claw hovers halfway along the left wall of the machine.)`</line>
+    <line condition="temp:claw-x=1+temp:claw-y=1">`(The claw hovers in the center of the machine.)`</line>
+    <line condition="temp:claw-x=2+temp:claw-y=1">`(The claw hovers halfway along the right wall of the machine.)`</line>
+
+    <line condition="temp:claw-x=0+temp:claw-y=2">`(The claw hovers in the back-left corner of the machine.)`</line>
+    <line condition="temp:claw-x=1+temp:claw-y=2">`(The claw hovers halfway along the back wall of the machine.)`</line>
+    <line condition="temp:claw-x=2+temp:claw-y=2">`(The claw hovers in the back-right corner of the machine.)`</line>
+
+    <option condition="temp:claw-x[gt]0" goto="claw-game-loop" variableChange="temp:claw-x=-1" blocking="Claw Message RestaurantClawGame MoveLeft">`(EZRA pushes the joystick left.)`</option>
+    <option condition="temp:claw-y[lt]2" goto="claw-game-loop" variableChange="temp:claw-y=+1" blocking="Claw Message RestaurantClawGame MoveBackwards">`(EZRA pushes the joystick up.)`</option>
+    <option condition="temp:claw-x[lt]2" goto="claw-game-loop" variableChange="temp:claw-x=+1" blocking="Claw Message RestaurantClawGame MoveRight">`(EZRA pushes the joystick right.)`</option>
+    <option condition="temp:claw-y[gt]0" goto="claw-game-loop" variableChange="temp:claw-y=-1" blocking="Claw Message RestaurantClawGame MoveForward">`(EZRA pulls the joystick down.)`</option>
+    <option goto="drop-claw" condition="temp:claw-x[gt]0|temp:claw-y[gt]0" blocking="Claw Message RestaurantClawGame Grab">`(EZRA pushes the button to drop the claw.)`</option>
+    <option speaker="ezra" goto="check-claw-position">Does this look right?</option>    
+  </scene>
+
+  <scene name="check-claw-position" nextScene="claw-game-loop">
+    <line speaker="johnny" condition="temp:prize-x=temp:claw-x+temp:prize-y=temp:claw-y">Yeah, looks good to me! Go for it!</line>
+    <line speaker="johnny" condition="!(temp:prize-x=temp:claw-x+temp:prize-y=temp:claw-y)"><filter name="capitalize"><if condition="temp:prize-x[gt]temp:claw-x">you're too far to the left</if><if condition="temp:prize-x[lt]temp:claw-x">you're too far to the right</if><if condition="(!(temp:prize-x=temp:claw-x))+(!(temp:prize-y=temp:claw-y))">, and </if><if condition="(!(temp:prize-x=temp:claw-x))+temp:prize-y=temp:claw-y">.</if><if condition="temp:prize-y[lt]temp:claw-y">you need to pull it a little closer.</if><if condition="temp:prize-y[gt]temp:claw-y">you need to push it back further.</if></filter></line>
+  </scene>
+  
+  <scene name="drop-claw" nextScene="claw-grab">
+    <line blocking="Claw Message RestaurantClawGameMusic StartEnd">`(The claw drops. <if condition="temp:prize-x=temp:claw-x+temp:prize-y=temp:claw-y">It grabs the <variable name="restaurant-claw-game-prize" />!<else>It grasps at nothing.</else></if>)`</line>
+    <line speaker="johnny" condition="!(temp:prize-x=temp:claw-x+temp:prize-y=temp:claw-y)">Aw, no good. It's hard to line it up just right ... maybe next time you should stand on a chair.</line>
+  </scene>
+
+  <scene name="claw-grab" nextScene="talk-about-conway">
+    <goto condition="!(temp:prize-x=temp:claw-x+temp:prize-y=temp:claw-y)" sceneName="talk-about-conway" />
+    
+    <line condition="restaurant-claw-game-prize=octopus">`(The octopus is attached too securely to the plastic boombox beneath it. It slips from the claw's grasp.)`</line>
+    <line condition="restaurant-claw-game-prize=octopus" speaker="johnny">Aw, no good. I had a feeling that octopus was a little too comfortable in there.</line>
+    
+    <line condition="restaurant-claw-game-prize=shells">`(The bag of shells is not substantial enough for the claw to hold. They tumble back out as it rises away.)`</line>
+    <line condition="restaurant-claw-game-prize=shells" speaker="johnny">Damn, you had it! Too bad those shells weren't in a styrofoam cup or something.</line>
+    
+    <line condition="restaurant-claw-game-prize=hat">`(The claw is only able to get ahold of the brim. It's not a strong enough grip to pull the hat out of the machine.)`</line>
+    <line condition="restaurant-claw-game-prize=hat" speaker="johnny">Sorry, kid. That hat would have looked good on you, too. But I guess it's just too far back in that corner.</line>
+    
+    <line condition="restaurant-claw-game-prize=headphones+!claw-full-strength">`(The claw's grasp seems unusually weak on this round, and the headphones tumble back out before they can be retrieved.)`</line>
+    <line condition="restaurant-claw-game-prize=headphones+!claw-full-strength" speaker="johnny">Aw, you were robbed! I guess "the house always wins, except on Tuesdays" ... A friend of ours always said that. I never really knew what he meant. Oh well.</line>
+
+    <line condition="restaurant-claw-game-prize=headphones+claw-full-strength">`(The claw returns to the front of the machine with the headphones in a tight grip. It drops them through a slot labeled "prize," where EZRA retrieves them.)`</line>
+    <line condition="restaurant-claw-game-prize=headphones+claw-full-strength" speaker="johnny">Whoa! Nice work! Now we just have to find you something to plug those into. Ha ha.</line>
+  </scene>
+  
+  <scene name="talk-about-conway">
+    <line speaker="johnny">Hey, listen ... it sounds like that old man you were following around, um ... I guess he had to leave.</line>
+    <option goto="is-conway-coming-back" speaker="ezra">Is he coming back?</option>
+    <option goto="is-conway-ok" speaker="ezra">Is he OK?</option>
+    <option goto="join-conway" speaker="ezra">I should go with him.</option>
+  </scene>
+
+  <scene name="is-conway-ok" nextScene="ezra-plan">
+    <line speaker="johnny">Yeah, he's OK. I mean, I'm sure he could be better, but I don't think we need to worry about him.</line>
+  </scene>
+
+  <scene name="is-conway-coming-back" nextScene="ezra-plan">
+    <line speaker="johnny">Well, probably not. He's got himself on a `trajectory`, you know?</line>
+  </scene>
+
+  <scene name="join-conway" nextScene="ezra-plan">
+    <line speaker="johnny">Oh, uh ... No, that's not a good idea. It's not a place for kids, where he's headed.</line>
+  </scene>
+
+  <scene name="ezra-plan">
+    <line speaker="johnny">Anyway, I don't know what kind of plans you have now, but if you need help figuring out your next move, you can always talk to me and Miss Junebug. I just wanted to make sure you know that.</line>
+    <option goto="ezra-follow-johnny" speaker="ezra">Could I keep going with you?</option>
+    <option goto="ezra-meet-julian" speaker="ezra">I'll meet up with Julian when we get back above-ground, and go back to the Museum.</option>
+    <option goto="ezra-undecided" speaker="ezra">I don't know what I'm going to do.</option>
+  </scene>
+
+  <scene name="ezra-follow-johnny" nextScene="closing">
+    <line speaker="johnny">Hey, I've got no objection. We have a pretty `ad hoc` thing going on, me and Junebug ... I'd have to talk to her, but I bet you're welcome to tag along for a while, if you're into it.</line>
+  </scene>
+
+  <scene name="ezra-meet-julian" nextScene="closing">
+    <line speaker="johnny">Oh yeah, he's your brother, you said, right?</line>
+  </scene>
+
+  <scene name="ezra-undecided" nextScene="closing">
+    <line speaker="johnny">Me neither. You're in good company!</line>
+  </scene>
+
+  <scene name="closing" nextScene="end">
+    <line speaker="johnny">Hey, maybe we still have time to poke around this place a little. They have some pretty wild stuff in here!</line>
+  </scene>
+
+</conversation>

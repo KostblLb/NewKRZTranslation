@@ -1,0 +1,36 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="dialog-lighten-fast">  
+  <scene name="intro">
+    <triggerEvent name="dialog-darken-fast"/>    
+    <setGameVar name="underworld-saw-mineral-springs" value="true"/>
+    
+    <line>As described in the brochure, these mineral springs &quot;`radiate with vigor`&quot; and &quot;`sweat youth from the pores of the cave walls, its sweet dampness evaporating and then recollecting on the ruddy faces of rejuvenated bathers`.&quot; The air does have a warmth and fragrance to it that seems to relax the nostrils.</line>
+    <line>Shannon encourages Conway to rest his leg in the water.</line>
+    <option goto="rest" insertedText="Conway rests for a while.">Rest for a while.</option>
+    <option goto="end">Leave.</option>
+  </scene>
+
+  <scene name="rest">
+    <line>The water is warmer than it looks, and strangely soothing.</line>
+    <option goto="the-day" insertedText="">Think about the day's work.</option>
+    <option goto="the-stars" insertedText="">Think about the night stars.</option>
+    <option goto="end">Leave.</option>
+  </scene>
+
+  <scene name="the-day" nextScene="end-of-springs">
+    <setGameVar name="underworld-mineral-springs-conway-thought-about-work" value="true"/>
+    <line>Conway closes his eyes and reflects on the day's work. He awoke at five. He moved some of Charlie's old books from the barn into Lysette's living room — she liked to look at them sometimes, and he knew this would be a difficult day. He fed {if}[one:dog-nameless]the dog{end}{if}[!one:dog-nameless]${one:dog-name}{end}.</line>
+    <line>He made a few other small deliveries, picked up a package Lysette had waiting for her at the post office, and then drove out to look for the last address on his manifest.</line>
+  </scene>
+
+  <scene name="the-stars" nextScene="end-of-springs">
+    <setGameVar name="underworld-mineral-springs-conway-thought-about-stars" value="true"/>    
+    <line>Conway leans his head back, eyes closed. It still feels like night, down in the cave. Not just the darkness, but the lateness of it. Somewhere on the other side of this rock, the stars are still drifting along indifferently.</line>
+    <line>He remembers some of Charlie's homework, from when he first went to college. Charlie was home visiting Lysette and Ira for the weekend, and had some book about ... astronomy, or physics or something. Maybe math. Watching the relative speeds at which different stars pan across the sky, and using it to determine their distance.</line>
+  </scene>
+
+  <scene name="end-of-springs" nextScene="end">
+    <line>Leaving the spring, Conway finds a few small aquatic insects nestled in his pant leg. He leaves them behind.</line>
+  </scene>
+
+</conversation>

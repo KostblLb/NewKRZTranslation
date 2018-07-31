@@ -1,0 +1,21 @@
+# -*- mode: blocking -*-
+
+@func HoundGoes
+
+  Hound Unfollow Hound
+  Hound Walk Hound HoundLeavePosition
+  Hound Set exchange-hound-decided true
+  Hound Set exchange-hound-fate with-conway
+  Hound Event hound-decided
+
+@end
+
+@func HoundStays
+
+  Hound Unfollow Hound
+  # Hound Message Hound Sit
+  Hound Set exchange-hound-decided true
+  Hound Set exchange-hound-fate with-shannon
+  Hound Event hound-decided
+
+@end

@@ -1,0 +1,40 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="bureau-talked-to-hound" value="true" />
+    <option goto="time" speaker="johnny">Got the time, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>?</option>
+    <option goto="cat" speaker="johnny">Hey, you see that cat over there?</option>
+  </scene>
+
+  <scene name="time">
+    <option goto="time-dont-care" speaker="johnny">Nah, you don't care about that.</option>
+    <option goto="fixed" speaker="johnny">I gotta get this thing fixed.</option>
+  </scene>
+
+  <scene name="time-dont-care">
+    <option goto="end" speaker="johnny">Maybe I should be more like you.</option>
+    <option goto="end" speaker="johnny">Keep doing what you do, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>.</option>
+  </scene>
+
+  <scene name="fixed">
+    <option goto="end" speaker="johnny">Or just let it go, right?</option>
+    <option goto="end" speaker="johnny">If she catches me asking you, I'll never hear the end of it!</option>
+  </scene>
+
+  <scene name="cat">
+    <option goto="washed-up" speaker="johnny">Looked like she just washed up.</option>
+    <option goto="bread" speaker="johnny">Think she'd eat some bread?</option>
+  </scene>
+
+  <scene name="washed-up">
+    <option goto="end" speaker="johnny">I bet she swam. Ha ha.</option>
+    <option goto="end" speaker="johnny">Where do you think she came from?</option>
+  </scene>
+
+  <scene name="bread">
+    <option goto="end" speaker="johnny">Nah. Well, more for you then, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>.</option>
+    <option goto="end" speaker="johnny">Maybe we should leave a crust or two behind and she'll go for it when she's comfortable.</option>
+  </scene>
+
+</conversation>
+

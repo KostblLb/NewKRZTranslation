@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <line>Baffling control panels are sheltered from the elements with a worn tarp. A closet-sized wall of knobs and wires looms behind the machine, humming faintly. An electric typewriter is the only easily-recognizable component.</line>
+  </scene>
+</conversation>

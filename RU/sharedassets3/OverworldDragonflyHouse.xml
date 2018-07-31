@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="overworld-visited-dragonfly-house" value="true"/>
+    
+    <line>The truck pulls up to a house with an intensely bright porch light. A cloud of dragonflies swells around the light: darting, hovering, turning at right angles.</line>
+
+    <line>There are no lights on in the house. A stencil on the mailbox reads: &quot;2880 Beaker Blvd.&quot; And below, written in marker: &quot;NO SOLICITORS. I WORK FOR LONG HOURS AND RETIRE EARLY.&quot;</line>
+  </scene>
+</conversation>

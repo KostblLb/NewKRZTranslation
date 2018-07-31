@@ -1,0 +1,22 @@
+# -*- mode: blocking -*-
+
+@set Scene Grove
+@set Stop riverworld-grove
+
+@func PostScene
+
+  Tugboat Message RiverworldManager QueueState CircleOfRocks
+
+@end
+
+@func PreScene
+
+  Tugboat Listen boat-stop
+  Tugboat Dialog RiverDisembark[Scene]
+  Tugboat Message RiverworldManager LoadScene [Scene] ? [Stop]=disembarked
+  Tugboat Message RiverworldManager LoadScene Tugboat ? [Stop]=aboard
+
+@end
+
+Tugboat Exec PreScene ? [Stop]=uncharted
+Tugboat Exec PostScene ? !([Stop]=uncharted)

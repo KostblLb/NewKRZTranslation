@@ -1,0 +1,15 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="fade-out-radio"/>
+    <setGameVar name="overworld-bus-stop-dropped-off-linda" value="true"/>
+    
+    <line>Linda doesn't care for the public transportation in this area. The buses are too small — in fact, they hardly qualify. Linda worked for twenty-five years as a city planner in Knoxville, so she knows, but it's not her place to say, really.</line>
+    <line>But if she were asked — if anyone `were` to ask — she'd start with public transportation. It's the pride of a civil society. It's a `place`, as much as any city center. It ought to be funded as such.</line>
+    <line>Sure, you could spend thousands on some concrete fountain, some scene of antiquity, something really `impressive`. But what does that do for a `polis`? Who meets at a fountain to exchange ideas?</line>
+    <line>Drug dealers. That's who. And maniacs.</line>
+    <line>Linda meets people on the bus, or at the bus stop. That's where things get done. In Mexico City, or Montreal, Or New York, the trains are so fluid in their dependability that they're practically a stable `place` themselves.</line>
+    <line>They're at least as reliable a place as —</line>
+    <line>Linda lives here, with her daughter and son-in-law, in that squat, gray building on the left. She owns the house, but her room is in the basement. The basement! Of her own house! Life is suffering, as they say.</line>
+  </scene>
+</conversation>

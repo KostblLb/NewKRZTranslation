@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+
+  <scene name="intro" nextScene="end">
+    <blocking>@StopSamHumming</blocking>
+    <line speaker="cate">Just in time! We've already finished eating, but we're about to place a to-go order for Clara. She's back on board, getting ready for her show.</line>
+    <line speaker="cate">Take a look at the menu, I'm sure there's something you'll like. Ida is a bit of a local celebrity. For her cooking, I mean.</line>
+    <line speaker="junebug">Hey, Ezra was just asking about you. He's around the corner playing a videogame. Maybe go let him know you two are back? Or ... where's the old man, anyway?</line>
+  </scene>
+
+</conversation>

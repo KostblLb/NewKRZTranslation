@@ -1,0 +1,44 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-theater-conversation-two">
+  <scene name="intro">
+    <line speaker="junebug">So, what are you hauling back there? Anything good? You been driving long?</line>
+    <option goto="antiques" speaker="conway">Antiques.</option>
+    <option goto="all-my-life" speaker="conway">All my life.</option>
+  </scene>
+
+  <scene name="antiques">
+    <line speaker="junebug">Naturally. Do you have any of those little ceramic, um, I want to say `porcelain` figurines? You know, `slice-of-life`?</line>
+    <option goto="no-figurines" speaker="conway">Nope.</option>
+    <option goto="junebug-collection" speaker="shannon">You collect porcelain figurines?</option>
+  </scene>
+
+  <scene name="no-figurines" nextScene="movie-something-happens">
+    <line speaker="junebug">They don't sell too well? More of a truck stop thing, huh? Yeah, I get it — you deal in `authenticity`. None of those prefab truck stop antiques, right? You deal in `aura`.</line>
+  </scene>
+
+  <scene name="junebug-collection" nextScene="movie-something-happens">
+    <line speaker="junebug">Nah, I just like to look at them sometimes. I like how they all have their jobs just `painted on`, you know? Like I saw one in a gas station the other day who could have been either a milkman or a cop — he had that hat and uniform, right? And who knows how it went down — maybe they just had more blue paint that day ... "American Moments Figurine. Cop. Thirty-five dollars."</line>
+    <line speaker="junebug">They posed him next to a dusty milkman, his brother. Fifteen dollars.</line>
+  </scene>
+
+  <scene name="all-my-life" nextScene="movie-something-happens">
+    <line speaker="junebug">I heard that. We're lifers, too.</line>
+    <line speaker="johnny">A life on the road.</line>
+  </scene>
+
+  <scene name="movie-something-happens" nextScene="final">
+    <line speaker="ezra">`(Gesturing at the screen.)` What are they doing?</line>
+    <line speaker="shannon">They're burying him.</line>
+  </scene>
+
+  <scene name="final">
+    <line speaker="shannon">`(To CONWAY.)` Time to get going?</line>
+    
+    <option goto="end" speaker="conway">Yup.</option>
+    <option goto="watch-more" speaker="conway">Might as well finish the film.</option>
+  </scene>
+
+  <scene name="watch-more" nextScene="end">
+    <setGameVar name="overworld-theater-two-stay" value="true"/>
+  </scene>
+</conversation>

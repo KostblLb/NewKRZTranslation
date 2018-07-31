@@ -1,0 +1,329 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-of-messages">
+  <scene name="intro" nextScene="route-first-message">
+    <audioFade clip="new-messages" direction="in" time="0"/>
+    <line speaker="system">You have ... twenty-three ... new messages.</line>
+  </scene>
+
+  <scene name="route-first-message">
+    <audioFade clip="new-messages" direction="out" time="0"/>    
+    <chaosGoto seed="voicemail">
+      <chaosGotoScene name="message-01" />
+      <chaosGotoScene name="message-03" />
+      <chaosGotoScene name="message-04" />
+      <chaosGotoScene name="message-05" />
+
+      <chaosGotoScene name="message-06" />
+      <chaosGotoScene name="message-07" />
+      <chaosGotoScene name="message-08" />
+      <chaosGotoScene name="message-09" />
+
+      <chaosGotoScene name="message-11" />
+      <chaosGotoScene name="message-13" />
+      <chaosGotoScene name="message-15" />
+
+      <chaosGotoScene name="message-17" />
+      <chaosGotoScene name="message-18" />
+
+      <chaosGotoScene name="message-21" />
+      <chaosGotoScene name="message-22" />
+      <chaosGotoScene name="message-23" />
+    </chaosGoto>
+  </scene>
+  
+  <scene name="heard-all-messages" nextScene="end">
+    <audioFade clip="end-of-messages" direction="in" time="0"/>
+    <triggerEvent name="end-of-messages" />
+    <line speaker="system">End of messages.</line>
+  </scene>
+  
+  <scene name="message-06">
+    <goto condition="phone-room-heard-message-06" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-06" value="true" />
+    
+    <triggerEvent name="play-voicemail-06" />
+    
+    <line speaker="message" style="skeleton">I can't sleep anywhere near a place where gas is sold. Not when it's being sold, but when it's `not` being sold.</line>
+    
+    <option goto="message-09">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+  
+  <scene name="message-09">
+    <goto condition="phone-room-heard-message-09" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-09" value="true" />
+
+    <triggerEvent name="play-voicemail-09" />
+    
+    <line speaker="message" style="skeleton">It was tough to hold onto the snake, but, yeah, my hands are pretty damp.</line>
+    
+    <option goto="message-18">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-18">
+    <goto condition="phone-room-heard-message-18" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-18" value="true" />
+
+    <triggerEvent name="play-voicemail-18" />
+    
+    <line speaker="message" style="skeleton">I remember the number "ten" in a flashcard with a turkey on it. It had a yellow background.</line>
+    
+    <option goto="message-04">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-04">
+    <goto condition="phone-room-heard-message-04" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-04" value="true" />
+
+    <triggerEvent name="play-voicemail-04" />
+    
+    <line speaker="message" style="skeleton">The frogs are too loud.</line>
+    
+    <option goto="message-20">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-20">
+    <goto condition="phone-room-heard-message-20" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-20" value="true" />
+
+    <triggerEvent name="play-voicemail-20" />
+    
+    <line speaker="message" style="skeleton">`(Music.)`</line>
+    
+    <option goto="message-23">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+  
+  <scene name="message-23">
+    <goto condition="phone-room-heard-message-23" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-23" value="true" />
+
+    <triggerEvent name="play-voicemail-23" />
+    
+    <line speaker="message" style="skeleton">Um. Not a whole lot. I guess I was walking ... I was in a stroller in Tree Tops Park, in Florida. My mother accidentally pushed me into a spiderweb, and I freaked out a lot. I think that's the first thing I remember.</line>
+    
+    <option goto="message-19">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-19">
+    <goto condition="phone-room-heard-message-19" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-19" value="true" />
+
+    <triggerEvent name="play-voicemail-19" />
+    
+    <line speaker="message" style="skeleton">We were sent for.</line>
+    
+    <option goto="message-03">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-03">
+    <goto condition="phone-room-heard-message-03" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-03" value="true" />
+
+    <triggerEvent name="play-voicemail-03" />
+    
+    <line speaker="message" style="skeleton">I keep hearing these noises whenever I close my eyes. It's like bells ringing, but the bells aren't metal bells or ceramic bells, the kind of bells that you normally hear. They're like ... this weird ... I can't even describe the material. It's just resonance. Just ringing. Resonance. And as soon as I open my eyes again, there's nothing.</line>
+    
+    <option goto="message-22">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-22">
+    <goto condition="phone-room-heard-message-22" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-22" value="true" />
+
+    <triggerEvent name="play-voicemail-22" />
+    
+    <line speaker="message" style="skeleton">I, uh ... I remember, uh ... I remember driving across an old dirt road.</line>
+    
+    <option goto="message-21">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-21">
+    <goto condition="phone-room-heard-message-21" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-21" value="true" />
+
+    <triggerEvent name="play-voicemail-21" />
+    
+    <line speaker="message" style="skeleton">My birthday party at McDonald's in Hawaii. I got a toy that I didn't like, and I broke it. </line>
+    
+    <option goto="message-12">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-12">
+    <goto condition="phone-room-heard-message-12" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-12" value="true" />
+    
+    <triggerEvent name="play-voicemail-12" />
+    
+    <line speaker="message" style="skeleton">`(Clicking.)`</line>
+    
+    <option goto="message-17">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-17">
+    <goto condition="phone-room-heard-message-17" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-17" value="true" />
+
+    <triggerEvent name="play-voicemail-17" />
+    
+    <line speaker="message" style="skeleton">Hm. Getting caught by my neck in the jungle gym. Or maybe it was crying so loud at that monster truck rally that my parents had to take me out, and they missed the show. One of those two.</line>
+    
+    <option goto="message-16">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-16">
+    <goto condition="phone-room-heard-message-16" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-16" value="true" />
+
+    <triggerEvent name="play-voicemail-16" />
+    
+    <line speaker="message" style="skeleton">Huh. Seriously?</line>
+    
+    <option goto="message-02">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-02">
+    <goto condition="phone-room-heard-message-02" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-02" value="true" />
+
+    <triggerEvent name="play-voicemail-02" />
+    
+    <line>`(Retreating music.)`</line>
+    
+    <option goto="message-11">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-11">
+    <goto condition="phone-room-heard-message-11" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-11" value="true" />
+
+    <triggerEvent name="play-voicemail-11" />
+    
+    <line speaker="message" style="skeleton">Whether I wear boots or sneakers, my feet always feel damp. Cold and damp.</line>
+    
+    <option goto="message-01">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-01">
+    <goto condition="phone-room-heard-message-01" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-01" value="true" />
+
+    <triggerEvent name="play-voicemail-01" />
+    
+    <line speaker="message" style="skeleton">Well, I was hoping that you'd be able to tell me why I can't sleep. It seems like it's been a long time, and it seems like ... it just ... it's time to sleep now.</line>
+    
+    <option goto="message-13">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+  
+  <scene name="message-13">
+    <goto condition="phone-room-heard-message-13" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-13" value="true" />
+
+    <triggerEvent name="play-voicemail-13" />
+    
+    <line speaker="message" style="skeleton">I remember going to a house in Aroostook County, Maine. I was two. We were moving. We were driving up in a white Nissan station wagon with faux wood paneling. It was the first time that I'd seen the house that I was going to live in for the next seven years.</line>
+    
+    <line speaker="message" style="skeleton">`(Clicking and beeping.)`</line>
+    
+    <option goto="message-14">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-14">
+    <goto condition="phone-room-heard-message-14" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-14" value="true" />
+
+    <triggerEvent name="play-voicemail-14" />
+    
+    <line speaker="message" style="skeleton">Being washed ... in the bathroom sink.</line>
+    
+    <option goto="message-08">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-08">
+    <goto condition="phone-room-heard-message-08" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-08" value="true" />
+
+    <triggerEvent name="play-voicemail-08" />
+    
+    <line speaker="message" style="skeleton">I was just parking my car. I had to parallel park it. The street that I live on was full. It just got cold today, for the first time in a long time, so I had the heat on, and whenever you have the heat on in an old car it definitely smells a certain way.</line>
+
+    <line speaker="message" style="skeleton">It smells kind of like ... you can smell that it's hot. You can feel it, too. The smell is from the car itself, like from the engine. There's been a lot of smoking going on in that car, so it's not exactly a pleasant smell, but it's definitely strong and it's definitely there.</line>
+
+    <line speaker="message" style="skeleton">With the windows down, you can also smell that it's cold. So you get both. That feeling, together, is super familiar, if you've been in old cars a lot.</line>
+
+    <line speaker="message" style="skeleton">Anyway, I was parking, and I had to go in-and-out about it, like, three times, but when I finally finished parking it was `perfect`. Both wheels against the curb.</line>
+
+    <line speaker="message" style="skeleton">And that's when I had the double memory of when I first learned how to drive, and my mom taught me how to parallel park, and she told me this story about when her dad — who was a motorcycle cop — taught her how to parallel park. Every time she parallel parked, he would take out a dime, and if he could fit the dime between the wheel of her car and the curb of the street, then she had to do it again.</line>
+
+    <line speaker="message" style="skeleton">She didn't do that for me. But every time that I got upset about having to do it again, she would tell me that at least I didn't have to be a dime's distance away from the curb.</line>
+
+    <line speaker="message" style="skeleton">I learned how to drive in the fall, and I got that smell a lot during that time. I don't know when my mom learned to drive.</line>
+    
+    <option goto="message-15">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-15">
+    <goto condition="phone-room-heard-message-15" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-15" value="true" />
+
+    <triggerEvent name="play-voicemail-15" />
+    
+    <line speaker="message" style="skeleton">Oh, you know, uh ... probably ... going to school?</line>
+    
+    <option goto="message-05">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+  
+  <scene name="message-05">
+    <goto condition="phone-room-heard-message-05" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-05" value="true" />
+
+    <triggerEvent name="play-voicemail-05" />
+    
+    <line speaker="message" style="skeleton">I can't sleep because the trees are scraping against my window, and it reminds me of a tongue scraping against my skin.</line>
+    
+    <option goto="message-10">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+
+  <scene name="message-10">
+    <goto condition="phone-room-heard-message-10" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-10" value="true" />
+
+    <triggerEvent name="play-voicemail-10" />
+    
+    <line speaker="message" style="skeleton">What?</line>
+    
+    <option goto="message-07">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+  
+  <scene name="message-07">
+    <goto condition="phone-room-heard-message-07" sceneName="heard-all-messages" />
+    <setGameVar name="phone-room-heard-message-07" value="true" />
+
+    <triggerEvent name="play-voicemail-07" />
+    
+    <line speaker="message" style="skeleton">I'm about to cross an ocean, and I worry about my dog.</line>
+    
+    <option goto="message-06">`(WILL listens to the next message.)`</option>
+    <option goto="end">`(WILL hangs up the phone.)`</option>    
+  </scene>
+</conversation>

@@ -1,0 +1,29 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="breakdown-discussed-radio-repair" value="true"/>
+    <option goto="hows-it-looking" speaker="conway">How's it looking?</option>
+    <option goto="broken-for-years" speaker="conway">That thing's been broken for years.</option>
+  </scene>
+
+  <scene name="hows-it-looking">
+    <line speaker="shannon">The leads are badly corroded, but I'm making progress. That's what I like about working on electronics: it gets easier as you go on.</line>
+    <option goto="hows-it-looking-2" speaker="conway">For me it's just the opposite.</option>
+    <option goto="hows-it-looking-2" speaker="conway">Or you just get used to it.</option>
+  </scene>
+
+  <scene name="hows-it-looking-2" nextScene="end">
+    <line speaker="shannon">Almost there ...</line>
+  </scene>
+
+  <scene name="broken-for-years">
+    <line speaker="shannon">So, we'll get to find out what station you had it tuned to when it went out. A snapshot of a younger man's tastes. Ha ha.</line>
+    <line speaker="shannon">Do you remember what it was?</line>
+    <option goto="broken-for-years-2" speaker="conway" variableChange="breakdown-conway-radio=talk">Talk radio, I guess.</option>
+    <option goto="broken-for-years-2" speaker="conway" variableChange="breakdown-conway-radio=college">Some college station.</option>
+  </scene>
+
+  <scene name="broken-for-years-2" nextScene="end">
+    <line speaker="shannon">Well ... I'm sure we'll find something to listen to on the road.</line>
+  </scene>
+</conversation>

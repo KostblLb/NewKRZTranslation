@@ -1,0 +1,27 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <endingAudioEvents>
+    <audioFade clip="tape-run" destroy="true" direction="out" time="0.5" />
+    <audioFade clip="tape-stop" direction="in" time="0.01" />
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="tape">
+    <setGameVar name="lab-did-first-phone-call" value="true" />
+    <line speaker="jenn">Who's she talking to?</line>
+    <line speaker="mimi">The test subjects are supposed to be talking to each other, so we can compare their recall fidelity before and after the phone conversation.</line>
+    <line speaker="jenn">That's what I mean — he's not even on the phone. She didn't fill out the questionnaire either.</line>
+    <line speaker="mimi">Well, what did he write?</line>
+    <line speaker="jenn">He just drew a picture of the cat.</line>
+    <line speaker="mimi">OK. Maybe she misdialed? She's been on the line for a minute though ...</line>
+    <line speaker="mimi">Is there tape? Of her conversation, I mean.</line>
+    <line speaker="jenn">Yeah ... Let's check it out.</line>
+  </scene>
+
+  <scene name="tape" nextScene="end">
+    <audioFade clip="tape-start" direction="in" time="0.01" />
+    <audioFade clip="tape-run" direction="in" time="0.25" />
+    <line speaker="voice on phone" style="skeleton">... huh, yeah that's my number, alright. You dialed correctly! But I'm not part of any "research study." Hey, I'll tell you what, the phones have been `bananas` around here lately. I think the phone company's understaffed, or someone's asleep at the switchboard.</line>
+    <line speaker="voice on phone" style="skeleton">It is pretty early, after all. I get up earlier than most; I've got to do my deltoid regimen and then cool down a bit before my morning swim. You know how it is.</line>
+    <line speaker="voice on phone" style="skeleton">Well. I'll tell you what, why don't you hang up and try dialing again. Hit the buttons `real hard`, if you can, maybe you'll wake them up and they'll connect you right!</line>
+  </scene>
+</conversation>

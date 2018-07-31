@@ -1,0 +1,90 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <line speaker="xanadu" style="xanadu">You are in a large, irregular chamber. The walls, floor, and ceiling are covered with crystalline projections.</line>
+    <line speaker="xanadu" style="xanadu">Strangers are here, scraping black mold from the crystals. They look up when you enter. One of them seems about to speak.</line>
+    <line speaker="ezra">Finally!</line>
+    <option goto="flee" speaker="junebug">Better run!</option>
+    <option goto="listen" speaker="shannon">Let's listen to what he says.</option>
+  </scene>
+
+  <scene name="flee">
+    <line speaker="conway">`(Typing.)` ~Run.~</line>
+    <line speaker="xanadu" style="xanadu">You'll have to say which compass direction to go in.</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* flees through a tunnel to the north.</line>
+    <line speaker="xanadu" style="xanadu">*LULA* flees through a tunnel to the northeast.</line>
+    <option goto="flee-joseph" speaker="junebug">Follow Joseph.</option>
+    <option goto="flee-lula" speaker="junebug">Follow Lula.</option>
+  </scene>
+
+  <scene name="listen">
+    <line speaker="xanadu" style="xanadu">The stranger reaches for a box he's carrying and presses a plastic button. The box whirs to life, and a crackly voice blurts something unintelligible, then slows to a deep gurgle.</line>
+    <line speaker="xanadu" style="xanadu">He looks at his companions momentarily in confused disappointment. Then he returns his awful gaze to you.</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* flees through a tunnel to the north.</line>
+    <line speaker="xanadu" style="xanadu">*LULA* flees through a tunnel to the northeast.</line>
+    <option goto="flee-joseph" speaker="shannon">Follow Joseph.</option>
+    <option goto="flee-lula" speaker="shannon">Follow Lula.</option>
+  </scene>
+
+  <scene name="flee-lula">
+    <setGameVar name="xanadu-chased-with" value="lula"/>    
+    
+    <line speaker="conway">`(Typing.)` ~Run north.~</line>
+    <line speaker="xanadu" style="xanadu">*LULA*'s headlamp scans across the northern passage as you run. Soft shadows loom perplexingly from floor to ceiling.</line>
+    <line speaker="xanadu" style="xanadu">You feel around to distinguish shadows from crystals, but eventually find yourselves cornered. You have hit a dead-end.</line>
+    <line speaker="lula">Who are they?</line>
+    
+    <option goto="flee-lula-harmless" speaker="shannon">Comfort her.</option>
+    <option goto="flee-lula-escape" speaker="shannon">Let's find a way out of here.</option>
+  </scene>
+
+  <scene name="flee-lula-harmless" nextScene="flee-lula-back">
+    <line speaker="conway">`(Typing.)` ~Comfort Lula.~</line>
+    <line speaker="xanadu" style="xanadu">You reassure *LULA* that the strangers are harmless.</line>
+    <line speaker="lula" style="xanadu">Are you ... are you sure?</line>
+    <line speaker="lula" style="xanadu">Maybe you're right. It sounds like they've gone back to work.</line>
+  </scene>
+
+  <scene name="flee-lula-escape" nextScene="flee-lula-back">
+    <line speaker="conway">`(Typing.)` ~Escape.~</line>
+    <line speaker="xanadu" style="xanadu">That's not a verb I recognize.</line>
+    <line speaker="conway">`(Typing.)` ~Look for escape.~</line>
+    <line speaker="xanadu" style="xanadu">You can't see any such thing.</line>
+    <line speaker="lula" style="xanadu">Listen. I think they've gone back to work. They seemed strange somehow ... maybe they've forgotten about us.</line>
+  </scene>
+
+  <scene name="flee-lula-back" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="chased-with-lula"/>
+    <line speaker="lula" style="xanadu">Alright. Let's try to pass them quickly, now. Don't make eye contact. Then we'll find our way back to the equipment.</line>
+  </scene>
+
+  <scene name="flee-joseph">
+    <setGameVar name="xanadu-chased-with" value="joseph"/>
+    <line speaker="conway">`(Typing.)` ~Run northeast.~</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* scrambles across outcrops of crystal as you struggle to follow him in the dark. He calls back, breathlessly:</line>
+    <line speaker="joseph" style="xanadu">What ... what happened to Lula? Lula, are you back there?</line>
+    <option goto="flee-joseph-stay" speaker="shannon">Stay and look for her.</option>
+    <option goto="flee-joseph-continue" speaker="junebug">Keep going!</option>
+  </scene>
+
+  <scene name="flee-joseph-stay" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="chased-with-joseph"/>
+    
+    <line speaker="conway">`(Typing.)` ~Look for Lula.~</line>
+    <line speaker="xanadu" style="xanadu">You can't see any such thing.</line>
+    <line speaker="joseph" style="xanadu">Donald! You have to find her! Make sure you find her!</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* climbs through the cave, into the darkness.</line>
+    <line speaker="conway">`(Typing.)` ~Look for Lula.~</line>
+    <line speaker="xanadu" style="xanadu">You can't see any such thing.</line>
+    <line speaker="xanadu" style="xanadu">The strangers return to their work, scraping the crystals. There is no sign of *LULA* now. You should leave.</line>
+  </scene>
+
+  <scene name="flee-joseph-continue" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="chased-with-joseph"/>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* climbs through the cave, into the darkness, and you follow behind as best you can keep up. In the distance, you can hear the strangers return to their work, scraping the crystals.</line>
+  </scene>
+</conversation>

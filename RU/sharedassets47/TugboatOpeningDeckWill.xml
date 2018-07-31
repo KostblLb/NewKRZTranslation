@@ -1,0 +1,86 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="tugboat-shannon-talked-to-will" value="true" debug="true" />
+    <setGameVar name="tugboat-opening-bookmark" value="will" />
+    
+    <line speaker="will">`(Singing, quietly.)` ... for we on mold and whiskey fed, and ...</line>
+    <line speaker="will">`(To SHANNON.)` Oh!</line>
+    <line speaker="will">Wet gears.</line>
+    <option goto="gears" speaker="shannon">Wet gears?</option>
+    <option goto="mammoth" speaker="shannon">Did you build this thing?</option>
+  </scene>
+
+  <scene name="gears" nextScene="qualifications">
+    <line speaker="will">Probably; who knows? First thing I tried, anyway ... down here by this little blue box, I took all the gears out and dried each one by hand, and then I loaded them back in again.</line>
+    <line speaker="will">That took care of the grinding sound, but her trunk keeps doing that sparking, clanking, weeping thing ...</line>
+  </scene>
+
+  <scene name="mammoth" nextScene="qualifications">
+    <line speaker="will">Ha! No. This thing's probably older than I am. Got some gray in her pelt, there ... calcium deposits, I guess.</line>
+  </scene>
+
+  <scene name="qualifications">
+    <line speaker="will">To be honest with you, I'm not really qualified for this work. Cate's a friend, you know how it is ... don't you?</line>
+    <option goto="need-anything" speaker="shannon" condition="tugboat-shannon-talked-to-cate">Cate was asking if you needed anything when we stop.</option>
+    <option goto="will-and-cate" speaker="shannon">How do you two know each other?</option>
+    <option goto="will-story" speaker="shannon">What's your story, Will?</option>
+  </scene>
+
+  <scene name="need-anything">
+    <line speaker="will">Hell, I don't know. Scratch ticket.</line>
+    <option goto="parts" speaker="shannon">I think she meant like parts, or ...</option>
+    <option goto="scratch-ticket-ok" speaker="shannon">Sure, OK.</option>
+    <option goto="will-and-cate" speaker="shannon">How do you two know each other?</option>
+  </scene>
+
+  <scene name="parts">
+    <line speaker="will">Ah. I wouldn't know if I did ... Ha ha.</line>
+    <option goto="will-and-cate" speaker="shannon">How do you and Cate know each other?</option>
+    <option goto="will-story" speaker="shannon">What's your story, Will?</option>    
+  </scene>
+
+  <scene name="scratch-ticket-ok">
+    <line speaker="will">Thanks.</line>
+    <option goto="will-and-cate" speaker="shannon">How do you and Cate know each other?</option>
+    <option goto="will-story" speaker="shannon">What's your story, Will?</option> 
+  </scene>
+
+  <scene name="will-story" nextScene="shoes">
+    <line speaker="will">A story, well ... I like to listen to them, I like to tell them, but I don't have one of my own.</line>
+    <line speaker="will">I also don't have a permanent address, or a pickup truck, or any change of clothes. I wash my laundry in the river, and in that moment I'm truly free.</line>
+    <line speaker="will">I don't even have any shoes ...</line>
+  </scene>
+  
+  <scene name="will-and-cate">
+    <line speaker="will">So ...</line>
+    <line speaker="will">Ever walked through rolling farmland?</line>
+    <option goto="farmland-drove" speaker="shannon">Just drove, I guess.</option>
+    <option goto="farmland-walked" speaker="shannon">Sure, along the highway.</option>
+  </scene>
+
+  <scene name="farmland-drove" nextScene="will-walked">
+    <line speaker="will">Right. Nobody does it, unless it's their land to farm; I mean they'll walk from barn to tractor, or tractor to truck. You know.</line>
+  </scene>
+
+  <scene name="farmland-walked" nextScene="will-walked">
+    <line speaker="will">Along the highway, that's what I mean; or smaller roads.</line>
+  </scene>
+
+  <scene name="will-walked" nextScene="shoes">
+    <line speaker="will">Well, I sure did. I slipped under or over fences, and I walked barefoot with the seeds when they were just planted, and tilled the earth with my toes ...</line>
+  </scene>
+
+  <scene name="shoes" nextScene="end">
+    <triggerEvent name="enter-ezra" debug="true" />
+    <line speaker="will">Hey, I should tell you where I left my shoes.</line>
+    <line speaker="will">Did you know I'm a classically trained organist? It's true; look at these long fingers and pedal-gripping toes ... It doesn't matter. A minor in French literature earned me a position teaching `Artaud to Zola` at the university.</line>
+    <line speaker="will">Well, some shitty governor cut state funding for our department, and I was demoted to mopping floors, running wiring through walls or in dangerous places ... I even operated the soundboard at the student theater!</line>
+    <line speaker="will">I left my shoes there, at the university. It was a protest! "Walk without shoes for ..." something important or tragic.</line>
+    <line speaker="will">I ended up by the shore, and soon I was drifting along the Echo. It ran for a while above ground, then. It doesn't anymore. But I prefer subterranean waters, anyway. Cate brings me along, and I record what I see and hear. I try to help with maintenance. I drop off the mail and pick up the trash. On occasion, I take the helm.</line>
+    <line speaker="will">Anyway, that's all I try to remember anymore. I listen to the river's stories, and my own stories get fainter and fainter.</line>
+    <line speaker="will" condition="tugboat-shannon-talked-to-cate">Well, I'll just keep drying gears, I guess.</line>
+    <line speaker="will" condition="!tugboat-shannon-talked-to-cate">Oh. If you talk to Cate, could you ask her, when she stops for gas, could she pick me up a scratch ticket? Thanks.</line>
+  </scene>
+
+</conversation>

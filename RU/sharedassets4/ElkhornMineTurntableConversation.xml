@@ -1,0 +1,82 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="elkhorn-mine-commit-turntable">
+  <scene name="intro">
+    <goto condition="!elkhorn-mine-found-turntable" sceneName="first-visit"/>
+    <goto condition="elkhorn-mine-found-turntable" sceneName="turntable-controls"/>
+  </scene>
+
+  <!-- First visit conversation -->
+  <scene name="first-visit">
+    <setGameVar name="elkhorn-mine-found-turntable" value="true"/>
+    
+    <line speaker="shannon">Oh, here we are. This may be hard to believe — it's hard for me to believe myself — but this whole branch was underwater last I heard.</line>
+    <option goto="safe" speaker="conway">Is it safe?</option>
+    <option goto="how-flood" speaker="conway">How did that happen?</option>
+  </scene>
+
+  <scene name="safe" nextScene="flood-description">
+    <line speaker="shannon">I guess so. Looks like they finally drained it. Or maybe it just drained off on its own.</line>
+  </scene>
+
+  <scene name="how-flood" nextScene="flood-description">
+    <line speaker="shannon">Some careless miner or some unattended machine bored through into an underground lake.</line>
+  </scene>
+
+  <scene name="flood-description">
+    <line speaker="shannon">The water came in pretty fast, and a lot of folks got trapped in the tunnels. I only heard parts of how it went from there — sanitized for the bereaved ... you know how these big companies are.</line>
+    <line speaker="shannon">But there was gossip too. The trapped miners couldn't get the pumps going because the power was rationed, so they shut all the lights off. But even then it wasn't enough.</line>
+    <line speaker="shannon">So I guess it was dark, when they ...</line>
+    <option goto="are-you-ok" speaker="conway">Are you OK?</option>
+    <option goto="shannon-lost-people" speaker="conway">You lost some people down here, didn't you?</option>
+  </scene>
+
+  <scene name="are-you-ok" nextScene="turntable">
+    <line speaker="shannon">Yeah. I'm fine.</line>
+  </scene>
+
+  <scene name="shannon-lost-people" nextScene="turntable">
+    <line speaker="shannon">We all lost people down here. Well, not all of us. But most of us.</line>
+  </scene>
+
+  <scene name="turntable" nextScene="turntable-controls">
+    <line speaker="shannon">It doesn't matter now. Look, this old turntable is still wired up. The controls are dead but I can use my signal generator to switch tracks, if the water hasn't damaged it too much. Or we can just keep heading down this tunnel.</line>
+    <line speaker="shannon">All this junk hanging up around the turntable is from the company store. Just junk, you know? The miners would buy it and use it to decorate the place ... or as landmarks, I guess. Hard to know which way is which down here. It's all so dim and gray.</line>
+  </scene>
+
+  <!-- Controls -->
+  <scene name="turntable-controls" nextScene="turntable-controls-route">
+    <line>`(SHANNON connects two clip leads from her signal generator to the turntable's electrical panel.)`</line>
+    
+    <line condition="elkhorn-mine-rail-ab" speaker="shannon">We're on the track between the animal bones and the rowboat, so ...</line>
+    <line condition="elkhorn-mine-rail-cd" speaker="shannon">We're on the track between the pendulum and the casket, so ...</line>
+    <line condition="elkhorn-mine-rail-ef" speaker="shannon">We're on the track between the bat feeder and the scarecrow, so ...</line>
+  </scene>
+
+  <scene name="turntable-controls-route">
+    <option condition="!elkhorn-mine-rail-ab" goto="rail-ab" speaker="shannon">`(Tuning.)` ~The animal bones and the rowboat.~</option>
+    <option condition="!elkhorn-mine-rail-cd" goto="rail-cd" speaker="shannon">`(Tuning.)` ~The pendulum and the casket.~</option>
+    <option condition="!elkhorn-mine-rail-ef" goto="rail-ef" speaker="shannon">`(Tuning.)` ~The bat feeder and the scarecrow.~</option>
+    <option goto="end" speaker="shannon">`(SHANNON disconnects the signal generator.)`</option>
+  </scene>
+
+  <scene name="rail-ab">
+    <setGameVar name="elkhorn-mine-rail-ab" value="true"/>
+    <setGameVar name="elkhorn-mine-rail-cd" value="false"/>
+    <setGameVar name="elkhorn-mine-rail-ef" value="false"/>
+    <goto sceneName="end"/>
+  </scene>
+
+  <scene name="rail-cd">
+    <setGameVar name="elkhorn-mine-rail-ab" value="false"/>
+    <setGameVar name="elkhorn-mine-rail-cd" value="true"/>
+    <setGameVar name="elkhorn-mine-rail-ef" value="false"/>
+    <goto sceneName="end"/>
+  </scene>
+
+  <scene name="rail-ef">
+    <setGameVar name="elkhorn-mine-rail-ab" value="false"/>
+    <setGameVar name="elkhorn-mine-rail-cd" value="false"/>
+    <setGameVar name="elkhorn-mine-rail-ef" value="true"/>
+    <goto sceneName="end"/>
+  </scene>
+</conversation>

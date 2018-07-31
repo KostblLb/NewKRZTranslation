@@ -1,0 +1,174 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="breakdown-talked-to-ezra-about-games" value="true"/>
+    
+    <line speaker="ezra">Are you bored?</line>
+    <option goto="dont-mind-being-bored" speaker="conway">Sure, but I don't mind.</option>
+    <option goto="not-bored" speaker="conway">Not yet.</option>
+    <option goto="is-ezra-bored" speaker="conway">Are you?</option>
+  </scene>
+
+  <scene name="dont-mind-being-bored" nextScene="play-a-game">
+    <line speaker="ezra">Yeah, I don't mind either ...</line>
+  </scene>
+
+  <scene name="not-bored" nextScene="play-a-game">
+    <line speaker="ezra">OK.</line>
+    <line speaker="ezra">To me, you look a little bored.</line>
+  </scene>
+
+  <scene name="is-ezra-bored" nextScene="play-a-game">
+    <line speaker="ezra">Yeah, most of the time.</line>
+  </scene>
+
+  <scene name="play-a-game">
+    <line speaker="ezra">Let's play a game.</line>
+    <option goto="twenty-questions" speaker="conway">How about `Twenty Questions`?</option>
+    <option goto="ezra-choice" speaker="conway">What would you like to play?</option>
+  </scene>
+
+  <scene name="twenty-questions">
+    <setGameVar name="breakdown-ezra-played-twenty-questions" value="true"/>
+    <line speaker="ezra">OK ...</line>
+    <line>`(EZRA looks meaningfully at his shoes.)`</line>
+    <line speaker="ezra">Got it.</line>
+    <line speaker="ezra">OK, guess.</line>
+    <option goto="twenty-bird" speaker="conway">Oh, OK. Is it a bird?</option>
+    <option goto="twenty-alive" speaker="conway">Right. Is it alive?</option>
+  </scene>
+
+  <scene name="twenty-bird" nextScene="question-2">
+    <line speaker="ezra">No! You're guessing too soon.</line>
+  </scene>
+
+  <scene name="twenty-alive" nextScene="question-2">
+    <line speaker="ezra">Um ... no.</line>
+  </scene>
+
+  <scene name="question-2">
+    <option goto="twenty-see" speaker="conway">Can I see it with my eye?</option>
+    <option goto="twenty-home" speaker="conway">Does it have a home?</option>
+  </scene>
+
+  <scene name="twenty-see" nextScene="question-3">
+    <line speaker="ezra">Yes.</line>
+  </scene>
+
+  <scene name="twenty-home" nextScene="question-3">
+    <line speaker="ezra">It ...</line>
+    <line speaker="ezra">Hmm.</line>
+    <line speaker="ezra">You could put it somewhere, and that would be the right place to put it ...</line>
+    <line speaker="ezra">Yes.</line>
+  </scene>
+
+  <scene name="question-3">
+    <option goto="twenty-recognize" speaker="conway">Would I recognize it if I saw it?</option>
+    <option goto="twenty-duration" speaker="conway">Does it last for more than a day?</option>
+  </scene>
+
+  <scene name="twenty-recognize" nextScene="question-4">
+    <line speaker="ezra">It would look like something you'd recognize, yeah.</line>
+    <line speaker="ezra">Yes.</line>
+  </scene>
+
+  <scene name="twenty-duration" nextScene="question-4">
+    <line speaker="ezra">Well ...</line>
+    <line speaker="ezra">We put it together, and that takes a while, but then we break it apart right away ...</line>
+    <line speaker="ezra">No, it doesn't last more than a day. Not the way it really is.</line>
+  </scene>
+
+  <scene name="question-4">
+    <option goto="twenty-make-yourself" speaker="conway">Hm. Did you make it yourself?</option>
+    <option goto="twenty-big" speaker="conway">Is it bigger than a dog?</option>
+  </scene>
+
+  <scene name="twenty-make-yourself" nextScene="final">
+    <line speaker="ezra">We put it together ... but we didn't make it. No.</line>
+  </scene>
+
+  <scene name="twenty-big" nextScene="final">
+    <line speaker="ezra">No, a dog is bigger ... except for one of those really little dogs. Or a puppy, I guess. Does a puppy count as a dog?</line>
+  </scene>
+
+  <scene name="final">
+    <line speaker="ezra">Alright, that's all your questions. What's your guess?</line>
+    <option goto="twenty-more" speaker="conway">I think I get a few more.</option>
+    <option goto="twenty-guess-options" speaker="conway">OK ...</option>
+  </scene>
+
+  <scene name="twenty-more" nextScene="twenty-guess-options">
+    <line speaker="ezra">I wasn't counting, but I'm pretty sure that was twenty.</line>
+  </scene>
+
+  <scene name="twenty-guess-options">
+    <option goto="twenty-guess-puzzle" speaker="conway">Is it a jigsaw puzzle?</option>
+    <option goto="twenty-guess-nest" speaker="conway">Is it a nest?</option>
+    <option goto="twenty-guess-chess" speaker="conway">Is it a game of chess?</option>
+  </scene>
+
+  <scene name="twenty-guess-puzzle" nextScene="end">
+    <setGameVar name="breakdown-ezra-twenty-questions-answer" value="puzzle"/>
+    <line speaker="ezra">Yeah! It's a puzzle. Julian found it at the bus station. It's a picture of a spooky underground lake. There aren't any boats, but some pieces are missing so maybe that's where the boats are.</line>
+  </scene>
+
+  <scene name="twenty-guess-nest" nextScene="end">
+    <setGameVar name="breakdown-ezra-twenty-questions-answer" value="nest"/>    
+    <line speaker="ezra">Yeah! A pretty small nest, like made for a small bird. It's empty and it's night time, and it just rained. It fell out of the tree and now we're putting it back together. Then we'll take it apart again. I was all ready for those questions.</line>
+  </scene>
+
+  <scene name="twenty-guess-chess" nextScene="end">
+    <setGameVar name="breakdown-ezra-twenty-questions-answer" value="chess"/> 
+    <line speaker="ezra">Yeah! Do you play chess? I'm pretty good at it — better than Julian, but not as good as Flora. She knows how to use `every` piece. I just focus on the horses. That's my strategy.</line>
+  </scene>
+
+  <scene name="ezra-choice">
+    <setGameVar name="breakdown-ezra-played-oracle" value="true"/>    
+    <line speaker="ezra">Um ... we can tell the future with this little tree branch.</line>
+    <line speaker="ezra">It's pretty easy. We just break off all the little sticks on each section and count through the different things that could happen.</line>
+    <line speaker="ezra">OK. What should we ask? It should be about you. I can't do both the counting-out and the questions.</line>
+    <option goto="oracle-conway-bed" speaker="conway">What kind of bed will I sleep in tonight?</option>
+    <option goto="oracle-conway-job" speaker="conway">What kind of job will I have next?</option>
+    <option goto="oracle-conway-travel" speaker="conway">How will I travel, in the future?</option>
+  </scene>
+
+  <scene name="oracle-conway-bed" nextScene="oracle-conway-2">
+    <setGameVar name="breakdown-ezra-oracle-count" value="+1"/>
+    <setGameVar name="breakdown-ezra-asked-oracle-bed" value="true"/>
+    
+    <line>`(EZRA snaps the smaller branches away, one at a time, counting out possibilities.)`</line>
+    <line speaker="ezra">King size, queen size, twin size, bunk —</line>
+    <line speaker="ezra">Bunk.</line>
+  </scene>
+
+  <scene name="oracle-conway-job" nextScene="oracle-conway-2">
+    <setGameVar name="breakdown-ezra-oracle-count" value="+1"/>
+    <setGameVar name="breakdown-ezra-asked-oracle-job" value="true"/>
+    
+    <line>`(EZRA snaps the smaller branches away, one at a time, counting out possibilities.)`</line>
+    <line speaker="ezra">Doctor, lawyer, tax man, driver —</line>
+    <line speaker="ezra">Driver.</line>
+  </scene>
+
+  <scene name="oracle-conway-travel" nextScene="oracle-conway-end">
+    <setGameVar name="breakdown-ezra-oracle-count" value="+1"/>
+    <setGameVar name="breakdown-ezra-asked-oracle-travel" value="true"/>
+    
+    <line>`(EZRA snaps the smaller branches away, one at a time, counting out possibilities.)`</line>
+    <line speaker="ezra">Motorbike, motorboat, horseback, hearse. Old truck, new truck —</line>
+    <line speaker="ezra">New truck.</line>
+  </scene>
+
+  <scene name="oracle-conway-2">
+    <goto condition="breakdown-ezra-oracle-count[gt]1" sceneName="oracle-conway-end"/>
+    <line speaker="ezra">OK. What else?</line>
+    <option condition="!breakdown-ezra-asked-oracle-bed" goto="oracle-conway-bed" speaker="conway">What kind of bed will I sleep in tonight?</option>
+    <option condition="!breakdown-ezra-asked-oracle-job" goto="oracle-conway-job" speaker="conway">What kind of job will I have next?</option>
+    <option condition="!breakdown-ezra-asked-oracle-travel" goto="oracle-conway-travel" speaker="conway">How will I travel in the future?</option>
+  </scene>
+
+  <scene name="oracle-conway-end" nextScene="end">
+    <line speaker="ezra">These other branches are too bare.</line>
+    <line speaker="ezra">Don't worry about it too much. It's just a bunch of sticks.</line>
+  </scene>
+</conversation>

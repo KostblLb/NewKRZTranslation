@@ -1,0 +1,33 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="cate">Weird, somehow I thought it was `his` truck, and delivery and all.</line>
+    <line speaker="junebug">It `was`, that's what she's saying. <if condition="restaurant-shannon-explanation-for-conway=left">He just left it behind.<else>But he gave it to her, before they took him away.</else></if></line>
+    <line speaker="cate" blocking="Ezra Walk Ezra EzraSailorTablePosition">`(To SHANNON.)` But you're going to deliver it anyway? Why?</line>
+
+    <option goto="friend" speaker="shannon">He's my friend. He needs my help to finish his job.</option>
+    <option goto="on-the-way" speaker="shannon">It's on my way.</option>
+    <option goto="recipient" speaker="shannon">Somebody's waiting for those antiques.</option>
+  </scene>
+
+  <scene name="friend" nextScene="lift-with-your-legs">
+    <line speaker="junebug">That's right. He's our friend too — Johnny and I will help you unload when we get there.</line>
+  </scene>
+
+  <scene name="on-the-way" nextScene="lift-with-your-legs">
+    <line speaker="cate">OK, right, you were saying ... the TV station is up there somewhere.</line>
+    <line speaker="cate">But it's old furniture or something, right? Can you lift all that by yourself?</line>
+    <line speaker="junebug">Johnny and I will help you unload when we get there. We've got nowhere else to be.</line>
+  </scene>
+
+  <scene name="recipient" nextScene="lift-with-your-legs">
+    <line speaker="will">Have you got a name, or just an address? Maybe it doesn't matter — even having discharged all that whatever-it-is onto the lawn, I'm sure you'd still have fulfilled your friend's obligation.</line>
+    <line speaker="junebug">Johnny and I will help you unload when we get there.</line>
+  </scene>
+
+  <scene name="lift-with-your-legs" nextScene="end">
+    <line speaker="junebug">`(To JOHNNY.)` Lift with your legs, cricket.</line>
+    <line speaker="johnny">Yes, ma'am.</line>
+  </scene>
+
+</conversation>

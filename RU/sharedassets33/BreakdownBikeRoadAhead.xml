@@ -1,0 +1,35 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <triggerEvent name="quarter-turn"/>
+    <setGameVar name="breakdown-bike-talked-about-road-ahead" value="true"/>
+    
+    <line speaker="johnny">How far out are we?</line>
+    <option goto="twenty-minutes" speaker="junebug">I don't know. Twenty minutes?</option>
+    <option goto="teasing" speaker="junebug">`(Teasing.)` Are we there yet?</option>
+  </scene>
+
+  <scene name="twenty-minutes" nextScene="harry">
+    <line speaker="johnny">Damn.</line>
+  </scene>
+
+  <scene name="teasing" nextScene="harry">
+    <line speaker="johnny">Oh, stop.</line>
+  </scene>
+
+  <scene name="harry">
+    <line speaker="johnny">Harry's not gonna be happy. You know he doesn't like me, anyway.</line>
+    <option goto="recordings" speaker="junebug">I'll tell him you had to get that drainpipe on tape.</option>
+    <option goto="frog" speaker="junebug">I'll tell him about the frog.</option>
+  </scene>
+
+  <scene name="recordings" nextScene="end">
+    <setGameVar name="breakdown-bike-johnny-hobby" value="recordings"/>
+    <line speaker="johnny">Aw, he wouldn't appreciate it ... but man, the way those raindrops `boomed` down that thing! I got at least thirty minutes of it.</line>
+  </scene>
+
+  <scene name="frog" nextScene="end">
+    <setGameVar name="breakdown-bike-johnny-hobby" value="animals"/>
+    <line speaker="johnny">`(Sighs.)` He won't understand.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,69 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="2"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="cave-entrance-options">
+    <goto condition="xanadu-died-in-cave-entrance" sceneName="cave-entrance-options"/>
+    
+    <line speaker="xanadu" style="xanadu">You are at the edge of a massive hole. The dirt gives way to rock as the ground sinks into darkness.</line>
+    <line speaker="xanadu" style="xanadu">The computer tied to your upper back slickens with sweat in the afternoon sun.</line>
+    <line speaker="xanadu" style="xanadu">The rope slung around your shoulder has slipped under the strap of your backpack, digging uncomfortably against your collar bone.</line>
+  </scene>
+
+  <scene name="cave-entrance-options">
+    <option condition="xanadu-death-count=3" goto="cave-entrance-persistence" speaker="shannon">There's got to be a way to do this safely, right?</option>
+    <option condition="!xanadu-died-in-cave-entrance" goto="cave-entrance-die" speaker="shannon">Go down into the hole, that seems pretty obvious.</option>
+    <option condition="!xanadu-died-in-cave-entrance" goto="cave-entrance-die" speaker="shannon">Lean in a bit and check it out?</option>
+    <option condition="xanadu-died-in-cave-entrance+xanadu-death-count[lt]3" goto="cave-entrance-die" speaker="shannon">Maybe we need to climb down more carefully?</option>
+    <option condition="xanadu-has-lamp+!xanadu-shined-lamp-in-entrance" goto="cave-entrance-lamp" speaker="shannon">Shine the lamp into the hole?</option>
+    <option condition="!xanadu-checked-for-pirates" goto="cave-entrance-yell" speaker="ezra">Yell into the hole first to see if there are pirates!</option>
+    <option condition="xanadu-died-in-cave-entrance|xanadu-shined-lamp-in-entrance" goto="cave-entrance-rope" speaker="shannon">Try using the rope to climb down safely.</option>
+  </scene>
+
+  <scene name="cave-entrance-lamp" nextScene="cave-entrance-options">
+    <setGameVar name="xanadu-shined-lamp-in-entrance" value="true"/>
+    
+    <line speaker="conway">`(Typing.)` ~Light lamp.~</line>
+    <line speaker="xanadu" style="xanadu">Your lamp is now on.</line>
+    <line speaker="conway">`(Typing.)` ~Shine lamp in hole.~</line>
+    <line speaker="xanadu" style="xanadu">The lamplight only reaches a few yards down the hole, where the rock is coated in a slimy black mold. You can tell that the walls are too slick to climb safely without assistance.</line>
+  </scene>
+
+  <scene name="cave-entrance-yell" nextScene="cave-entrance-options">
+    <setGameVar name="xanadu-checked-for-pirates" value="true"/>
+    <line speaker="conway">`(Typing.)` ~Yell.~</line>
+    <line speaker="xanadu" style="xanadu">I only understood you as far as wanting to yell.</line>
+    <line speaker="conway">`(Typing.)` ~Yell &quot;any pirates down there?&quot;~</line>
+    <line speaker="xanadu" style="xanadu">No response.</line>
+    <line speaker="shannon">Sorry, kid, you're batting |zero| today.</line>
+    <line speaker="ezra">At least we know there's no pirates.</line>
+  </scene>
+
+  <scene name="cave-entrance-rope" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="bedquilt"/>
+    
+    <line speaker="conway">`(Typing.)` ~Tie rope to tree.~</line>
+    <line speaker="xanadu" style="xanadu">The rope is tied snugly to a tree trunk.</line>
+    <line speaker="conway">`(Typing.)` ~Down.~</line>
+    <line speaker="xanadu" style="xanadu">Your feet slip a few times on the slimy rock, but you remain stable. *LULA* and *JOSEPH* descend carefully after you.</line>
+  </scene>
+
+  <scene name="cave-entrance-persistence" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="bedquilt"/>
+
+    <line speaker="conway">`(Typing.)` ~Climb down safely.~</line>
+    
+    <line speaker="xanadu" style="xanadu">Your feet slip a few times on the slimy rock, but you remain stable. *LULA* and *JOSEPH* descend carefully after you.</line>
+  </scene>
+  
+  <scene name="cave-entrance-die" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="die"/>
+    <line condition="xanadu-death-count=0" speaker="conway">`(Typing.)` ~Down.~</line>
+    <line condition="xanadu-death-count=1" speaker="conway">`(Typing.)` ~Climb down carefully.~</line>
+    <line condition="xanadu-death-count=2" speaker="conway">`(Typing.)` ~Climb down even more carefully.~</line>
+    
+    <line speaker="xanadu" style="xanadu">The cave walls are too slick to climb safely without assistance. You lose your footing and fall to your death.</line>
+  </scene>
+</conversation>

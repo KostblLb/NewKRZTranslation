@@ -1,0 +1,369 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <goto sceneName="$grove-bookmark-ezra" />
+    <goto sceneName="start" /> <!-- this is just to suppress a warning in the conversation validator -->
+  </scene>
+  
+  <scene name="start">
+    <blocking>@inline CateCrouch</blocking>
+    <line event="ezra-music-now">`(CATE gently rolls a fallen branch and plucks something white from the underside. She holds it up for EZRA to examine.)`</line>
+    
+    <line speaker="cate" blocking="@inline CateStand; Ezra Walk Ezra [Root]/StartEzraNearCatePosition">`Pleurocybella porrigens`. The common name is "angel wings." Isn't that pleasant? They have a delicate, springy texture, and they're tasty, like sweet moss.</line>
+    <line speaker="cate">Would you like a bite?</line>
+    <option goto="eat-angel-wing" speaker="ezra">OK.</option>
+    <option goto="angel-wing-moss" speaker="ezra">Sweet moss doesn't sound very tasty to me ...</option>
+  </scene>
+
+  <scene name="eat-angel-wing">
+    <line>`(EZRA takes a small bite and ruminates)`</line>
+    <line speaker="cate">What do you think?</line>
+    <option goto="angel-wing-spicy" speaker="ezra">Is it supposed to be spicy?</option>
+    <option goto="angel-wing-bug" speaker="ezra">I think I got a bug.</option>
+    <option goto="angel-wing-moss" speaker="ezra">It does taste like moss.</option>
+  </scene>
+
+  <scene name="angel-wing-spicy" nextScene="mushroom-hunting-intro">
+    <line speaker="cate">Um, no ... go ahead and spit that out, it's OK.</line>
+  </scene>
+
+  <scene name="angel-wing-bug" nextScene="mushroom-hunting-intro">
+    <line speaker="cate">Oh, lucky you.</line>
+    <line speaker="cate">I'm kidding, you can spit it out if you want.</line>
+  </scene>
+
+  <scene name="angel-wing-moss" nextScene="mushroom-hunting-intro">
+    <line speaker="cate">Personally, I like to be able to tell where my food came from, by flavor alone. I like to taste my surroundings, I mean. It keeps me connected to the ... the whole thing.</line>
+  </scene>
+
+  <scene name="mushroom-hunting-intro">
+    <line speaker="cate">My mushroom-hunting mentor told me, "it's useless to pretend to know mushrooms; they escape your erudition; the more you know them, the less sure you feel about identifying them."</line>
+    <line speaker="cate">`(She taps the cover of the small red book she's carrying.)` That's why I always bring my favorite guidebook.</line>
+    <line blocking="@inline CateCrouch">`(CATE points to a small mushroom growing in the dirt.)`</line>
+    <line speaker="cate" blocking="@inline EzraCrouch">Oh, here's an important one to recognize, though. Look, see the sort of greenish pallor of the cap? `Amanita phalloides`. That's Greek: "amanita" means mushroom, and "phalloides" means, um ... never mind.</line>
+    <option goto="amanita-edible" speaker="ezra">Can you eat it?</option>
+    <option goto="amanita-smell" speaker="ezra">It smells like honey.</option>
+  </scene>
+
+  <scene name="amanita-edible" nextScene="amanita-deadly">
+    <line speaker="cate">Only once! It's deadly poisonous.</line>
+  </scene>
+
+  <scene name="amanita-smell" nextScene="amanita-deadly">
+    <line speaker="cate">Yeah. Sort of nauseating, though, right? Sickly-sweet.</line>
+  </scene>
+
+  <scene name="amanita-deadly" nextScene="have-fun">
+    <line speaker="cate">"Death Cap," that's the common name. It's killed a lot of people, this little mushroom — including a few Roman emperors. It's a revolutionary! Ha ha.</line>
+    <line speaker="cate">Even the Buddha died from eating a mushroom, when he was very old. That's just what they do: clear away old things, make room for new things.</line>
+    <line speaker="cate">Pretty important, right? I've always thought they deserved a little more respect.</line>
+    <line speaker="cate" blocking="@inline CateStand">Would you like to help me look for a few more? I have a sort of shopping list.</line>
+    <line speaker="cate" blocking="@inline EzraStand">Great. Look for ... actually, just grab any mushrooms that catch your eye and throw them in this bag. Let me know when you're done and we'll see what you've got!</line>
+  </scene>
+
+  <scene name="have-fun" nextScene="ezra-explores">
+    <line speaker="cate">"Have fun!" That's the second rule of mushroom hunting. The first rule is "ask Cate before eating anything," OK?</line>
+  </scene>
+
+  <!-- start mushroom picking -->
+  <scene name="ezra-explores">
+    <triggerEvent name="ezra-explores,ezra-music-now" />
+    <setGameVar name="temp:mushroom-split" value="true" />
+    <goto condition="grove-ezra-mushroom-area-count[gt]1|grove-cate-mushroom-area-count[gt]1" sceneName="done-hunting" />
+
+    <blocking>@inline EzraStand</blocking>
+    
+    <option goto="rotting-stump" condition="!grove-ezra-examined-rotting-stump">`(EZRA investigates a rotting stump.)`</option>
+    <option goto="base-of-tree" condition="!grove-ezra-examined-base-of-tree">`(EZRA pokes around the base of a cypress tree.)`</option>
+    <option goto="plastic-bag" condition="!grove-ezra-examined-plastic-bag">`(EZRA checks out a plastic bag washed up on the island.)`</option>
+  </scene>
+
+  <scene name="rotting-stump">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraRottingStumpPosition
+      @inline EzraCrouch
+    </blocking>
+    
+    <setGameVar name="grove-ezra-mushroom-area-count" value="+1" />
+    <setGameVar name="grove-ezra-examined-rotting-stump" value="true" />    
+    <line>`(The stump is ringed with overlapping shelves of mushrooms striped brown-blue-gray-white. A caterpillar crawls along one of them.)`</line>
+
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory" event="ezra-music-then"><fragment name="ezra-memory-introduction-1" /></line>
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory"><fragment name="ezra-memory-introduction-2" /></line>
+    
+    <line style="memory" event="ezra-music-then">He didn't have any friends nearby; none of their new neighbors seemed to have children his age. So he played alone in the woods, alone, except for the deer.</line>
+    
+    <option goto="turkey-tail">`(EZRA inspects the mushrooms.)`</option>
+    <option goto="cordyceps">`(EZRA inspects the caterpillar.)`</option>
+  </scene>
+  
+  <scene name="turkey-tail">
+    <line event="ezra-music-now">`(It smells spicy, sweet, mild; like how EZRA had expected his father's tobacco to taste, when he hastily chewed and swallowed a noxious fistful, and spent the afternoon retching in secret.)`</line>
+    
+    <line style="memory" event="ezra-music-then">He heard someone calling his name; probably his mother, but her voice didn't sound right through the trees. He kept going.</line>
+    
+    <option goto="take-turkey-tail">`(EZRA tears off a piece of the mushroom and puts it in his bag.)`</option>
+    <option goto="ezra-explores">`(EZRA leaves the tree stump.)`</option>
+  </scene>
+
+  <scene name="take-turkey-tail" nextScene="ezra-explores">
+    <setGameVar name="grove-ezra-took-turkey-tail" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />    
+  </scene>
+  
+  <scene name="cordyceps">
+    <line event="ezra-music-now">`(The caterpillar shuffles listlessly across the mushroom. It seems to be dragging several of its legs. An odd, brown-black thread protrudes about two inches out of its head.)`</line>
+    <line style="memory" event="ezra-music-then">He saw strange lights in the trees, flickering purple. He kept going.</line>
+    
+    <option goto="take-cordyceps">`(EZRA carefully picks up the caterpillar and puts it in his bag.)`</option>
+    <option goto="ezra-explores">`(EZRA leaves the tree stump.)`</option>
+  </scene>
+
+  <scene name="take-cordyceps" nextScene="ezra-explores">
+    <setGameVar name="grove-ezra-took-cordyceps" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />    
+  </scene>
+  
+  <scene name="base-of-tree">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraBaseOfTreePosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-mushroom-area-count" value="+1" />
+    <setGameVar name="grove-ezra-examined-base-of-tree" value="true" />        
+    <line event="ezra-music-now">`(A brownish clump of mushrooms feathers out from the base of the cypress tree. A few feet above, several pale blue puffs cling to the trunk.)`</line>
+
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory" event="ezra-music-then"><fragment name="ezra-memory-introduction-1" /></line>
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory"><fragment name="ezra-memory-introduction-2" /></line>
+    
+    <line style="memory" event="ezra-music-then">The woods were full of deer.</line>
+    <line style="memory">His dad said the deer liked best to live on the edges of forests. Recent development in the area had created a lot of fresh edges, so they massed here and sometimes ran into the road.</line>
+    
+    <option goto="sheeps-head">`(EZRA crouches to get a closer look at the brownish clump.)`</option>
+    <option goto="puffball">`(EZRA examines the blue puffs.)`</option>
+  </scene>
+  
+  <scene name="sheeps-head">
+    <blocking>
+      @inline EzraCrouch
+    </blocking>
+    
+    <line event="ezra-music-now">`(The mushrooms look dried out and brittle, almost like tree bark.)`</line>
+    
+    <line style="memory" event="ezra-music-then">He heard strange, gruff voices back in the direction of the house, and something that sounded like a choked sob or a sharp rebuke. He kept going.</line>
+
+    <option goto="take-sheeps-head">`(EZRA tears off a piece of the mushroom and puts it in his bag.)`</option>
+    <option goto="ezra-explores">`(EZRA leaves the tree.)`</option>
+  </scene>
+
+  <scene name="take-sheeps-head" nextScene="ezra-explores">
+    <setGameVar name="grove-ezra-took-sheeps-head" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />    
+  </scene>
+  
+  <scene name="puffball">
+    <line event="ezra-music-now">`(He prods one of the pale orbs with a stick, and it cracks open a little, releasing a fine dust into the air.)`</line>
+    <line style="memory" event="ezra-music-then">He felt like the world outside the woods had somehow slipped away while he was gone, and now there was nothing but the woods. He kept going.</line>
+    
+    <option goto="take-puffball">`(EZRA carefully removes a puffball, and puts it in his bag.)`</option>
+    <option goto="ezra-explores">`(EZRA leaves the tree.)`</option>
+  </scene>
+
+  <scene name="take-puffball" nextScene="ezra-explores">
+    <setGameVar name="grove-ezra-took-puffball" value="true" />
+    <setGameVar name="grove-ezra-mushrooms-taken-count" value="+1" />
+  </scene>
+  
+  <scene name="plastic-bag" nextScene="ezra-explores">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraPlasticBagPosition
+      @inline EzraCrouch      
+    </blocking>
+    
+    <setGameVar name="grove-ezra-examined-plastic-bag" value="true" />
+    <setGameVar name="grove-ezra-mushroom-area-count" value="+1" />
+    <line event="ezra-music-now">`(The bag is ragged and waterlogged. He nudges it with a stick, coiling up a plastic thread and spreading it out on the beach.)`</line>
+
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory" event="ezra-music-then"><fragment name="ezra-memory-introduction-1" /></line>
+    <line condition="grove-ezra-mushroom-area-count=1" style="memory"><fragment name="ezra-memory-introduction-2" /></line>
+    
+    <line style="memory" event="ezra-music-then">He'd taken a knife from the kitchen, selected for its long, serrated edge. Meant for slicing bread, its teeth had reminded him of a saw blade. He was determined to collect some firewood to heat the house.</line>
+    <line event="ezra-music-now">`(There are no mushrooms in the bag.)`</line>
+  </scene>
+  
+  <!-- end mushroom hunting -->
+  <scene name="done-hunting" nextScene="reconnect-with-cate" waitForEvent="cate-done-hunting" skipAheadCondition="temp:cate-done-hunting">
+    <triggerEvent name="ezra-done-hunting" />
+    <setGameVar name="temp:ezra-done-hunting" value="true" />
+    
+    <blocking>
+      @inline EzraStand
+      Ezra Walk Ezra [Root]/EzraStartPosition
+    </blocking>
+    
+    <line displayCompleteEvent="disable-focus-right" event="ezra-music-now">`(EZRA closes his eyes and listens to the water and the distant clicking of bats.)`</line>
+  </scene>
+
+  <scene name="reconnect-with-cate" waitForEvent="talk-about-memorial" nextScene="memorial" skipAheadCondition="temp:cate-ready-to-talk-about-memorial">
+    <triggerEvent name="enable-focus-right" />
+    <setGameVar name="temp:done-hunting" value="true" />
+    <line style="memory" displayCompleteEvent="disable-focus-right" event="ezra-music-then">He tripped on a protruding root and lay for a while in the mud, examining the pale upper branches of a sycamore tree, listening to the soft rumble of a faraway thunderstorm, then louder, closer, and his hair stood on end, and there was the bird.</line>
+  </scene>
+
+  <scene name="memorial">
+    <triggerEvent name="enable-focus-right,ezra-music-now" />
+    <option goto="memorial-trees" speaker="ezra">These are the only trees in this whole cave. Who planted them here?</option>
+    <option goto="memorial-island" speaker="ezra">What's this island for? It looks like someone made it on purpose.</option>
+  </scene>
+
+  <scene name="memorial-trees" nextScene="memorial-background">
+    <triggerEvent name="ezra-asks-about-memorial" />
+    <setGameVar name="temp:ezra-asked-about-memorial" value="true" />
+    <line speaker="cate">Right, not many trees down here in the dark ...</line>
+    <line speaker="cate">I know these are ... some kind of cypress. And they were definitely planted here deliberately, uh ... by someone who ...</line>
+  </scene>
+
+  <scene name="memorial-island" nextScene="memorial-background">
+    <triggerEvent name="ezra-asks-about-memorial" />    
+    <line speaker="cate">Oh, right, it's kind of a nice, simple shape. Pleasantly minimal island geometry.</line>
+    <line speaker="cate">I'm sure it `could` be natural, though. I mean, I don't know if the island itself is man-made or not, but ...</line>
+  </scene>
+
+  <scene name="memorial-background" nextScene="wait-for-ezra-search">
+    <line speaker="cate">I guess I don't know much about this place, really. It's supposed to be some kind of memorial? To something?</line>
+    <line speaker="cate">Will would know more.</line>
+    <line speaker="cate">Sorry, it's a mystery.</line>
+  </scene>
+
+  <scene name="wait-for-ezra-search" waitForEvent="ezra-will-search-for-clues" nextScene="ezra-searches-for-clues" skipAheadCondition="temp:ezra-said-he-will-search-for-clues">
+    <triggerEvent name="cate-done-explaining-memorial" />
+    <setGameVar name="temp:cate-done-explaining-memorial" value="true" />
+    <line displayCompleteEvent="disable-focus-right">`(EZRA kicks the dirt.)`</line>
+  </scene>
+
+  <scene name="ezra-searches-for-clues">
+    <triggerEvent name="enable-focus-right" />    
+    <goto condition="grove-ezra-clue-area-count[gt]1" sceneName="done-searching-for-clues" />
+
+    <blocking>
+      @inline EzraStand
+    </blocking>
+    
+    <option goto="cypress-tree" condition="!grove-ezra-searched-cypress-tree">`(EZRA investigates a cypress tree.)`</option>
+    <option goto="edge-of-water" condition="!grove-ezra-searched-edge-of-water">`(EZRA looks around the shore.)`</option>
+    <option goto="large-rock" condition="!grove-ezra-searched-large-rock">`(EZRA examines a large stone monument.)`</option>
+  </scene>
+
+  <scene name="cypress-tree">
+    <blocking>
+      Ezra Walk Ezra [Root]/EzraBaseOfTreePosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-searched-cypress-tree" value="true" />
+    <setGameVar name="grove-ezra-clue-area-count" value="+1" />    
+    <line>`(The tree smells spicy, oily.)`</line>
+    <option goto="examine-bark-graffiti">`(EZRA inspects the bark.)`</option>
+    <option goto="examine-trimmed-branches">`(EZRA looks up into the branches.)`</option>
+  </scene>
+
+  <scene name="edge-of-water">
+    <blocking>
+      Ezra Walk Ezra [Root]/LandingPosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-searched-edge-of-water" value="true" />
+    <setGameVar name="grove-ezra-clue-area-count" value="+1" />        
+    <line>`(EZRA steps on a plastic bottle. A wooden post projects from the sand nearby.)`</line>
+    <option goto="examine-mooring-post">`(EZRA examines the wooden post.)`</option>
+    <option goto="examine-plastic-bottle">`(EZRA picks up the plastic bottle.)`</option>
+  </scene>
+
+  <scene name="large-rock">
+    <blocking>
+      Ezra Walk Ezra [Root]/RuinsPosition
+    </blocking>
+    
+    <setGameVar name="grove-ezra-searched-large-rock" value="true" />
+    <setGameVar name="grove-ezra-clue-area-count" value="+1" />        
+    <line>`(The monument is covered with lichen and painted text.)`</line>
+    <option goto="examine-rock-graffiti">`(EZRA reads the text.)`</option>
+    <option goto="examine-lichen">`(EZRA inspects the lichen.)`</option>
+  </scene>
+
+  <scene name="examine-bark-graffiti" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-bark-graffiti" value="true" />
+    <line>`(A message is carved in the bark.)`</line>
+    <line speaker="bark carving">OZY</line>
+  </scene>
+
+  <scene name="examine-trimmed-branches" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-trimmed-branches" value="true" />    
+    <line>`(Some of the branches have been trimmed recently.)`</line>
+  </scene>
+
+  <scene name="examine-mooring-post" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-mooring-post" value="true" />    
+    <line>`(A groove is worn near the top of the post.)`</line>
+  </scene>
+
+  <scene name="examine-plastic-bottle" nextScene="ezra-searches-for-clues">
+    <setGameVar name="grove-ezra-found-plastic-bottle" value="true" />
+    
+    <blocking>
+      @inline EzraCrouch
+      Ezra Wait 2
+      @inline EzraStand
+    </blocking>
+    
+    <line>`(There's a scrap of paper inside the bottle. EZRA takes it out and reads it.)`</line>
+    <line speaker="message">EGGS FLOUR CHARDONNAY LAXATIVES PAPER TOWELS SCRATCH TICKET</line>
+  </scene>
+
+  <scene name="examine-rock-graffiti" nextScene="ezra-searches-for-clues">
+    <blocking>
+      @inline EzraCrouch
+    </blocking>
+    
+    <setGameVar name="grove-ezra-found-rock-graffiti" value="true" />    
+    <line speaker="rock graffiti">X+O 4EVA</line>
+  </scene>
+
+  <scene name="examine-lichen" nextScene="ezra-searches-for-clues">
+    <blocking>
+      @inline EzraCrouch
+    </blocking>
+    
+    <setGameVar name="grove-ezra-found-lichen" value="true" />    
+    <line>`(Colorful lichen coats the surface of the monument, mixing with painted graffiti, in some places indistinguishably.)`</line>
+  </scene>
+
+  <scene name="done-searching-for-clues" nextScene="iron-pariah-appears" waitForEvent="iron-pariah-appears" skipAheadCondition="temp:iron-pariah-appeared">
+    <triggerEvent name="ezra-finishes-search-for-clues" />
+    <setGameVar name="temp:ezra-search-for-clues-complete" value="true" />
+
+    <blocking>
+      @inline EzraStand
+      Ezra Walk Ezra [Root]/EzraStartPosition
+    </blocking>
+    
+    <line displayCompleteEvent="disable-focus-right">`(EZRA inspects the contents of his pockets.)`</line>
+  </scene>
+
+  <scene name="iron-pariah-appears" nextScene="iron-pariah-done" waitForEvent="iron-pariah-split" skipAheadCondition="temp:iron-pariah-split">
+    <line>`(CATE and EZRA look up at an old battleship drifting by.)`</line>
+  </scene>
+
+  <scene name="iron-pariah-done" nextScene="end">
+    <triggerEvent name="enable-focus-right,end-music" />
+    <line style="memory" event="ezra-music-then">Ezra's parents shook him awake. They seemed alarmed, but not immediately concerned. They led him back to the house, past the house, into the car.</line>
+    <line style="memory">Dad said they were going to stay at the bus station for a while, the one with the little arcade, with the car game he liked.</line>
+    <line style="memory">Dad watched him closely in the rear-view mirror, expecting Ezra to be excited, or confused, or scared, but he didn't feel anything. He hardly seemed to hear.</line>
+    <line style="memory">In fact, he felt like he was observing the family car from a distance, from far above, from the clouds.</line>
+  </scene>
+
+  <fragments>
+    <fragment name="ezra-memory-introduction-1">He didn't like to play in the house. It was always too cold. It seemed to store up the cold at night, then slowly discharge it into his bones during the day, while the sun bounced feebly off the windows.</fragment>
+    <fragment name="ezra-memory-introduction-2">But he liked to play in the woods behind the house.</fragment>
+  </fragments>
+  
+</conversation>

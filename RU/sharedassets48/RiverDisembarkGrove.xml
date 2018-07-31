@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <option goto="aboard" center="true" dividerAfter="true">I took a nap.</option>
+    <option goto="end" center="true" variableChange="riverworld-grove=disembarked">Ezra helped Cate forage for mushrooms.</option>
+  </scene>
+
+  <scene name="aboard" nextScene="end">
+    <setGameVar name="riverworld-grove" value="aboard" />
+    <setGameVar name="tugboat-vignette" value="WillSleeping" />
+  </scene>
+</conversation>
+

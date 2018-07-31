@@ -1,0 +1,197 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-final-conversation">
+  <scene name="intro">
+    <line speaker="junebug">`(To JOHNNY.)` Stay here.</line>
+    <line speaker="junebug">`(To EZRA.)` Careful. He's wicked with strangers.</line>
+    <line speaker="johnny">Ha. You —</line>
+    
+    <option goto="tow-coming" speaker="conway">You didn't have to stop, we've got a tow coming.</option>
+    <option goto="clear-tree" speaker="shannon">You here to clear the tree?</option>
+    <option goto="chasing" speaker="ezra">Who's chasing you?</option>
+  </scene>
+
+  <scene name="tow-coming" nextScene="question-2">
+    <setGameVar name="breakdown-perceived-reason-for-stopping" value="help"/>
+    
+    <line speaker="junebug">Hear that, cricket? We didn't have to stop.</line>
+    <line speaker="johnny">Oh! Why'd we stop?</line>
+  </scene>
+
+  <scene name="clear-tree" nextScene="question-2">
+    <setGameVar name="breakdown-perceived-reason-for-stopping" value="tree"/>
+    
+    <line speaker="junebug">Hear that, cricket? We'd better get the chainsaw out.</line>
+    <line speaker="johnny">Who'll pay to gas it up?</line>
+  </scene>
+
+  <scene name="chasing" nextScene="question-2">
+    <setGameVar name="breakdown-perceived-reason-for-stopping" value="chase"/>
+    
+    <line speaker="junebug">Hear that, cricket? We're being pursued.</line>
+    <line speaker="johnny">I knew it. Who's after us?</line>
+  </scene>
+
+  <scene name="question-2">
+    <line speaker="junebug">That's a good question. These folks seem to have a certain handle on the situation.</line>
+    <line speaker="junebug">So ... ?</line>
+    
+    <option condition="breakdown-perceived-reason-for-stopping=help" goto="interruption" insertedText="*CONWAY*: Oh-" speaker="conway">Oh, we thought you were stopping to help.</option>
+    <option condition="breakdown-perceived-reason-for-stopping=help" goto="interruption" insertedText="*SHANNON*: Re-" speaker="shannon">Really, you didn't have to stop.</option>
+    <option condition="breakdown-perceived-reason-for-stopping=tree" goto="interruption" insertedText="*CONWAY*: Ma-" speaker="conway">Maybe they're contractors.</option>
+    <option condition="breakdown-perceived-reason-for-stopping=tree" goto="interruption" insertedText="*SHANNON*: Wo-" speaker="shannon">Won't the state cover that?</option>
+    <option condition="breakdown-perceived-reason-for-stopping=chase" goto="interruption" insertedText="*EZRA*: Di-" speaker="ezra">Dinosaurs.</option>
+    <option condition="breakdown-perceived-reason-for-stopping=chase" goto="interruption" insertedText="*SHANNON*: Ma-" speaker="shannon">Maybe the law?</option>
+  </scene>
+
+  <scene name="interruption">
+    <line speaker="junebug">Sure, sure, something like that. Listen: we've got two questions for you folks.</line>
+    <line speaker="junebug">What kind of people do you take us for? I mean, how do we strike you?</line>
+    
+    <option goto="nice" speaker="conway">You seem nice enough.</option>
+    <option goto="confused" speaker="conway">Not sure I follow.</option>
+    <option goto="space" speaker="ezra">Probably from space.</option>
+  </scene>
+
+  <scene name="nice" nextScene="like-music">
+    <line speaker="junebug">`(To JOHNNY.)` What do you think, cricket?</line>
+    <line speaker="johnny">Our generosity is unmistakable, ma'am. It `radiates`.</line>
+    <line speaker="junebug">It does radiate.</line>
+  </scene>
+
+  <scene name="confused" nextScene="like-music">
+    <line speaker="junebug">What kind of temperament do you think we have? What kind of work would you say we do?</line>
+    
+    <option goto="artists" speaker="conway">I guess ... some kind of art thing, maybe?</option>
+    <option goto="space" speaker="ezra">Astronauts or aliens.</option>
+  </scene>
+
+  <scene name="space" nextScene="like-music">
+    <line speaker="johnny">I always said you fell from heaven, ma'am.</line>
+    <line speaker="junebug">`(To JOHNNY.)` Otherworldly!</line>
+    <line speaker="johnny">It's unmistakable.</line>
+  </scene>
+
+  <scene name="artists" nextScene="like-music">
+    <line speaker="junebug">It may be!</line>
+    <line speaker="johnny">She's the artist; I'm just an entertainer.</line>
+  </scene>
+
+  <scene name="like-music">
+    <line speaker="junebug">Now, here's another question for you: do you like music?</line>
+    <line speaker="johnny">Do you like music?</line>
+    
+    <option goto="music-interruption" insertedText="*CONWAY*: Lys-" speaker="conway">Lysette used to sing in taverns on the weekend. Beautiful stuff.</option>
+    <option goto="music-interruption" insertedText="*SHANNON*: Som-" speaker="shannon">Sometimes I like to leave the radio dialed between stations.</option>
+    <option goto="music-interruption" insertedText="*EZRA*: I-" speaker="ezra">I don't like music, but I do like sounds.</option>
+  </scene>
+
+  <scene name="music-interruption">
+    <line speaker="junebug">Of course you do.</line>
+    <line speaker="johnny">Say, they should come to our gig!</line>
+    <line speaker="junebug">What an idea!</line>
+    
+    <option goto="tow" speaker="conway">Well, we're waiting for a tow.</option>
+    <option goto="now" speaker="shannon">Right now?</option>
+    <option goto="zero" speaker="shannon">We're just trying to get back on the |Zero|.</option>
+  </scene>
+
+  <scene name="tow">
+    <setGameVar name="breakdown-assistance-offered" value="repair"/>    
+    <line speaker="junebug">A tow! I won't hear about it. This time of night, you'll be kicking your heels 'til dawn.</line>
+    <line speaker="junebug">We'll fix your truck up. Me and Johnny are a couple of regular gearheads. Why, I just put a new cylinder block in this baby over here:</line>
+    
+    <option goto="tow-2" speaker="junebug" variableChange="motorcycle-name=Weird Vector">`The Weird Vector`.</option>
+    <option goto="tow-2" speaker="junebug" variableChange="motorcycle-name=Sloth-on-wheels">`The Sloth-on-wheels`.</option>
+    <option goto="tow-2" speaker="junebug" variableChange="motorcycle-name=Vicious Cycle">`The Vicious Cycle`.</option>
+  </scene>
+
+  <scene name="tow-2" nextScene="booking">
+    <line speaker="johnny">— that's what we call our bike.</line>
+    <line speaker="junebug">We call it `The <variable name="motorcycle-name"/>`.</line>
+    <line condition="motorcycle-name=Weird Vector" speaker="johnny">Because the front wheel's a little loose.</line>
+    <line condition="motorcycle-name=Sloth-on-wheels" speaker="johnny">Because it's two-tired.</line>
+    <line condition="motorcycle-name=Vicious Cycle" speaker="johnny">Pretty tough, huh?</line>
+    <line speaker="junebug">We'll get you fixed up quick, so you can come to the gig.</line>
+  </scene>
+  
+  <scene name="now">
+    <setGameVar name="breakdown-assistance-offered" value="none"/>    
+    <line speaker="junebug">Right now. Just headed over there on this baby:</line>
+
+    <option goto="now-2" speaker="junebug" variableChange="motorcycle-name=Weird Vector">`The Weird Vector`.</option>
+    <option goto="now-2" speaker="junebug" variableChange="motorcycle-name=Sloth-on-wheels">`The Sloth-on-wheels`.</option>
+    <option goto="now-2" speaker="junebug" variableChange="motorcycle-name=Vicious Cycle">`The Vicious Cycle`.</option>    
+  </scene>
+
+  <scene name="now-2" nextScene="booking">
+    <line speaker="johnny">— that's what we call our bike.</line>
+    <line speaker="junebug">We call it `The <variable name="motorcycle-name"/>`.</line>
+    <line condition="motorcycle-name=Weird Vector" speaker="johnny">Because the front wheel's a little loose.</line>
+    <line condition="motorcycle-name=Sloth-on-wheels" speaker="johnny">Because it's two-tired.</line>
+    <line condition="motorcycle-name=Vicious Cycle" speaker="johnny">Pretty tough, huh?</line>
+    <line speaker="johnny">We'd be very much obliged.</line>
+  </scene>
+
+  <scene name="zero">
+    <setGameVar name="breakdown-assistance-offered" value="zero"/>
+    <line speaker="junebug">The |Zero|! Is that a fact ...</line>
+    <line speaker="johnny">The |Zero|?</line>
+    <line speaker="junebug">Hush, cricket. You folks are in luck. I happen to know just where you're going, and I'm happy to lead you there.</line>
+    <line speaker="junebug">We've been down there many a time riding this baby:.</line>
+    
+    <option goto="zero-2" speaker="junebug" variableChange="motorcycle-name=Weird Vector">`The Weird Vector`.</option>
+    <option goto="zero-2" speaker="junebug" variableChange="motorcycle-name=Sloth-on-wheels">`The Sloth-on-wheels`.</option>
+    <option goto="zero-2" speaker="junebug" variableChange="motorcycle-name=Vicious Cycle">`The Vicious Cycle`.</option>    
+  </scene>
+
+  <scene name="zero-2" nextScene="booking">
+    <line speaker="johnny">— that's what we call our bike.</line>
+    <line speaker="junebug">We call it `The <variable name="motorcycle-name"/>`.</line>
+    <line condition="motorcycle-name=Weird Vector" speaker="johnny">Because the front wheel's a little loose.</line>
+    <line condition="motorcycle-name=Sloth-on-wheels" speaker="johnny">Because it's two-tired.</line>
+    <line condition="motorcycle-name=Vicious Cycle" speaker="johnny">Pretty tough, huh?</line>    
+    <line speaker="junebug">Only ... it's just ...</line>
+  </scene>
+  
+  <scene name="booking" nextScene="stopping">
+    <line speaker="junebug">See, we have a regular booking tonight and, well, we're running late.</line>
+    <line speaker="johnny">Very late.</line>
+    <line speaker="junebug">That's what I told them. Now the old man who runs this venue, Harry Esperanza, is a notorious withholder. And if we don't get a few bodies in the crowd, well ... he'll go all penny-pinching on us.</line>
+    <line speaker="junebug">Just a short set. We only have one song prepared.</line>
+    <line speaker="johnny">You'll come to the gig, won't you?</line>
+    
+    <option goto="stopping" insertedText="*SHANNON*: We-" speaker="shannon">We really don't have time.</option>
+    <option goto="stopping" insertedText="*CONWAY*: Of-" speaker="conway">Of course we will.</option>
+  </scene>
+
+  <scene name="stopping" nextScene="end">
+    <setGameVar name="breakdown-completed" value="true"/>
+    
+    <line speaker="junebug">`(To JOHNNY.)` Of course they will!</line>
+    <line speaker="junebug">Can you believe: we almost didn't stop?</line>
+
+    <line speaker="johnny" condition="one:dog-name=Blue">`(To BLUE.)` Hungry, old lady? I think I've got a crust in the sidecar here ...</line>
+    <line speaker="johnny" condition="one:dog-name=Homer">`(To HOMER.)` Hungry, old man? I think I've got a crust in the sidecar here ...</line>
+    <line speaker="johnny" condition="one:dog-name=Dog">`(To DOG.)` Hungry, old man? I think I've got a crust in the sidecar here ...</line>
+    
+    <line condition="breakdown-reason-for-stopping=none" speaker="junebug">It was only out of the kindness of my own heart ...</line>
+
+    <line condition="breakdown-reason-for-stopping=help" speaker="junebug">But Johnny here saw you folks were in trouble ...</line>
+
+    <line condition="breakdown-reason-for-stopping=late" speaker="junebug">After all, it's so late  ...</line>
+
+    <line condition="breakdown-reason-for-stopping=dog" speaker="junebug">But that dog of your is such a pitiful sight ...</line>
+
+    <line condition="breakdown-reason-for-stopping=ezra" speaker="junebug">But you having a kid, and all ...</line>
+
+    <line condition="breakdown-reason-for-stopping=worn-down" speaker="junebug">Of course, I was ultimately attended by my better angels ...</line>
+    
+    <line speaker="junebug">Well, it's all said and done. We stopped. That's all that matters.</line>
+    <line speaker="junebug">Our gig's at an old tavern called &quot;The Lower Depths.&quot; It's over there by old Charlie Moran Highway, just east off sixty-five.</line>
+    <line condition="breakdown-bike-johnny-hobby=animals" speaker="junebug">We usually take a right off the interstate around the petting zoo. Johnny likes the petting zoo.</line>
+    <line condition="breakdown-bike-johnny-hobby=animals" speaker="johnny">I do like the petting zoo.</line>    
+    <line condition="breakdown-bike-johnny-hobby=recordings" speaker="junebug">We usually take a right off the interstate around the arcade. Johnny likes the arcade.</line>
+    <line condition="breakdown-bike-johnny-hobby=recordings" speaker="johnny">That place ... I just put fresh batteries in my field recorder!</line>
+    <line speaker="junebug">Now, let's see about that truck of yours ... I feel `certain` we can get it running.</line>
+  </scene>
+</conversation>

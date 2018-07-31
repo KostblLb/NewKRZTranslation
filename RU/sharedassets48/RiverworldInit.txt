@@ -1,0 +1,9 @@
+# -*- mode: blocking -*-
+
+# temp
+
+# Main Message RiverworldManager QueueState Generic
+# Main Wait 1
+# Main Message RiverworldManager QueueState FloatingGasStation
+
+# Main Message RiverworldManager QueueState Bureau

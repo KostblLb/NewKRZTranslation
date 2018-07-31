@@ -1,0 +1,43 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <scene name="intro">
+    <setGameVar name="xanadu-next-scene" value="bedquilt-glitch"/>
+    <setGameVar name="xanadu-played-glitch" value="true"/>
+    
+    <line speaker="xanadu" style="xanadu-glitch">Y_u are sta_iigg at the eed o  _ _o_d b.f___ _ .mal_ ._i_k bbi_din_. A_ouud y__ is a f__ess.</line>
+
+    <line speaker="junebug">Ha. This thing is in rough shape.</line>
+    
+    <option goto="switches" speaker="shannon">Do these switches do anything?</option>
+    <option goto="blow-on-xanadu" speaker="ezra">Try blowing on it.</option>
+  </scene>
+
+  <scene name="blow-on-xanadu" nextScene="second-options">
+    <line>`(CONWAY blows some dust off the keyboard and presses the &quot;return&quot; key.)`</line>
+    <line speaker="xanadu" style="xanadu-glitch">_o_ a_e s__n_i_n at tee en_ _f   road bff___   small _ri_k uuulli.g. Aroonn yyu .  a __..__</line>
+
+    <line speaker="shannon">OK, that's ... worse.</line>    
+  </scene>
+  
+  <scene name="switches" nextScene="second-options">
+    <line>`(CONWAY flips an unlabeled switch.)`</line>
+    <line speaker="xanadu" style="xanadu-glitch">_o_ a_e standi_n at tee en_ _f   road bff___   small _ri_k uuulli.g. Aroonn yyu .  a __..__</line>
+
+    <line speaker="shannon">OK, that's ... worse.</line>    
+  </scene>
+
+  <scene name="second-options">
+    <option goto="type-help" speaker="shannon">Try typing 'HELP.'</option>
+    <option goto="type-house" speaker="junebug">It kinda looks like a house. Type 'HOUSE.'</option>
+  </scene>
+
+  <scene name="type-help" nextScene="end">
+    <line speaker="conway">`(Typing.)` ~HELP.~</line>
+    <line speaker="xanadu" style="xanadu-glitch">Th_t_s ..  . ___. I ___ogni_e.</line>
+  </scene>
+
+  <scene name="type-house" nextScene="end">
+    <line speaker="conway">`(Typing.)` ~HOUSE.~</line>
+    <line speaker="xanadu" style="xanadu-glitch">.hatts n__ a  v__   r.co_ni_e.</line>
+  </scene>
+</conversation>

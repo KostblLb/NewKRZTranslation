@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <line>A man with a large pair of antlers slung over his shoulder is speaking with Joseph.</line>
+  </scene>
+</conversation>

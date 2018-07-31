@@ -1,0 +1,82 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+
+<conversation act="three" endingEvent="restore-road-sounds">
+  <endingAudioEvents>
+    <audioFade clip="children" destroy="true" direction="out" time="2" />
+  </endingAudioEvents>
+
+  <scene name="intro">
+    <triggerEvent name="fade-out-road-sounds"/>
+    <triggerEvent name="fade-out-radio"/>
+    
+    <audioFade clip="children" direction="in" time="4" />    
+    <setGameVar name="underworld-saw-ezra-game-2" value="true"/>
+    
+    <line>About a dozen children are gathered in a shallow, dry basin to the side of the road. They are seated on overturned pots and pans arranged in three configurations.</line>
+    <line>One group of five children are clustered to the right. One group are arranged loosely in the center, all, facing an older girl who sits on three pans stacked together.</line>
+    <line>The boy at the head of the arrangement looks sternly down on another child, a younger boy kneeled on the stone floor without a pot to sit on.</line>
+    <line>A spare stockpot, perhaps belonging to the younger boy, is set to the side.</line>
+    <option goto="witnesses-start" insertedText="Ezra seats himself in the center.">Sit in the center.</option>
+    <option goto="jury-start" insertedText="Ezra seats himself on the right.">Sit on the right.</option>
+    <option goto="lawyer-start" insertedText="Ezra stands next to the younger boy.">Stand next to the younger boy.</option>
+  </scene>
+
+  <scene name="witnesses-start">
+    <line>A few of the other children nod or wave at Ezra.</line>
+    <line>The older girl takes a wide, green leaf from the floor next to her, and pretends to read off a list of charges. The younger child is accused of making agreements for trading card exchanges which he was not able to honor.</line>
+    <line>The judge asks for a witness to testify. A boy describes the participants and events depicted on the trading card he was to receive, and makes related claims about the defendant's nature.</line>
+    <line>Ezra is asked to testify.</line>
+    <option goto="testify-against" insertedText="Ezra makes up a story about the defendant's thoughtless behavior.">Testify against him.</option>
+    <option goto="testify-for" insertedText="Ezra makes up a story about the defendant's extenuating circumstances.">Testify for him.</option>
+  </scene>
+
+  <scene name="testify-against" nextScene="game-end">
+    <line>The judge appears repulsed.</line>
+    <line>A few other witnesses testify to the defendant's moral failings.</line>
+  </scene>
+
+  <scene name="testify-for" nextScene="game-end">
+    <line>The judge appears impressed.</line>
+    <line>A few other witnesses testify to the defendant's character.</line>
+    <line>The jury is sequestered a few feet away, and returns with a verdict of &quot;not guilty.&quot;</line>
+  </scene>
+
+  <scene name="jury-start">
+    <line>One of the other children passes Ezra a leaf and a small stick, with which to take notes.</line>
+    <line>The older girl takes a wide, brown leaf from the floor next to her, and pretends to read off a list of charges. The younger child is accused of making agreements for trading card exchanges which he was not able to honor.</line>
+    <line>The judge calls a parade of witnesses from the middle group to testify about the defendant's behavior and character, and any related contractual breaches.</line>
+    <line>It is time to pass a verdict. Ezra and his fellow jurors are sequestered a few feet away.</line>
+    <option goto="jury-guilty" insertedText="Ezra votes 'guilty.'">Vote 'guilty.'</option>
+    <option goto="jury-not-guilty" insertedText="Ezra votes 'not guilty.'">Vote 'not guilty.'</option>
+  </scene>
+
+  <scene name="jury-guilty" nextScene="game-end">
+    <line>They agree that the defendant should be made to honor his promised exchanges in the form of hard labor.</line>
+  </scene>
+
+  <scene name="jury-not-guilty" nextScene="game-end">
+    <line>They agree that the exchanges were not properly documented, and the defendant should walk free, but under careful scrutiny.</line>
+  </scene>
+
+  <scene name="lawyer-start">
+    <line>The older girl nods solemnly to Ezra.</line>
+    <line>The older girl takes a wide, green leaf from the floor next to her, and pretends to read off a list of charges. The younger child is accused of making agreements for trading card exchanges which he was not able to honor.</line>
+    <line>The judge asks for a witness to testify. A boy describes the participants and events depicted on the trading card he was to receive, and makes related claims about the defendant's nature.</line>
+    <line>Ezra is prompted to argue on behalf of his client.</line>
+    <option goto="mistaken-identity" insertedText="Ezra makes a case for mistaken identity.">Claim mistaken identity.</option>
+    <option goto="prejudice" insertedText="Ezra makes a case for prejudicial treatment.">Claim prejudice.</option>
+  </scene>
+
+  <scene name="mistaken-identity" nextScene="game-end">
+    <line>The judge invites the jury to examine the defendant more carefully. The defendant slyly rearranges his hair.</line>
+    <line>The jury is sequestered a few feet away, and returns with a verdict of &quot;not guilty.&quot;</line>
+  </scene>
+
+  <scene name="prejudice" nextScene="game-end">
+    <line>The judge considers the facts, and declares a mistrial.</line>
+  </scene>
+
+  <scene name="game-end" nextScene="end">
+    <line>The groups of children reconfigure themselves and a new trial begins, with the former defendant now as judge.</line>
+  </scene>
+</conversation>

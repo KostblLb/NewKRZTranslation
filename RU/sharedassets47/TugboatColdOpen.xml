@@ -1,0 +1,161 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <line speaker="manual">5.4: Context Backlash</line>
+    <line speaker="manual">General wear on the GESTURAL GEAR MOUNTING APPARATUS (5A-1) may result in undesirable play between teeth in the CONTEXT AND HISTORY STATE MACHINE gears, causing stuttering, slippage, resetting, skipping —</line>
+    <option goto="backlash-continue" speaker="will">Hm. Guess it could be 'slippage' ...</option>
+    <option goto="manual-toc" speaker="will">Well this is not at all helpful.</option>
+  </scene>
+
+  <scene name="backlash-continue">
+    <blocking>Dialog Gesture Will Enter ManualScratch</blocking>
+    <line speaker="manual">If left unresolved, gear slop can gradually throw LIMBS out of alignment, blend MOTIONS, and decontextualize GESTURES.</line>
+    <line speaker="manual">See also sections 1.8 `General Troubleshooting`, and 5.3 `Gesture Context`.</line>
+    <option goto="general-troubleshooting" speaker="will">Troubleshooting, OK ...</option>
+    <option goto="gesture-context" speaker="will">Gesture Context, hm ...</option>
+    <option goto="manual-toc" speaker="will">OK. What else is in here?</option>
+  </scene>
+
+  <scene name="general-troubleshooting" nextScene="manual-final-choice">
+    <line speaker="manual">1.8: General Troubleshooting</line>
+    <line speaker="manual">Technicians of sufficient TALENT and EXPERIENCE may skip this section.</line>
+    <line speaker="manual">General troubleshooting techniques include: <template name="technique" seed="troubleshooting" seed-offset="tugboat-troubleshooting-offset" />; <template name="technique" seed="troubleshooting" seed-offset="tugboat-troubleshooting-offset" />; or <template name="technique" seed="troubleshooting" seed-offset="tugboat-troubleshooting-offset" />.</line>
+  </scene>
+
+  <scene name="gesture-context" nextScene="manual-final-choice">
+    <line speaker="manual">5.3 Gesture Context</line>
+    <line speaker="manual">All GESTURES happen in a CONTEXT — the set of preceding GESTURES, the overall ORIENTATION, and extended variables such as TIME OF DAY and interior AFFECT GEAR angles.</line>
+  </scene>
+
+  <scene name="manual-toc" nextScene="manual-final-choice">
+    <blocking>Dialog Gesture Will Enter ManualScratch</blocking>
+    <line speaker="manual">TABLE OF CONTENTS</line>
+    <line speaker="manual">0. Introduction</line>
+    <line speaker="manual">1. Installation</line>
+    <line speaker="manual">2. Orientations</line>
+    <line speaker="manual">4. Order of Operations</line>
+    <line speaker="manual">3. The Passage of Time</line>
+    <line speaker="manual">5. Gestures</line>
+    <line speaker="manual">6. Final Notes</line>
+  </scene>
+
+  <scene name="manual-final-choice">
+    <triggerEvent name="enter-junebug" />
+    <blocking>Dialog Gesture Will Enter ManualScratch</blocking>
+    <option goto="junebug-enters" speaker="will" blocking="Dialog Exec TossManual">That'll do, book. `(He throws the manual into the river.)`</option>
+    <option goto="junebug-enters" speaker="will" blocking="Dialog Exec StopReading">Must be missing a page or something ...</option>
+    <option goto="junebug-enters" speaker="will" blocking="Dialog Exec StopReading">Maybe I oughta read it back-to-front ...</option>
+  </scene>
+
+  <scene name="junebug-enters">
+    <blocking>Dialog Look Will Junebug</blocking>
+    <line speaker="will">My savior! Our friend here is in a bad way ... any insight?</line>
+    <option goto="voltage" speaker="junebug">I try to stay clear of high voltage these days.</option>
+    <option goto="retire-mammoth" speaker="junebug">Time to put that mammoth out to pasture, Will.</option>
+  </scene>
+
+  <scene name="voltage" nextScene="what-brings-you-here">
+    <line speaker="will">I don't at all blame you, especially down here — on the water, I mean. Sure, it's dangerous. But this is where she lives.</line>
+  </scene>
+
+  <scene name="retire-mammoth" nextScene="what-brings-you-here">
+    <line speaker="will">Oh, I feel certain she's got a few trips left in her ... if only she had a more capable surgeon! Sadly, mechanics are in short supply down here. I think the setting is too romantic. It scares them off!</line>
+  </scene>
+
+  <scene name="what-brings-you-here">
+    <line speaker="will">And what brings `you` down to the Echo tonight?</line>
+    <option goto="tagging-along" speaker="junebug">Just tagging along.</option>
+    <option goto="inevitable-echo" speaker="junebug">I always end up here, eventually.</option>
+  </scene>
+
+  <scene name="tagging-along">
+    <line speaker="will">Ha! That doesn't sound like you ...</line>
+    <option goto="what-does-that-mean" speaker="junebug">What does that mean?</option>
+    <option goto="returning-favor" speaker="junebug">We dragged some folks to a show — just returning the favor.</option>
+  </scene>
+
+  <scene name="what-does-that-mean" nextScene="returning-favor">
+    <line speaker="will">Oh, I just mean that you and your Johnny have always been `complete`. Since I first met the pair of you. Free-standing, like a lighthouse.</line>
+  </scene>
+
+  <scene name="returning-favor" nextScene="bureau">
+    <line speaker="will">I'm sure your new friends appreciate the company. It's no shame, to be lonesome ...</line>
+  </scene>
+
+  <scene name="inevitable-echo" nextScene="bureau">
+    <line speaker="will">The river is like that. It always has been.</line>
+  </scene>
+
+  <scene name="bureau" nextScene="will-alone">
+    <line speaker="will">We picked you up at the Bureau tonight ... never seen you that far upriver before. I hope that doesn't mean you've been traveling on the |Zero|?</line>
+
+    <option speaker="junebug" goto="will-on-zero">Yeah, have you been there? The |Zero|?</option>
+    <option speaker="junebug" goto="will-on-bureau">The Bureau has great acoustics.</option>
+  </scene>
+
+  <scene name="will-on-zero" nextScene="will-alone">
+    <line speaker="will">Oh, no, not me. This old river-rat steers clear of weird highways.</line>
+  </scene>
+  
+  <scene name="will-on-bureau" nextScene="will-alone">
+    <line speaker="will">You've got `that` right. Wow! I could sit in there for hours, just listen to my breath reverberate through that weird architecture. Still, it's always good to be back on the river.</line>
+  </scene>
+  
+  <scene name="will-alone" nextScene="end">
+    <line speaker="will">I've been traveling this river for more than half my life, more-or-less alone. I `think` I've seen it change quite a bit in all those years ... but I can't say for sure. The water has a peculiar way of making a person forgetful.</line>
+    <line speaker="will">Some nights I remember a place, but it's full of strange new people. And some nights I meet an old friend on an unfamiliar shore.</line>
+    <line speaker="will">I wonder which kind of night this is.</line>
+  </scene>
+
+  <!-- ====================================================== -->
+  
+  <!-- template stuff -->
+  <templates>
+    <technique>
+      <common>
+        <template xml:space="preserve" once="true"><action /> and <gerund /> for changes in <quality /></template>
+        <template xml:space="preserve" once="true"><action /></template>
+        <template xml:space="preserve" once="true"><gerund /> until the <quality /> clears up</template>
+        <template xml:space="preserve" once="true"><action /> until the <quality /> becomes apparent</template>
+      </common>
+      <rare>
+        <template xml:space="preserve" once="true">asking a friend to share their insight</template>
+        <template xml:space="preserve" once="true">pretending not to notice the problem</template>
+      </rare>
+    </technique>
+  </templates>
+
+  <templateValues>
+    <action>
+      <common>
+        <value>applying a cold washcloth</value>
+        <value>chiseling out a small hole</value>
+        <value>hammering with something plastic</value>
+        <value>tapping on exposed metal with a wrench</value>
+        <value>leaving it alone, then returning later</value>
+      </common>
+    </action>
+
+    <gerund>
+      <common>
+        <value>listening</value>
+        <value>observing</value>
+        <value>waiting</value>
+        <value>watching</value>        
+        <value>feeling</value>        
+      </common>
+    </gerund>
+
+    <quality>
+      <common>
+        <value>resonance</value>
+        <value>texture</value>
+        <value>tone</value>
+        <value>hue</value>
+        <value>specularity</value>
+        <value>stability</value>
+      </common>      
+    </quality>
+  </templateValues>
+  
+</conversation>

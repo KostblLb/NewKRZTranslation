@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="elkhorn-mine-found-tram-birdcage" value="true"/>
+    
+    <line>A paper tag hangs from the birdcage by a string: &quot;*CANARY 25 TOKENS*.&quot;</line>
+    <line>Canaries sold at the company store? Did they also sell respirators? No bones in the cage. The bird must have been set free. Or maybe the cage was cleaned.</line>
+    <line>There are cardinals at the Louisville Zoo. And other birds: ostriches, eagles ... emus ... no canaries. Too common? Too small, maybe. But they have starlings. Starlings aren't much bigger than canaries.</line>
+  </scene>
+</conversation>

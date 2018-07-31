@@ -1,0 +1,127 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="bait-shop-end">
+  <scene name="intro" nextScene="outside">
+    <triggerEvent name="bait-shop-start"/>
+    <setGameVar name="overworld-visited-bait-shop" value="true"/>
+    
+    <line>Conway pulls into the bait shop parking lot.</line>
+  </scene>
+
+  <scene name="outside" nextScene="outside-options">
+    <triggerEvent name="bait-shop-outside"/>
+    
+    <line>Vaulted above the road on a thin steel bar, a handwritten sign reads &quot;LIVE BAIT. MINNOWS SMALL AND ALSO LARGE FOR STRIPERS. NIGHTCRAWLERS. CHIPS AND BEER.&quot; A green flyer hangs loosely from a bit of masking tape at eye-level.</line>
+    <line>To the shop's right, a dirt parking lot sprawls unevenly into grass and then eventually trees.</line>
+    <line pause="false">The bait shop is open.</line>
+  </scene>
+
+  <scene name="outside-options">
+    <option goto="enter-shop" insertedText="Conway enters the bait shop.">Enter the bait shop.</option>
+    <option goto="read-flyer" insertedText="Conway reads the flyer.">Read the flyer.</option>
+    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+  </scene>
+
+  <scene name="read-flyer" nextScene="outside-options">
+    <line>Computer-printed type in a bold font surrounds a clip art illustration of a TV set. The TV has eyes, arms, and legs. Its shoulders are slouched. On the screen is a cartoon expression of exhausted nausea. A hot water bottle rests against its wire antenna.</line>
+    <line pause="false">&quot;TV Repair, no model too old, inquire within. We do not sell digital converter boxes.&quot;</line>
+  </scene>
+
+  <scene name="enter-shop">
+    <triggerEvent name="bait-shop-inside"/>
+    
+    <line>Narrow aisles crowded with lures, reels, rods, and snacks divide the shop lengthwise from the entrance to the cashier's counter. The left wall is lined with churning tanks of water.</line>
+
+    <option goto="look-at-tanks" insertedText="Conway approaches the tanks.">Look into the tanks.</option>
+    <option goto="counter" insertedText="Conway approaches the counter.">Approach the counter.</option>
+    <option goto="outside" insertedText="Conway leaves the shop.">Leave the shop.</option>
+  </scene>
+
+  <scene name="look-at-tanks" nextScene="tank-options">
+    <triggerEvent name="bait-shop-approach-tanks"/>
+    
+    <line pause="false">The three metal tanks aren't labeled, and the water is too agitated to get a clear view of what's inside each one. The contents of the first tank are vaguely gray. The second is a muddy pink. The third is clear, but shiny silver flecks occasionally flash along its surface.</line>
+  </scene>
+
+  <scene name="tank-options">
+    <option goto="first-tank" insertedText="Conway reaches into the first tank.">Reach into the first tank.</option>
+    <option goto="second-tank" insertedText="Conway reaches into the second tank.">Reach into the second tank.</option>
+    <option condition="!conway-shocked-by-bait-tank" goto="third-tank" insertedText="Conway reaches into the third tank.">Reach into the third tank.</option>
+    <option goto="enter-shop" insertedText="Conway steps away from the tanks.">Leave the tanks.</option>
+  </scene>
+
+  <scene name="first-tank">
+    <line>Conway's hand brushes against something roughly the size of his palm.</line>
+    <option goto="first-tank-deeper" insertedText="Conway reaches deeper into the tank.">Reach deeper into the tank.</option>
+    <option goto="tank-options" insertedText="Conway removes his hand from the tank.">Remove hand from the tank.</option>
+  </scene>
+
+  <scene name="first-tank-deeper" nextScene="tank-options">
+    <line pause="false">Conway's hand comes into contact with a scaly, uneven surface. As he runs his fingers along the bottom, a bead of sweat bridges the inches from his temple to the water's surface. Something bites at his forearm. He recoils.</line>
+  </scene>
+
+  <scene name="second-tank">
+    <line>Conway's fingers slip through something fleshy but inert. The sensation is nauseating.</line>
+    <option goto="second-tank-deeper" insertedText="Conway reaches deeper into the tank.">Reach deeper into the tank.</option>
+    <option goto="tank-options" insertedText="Conway removes his hand from the tank.">Remove hand from the tank.</option>
+  </scene>
+
+  <scene name="second-tank-deeper" nextScene="tank-options">
+    <line>As his elbow passes into the pinkish mass, he realizes he's about to be sick from the smell, and pulls away.</line>
+  </scene>
+
+  <scene name="third-tank">
+    <line>The water seems to tremble with life. Conway can't tell if his hand is being nibbled by fish or massaged by the artificial current. As his eyes near the surface of the water, he can see something colorful glowing faintly at the bottom of the tank.</line>
+    <option goto="third-tank-deeper" insertedText="Conway reaches deeper into the tank.">Reach deeper into the tank.</option>
+    <option goto="tank-options" insertedText="Conway removes his hand from the tank.">Remove hand from the tank.</option>
+  </scene>
+
+  <scene name="third-tank-deeper" nextScene="electroshock-hallucination">
+    <setGameVar name="conway-shocked-by-bait-tank" value="true"/>
+    
+    <line>A tremor spreads from his elbow out to his fingertips, and up to the base of his shoulder. His vision flickers. The water is running warm, under his skin now, and he has the sensation that something is about to snap. His eyes close.</line>
+  </scene>
+
+  <scene name="electroshock-hallucination" nextScene="after-hallucination">
+    <triggerEvent name="bait-shop-flashback"/>
+    
+    <line>He lays on a rooftop, new shingles rough beneath his back, swelling in the noon sun. He is exhausted. They must have started before dawn. His legs are sore from holding stable on the uneven surface, his wrists from breaking old sealant, his fingers from carefully lifting shingles to hammer down new ones.</line>
+    <line>His boss, Ira, yells from the idling truck below. He shades his eyes with his hand. A beer would be good. It's barely past noon, but he's worked a full day already ... what could the harm be? Maybe a shot at the counter, just to get his eyes open. Then a beer. He could offer to drive into town for lunch, and stop at that place on Cumberland —</line>
+  </scene>
+
+  <scene name="after-hallucination" nextScene="enter-shop">
+    <triggerEvent name="bait-shop-flashback-end"/>
+    
+    <line>The cashier pushes Conway roughly on the shoulder. He's been talking, yelling maybe, but it's all an echo now.</line>
+    <line>Conway looks up, his neck stiff with pain, his right palm still tingling. The cashier points to the tank, then above it to a few holes torn in the wall: nail holes from which an electric sign has come dislodged and fallen into the water. He helps Conway to his feet, looks at him pitifully, and returns to the cash register.</line>
+  </scene>
+
+  <scene name="counter" nextScene="counter-options">
+    <line pause="false">A wiry cashier stands behind the register, preoccupied with a sudoku puzzle.</line>
+  </scene>
+
+  <scene name="counter-options">
+    <option condition="!asked-cashier-about-workshop" goto="ask-cashier-about-workshop" insertedText="Conway asks about Shannon Márquez's workshop.">Ask about Shannon Márquez's workshop.</option>
+    <option condition="asked-cashier-about-workshop" goto="read-workshop-note" insertedText="Conway reads the note on the workshop door.">Read the note on the workshop door.</option>
+    <option condition="!asked-bait-shop-cashier-about-basketball" goto="ask-cashier-about-basketball" insertedText="Conway asks about the basketball game.">Ask about the basketball game.</option>
+    <option goto="enter-shop">Walk away.</option>
+  </scene>
+
+  <scene name="ask-cashier-about-workshop" nextScene="counter-options">
+    <setGameVar name="asked-cashier-about-workshop" value="true"/>
+    <line>A handwritten sign on the door behind the counter reads &quot;TV REPAIRS BY APPOINTMENT PLEASE CONSULT WITH CASHIER.&quot; The cashier knocks a few times on the door and waits, occasionally glancing at his puzzle.</line>
+    <line pause="false">After a few moments with no answer, he notices a smaller note written on the sign, reads it, then points it out to Conway.</line>
+  </scene>
+
+  <scene name="read-workshop-note" nextScene="counter-options">
+    <setGameVar name="read-shannons-note-at-workshop" value="true"/>
+    <line pause="false">&quot;`Weaver. I got your message. Have left for the old mine. Don't know if I will see you there or what. Ready either way. -Shannon`&quot;</line>
+  </scene>
+
+  <scene name="ask-cashier-about-basketball" nextScene="counter-options">
+    <setGameVar name="asked-bait-shop-cashier-about-basketball" value="true"/>
+    <triggerEvent name="bait-shop-radio-on"/>
+    
+    <line pause="false">The cashier switches on the radio. An AM sports broadcast is playing, but Conway can't be sure if it's meant to answer or to drown out his questions.</line>
+  </scene>
+
+</conversation>

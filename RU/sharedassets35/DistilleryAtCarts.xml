@@ -1,0 +1,31 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-carts" value="true"/>
+    <setGameVar name="distillery-scene-title" value="Hard Times Distillery"/>
+    
+    <triggerEvent name="start-tape"/>
+
+    <line speaker="doolittle" style="skeleton">Here's the fleet. Ha ha.</line>
+    <line speaker="doolittle" style="skeleton">Oh, we just use these to get around internally.</line>
+
+    <option speaker="conway" goto="size">How big is this place?</option>
+    <option speaker="conway" goto="job">What do you do here?</option>    
+  </scene>
+  
+  <scene name="size" nextScene="to-trucks">
+    <line speaker="doolittle" style="skeleton">Oh, it's grown a great deal over the years. Incredible to think, really ...</line>
+    <line speaker="doolittle" style="skeleton">When Mr. Bishop founded this operation, it was only about eighteen-hundred square feet, and half of that or more was occupied by camouflage to keep the law out.</line>
+    <line speaker="doolittle" style="skeleton">Hiding out in the back of an old church purifying spirits by handmade fire. A kettle, and a dream.</line>
+  </scene>
+
+  <scene name="job" nextScene="to-trucks">
+    <line speaker="doolittle" style="skeleton">Oh, I'm a copywriter. Text on bottles and flyers, ad copy, that sort of thing.</line>
+    <line speaker="doolittle" style="skeleton">"Discerning shades and heartsick lovers have long known the taste of Hard Times, and held it in favor over all other spirits!" That was one of mine.</line>
+  </scene>
+
+  <scene name="to-trucks" nextScene="end">
+    <line speaker="doolittle" style="skeleton">So. The trucks are just east a ways, in shipping. You can become acquainted with the dispatcher there.</line>
+    <line speaker="doolittle" style="skeleton">Give me a tap on the shoulder, if you see something that catches your eye. Always happy to show off the facilities. Sublime machinery.</line>
+  </scene>
+</conversation>

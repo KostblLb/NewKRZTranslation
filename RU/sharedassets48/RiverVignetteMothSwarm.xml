@@ -1,0 +1,176 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four" endingEvent="end-story">
+  <scene name="intro">
+    <triggerEvent name="start-story" />    
+    <line>It's easy to miss, but beneath that quarter-acre swarm of moths — that's `<template name="mothBinomialName" seed="bugs" />`, the <template name="mothCommonName" seed="bugs" capture="riverworld-moth-common-name" />, <template name="mothDetail" seed="bugs" /> — is a quarter-acre sunflower orchard, and beneath that sunflower orchard there are two small lots with small houses, positioned so they just about butt right up against each other.</line>
+    <line>The houses are empty now of human life. There's no sign of a person, or anything living except for moths and overgrowth. There are some pipes bolted into the cave wall near the perimeter, and a few stone scars where other pipes have been ripped away by scavengers — these once supported the large "grow lamps" that fed the sunflowers.</line>
+    <line>The lamps are gone now. Once this crop of sunflowers is picked away, it's unlikely anything else will grow here but lichen, moss, and rock formations. The <variable name="riverworld-moth-common-name" /> will move on. The houses will be visible again, at least until somebody strips them for building materials, or the river washes them away.</line>
+    <line>The houses were once inhabited by two sisters. Why they built their houses so close together — or lived in any proximity at all — is a mystery, since they clearly despised one another.</line>
+    <option goto="tricked">Some think they were tricked into buying the houses.</option>
+    <option goto="reconciliation">It's possible the neighboring houses were an attempt at reconciliation.</option>
+  </scene>
+
+  <scene name="tricked" nextScene="gardening">
+    <line>Maybe by an unscrupulous real estate agent or, more likely, a concerned family member. It stands to reason this sororal rift would have sent ripples of discomfort through the rest of the familial pool — any time these sisters were in the same room, the tension was incendiary, or so I hear!</line>
+  </scene>
+
+  <scene name="reconciliation" nextScene="gardening">
+    <line>It didn't work. If anything, close quarters just turned up the pressure until those decades of closely-held resentments and animosities were pretty near to boiling over.</line>
+  </scene>
+
+  <scene name="gardening" nextScene="end">
+    <line>All that energy had to go somewhere, and both sisters had the same idea: they took up gardening. They both cultivated sunflowers, an improbable crop for this location; too improbable to be coincidence. Maybe the sunflower had some special meaning for them, or maybe when one sister saw her rival sowing the impossible seeds, she knew at once she couldn't bear to be outdone.</line>
+    <line>Which sister had the greener thumb, we'll never know. The stalks tangled, the roots knotted, and the seeds mixed. Those gangly sunflowers merged the two lots into one undifferentiated field.</line>
+    <line>The two sisters moved out, probably around the time the moths started showing up. Of course there was no selling the lots then, overgrown and bug-chewed as they are.</line>
+    <line>In fact, if those sisters ever tried to sell, they'd be in for a rude shock. Not long ago, a property tax clerk, having seen the two adjoining lots registered to the same last name, presumed they belonged to the same owner and erased the legal border between them.</line>
+  </scene>
+
+  <!-- ====================================================== -->
+
+  <templates>
+    <mothCommonName>
+      <common>
+        <template xml:space="preserve"><subAdjective /> <adjective /> <noun /> Moth</template>
+        <template xml:space="preserve"><adjective /> <noun /> Moth</template>
+        <template xml:space="preserve"><noun /> Moth</template>
+      </common>
+    </mothCommonName>
+
+    <mothBinomialName>
+      <common>
+        <template xml:space="preserve"><genus /> <species /></template>
+      </common>
+    </mothBinomialName>
+
+    <mothDetail>
+      <common>
+        <template xml:space="preserve">they make their homes <homeLocation /></template>
+        <template xml:space="preserve">their diet is mostly constrained to <food />, but they make an exception for sunflowers</template>      
+        <template xml:space="preserve">they usually live <direction /></template>
+      </common>
+    </mothDetail>
+  </templates>
+
+  <templateValues>
+    <subAdjective>
+      <common>
+        <value>Small</value>
+        <value>Lesser</value>        
+        <value>Large</value>
+        <value>Common</value>
+      </common>
+      <rare>
+        <value>Uncommon</value>
+        <value>Bloated</value>        
+      </rare>
+    </subAdjective>
+
+    <adjective>
+      <common>
+        <value>Prominent</value>
+        <value>Mottled</value>
+        <value>Greasy</value>
+        <value>Garden</value>
+        <value>Clouded</value>
+        <value>Dark</value>
+        <value>Autumnal</value>
+        <value>Imperial</value>
+        <value>Dotted</value>
+        <value>Prominent</value>
+        <value>Rough</value>
+        <value>Pale</value>
+      </common>
+      <rare>
+        <value>Greedy</value>
+        <value>Egregious</value>
+        <value>Shocking</value>
+        <value>Dismal</value>
+      </rare>
+    </adjective>
+
+    <noun>
+      <common>
+        <value>Tunnel</value>        
+        <value>Pea</value>
+        <value>Diamondback</value>
+        <value>Apple</value>
+        <value>Wax</value>
+        <value>Quaker</value>
+        <value>Dagger</value>
+        <value>Brick</value>
+        <value>Heart and Club</value>
+        <value>Miller</value>
+        <value>Mint</value>
+        <value>Hawk</value>
+        <value>Thorn</value>
+        <value>Oak</value>
+        <value>Turnip</value>
+      </common>
+    </noun>
+
+    <genus>
+      <common>
+        <value>Eupithecia</value>
+        <value>Mythimna</value>
+        <value>Gortyna</value>
+        <value>Hyalophora</value>
+        <value>Attacus</value>
+        <value>Callosamia</value>
+        <value>Apamea</value>
+        <value>Brachylomia</value>
+        <value>Noctua</value>
+        <value>Campaea</value>
+      </common>
+    </genus>
+    
+    <species>
+      <common>
+        <value>meticulosa</value>
+        <value>oleracea</value>
+        <value>conjuncta</value>
+        <value>pityocampa</value>
+        <value>bidentata</value>
+        <value>absinthiata</value>
+        <value>similis</value>
+        <value>domestica</value>
+        <value>lunosa</value>
+        <value>centaureata</value>
+        <value>odorata</value>
+      </common>
+    </species>
+
+    <homeLocation>
+      <common>
+        <value>near moving water</value>
+        <value>in abandoned cars and boats</value>
+        <value>in the tunnels</value>
+        <value>in people's chimneys</value>        
+      </common>
+    </homeLocation>
+
+    <food>
+      <common>
+        <value>dogwood sap</value>
+        <value>dandelion nectar</value>
+        <value>lichen</value>
+        <value>moss</value>        
+      </common>
+      <rare>
+        <value>discarded clothing</value>
+        <value>smaller insects</value>        
+      </rare>
+    </food>
+
+    <direction>
+      <common>
+        <value>by water</value>        
+        <value>further upriver</value>
+        <value>further downriver</value>
+      </common>
+      <rare>
+        <value>in cities</value>
+        <value>in forests</value>        
+      </rare>
+    </direction>
+  </templateValues>
+</conversation>

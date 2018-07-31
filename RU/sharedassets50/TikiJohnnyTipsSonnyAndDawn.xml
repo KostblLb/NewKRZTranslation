@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-johnny-talked-to-sonny-and-dawn" value="true" />
+    <setGameVar name="tiki-johnny-tips-total" value="+750" />
+    <setGameVar name="tiki-johnny-any-tips" value="true" />        
+    <line>These two are pretty reliable. Where does their money come from, anyway? Government check, maybe? Naw, then they'd only tip like that on the first and fifteenth ...</line>
+    <line>Maybe they fence stereos or something.</line>
+  </scene>
+</conversation>

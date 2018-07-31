@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="lab-looked-at-bookshelf" value="true" />
+    <line speaker="jenn">The modernist bookshelf with the fancy vintage turntable. So ostentatious. So Darryl.</line>
+    <line speaker="mimi">What? That was `my` bookshelf!</line>
+    <line speaker="jenn">Oh no! Ha ha ... But you, like, grew out of it or something, right? It ended up in the lab somehow.</line>
+    <line speaker="mimi">I keep my books in a pile now. It's easier to find what I'm looking for. Never, "what shelf is that book on?" Only, "well, it's somewhere in the pile."</line>
+    <line speaker="jenn">Pragmatic.</line>
+  </scene>
+</conversation>

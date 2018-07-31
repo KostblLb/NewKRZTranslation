@@ -1,0 +1,72 @@
+# -*- mode: blocking -*-
+
+@func SitDown [Position]
+
+  Chair Marker Lock
+  Chair Walk [PLAYER] [Position]
+  Chair Gesture [PLAYER] Enter Sit
+  Chair Set temp:player-sitting true
+  Chair Event sat-down
+
+@end
+
+@func StandUp
+
+  Chair Gesture [PLAYER] Exit Sit
+  Chair Marker Unlock
+  Chair Set temp:player-sitting false
+  Chair Event stood-up
+
+@end
+
+@func SitDownLow [Position]
+
+  Chair Marker Lock
+  Chair Walk [PLAYER] [Position]
+  Chair Gesture [PLAYER] Enter SitLow
+  Chair Set temp:player-sitting true
+  Chair Event sat-down
+
+@end
+
+@func StandUpLow
+
+  Chair Gesture [PLAYER] Exit SitLow
+  Chair Marker Unlock
+  Chair Set temp:player-sitting false
+  Chair Event stood-up
+
+@end
+
+@func TableSitDown [Position]
+
+  Table Marker Lock
+  Table Walk [PLAYER] [Position]
+  Table Gesture [PLAYER] Enter SitTable
+  Table Set temp:player-at-table true
+  Table Event sat-down
+
+@end
+
+@func TableStandUp
+
+  Table Gesture [PLAYER] Exit SitTable
+  Table Marker Unlock
+  Table Set temp:player-at-table false
+  Table Event stood-up
+
+@end
+
+@func SitChair
+
+  Chair Marker Lock
+  Chair Walk [PLAYER] LabDoorways/ChairSitPosition
+  Chair Gesture [PLAYER] Enter SitLow
+  Chair Set temp:player-sitting true
+  Chair Event sat-down
+
+  Chair Disable ActorsDoorways ? lab-doorways-sub-scene=curtains
+  Chair Dialog LabTestCurtains ? lab-doorways-sub-scene=curtains
+  Chair Marker Unlock ? lab-doorways-sub-scene=curtains
+  Chair Exec GotoCarryObject ? lab-doorways-sub-scene=curtains
+@end

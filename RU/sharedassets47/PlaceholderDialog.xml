@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<conversation act="">
+  <scene name="intro" nextScene="end">
+    <line>The policeman's beard is half constructed.</line>
+  </scene>
+</conversation>

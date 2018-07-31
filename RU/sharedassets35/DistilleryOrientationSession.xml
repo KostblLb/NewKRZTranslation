@@ -1,0 +1,38 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-orientation" value="true"/>
+    <triggerEvent name="start-tape"/>
+    
+    <line speaker="doolittle" style="skeleton">More new arrivals this evening! Plenty to do. Got to relay The Formula.</line>
+    <option goto="job" speaker="conway">What job are they working?</option>
+    <option goto="computer" speaker="shannon">We actually just need to ask you about a computer.</option>
+    <option goto="formula" speaker="shannon" condition="!distillery-heard-about-formula">What formula?</option>
+  </scene>
+
+  <scene name="job" nextScene="end">
+    <line speaker="doolittle" style="skeleton">I don't know that it's been settled just yet. You see, sometimes we take on newcomers already in debt to the distillery.</line>
+    <line speaker="doolittle" style="skeleton">One of the foremen will find something for them to do — chip away at their sum until its all settled.</line>
+    <line speaker="doolittle" style="skeleton">That's what I'm doing here. Chipping away. That's what we're all doing.</line>
+  </scene>
+
+  <scene name="computer" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Hm? No, the orientation is all done by voice and rote.</line>
+    <line speaker="doolittle" style="skeleton">We don't believe electronics have a role in our company culture. Computers are tools.</line>
+    <line speaker="doolittle" style="skeleton">Plenty of interesting mechanical this-and-that ahead, though. Shall we move on?</line>
+  </scene>
+
+  <scene name="formula">
+    <setGameVar name="distillery-heard-about-formula" value="true" />
+    
+    <line speaker="doolittle" style="skeleton">Eh? Oh, The Formula! Changed our lives.</line>
+    <line speaker="doolittle" style="skeleton">Once, years ago, we were as prisoners to the intricacies of our debts here. We'd have to account for everything on paper.</line>
+    <line speaker="doolittle" style="skeleton">Compounding interest by hand, reassessing amortization and leveraged asset distributions according to nightly merit decay ...</line>
+    <line speaker="doolittle" style="skeleton">Then, `she` stepped out of the dark caves, to show us the light of The Formula! She had a brilliant grasp of mathematics, and a saintlike way of speaking right `through` the numbers.</line>
+    <line speaker="doolittle" style="skeleton">Now, we just plug our daily numbers into The Formula, and run it all through the adding machine. We occasionally suffer some surplus drift, but she instructed us on all the necessary adjustments.</line>
+    <line speaker="doolittle" style="skeleton">It was devastating to see our revered mathematician go, but she was needed elsewhere. Her legacy abides.</line>
+
+    <option goto="job" speaker="conway">What job are they working?</option>
+    <option goto="computer" speaker="shannon">We actually just need to ask you about a computer.</option>
+  </scene>
+</conversation>

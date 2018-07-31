@@ -1,0 +1,22 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="lower-depths-talked-to-junebug-after-song" value="true"/>
+    <line speaker="junebug">Well, hope you liked it.</line>
+    <option goto="sad" speaker="conway">Kind of sad, isn't it?</option>
+    <option goto="heard-before" speaker="conway">I've heard it before.</option>
+  </scene>
+
+  <scene name="sad" nextScene="next-step">
+    <line speaker="junebug">Kind of.</line>
+  </scene>
+
+  <scene name="heard-before" nextScene="next-step">
+    <line speaker="junebug">I don't doubt that. You look like you've spent an evening or two in a grimy old tavern.</line>
+  </scene>
+
+  <scene name="next-step" nextScene="end">
+    <line speaker="junebug">Listen, we appreciate you folks sticking around for the show. There's nothing more wretched than playing sad songs to an empty room.</line>
+    <line speaker="junebug">We've just got to get our fee from Harry, and then we'll get you headed to the, uh, |Zero| ...</line>
+  </scene>
+</conversation>

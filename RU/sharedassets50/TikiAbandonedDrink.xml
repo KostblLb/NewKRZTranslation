@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="tiki-shannon-examined-abandoned-drink" value="true" />
+    <line>An untouched drink sits on a table, forgotten or abandoned — or simply wasted.</line>
+  </scene>
+</conversation>

@@ -1,0 +1,266 @@
+# -*- mode: blocking -*-
+
+@set Root VignetteOpening
+
+# Universal setup
+@func SetupVignette
+
+  @LockDoors
+
+  Main Enable [Root]
+
+  Main Push Cate FreeRotate
+  Main Push Will FreeRotate
+
+  Main Warp Cate [Root]/CateStand
+  Main Gesture Cate Snap Lean
+  Main Message Cate SetLimitedLook
+  # Main Message Cate SetPOIOffsetFromString 160,0,90
+  # Main Look Cate TugboatCameraRig/PlayerClamped/Poi
+  Main Parent [Root]/ShannonPoi TugboatCameraRig/PlayerClamped
+  Main Transform TugboatCameraRig/PlayerClamped/ShannonPoi $Local &0,0,3
+  Main Disable Cate CharacterHunch
+
+  Main Message Clara DisableNavigation
+  Main Message Johnny DisableNavigation
+  Main Message Junebug DisableNavigation
+
+  Main Gesture* Johnny Enter MessTable
+  Main Transform Johnny [Root]/JohnnyPositionPort
+  Main Gesture* Junebug Enter MessTable
+  Main Transform Junebug [Root]/JunebugPositionPort
+  Main Gesture* Clara Enter MessTable
+  Main Transform Clara [Root]/ClaraPositionPort
+
+  Main Transform Hound [Root]/HoundStartPosition
+  Main Gesture Hound Snap IdleFloor
+  Main Disable Hound CharacterPointOfInterest
+
+  Main Parent [Root]/CatePoi Cate
+  Main Transform Cate/CatePoi $Local &0,0,0
+
+  Main Message Will DisableNavigation
+  Main Transform Will [Root]/WillStand
+  Main Message Will MarkForRender
+  Main Parent [Root]/WillPoi Will
+  Main Transform Will/WillPoi $Local &0,2,0
+  Main Disable Will CharacterHunch
+
+  Main Warp Ezra [Root]/EzraStartPosition
+  Main Message Ezra EnableLayer Recorder
+
+  Main Warp Conway [Root]/ConwayStartPosition
+  Main Message Conway EnableLayer Beer
+
+  Ezra Wait tugboat-shannon-talked-to-cate+tugboat-shannon-talked-to-will
+  Ezra Set tugboat-opening-bookmark musicians
+  Ezra Event save  
+  Ezra Listen enter-ezra
+  Ezra Message Will GoManualPoi
+  Ezra Marker Lock
+  Ezra Exec GoOutside Ezra DeckDoorPortBack Run ? temp:tugboat-side-exterior=port
+  Ezra Exec GoOutside Ezra DeckDoorStarboardBack Run ? temp:tugboat-side-exterior=starboard
+  Ezra Sync Door
+  Ezra Run Ezra [Root]/EzraWillPosition ? temp:tugboat-side-exterior=starboard
+  Ezra Run Ezra [Root]/EzraCatePosition ? temp:tugboat-side-exterior=port
+  Ezra Look Ezra Shannon
+  Ezra Wait !temp:dialog-running
+  Ezra Message Will GoAutomaticPoi  
+  Ezra Disable Will/WillPoi
+  Ezra Turn Shannon Ezra
+  Ezra Look Shannon Ezra
+  Ezra Wait 1
+  Ezra Dialog TugboatOpeningDeckEzra Arrow
+  Ezra Exec SetPlayer Ezra
+  Ezra Exec UnlockDoors
+  Ezra Marker Unlock
+  Ezra Unlook Shannon
+  Ezra Walk* Shannon [Root]/ShannonStartPosition
+  Ezra Set temp:ezra-talked-to-shannon true
+  Ezra Wait temp:tugboat-inside
+  Ezra Exec LockDoors
+  
+@end
+
+@func SetupMessTable
+
+  Mess Listen tugboat-enter
+  Mess Transform Johnny [Root]/JohnnyPositionPort ? temp:tugboat-side-exterior=port
+  Mess Transform Johnny [Root]/JohnnyPositionStarboard ? temp:tugboat-side-exterior=starboard
+  Mess Transform Junebug [Root]/JunebugPositionPort ? temp:tugboat-side-exterior=port
+  Mess Transform Junebug [Root]/JunebugPositionStarboard ? temp:tugboat-side-exterior=starboard
+  Mess Transform Clara [Root]/ClaraPositionPort ? temp:tugboat-side-exterior=port
+  Mess Transform Clara [Root]/ClaraPositionStarboard ? temp:tugboat-side-exterior=starboard
+  Mess Exec SetupMessTable
+
+@end
+
+@SetupMessTable
+
+@func CateGoesInside
+
+  Cate Unlook Cate
+  Cate Disable Cate/CatePoi
+  Cate Gesture Cate Exit Lean
+  Cate Message Cate SetUnlimitedLook
+  Cate Enable Cate CharacterHunch
+  Cate Exec GoInside Cate CockpitDoorPort Walk
+  Cate Sync Door
+  Cate Walk Cate [Root]/CateSteer
+  Cate Align Cate [Root]/CateSteer
+  Cate Gesture Cate Enter Steer
+  
+@end
+
+@func WarpCateInside
+
+  Cate Disable Cate/CatePoi
+  Cate Message Cate SetUnlimitedLook
+  Cate Warp Cate [Root]/CateSteer
+  Cate Gesture Cate Snap Steer
+  
+@end
+
+@func ConwayEnters
+
+  Conway Set tugboat-ezra-recorded-cat true
+  Conway Set temp:completed-deck true
+  Conway Fork End
+  Conway Disable [Root]/BlockNavLowerDeck
+  Conway Walk Conway [Root]/ConwayEzraPosition
+  Conway Enable [Root]/BlockNavLowerDeck
+  Conway Gesture Conway Enter Swig
+
+  End Marker Lock
+  End Listen done-recording
+  End Sync Conway
+  End Player Conway
+  End Message TugboatCameraRig SetPlayer Conway
+  End Walk* Ezra [Root]/ActorMusicians/StandPosition
+
+  End Gesture Conway Enter Swig
+  End Exec UnlockDoors
+  End Interact ActorDeckDoorPortFront PortInterior ? temp:tugboat-side=port
+  End Interact ActorDeckDoorStarboardFront PortInterior ? temp:tugboat-side=starboard
+  End Listen used-deck-door
+  End Interact Off
+
+  End Fork Shannon
+  End Message TugboatCameraRig SetPlayer [Root]/EndPlayer
+  End Walk Conway [Root]/ConwayEndPositionPort ? temp:tugboat-side-exterior=port
+  End Walk Conway [Root]/ConwayEndPositionStarboard ? temp:tugboat-side-exterior=starboard
+  End Push Conway FreeRotate
+  End Turn Conway [Root]/EndRotation
+  End Interact On
+  End Set tugboat-opening-bookmark conway
+  End Event save  
+
+  Shannon Push Shannon FreeRotate
+  Shannon Walk Shannon [Root]/ShannonEndPositionPort ? temp:tugboat-side-exterior=port
+  Shannon Walk Shannon [Root]/ShannonEndPositionStarboard ? temp:tugboat-side-exterior=starboard
+  Shannon Turn Shannon [Root]/EndRotation
+
+@end
+
+@func ConwaySwig
+  Conway Gesture Conway Enter Swig
+@end
+
+@func ShannonLean
+  Shannon Message Shannon DisableSlope
+  Shannon Gesture Shannon Enter Lean
+@end
+
+# Bookmarks
+@func LoadBookmark
+  # fix for a bad save state bug
+  Main Set tugboat-opening-bookmark musicians ? !(tugboat-opening-bookmark=musicians)+tugboat-shannon-talked-to-cate+tugboat-shannon-talked-to-will
+
+  Main Exec LoadStartBookmark ? tugboat-opening-bookmark=start
+  Main Exec LoadCateBookmark ? tugboat-opening-bookmark=cate
+  Main Exec LoadWillBookmark ? tugboat-opening-bookmark=will
+  Main Exec LoadMusiciansBookmark ? tugboat-opening-bookmark=musicians
+  Main Exec LoadConwayBookmark ? tugboat-opening-bookmark=conway
+@end
+
+@func LoadStartBookmark
+  Main Player Shannon Player
+  Main Message TugboatCameraRig SetPlayer Shannon
+  Main Warp Shannon [Root]/ShannonStartPosition
+  Main Exec SnapStaging
+
+  @inline SetupOutsideSound
+  
+  Main Interact Off
+  Main Cursor Hide
+  Main Marker Lock
+  Main Wait 2
+  Main Interact On
+  Main Cursor Show
+  Main Marker Unlock
+@end
+
+@func LoadCateBookmark
+  Main Player Shannon Player
+  Main Message TugboatCameraRig SetPlayer Shannon
+  Main Warp Shannon [Root]/ShannonCatePositionWill
+  Main Exec SnapStaging
+
+  @inline SetupOutsideSound  
+@end
+
+@func LoadWillBookmark
+
+  Main Exec WarpCateInside ? tugboat-shannon-talked-to-cate
+  Main Player Shannon Player
+  Main Message TugboatCameraRig SetPlayer Shannon
+  Main Warp Shannon [Root]/ShannonWillPosition
+  Main Exec SnapStaging
+
+  @inline SetupOutsideSound  
+@end
+
+@func LoadMusiciansBookmark
+  Main Set temp:completed-deck true
+  Main Set temp:tugboat-side port
+  Main Set temp:tugboat-inside true
+  Main Set temp:tugboat-peeled true
+  Main Exec WarpCateInside  
+  Main Warp Ezra [Root]/ActorMusicians/StandPosition
+  Main Warp Shannon [Root]/ShannonStartPosition
+  Main Player Ezra Player
+  Main Message TugboatCameraRig SetPlayer Ezra
+  Main Exec SnapStaging
+
+  @inline SetupInsideSound  
+@end
+
+@func LoadConwayBookmark
+  Main Set temp:completed-deck true
+  Main Set tugboat-ezra-recorded-cat true
+
+  Main Marker Lock
+  
+  Main Push Conway FreeRotate
+  Main Warp Conway [Root]/ConwayEndPositionPort  
+  Main Push Shannon FreeRotate
+  Main Warp Shannon [Root]/ShannonEndPositionPort
+  
+  Main Message TugboatCameraRig SetPlayer [Root]/EndPlayer  
+  Main Exec SnapStaging
+
+  @inline SetupOutsideSound
+@end
+
+@func AfterEndConversation
+  Main Marker Lock
+  Main Interact Off
+  Main Cursor Hide
+  Main Wait 2
+  Main SceneChange Overworld ? !debug-run-all-tugboat-vignettes
+  Main Set tugboat-vignette MapRoom ? debug-run-all-tugboat-vignettes  
+  Main SceneChange Tugboat ? debug-run-all-tugboat-vignettes
+@end
+
+@SetupVignette
+@LoadBookmark

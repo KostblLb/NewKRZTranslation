@@ -1,0 +1,92 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro">
+    <line speaker="xanadu" style="xanadu">You are in open forest, with a deep valley to one side.</line>
+    <option goto="forest-head-back" speaker="shannon">Head back south to that building.</option>
+    <option goto="forest-climb-tree" speaker="ezra">Can we climb a tree?</option>
+  </scene>
+
+  <scene name="forest-climb-tree">
+    <line speaker="conway">`(Typing.)` ~Climb tree.~</line>
+    <line speaker="xanadu" style="xanadu">I don't think much is to be achieved by that.</line>
+    <line speaker="conway">Sorry.</line>
+    
+    <option goto="forest-head-back" speaker="shannon">Head back South to that building.</option>
+    <option goto="forest-dig-hole" speaker="ezra">Can we dig a hole?</option>
+  </scene>
+
+  <scene name="forest-dig-hole" nextScene="forest-head-back">
+    <line speaker="conway">`(Typing.)` ~Dig a hole.~</line>
+    <line speaker="xanadu" style="xanadu">You can't see any such thing.</line>
+    <line speaker="shannon">Pretty limited vocabulary.</line>
+  </scene>
+
+  <scene name="forest-head-back" nextScene="forest-maze-deadend">
+    <setGameVar name="xanadu-forest-maze-count" value="0"/>
+    
+    <line speaker="conway">`(Typing.)` ~South.~</line>
+    <line speaker="xanadu" style="xanadu">You're in forest.</line>
+    <line speaker="junebug">Hey, it's a maze.</line>
+  </scene>
+
+  <scene name="forest-maze-deadend">
+    <setGameVar name="xanadu-forest-maze-count" value="+1"/>
+    <setGameVar name="xanadu-next-scene" value="hole"/>    
+    
+    <line condition="xanadu-forest-maze-count=2" speaker="xanadu" style="xanadu">*LULA* is here, soldering replacement components in a small, hand-made radio.</line>
+    <line condition="xanadu-forest-maze-count=4" speaker="xanadu" style="xanadu">*JOSEPH* is here, tapping with a small stylus on a modified pocket braille slate. A small gray kitten, no more than a few weeks old, dozes comfortably on top of his backpack.</line>
+    
+    <option condition="xanadu-forest-maze-count=2" goto="forest-maze-talk-to-lula" speaker="shannon">Oh, we should talk to her.</option>
+    <option condition="xanadu-forest-maze-count=4" goto="forest-maze-talk-to-joseph" speaker="shannon">Maybe he has something to say.</option>
+    
+    <option condition="xanadu-forest-maze-count[lt]5" goto="forest-maze-south" speaker="junebug">South?</option>
+    <option condition="xanadu-forest-maze-count[lt]5" goto="forest-maze-east" speaker="junebug">East?</option>
+    <option condition="xanadu-forest-maze-count[lt]5" goto="forest-maze-north" speaker="junebug">North?</option>
+    <option condition="xanadu-forest-maze-count[lt]5" goto="forest-maze-west" speaker="junebug">West?</option>
+
+    <option condition="xanadu-forest-maze-count=5" goto="end" speaker="junebug">South?</option>
+    <option condition="xanadu-forest-maze-count=5" goto="end" speaker="junebug">East?</option>
+    <option condition="xanadu-forest-maze-count=5" goto="end" speaker="junebug">North?</option>
+    <option condition="xanadu-forest-maze-count=5" goto="end" speaker="junebug">West?</option>
+  </scene>
+
+  <scene name="forest-maze-south" nextScene="forest-maze-deadend">
+    <line speaker="conway">`(Typing.)` ~South.~</line>
+    <line speaker="xanadu" style="xanadu">You're in forest.</line>
+  </scene>
+
+  <scene name="forest-maze-east" nextScene="forest-maze-deadend">
+    <line speaker="conway">`(Typing.)` ~East.~</line>
+    <line speaker="xanadu" style="xanadu">You're in forest.</line>
+  </scene>
+
+  <scene name="forest-maze-north" nextScene="forest-maze-deadend">
+    <line speaker="conway">`(Typing.)` ~North.~</line>
+    <line speaker="xanadu" style="xanadu">You're in forest.</line>
+  </scene>
+
+  <scene name="forest-maze-west" nextScene="forest-maze-deadend">
+    <line speaker="conway">`(Typing.)` ~West.~</line>
+    <line speaker="xanadu" style="xanadu">You're in forest.</line>
+  </scene>
+  
+  <scene name="forest-maze-talk-to-lula" nextScene="forest-maze-deadend">
+    <line speaker="conway">`(Typing.)` ~Ask Lula how she is doing.~</line>
+    <line speaker="lula" style="xanadu">Hi Donald. I'm getting the strangest interference out here. I've been tuning the radio's circuits gradually as we go, swapping capacitor values and tweaking resistor networks. It was working for a while, but ... everything I can pick up sounds so distant and muffled.</line>
+    <line speaker="xanadu" style="xanadu">*LULA* hands you the radio.</line>
+    <line speaker="lula" style="xanadu">Well, maybe you'll have better luck. You're good at this stuff. Just don't forget to give it back!</line>
+  </scene>
+
+  <scene name="forest-maze-talk-to-joseph" nextScene="forest-maze-deadend">
+    <line speaker="conway">`(Typing.)` ~Listen.~</line>
+    <line speaker="joseph" style="xanadu">Donald! I was just transcribing your footsteps. Sounded like ...</line>
+    <line speaker="xanadu" style="xanadu">*JOSEPH* runs his finger along the index card he's been tapping on, from right to left.</line>
+    <line speaker="joseph" style="xanadu">'Long, weary song, drearily gone. Dearly gone.' You beat a melancholy shuffle through these woods, Donald. Ha!</line>
+    <line speaker="joseph" style="xanadu">I've been noting down the sounds of the forest — with an ear for speech. And an inborn filter for poetry, I suppose ... so maybe it's me being melancholy, after all.</line>
+    <line speaker="joseph" style="xanadu">I'm eager to see what the poetics sub-system makes of these punched cards!</line>
+  </scene>
+</conversation>

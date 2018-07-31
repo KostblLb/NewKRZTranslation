@@ -1,0 +1,8 @@
+15  Actor_Shuttle/ActorWaypointShipping, ActorWaypointPark
+10  DistilleryShuttleInteraction.Dismount
+ 2  DistilleryPew/Pew/PewActor
+ 1  Actor_Surface/ActorChurchStill
+ 0  Actor_Surface/ActorChurchFloor
+-1  Actor_Surface/ActorToChurch
+-10 DistilleryShuttleInteraction.Mount
+-15 DegaussAction

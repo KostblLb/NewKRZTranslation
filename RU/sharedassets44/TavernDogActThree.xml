@@ -1,0 +1,39 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="tavern-talked-to-dog" value="true" />
+    <option goto="wrong" speaker="conway">Doesn't feel right.</option>
+    <option goto="home" speaker="conway">Feels a little like home, huh?</option>
+  </scene>
+
+  <scene name="wrong">
+    <option goto="dead" speaker="conway">Feels dead here.</option>
+    <option goto="pit" speaker="conway">Like a deep pit.</option>
+  </scene>
+
+  <scene name="dead">
+    <option goto="end" speaker="conway">Or like something once died, anyway.</option>
+    <option goto="end" speaker="conway">Well, that's just a feeling. Right?</option>
+  </scene>
+
+  <scene name="pit">
+    <option goto="end" speaker="conway">Like a snare.</option>
+    <option goto="end" speaker="conway">I wonder sometimes if I'm really up here, or still down below ...</option>
+  </scene>
+
+  <scene name="home">
+    <option goto="home-wish-didnt" speaker="conway">But I wish it didn't.</option>
+    <option goto="home-good-memories" speaker="conway">It's not all bad memories.</option>
+  </scene>
+
+  <scene name="home-wish-didnt">
+    <option goto="end" speaker="conway">Well, can't control your feelings, right?</option>
+    <option goto="end" speaker="conway">Got to keep focused, here, <if condition="one:dog-nameless">old man<else>${one:dog-name}</else></if>. Got to keep focused.</option>
+  </scene>
+
+  <scene name="home-good-memories">
+    <option goto="end" speaker="conway">Some of it I don't remember at all ...</option>
+    <option goto="end" speaker="conway">Gentler times, in a twisted kind of way.</option>
+  </scene>
+
+</conversation>

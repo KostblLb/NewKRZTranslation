@@ -1,0 +1,19 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro">
+    <setGameVar name="returned-d20-to-gamers" value="true"/>
+    
+    <line>Folding chairs are arranged around a worn card table. The chairs are empty, and the surface of the table is bare.</line>
+
+    <option goto="end-leave">Conway places the twenty-sided die on the table.</option>
+    <option goto="end-keep">Conway keeps the twenty-sided die in his pocket and walks away.</option>    
+  </scene>
+
+  <scene name="end-leave" nextScene="end">
+    <setGameVar name="kept-d20" value="false"/>
+  </scene>
+  
+  <scene name="end-keep" nextScene="end">
+    <setGameVar name="kept-d20" value="true"/>
+  </scene>
+</conversation>

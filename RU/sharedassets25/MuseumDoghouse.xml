@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">&gt;
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-tape"/>
+    <setGameVar name="museum-looked-at-doghouse" value="true"/>
+    <setGameVar name="museum-location" value="doghouse" />    
+    <line speaker="thomas">That dog was in nearly as bad shape as the old man, just sort of shrugging along. They found some treats in the doghouse exhibit. That seemed to cheer them up a bit.</line>
+  </scene>
+</conversation>

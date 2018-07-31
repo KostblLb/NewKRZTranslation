@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-overgrown-subdivision" value="true"/>
+
+    <line>From a distance, from the air, it first looks like a swamp. Vines have grown over the streetlamps. Flower bushes obscure the streets. A few of the houses have slipped partially into the ground, foundations cracked by underground roots.</line>
+  </scene>
+</conversation>

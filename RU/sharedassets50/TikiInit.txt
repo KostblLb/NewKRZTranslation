@@ -1,0 +1,47 @@
+# -*- mode: blocking -*-
+
+# This loads all shaders so there isn't a freeze
+# the first time you use the flashlight
+
+Shannon Wait 0.02
+Shannon Message Shannon EnableFlashlight
+Shannon Wait 0.02
+Shannon Message Shannon DisableFlashlight
+
+# set player position from save file
+@set StartPosition $tiki-player-position
+
+Setup Warp Shannon PlayerStartPositions/[StartPosition]
+Setup Message TikiCamera SnapToMarkerFollower
+
+Ending Listen end-scene
+Ending Cursor Hide
+Ending Marker Lock
+Ending Interact Off
+Ending Wait 2
+Ending SceneChange Overworld
+
+@func PatchAnswerPhone
+  Patch Marker Lock
+  Patch Interact Off
+  Patch Look TikiPatch TikiPhone
+  Patch Walk TikiPatch TikiPhoneStand
+  Patch Unlook TikiPatch
+  Patch Message TikiPatch PickupPhone
+  Patch Wait 1
+  Patch Message TikiPatchIncomingCall StopRing
+  Patch Wait 2
+  Patch Walk TikiPatch TikiPhoneStand2
+  Patch Dialog $temp:next-phone-conversation
+  Patch Exec PatchHangupPhone
+@end
+
+@func PatchHangupPhone
+  Patch Walk TikiPatch TikiPhoneStand
+  Patch Message TikiPatch HangupPhone
+  Patch Marker Unlock
+  Patch Interact On
+  Patch Wait 5
+  Patch Walk TikiPatch WaypointPatchWatchMusician
+  Patch Message TikiPatchIncomingCall WaitForNextCall
+@end

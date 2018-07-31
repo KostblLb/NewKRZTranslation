@@ -1,0 +1,9 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="distillery-met-skeleton-earl" value="true" />
+    <setGameVar name="distillery-met-skeleton-count" value="+1" />
+    <line speaker="doolittle" style="skeleton">This is Earl. He used to be a beekeeper! Borrowed some used casks to store the hives, but the interest accrued more quickly than the honey. Now he works for us here in logistics.</line>
+  </scene>
+</conversation>

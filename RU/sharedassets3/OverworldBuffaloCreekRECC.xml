@@ -1,0 +1,46 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="intro-options">
+    <setGameVar name="overworld-visited-buffalo-creek-recc" value="true"/>
+    
+    <line pause="false">The office of the Buffalo Creek Rural Electric Cooperative Corporation is almost invisible from the road, its parking lot overgrown with weeds and its facade sheltered by ivy.</line>
+  </scene>
+
+  <scene name="intro-options">
+    <option goto="look-in-window" insertedText="Conway looks in through a window.">Look in a window.</option>
+    <option goto="inside-front-door" insertedText="Conway enters the front door.">Enter the front door.</option>
+    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+  </scene>
+
+  <scene name="look-in-window" nextScene="intro-options">
+    <line pause="false">A sinewy shadow obstructs the view through the window.</line>
+  </scene>
+
+  <scene name="inside-front-door">
+    <line>The floor is loosely covered in dirt. Parts of the carpet have rotted with exposure to rain. Wild mushrooms grow in some corners of the room.</line>
+    <line condition="!overworld-buffalo-creek-recc-broke-wall">The wall behind the front desk has been mostly rotted away; it looks fragile.</line>
+    <line condition="overworld-buffalo-creek-recc-broke-wall">A large hole has been forced through the back wall.</line>
+    
+    <option condition="!overworld-buffalo-creek-recc-broke-wall" goto="push-through-wall" insertedText="Conway pushes through the moldy back wall.">Push through the back wall.</option>
+    <option condition="overworld-buffalo-creek-recc-broke-wall" goto="push-through-wall" insertedText="Conway steps through the hole in the back wall.">Walk through the back wall.</option>    
+    <option goto="intro">Leave the building.</option>
+  </scene>
+
+  <scene name="push-through-wall">
+    <setGameVar name="overworld-buffalo-creek-recc-broke-wall" value="true"/>
+    
+    <line>Conway finds himself in what may once have been a conference room. The floor has fallen away in places, and filled with a dark green mire. The walls of the conference room are decayed and damaged.</line>
+    
+    <option goto="push-through-another-wall" insertedText="Conway pushes through the wall.">Push through another wall.</option>
+    <option goto="intro" insertedText="Conway walks back out of the building.">Leave the building.</option>
+  </scene>
+
+  <scene name="push-through-another-wall" nextScene="end">
+    <setGameVar name="overworld-completed-buffalo-creek-recc" value="true"/>
+    
+    <line>The drywall dissolves as Conway pushes through it, falling in damp clumps in the marsh. He breaks through into a long hallway.</line>
+    <line>The glow of a bioluminescent fungus casts a faint blush on the walls. Conway has the feeling he has interrupted something.</line>
+    <line>After a moment of silence, the frog chorus resumes.</line>
+  </scene>
+
+</conversation>

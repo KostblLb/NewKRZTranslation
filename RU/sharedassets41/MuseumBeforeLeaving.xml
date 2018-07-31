@@ -1,0 +1,63 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro">
+    <setGameVar name="museum-parking-made-plan" value="true"/>
+    <line speaker="shannon">So ... what's the plan, here?</line>
+    <option goto="zero" speaker="conway">Head back to the |Zero|, I guess.</option>
+    <option goto="lula" speaker="conway">We should try to get in touch with that clerk.</option>
+    <option goto="eat" speaker="conway">I could use a bite to eat.</option>
+    <option goto="shannon-opinion" speaker="conway">What do you think?</option>
+  </scene>
+
+  <scene name="zero" nextScene="zero-how">
+    <line speaker="shannon">I hope these are the right files. I mean ... I'm pretty sure they're what Lula was asking for, but it was kind of a mess in that storage facility.</line>
+  </scene>
+
+  <scene name="lula">
+    <line speaker="shannon">Yeah, OK. These files we got from the storage facility are all tagged and stamped — there's a phone number ...</line>
+    <line speaker="shannon">Oh, it's long-distance. Weird. Well, we can head back to my workshop and use the phone there. My landlord has a pretty good phone plan. He's always calling home to Ukraine.</line>
+    <option goto="head-to-workshop" speaker="conway">Sounds good to me.</option>
+    <option goto="zero-how" speaker="conway">Let's just head back to the |Zero|.</option>
+  </scene>
+
+  <scene name="eat">
+    <line speaker="shannon">Oh, OK. You've been on the road a while.</line>
+    <line speaker="shannon">Well, there's an all-night convenience store not too far from here. Is that OK?</line>
+    <option goto="eat-ok" speaker="conway">Sounds good to me.</option>
+    <option goto="zero-how" speaker="conway">Let's just head back to the |Zero|.</option>
+  </scene>
+
+  <scene name="eat-ok" nextScene="end">
+    <setGameVar name="museum-parking-plan" value="eat"/>
+    <line speaker="shannon">OK. We can take thirty-one heading east. It's right before sixty-five.</line>
+  </scene>
+
+  <scene name="shannon-opinion">
+    <line speaker="shannon">Well, we've got to get back on the |Zero| and bring these documents back to the clerk at the Bureau.</line>
+    <line speaker="shannon">I'm just not sure how to get there. The entrance at the farmhouse was gone ...</line>
+    <option goto="zero-conway-farmhouse" speaker="conway">Let's take another look at that farmhouse.</option>
+    <option goto="zero-conway-gas-station" speaker="conway">Let's ask at the gas station if he knows another route.</option>
+  </scene>
+
+  <scene name="zero-how">
+    <line speaker="shannon">How do we get back there, though? The entrance at the farmhouse was gone ...</line>
+    <option goto="zero-conway-farmhouse" speaker="conway">Let's take another look at that farmhouse.</option>
+    <option goto="zero-conway-gas-station" speaker="conway">Let's ask at the gas station if he knows another route.</option>
+  </scene>
+
+  <scene name="zero-conway-farmhouse" nextScene="end">
+    <setGameVar name="museum-parking-plan" value="farmhouse"/>    
+    <line speaker="shannon">Sure, OK. Maybe we missed something.</line>
+  </scene>
+
+  <scene name="zero-conway-gas-station" nextScene="end">
+    <setGameVar name="museum-parking-plan" value="gasstation"/>
+    <line speaker="shannon">Sure, OK. Worth a shot.</line>
+  </scene>
+
+  <scene name="head-to-workshop" nextScene="end">
+    <setGameVar name="museum-parking-plan" value="workshop"/>
+    <line speaker="shannon">OK. It's up north, remember? By the lake, where Peonia and Wax meet.</line>
+  </scene>
+
+</conversation>

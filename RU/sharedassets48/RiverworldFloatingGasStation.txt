@@ -1,0 +1,22 @@
+# -*- mode: blocking -*-
+
+@set Scene FloatingGasStation
+@set Stop riverworld-floating-gas-station
+
+@func PostScene
+
+  Tugboat Message RiverworldManager QueueState Taxidermist
+
+@end
+
+@func PreScene
+
+  Tugboat Listen boat-stop
+  Tugboat Dialog RiverDisembark[Scene]
+  Tugboat Message RiverworldManager LoadScene [Scene] ? [Stop]=disembarked
+  Tugboat Message RiverworldManager LoadScene Tugboat ? [Stop]=aboard
+
+@end
+
+Tugboat Exec PreScene ? [Stop]=uncharted
+Tugboat Exec PostScene ? !([Stop]=uncharted)

@@ -1,0 +1,8 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="julian-overworld-saw-burned-out-house" value="true"/>
+
+    <line>The flayed hull of a country home smolders in the night. Parts of the property are obscured by smoke.</line>
+  </scene>
+</conversation>

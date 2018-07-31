@@ -1,0 +1,98 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="temp:talked-to-dashiell" value="true" />
+    <line speaker="dashiell">`(Softly.)` ... could be bypassed with another capacitor at one-hundred nanofarads to reduce noise ...</line>
+    <option goto="dashiell" speaker="shannon" condition="shannon-saw-weaver-video">Are you Dashiell Morse?</option>
+    <option goto="work" speaker="shannon">What are you working on?</option>
+    <option goto="floating-pins" speaker="shannon">If your circuit's too noisy, you should tie those floating pins to ground.</option>
+  </scene>
+
+  <scene name="dashiell" nextScene="about-phone">
+    <line speaker="dashiell">Him? I mean, me? Yes. I'm him.</line>
+    <line speaker="dashiell">Sorry! I've been hacking on this thing all night — my thoughts are starting to come in alternating currents.</line>
+  </scene>
+
+  <scene name="work" nextScene="about-phone">
+    <line speaker="dashiell">Oh! You startled me.</line>
+    <line speaker="dashiell">Dashiell Morse. Pleased to meet you.</line>
+  </scene>
+
+  <scene name="floating-pins" nextScene="about-phone">
+    <line speaker="dashiell">Huh. That's a pretty good idea — they're probably picking up all kinds of radio interference.</line>
+    <line speaker="dashiell">Dashiell Morse. Pleased to meet you.</line>
+  </scene>
+
+  <scene name="about-phone">
+    <line speaker="dashiell">We don't install this type of phone for customers anymore, but there are quite a few of them still in circulation. Anyway, the new system doesn't source enough current to ring these old bells, so I'm trying to come up with a workaround. Maybe a little box the customer could attach right before the wall jack.</line>
+    <option goto="circuit-geek" speaker="shannon">I'm a bit of a circuit geek myself ...</option>
+    <option goto="still-work-here" speaker="shannon" condition="shannon-saw-weaver-video">So you `do` still work here — on the tugboat they weren't totally sure.</option>
+    <option goto="still-work-here" speaker="shannon" condition="!shannon-saw-weaver-video">Sounds like a good gig, fixing old phones.</option>
+  </scene>
+  
+  <scene name="circuit-geek" nextScene="dashiell-background">
+    <line speaker="dashiell">I bet. I mean, uh ... you seem very comfortable with electronics!</line>
+  </scene>
+
+  <scene name="still-work-here" nextScene="dashiell-background">
+    <line speaker="dashiell">Oh, well, uh ... yeah, I'm here just about every night.</line>
+  </scene>
+
+  <scene name="dashiell-background">
+    <line speaker="dashiell">Is this your first time down here? Yeah, I can tell — your eyes can't quite adjust to the light. It takes some practice.</line>
+    <line speaker="dashiell">Believe it or not, I've been coming here since I was a kid, for one reason or the next. Back then, this place was a train station. It's true! They had bats then, too, but they were considered a nuisance!</line>
+    <option goto="dashiell-kid-train" speaker="shannon">What did you come here for, as a kid?</option>
+    <option goto="dashiell-return" speaker="shannon">A train station? What happened to it?</option>
+  </scene>
+
+  <scene name="dashiell-kid-train" nextScene="dashiell-return">
+    <line speaker="dashiell">I usually came here with my grandmother. We took the train out to the town she lived in, or in the other direction back to my parents' home. In my memories, it was always cold. Winter, I guess. Sometimes now I walk along the tunnel, run my hand along these wet stone walls, and close my eyes ... ringing footsteps and the drip-drip-drip of the grimy stalactites ...</line>
+  </scene>
+
+  <scene name="dashiell-return" nextScene="wevp-route">
+    <line speaker="dashiell">Well, the river shifted and this place slowly filled with water, carrying the trains away with the current. It does that, the river, and I don't begrudge it. It's a good reminder that everything we have is borrowed. Even trains.</line>
+    <line speaker="dashiell">Eventually, someone at the Bureau of Reclaimed Spaces heard this place was still empty, so they moved the phone company in here. I returned here as a young lineman — a skill I picked up in wartime, running telephone wires behind enemy lines. We used trees instead of poles. I miss that, actually. They were easier to climb.</line>
+    <line speaker="dashiell">It's just as well. I'm in no shape to be climbing `anything`, these days! The closest I get is patching up the wiring in the Crystal Room for the WEVP folks.</line>
+  </scene>
+
+  <scene name="wevp-route">
+    <goto condition="shannon-saw-weaver-video" sceneName="wevp-saw-video" />
+    <goto condition="!shannon-saw-weaver-video" sceneName="wevp-didnt-see-video" />
+  </scene>
+  
+  <scene name="wevp-didnt-see-video">
+    <line speaker="dashiell">WEVP — that's "community television." I've volunteered there for a number of years. I know everybody over there — Ralph, Sherry, Weaver, Dave ...</line>
+
+    <option goto="weaver" speaker="shannon">Weaver Márquez?</option>
+    <option goto="crystal-room" speaker="shannon">The Crystal Room?</option>
+  </scene>
+  
+  <scene name="wevp-saw-video">
+    <option goto="wevp" speaker="shannon">WEVP is the TV station, right? Cate says you're the only one who can tell me where it is.</option>
+    <option goto="crystal-room" speaker="shannon">The Crystal Room?</option>
+    <option goto="weaver" speaker="shannon">Did you ever know a girl named Weaver?</option>
+  </scene>
+
+  <scene name="weaver" nextScene="visit-wevp">
+    <setGameVar name="exchange-asked-dashiell-about-weaver" value="true" />
+    <line speaker="dashiell">Sure, Weaver Márquez. That's funny, I was just thinking about her ... Yeah, I met her a couple times at the TV station.</line>
+    <line speaker="dashiell">I suppose I didn't know her `too` well. She handled the archives, and I was helping with wiring and stuff. She really seemed to know her way around all that gear, though. She had a head for signals, I think.</line>
+    <line speaker="dashiell">No idea where she ended up. I would guess she's probably not too popular around the station anymore, but I always liked her ...</line>
+  </scene>
+  
+  <scene name="wevp" nextScene="visit-wevp">
+    <line speaker="dashiell">Oh! Maybe they should print some maps — it's not really supposed to be a secret, but it's not common knowledge either ... that must be why they're always short-staffed. Ha ha.</line>
+  </scene>
+
+  <scene name="crystal-room" nextScene="visit-wevp">
+    <line speaker="dashiell">Yep. WEVP is actually a `cable` signal. Not a lot of people down here know all the mechanics of it, but here goes:</line>
+    <line speaker="dashiell">It's supposed to be community television, you know, `local`. By and for all denizens of the Echo River. But most of us down here spend most of our time on boats, and you can't plug a cable into a boat!</line>
+    <line speaker="dashiell">So, years back, they set up a broadcast relay. They run a wire down to the Crystal Room and then it gets beamed out around the river. The rock formations there have a nice `resonant` quality that naturally amplifies the signal quite a bit, as long as you keep them clean.</line>
+  </scene>
+
+  <scene name="visit-wevp" nextScene="end">
+    <line speaker="dashiell">Listen, miss: if you're interested in WEVP you should go talk to them directly. They're always looking for volunteers! Take the ferry over to the Silo, there's a mail stop there. They don't have a sign or anything, just ask around.</line>
+    <line speaker="dashiell">I guess I'll get back to this damn old ringer. Poppy's just a little further down if you're dropping off that package. Nice chatting with you.</line>
+  </scene>
+
+</conversation>

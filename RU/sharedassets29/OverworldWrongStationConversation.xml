@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="end-station-hint-conversation">
+  <scene name="intro" nextScene="end">
+    <line speaker="shannon">This station doesn't `quite` match that bartender's description ...</line>
+    <line speaker="shannon">Definitely weird, though. Let's keep scanning; he said we'd know it when we heard it.</line>
+  </scene>
+</conversation>

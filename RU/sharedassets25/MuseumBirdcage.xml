@@ -1,0 +1,13 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-looked-at-birdcage" value="true"/>
+    <setGameVar name="museum-location" value="bird-cage" />
+    
+    <line speaker="sadie">The moment I now recall most clearly from their short visit was the birdcage exhibit.</line>
+    <line speaker="sadie">The old man stopped to rest — or maybe to think. The young woman had been anxious up to that point, but she stopped as well, and examined the birdcage more closely.</line>
+    <line speaker="sadie">It seemed to elicit a tenderness from her. She ran one fingernail along the bars of the wire cage, marking out a tuneless scale, like a child's xylophone.</line>
+    <line speaker="sadie">And then they moved on.</line>
+  </scene>
+</conversation>

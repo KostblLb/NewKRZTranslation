@@ -1,0 +1,44 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one" endingEvent="elkhorn-mine-exit-decision">
+  <scene name="intro">
+    <goto condition="!elkhorn-mine-found-exit" sceneName="find-exit-first-time"/>
+    <goto condition="elkhorn-mine-found-exit" sceneName="return-to-exit"/>
+  </scene>
+
+  <scene name="find-exit-first-time">
+    <setGameVar name="elkhorn-mine-found-exit" value="true"/>
+    
+    <line speaker="shannon">Thank God. OK.</line>
+
+    <option goto="lets-go" speaker="conway">Let's go.</option>
+    <option goto="end" speaker="conway">Let's poke around down here a bit more first.</option>    
+  </scene>
+
+  <scene name="return-to-exit">
+    <line speaker="shannon">Here we are.</line>
+    
+    <option goto="lets-go" speaker="conway">Let's get out of here.</option>
+    <option goto="end" speaker="conway">Let's poke around down here a bit more first.</option>    
+  </scene>
+  
+  
+  <scene name="lets-go">
+    <line condition="!elkhorn-mine-found-broken-track" speaker="shannon">Yeah, OK. I just ... I'd still like to look around a bit. I think I saw a tunnel with some broken up tracks back there; I'm wondering what's down there.</line>
+    <line condition="elkhorn-mine-found-broken-track" speaker="shannon">Yeah, OK. I just ... That tunnel, where the tracks were broken. I'd like to take a look down there.</line>
+
+    <option goto="choose-conway" speaker="conway">Do whatever you need. I'll just wait for you here.</option>
+    <option goto="choose-shannon" speaker="shannon">If you wait for me here, I'll just go take another look around.</option>
+  </scene>
+  
+  <scene name="choose-shannon" nextScene="end">
+    <setGameVar name="elkhorn-mine-shannon-end" value="true"/>
+    
+    <line speaker="conway">Sure, OK. I'll be right here.</line>
+  </scene>
+
+  <scene name="choose-conway" nextScene="end">
+    <setGameVar name="elkhorn-mine-conway-end" value="true"/>
+
+    <line speaker="shannon">Thanks. I'll be right back.</line>
+  </scene>
+</conversation>

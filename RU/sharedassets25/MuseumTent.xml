@@ -1,0 +1,10 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two" endingEvent="stop-tape">
+  <scene name="intro" nextScene="end">
+    <triggerEvent name="start-tape"/>    
+    <setGameVar name="museum-looked-at-tent" value="true"/>
+    <setGameVar name="museum-location" value="tent"/>    
+    <line speaker="walker">They were hollering at that empty tent you folks have on display. Ha!</line>
+    <line speaker="walker">Hey, if you ever need anyone to stay in there ... I've been in worse positions.</line>
+  </scene>
+</conversation>

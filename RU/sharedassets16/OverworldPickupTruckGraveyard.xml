@@ -1,0 +1,30 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="two">
+  <scene name="intro">
+    <setGameVar name="overworld-saw-pickup-truck-graveyard" value="true"/>
+    
+    <line>A dirt road runs into the forest. The path is worn by large tire tracks. A sign is posted but the lettering has been smudged away by rain. It might say something about a grove, or a stockyard.</line>
+    <option goto="down-path" insertedText="Conway and Shannon drive down the path.">Drive down the path.</option>
+    <option goto="end">Get back on the highway.</option>
+  </scene>
+
+  <scene name="down-path">
+    <line>The truck's headlights briefly glimmer on unknown surfaces between the trees. Ahead, the path winds to the right.</line>
+    <option goto="ahead" insertedText="They drive ahead.">Drive ahead.</option>
+    <option goto="woods" insertedText="They get out of the truck and walk in the woods.">Get out of the truck and walk into the woods.</option>
+    <option goto="end">Get back on the highway.</option>
+  </scene>
+
+  <scene name="ahead" nextScene="graveyard">
+    <line>Conway and Shannon pull up to a small hill with a view onto a clearing.</line>
+  </scene>
+
+  <scene name="woods" nextScene="graveyard">
+    <line>Conway and Shannon push aside collapsed branches and spiderwebs. The material of the forest gives way to rusty, painted metal.</line>
+  </scene>
+
+  <scene name="graveyard" nextScene="end">
+    <line>Dozens of corroded pickup trucks, some broken into pieces by years of seasonal heating and cooling, clog the forest floor.</line>
+  </scene>
+
+</conversation>

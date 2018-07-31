@@ -1,0 +1,7 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three">
+  <scene name="intro" nextScene="end">
+    <setGameVar name="hotmk-saw-backpack-lula" value="true"/>
+    <line>A hiking backpack leans against a rock. It's full of empty wine bottles and library books.</line>
+  </scene>
+</conversation>

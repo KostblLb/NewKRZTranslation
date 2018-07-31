@@ -1,0 +1,14 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="xanadu-scene-continue">
+  <endingAudioEvents>
+    <audioFade clip="all" destroy="true" direction="out" speed="xanadu-scene-out"/>
+  </endingAudioEvents>
+  
+  <scene name="intro" nextScene="end">
+    <setGameVar name="xanadu-next-scene" value="resources"/>
+    
+    <line speaker="xanadu" style="xanadu">After what may have been years, you stumble out of a tunnel into a cavernous open space.</line>
+    <line speaker="xanadu" style="xanadu">Stalactites adorn the ceiling like grotesques. In the center of the room is an enormous, rocky spire.</line>    
+    <line speaker="xanadu" style="xanadu">This is where you will set up your equipment, and establish your legacy.</line>
+  </scene>
+</conversation>

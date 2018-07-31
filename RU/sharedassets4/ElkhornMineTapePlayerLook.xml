@@ -1,0 +1,6 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="one">
+  <scene name="intro" nextScene="end">
+    <line>A dusty reel-to-reel tape player is stashed beneath the track, loaded with tape but starved for power.</line>
+  </scene>
+</conversation>

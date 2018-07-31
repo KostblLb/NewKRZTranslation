@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="three" endingEvent="enter-personnel-storage,disable-degauss,stop-tape">
+  <scene name="intro">
+    <setGameVar name="distillery-saw-storage" value="true"/>
+    <triggerEvent name="start-tape"/>
+    
+    <line speaker="doolittle" style="skeleton">I have to ask you to step in here a moment — this is for your safety — and adjust your outfits just a bit.</line>
+    <line speaker="doolittle" style="skeleton">There's some protective headwear up on the wall back there.</line>
+    <line speaker="doolittle" style="skeleton">Please remove your shoes and eyeglasses.</line>
+    <option goto="shoes" speaker="shannon">I'm not taking off my shoes.</option>
+    <option goto="glasses" speaker="conway">We don't wear glasses.</option>
+  </scene>
+
+  <scene name="shoes" nextScene="helmets">
+    <line speaker="doolittle" style="skeleton">Oh, I understand. It's only a courtesy to ...</line>
+  </scene>
+
+  <scene name="glasses" nextScene="helmets">
+    <line speaker="doolittle" style="skeleton">So, that won't be an issue.</line>
+  </scene>
+
+  <scene name="helmets" nextScene="end">
+    <line speaker="doolittle" style="skeleton">Well, do us a favor and put on the headwear, anyway. Just this way.</line>
+  </scene>
+</conversation>

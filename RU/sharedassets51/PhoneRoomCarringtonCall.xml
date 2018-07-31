@@ -1,0 +1,87 @@
+<?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
+<conversation act="four">
+  <scene name="intro">
+    <setGameVar name="phone-room-talked-to-carrington" value="true" />
+    <line speaker="carrington">Oh! Is that you?</line>
+    <option goto="guess-its-me" speaker="shannon">I guess so.</option>
+    <option goto="who-calling" speaker="shannon">Who are you calling for?</option>
+  </scene>
+
+  <scene name="guess-its-me" nextScene="help">
+    <line speaker="carrington">You don't sound convinced ...</line>
+    <line speaker="carrington">Well, it doesn't matter either way. I just dialed |zero| and asked the operator to connect me to any open line on the river. I'm in need of an outside perspective, you see?</line>
+  </scene>
+
+  <scene name="who-calling" nextScene="help">
+    <line speaker="carrington">It `is` you! I was trying to call a friend in Chicago, a lighting designer. The phone lines are acting up tonight. I believe it must be the storm. I heard it surged through Bowling Green just a few hours ago, sweeping telephone poles across the road in a tangled fan of kindling ...</line>
+  </scene>
+
+  <scene name="help" nextScene="route-lighting-crisis">
+    <line speaker="carrington">Well. Maybe you can help me out. I reckon you can. Here's the score:</line>
+    <line speaker="carrington">The performance is at dawn. We're coming right up to it! None of the cast is here yet. That's OK. <if condition="!(two:carrington-play-location=storage+three:carrington-storage-audience=none)">Hell, I'll enlist `the audience` if I have to.</if></line>
+    <line speaker="carrington">The stage crew, likewise, are delayed by bad weather. They may not make it in time. And they've got the props and the costumes with them ...</line>
+    <line speaker="carrington">Well, I've done more with less. Good theater is always dangerous.</line>
+    <line speaker="carrington">My experimental stage production of `The Death of the Hired Man` can survive those tribulations, but there is one element still missing that is far more crucial. We can have theater without props, without stage setting, even without actors ...</line>
+    <line speaker="carrington">But there is no theater without `light`!</line>
+    <line speaker="carrington">Of course, my production — experimental though it may be — aspires to emulate its source material. Frost's poem is framed by three sources of light and their effects on its subject, Mary.</line>
+    <line speaker="carrington">First, Mary stares a lamp flame on the table in front of her, while waiting for her husband, Warren, to come home. Second, she distracts herself from a painful conversation by examining the moonlight on her apron. Third, she watches a little silver cloud pass over the moon, dimming it, as Warren finds Silas dead in the next room.</line>
+  </scene>
+
+  <scene name="route-lighting-crisis">
+    <goto sceneName="gasstation" condition="two:carrington-play-location=gasstation" />
+    <goto sceneName="mine" condition="two:carrington-play-location=mine" />
+    <goto sceneName="storage" condition="two:carrington-play-location=storage" />
+  </scene>
+
+  <scene name="gasstation" nextScene="moon-choices">
+    <line speaker="carrington">And yet, despite this rich tableau of moonlight ... we perform at dawn. Outside! I welcome the challenge ... but how to meet it?</line>
+    <line speaker="carrington">What I mean is: where, in this oily gas station by the highway at sunrise, is the moon? Where do you see it, in your mind's eye? what's the first solution that appears?</line>
+  </scene>
+
+  <scene name="mine" nextScene="moon-choices">
+    <line speaker="carrington">And yet, despite this rich tableau of moonlight ... we perform underground! In an old coal mine!</line>
+    <line speaker="carrington">What I mean is: where, in this dusty, man-made cave, sheltered in soot from the light of dawn, is the moon? Where do you see it, in your mind's eye? What's the first solution that appears?</line>
+  </scene>
+
+  <scene name="storage" nextScene="moon-choices">
+    <line speaker="carrington">And yet, despite this rich tableau of moonlight ... we perform underground! In a storage facility!</line>
+    <line speaker="carrington">What I mean is: where, in these artificial tunnels, lit by droning, draining fluorescents, is the moon? Where do you see it, in your mind's eye? What's the first solution that appears?</line>
+  </scene>
+
+  <scene name="moon-choices">
+    <option goto="moon-photo" speaker="shannon">Hang up a photo of the moon?</option>
+    <option goto="moon-actor" speaker="shannon">Have an actor play the moon, dressed in white.</option>
+    <option goto="moon-imagination" speaker="shannon">Tell everyone to close their eyes and imagine the moon.</option>
+  </scene>
+
+  <scene name="moon-photo" nextScene="how-are-you">
+    <setGameVar name="phone-room-carrington-moon-solution" value="photo" />
+    <line speaker="carrington">A small photograph, in a modest frame ... or even frameless, hanging by clothespin from a fishing line. Primitive, authentic, nostalgic. It'll certainly do.</line>
+  </scene>
+
+  <scene name="moon-actor" nextScene="how-are-you">
+    <setGameVar name="phone-room-carrington-moon-solution" value="actor" />    
+    <line speaker="carrington">Interesting solution. I take it you're volunteering? I admire your enthusiasm — you really dive in!</line>
+  </scene>
+
+  <scene name="moon-imagination" nextScene="how-are-you">
+    <setGameVar name="phone-room-carrington-moon-solution" value="imagine" />
+    <line speaker="carrington">Hm. It's minimalist, a bit sentimental ... but it addresses the issue head-on, which I like. No hasty aesthetic papering-over, just concede the issue and invite everyone to develop the solution. I can already imagine the reviews — it may prove a bit controversial!</line>
+  </scene>
+
+  <scene name="how-are-you" nextScene="end">
+    <line speaker="carrington">You have a natural sensitivity for this kind of work.</line>
+    <line speaker="carrington">No — an `availability`. It's your strongest quality.</line>
+      
+    <option speaker="shannon" goto="available">... thanks.</option>
+    <option speaker="shannon" goto="available">That's my strongest quality? I'm "available?"</option>
+  </scene>
+
+  <scene name="available" nextScene="end">
+    <line speaker="carrington">It's a quality I feel is habitually sold short. Keeping oneself available, open to the vagaries of chance and experience, requires constant maintenance. It's a quality we have to nurture in ourselves; our natural instinct is to close ourselves off from risk ... and opportunity.</line>
+    <line speaker="carrington">A theologian I once happened to meet said: "Why make art? To quiet the mind, making it susceptible to divine influences."</line>
+    <line speaker="carrington">That's a kind of `availability` few of us ever attain.</line>
+    <line speaker="carrington">Well. I hope you make it to the premiere, though it's coming up very quickly and I know you're still traveling. If so, I'll see you here at dawn. Safe travels, and thank you, as always, for your insight!</line>
+  </scene>
+
+</conversation>

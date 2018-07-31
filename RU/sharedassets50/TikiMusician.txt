@@ -1,0 +1,68 @@
+# -*- mode: blocking -*-
+
+@func MusicianTakeJar
+
+  Main Marker Lock
+  Main Message TikiCamera LookAt WaypointMusician
+  Main Message TikiCamera ZoomIn
+  Main Player Johnny
+  Main Message TikiPatchIncomingCall Pause
+  Main Disable TikiDinghies/DinghyGroup/DinghyWobble/TikiDinghyJohnny/Body Renderer
+  Main Disable TikiDinghies/DinghyGroup/DinghyWobble/TikiDinghyJunebug/Body Renderer  
+  
+  Shannon Message FlashlightAction Hide
+  Shannon Message Shannon DisableFlashlight
+  Shannon Push Shannon
+  Shannon Walk Shannon WaypointShannonHut*
+  Shannon Pop Shannon
+
+  Musician Push Johnny
+  Musician Walk Johnny WaypointJohnnyTalkMusician
+  Musician Dialog TikiCyrano WorldPlacement Focus:ActorMusician ArrowFollowsObject
+  Musician Message TikiMusicSource PlaySongTwo
+  Musician Message Johnny EnableJar
+  Musician Disable TikiBeach/TipJar Renderer
+  Musician Turn Johnny TikiJunebug
+  Musician Tag Johnny/JohnnyArmature/root/torso/chest/neck PointOfInterest
+  Musician Pop Johnny
+
+  Main Sync Musician
+  Main Set tiki-johnny-took-tipjar true
+  Main Set temp:player-is-johnny true
+  Main Message TikiCamera Clear
+  Main Message TikiCamera ZoomOut
+  Main Marker Unlock
+  Main Event johnny-took-tipjar
+
+@end
+
+@func MusicianReturnJar
+
+  Main Marker Lock
+  Main Set temp:player-is-johnny false
+  Main Set tiki-johnny-returned-tipjar true
+  Main Message TikiCamera LookAt WaypointMusician
+  Main Enable TikiDinghies/DinghyGroup/DinghyWobble/TikiDinghyJohnny/Body Renderer
+  Main Enable TikiDinghies/DinghyGroup/DinghyWobble/TikiDinghyJunebug/Body Renderer  
+  
+  Musician Event reset-ending-hint-timer
+  Musician Player Shannon
+  Main Message TikiPatchIncomingCall Unpause  
+  Musician Walk Johnny WaypointJohnnyTalkMusician
+  Musician Message Johnny DisableJar
+  Musician Enable TikiBeach/TipJar Renderer
+  Musician Marker Unlock
+  Musician Event johnny-returned-tipjar
+  Musician Event save
+
+  Johnny Sync Musician
+  Johnny Push Johnny
+  Johnny Walk Johnny WaypointJohnnyByJunebug
+  Johnny Tag Johnny/JohnnyArmature/root/torso/chest/neck Untagged
+  Johnny Pop Johnny
+
+  Main Sync Musician
+  Main Message FlashlightAction Show
+  Main Message TikiCamera Clear
+  
+@end

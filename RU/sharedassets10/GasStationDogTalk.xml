@@ -6,7 +6,7 @@
   </scene>
 
   <scene name="ready-to-leave">
-    <line>`(CONWAY scratches behind {if}[dog-nameless]the dog{end}{if}[!dog-nameless]${dog-name}{end}'s right ear.)`</line>
+    <line>`(КОНУЭЙ чешет {if}[dog-name=Homer]Гомера{end}{if}[dog-name=Blue]Хандру{end}{if}[dog-nameless]пса{end} за правым ухом)`</line>
     
     <option goto="hows-it-going" speaker="conway">How's it going, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}?</option>
     <option goto="end" speaker="conway">Take it easy, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}.</option>

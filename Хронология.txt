@@ -1,0 +1,10 @@
+АКТ 1
+
+СЦЕНА 1 (Equus Oils)
+
+sharedassets8:
+- GasStationDogLook	Посмотреть на собаку
+- GasStationTruckLook	Посмотреть на грузовик
+sharedassets10:
+- JosephDialog		Поговорить с Джозефом
+- JosephComputer	Использовать компьютер Джозефа

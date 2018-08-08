@@ -3,6 +3,6 @@
   <scene name="intro" nextScene="end">
     <setGameVar name="looked-at-gamers" value="true"/>
     
-    <line>Emily, Ben and Bob sit in folding chairs behind a worn card table. Papers, oddly-shaped dice, and highway maps cover the tabletop.</line>
+    <line>Эмили, Бен и Боб сидят на складных стульях за потёртым карточным столом. Листы, игральные кубики странной формы и карты шоссе покрывают стол.</line>
   </scene>
 </conversation>

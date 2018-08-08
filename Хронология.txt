@@ -6,5 +6,13 @@ sharedassets8:
 - GasStationDogLook	Посмотреть на собаку
 - GasStationTruckLook	Посмотреть на грузовик
 sharedassets10:
+- GasStationHighwayLook	Посмотреть на шоссе
+- JosephLool		Посмотреть на Джозефа
 - JosephDialog		Поговорить с Джозефом
 - JosephComputer	Использовать компьютер Джозефа
+- GasStationGamersLook 	Посмотреть на игроков
+- GasStationGamersTalk	Поговорить с игроками
+- BasementSighLook	Посмотреть на знак в подвале
+- GasStationGrabD20	Взять 20гранник
+- GasStationEmptyGamersTableUse	Посмотреть на пустой стол
+- GasStationDogTalk	Поговорить с собакой

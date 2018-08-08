@@ -2,7 +2,7 @@
 <conversation act="one">
     <scene name="intro" nextScene="end">
       <triggerEvent name="looked-at-sign" />
-      <line>`(К стене привинчен пыльный ржавый знак.)`</line>
+      <line>(К стене привинчен пыльный ржавый знак.)</line>
       <line speaker="sign">СОБЛЮДАЙТЕ ПРАВИЛА:</line>
       <line speaker="sign">1. Не разжигайте огонь возле бензина.
 2. Не употребляйте пиво и крепкие напитки на службе.

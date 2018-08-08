@@ -1,7 +1,7 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one" formattingCharacters="*|`~^">
   <scene name="intro" nextScene="intro-route">
-    <line>`(КОНУЭЙ нажимает клавишу, пробуждая компьютер ото сна.)`</line>
+    <line>(КОНУЭЙ нажимает клавишу, пробуждая компьютер ото сна.)</line>
   </scene>
 
   <scene name="intro-route">
@@ -12,8 +12,8 @@
   <scene name="user-prompt">
     <line speaker="computer">~Пользователь.~</line>
 
-    <option goto="user-conway" speaker="conway">`(Печатает.)` ~Конуэй.~</option>
-    <option goto="password-1" speaker="conway">`(Печатает.)` ~Джозеф.~</option>
+    <option goto="user-conway" speaker="conway">(Печатает.) ~Конуэй.~</option>
+    <option goto="password-1" speaker="conway">(Печатает.) ~Джозеф.~</option>
   </scene>
 
   <scene name="user-conway" nextScene="user-prompt">
@@ -23,21 +23,21 @@
   <scene name="password-1">
     <line speaker="computer">~Пароль.~</line>
 
-    <option goto="password-2" speaker="conway">`(Печатает.)` ~Сорвалось колесо.~</option>
-    <option goto="password-2" speaker="conway">`(Печатает.)` ~Звёзды опадают.~</option>
-    <option goto="password-2" speaker="conway">`(Печатает.)` ~Я говорю и слушаю, как он говорит.~</option>
+    <option goto="password-2" speaker="conway">(Печатает.) ~Сорвалось колесо.~</option>
+    <option goto="password-2" speaker="conway">(Печатает.) ~Звёзды опадают.~</option>
+    <option goto="password-2" speaker="conway">(Печатает.) ~Я говорю и слушаю, как он говорит.~</option>
   </scene>
 
   <scene name="password-2">
-    <option goto="password-3" speaker="conway">`(Печатает.)` ~Аварию никто не заметил.~</option>
-    <option goto="password-3" speaker="conway">`(Печатает.)` ~Мерцает луна.~</option>
-    <option goto="password-3" speaker="conway">`(Печатает.)` ~Уже поздно.~</option>
+    <option goto="password-3" speaker="conway">(Печатает.) ~Аварию никто не заметил.~</option>
+    <option goto="password-3" speaker="conway">(Печатает.) ~Мерцает луна.~</option>
+    <option goto="password-3" speaker="conway">(Печатает.) ~Уже поздно.~</option>
   </scene>
 
   <scene name="password-3">
-    <option goto="password-complete" speaker="conway">`(Печатает.)` ~Ты просто вдыхаешь дорогу.~</option>
-    <option goto="password-complete" speaker="conway">`(Печатает.)` ~Нудят огни.~</option>
-    <option goto="password-complete" speaker="conway">`(Печатает.)` ~Станет только позднее.~</option>
+    <option goto="password-complete" speaker="conway">(Печатает.) ~Ты просто вдыхаешь дорогу.~</option>
+    <option goto="password-complete" speaker="conway">(Печатает.) ~Нудят огни.~</option>
+    <option goto="password-complete" speaker="conway">(Печатает.) ~Станет только позднее.~</option>
   </scene>
 
   <scene name="password-complete" nextScene="root-menu">
@@ -45,23 +45,23 @@
     
     <line speaker="computer">~Пароль принят.~</line>
 
-    <line speaker="joseph">`(Кричит)` Как ты там? Разобрался с паролем? Конечно, разобрался.</line>
+    <line speaker="joseph">(Кричит) Как ты там? Разобрался с паролем? Конечно, разобрался.</line>
   </scene>
 
   <scene name="root-menu">
-    <option goto="messages-root" speaker="conway">`(Печатает.)` ~Сообщения.~</option>
-    <option condition="!marquez-address-retrieved" goto="address-book-root" speaker="conway">`(Печатает.)` ~Адресная книга.~</option>
-    <option goto="games-root" speaker="conway">`(Печатает.)` ~Игры.~</option>
-    <option goto="end" speaker="conway">`(Печатает.)` ~Выход.~</option>
+    <option goto="messages-root" speaker="conway">(Печатает.) ~Сообщения.~</option>
+    <option condition="!marquez-address-retrieved" goto="address-book-root" speaker="conway">(Печатает.) ~Адресная книга.~</option>
+    <option goto="games-root" speaker="conway">(Печатает.) ~Игры.~</option>
+    <option goto="end" speaker="conway">(Печатает.) ~Выход.~</option>
   </scene>
 
   <scene name="messages-root">
     <line speaker="computer">~Сообщение один от &quot;donald@hotmk.mail&quot;.~</line>
     <line speaker="computer">~Сообщение два от &quot;accounts@consolidated.mail&quot;.~</line>
     
-    <option goto="message-one" speaker="conway">`(Печатает.)` ~Прочитать сообщение один.~</option>
-    <option goto="message-two" speaker="conway">`(Печатает.)` ~Прочитать сообщение два.~</option>
-    <option goto="root-menu" speaker="conway">`(Печатает.)` ~Закрыть меню сообщений.~</option>
+    <option goto="message-one" speaker="conway">(Печатает.) ~Прочитать сообщение один.~</option>
+    <option goto="message-two" speaker="conway">(Печатает.) ~Прочитать сообщение два.~</option>
+    <option goto="root-menu" speaker="conway">(Печатает.) ~Закрыть меню сообщений.~</option>
   </scene>
 
   <scene name="message-one" nextScene="messages-root">
@@ -93,10 +93,10 @@
 
   <scene name="address-book-root">
     <line speaker="computer">~Адресная книга.~</line>
-    <option goto="address-krz" speaker="conway">`(Печатает.)` ~Нулевая~</option>
-    <option goto="address-dogwood" speaker="conway">`(Печатает.)` ~Догвуд драйв.~</option>
-    <option goto="address-marquez" speaker="conway">`(Печатает.)` ~Маркез.~</option>
-    <option goto="root-menu" speaker="conway">`(Печатает.)` ~Закрыть адресную книгу.~</option>
+    <option goto="address-krz" speaker="conway">(Печатает.) ~Нулевая~</option>
+    <option goto="address-dogwood" speaker="conway">(Печатает.) ~Догвуд драйв.~</option>
+    <option goto="address-marquez" speaker="conway">(Печатает.) ~Маркез.~</option>
+    <option goto="root-menu" speaker="conway">(Печатает.) ~Закрыть адресную книгу.~</option>
   </scene>
 
   <scene name="address-krz" nextScene="address-book-root">
@@ -119,9 +119,9 @@
 
   <!-- Joseph asks a favor -->
   <scene name="joseph-favor" nextScene="end">
-    <line speaker="joseph">`(Кричит.)` Нашёл? Где-то на Макондо, да? Ага, точно.</line>
+    <line speaker="joseph">(Кричит.) Нашёл? Где-то на Макондо, да? Ага, точно.</line>
 
-    <line speaker="joseph">Хей, слушай, пока ты был внизу, я тебе в грузовик положил старый телевизор. Я его одолжил у Уивер много лет назад, а теперь из-за этой дряни с электричеством всё равно уже ничего не ловится, только шум и аналоговое.</line>
+    <line speaker="joseph">Эй, слушай, пока ты был внизу, я тебе в грузовик положил старый телевизор. Я его одолжил у Уивер много лет назад, а теперь из-за этой дряни с электричеством всё равно уже ничего не ловится, только шум и аналоговое.</line>
 
     <line speaker="joseph">Она больш читать любит, но может, ей будет приятно его вернуть. Это хороший телевизор!</line>
   </scene>

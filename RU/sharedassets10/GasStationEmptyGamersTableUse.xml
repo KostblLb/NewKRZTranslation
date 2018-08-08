@@ -3,10 +3,10 @@
   <scene name="intro">
     <setGameVar name="returned-d20-to-gamers" value="true"/>
     
-    <line>Folding chairs are arranged around a worn card table. The chairs are empty, and the surface of the table is bare.</line>
+    <line>Складные стулья расставлены вокруг потёртого карточного стола. Стулья пусты, как и поверхность стола.</line>
 
-    <option goto="end-leave">Conway places the twenty-sided die on the table.</option>
-    <option goto="end-keep">Conway keeps the twenty-sided die in his pocket and walks away.</option>    
+    <option goto="end-leave">Конуэй кладёт двадцатигранник на стол.</option>
+    <option goto="end-keep">Конуэй оставляет двадцатигранник себе и уходит.</option>    
   </scene>
 
   <scene name="end-leave" nextScene="end">

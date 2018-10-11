@@ -2,35 +2,35 @@
 <conversation act="one" endingEvent="marquez-farm-weaver-gone">
   <!-- While looking out window -->
   <scene name="intro">
-    <line speaker="weaver">Hey. Hey, wake up. You spaced out for a minute there.</line>
+    <line speaker="weaver">Эй. Эй, вставай. Ты отключился на минуту.</line>
 
-    <option goto="weaver-complains-about-tv" speaker="conway">The picture on the TV ...</option>
-    <option goto="whats-in-barn" speaker="conway">What do you keep out in that barn?</option>
+    <option goto="weaver-complains-about-tv" speaker="conway">Картинка на телевизоре ...</option>
+    <option goto="whats-in-barn" speaker="conway">Что ты хранишь в сарае?</option>
   </scene>
 
   <scene name="weaver-complains-about-tv">
-    <line speaker="weaver">That TV is picking up the wrong signal. My cousin Shannon would know more about it. She fixes TVs for a living. Well, she used to ... I think the new models are giving her some trouble.</line>
+    <line speaker="weaver">Телек ловит не тот сигнал. Кузина Шэннон больше об этом знает. Она зарабатывает на жизнь ремонтом ТВ. Ну, раньше зарабатывала ... По-моему, с новыми моделями у неё не очень хорошо выходит.</line>
 
-    <option goto="the-zero" speaker="conway">So ... I really just need to get to the |Zero|.</option>
-    <option goto="cousin" speaker="conway">Your cousin?</option>
+    <option goto="the-zero" speaker="conway">Так ... мне очень надо добраться до |Нулевой.|</option>
+    <option goto="cousin" speaker="conway">Твоя кузина?</option>
   </scene>
 
   <scene name="cousin" nextScene="the-zero">
     <setGameVar name="got-shannons-workshop-directions" value="true"/>
     
-    <line speaker="weaver">That's my father's brother's daughter, Shannon. We're about the same age. Well, we used to be. She's older now.</line>
-    <line speaker="weaver">She has a workshop up north a ways, by the lake. Right where Peonia and Wax road meet. It's a big bait and tackle shop, and she fixes TVs in the back. Do you like fishing?</line>
+    <line speaker="weaver">Шэннон - дочь брата моего отца. Мы ровесницы. Ну, раньше были ровесницы. Теперь она старше.</line>
+    <line speaker="weaver">У неё есть мастерская к северу отсюда, возле озера. На перекрёстке Пеонии и Вокс. Там большой рыболовный магазин, а на складе она чинит телевизоры. А ты любишь рыбалку?</line>
   </scene>
   
   <scene name="whats-in-barn" nextScene="weaver-complains-about-tv">
-    <line speaker="weaver">Used to be tools and feed. Then books. Now, I think it's mostly spiders.</line>
+    <line speaker="weaver">Раньше были корм и инструменты. Потом книги. Теперь, наверное, только пауки.</line>
   </scene>
   
   <scene name="the-zero" nextScene="end">
     <setGameVar name="got-mines-directions" value="true"/>
     
-    <line speaker="weaver">Honestly, I'm not convinced you should bother with the |Zero|; I'd much rather you find my cousin and fix my TV. But I'll get you headed the right way.</line>
-    <line speaker="weaver">So, it's pretty easy: get back on sixty-five heading north, then take the first right after the artificial limb factory. From there, your arrival at the |Zero| is basically inevitable.</line>
-    <line speaker="weaver">Nice to know you, Conway. Keep your eyes open. Especially in the dark!</line>
+    <line speaker="weaver">Если честно, не думаю, что тебе стоит сейчас направляться к |Нулевой|. Нашёл бы ты лучше мою кузину и починил телек. Но так уж и быть, скажу тебе, как проехать.</line>
+    <line speaker="weaver">Путь простой: выезжаешь обратно на шестьдесят пятую в направлении севера, после завода протезов - сразу направо. Оттуда ты неизбежно попадёшь на |Нулевую.|</line>
+    <line speaker="weaver">Приятно было познакомиться, Конуэй. И смотри в оба. Особенно в темноте!</line>
   </scene>
 </conversation>

@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one">
   <scene name="intro" nextScene="end">
-    <line>Stacks of boxes climb precariously to the ceiling. A worn writing table in the corner is the only evidence that this basement was ever used as anything but a staging area.</line>
+    <line>Шаткие столбы из коробок подпирают потолок. Только иссохший письменный стол говорит о том, что это место предназначалось не только для складирования хлама.</line>
   </scene>
 </conversation>

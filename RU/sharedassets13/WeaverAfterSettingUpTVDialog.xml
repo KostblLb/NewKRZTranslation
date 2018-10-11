@@ -2,31 +2,31 @@
 <conversation act="one">
   <!-- After setting up TV -->
   <scene name="intro">
-    <line speaker="weaver">That's not how it's supposed to look. You've made a mistake setting it up. Is it a foreign object to you? Which of your parents was it who wouldn't allow you to watch television?</line>
+    <line speaker="weaver">Нет, не так должно быть. Ты всё неправильно сделал. Ты с ними не имел дела? Кто из родителей запрещал тебе в детстве смотреть ТВ?</line>
     
-    <option goto="after-tv-setup-ma" speaker="conway">Ma thought she heard ghosts in the static.</option>
-    <option goto="after-tv-setup-dad" speaker="conway">Dad thought it was radioactive.</option>
-    <option goto="after-tv-setup-none" speaker="conway">I know how to set up a TV.</option>
+    <option goto="after-tv-setup-ma" speaker="conway">Мама думала, что видит в белом шуме души умерших.</option>
+    <option goto="after-tv-setup-dad" speaker="conway">Папа говорил, что от него излучение</option>
+    <option goto="after-tv-setup-none" speaker="conway">Я знаю, как настраивать ТВ.</option>
   </scene>
 
   <scene name="after-tv-setup-ma">
     <setGameVar name="conway-family-illness" value="mother"/>
     
-    <line speaker="weaver">I know about that. She was ill, wasn't she? Mentally, I mean. Kind of distant, fearful?</line>
+    <line speaker="weaver">Знаю про такое. Она была нездорова, да? В смысле, душевно. Она была отстранённая, боязливая?</line>
 
-    <option goto="parent-paranoid" speaker="conway">Fearful, yeah. That's a way to put it.</option>
-    <option goto="parent-obsessive" speaker="conway">No, things just had to be a certain way.</option>
-    <option goto="parent-artist" speaker="conway">No, just expressive.</option>
+    <option goto="parent-paranoid" speaker="conway">Боязливая, да. Можно так сказать.</option>
+    <option goto="parent-obsessive" speaker="conway">Нет, просто так должно быть.</option>
+    <option goto="parent-artist" speaker="conway">Нет, просто вспыльчивая.</option>
   </scene>
 
   <scene name="after-tv-setup-dad">
     <setGameVar name="conway-family-illness" value="father"/>
 
-    <line speaker="weaver">I know about that. He was ill, wasn't he? Mentally, I mean. Kind of cautious, timid?</line>
+    <line speaker="weaver">Знаю про такое. Он был нездоров, да? В смысле, душевно. Он был осторожный, робкий?</line>
 
-    <option goto="parent-paranoid" speaker="conway">Cautious, yeah. That's a way to put it.</option>
-    <option goto="parent-obsessive" speaker="conway">No, things just had to be a certain way.</option>
-    <option goto="parent-artist" speaker="conway">No, just expressive.</option>
+    <option goto="parent-paranoid" speaker="conway">Осторожный, да. Можно так сказать.</option>
+    <option goto="parent-obsessive" speaker="conway">Нет, просто так должно быть.</option>
+    <option goto="parent-artist" speaker="conway">Нет, просто вспыльчивый.</option>
   </scene>
 
   <scene name="parent-paranoid" nextScene="after-tv-setup-look-at-tv">
@@ -45,14 +45,14 @@
     <setGameVar name="conway-family-illness" value="none"/>
     <setGameVar name="conway-family-illness-quality" value="none"/>    
     
-    <line speaker="weaver">OK. I'm skeptical.</line>
+    <line speaker="weaver">Ладно, я просто сомневаюсь.</line>
   </scene>
 
   <scene name="after-tv-setup-look-at-tv" nextScene="end">
     <setGameVar name="marquez-farm-talked-to-weaver-about-tv" value="true"/>
     
-    <line speaker="weaver">You have it all backwards. I'm not surprised; are you? Have you been paying attention? I don't think you have.</line>
+    <line speaker="weaver">Ты всё наоборот сделал. Я не удивлена, а ты? Ты знаешь про аккуратность? Наверное, нет, не знаешь.</line>
 
-    <line speaker="weaver">It's time to start paying attention now, Conway. Look closely at the television.</line>
+    <line speaker="weaver">Теперь будь аккуратнее, Конуэй. Смотри внимательно на экран.</line>
   </scene>
 </conversation>

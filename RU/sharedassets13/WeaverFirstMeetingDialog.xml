@@ -2,62 +2,62 @@
 <conversation act="one">
   <!-- First meeting -->
   <scene name="intro">
-    <line speaker="weaver">I was just thinking what a lovely house we have. Do you like it? Have you been here before? Did you happen to see an owl?</line>
+    <line speaker="weaver">Я всё думаю: ну что за замечательный у нас дом! Тебе нравится? Ты здесь был раньше? Ты встречал сов?</line>
 
-    <option goto="intro-nice-house" speaker="conway">Sure, it's a nice house.</option>
-    <option goto="intro-never-been-here" speaker="conway">No, I've never been here before.</option>
-    <option goto="intro-no-owl" speaker="conway">I didn't see any owl.</option>
+    <option goto="intro-nice-house" speaker="conway">Да, дом мне нравится.</option>
+    <option goto="intro-never-been-here" speaker="conway">Нет, раньше я здесь не бывал.</option>
+    <option goto="intro-no-owl" speaker="conway">Не видел ни одной совы.</option>
   </scene>
 
   <scene name="intro-nice-house" nextScene="intro-what-do-you-do">
-    <line speaker="weaver">I know. I like the large beams that run across the ceilings. I like to sit in the house and think of the hills and bluffs surrounding us, like a ... like a cradle.</line>
+    <line speaker="weaver">Знаю. Мне нравятся толстые балки, на которых лежит крыша. Я люблю сидеть дома и думать о холмах и скалах, они окружают нас как ... как колыбель.</line>
   </scene>
 
   <scene name="intro-never-been-here" nextScene="intro-what-do-you-do">
-    <line speaker="weaver">I know. It must seem very strange to you. I was here when this house was built, so it's never been strange to me.</line>
+    <line speaker="weaver">Знаю. Он тебе, наверное, кажется странным. Но этот дом строили при мне, так что он мне никогда не казался странным.</line>
   </scene>
 
   <scene name="intro-no-owl" nextScene="intro-what-do-you-do">
-    <line speaker="weaver">I know. I saw it out the window once. Big, ugly thing. All sound and fury. Well, it's gone now.</line>
+    <line speaker="weaver">Знаю. Я видела из окна однажды. Большая страшилища. Всё злилась и ухала. Ну, больше её нет.</line>
   </scene>
 
   <scene name="intro-what-do-you-do">
-    <line speaker="weaver">There used to be another house here. But we had it destroyed. And we built this one. It was very expensive and we got quite under water.</line>
-    <line speaker="weaver">What do you do for work? Is it too difficult or do you like it very much? I was once a mathematician. Are you looking for something in particular here?</line>
+    <line speaker="weaver">Здесь раньше был другой дом. Но его снесли. А потом мы построили этот. Это нам дорого обошлось, так что пришлось на время залечь на дно.</line>
+    <line speaker="weaver">А ты чем занимаешься? Тебе нравится работа или она слишком тяжела? Я раньше была математиком. Ты что-то конкретное ищешь?</line>
 
-    <option goto="intro-deliveries" speaker="conway">I drive deliveries for a small antique shop.</option>
-    <option goto="intro-in-a-ditch" speaker="conway">It's better than being in a ditch.</option>
-    <option goto="intro-the-zero" speaker="conway">I'm looking for the |Zero|.</option>
+    <option goto="intro-deliveries" speaker="conway">Я доставляю заказы из антикварного салона.</option>
+    <option goto="intro-in-a-ditch" speaker="conway">Лучше, чем жить в канаве.</option>
+    <option goto="intro-the-zero" speaker="conway">Я ищу |Нулевую.|</option>
   </scene>
 
   <scene name="intro-deliveries" nextScene="intro-stay-here">
-    <line speaker="weaver">I believe it's hard times for a small antique shop. It's hard times everywhere, even out here on our little farm. My parents stopped paying the bank a while back. I shouldn't even be here. But I just stayed.</line>
+    <line speaker="weaver">Тяжело сейчас, наверное, владеть антикварным магазином. Для всех сейчас тяжёлые времена, Даже здесь, на нашей маленькой ферме. Родители перестали платить по кредитам . Меня здесь даже быть не должно. Но я вот осталась.</line>
   </scene>
 
   <scene name="intro-in-a-ditch" nextScene="intro-stay-here">
-    <line speaker="weaver">Yes. Just about anything is better than being in a hole in the ground. That's why I stay here.</line>
+    <line speaker="weaver">Да. Всё лучше, чем жить в дыре в земле. Поэтому я и осталась здесь.</line>
   </scene>
 
   <scene name="intro-stay-here">
-    <line speaker="weaver">I have some notebooks. I'm only a little bored. I might prefer to watch TV occasionally.</line>
+    <line speaker="weaver">У меня есть тетради, мне почти не скучно. Время от времени можно и телевизор посмотреть.</line>
 
-    <option goto="intro-too-smart" speaker="conway">Joseph says you're too smart to watch TV.</option>
-    <option goto="intro-return-tv" speaker="conway">Actually, I have a TV here that I think belongs to you.</option>
+    <option goto="intro-too-smart" speaker="conway">Джозеф говорит, ты слишком умная, чтобы смотреть телевизор.</option>
+    <option goto="intro-return-tv" speaker="conway">Кстати, у меня как раз есть телевизор для тебя.</option>
   </scene>
 
   <scene name="intro-the-zero">
-    <line speaker="weaver">Oh, you're lost. And that old blind man sent you, is that right? Of course he did. He's nice. Did he say anything nice about me? Did he send along a gift?</line>
+    <line speaker="weaver">О, так ты заблудился. И тебя прислал слепой старик, не так ли? Конечно, он тебя прислал. Он милый. А обо мне он ничего милого не говорил? Он не отправил подарочек?</line>
 
-    <option goto="intro-too-smart" speaker="conway">He said you were too smart to watch TV.</option>
-    <option goto="intro-return-tv" speaker="conway">He asked me to return this TV set of yours.</option>
+    <option goto="intro-too-smart" speaker="conway">Он сказал, ты слишком умная, чтобы смотреть телевизор.</option>
+    <option goto="intro-return-tv" speaker="conway">Он попросил меня вернуть тебе телевизор.</option>
   </scene>
 
   <scene name="intro-too-smart" nextScene="intro-return-tv">
-    <line speaker="weaver">That was a nice thing to say. But he was wrong. I'm not as smart as I used to be. Well, actually ... I suppose I am as smart as I used to be, but never any smarter. I don't learn anything new anymore. I write some figures, but nothing radical.</line>
-    <line speaker="weaver">I'll bet he sent that old TV along with you, didn't he? Of course he did. That was clever of him.</line>
+    <line speaker="weaver">Это мило. Но это неправда. Я уже не так умна, как раньше. Ну, то есть ... Наверное, я так же умна, как раньше, но умнее не становлюсь. Я больше не изучаю новое. Пишу всякое, но ничего сверхъестественного.</line>
+    <line speaker="weaver">Держу пари, он с тобой отправил мой старый телевизор? Ну конечно, отправил. Смекалистый старик.</line>
   </scene>
 
   <scene name="intro-return-tv" nextScene="end">
-    <line speaker="weaver">Will you please set it up? Then I can explain to you how to get where you're going. The |Zero|. I know.</line>
+    <line speaker="weaver">Не настроишь мне его, будь добр? Потом я тебе объясню, как доехать. До |Нулевой.| Я знаю.</line>
   </scene>
 </conversation>

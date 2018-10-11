@@ -3,37 +3,37 @@
   <scene name="intro">
     <setGameVar name="marquez-farm-leaving-talked-to-dog" value="true"/>
     
-    <option goto="horses" speaker="conway">There are some horses out there behind the house.</option>
-    <option goto="weaver" speaker="conway">I just met the strangest lady.</option>
+    <option goto="horses" speaker="conway">За этим домом живут лошади.</option>
+    <option goto="weaver" speaker="conway">Я познакомился с престранной женщиной.</option>
   </scene>
 
   <scene name="horses">
-    <option goto="ira-horses" speaker="conway">Remember the horses you and Lysette and Ira had?</option>
-    <option goto="horses-barn" speaker="conway">I guess they don't sleep in the barn.</option>
+    <option goto="ira-horses" speaker="conway">Помнишь, какие у вас с Ирой и Лизеттой были лошади?</option>
+    <option goto="horses-barn" speaker="conway">Думаю, они спят снаружи сарая.</option>
   </scene>
 
   <scene name="ira-horses">
-    <option goto="end" speaker="conway">I miss them sometimes. The horses.</option>
-    <option goto="end" speaker="conway">Yours didn't like to sleep in the barn either.</option>
+    <option goto="end" speaker="conway">Я иногда скучаю по ним. По лошадям.</option>
+    <option goto="end" speaker="conway">Ваши тоже не любили спать внутри.</option>
   </scene>
   
   <scene name="horses-barn">
-    <option goto="end" speaker="conway">It's too spooky for a horse.</option>
-    <option goto="end" speaker="conway">Must be full of gear.</option>
+    <option goto="end" speaker="conway">Там слишком жутко для них.</option>
+    <option goto="end" speaker="conway">Всё набито инструментами.</option>
   </scene>
   
   <scene name="weaver">
-    <option goto="weaver-nice" speaker="conway">She seemed pretty nice.</option>
-    <option goto="weaver-creepy" speaker="conway">She kinda creeped me out, {if}[dog-nameless]buddy{end}{if}[!dog-nameless]${dog-name}{end}.</option>
+    <option goto="weaver-nice" speaker="conway">Она довольно ничего.</option>
+    <option goto="weaver-creepy" speaker="conway">Мне от неё не по себе, {if}[dog-name=Blue]Хандра{end}{if}[dog-name=Homer]Гомер{end}{if}[dog-nameless]дружок{end}.</option>
   </scene>
 
   <scene name="weaver-nice">
-    <option goto="end" speaker="conway">&quot;Márquez&quot; ... I wonder where her folks are from ...</option>
-    <option goto="end" speaker="conway">I hope we see her again.</option>
+    <option goto="end" speaker="conway">&quot;Маркез&quot; ... Интересно, откуда её семья ...</option>
+    <option goto="end" speaker="conway">Надеюсь, мы ещё увидимся.</option>
   </scene>
 
   <scene name="weaver-creepy">
-    <option goto="end" speaker="conway">Just had a weird ... energy ...</option>
-    <option goto="end" speaker="conway">But that's not her fault, I guess. Some folks are just like that.</option>
+    <option goto="end" speaker="conway">У неё такая странная ... энергия ...</option>
+    <option goto="end" speaker="conway">Но она тут ни при чём, наверное. Некоторые люди просто такие по жизни.</option>
   </scene>
 </conversation>

@@ -1,18 +1,34 @@
-��� 1
+АКТ 1
 
-����� 1 (Equus Oils)
+СЦЕНА 1 (Equus Oils)
 
 sharedassets8:
-- GasStationDogLook	���������� �� ������
-- GasStationTruckLook	���������� �� ��������
+- GasStationDogLook	Посмотреть на собаку
+- GasStationTruckLook	Посмотреть на грузовик
 sharedassets10:
-- GasStationHighwayLook	���������� �� �����
-- JosephLool		���������� �� �������
-- JosephDialog		���������� � ��������
-- JosephComputer	������������ ��������� �������
-- GasStationGamersLook 	���������� �� �������
-- GasStationGamersTalk	���������� � ��������
-- BasementSighLook	���������� �� ���� � �������
-- GasStationGrabD20	����� 20�������
-- GasStationEmptyGamersTableUse	���������� �� ������ ����
-- GasStationDogTalk	���������� � �������
+- GasStationHighwayLook	Посмотреть на шоссе
+- JosephLool		Посмотреть на Джозефа
+- JosephDialog		Поговорить с Джозефом
+- JosephComputer	Использовать компьютер Джозефа
+- GasStationGamersLook 	Посмотреть на игроков
+- GasStationGamersTalk	Поговорить с игроками
+- BasementSighLook	Посмотреть на знак в подвале
+- GasStationGrabD20	Взять 20гранник
+- GasStationEmptyGamersTableUse	Посмотреть на пустой стол
+- GasStationDogTalk	Поговорить с собакой
+
+СЦЕНА 2 (Marquez Farm)
+
+sharedassets13
+- MarquezFarmDogLook -- Посмотреть на собаку
+- MarquezFarmDogTalkBeforeWeaver -- Поговорить с собакой до встречи с Уивер
+- MarquezFarmTruckLook -- Посмотреть на грузовик
+- MarquezLampLook -- Посмотреть на лампу
+- GraveyardLook -- Посмотреть на клалбище
+- WeaverFirstMeetingDialog -- Первая встреча с Уивер
+- WeaverAfterSettingUpTVDialog -- Разговор после настройки тв
+- WeaverWhileLookingOutWindowDialog -- Разговор, пока Конуэй смотрит в окно
+- MarquezBasement -- Осмотреть подвал Маркез
+- MarquezClock -- Осмотреть настенные часы Маркез
+- MarquezPotsAndPans -- Осмотреть кухонную утварь
+- MarquezStove -- Осмотреть плиту

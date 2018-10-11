@@ -4,18 +4,18 @@
   <scene name="intro">
     <setGameVar name="marquez-farm-arrival-talked-to-dog" value="true"/>
     
-    <option goto="dark" speaker="conway">Pretty dark out here, huh?</option>
-    <option goto="path" speaker="conway">So I guess we just head up the path here; the farmhouse is up the hill a bit.</option>        
+    <option goto="dark" speaker="conway">Темновато здесь, да?</option>
+    <option goto="path" speaker="conway">Думаю, нам надо идти по этой тропе. Ферма чуть выше на холме.</option>        
   </scene>
 
   <scene name="dark">
-    <option goto="end" speaker="conway">Maybe you'd better stay down here where it's lit.</option>
-    <option goto="end" speaker="conway">Hope I can borrow you a treat up there.</option>      
+    <option goto="end" speaker="conway">Может, посидишь лучше там, где светло?.</option>
+    <option goto="end" speaker="conway">Попробую раздобыть тебе перекусить.</option>      
   </scene>
 
   <scene name="path">
-    <option goto="end" speaker="conway">Keep an eye on the truck, alright?</option>      
-    <option goto="end" speaker="conway">Maybe I can borrow you a treat up there.</option>
+    <option goto="end" speaker="conway">Приглядишь за машиной, ладно?</option>      
+    <option goto="end" speaker="conway">Попробую раздобыть тебе перекусить.</option>
   </scene>
   
 </conversation>

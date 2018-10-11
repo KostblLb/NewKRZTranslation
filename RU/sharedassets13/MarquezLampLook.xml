@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one">
     <scene name="intro" nextScene="end">
-      <line>A street lamp lights the base of a dusty path leading up the hill.</line>
+      <line>Уличный фонарь освещает подножие тропы, ведущей на ферму.</line>
     </scene>
 </conversation>

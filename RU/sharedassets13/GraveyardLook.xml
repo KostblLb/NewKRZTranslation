@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one">
   <scene name="intro" nextScene="end">
-    <line>A family graveyard is set off to the side of the house. Headstones are inscribed with the surnames of the unfortunate: &quot;Nowakowski,&quot; &quot;Padilla,&quot; &quot;Márquez.&quot;</line>
+    <line>Фамильное кладбище устроено рядом с домом. На надгробиях выгравированы надписи: &quot;Новаковски&quot;, &quot;Падилла&quot;, &quot;Маркез&quot;.</line>
   </scene>
 </conversation>

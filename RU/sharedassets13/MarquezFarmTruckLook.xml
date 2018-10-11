@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one">
   <scene name="intro" nextScene="end">
-    <line>A moving truck rumbles softly to itself. Painted on its side are the words &quot;Lysette's Antiques. Furniture. Glassware. Curiosities.&quot;</line>
+    <line>Заведённый грузовик мягко тарахтит про себя. На боку кабины написано: &quot;Антиквариат Лизетты. Мебель. Стекло. Диковинки.&quot;</line>
   </scene>
 </conversation>

@@ -1,45 +1,45 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one">
   <scene name="intro">
-    <option condition="!elkhorn-mine-outro-conway-talked-to-dog" goto="hows-it-going" speaker="conway">How's it going, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}?</option>
-    <option condition="shannon-companion+!elkhorn-mine-outro-shannon-talked-to-dog" goto="introduce-shannon" speaker="conway">{if}[dog-nameless]Old man{end}{if}[!dog-nameless]${dog-name}{end}, this is Shannon.</option>    
+    <option condition="!elkhorn-mine-outro-conway-talked-to-dog" goto="hows-it-going" speaker="conway">Как делишки, {if}[dog-nameless]старина{end}{if}[dog-name=Homer]Гомер{end}{if}[dog-name=Blue]Хандра{end}?</option>
+    <option condition="shannon-companion+!elkhorn-mine-outro-shannon-talked-to-dog" goto="introduce-shannon" speaker="conway">{if}[dog-nameless]Старик{end}{if}[dog-name=Homer]Гомер{end}{if}[dog-name=Blue]Хандра{end}, это Шэннон.</option>    
   </scene>
 
   <scene name="hows-it-going">
     <setGameVar name="elkhorn-mine-outro-conway-talked-to-dog" value="true"/>
     
-    <option goto="alone" speaker="conway">Sorry I left you alone so long.</option>
-    <option goto="leg" speaker="conway">Hurt my leg pretty bad down there.</option>
+    <option goto="alone" speaker="conway">Извини, что оставил тебя надолго.</option>
+    <option goto="leg" speaker="conway">Сильно себе ногу ушиб там.</option>
   </scene>
 
   <scene name="alone">
-    <option goto="hadnt-come-back" speaker="conway">What would you have done if I hadn't come back?</option>
-    <option goto="what-dog-did" speaker="conway">What did you get into up here?</option>
+    <option goto="hadnt-come-back" speaker="conway">Что бы ты делал, если бы я не вернулся?</option>
+    <option goto="what-dog-did" speaker="conway">А ты чем занимался?</option>
   </scene>
 
   <scene name="hadnt-come-back">
-    <option goto="end" speaker="conway">It'll be one of us, eventually. Oh well.</option>
-    <option goto="end" speaker="conway">Nah, I'll keep coming back.</option>
+    <option goto="end" speaker="conway">Всё равно это случится рано или поздно. С тобой или со мной. Такие дела.</option>
+    <option goto="end" speaker="conway">Не, я всегда возвращаюсь.</option>
   </scene>
 
   <scene name="what-dog-did">
-    <option goto="end" speaker="conway">Did you take a nap?</option>
-    <option goto="end" speaker="conway">Did you find any rabbits?</option>
+    <option goto="end" speaker="conway">Успел вздремнуть?</option>
+    <option goto="end" speaker="conway">Кроликов не находил?</option>
   </scene>
 
   <scene name="leg">
-    <option goto="shuffle" speaker="conway">I've got a shuffle like you now.</option>
-    <option goto="pretty-bad" speaker="conway">Seems pretty bad, if I'm honest.</option>
+    <option goto="shuffle" speaker="conway">Я теперь шаркать стал прямо как ты.</option>
+    <option goto="pretty-bad" speaker="conway">Кажется, всё очень плохо, честное слово.</option>
   </scene>
 
   <scene name="shuffle">
-    <option goto="end" speaker="conway">Yeah we've got a lot in common.</option>
-    <option goto="end" speaker="conway">Maybe we can still heal up.</option>
+    <option goto="end" speaker="conway">Да, у нас с тобой много общего.</option>
+    <option goto="end" speaker="conway">Может, ещё поправимся.</option>
   </scene>
 
   <scene name="pretty-bad">
-    <option goto="end" speaker="conway">How much time do you think I have left getting around on two legs?</option>
-    <option goto="end" speaker="conway">Well, I'm not worried if you're not.</option>
+    <option goto="end" speaker="conway">Как думаешь, сколько мне ещё осталось ходить на двух ногах?</option>
+    <option goto="end" speaker="conway">Ну, если ты не волнуешься, то и мне нечего.</option>
   </scene>
 
   <!-- Introduce Shannon -->
@@ -47,38 +47,38 @@
   <scene name="introduce-shannon">
     <setGameVar name="elkhorn-mine-outro-shannon-talked-to-dog" value="true"/>
 
-    <option goto="nice-to-meet-dog" speaker="shannon">Nice to meet you{if}[!dog-nameless], ${dog-name}{end}.</option>
-    <option goto="never-had-a-dog" speaker="shannon">I never had a dog.</option>
+    <option goto="nice-to-meet-dog" speaker="shannon">Приятно познакомиться{if}[dog-name=Homer], Гомер{end}{if}[dog-name=Homer], Хандра{end}.</option>
+    <option goto="never-had-a-dog" speaker="shannon">У меня никогда не было собаки.</option>
   </scene>
 
   <scene name="nice-to-meet-dog">
-    <option goto="shannon-gave-treat" speaker="shannon">I've got some dried banana slices in my bag, would you like one?</option>
-    <option goto="help-with-driving" speaker="shannon">Do you help with the driving?</option>
+    <option goto="shannon-gave-treat" speaker="shannon">У меня с собой есть немного банановых чипсов, будешь?</option>
+    <option goto="help-with-driving" speaker="shannon">Ты помогаешь ему рулить?</option>
   </scene>
 
   <scene name="shannon-gave-treat">
-    <option goto="end" speaker="shannon">I don't really like them anyway.</option>
-    <option goto="end" speaker="shannon">Take care of your friend here, and there's more where that came from.</option>
+    <option goto="end" speaker="shannon">Они мне всё равно не нравятся.</option>
+    <option goto="end" speaker="shannon">Если будешь заботиться о своём друге, у меня найдётся для тебя ещё.</option>
   </scene>
 
   <scene name="help-with-driving">
-    <option goto="end" speaker="shannon">Maybe you can help your friend here, too.</option>
-    <option goto="end" speaker="shannon">You help with the drooling, looks like.</option>    
+    <option goto="end" speaker="shannon">Может, и сейчас поможешь своему другу?</option>
+    <option goto="end" speaker="shannon">Похоже, ты помогаешь ему слюноточить.</option>    
   </scene>
 
   <scene name="never-had-a-dog">
-    <option goto="alternating-shifts" speaker="shannon">My folks worked alternating shifts for a while.</option>
-    <option goto="allergic" speaker="shannon">Dad was allergic.</option>
+    <option goto="alternating-shifts" speaker="shannon">Родители когда-то работали по разным сменам сменам.</option>
+    <option goto="allergic" speaker="shannon">Папа был аллергиком.</option>
   </scene>
   
   <scene name="alternating-shifts">
-    <option goto="end" speaker="shannon">No time to care for a dog.</option>
-    <option goto="end" speaker="shannon">And then they finally got their shifts in sync ...</option>
+    <option goto="end" speaker="shannon">Не было времени на питомцев.</option>
+    <option goto="end" speaker="shannon">А потом им наконец-то поставили смены в одно время ...</option>
   </scene>
 
   <scene name="allergic">
-    <option goto="end" speaker="shannon">He needed to be able to breath clearly. At home, anyway.</option>
-    <option goto="end" speaker="shannon">I would have liked a dog, though.</option>
+    <option goto="end" speaker="shannon">Ему нужен был свежий воздух. Хотя бы дома.</option>
+    <option goto="end" speaker="shannon">Вообще мне бы хотелось иметь собаку.</option>
   </scene>
   
 </conversation>

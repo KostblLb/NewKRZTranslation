@@ -8,37 +8,37 @@
   <scene name="find-exit-first-time">
     <setGameVar name="elkhorn-mine-found-exit" value="true"/>
     
-    <line speaker="shannon">Thank God. OK.</line>
+    <line speaker="shannon">Слава Богу. Наконец-то.</line>
 
-    <option goto="lets-go" speaker="conway">Let's go.</option>
-    <option goto="end" speaker="conway">Let's poke around down here a bit more first.</option>    
+    <option goto="lets-go" speaker="conway">Идёмте.</option>
+    <option goto="end" speaker="conway">Давайте побродим тут ещё немного.</option>    
   </scene>
 
   <scene name="return-to-exit">
-    <line speaker="shannon">Here we are.</line>
+    <line speaker="shannon">Вот и приехали.</line>
     
-    <option goto="lets-go" speaker="conway">Let's get out of here.</option>
-    <option goto="end" speaker="conway">Let's poke around down here a bit more first.</option>    
+    <option goto="lets-go" speaker="conway">Давайте выбираться.</option>
+    <option goto="end" speaker="conway">Давайте побродим тут ещё немного.</option>    
   </scene>
   
   
   <scene name="lets-go">
-    <line condition="!elkhorn-mine-found-broken-track" speaker="shannon">Yeah, OK. I just ... I'd still like to look around a bit. I think I saw a tunnel with some broken up tracks back there; I'm wondering what's down there.</line>
-    <line condition="elkhorn-mine-found-broken-track" speaker="shannon">Yeah, OK. I just ... That tunnel, where the tracks were broken. I'd like to take a look down there.</line>
+    <line condition="!elkhorn-mine-found-broken-track" speaker="shannon">Да, ладно ... Просто ... Я бы хотела ещё здесь побродить. Кажется, я видела оборванные пути. Интересно, что там.</line>
+    <line condition="elkhorn-mine-found-broken-track" speaker="shannon">Да, ладно ... Просто ... Тот туннель с оборванными путями. Я бы хотела взглянуть, что там.</line>
 
-    <option goto="choose-conway" speaker="conway">Do whatever you need. I'll just wait for you here.</option>
-    <option goto="choose-shannon" speaker="shannon">If you wait for me here, I'll just go take another look around.</option>
+    <option goto="choose-conway" speaker="conway">Делайте, что хотите. Я просто подожду здесь.</option>
+    <option goto="choose-shannon" speaker="shannon">Если подождёте, я гляну ещё разок быстренько.</option>
   </scene>
   
   <scene name="choose-shannon" nextScene="end">
     <setGameVar name="elkhorn-mine-shannon-end" value="true"/>
     
-    <line speaker="conway">Sure, OK. I'll be right here.</line>
+    <line speaker="conway">Да, конечно. Я здесь посижу.</line>
   </scene>
 
   <scene name="choose-conway" nextScene="end">
     <setGameVar name="elkhorn-mine-conway-end" value="true"/>
 
-    <line speaker="shannon">Thanks. I'll be right back.</line>
+    <line speaker="shannon">Спасибо. Я скоро.</line>
   </scene>
 </conversation>

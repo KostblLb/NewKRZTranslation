@@ -3,14 +3,14 @@
   <scene name="intro">
     <setGameVar name="elkhorn-valley-outro-shannon-talked-about-truck" value="true"/>
     
-    <line speaker="shannon">&quot;Lysette's Antiques.&quot; I guess this is your truck?</line>
+    <line speaker="shannon">&quot;Антиквариат Лизетты&quot;. Это, значит, ваш грузовик?</line>
 
-    <option goto="surprised" speaker="conway">Surprised?</option>    
-    <option goto="end" speaker="conway">This is my truck.</option>
+    <option goto="surprised" speaker="conway">Удивлены?</option>
+    <option goto="end" speaker="conway">Это мой грузовик.</option>
   </scene>
 
   <scene name="surprised" nextScene="end">
-    <line speaker="shannon">It's kind of old ... no, I'm not surprised. I guess it's an antique, too.</line>
-    <line speaker="shannon">I think it suits you.</line>
+    <line speaker="shannon">Староват он ... нет, не удивлена. Наверное, тоже антиквариат.</line>
+    <line speaker="shannon">Думаю, вам подходит.</line>
   </scene>
 </conversation>

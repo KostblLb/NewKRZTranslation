@@ -3,7 +3,7 @@
   <scene name="intro" nextScene="end">
     <setGameVar name="elkhorn-mine-found-broken-track" value="true"/>
     
-    <line speaker="shannon">The tracks are all messed up here. This tram isn't going any further. I wonder what's down that tunnel.</line>
+    <line speaker="shannon">Рельсы совсем поломаны. Вагонетка дальше не поедет. Интересно, что там дальше.</line>
   </scene>
 
 </conversation>

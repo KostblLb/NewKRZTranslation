@@ -4,11 +4,11 @@
     <triggerEvent name="enter-shack"/>
     <setGameVar name="elkhorn-valley-outro-complete" value="true"/>
     
-    <line>The cramped shack is lined with wooden shelves. Dusty stacks of tape reels and notebooks crowd the room, but a bit of moonlight filters through a window near the ceiling.</line>
+    <line>Покорёженная будка сверху донизу занята полками. Комната завалена пыльными плёнками и блокнотами, но луч лунного света пробивается сквозь окно возле потолка.</line>
   </scene>
 
   <scene name="desk" nextScene="choose-notebook">
-    <line pause="false">On a small desk in the middle of the room lay three notebooks. The red one is labeled &quot;J. Márquez,&quot; the green one is labeled &quot;R. Márquez,&quot; and the blue one is unlabeled.</line>
+    <line pause="false">Посреди комнаты на небольшом столике лежат три блокнота. Красный подписан &quot;Дж. Маркез,&quot; зелёный -  &quot;Р. Маркез,&quot; синий блокнот без подписи.</line>
   </scene>
 
   <scene name="choose-notebook">
@@ -16,129 +16,129 @@
     <goto condition="elkhorn-mine-outro-read-red-notebook+elkhorn-mine-outro-read-blue-notebook" sceneName="green-notebook-interrupt"/>
     <goto condition="elkhorn-mine-outro-read-red-notebook+elkhorn-mine-outro-read-green-notebook" sceneName="blue-notebook-interrupt"/>    
     
-    <option condition="!elkhorn-mine-outro-read-red-notebook" goto="red-notebook" insertedText="Conway opens the red notebook.">Open the red notebook.</option>
-    <option condition="!elkhorn-mine-outro-read-green-notebook" goto="green-notebook" insertedText="Conway opens the green notebook.">Open the green notebook.</option>
-    <option condition="!elkhorn-mine-outro-read-blue-notebook" goto="blue-notebook" insertedText="Conway opens the blue notebook.">Open the blue notebook.</option>
+    <option condition="!elkhorn-mine-outro-read-red-notebook" goto="red-notebook" insertedText="Конуэй открывает красный блокнот.">Открыть красный блокнот.</option>
+    <option condition="!elkhorn-mine-outro-read-green-notebook" goto="green-notebook" insertedText="Конуэй открывает зелёный блокнот.">Открыть зелёный блокнот.</option>
+    <option condition="!elkhorn-mine-outro-read-blue-notebook" goto="blue-notebook" insertedText="Конуэй открывает синий блокнот.">Открыть синий блокнот.</option>
   </scene>
 
   <scene name="red-notebook" nextScene="choose-notebook">
     <triggerEvent name="shannon-exits-mine-to-shack"/>
     <setGameVar name="elkhorn-mine-outro-read-red-notebook" value="true"/>
 
-    <line>The pages are covered in disorganized notes, some written horizontally and others scribbled vertically into margins. A few pages are lined more evenly and divided up into charts correlating seasons, lyrics, harmonies, and coal hauls.</line>
+    <line>Страницы покрыты разрозненными записями, некоторые написаны горизонтально, некоторые вертикально - на полях. Некоторые страницы разделены на более аккуратные части и представляют подборки графиков для времён года, текстов песен, нот, и развоза угля.</line>
   </scene>
 
   <scene name="green-notebook" nextScene="choose-notebook">
     <triggerEvent name="shannon-exits-mine-to-shack"/>    
     <setGameVar name="elkhorn-mine-outro-read-green-notebook" value="true"/>
 
-    <line>On each page is a delicately-rendered charcoal drawing. Most are portraits of rugged faces. Near the middle of the book, there are a few drawings of a young girl in a miner's helmet. She plays along the mine cart tracks, collecting pieces of wire. In one drawing, another young girl sits nearby, intently studying a book.</line>
+    <line>На каждой странице аккуратно выведены угольком изображения. В основном портреты с суровыми лицами. К середине блокнота появляются несколько портретов девочки в шахтёрской каске. Она играется вдоль путей вагонетки, собирая кусочки проволоки. На другом рисунке ещё одна девочка сидит неподалёку и усердно изучает книгу.</line>
   </scene>
 
   <scene name="blue-notebook" nextScene="choose-notebook">
     <triggerEvent name="shannon-exits-mine-to-shack"/>    
     <setGameVar name="elkhorn-mine-outro-read-blue-notebook" value="true"/>
 
-    <line>The notebook is full of greek letters and cryptic mathematical formulas. Near the back of the book, what first looks like it might be an esoteric German shorthand is actually a love poem written in anagrams.</line>
+    <line>Блокнот исписан греческими буквами и таинственными символами. На последних страницах появляется что-то, похожее на эзотерические Германские письмена. На самом деле это любовные стихи, записанные анаграммами.</line>
   </scene>
 
   <!-- Notebook interruption versions -->
   <scene name="red-notebook-interrupt" nextScene="shannon-enters-shack">
-    <line>Conway opens the red notebook.</line>
-    <line>The pages are covered in disorganized notes, some written horizontally and others scribbled vertically into margins. A few pages are lined more evenly and divided up into —</line>
+    <line>Конуэй открывает красный блокнот.</line>
+    <line>Страницы покрыты разрозненными записями, некоторые написаны горизонтально, некоторые вертикально - на полях. Некоторые страницы разделены на более аккуратные части и представляют —</line>
   </scene>
 
   <scene name="green-notebook-interrupt" nextScene="shannon-enters-shack">
-    <line>Conway opens the green notebook.</line>    
-    <line>On each page is a delicately-rendered charcoal drawing. Most are portraits of rugged faces. Near the middle of the book, there are a few drawings of a young girl in a miner's helmet. She plays along the mine cart tracks, collecting pieces of —</line>
+    <line>Конуэй открывает зелёный блокнот.</line>    
+    <line>На каждой странице аккуратно выведены угольком изображения. В основном портреты с суровыми лицами. К середине блокнота появляются несколько портретов девочки в шахтёрской каске. Она играется вдоль путей вагонетки, собирая кусочки —</line>
   </scene>
 
   <scene name="blue-notebook-interrupt" nextScene="shannon-enters-shack">
-    <line>Conway opens the blue notebook.</line>    
-    <line>The notebook is full of Greek letters and cryptic mathematical formulas. Near the back of the book, what first looks like it might be —</line>
+    <line>Конуэй открывает синий блокнот.</line>    
+    <line>Блокнот исписан греческими буквами и таинственными символами. На последних страницах появляется что-то, похожее на —</line>
   </scene>
 
   <!-- Shannon enters shack -->
   <scene name="shannon-enters-shack">
-    <line speaker="shannon">Oh yeah. This place.</line>
+    <line speaker="shannon">О да. Это место.</line>
     
-    <option goto="didnt-think-coming" speaker="conway">I didn't think you were coming back.</option>
-    <option goto="archivists-parents" speaker="conway">These notebooks are labeled &quot;Márquez.&quot; Your parents are the archivists?</option>
+    <option goto="didnt-think-coming" speaker="conway">Не думал, что вы вернётесь.</option>
+    <option goto="archivists-parents" speaker="conway">На этих книжках написано &quot;Маркез&quot;. Ваши родители были историками?</option>
   </scene>
 
   <scene name="didnt-think-coming">
-    <line speaker="shannon">Sure I was. Why wouldn't I be?</line>
+    <line speaker="shannon">А с чего бы мне не возвращаться?</line>
     
-    <option goto="disappearing" speaker="conway">Most everyone else I've met tonight has just disappeared.</option>
-    <option goto="looking-for" speaker="conway">Did you find what you were looking for?</option>
+    <option goto="disappearing" speaker="conway">Стоит мне с кем-нибудь познакомиться - и люди просто исчезают.</option>
+    <option goto="looking-for" speaker="conway">Вы нашли, что искали?</option>
   </scene>
 
   <scene name="disappearing" nextScene="intro-more-options">
-    <line pause="false" speaker="shannon">Well here I am, dammit.</line>
+    <line pause="false" speaker="shannon">Да Господи, вот же я.</line>
   </scene>
 
   <scene name="looking-for" nextScene="intro-more-options">
-    <line pause="false" speaker="shannon">Yeah ... Maybe. Look, we're not going to talk about that anymore, OK?</line>
+    <line pause="false" speaker="shannon">Да ... Наверное. Слушайте, давайте больше не будем об этом, ладно?</line>
   </scene>
 
   <scene name="intro-more-options">
-    <option goto="intro-sorry" speaker="conway">Sorry.</option>
-    <option goto="archivists-parents" speaker="conway">The notebooks are labeled &quot;Márquez.&quot; Your parents are the archivists?</option>
+    <option goto="intro-sorry" speaker="conway">Извините.</option>
+    <option goto="archivists-parents" speaker="conway">На этих книжках написано &quot;Маркез&quot;. Ваши родители были историками?</option>
   </scene>
 
   <scene name="archivists-parents" nextScene="leg">
-    <line speaker="shannon">No. Weaver's parents are the archivists. My parents were miners.</line>
+    <line speaker="shannon">Нет. Историками были родители Уивер. Мои были шахтёрами.</line>
   </scene>
 
   <scene name="intro-sorry" nextScene="leg">
-    <line speaker="shannon">No, I'm sorry. I'm just on edge. I'll be OK once I get away from this mine.</line>
+    <line speaker="shannon">Нет, это вы меня извините. Я просто под впечатлением. Мы уедем отсюда - и всё будет хорошо.</line>
   </scene>
 
   <scene name="leg">
-    <line speaker="shannon">... How's the leg?</line>
-    <option goto="leg-slow" speaker="conway">I can walk on it, but it's slow.</option>
-    <option goto="leg-painful" speaker="conway">I can walk on it, but it's painful.</option>
+    <line speaker="shannon">... Как нога?</line>
+    <option goto="leg-slow" speaker="conway">Ходить можно, но без спешки.</option>
+    <option goto="leg-painful" speaker="conway">Ходить можно, но боль ужасная.</option>
   </scene>
 
   <scene name="leg-slow" nextScene="shannon-drive">
-    <line speaker="shannon">Well, I'll try not to get too far ahead of you. You don't mind my hitching a ride, do you? I kinda got a lift out here, and wasn't sure if, uh — when I'd be heading back. I can drive.</line>
+    <line speaker="shannon">Что ж, постараюсь далеко не уходить. Не возражаете, если я с вами? Меня сюда подвезли, так что я не знаю, смогу ли — эм, когда я поеду обратно. Я могу сесть за руль.</line>
   </scene>
 
   <scene name="leg-painful" nextScene="shannon-drive">
     <setGameVar name="shannon-gave-painkillers" value="true"/>    
-    <line speaker="shannon">Oh. I've got some painkillers here that could help you out. I got them from a friend when I sprained my wrist installing a security system. You'd better let me drive, though. They're pretty strong.</line>
+    <line speaker="shannon">Ой. У меня есть обезболивающие, они могут вам помочь. Друг мне их дал, когда я устанавливала себе систему безопасности и потянула запястье. Только лучше мне тогда сесть за руль. Они весьма сильные.</line>
   </scene>
 
   <scene name="shannon-drive">
-    <option goto="conway-will-drive" speaker="conway">I can handle it.</option>
-    <option goto="shannon-will-drive" speaker="conway">Yeah, maybe that's best.</option>
+    <option goto="conway-will-drive" speaker="conway">Я справлюсь.</option>
+    <option goto="shannon-will-drive" speaker="conway">Да, может, с ними лучше.</option>
   </scene>
 
   <scene name="conway-will-drive" nextScene="next-steps">
-    <line pause="false" speaker="shannon">OK. Your decision.</line>
+    <line pause="false" speaker="shannon">Ладно, как вам угодно.</line>
   </scene>
 
   <scene name="shannon-will-drive" nextScene="next-steps">
     <setGameVar name="shannon-will-drive" value="true"/>
-    <line pause="false" speaker="shannon">Don't worry: I've been driving since I was nine.</line>
+    <line pause="false" speaker="shannon">Не переживайте, я с девяти лет вожу.</line>
   </scene>
 
   <scene name="next-steps">
-    <option goto="zero" speaker="conway">I still need to find the |Zero|.</option>
-    <option goto="dogwood" speaker="conway">I guess I should look for another route to Dogwood Drive.</option>
+    <option goto="zero" speaker="conway">Мне всё ещё нужно добраться до |Нулевой|.</option>
+    <option goto="dogwood" speaker="conway">Видимо, нам придётся искать другой путь до Догвуд Драйв.</option>
   </scene>
 
   <scene name="zero" nextScene="find-weaver">
-    <line speaker="shannon">Well, it's like I told you: Weaver doesn't lie. If she sent you here to find your on-ramp, this is where you should be looking. Or maybe you just weren't listening closely enough, and that's not exactly what she said?</line>
+    <line speaker="shannon">Ну, как я уже говорила, Уивер не врёт. Если она сюда вас отправила искать заезд, то здесь он и должен быть. Или может, вы невнимательно слушали, и она совсем не это сказала?</line>
   </scene>
 
   <scene name="dogwood" nextScene="find-weaver">
-    <line speaker="shannon">Yeah, alright. Well, maybe asking Weaver about the |Zero| was the wrong place to start. Maybe we should just ask her for specific directions. Her answers are complicated enough without a layer of indirection at the question.</line>
+    <line speaker="shannon">Да, точно. Наверное, не нужно было даже спрашивать Уивер про |Нулевую|. Может, надо было спрашивать про точный адрес. Даже если она говорит прямо, всё равно получаются загадки.</line>
   </scene>
 
   <scene name="find-weaver" nextScene="end">
-    <line speaker="shannon">I saw Weaver at my workshop. That's up north by Lake Nolin, right at Wax and Peonia, in the back of a bait shop. Pretty glamorous, right? These are the times we live in.</line>
-    <line speaker="shannon">She's either up there or back at the farmhouse. Whichever you want to head to first, just let me know.</line>
+    <line speaker="shannon">Я видела Уивер в мастерской. Это на север отсюда, вдоль озера Нолин, прямо на пересечении Вокс и Пеонии, в магазине снастей в подсобке. Роскошно, а? Вот так и живём.</line>
+    <line speaker="shannon">Она или там, или на ферме. Куда едем? Только дайте знать.</line>
   </scene>
 
 </conversation>

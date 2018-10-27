@@ -1,47 +1,47 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one">
   <scene name="intro">
-    <line>`(CONWAY brushes some dirt off {if}[dog-nameless]the dog{end}{if}[!dog-nameless]${dog-name}{end}'s hat.)`</line>
+    <line>(КОНУЭЙ стряхивает грязь со шляпы {if}[dog-name=Homer]Гомера{end}{if}[dog-name=Blue]Хандры{end}{if}[dog-nameless]пса{end}.)</line>
 
-    <option goto="hows-it-going" speaker="conway">How's it going, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}?</option>
-    <option goto="end" speaker="conway">Take it easy, {if}[dog-nameless]old man{end}{if}[!dog-nameless]${dog-name}{end}.</option>
+    <option goto="hows-it-going" speaker="conway">Как поживаешь, {if}[dog-name=Homer]Гомер{end}{if}[dog-name=Blue]Хандра{end}{if}[dog-nameless]старина{end}?</option>
+    <option goto="end" speaker="conway">Держись, {if}[dog-name=Homer]Гомер{end}{if}[dog-name=Blue]Хандра{end}{if}[dog-nameless]старина{end}.</option>
   </scene>
 
   <scene name="hows-it-going">
     <setGameVar name="elkhorn-mine-intro-talked-to-dog" value="true"/>
     
-    <option goto="onramp" speaker="conway">Huh. Not sure that lady was right about the on-ramp to the |Zero| being here.</option>
-    <option goto="hat" speaker="conway">Hey, you got something on your hat.</option>
+    <option goto="onramp" speaker="conway">Хм. Не уверен, что та дамочка правильно указала заезд на |Нулевую|.</option>
+    <option goto="hat" speaker="conway">Эй, у тебя что-то на шляпе.</option>
   </scene>
 
   <scene name="onramp">
-    <option goto="runaround" speaker="conway">I guess you just can't tell with some folks. They're liable to run you around just for kicks.</option>
-    <option goto="somewhere" speaker="conway">Better look around, though. Must be down here somewhere.</option>
+    <option goto="runaround" speaker="conway">За некоторых людей нельзя ручаться. Такие могут тебя гонять туда-сюда за просто так.</option>
+    <option goto="somewhere" speaker="conway">Хотя давай осмотримся. Где-то тут он должен быть.</option>
   </scene>
 
   <scene name="runaround">
-    <option goto="end" speaker="conway">Well, try not to get frustrated.</option>
-    <option goto="end" speaker="conway">Should we look around? Or get back on the road? Oh, I don't know.</option>
+    <option goto="end" speaker="conway">Ну, попытайся не злиться.</option>
+    <option goto="end" speaker="conway">Осмотримся? Или поедем обратно? Ох, не знаю даже.</option>
   </scene>
 
   <scene name="somewhere">
-    <option goto="end" speaker="conway">Better hurry, though. Weather's about to turn.</option>
-    <option goto="end" speaker="conway">Let's take our time and check this out thorough, OK?</option>
+    <option goto="end" speaker="conway">Правда, лучше поспешить. Погода меняется.</option>
+    <option goto="end" speaker="conway">Давай не будем торопиться и всё здесь тщательно осмотрим, ладно?</option>
   </scene>
 
   <scene name="hat">
-    <option goto="flowers" speaker="conway">Been digging in Lysette's flowers again?</option>
-    <option goto="road" speaker="conway">Did you pick that up on the road?</option>
+    <option goto="flowers" speaker="conway">Опять совал нос в цветы Лизетты?</option>
+    <option goto="road" speaker="conway">На дороге подобрал?</option>
   </scene>
 
   <scene name="flowers">
-    <option goto="end" speaker="conway">She just can't keep you out of there, can she?</option>
-    <option goto="end" speaker="conway">The way Ira used to yell at you, you'd think he was losing his mind.</option>
+    <option goto="end" speaker="conway">Всё никак не может их от тебя упрятать, да?</option>
+    <option goto="end" speaker="conway">Ира на тебя всегда за это орал как бешеный.</option>
   </scene>
 
   <scene name="road">
-    <option goto="end" speaker="conway">Don't you ever get tired of nosing around strange places?</option>
-    <option goto="end" speaker="conway">You like it out here don't you. Picking up strange dirt on the road.</option>
+    <option goto="end" speaker="conway">Тебе вообще не надоедает копаться в странных местах?</option>
+    <option goto="end" speaker="conway">Тебе нравится здесь, да? Роешься в странной пыли на странных дорогах.</option>
   </scene>
   
 </conversation>

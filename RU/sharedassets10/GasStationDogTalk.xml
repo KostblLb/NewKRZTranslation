@@ -6,7 +6,7 @@
   </scene>
 
   <scene name="ready-to-leave">
-    <line>`(КОНУЭЙ чешет {if}[dog-name=Homer]Гомера{end}{if}[dog-name=Blue]Хандру{end}{if}[dog-nameless]пса{end} за правым ухом)`</line>
+    <line>(КОНУЭЙ чешет {if}[dog-name=Homer]Гомера{end}{if}[dog-name=Blue]Хандру{end}{if}[dog-nameless]пса{end} за правым ухом.)</line> <!--курсив-->
     
     <option goto="hows-it-going" speaker="conway">Как дела, старина?</option>
     <option goto="end" speaker="conway">Держись, старина.</option>

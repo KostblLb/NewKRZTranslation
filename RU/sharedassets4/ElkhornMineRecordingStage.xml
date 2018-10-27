@@ -3,17 +3,17 @@
   <scene name="intro">
     <setGameVar name="elkhorn-mine-found-recording-stage" value="true"/>
     
-    <line speaker="shannon">Damn. It's almost totally intact. I thought it would have been destroyed.</line>
-    <option goto="what-is-this-place" speaker="conway">What is this place?</option>
-    <option goto="destroyed-by-what" speaker="conway">Destroyed by what?</option>
+    <line speaker="shannon">Ого, тут всё почти целое. Я думала, от этого места ничего не осталось.</line>
+    <option goto="what-is-this-place" speaker="conway">Где это мы?</option>
+    <option goto="destroyed-by-what" speaker="conway">Не осталось после чего?</option>
   </scene>
 
   <scene name="destroyed-by-what" nextScene="what-is-this-place">
-    <line speaker="shannon">When the mine flooded, I mean. It looks so fragile, doesn't it?</line>
+    <line speaker="shannon">В смысле, после наводнения в шахте. Видишь, какое здесь всё хлипкое?</line>
   </scene>
 
   <scene name="what-is-this-place" nextScene="route-archivists">
-    <line speaker="shannon">It's a recording studio, basically. Kind of thrown together, but ...</line>
+    <line speaker="shannon">Это место служило студией звукозаписи. Построено абы как, но всё же ...</line>
   </scene>
   
   <scene name="route-archivists">
@@ -24,26 +24,26 @@
   <scene name="archivists-first-time" nextScene="questions">
     <setGameVar name="elkhorn-mine-heard-about-archivists" value="true"/>    
     
-    <line speaker="shannon">When this mine was active, a couple of folk music archivists spent time here recording miners' songs. Really academic, ivory tower types. None of the miners really talked to them much.</line>
-    <line speaker="shannon">So they stayed at the margins, observed, took notes, and then sometimes they'd get someone on a lunch break to sing into their microphone.</line>
-    <line speaker="shannon">Then I guess the power company got some kind of interest in the project, and gave the archivists some coal scrip tokens to pay the miners with for their songs.</line>
+    <line speaker="shannon">Когда шахта ещё работала, пара энтузиастов истории фолка пришли сюда, чтобы записывать шахтёрские песни. Очень учёные типы, прямо мудрецы. Шахтёры с ними особо никогда не разговаривали.</line>
+    <line speaker="shannon">Так что они всегда были как бы с краю, наблюдали, делали записи и время от времени вырывали кого-нибудь во время обеда попеть для них в микрофон.</line>
+    <line speaker="shannon">Видимо, тогда энергокомпанию заинтересовала их деятельность, и они дали этим историкам жетоны, чтобы платить шахтёрам за их пение.</line>
   </scene>
 
   <scene name="archivists-again" nextScene="questions">
-    <line speaker="shannon">This is where the archivists would record, and I guess then they'd sequester themselves down by that tape deck we found, to listen to the recorded songs.</line>
+    <line speaker="shannon">В этом месте они записывали, а потом, наверное, уединялись возле того проигрывателя, который мы нашли, чтобы слушать записанные песни.</line>
   </scene>
 
   <scene name="questions">
-    <option goto="did-shannon-come-here" speaker="conway">Did you ever come down here?</option>
-    <option goto="what-were-archivists-after" speaker="conway">What do you think the archivists were after?</option>
+    <option goto="did-shannon-come-here" speaker="conway">Вы здесь были раньше?</option>
+    <option goto="what-were-archivists-after" speaker="conway">Как думаете, что им было нужно?</option>
   </scene>
 
   <scene name="did-shannon-come-here" nextScene="end">
-    <line speaker="shannon">Yeah, I came here with my parents once or twice. They used to play music here, even when those archivists weren't around. It was a nice setup; kinda rickety, kinda dangerous, I guess, but ... I don't know. It had a good energy. It was warm, sometimes.</line>
+    <line speaker="shannon">Да, пару раз я была тут с родителями. Здесь они играли музыку, даже без историков. Сцена здесь была ничего. Немного косая, немного опасная, но ... не знаю. Энергия у этого места была хорошая. Даже тепло иногда было.</line>
   </scene>
 
   <scene name="what-were-archivists-after" nextScene="end">
-    <line speaker="shannon">Data, I guess? Comparing intonation, subject matter, diction ... you know, all those little details that no one really thinks about when they listen to music. Yeah, academics are great at that stuff. Let's get out of here.</line>
+    <line speaker="shannon">Данные, наверное, собирали? Сравнивали интонации, темы, дикцию ... Знаете, вот эти все мелкие детали, о которых никто не задумывается, когда слушают музыку. Да, учёные хорошо в этом разбираются. Идёмте отсюда.</line>
   </scene>
 
 </conversation>

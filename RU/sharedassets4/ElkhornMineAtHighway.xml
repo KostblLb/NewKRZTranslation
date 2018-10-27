@@ -3,17 +3,17 @@
   <scene name="intro">
     <setGameVar name="elkhorn-mine-found-highway" value="true"/>
     
-    <line speaker="shannon">Do you hear that? Kind of a muffled rumbling.</line>
-    <option goto="water" speaker="conway">Maybe we're near water?</option>
-    <option goto="surface" speaker="conway">Maybe we're near the surface?</option>
+    <line speaker="shannon">Вы слышали это? Я слышу урчание.</line>
+    <option goto="water" speaker="conway">Может, вода рядом?</option>
+    <option goto="surface" speaker="conway">Может, мы рядом с поверхностью?</option>
   </scene>
 
   <scene name="water" nextScene="end">
-    <line speaker="shannon">Could be. There was an underground lake around here years ago. I guess that's why they stopped digging so abruptly here.</line>
+    <line speaker="shannon">Возможно. Много лет назад здесь было подземное озеро. Наверное, пожтому они так резко перестали здесь копать.</line>
   </scene>
 
   <scene name="surface" nextScene="end">
-    <line speaker="shannon">Yeah, sounds kind of like a highway. I wonder why they stopped digging so abruptly here. Maybe they hit a pipe or something.</line>
+    <line speaker="shannon">Да, по звуку похоже на шоссе. Интересно, почему они так резко перестали здесь копать. Может, натолкнулись на трубу или что.</line>
   </scene>
 
 </conversation>

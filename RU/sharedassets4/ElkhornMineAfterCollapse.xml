@@ -3,50 +3,50 @@
   <scene name="intro">
     <setGameVar name="elkhorn-mine-collapse-happened" value="true"/>
     
-    <line speaker="shannon">Jesus! Are you alright? What the hell.</line>
-    <option goto="intro-ok" speaker="conway">I'm OK.</option>
-    <option goto="stuck-leg" speaker="conway">My leg is stuck.</option>
+    <line speaker="shannon">Боже мой! Вы целы? Чёрт побери.</line>
+    <option goto="intro-ok" speaker="conway">Всё хорошо.</option>
+    <option goto="stuck-leg" speaker="conway">Нога застряла.</option>
   </scene>
 
   <scene name="intro-ok" nextScene="pull-out">
-    <line speaker="shannon">I've got you. You're alright. Shit. Your leg is pinned. I'm going to pull you out; we have to get you out of here.</line>
+    <line speaker="shannon">Я тут. С вами всё будет хорошо. Чёрт. Ногу завалило камнями. Я вас сейчас вытащу. Давайте выбираться отсюда.</line>
   </scene>
 
   <scene name="stuck-leg" nextScene="pull-out">
-    <line speaker="shannon">Shit. OK, I'm going to pull you out; we have to get you out of here.</line>
+    <line speaker="shannon">Чёрт. Ладно, я вас сейчас вытащу. Давайте выбираться отсюда.</line>
   </scene>
 
   <scene name="pull-out">
-    <line speaker="shannon">There you go. OK. Are you hurt? Can you put any weight on that leg?</line>
-    <option goto="broken-leg" speaker="conway">It's all messed up.</option>
-    <option goto="leg-ok" speaker="conway">It's fine.</option>
+    <line speaker="shannon">Вот так. Хорошо. Вам больно? Можете перенести вес на повреждённую ногу?</line>
+    <option goto="broken-leg" speaker="conway">Её всю разворотило.</option>
+    <option goto="leg-ok" speaker="conway">Всё в порядке.</option>
   </scene>
 
   <scene name="leg-ok" nextScene="broken-leg">
-    <line speaker="shannon">Just try to stand up. Careful. I'm right here.</line>
-    <line speaker="shannon">Damn! Don't worry, I've got you. That leg is in bad shape.</line>
+    <line speaker="shannon">Просто попробуйте встать. Осторожно. Я здесь, рядом.</line>
+    <line speaker="shannon">Дерьмо! Ладно, не волнуйтесь, обопритесь на меня. Ваша нога в плачевном состоянии</line>
   </scene>
 
   <scene name="broken-leg" nextScene="lights-on">
-    <line speaker="shannon">Here, let's get you onto the tram.</line>
-    <line speaker="shannon">There you go. Now, let's see if this thing has power.</line>
+    <line speaker="shannon">Вот, давайте посадим вас на машину.</line>
+    <line speaker="shannon">Вот так. Сейчас узнаем, работает ли эта штуковина.</line>
   </scene>
 
   <scene name="lights-on">
     <triggerEvent name="activate-tram-power"/>
-    <line speaker="shannon">Well, OK. There's some luck, right? We should be able to ride this tram right out one of the auxiliary exits. If there are any. I think there are.</line>
-    <option goto="walk" speaker="conway">I can walk.</option>
-    <option goto="quest" speaker="conway">What about Weaver?</option>
-    <option goto="quest" speaker="conway">What about the on-ramp?</option>
+    <line speaker="shannon">Вроде заработало. Повезло нам, а? Она должна довезти нас прямо до вспомогательного выхода. Если они ещё остались. Я думаю, ещё остались.</line>
+    <option goto="walk" speaker="conway">Я могу идти.</option>
+    <option goto="quest" speaker="conway">А что насчёт Уивер?</option>
+    <option goto="quest" speaker="conway">А что насчёт заезда?</option>
   </scene>
 
   <scene name="walk" nextScene="quest">
-    <line speaker="shannon">No way. You need to stay off that leg, or you'll just do more damage.</line>
+    <line speaker="shannon">Нет, вам идти нельзя. Вам нельзя опираться на эту ногу, если не хотите сделать ещё хуже.</line>
   </scene>
 
   <scene name="quest" nextScene="end">
-    <line speaker="shannon">We'll just find the exit, and then figure out what to do from there. That's our first priority.</line>
-    <line speaker="shannon">So. The controls are over on your side. Let's get moving.</line>
+    <line speaker="shannon">Мы просто найдём источник тока, а там уже поймём, что делать дальше. Это наша основная задача.</line>
+    <line speaker="shannon">Так. Рычаги с вашей стороны. Поехали.</line>
   </scene>
 
 </conversation>

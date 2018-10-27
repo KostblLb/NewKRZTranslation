@@ -1,166 +1,166 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one" endingEvent="elkhorn-mine-portal-collapse">
   <scene name="intro">
-    <line speaker="shannon">That runs into the mine's P.A. system. Do you think it still works?</line>
+    <line speaker="shannon">Он подключается к системе оповещения шахты. Думаешь, он всё ещё работает?</line>
     
-    <option goto="try-pa" speaker="conway">Only one way to find out.</option>
-    <option goto="light-off" speaker="conway">The little light on the front of it is off.</option>
+    <option goto="try-pa" speaker="conway">Есть лишь один способ узнать.</option>
+    <option goto="light-off" speaker="conway">У него лампочка спереди не горит.</option>
   </scene>
 
   <scene name="try-pa">
     <triggerEvent name="elkhorn-mine-portal-conway-engages-pa"/>
     
-    <line speaker="shannon">Alright, give it a whirl!</line>
+    <line speaker="shannon">Ладно, взбодри его!</line>
     
-    <option goto="conway-pa-said-something" speaker="conway">`(Into P.A.)` Uh, is anybody down there?</option>
-    <option goto="conway-pa-said-something" speaker="conway">`(Into P.A.)` Uh, how big is this place?</option>
-    <option goto="conway-silent" speaker="conway">`(Into P.A.)` ...</option>
+    <option goto="conway-pa-said-something" speaker="conway">(В репродуктор.) Эм, есть кто живой?</option>
+    <option goto="conway-pa-said-something" speaker="conway">(В репродуктор.) Эм, насколько велико это место?</option>
+    <option goto="conway-silent" speaker="conway">(В репродуктор.) ...</option>
   </scene>
 
   <scene name="conway-pa-said-something" nextScene="light-off">
-    <line speaker="shannon">Nothing. Hm...</line>
+    <line speaker="shannon">Ничего. Хм...</line>
   </scene>
 
   <scene name="conway-silent" nextScene="light-off">
-    <line speaker="shannon">What's that, stage fright? Alright, I'll try it.</line>
-    <line speaker="shannon">`(Into P.A.)` Check one, check two, check one, two — it's not working.</line>
+    <line speaker="shannon">Что с вами, боязнь сцены? Ладно, давайте я попробую.</line>
+    <line speaker="shannon">(В репродуктор.) И раз, и два, и раз, два — не работает.</line>
   </scene>
 
   <scene name="light-off">
-    <line speaker="shannon">Oh, there's no power. Yeah, OK. Even when this old mine was up and running it was tricky to keep stuff powered.</line>
-    <line speaker="shannon">You know, the miners used to have to pay just to run the fans and the lights? Yeah, they got paid in these shitty plastic tokens — coal scrip, you know? And if you want to run the fans for a bit to clear the air up, well, you have to put a token in.</line>
-    <line speaker="shannon">My parents used to work here. So did Weaver's parents. I guess a lot of folks' parents worked here ...</line>
+    <line speaker="shannon">А, так электричества нет. Ага, ладно. Даже когда шахта ещё работала, всё равно было трудно следить за оборудованием.</line>
+    <line speaker="shannon">Знаете, шахтёрам приходилось платить хотя бы за свет и вентиляцию. Да, им платили этими сраными пластиковыми жетонами  — угольными векселями, знаете? И если тебе надо запустить вентилятор, чтобы просто прочистить воздух, что ж - опускай жетон внутрь.</line>
+    <line speaker="shannon">Мои родители здесь работали. И родители Уивер тоже. Думаю, у многих здесь работали родители ...</line>
     
-    <option goto="head-into-mine" speaker="conway">So let's just head into the mine and see what we see.</option>
-    <option goto="power-up" speaker="conway">Can we power it up?</option>
+    <option goto="head-into-mine" speaker="conway">Давайте прост пойдём внутрь и посмотрим, что мы найдём.</option>
+    <option goto="power-up" speaker="conway">Мы можем включить эту штуку?</option>
   </scene>
 
   <scene name="head-into-mine" nextScene="power-up">
-    <line speaker="shannon">No, I'd definitely feel better getting some readings first. We don't know what it's like down there anymore; years of seasonal changes and seismic irregularities could have totally reconfigured it. I'm not going in blind, and neither are you.</line>
+    <line speaker="shannon">Нет, пусть сначала меня успокоят показания приборов. Мы больше не знаем, что там сейчас творится; ежегодная смена сезонов и сейсмическая активность могли всё там изменить. Я туда вслепую не пойду и вы тоже.</line>
   </scene>
 
   <scene name="power-up" nextScene="using-the-pa-waiting">
     <triggerEvent name="elkhorn-mine-portal-shannon-moves-clear"/>    
     
-    <line speaker="shannon">I bet we just have to free up some power for the P.A. system. Everything is rationed. Here, set up that lamp of yours, and I'll go unplug these ceiling lights.</line>
+    <line speaker="shannon">Думаю, надо просто освободить немного энергии для системы оповещения. Всё строго отмерено. Вот, поставьте свою лампу, а я пока отключу освещение на потолке.</line>
   </scene>
 
   <scene name="using-the-pa-waiting">
-    <option goto="using-the-pa-intro">`(CONWAY clears his throat nervously.)`</option>
-    <option goto="using-the-pa-intro">`(CONWAY tries to think of something clever to say.)`</option>
-    <option goto="using-the-pa-intro">`(CONWAY fidgets with the change in his pocket.)`</option>        
+    <option goto="using-the-pa-intro">(КОНУЭЙ нервно прочищает горло.)</option>
+    <option goto="using-the-pa-intro">(КОНУЭЙ пытается придумать что-нибудь остроумное.)</option>
+    <option goto="using-the-pa-intro">(КОНУЭЙ перебирает монеты в кармане.)</option>        
   </scene>
   
   <scene name="using-the-pa-intro">
     <triggerEvent name="elkhorn-mine-portal-lights-off"/>
     <triggerEvent name="elkhorn-mine-portal-pa-on"/>    
     
-    <line speaker="shannon">I heard the speakers back here crackle a bit: it's on now, right? Try saying something into the mouthpiece.</line>
+    <line speaker="shannon">Я слышала, как динамики треснули. Оно работает, да? Попробуйте сказать что-нибудь в микрофон.</line>
     
-    <option goto="using-the-pa-conway-said-something" speaker="conway">`(Into P.A.)` Well ...</option>
-    <option goto="using-the-pa-two" speaker="conway">`(Into P.A.)` ...</option>
+    <option goto="using-the-pa-conway-said-something" speaker="conway">(В репродуктор.) Ну ...</option>
+    <option goto="using-the-pa-two" speaker="conway">(В репродуктор.) ...</option>
   </scene>
 
   <scene name="using-the-pa-two">
-    <line speaker="shannon">Say something!</line>
-    <option goto="using-the-pa-conway-said-something" speaker="conway">So, we're down here ...</option>
-    <option goto="using-the-pa-conway-said-something" speaker="conway">... I've got ...</option>
+    <line speaker="shannon">Говорите уже!</line>
+    <option goto="using-the-pa-conway-said-something" speaker="conway">Ну, мы стоим здесь ... </option>
+    <option goto="using-the-pa-conway-said-something" speaker="conway">... У меня есть ...</option>
   </scene>
 
   <scene name="using-the-pa-conway-said-something" nextScene="echo-delay">
-    <line speaker="shannon">OK, I hear you ...</line>
-    <line speaker="shannon">We need to measure the echo delay time and figure out how deep the tunnels run. Just make some noises into the mouthpiece.</line>
+    <line speaker="shannon">Хорошо, я вас слышу ...</line>
+    <line speaker="shannon">Нам нужно измерить задержку эха и выяснить, насколько глубоко растягиваются тоннели. Поиздавайте какие-нибудь звуки в микрофон.</line>
   </scene>
 
   <scene name="echo-delay">
-    <option event="portal-pa-sound-tapMicrophoneClip" goto="echo-delay-two">`(CONWAY taps the mouthpiece.)`</option>
-    <option event="portal-pa-sound-rubMicrophoneClip" goto="echo-delay-two">`(CONWAY rubs a finger along the surface of the mouthpiece.)`</option>
-    <option event="portal-pa-sound-clearThroatClip" goto="echo-delay-two">`(CONWAY clears his throat.)`</option>
+    <option event="portal-pa-sound-tapMicrophoneClip" goto="echo-delay-two">(КОНУЭЙ тыкает пальцем в микрофон.)</option>
+    <option event="portal-pa-sound-rubMicrophoneClip" goto="echo-delay-two">(КОНУЭЙ водит пальцем по поверхности микрофона.)</option>
+    <option event="portal-pa-sound-clearThroatClip" goto="echo-delay-two">(КОНУЭЙ прочищает горло.)</option>
   </scene>
 
   <scene name="echo-delay-two">
-    <option event="portal-pa-sound-scrapeCoinClip" goto="echo-delay-three">`(CONWAY scrapes a coin across the mouthpiece.)`</option>
-    <option event="portal-pa-sound-knockOnTableClip" goto="echo-delay-three">`(CONWAY knocks on the table.)`</option>
-    <option event="portal-pa-sound-humClip" goto="echo-delay-three">`(CONWAY hums a deep tone into the mouthpiece.)`</option>
+    <option event="portal-pa-sound-scrapeCoinClip" goto="echo-delay-three">(КОНУЭЙ царапает поверхность микрофона монетой.)</option>
+    <option event="portal-pa-sound-knockOnTableClip" goto="echo-delay-three">(КОНУЭЙ стучит по столу.)</option>
+    <option event="portal-pa-sound-humClip" goto="echo-delay-three">(КОНУЭЙ низко мычит в микрофон.)</option>
   </scene>
 
   <scene name="echo-delay-three">
-    <option event="portal-pa-sound-spitClip" goto="echo-delay-end">`(CONWAY spits.)`</option>
-    <option event="portal-pa-sound-whistleClip" goto="echo-delay-end">`(CONWAY whistles.)`</option>
-    <option event="portal-pa-sound-blowClip" goto="echo-delay-end">`(CONWAY blows on the mouthpiece.)`</option>
+    <option event="portal-pa-sound-spitClip" goto="echo-delay-end">(КОНУЭЙ плюёт.)</option>
+    <option event="portal-pa-sound-whistleClip" goto="echo-delay-end">(КОНУЭЙ насвистывает.)</option>
+    <option event="portal-pa-sound-blowClip" goto="echo-delay-end">(КОНУЭЙ дует в микрофон.)</option>
   </scene>
 
   <scene name="echo-delay-end" nextScene="spectrum-analyzer">
     <line/>
-    <line speaker="shannon">Damn, that's a long delay! These tunnels run deep. I bet some of them have ruptured or joined up with a cave system.</line>
-    <line speaker="shannon">Alright, I set up my spectrum analyzer, so just say something into the mouthpiece and we can get a sense for how narrow the mine tunnels are.</line>
-    <line speaker="shannon">Don't be shy, just say anything that comes into your head. Tell me a story about something — or what did you have for breakfast today?</line>
+    <line speaker="shannon">Чёрт, это длинное эхо! Туннели очень глубоки. Наверняка какие-то из них расширились сами по себе или соединились с пещерами.</line>
+    <line speaker="shannon">Ладно, я включила спектральный анализатор, а вы просто скажите что-нибудь в микрофон, чтобы мы поняли, насколько шахта узкая.</line>
+    <line speaker="shannon">Не стесняйтесь, говорите первое, что приходит в голову. Расскажите мне какую-нибудь историю — или чем вы сегодня завтракали?</line>
   </scene>
 
   <scene name="spectrum-analyzer">
-    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-roof-story" speaker="conway">`(Into P.A.)` Here is a story. I used to work doing roof repair.</option>
-    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-breakfast-story" speaker="conway">`(Into P.A.)` I had breakfast with Lysette.</option>
+    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-roof-story" speaker="conway">(В репродуктор.) Вот вам история. Я как-то работал починщиком крыш.</option>
+    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-breakfast-story" speaker="conway">(В репродуктор.) Сегодня я завтракал вместе с Лизеттой.</option>
   </scene>
 
   <scene name="spectrum-analyzer-roof-story">
-    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-roof-story-two" speaker="conway">My boss got a real big job out in Louisville.</option>
-    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-roof-story-two" speaker="conway">We even fixed up a church roof once.</option>
+    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-roof-story-two" speaker="conway">Моему боссу подвернулось крупное дело в Луисвилле.</option>
+    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-roof-story-two" speaker="conway">Мы даже как-то чинили крышу церкви.</option>
   </scene>
 
   <scene name="spectrum-analyzer-roof-story-two">
-    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-roof-story-three" speaker="conway">It should have taken us an hour to get there.</option>
-    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-roof-story-three" speaker="conway">It seemed like a big project, but doable.</option>
+    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-roof-story-three" speaker="conway">Нам добираться было около часа.</option>
+    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-roof-story-three" speaker="conway">Работа была большая, но выполнимая.</option>
   </scene>
 
   <scene name="spectrum-analyzer-roof-story-three">
-    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">But then a thunderstorm hit and it was too late anyhow.</option>
-    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">But I was too hung over and we ran late.</option>
+    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">А потом разразилась гроза, да и всё равно уже стемнело.</option>
+    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">Но у меня было жуткое похмелье, так что я опоздал.</option>
   </scene>
 
   <scene name="spectrum-analyzer-breakfast-story">
-    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-breakfast-story-two" speaker="conway">She made biscuits.</option>
-    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-breakfast-story-two" speaker="conway">I made some red-eye gravy.</option>
-    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-breakfast-story-two" speaker="conway">I just had coffee.</option>
+    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-breakfast-story-two" speaker="conway">Она испекла печенья.</option>
+    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-breakfast-story-two" speaker="conway">Я сделал жирную подливу.</option>
+    <option event="portal-pa-sound-storyTwoClip" goto="spectrum-analyzer-breakfast-story-two" speaker="conway">Я только пил кофе.</option>
   </scene>
 
   <scene name="spectrum-analyzer-breakfast-story-two">
-    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-breakfast-story-three" speaker="conway">She talked about her late husband, Ira.</option>
-    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-breakfast-story-three" speaker="conway">We talked about the day's work.</option>
-    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-breakfast-story-three" speaker="conway">We listened to the radio.</option>
+    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-breakfast-story-three" speaker="conway">Она говорила о своём покойном муже Ире.</option>
+    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-breakfast-story-three" speaker="conway">Мы говорили о рабочем дне.</option>
+    <option event="portal-pa-sound-storyThreeClip" goto="spectrum-analyzer-breakfast-story-three" speaker="conway">Мы слушали радио.</option>
   </scene>
 
   <scene name="spectrum-analyzer-breakfast-story-three">
-    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">Then she cleared the table.</option>
-    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">Then I loaded the truck.</option>
-    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">Then we just sat there for a bit.</option>
+    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">Потом она протёрла стол.</option>
+    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">Потом я загрузил машину.</option>
+    <option event="portal-pa-sound-storyOneClip" goto="spectrum-analyzer-end" speaker="conway">Потом мы просто сидели какое-то время.</option>
   </scene>
 
   <scene name="spectrum-analyzer-end" nextScene="breath-resonance">
     <line/>    
-    <line speaker="shannon">... got it. Looks like the tunnels are pretty cramped ... Yeah, low ceilings, hope you're ready to stoop a bit! Eh, you're probably used to it.</line>
-    <line speaker="shannon">One more test. We just need to know if the air is breathable, or if it's too thin, or too dense. Just sit real close to the mouthpiece and breathe.</line>
-    <line speaker="shannon">I'll measure the resonance of your breath with the air in the tunnels. Just try to relax. Try to breathe naturally.</line>
+    <line speaker="shannon">... вижу. Похоже, туннели довольно узкие ... Да, и низкие потолки. Придётся вам ссутулиться! А, да вы уже, наверное, привыкли.</line>
+    <line speaker="shannon">Ещё одна проверка. Надо понять, можно ли дышать тем воздухом, разряжённый ли он или слишком плотный. Просто встаньте очень близко к микрофону и дышите.</line>
+    <line speaker="shannon">Я измерю резонанс вашего дыхания с тоннелями. Расслабьтесь, старайтесь дышать ровно.</line>
   </scene>
 
   <scene name="breath-resonance">
-    <option event="portal-pa-sound-breathOneClip" goto="breath-resonance-two">`(CONWAY breathes, and thinks about the road.)`</option>
-    <option event="portal-pa-sound-breathOneClip" goto="breath-resonance-two">`(CONWAY breathes, and thinks about resting.)`</option>
+    <option event="portal-pa-sound-breathOneClip" goto="breath-resonance-two">(КОНУЭЙ вдыхает и думает о дороге.)</option>
+    <option event="portal-pa-sound-breathOneClip" goto="breath-resonance-two">(КОНУЭЙ вдыхает и думает об отдыхе.)</option>
   </scene>
 
   <scene name="breath-resonance-two">
-    <option event="portal-pa-sound-breathTwoClip" goto="breath-resonance-three">`(CONWAY breathes, and remembers a moment earlier in the day.)`</option>
-    <option event="portal-pa-sound-breathTwoClip" goto="breath-resonance-three">`(CONWAY breathes, and remembers a moment when he was younger.)`</option>
+    <option event="portal-pa-sound-breathTwoClip" goto="breath-resonance-three">(КОНУЭЙ вдыхает и вспоминает ранние события дня.)</option>
+    <option event="portal-pa-sound-breathTwoClip" goto="breath-resonance-three">(КОНУЭЙ вдыхает и вспоминает раннее детство.)</option>
   </scene>
 
   <scene name="breath-resonance-three">
     <line/>
-    <line speaker="shannon">Getting some pretty strong readings here. I think we're in good shape, but keep at it for a minute!</line>
-    <option event="portal-pa-sound-breathThreeClip" goto="breath-resonance-four">`(CONWAY breathes, and visualizes a hot meal.)`</option>
-    <option event="portal-pa-sound-breathThreeClip" goto="breath-resonance-four">`(CONWAY breathes, and visualizes a cold drink.)`</option>
+    <line speaker="shannon">Показания очень качественные. Думаю, идти можно, но вы ещё подышите минутку.</line>
+    <option event="portal-pa-sound-breathThreeClip" goto="breath-resonance-four">(КОНУЭЙ вдыхает и представляет горячий обед.)</option>
+    <option event="portal-pa-sound-breathThreeClip" goto="breath-resonance-four">(КОНУЭЙ вдыхает и представляет холодный напиток.)</option>
   </scene>
 
   <scene name="breath-resonance-four" nextScene="end">
-    <line>`(CONWAY breathes and relaxes, as a peal of feedback and loose rock engulfs him.)`</line>
+    <line>(КОНУЭЙ вдыхает и расслабляется, на него накатывают грохочащее эхо и сорвавшийся камень.)</line>
   </scene>
 
 </conversation>

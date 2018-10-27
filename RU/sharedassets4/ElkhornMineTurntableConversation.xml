@@ -9,54 +9,54 @@
   <scene name="first-visit">
     <setGameVar name="elkhorn-mine-found-turntable" value="true"/>
     
-    <line speaker="shannon">Oh, here we are. This may be hard to believe — it's hard for me to believe myself — but this whole branch was underwater last I heard.</line>
-    <option goto="safe" speaker="conway">Is it safe?</option>
-    <option goto="how-flood" speaker="conway">How did that happen?</option>
+    <line speaker="shannon">Ах, вот мы где. В это трудно поверить — я сама в это с трудом верю — но эта ветка шахт была целиком затоплена, насколько я знаю.</line>
+    <option goto="safe" speaker="conway">Здесь безопасно?</option>
+    <option goto="how-flood" speaker="conway">Как это произошло?</option>
   </scene>
 
   <scene name="safe" nextScene="flood-description">
-    <line speaker="shannon">I guess so. Looks like they finally drained it. Or maybe it just drained off on its own.</line>
+    <line speaker="shannon">Наверное. Похоже, её наконец осушили. Или может, сама по себе высохла.</line>
   </scene>
 
   <scene name="how-flood" nextScene="flood-description">
-    <line speaker="shannon">Some careless miner or some unattended machine bored through into an underground lake.</line>
+    <line speaker="shannon">Какой-то невнимательный рабочий или машина без присмотра пробурилась насквозь к подземному озеру.</line>
   </scene>
 
   <scene name="flood-description">
-    <line speaker="shannon">The water came in pretty fast, and a lot of folks got trapped in the tunnels. I only heard parts of how it went from there — sanitized for the bereaved ... you know how these big companies are.</line>
-    <line speaker="shannon">But there was gossip too. The trapped miners couldn't get the pumps going because the power was rationed, so they shut all the lights off. But even then it wasn't enough.</line>
-    <line speaker="shannon">So I guess it was dark, when they ...</line>
-    <option goto="are-you-ok" speaker="conway">Are you OK?</option>
-    <option goto="shannon-lost-people" speaker="conway">You lost some people down here, didn't you?</option>
+    <line speaker="shannon">Вода быстро стала прибывать, и многие оказались в ловушке. Дальше я слышала только обрывки истории — шахты очистили ради скорбящих ... ну вы знаете, как к нам относятся большие компании.</line>
+    <line speaker="shannon">Ещё ходили слухи. Шахтёры не могли включить насосы из-за того, что энергия была тщательно отмерена, так что они отключили свет. Но даже этого было недостаточно.</line>
+    <line speaker="shannon">Так что было темно, когда они ...</line>
+    <option goto="are-you-ok" speaker="conway">С вами всё в порядке?</option>
+    <option goto="shannon-lost-people" speaker="conway">Вы там кого-то потеряли, верно?</option>
   </scene>
 
   <scene name="are-you-ok" nextScene="turntable">
-    <line speaker="shannon">Yeah. I'm fine.</line>
+    <line speaker="shannon">Да, всё хорошо.</line>
   </scene>
 
   <scene name="shannon-lost-people" nextScene="turntable">
-    <line speaker="shannon">We all lost people down here. Well, not all of us. But most of us.</line>
+    <line speaker="shannon">Мы все там кого-то потеряли. Ну, не все. Но многие из нас.</line>
   </scene>
 
   <scene name="turntable" nextScene="turntable-controls">
-    <line speaker="shannon">It doesn't matter now. Look, this old turntable is still wired up. The controls are dead but I can use my signal generator to switch tracks, if the water hasn't damaged it too much. Or we can just keep heading down this tunnel.</line>
-    <line speaker="shannon">All this junk hanging up around the turntable is from the company store. Just junk, you know? The miners would buy it and use it to decorate the place ... or as landmarks, I guess. Hard to know which way is which down here. It's all so dim and gray.</line>
+    <line speaker="shannon">Теперь уже не важно. Смотрите, поворотный круг ещё цел. Панель управления сгорела, но я могу подавать сигналы со своего генератора для поворота рельс. Надеюсь, вода его не испортила. Если что, всегда можно просто ехать прямо.</line>
+    <line speaker="shannon">Весь этот хлам вокруг компания когда-то продавала шахтёрам. Это же просто мусор, видите? Шахтёры его покупали, чтобы украшать туннели ... ну или для ориентира. Здесь сложно разобраться, куда какой путь ведёт. Всё такое тёмное и серое.</line>
   </scene>
 
   <!-- Controls -->
   <scene name="turntable-controls" nextScene="turntable-controls-route">
-    <line>`(SHANNON connects two clip leads from her signal generator to the turntable's electrical panel.)`</line>
+    <line>(ШЭННОН прикрепляет клеммы от своего генератора к щитку поворотного круга.)</line>
     
-    <line condition="elkhorn-mine-rail-ab" speaker="shannon">We're on the track between the animal bones and the rowboat, so ...</line>
-    <line condition="elkhorn-mine-rail-cd" speaker="shannon">We're on the track between the pendulum and the casket, so ...</line>
-    <line condition="elkhorn-mine-rail-ef" speaker="shannon">We're on the track between the bat feeder and the scarecrow, so ...</line>
+    <line condition="elkhorn-mine-rail-ab" speaker="shannon">Сейчас мы между скелетами животных и байдаркой, так что ...</line>
+    <line condition="elkhorn-mine-rail-cd" speaker="shannon">Сейчас мы между маятником и гробом, так что ...</line>
+    <line condition="elkhorn-mine-rail-ef" speaker="shannon">Сейчас мы между кормушкой для летучих мышей и пугалом, так что ...</line>
   </scene>
 
   <scene name="turntable-controls-route">
-    <option condition="!elkhorn-mine-rail-ab" goto="rail-ab" speaker="shannon">`(Tuning.)` ~The animal bones and the rowboat.~</option>
-    <option condition="!elkhorn-mine-rail-cd" goto="rail-cd" speaker="shannon">`(Tuning.)` ~The pendulum and the casket.~</option>
-    <option condition="!elkhorn-mine-rail-ef" goto="rail-ef" speaker="shannon">`(Tuning.)` ~The bat feeder and the scarecrow.~</option>
-    <option goto="end" speaker="shannon">`(SHANNON disconnects the signal generator.)`</option>
+    <option condition="!elkhorn-mine-rail-ab" goto="rail-ab" speaker="shannon">(Настраивает.) ~Скелеты животных и байдарка.~</option> <!--TODO letter gothic std italic, ~ -->
+    <option condition="!elkhorn-mine-rail-cd" goto="rail-cd" speaker="shannon">(Настраивает.) ~Маятник и гроб.~</option>
+    <option condition="!elkhorn-mine-rail-ef" goto="rail-ef" speaker="shannon">(Настраивает.) ~Кормушка для летучих мышей и пугало.~</option>
+    <option goto="end" speaker="shannon">(ШЭННОН отключается от поворотного круга.)</option>
   </scene>
 
   <scene name="rail-ab">

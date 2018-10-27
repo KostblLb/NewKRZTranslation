@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one">
   <scene name="intro" nextScene="end">
-    <line>A dusty reel-to-reel tape player is stashed beneath the track, loaded with tape but starved for power.</line>
+    <line>Под путями покоится покрытый пылью бобинный проигрыватель. В него загружена плёнка, но ему не хватает энергии.</line>
   </scene>
 </conversation>

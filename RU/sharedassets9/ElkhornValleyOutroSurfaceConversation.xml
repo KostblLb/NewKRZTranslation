@@ -3,82 +3,82 @@
   <scene name="intro">
     <setGameVar name="elkhorn-valley-outro-complete" value="true"/>
     
-    <line speaker="shannon">Hey stranger.</line>
-    <option goto="didnt-think-coming" speaker="conway">I didn't think you were coming back.</option>
-    <option goto="looking-for" speaker="conway">Did you find what you were looking for?</option>
+    <line speaker="shannon">И снова здравствуйте.</line>
+    <option goto="didnt-think-coming" speaker="conway">Не думал, что вы вернётесь.</option>
+    <option goto="looking-for" speaker="conway">Нашли, что искали?</option>
   </scene>
 
   <scene name="didnt-think-coming">
-    <line speaker="shannon">Sure I was. Why wouldn't I be?</line>
-    <option goto="disappearing" speaker="conway">People just keep disappearing tonight.</option>
-    <option goto="looking-for" speaker="conway">Did you find what you were looking for?</option>
+    <line speaker="shannon">А с чего бы мне не возвращаться?</line>
+    <option goto="disappearing" speaker="conway">Сегодня люди просто исчезают на глазах.</option>
+    <option goto="looking-for" speaker="conway">Нашли, что искали?</option>
   </scene>
 
   <scene name="disappearing" nextScene="intro-more-options">
-    <line speaker="shannon">Well here I am, dammit.</line>
+    <line speaker="shannon">Да Господи, вот же я.</line>
   </scene>
 
   <scene name="looking-for" nextScene="intro-more-options">
-    <line speaker="shannon">Yeah ... Maybe. Look, we're not going to talk about that anymore, OK?</line>
+    <line speaker="shannon">Да ... Наверное. Слушайте, давайте больше не будем об этом, ладно?</line>
   </scene>
 
   <scene name="intro-more-options">
-    <option goto="intro-sorry" speaker="conway">Sorry.</option>
-    <option goto="leg" speaker="conway">Fair enough.</option>
+    <option goto="intro-sorry" speaker="conway">Извините.</option>
+    <option goto="leg" speaker="conway">Справедливо.</option>
   </scene>
 
   <scene name="intro-sorry" nextScene="leg">
-    <line speaker="shannon">No, I'm sorry. I'm just on edge. I'll be ok once I get away from this mine.</line>
+    <line speaker="shannon">Нет, это вы меня извините. Я просто под впечатлением. Мы уедем отсюда - и всё будет хорошо.</line>
   </scene>
 
   <scene name="leg">
-    <line speaker="shannon">... How's the leg?</line>
-    <option goto="leg-slow" speaker="conway">I can walk on it, but it's slow.</option>
-    <option goto="leg-painful" speaker="conway">I can walk on it, but it's painful.</option>
+    <line speaker="shannon">... Как нога?</line>
+    <option goto="leg-slow" speaker="conway">Ходить можно, но без спешки.</option>
+    <option goto="leg-painful" speaker="conway">Ходить можно, но боль ужасная.</option>
   </scene>
 
   <scene name="leg-slow" nextScene="shannon-drive">
-    <line speaker="shannon">Well, I'll try not to get too far ahead of you. You don't mind my hitching a ride, do you? I kinda got a lift out here, and wasn't sure if, uh — when I'd be heading back. I can drive.</line>
+    <line speaker="shannon"Что ж, постараюсь далеко не уходить. Не возражаете, если я с вами? Меня сюда подвезли, так что я не знаю, смогу ли — эм, когда я поеду обратно. Я могу сесть за руль.</line>
   </scene>
 
   <scene name="leg-painful" nextScene="shannon-drive">
     <setGameVar name="shannon-gave-painkillers" value="true"/>
     
-    <line speaker="shannon">Oh. I've got some painkillers here that could help you out. I got them from a friend when I sprained my wrist installing a security system. You'd better let me drive, though. They're pretty strong.</line>
+    <line speaker="shannon">Ой. У меня есть обезболивающие, они могут вам помочь. Друг мне их дал, когда я устанавливала себе систему безопасности и потянула запястье. Только лучше мне тогда сесть за руль. Они весьма сильные.</line>
   </scene>
 
   <scene name="shannon-drive">
-    <option goto="conway-will-drive" speaker="conway">I can handle it.</option>
-    <option goto="shannon-will-drive" speaker="conway">Yeah, maybe that's best.</option>
+    <option goto="conway-will-drive" speaker="conway">Я справлюсь.</option>
+    <option goto="shannon-will-drive" speaker="conway">Да, может, с ними лучше.</option>
   </scene>
 
   <scene name="conway-will-drive" nextScene="next-steps">
-    <line speaker="shannon">OK. Your decision.</line>
+    <line speaker="shannon">Ладно, как вам угодно.</line>
   </scene>
 
   <scene name="shannon-will-drive" nextScene="next-steps">
     <setGameVar name="shannon-will-drive" value="true"/>
-    <line speaker="shannon">Don't worry: I've been driving since I was nine.</line>
+    <line speaker="shannon">Не переживайте, я с девяти лет вожу.</line>
   </scene>
 
   <scene name="next-steps">
-    <option goto="zero" speaker="conway">I still need to find the |Zero|.</option>
-    <option goto="dogwood" speaker="conway">I guess I should look for another route to Dogwood Drive.</option>
+    <option goto="zero" speaker="conway">Мне всё ещё нужно добраться до |Нулевой|.</option>
+    <option goto="dogwood" speaker="conway">Видимо, нам придётся искать другой путь до Догвуд Драйв.</option>
   </scene>
 
   <scene name="zero" nextScene="find-weaver">
-    <line speaker="shannon">Well, it's like I told you: Weaver doesn't lie. If she sent you here to find your onramp, this is where you should be looking. Or maybe you just weren't listening closely enough, and that's not exactly what she said?</line>
+    <line speaker="shannon">Ну, как я уже говорила, Уивер не врёт. Если она сюда вас отправила искать заезд, то здесь он и должен быть. Или может, вы невнимательно слушали, и она совсем не это сказала?</line>
   </scene>
 
   <scene name="dogwood" nextScene="find-weaver">
-    <line speaker="shannon">Yeah, alright. Well, maybe asking Weaver about the |Zero| was the wrong place to start. Maybe we should just ask her for specific directions. Her answers are complicated enough without a layer of indirection at the question.</line>
+    <line speaker="shannon">Да, точно. Наверное, не нужно было даже спрашивать Уивер про |Нулевую|. Может, надо было спрашивать про точный адрес. Даже если она говорит прямо, всё равно получаются загадки.</line>
   </scene>
 
   <scene name="find-weaver" nextScene="end">
     <setGameVar name="elkhorn-valley-outro-complete" value="true"/>
     
-    <line speaker="shannon">I saw Weaver at my workshop. That's up north by Lake Nolin, right at Wax and Peonia, in the back of a bait shop. Pretty glamorous, right? These are the times we live in.</line>
-    <line speaker="shannon">She's either up there or back at the farmhouse. Whichever you want to head to first, just let me know.</line>
+    <line speaker="shannon">Я видела Уивер в мастерской. Это на север отсюда, вдоль озера Нолин, прямо на пересечении Вокс и Пеонии, в магазине снастей в подсобке. Роскошно, а? Вот так и живём.</line>
+    <line speaker="shannon">Она или там, или на ферме. Куда едем? Только дайте знать.</line>
   </scene>
 
 </conversation>

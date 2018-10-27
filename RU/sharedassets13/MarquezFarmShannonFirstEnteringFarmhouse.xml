@@ -3,56 +3,56 @@
   <scene name="intro">
     <setGameVar name="spoke-with-shannon-at-farmhouse" value="true"/>
     
-    <line speaker="shannon">So, this is where she was? Yeah, makes sense. This was where Weaver and her parents lived. They took out a bunch of loans, you know, and had this place built.</line>
-    <line speaker="shannon">Do you have any debts?</line>
-    <option goto="collateral" speaker="conway">I never really had any collateral.</option>
-    <option goto="apologies" speaker="conway">I owe some people some apologies.</option>
+    <line speaker="shannon">Так, значит, здесь она была? Ну, всё ясно. Они здесь жили с родителями. Они набрали кучу долгов, ну вы знаете, и построили это место.</line>
+    <line speaker="shannon">У вас есть долги?</line>
+    <option goto="collateral" speaker="conway">Честно говоря, я никогда не брал взаймы.</option>
+    <option goto="apologies" speaker="conway">Некоторым людям я должен извинения.</option>
   </scene>
 
   <scene name="apologies" nextScene="debt">
-    <line speaker="shannon">Well, you're lucky that's all you owe.</line>
+    <line speaker="shannon">Что ж, повезло вам, что это все ваши долги.</line>
   </scene>
 
   <scene name="collateral" nextScene="debt">
-    <line speaker="shannon">Something to be said for that, I guess.</line>
+    <line speaker="shannon">Наверное, это что-то да значит.</line>
   </scene>
 
   <scene name="debt">
-    <line speaker="shannon">My parents were like that. Until the company store found a way to get to them. For my dad it was tokens to run the fans and air purifiers, and for my mom it was canaries. Two solutions to the same problem, but they sure sounded different.</line>
-    <line speaker="shannon">Weaver had debt, too — a lot of it. All tuition.</line>
-    <option goto="pay-off" speaker="conway">How did she pay it off?</option>
-    <option goto="mathematician" speaker="conway">She said she was a mathematician or something?</option>
+    <line speaker="shannon">Мои родители тоже были такими. Пока компания не додумалась, как к ним подобраться. Для моего отца это были жетоны для вентиляторов и воздушных очистителей, а для матери это были канарейки. Два решения одной задачи, хотя и выглядели они по-разному.</line>
+    <line speaker="shannon">Уивер тоже была в долгах по шею. Всё на оплату обучения.</line>
+    <option goto="pay-off" speaker="conway">Как она расплатилась?</option>
+    <option goto="mathematician" speaker="conway">Она говорила, что она математик, да?</option>
   </scene>
 
   <scene name="pay-off" nextScene="bills">
-    <line speaker="shannon">She didn't. She had no income, none of them did.</line>
+    <line speaker="shannon">Никак. У неё не было дохода, да и у родителей тоже.</line>
   </scene>
 
   <scene name="mathematician" nextScene="bills">
-    <line speaker="shannon">Yeah, she studied some esoteric stuff about ... something about using math to translate between Spanish and English?</line>
+    <line speaker="shannon">Да, она занималась чем-то эзотерическим ... чем-то про использование математики для перевода с испанского на английский?</line>
   </scene>
 
   <scene name="bills">
-    <line speaker="shannon">I think eventually Weaver put those math skills to work on all the red numbers in the family checkbook, and got a clear sense of just how hopeless their situation was.</line>
-    <line speaker="shannon">So she left. I guess she just drove away in the middle of the night — they woke up in the morning and the car was gone. Never came back.</line>
-    <line speaker="shannon">Until tonight.</line>
+    <line speaker="shannon">Думаю, в конце концов она применила свои математические навыки к красным записям в семейном бюджете и поняла, насколько они были безнадёжны.</line>
+    <line speaker="shannon">И она уехала. Думаю, она уехала посреди ночи — родители проснулись, а машины уже не было. Так и не вернулась.</line>
+    <line speaker="shannon">До сего вечера.</line>
     
-    <option goto="someone-else" speaker="conway">Someone else told me to come here and talk to her.</option>
-    <option goto="old-tv" speaker="conway">She seemed really focused on that old TV.</option>
-    <option goto="happy-to-see-her" speaker="conway">Were you happy to see her?</option>
+    <option goto="someone-else" speaker="conway">Один человек сказал мне съездить сюда и поговорить с ней.</option>
+    <option goto="old-tv" speaker="conway">Кажется, её очень привлёк этот телевизор.</option>
+    <option goto="happy-to-see-her" speaker="conway">Ты была рада увидеться с ней снова?</option>
   </scene>
 
   <scene name="someone-else" nextScene="old-tv">
-    <line speaker="shannon">Huh. OK. I guess we two aren't the only ones she's been talking to.</line>
+    <line speaker="shannon">Хм. Хорошо. Видимо, мы не первые, с кем она говорила.</line>
   </scene>
 
   <scene name="happy-to-see-her" nextScene="old-tv">
-    <line speaker="shannon">I don't know. It was so sudden and ... it wasn't like a reunion. She just appeared. She —</line>
+    <line speaker="shannon">Не знаю. Всё было так внезапно и ... я не почувствовала воссоединения. Она просто появилась. Она —</line>
   </scene>
 
   <scene name="old-tv" nextScene="end">
-    <line speaker="shannon">Oh. That's not something you see every day. That old TV right there, well, `that` is a damned antique for you. I had a model like that in the shop once, but I had to sell it off to make rent. Most painful decision I ever made.</line>
-    <line speaker="shannon">Say, do you mind if I open it up? Looks like the dials are all corroded, and the screen is leaking light a bit. Come on — I bet Lysette would never forgive you for letting a specimen like that fall into disrepair.</line>
+    <line speaker="shannon">Ой. Он тут всегда стоял. Вот этот старый телевизор, вот ЭТО и есть настоящий антиквариат. У меня в мастерской была такая модель, но пришлось её продать, чтобы заплатить аренду. Самое болезненное решение в моей жизни.</line>
+    <line speaker="shannon">Послушайте, можно я его вскрою? Похоже, тут всё разъела коррозия, и экран немного фонит. Давайте, Лизетта бы не простила вас, если б вы предали забвению такую редкость.</line>
   </scene>
 
 </conversation>

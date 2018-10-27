@@ -3,157 +3,157 @@
   <scene name="intro">
     <setGameVar name="met-shannon" value="true"/>
     
-    <line speaker="conway">Excuse me, ma'am, I saw the light was on and I'm looking for the on-ramp to —</line>
-    <option goto="kick-off-property" speaker="shannon">Are you here to kick me off the property?</option>
-    <option goto="believe-in-ghosts" speaker="shannon">Do you believe in ghosts?</option>
+    <line speaker="conway">Простите, мэм, я увидел свет в тоннеле, я ищу заезд на —</line>
+    <option goto="kick-off-property" speaker="shannon">Вы пришли выгонять меня с частной территории?</option>
+    <option goto="believe-in-ghosts" speaker="shannon">Вы верите в призраков?</option>
   </scene>
 
   <scene name="kick-off-property">
-    <line speaker="conway">Oh, no, no ... I guess you don't belong here either, do you?</line>
-    <option goto="power-company" speaker="shannon">Do you work for the power company?</option>
-    <option goto="wandering" speaker="shannon">Are you just out wandering?</option>
+    <line speaker="conway">О, нет-нет ... Вы тоже не здешняя, да?</line>
+    <option goto="power-company" speaker="shannon">Вы работаете на энергетиков?</option>
+    <option goto="wandering" speaker="shannon">Вы путешествуете?</option>
   </scene>
 
   <scene name="power-company">
-    <line speaker="conway">The power company? Oh, no, no. I once worked for an electrician for a few weeks, but I sort of drifted on before I really learned anything.</line>
-    <option goto="wandering" speaker="shannon">I get it. You're a nomad.</option>
-    <option goto="drunk" speaker="shannon">I get it. You're a drunk.</option>
+    <line speaker="conway">На энергетиков? О, нет, нет. Я как-то проработал пару недель электриком, но я как бы сменил место прежде чем чему-то научиться.</line>
+    <option goto="wandering" speaker="shannon">Вижу. Вы кочевник!</option>
+    <option goto="drunk" speaker="shannon">Вижу. Вы пьяница.</option>
   </scene>
 
   <scene name="wandering">
-    <line speaker="conway">Ha. Well, I do drive a lot. Just me and the road mostly, when the sun is out.</line>
+    <line speaker="conway">Ха. Ну, я правда много езжу. В основном только я и дорога, когда солнце светит.</line>
     
-    <option goto="lonely" speaker="shannon">You sound lonely.</option>
-    <option goto="conway-business-in-mine" speaker="shannon">Is that your job? Driving?</option>
+    <option goto="lonely" speaker="shannon">У вас одинокий голос.</option>
+    <option goto="conway-business-in-mine" speaker="shannon">Это ваша работа? Вы водитель?</option>
   </scene>
 
   <scene name="lonely" nextScene="conway-business-in-mine">
-    <line speaker="conway">Nah, I get by.</line>
+    <line speaker="conway">Не-а, я в порядке.</line>
   </scene>
 
   <scene name="drunk" nextScene="conway-business-in-mine">
-    <line speaker="conway">Nah, I do a pretty good job now, I keep sober. I've got a gig.</line>
+    <line speaker="conway">Не-а, у меня теперь хорошая работа, так что я в завязке. И у меня крупное дело.</line>
   </scene>
 
   <scene name="believe-in-ghosts">
-    <line speaker="conway">Well, let's see ... I do believe a place can be haunted, if that's what you mean.</line>
+    <line speaker="conway">Ну, если подумать ... Я верю, что какое-то место может быть одержимым, если вы об этом.</line>
     
-    <option goto="person-be-haunted" speaker="shannon">What about a person? Can a person be haunted?</option>
-    <option goto="not-place-haunted" speaker="shannon">No, that's not what I mean.</option>
+    <option goto="person-be-haunted" speaker="shannon">А человек? Человек может быть одержимым?</option>
+    <option goto="not-place-haunted" speaker="shannon">Нет, я не об этом.</option>
   </scene>
 
   <scene name="person-be-haunted">
-    <line speaker="conway">Sure, I guess a person could. Sometimes I feel haunted myself.</line>
+    <line speaker="conway">Конечно, и человек тоже может, наверное. Я иногда сам чувствую себя одержимым.</line>
     
-    <option goto="what-haunts-conway" speaker="shannon">What haunts you?</option>
-    <option goto="shannon-haunted-too" speaker="shannon">Me too.</option>
+    <option goto="what-haunts-conway" speaker="shannon">Одержимым чем?</option>
+    <option goto="shannon-haunted-too" speaker="shannon">Я тоже.</option>
   </scene>
 
   <scene name="what-haunts-conway" nextScene="conway-business-in-mine">
-    <line speaker="conway">Uh ... bad decisions, I guess. Wasted youth. Ha. Well, look ...</line>
+    <line speaker="conway">Эм-м ... плохими решениями, наверное. Потерянной молодостью. Ха. Так, это ...</line>
   </scene>
 
   <scene name="not-place-haunted">
-    <line speaker="conway">Well, OK, I've run across a few people who acted like ghosts. Kinda there, kinda ... somewhere else.</line>
+    <line speaker="conway">Ну, хорошо, я встречался с людьми, которые вели себя как призраки. Вроде здесь, а вроде и ... ещё где-то.</line>
     
-    <option goto="shannon-haunted-too" speaker="shannon">Me too.</option>
-    <option goto="conway-business-in-mine" speaker="shannon">So what brings you to this old mine tonight?</option>
+    <option goto="shannon-haunted-too" speaker="shannon">Я тоже.</option>
+    <option goto="conway-business-in-mine" speaker="shannon">Так что привело вас в шахты?</option>
   </scene>
 
   <scene name="shannon-haunted-too">
-    <line speaker="conway">Oh yeah? Did, uh ... is that what lead you down here?</line>
-    <option goto="shannon-ghosts-led-down" speaker="shannon">Yes.</option>
-    <option goto="shannon-doesnt-want-to-talk-about-ghosts" speaker="shannon">I don't want to talk about it anymore.</option>
+    <line speaker="conway">О да? Вы эм ... Это привело вас в шахты?</line>
+    <option goto="shannon-ghosts-led-down" speaker="shannon">Да.</option>
+    <option goto="shannon-doesnt-want-to-talk-about-ghosts" speaker="shannon">Я больше не хочу говорить об этом.</option>
   </scene>
 
   <scene name="shannon-ghosts-led-down" nextScene="conway-business-in-mine">
-    <line speaker="conway">So. I guess this place must be pretty important. Maybe I'm in the right place after all.</line>
+    <line speaker="conway">Так, значит, это важное место. Может, я на самом деле приехал куда надо.</line>
   </scene>
 
   <scene name="shannon-doesnt-want-to-talk-about-ghosts" nextScene="conway-business-in-mine">
-    <line speaker="conway">OK. You seem like you've got a lot on your mind. I don't mean to bother you. It's just ...</line>
+    <line speaker="conway">ОК. У вас, кажется, своих забот полно. Не хотел вас беспокоить. Просто ...</line>
   </scene>
 
   <scene name="conway-business-in-mine">
-    <line speaker="conway">Here's what it is: I drive deliveries for a shop called Lysette's Antiques, and I'm out trying to finish this job.</line>
-    <option goto="deliver-to-mine" speaker="shannon">You're making a delivery to the mine?</option>
-    <option goto="whats-in-delivery" speaker="shannon">What kind of stuff are you hauling?</option>
+    <line speaker="conway">Я что хочу сказать: я доставляю посылки для салона &quot;Антиквариат Лизетты&quot;, и я пытаюсь закончить доставку.</line>
+    <option goto="deliver-to-mine" speaker="shannon">У вас заказ в шахту?</option>
+    <option goto="whats-in-delivery" speaker="shannon">Что у вас в посылке?</option>
   </scene>
 
   <scene name="deliver-to-mine" nextScene="looking-for-dogwood">
-    <line speaker="conway">Oh, uh ... no.</line>
+    <line speaker="conway">О, эм ... нет.</line>
   </scene>
 
   <scene name="looking-for-dogwood" nextScene="switch">
-    <line speaker="conway">I have a delivery for &quot;5 Dogwood Drive,&quot; and I can't remember ever seeing that address before. Now I heard I need to take a highway called the |Zero|.</line>
-    <line speaker="conway">So I met this young lady, name of Weaver Márquez, and she sent me this way, and so here I am. Uncommon kind of place for an on-ramp, but that's what it's been like so far anyway with —</line>
+    <line speaker="conway">У меня доставка на &quot;Догвуд Драйв, 5&quot;, и я не помню, чтобы хотя бы слышал этот адрес раньше. А теперь, как мне сказали, мне надо ехать на |Нулевую|.</line>
+    <line speaker="conway">Я встретил одну молодую леди по имени Уивер Маркез. Она направила меня сюда, и вот я здесь. Интересное место для заезда на шоссе, но похоже, здесь всё такое —</line>
   </scene>
 
   <scene name="whats-in-delivery" nextScene="looking-for-dogwood">
-    <line speaker="conway">Antiques. Good stuff. Lysette has a sharp eye, for the little good it's done her lately. You know, it's just one recession after another, everybody's selling their old stuff cheap but nobody's really buying ...</line>
+    <line speaker="conway">Антиквариат. Неплохой. У Лизетты глаз острый, но уже не то что раньше. Знаете, в последнее время сплошные спады. Все хотят продать своё добро подешевле, но не покупает никто ...</line>
   </scene>
 
   <scene name="switch">
-    <line speaker="shannon">What?</line>
+    <line speaker="shannon">Что?</line>
     
-    <option goto="know-weaver" speaker="conway">Weaver Márquez. Do you know her?</option>
-    <option goto="zero-nearby" speaker="conway">The |Zero|, is that around here?</option>
+    <option goto="know-weaver" speaker="conway">Уивер Маркез. Вы знакомы?</option>
+    <option goto="zero-nearby" speaker="conway">|Нулевая|, до неё долго добираться?</option>
   </scene>
 
   <scene name="know-weaver">
-    <line speaker="shannon">So you saw her. Tonight. I know Weaver. She was ... she's my cousin. I'm Shannon Márquez.</line>
+    <line speaker="shannon">Так вы её видели. Сегодня. Я знаю Уивер. Она была ... Она моя кузина. Я Шэннон Маркез.</line>
     
-    <option goto="fixes-televisions" speaker="conway">Oh, you're the one who fixes televisions.</option>
-    <option goto="weaver-doesnt-lie" speaker="conway">I get it. She tricked me.</option>
+    <option goto="fixes-televisions" speaker="conway">О, так это вы чините телевизоры.</option>
+    <option goto="weaver-doesnt-lie" speaker="conway">Всё ясно. Меня одурачили.</option>
   </scene>
 
   <scene name="fixes-televisions" nextScene="weaver-doesnt-lie">
-    <line speaker="shannon">That's right. Did she tell you that, too? Of course she did.</line>
+    <line speaker="shannon">Точно. Она вам и об этом рассказала? Ну конечно.</line>
   </scene>
 
   <scene name="zero-nearby" nextScene="weaver-doesnt-lie">
-    <line speaker="shannon">I've never heard of the damned &quot;|Zero|.&quot; That doesn't sound like a real highway. But I know Weaver. I've known her all my life, she was ... she's my cousin. I'm Shannon Márquez.</line>
+    <line speaker="shannon">Ни разу не слышала про эту вашу &quot;|Нулевую|.&quot; Не похоже на название реальной автострады. Но Уивер я знаю. Я знала её всю свою жизнь, она была ... она моя кузина. Я Шэннон Маркез.</line>
   </scene>
 
   <scene name="weaver-doesnt-lie">
-    <line speaker="shannon">Weaver doesn't lie. One time, when we were younger, she told me my dad had been in a terrible car wreck. There was crushed metal everywhere, and we'd be hearing it echo through the house for years, she said. I was very upset, crying, and then my dad walked in the door, just come back from a trip to the junkyard collecting scrap metal to fashion into wind chimes.</line>
-    <line speaker="shannon">I was angry, but she said it wasn't a joke, and it wasn't a lie. At the time I thought she meant it as a riddle or a puzzle.</line>
-    <line speaker="shannon">But Weaver's not a puzzle. She's a mystery.</line>
+    <line speaker="shannon">Уивер не будет врать. Когда мы были маленькими, она мне рассказала, что отец попал в ужасную аварию. Что везде были железные обломки, и что скрежет металла будет эхом раздаваться по нашему дому год за годом. Я очень расстроилась, зарыдала, и тут вошёл папа, только что вернулся со свалки. Он собирал металл для ветряной подвески.</line>
+    <line speaker="shannon">Я разозлилась, но она сказала, что это не шутка, и что она не врёт. В то время я думала, что это какая-то загадка.</line>
+    <line speaker="shannon">Но Уивер не загадка. Она - тайна.</line>
     
-    <option goto="zero-somewhere" speaker="conway">So, maybe the |Zero| `is` down here somewhere.</option>
-    <option goto="shannon-business" speaker="conway">So, what are `you` doing down here, Shannon?</option>
+    <option goto="zero-somewhere" speaker="conway">Так, может, |Нулевая| и правда где-то здесь.</option> <!-- is курсивом -->
+    <option goto="shannon-business" speaker="conway">Так, а вы что здесь делаете, Шэннон?</option> <!-- you курсивом -->
   </scene>
 
   <scene name="zero-somewhere" nextScene="shannon-business">
-    <line speaker="shannon">Maybe it is. Well, I won't mind the company. I've got business down here, myself.</line>
+    <line speaker="shannon">Может быть. Ну, я не прочь компании. У меня самой здесь есть дело.</line>
   </scene>
 
   <scene name="shannon-business">
-    <line speaker="shannon">I talked to Weaver earlier this evening, too. Or anyway, she talked to me; it's hard to tell if she's listening sometimes.</line>
-    <line speaker="shannon">Weaver told me I had to come down here to the old Elkhorn Mine. She said I'd find ... something I've been looking for.</line>
+    <line speaker="shannon">Я тоже говорила с Уивер сегодня вечером. Ну или скорее она со мной говорила; иногда трудно понять, слушает ли она.</line>
+    <line speaker="shannon">Уивер сказала, что я должна приехать в старую шахту Элкхорн. Сказала, что я найду ... что-то, что я ищу.</line>
     
-    <option goto="where-was-weaver" speaker="conway">Where did you see Weaver?</option>
-    <option goto="what-shannon-is-looking-for" speaker="conway">What are you looking for?</option>
+    <option goto="where-was-weaver" speaker="conway">Где вы видели Уивер?</option>
+    <option goto="what-shannon-is-looking-for" speaker="conway">Что вы ищете?</option>
   </scene>
 
   <scene name="where-was-weaver" nextScene="next-steps">
-    <line speaker="shannon">At my workshop. She just appeared. I hadn't seen her since ... a long time.</line>
+    <line speaker="shannon">В мастерской. Она появилась из ниоткуда. Я не видела её с ... давних пор.</line>
   </scene>
 
   <scene name="what-shannon-is-looking-for" nextScene="next-steps">
-    <line speaker="shannon">I'm not exactly sure. I have a few ideas ... I'll know it when I see it.</line>
+    <line speaker="shannon">Не уверена. У меня есть кое-какие соображения ... Я пойму, когда увижу.</line>
   </scene>
 
   <scene name="next-steps">
-    <line speaker="shannon">It's not such a bad thing, you showing up now. All told, I'd rather not go down there alone. Your dog should stay up here, though. It's no place for a dog.</line>
-    <line speaker="shannon">This is an old mine. It runs pretty deep and tangled. If we're going to go down into it, find your on-ramp and whatever else, we've got to keep our bearings. I don't want to get turned around.</line>
-    <line speaker="shannon">I've got some gear here to measure conductivity, frequency response, stuff like that. Maybe we can find a way to put a signal out ahead, do some analysis and figure out what kind of topology we're up against.</line>
+    <line speaker="shannon">Совсем неплохо, что вы появились здесь. Мне, знаете, лучше не идти в одиночку. Хотя вашей собаке лучше остаться здесь. Это не место для собак.</line>
+    <line speaker="shannon">Это старая шахта. Её ходы глубокие и запутанные. Если мы будем спускаться, искать ваш заезд или что там ещё, надо брать вещи с собой. Я не хочу по ней потом возвращаться.</line>
+    <line speaker="shannon">У меня с собой оборудование для измерения проводимости, частоты отклика и прочего. Может, есть способ послать сигнал вдаль, а потом проанализировать ответ и построить топологию шахты.</line>
     
-    <option goto="topology" speaker="conway">Topology. OK.</option>
-    <option goto="end" speaker="conway">Sure, let's look around.</option>
+    <option goto="topology" speaker="conway">Топология. Да.</option>
+    <option goto="end" speaker="conway">Ага, давайте осмотримся.</option>
   </scene>
 
   <scene name="topology" nextScene="end">
-    <line speaker="shannon">Topology. That's the science of continuous space, my friend. The way this twisty maze of passages fits together.</line>
+    <line speaker="shannon">Топология, мой друг, - это наука о непрерывных пространствах. О том, как эти витиеватые лабиринты тоннелей связываются воедино.</line>
   </scene>
 </conversation>

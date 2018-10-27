@@ -3,46 +3,46 @@
   <scene name="intro" nextScene="exterior">
     <setGameVar name="overworld-visited-shannons-workshop" value="true"/>
     
-    <line>Conway and Shannon pull into the bait shop parking lot.</line>
+    <line>Конуэй паркуется возле рыболовного магазина.</line>
   </scene>
 
   <scene name="exterior">
-    <line>Vaulted above the road on a thin steel bar, a handwritten sign reads &quot;LIVE BAIT. MINNOWS SMALL AND ALSO LARGE FOR STRIPERS. NIGHTCRAWLERS. CHIPS AND BEER.&quot; A green flyer hangs loosely from a bit of masking tape at eye-level.</line>
-    <line>To the shop's right, a dirt parking lot sprawls unevenly into grass and then eventually trees.</line>
-    <line>The bait shop is closed.</line>
+    <line>Над дорогой на тонком стальном шесте поднимается вывеска, на которой от руки выведено: &quot;ЖИВАЯ НАЖИВКА. МАЛАЯ БЛЕСНА И БОЛЬШАЯ НА ОКУНЯ. ЧЕРВЯКИ. ЧИПСЫ И ПИВО.&quot; На уровне глаз болтается зелёная листовка, приклеенная на малярный скотч.</line>
+    <line>Справа от магазина парковка смешивается с землёй, травой и в конечном итоге врастает в деревья.</line>
+    <line>Магазин закрыт.</line>
     
-    <option goto="workshop-entrance" insertedText="Conway and Shannon walk around to the side of the building into the workshop.">Enter the side door to Shannon's workshop.</option>
-    <option goto="end" insertedText="Conway and Shannon drive away.">Drive away.</option>
+    <option goto="workshop-entrance" insertedText="Конуэй и Шэннон обходят рыболовный магазин сзади и заходят в мастерскую.">Войти в мастерскую Шэннон через чёрный ход.</option>
+    <option goto="end" insertedText="Конуэй и Шэннон уезжают.">Уехать.</option>
   </scene>
 
   <scene name="workshop-entrance" nextScene="workshop-entrance-options">
-    <line>The walls are lined with cheap metal shelves, loaded precariously with vacuum tubes, awkwardly-shaped metal casings, and coffee cans full of electronic components.</line>
-    <line pause="false">Shannon leads Conway to the back of the room, where a few TV sets in various states of disassembly are set up on a rough wooden table. She flips the switch on the power strip they're all plugged into, and the TV sets tremble to life.</line>
+    <line>К стенам приделаны дешёвые металлические полки, на которых аккуратно разложены вакуумные трубки, металлические корпуса странных форм, и банки из-под кофе, доверху наполненные радиодеталями.</line>
+    <line pause="false">Шэннон отводит Конуэя в заднюю часть мастерской, где на деревянном столе собрались телевизоры на разной стадии разборки. Она щёлкает выключателем, провода от которого уходят в телевизоры, и каждый из них начинает жужжать, наполняясь жизнью.</line>
   </scene>
 
   <scene name="workshop-entrance-options">
-    <option goto="watch-tv" insertedText="Conway watches the TV sets.">Watch the TV sets.</option>
-    <option goto="ask-about-weaver" insertedText="Conway asks Shannon where she saw Weaver.">Ask Shannon about Weaver.</option>
-    <option goto="exterior" insertedText="Conway and Shannon walk back out of the workshop.">Leave the workshop.</option>
+    <option goto="watch-tv" insertedText="Конуэй смотрит на телевизоры.">Смотреть на телевизоры.</option>
+    <option goto="ask-about-weaver" insertedText="Конуэй спрашивает Шэннон, где она видела Уивер.">Спросить Шэннон об Уивер.</option>
+    <option goto="exterior" insertedText="Конуэй и Шэннон уходят из мастерской.">Покинуть мастерскую.</option>
   </scene>
 
   <scene name="watch-tv" nextScene="workshop-entrance-options">
-    <line pause="false">A ghostly white wobble flickers along one screen in a rhythmic pattern. Another is just snow. A third — a small security monitor in the middle of the table — is oscillating between different shades of black.</line>
+    <line pause="false">Призрачная белая рябь покрывает один экран и ритмично мерцает. На другом - только белый снег. На третьем - маленьком мониторе наблюдения в середине стола - плавно перетекают друг в друга оттенки чёрного.</line>
   </scene>
 
   <scene name="ask-about-weaver">
-    <line>Shannon points to a small security monitor on the table. The image on the screen is just black, but it seems to be fading slowly — almost imperceptibly — between different shades of black.</line>
-    <line>Shannon tweaks a few knobs on the side of the monitor, but the picture doesn't change.</line>
+    <line>Шэннон указывает на маленький монитор наблюдения на столе. На мониторе просто горит чёрный экран, но кажется, будто он медленно — почти незаметно — переливается разными оттенками чёрного.</line>
+    <line>Шэннон подкручивает ручки на боку монитора, но картинка не меняется.</line>
     
-    <option goto="stare-at-monitor" insertedText="Conway stares directly at the security monitor.">Stare at the security monitor.</option>
-    <option goto="exterior" insertedText="Conway and Shannon walk back out of the workshop.">Leave the workshop.</option>
+    <option goto="stare-at-monitor" insertedText="Конуэй глядит прямо в монитор наблюдения.">Смотреть в монитор наблюдения.</option>
+    <option goto="exterior" insertedText="Конуэй и Шэннон уходят из мастерской.">Покинуть мастерскую.</option>
   </scene>
 
   <scene name="stare-at-monitor" nextScene="end">
     <setGameVar name="overworld-completed-shannons-workshop" value="true"/>
     
-    <line>The screen is a cavernous black. It hums and swells at the pace of the tide. Conway loses track of the workshop's walls — they could be inches away, or miles. He is adrift on black water, traveling swiftly toward a rocky shore. There should be a lighthouse or a buoy by these rocks — it's too dangerous.</line>
-    <line>Shannon switches off the power strip. Weaver is not here.</line>
+    <line>Экран чёрный как бездна. Он подвывает и шипит, будто приливные волны. Конуэй теряет ощущение расстояния; эти стены вокруг - они в двух шагах от него или за километр? Он лежит на поверхности тёмной воды, и она нежно несёт его к скалистому берегу. На этом берегу точно должен стоять маяк или должны быть буйки вокруг - он слишком опасен.</line>
+    <line>Шэннон выключает питание. Уивер здесь нет.</line>
   </scene>
 
 </conversation>

@@ -1,18 +1,18 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one" endingEvent="marquez-farm-enter-krz">
   <scene name="intro" nextScene="tuning">
-    <line speaker="shannon">Oh yeah, these tubes are all messed up. Look like they've been in a swamp, or a cave or something — there's moss growing on this one!</line>
-    <line speaker="shannon">That's OK, I have a few spares in my bag here ... Here, I pulled this one out of an old computer monitor. Just needs to be recalibrated a bit ...</line>
+    <line speaker="shannon">О да, электроника ни к чёрту. Он как будто побывал в болоте, или в пещере, или ещё где - здесь же всё мхом поросло!</line>
+    <line speaker="shannon">Ничего страшного. У меня есть запчасти в сумке ... Вот, вытащила из старого компьютерного монитора. Просто немного подрегулируем ...</line>
   </scene>
 
   <scene name="tuning">
-    <line speaker="shannon">OK, that oughta ... should be seeing something now; are you seeing anything?</line>
-    <option goto="tuning-more" speaker="conway">Hey that looks dangerous, what you're doing there.</option>
-    <option goto="tuning-more" speaker="conway">Uh, little bit to the left ... ?</option>
+    <line speaker="shannon">Окей, сейчас должно ... сейчас должно быть что-то видно. Вы что-нибудь видите?</line>
+    <option goto="tuning-more" speaker="conway">Эй, а вам не кажется, что это не безопасно?</option>
+    <option goto="tuning-more" speaker="conway">Эм, немного влево ... ?</option>
   </scene>
 
   <scene name="tuning-more" nextScene="end">
-    <line speaker="shannon">Damn, OK ... Here, I think the contacts are dirty. Now don't go telling my customers I clean off old vacuum tubes with spit ...</line>
-    <line speaker="shannon">There, just gotta turn it north/south, and —</line>
+    <line speaker="shannon">Чёрт, ладно ... Так, думаю, контакты загрязнились. Только не говорите теперь моим клиентам, что я чищу электронику слюнями ...</line>
+    <line speaker="shannon">Вот, теперь надо только повернуть на север/юг и —</line>
   </scene>
 </conversation>

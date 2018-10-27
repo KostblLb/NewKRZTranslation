@@ -3,21 +3,21 @@
   <scene name="intro">
     <setGameVar name="shannon-talked-about-graveyard" value="true"/>
     
-    <line speaker="shannon">There's nobody buried here, you know. It's decorative, I guess ...</line>
-    <line speaker="shannon">Or it's art or something, I don't know.</line>
-    <option goto="decorative-graveyard" speaker="conway">A decorative graveyard?</option>
-    <option goto="headstone-names" speaker="conway">What are the names on the headstones?</option>
+    <line speaker="shannon">Знаете, а здесь ведь никто не лежит. Они здесь для украшения ...</line>
+    <line speaker="shannon">Может, это инсталляция какая-нибудь, не знаю.</line>
+    <option goto="decorative-graveyard" speaker="conway">Декоративное кладбище?</option>
+    <option goto="headstone-names" speaker="conway">Чьи имена на надгробиях?</option>
   </scene>
 
   <scene name="decorative-graveyard" nextScene="marquez-headstone">
-    <line speaker="shannon">Weaver's folks were like that. Not morbid, I mean, but strange. Careless with tragic ideas.</line>
+    <line speaker="shannon">Да, родители Уивер были такие. Не больные, в смысле, просто странные. Беспечные люди, любящие всё трагичное.</line>
   </scene>
 
   <scene name="headstone-names" nextScene="marquez-headstone">
-    <line speaker="shannon">&quot;Nowakowski,&quot; &quot;Padilla&quot; ... I don't know those names. Maybe the people who lived here before? I know when they bought this property it already had a house and everything. Or maybe they have some other symbolic meaning.</line>
+    <line speaker="shannon">&quot;Новаковски&quot;, &quot;Падилла&quot; ... Я не знаю, кто это. Может, те, кто жил здесь раньше? Я знаю, что когда они купили участок, здесь уже был дом и всё прилежащее. А может, у надгробий есть ещё какой-то символический смысл.</line>
   </scene>
 
   <scene name="marquez-headstone" nextScene="end">
-    <line speaker="shannon">Oh, and look at that headstone: &quot;Márquez.&quot; I used to think that was for my parents. Now I don't know.</line>
+    <line speaker="shannon">О, а вы сюда посмотрите: &quot;Маркез.&quot; Я думала, что это для моих родителей. Теперь даже не знаю.</line>
   </scene>
 </conversation>

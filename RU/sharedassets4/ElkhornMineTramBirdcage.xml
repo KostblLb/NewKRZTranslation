@@ -3,8 +3,8 @@
   <scene name="intro" nextScene="end">
     <setGameVar name="elkhorn-mine-found-tram-birdcage" value="true"/>
     
-    <line>A paper tag hangs from the birdcage by a string: &quot;*CANARY 25 TOKENS*.&quot;</line>
-    <line>Canaries sold at the company store? Did they also sell respirators? No bones in the cage. The bird must have been set free. Or maybe the cage was cleaned.</line>
-    <line>There are cardinals at the Louisville Zoo. And other birds: ostriches, eagles ... emus ... no canaries. Too common? Too small, maybe. But they have starlings. Starlings aren't much bigger than canaries.</line>
+    <line>С птичьей клетки на верёвочке свисает бирка: &quot;КАНАРЕЙКА 25 ЖЕТОНОВ.&quot;</line> <!--bold-->
+    <line>Канареек продавали в магазине компании? А респираторы тоже продавали? Костей нет. Должно быть, птицу освободили. Или может, клетку вычистили.</line>
+    <line>В Луисвилльском зоопарке есть красные кардиналы. А ещё есть страусы, орлы ... эму ... канареек нет. Недостаточно редкие? Или слишком маленькие. Но у них есть скворцы. Скворцы не намного больше канареек.</line>
   </scene>
 </conversation>

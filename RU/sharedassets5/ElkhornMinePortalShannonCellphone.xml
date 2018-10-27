@@ -1,36 +1,36 @@
 <?xml-stylesheet type="text/xsl" href="http://kentuckyroutezero.com/KRZConversation.xslt"?>
 <conversation act="one" endingEvent="elkhorn-mine-portal-shannon-pockets-phone">
   <scene name="intro">
-    <line>`(SHANNON speaks into the large brick cell phone held up to her ear.)`</line>
-    <option goto="phone-two" speaker="shannon">It's two-hundred dollars for two weeks.</option>
-    <option goto="phone-two" speaker="shannon">Yeah, it kind of `is` an emergency.</option>
-    <option goto="phone-two" speaker="shannon">No, it's fine, I'll figure it out.</option>
+    <line>(ШЭННОН говорит в большой мобильный телефон - кирпич, удерживая его возле уха.)</line>
+    <option goto="phone-two" speaker="shannon">Это обойдётся в две сотни долларов за две недели.</option>
+    <option goto="phone-two" speaker="shannon">Да, это ДЕЙСТВИТЕЛЬНО срочно.</option> <!-- курсив (it) -->
+    <option goto="phone-two" speaker="shannon">Нет, всё хорошо. Я разберусь.</option>
   </scene>
 
   <scene name="phone-two">
-    <line speaker="phone">`(Inaudible.)`</line>
-    <option goto="phone-three" speaker="shannon">That's true.</option>
-    <option goto="phone-three" speaker="shannon">I guess he can't kick me out for another week or two.</option>
-    <option goto="phone-three" speaker="shannon">But can I trust him not to just change the locks?</option>
+    <line speaker="phone">(Неразборчиво.)</line>
+    <option goto="phone-three" speaker="shannon">Это правда.</option>
+    <option goto="phone-three" speaker="shannon">Не думаю, что он меня выгонит за неделю или две.</option>
+    <option goto="phone-three" speaker="shannon">Но могу ли я надеяться, что он не сменит замки?</option>
   </scene>
 
   <scene name="phone-three">
-    <line speaker="phone">`(Inaudible.)`</line>
-    <option goto="phone-four" speaker="shannon">Yes, and I appreciate that, but —</option>
-    <option goto="phone-four" speaker="shannon">OK, you're right.</option>
-    <option goto="hang-up-phone" speaker="shannon">Just ... never mind. I have to go. Sorry.</option>
+    <line speaker="phone">(Неразборчиво)</line>
+    <option goto="phone-four" speaker="shannon">Да, и я ценю это, но —</option>
+    <option goto="phone-four" speaker="shannon">ОК, хорошо.</option>
+    <option goto="hang-up-phone" speaker="shannon">Просто ... не важно. Мне пора. Извини.</option>
   </scene>
 
   <scene name="phone-four">
     <line speaker="phone">`(Inaudible.)`</line>
-    <option goto="hang-up-phone" speaker="shannon">OK. I'll talk to you tomorrow. Love you.</option>
-    <option goto="hang-up-phone" speaker="shannon">Forget it. Bye.</option>
+    <option goto="hang-up-phone" speaker="shannon">ОК. Поговорим завтра. Люблю тебя.</option>
+    <option goto="hang-up-phone" speaker="shannon">Забудь. Пока.</option>
   </scene>
 
   <scene name="hang-up-phone" nextScene="end">
     <triggerEvent name="elkhorn-mine-portal-shannon-ends-call"/>
     
-    <line>`(SHANNON hangs up the phone and puts it away.)`</line>
+    <line>(ШЭННОН кладёт трубку и убирает телефон.)</line>
   </scene>
   
 </conversation>

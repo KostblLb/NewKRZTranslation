@@ -32,3 +32,36 @@ sharedassets13
 - MarquezClock -- Осмотреть настенные часы Маркез
 - MarquezPotsAndPans -- Осмотреть кухонную утварь
 - MarquezStove -- Осмотреть плиту
+
+СЦЕНА 3 (Elkhorn Mine)
+
+sharedassets8
+- ElkhornValleyIntroDogConversation -- Поговорить с собакой
+sharedassets5
+- ElkhornMinePortalShannonCellphone -- Разговор Шэннон по телефону
+- ElkhornMinePortalEncounter -- Встреча Шэннон и Конуэя
+- ElkhornMinePortalLoudspeaker -- Конуэй тестирует репродуктор
+sharedassets4
+- ElkhornMineAfterCollapse -- После обвала шахты
+- ElkhornMineTramBirdcage -- При осмотре клетки для птиц на вагонетке
+- ElkhornMineTramNotebooks -- При осмотре книжек на вагонетке
+- ElkhornMineTramTapeReels -- При осмотре плёнок
+- ElkhornMineTurntableConversation -- Разговор у поворотного механизма
+- ElkhornMineTapePlayerLook -- После осмотра проигрывателя под путями
+- ElkhornMineAfterHearingTape -- После прослушивания проигрывателя под путями
+- ElkhornMineAtBrokenTrack -- При осмотре сломанных путей
+- ElkhornMineRecordingStage -- У звукозаписывающей студии
+- ElkhornMineAtHighway -- При обнаружении подземных вод
+- ElkhornMineExit -- У выхода из шахты
+sharedassets9
+- ElkhornValleyOutroArchiveShack -- При осмотре хибары снаружи шахты
+- ElkhornValleyOutroDogConversation -- Разговор с собакой снаружи шахты
+- ElkhornValleyOutroSurfaceConversation -- Разговор с Шэннон после выхода на поверхность
+- ElkhornValleyOutroTruckConversation -- Обсуждение грузовика с Шэннон
+sharedassets3
+- OverworldShannonsWorkshop -- Прибытие в мастерскую Шэннон
+sharedassets13
+- MarquezFarmGraveyardShannonConversation -- Разговор с Шэннон у кладбища
+- MarquezFarmShannonFirstEnteringFarmhouse -- Разговор после входа в дом
+- MarquezFarmTuneTv -- Шэннон настраивает телевизор
+

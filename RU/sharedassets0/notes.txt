@@ -1,0 +1,167 @@
+<notes>
+  <act name="one">
+    <note name="Ферма Маркез" condition="marquez-address-retrieved">
+      <text>(От Equus Oils) Поезжайте на северо-восток по шестьдесят пятой и сверните налево, как только завидите жуткое дерево, что вечно горит.</text>
+    </note>
+    
+    <note name="Заезд на Нулевую автостраду" condition="got-mines-directions+!overworld-discovered-mines">
+      <text>(От фермы Маркез) Выезжаешь обратно на шестьдесят пятую в направлении севера, после завода протезов - сразу направо.</text>
+    </note>
+    
+    <note name="Шахты" condition="got-mines-directions+overworld-discovered-mines">
+      <text>(От фермы Маркез) Выезжаешь обратно на шестьдесят пятую в направлении севера, после завода протезов - сразу направо.</text>
+    </note>
+
+    <note name="Мастерская Шэннон Маркез" condition="got-shannons-workshop-directions">
+      <text>(От фермы Маркез) Мастерская к северу отсюда, возле озера. На перекрёстке Пеонии и Вокс. Там большой рыболовный магазин, а на складе она чинит телевизоры..</text>
+    </note>
+
+    <note name="Поворотный механизм в шахте Элкхорн" condition="elkhorn-mine-found-turntable+!elkhorn-mine-complete">
+      <text>Диск в центре шахты окружён необычными предметами.</text>
+      
+      <text condition="!elkhorn-mine-found-exit">Пути, идущие от входа в шахту, окружают с двух сторон байдарка и скелет какого-то животного.</text>
+      <text condition="elkhorn-mine-found-exit">Пути, идущие от входа к выходу из шахты, окружают с двух сторон байдарка и скелет какого-то животного.</text>
+      
+      <text condition="elkhorn-mine-found-highway+!elkhorn-mine-found-broken-track">Кормушка для летучих мышей и пугало окружают пути, которые ведут в тупик.</text>
+      <text condition="!elkhorn-mine-found-highway+elkhorn-mine-found-broken-track">Кормушка для летучих мышей и пугало окружают пути, которые ведут к сломанным рельсам.</text>
+      <text condition="elkhorn-mine-found-highway+elkhorn-mine-found-broken-track">Кормушка для летучих мышей и пугало окружают пути, которые идут от тупика к сломанным рельсам.</text>
+      
+      <text condition="elkhorn-mine-found-tape-player+!elkhorn-mine-found-recording-stage">Маятник и гроб окружают пути, ведущие к проигрывателю.</text>
+      <text condition="!elkhorn-mine-found-tape-player+elkhorn-mine-found-recording-stage">Маятник и гроб окружают пути, ведущие к звукозаписывающей студии.</text>
+      <text condition="elkhorn-mine-found-tape-player+elkhorn-mine-found-recording-stage">Маятник и гроб окружают пути между проигрывателем и звукозаписывающей студией.</text>
+    </note>
+  </act>
+
+  <act name="two">
+    <note name="Dr. Truman's House" condition="current-scene-name=OverworldActTwo">
+      <text>(From Márquez Farm) Get on sixty-five going southwest. Take a right just past the observatory, just before the river. If you continue north, you'll be there shortly.</text>
+    </note>
+    
+    <note name="Forest" condition="current-scene-name=JulianOverworld">
+      <text>You have to follow the Green river way out east, and then hop over Lake Cumberland!</text>
+    </note>
+    
+    <note name="Storage Facility" condition="bureau-got-storage-directions+!storage-conway-collapsed">
+      <text>Just go back the way you came. Find the crystal, and then turn around.</text>
+    </note>
+    
+    <note name="Bureau of Secret Tourism: River Tunnels" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive clockwise until you reach the feather. Pause for a moment to consider the cave walls. Reverse direction and drive counter-clockwise until you hit the bird house. Now turn around again, and you're almost upon it.</text>
+      <text>To return, simply find the feather again, and turn around.</text>
+    </note>
+
+    <note name="Bureau of Secret Tourism: Gallery" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive counter-clockwise toward the TV. When you reach the TV, drive clockwise to the antenna. Now turn around again and head just past the barn.</text>
+      <text>To return to the Bureau, find the TV again, and again turn around.</text>
+    </note>
+
+    <note name="Bureau of Secret Tourism: Mineral Springs" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive clockwise to the feather, then come back to the talon. Turn again, and there you are.</text>
+      <text>To return to the Bureau, find the feather, and again turn around.</text>
+    </note>
+
+    <note name="Bureau of Secret Tourism: Meditation Tunnels" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive clockwise to the scarecrow, then turn around and head counter-clockwise until you reach the pendulum. Reverse direction once more, keep driving clockwise, and you can't miss it.</text>
+      <text>To return, find the scarecrow again, turn around, and before long you'll be back at the Bureau.</text>      
+    </note>
+
+    <note name="Bureau of Secret Tourism: Valley" condition="bureau-found-secret-tourism+!bureau-checked-out">
+      <text>(From the Bureau of Reclaimed Spaces) Drive counter-clockwise to the bottle. Turn around. Drive clockwise to the still. Turn around. You're nearly on top of it.</text>
+      <text>To return, find the bottle again, turn around, and head back.</text>
+    </note>
+    
+  </act>
+
+  <act name="three">
+    <note name="The Lower Depths" condition="breakdown-completed+!lower-depths-met-harry+breakdown-bike-johnny-hobby=animals">
+      <text>Over by Charlie Moran Highway, just east off sixty-five.</text>
+      <text>Take a right off sixty-five around the petting zoo.</text>
+    </note>
+    
+    <note name="The Lower Depths" condition="breakdown-completed+!lower-depths-met-harry+breakdown-bike-johnny-hobby=recordings">
+      <text>Over by Charlie Moran Highway, just east off sixty-five.</text>
+      <text>Take a right off sixty-five around the arcade.</text>
+    </note>
+    
+    <note name="The Zero" condition="lower-depths-harry-gave-zero-directions+!underworld-visited">
+      <text>(From The Lower Depths) Tune the radio looking for a station that's "familiar, but strange."</text>
+      <text>Drive for a while, until the station cuts out, then turn around.</text>
+    </note>
+    
+    <note name="Shannon's Workshop" condition="museum-parking-made-plan+museum-parking-plan=workshop+!breakdown-completed">
+      <text>Up north, by the lake, where Peonia and Wax meet.</text>
+    </note>
+    
+    <note name="Convenience Store" condition="museum-parking-made-plan+museum-parking-plan=eat+!breakdown-completed+!overworld-saw-convenience-store">
+      <text>(From the museum) Take thirty-one heading east. It's just before sixty-five.</text>
+    </note>
+    
+    <note name="Bureau of Reclaimed Spaces" condition="hotmk-lula-gave-bureau-directions">
+      <text>(From The Hall of the Mountain King) Head counter-clockwise to the cathode ray, then turn around. Then it's just clockwise until you find the Bureau.</text>
+    </note>
+    
+    <note name="Consolidated Power Office" condition="gas-station-computer-read-consolidated-email">
+      <text>(From Bureau of Reclaimed Spaces) Head clockwise for quite some time, until you reach the scarecrow. Then turn around and go back to the bat feeder. Turn around, and it's a short clockwise drive, on your right.</text>
+    </note>
+    
+    <note name="Rust Archives" condition="gas-station-computer-read-rust-archives-email">
+      <text>(From Bureau of Reclaimed Spaces) Clockwise to the anchor, counter-clockwise to the whirlpool, then briefly clockwise.</text>
+    </note>
+
+    <note name="Carrington's Play" condition="one:met-carrington+two:carrington-play-location=gasstation">
+      <text>Carrington said to meet him at Equus Oils, just off sixty-five.</text>
+    </note>
+    
+    <note name="Carrington's Play" condition="one:met-carrington+two:carrington-play-location=mine">
+      <text>Carrington said to meet him at the Elkhorn Mine entrance.</text>
+      <text>(From Márquez Farm) Get back on sixty-five heading north, then take the first right after the artificial limb factory.</text>
+    </note>
+    
+    <note name="Carrington's Play" condition="one:met-carrington+two:carrington-play-location=storage">
+      <text>Carrington said to meet him at the storage facility.</text>
+      <text>(From the Bureau of Reclaimed Spaces) Find the crystal, and then turn around.</text>
+    </note>
+  </act>
+
+  <act name="four">
+    <note name="Mucky Mammoth Log Entry #1" condition="!(riverworld-floating-gas-station=uncharted)">
+      <text>Refuel at LL. Lucky timing, needle in red. Busy night.</text>
+    </note>
+    
+    <note name="Mucky Mammoth Log Entry #2" condition="riverworld-rum-colony=disembarked">
+      <text>Rum Colony. Mail dropped. Glass pickup, 4x bins. Rest. Saw crab below deck carrying whole bagel in claw.</text>
+    </note>
+    
+    <note name="Mucky Mammoth Log Entry #3" condition="!(riverworld-phone-room=uncharted)">
+      <text>Phone stop. All ashore. Val on helm. All back.</text>
+    </note>
+    
+    <note name="Mucky Mammoth Log Entry #4" condition="riverworld-research-lab=aboard">
+      <text>Radvansky. Mail dropped. Waste pickup, 1x bin. Two ashore. Two back.</text>
+    </note>
+
+    <note name="Mucky Mammoth Log Entry #4" condition="riverworld-research-lab=disembarked">
+      <text>Radvansky. Mail dropped. Waste pickup, 1x bin. Four ashore. Four back.</text>
+    </note>
+    
+    <note name="Mucky Mammoth Log Entry #5" condition="riverworld-grove=disembarked">
+      <text>Leg stretch. Two ashore, two back. Smart kid. Decent haul.</text>
+    </note>
+    
+    <note name="Mucky Mammoth Log Entry #5" condition="riverworld-grove=aboard">
+      <text>Leg stretch. One ashore, one back. Decent haul.</text>
+    </note>
+
+    <note name="Mucky Mammoth Log Entry #6" condition="!(riverworld-exchange=uncharted)">
+      <text>Exchange. Two ashore, one back.</text>
+    </note>
+    
+    <note name="Mucky Mammoth Log Entry #7" condition="!(riverworld-restaurant=uncharted)">
+      <text>Breakfast. All ashore, tied, all back. Damn good.</text>
+    </note>
+    
+    <note name="Mucky Mammoth Log Entry #8" condition="!(riverworld-dockyard=uncharted)">
+      <text>Iquitos. Four ashore, four back. Got a little weepy.</text>
+    </note>
+  </act>
+</notes>

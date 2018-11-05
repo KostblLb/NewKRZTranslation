@@ -110,7 +110,7 @@
   <scene name="address-marquez" nextScene="joseph-favor">
     <setGameVar name="marquez-address-retrieved" value="true"/>
     
-    <line speaker="computer">~Дом Маркез. Макондо Лейн, 100. Поезжайте на северо-восток по шестьдесят пятой и поверните налево, как только заметите уродливое дерево, что вечно горит. У подножья горы ищите амбар, не пропустите.~</line>
+    <line speaker="computer">~Дом Маркез. Макондо Лейн, 100. Поезжайте на северо-восток по шестьдесят пятой и сверните налево, как только завидите жуткое дерево, что вечно горит. У подножья горы ищите амбар, не пропустите.~</line>
   </scene>
 
   <scene name="games-root" nextScene="root-menu">

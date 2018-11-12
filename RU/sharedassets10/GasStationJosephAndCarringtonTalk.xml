@@ -4,57 +4,57 @@
     <triggerEvent name="meet-carrington"/>
     <setGameVar name="met-carrington" value="true"/>
     
-    <line speaker="joseph">... and that's only a few miles outside of Hodgenville anyway. I don't think you could do much better for accessibility, and they got that new gas station if folks get lost —</line>
-    <line speaker="carrington">But maybe they `should` feel lost, Joseph: just as lost then as we are always already lost. Just like poor, itinerant Silas, wandering the road, looking for a home.</line>
-    <line speaker="joseph">Well that's a way to look at it, I guess ...</line>
-    <line speaker="joseph">`(To CONWAY.)` Well, hello! I heard that old truck rumble on up. How's {if}[dog-nameless]that dog{end}{if}[!dog-nameless]${dog-name}{end}? Say, maybe you can help this fellow. He's looking for a ... a &quot;venue&quot; is how you said it, right?</line>
-    <option goto="bar-stage" speaker="conway">Sure, I have an old friend who runs a bar, and they've got a real big stage.</option>
-    <option goto="furniture-warehouse" speaker="conway">Sure, I know a furniture warehouse you could probably break into.</option>
+    <line speaker="joseph">... и это всего-то в паре миль от Ходгенвиля. Думаю, для вас места лучше не найти, а рядом как раз заправка, если кто заблудится  —</line>
+    <line speaker="carrington">А может, им НУЖНО заблудиться, Джозеф? Заблудиться, ибо все мы изо дня в день блуждаем по этой жизни. Так же, как и странствующий Сайлас идёт вдоль дороги и ищет свой дом.</line> <!--должны курсивом-->
+    <line speaker="joseph">Ну, наверное, можно и так сказать ...</line>
+    <line speaker="joseph">(КОНУЭЮ) Приветствую! Слышал, как твой грузовик притарахтел. Как {if}[dog-nameless]пёс{end}{if}[dog-name=Homer]Гомер{end}{if}[dog-name=Blue]Хандра{end}? Слушай, может, поможешь одному человеку? Ему нужна ... эм ... &quot;аудитория&quot;, ты ведь так выразился?</line>
+    <option goto="bar-stage" speaker="conway">Не вопрос, у моего приятеля есть бар, и там довольно большая сцена.</option>
+    <option goto="furniture-warehouse" speaker="conway">Конено. Есть один склад с утварью, куда можно вломиться.</option>
   </scene>
 
   <scene name="bar-stage" nextScene="introduce-play">
-    <line speaker="carrington">No, no, it can't be indoors. Impossible ...</line>
+    <line speaker="carrington">Нет-нет, только не в помещении. Невозможно ...</line>
   </scene>
 
   <scene name="furniture-warehouse" nextScene="introduce-play">
-    <line speaker="carrington">This isn't some illegal drug party!</line>
+    <line speaker="carrington">Мы не собираемся устраивать наркопритон!</line>
   </scene>
 
   <scene name="introduce-play">
-    <line speaker="carrington">But I'm obliged you'd stop a moment to help me work this through. Let me explain my charge:</line>
-    <line speaker="carrington">I've dedicated my last twelve years to the design and orchestration of my life's great work: a grand, broadly experimental theatrical adaptation of `The Death of the Hired Man` by Robert Frost.</line>
-    <option goto="more-hired-man" speaker="conway">Yeah, I've read some of his stuff.</option>
-    <option goto="experimental" speaker="conway">How do you mean &quot;experimental&quot;?</option>
+    <line speaker="carrington">Но благодарю вас за то, что остановились на минутку помочь мне. Теперь позвольте объясниться:</line>
+    <line speaker="carrington">Я посвятил последние двенадцать лет жизни созданию и работе над произведением всей моей жизни: эпохальной и необычайно экспериментальной адаптации "Смерти батрака" Роберта Фроста.</line>
+    <option goto="more-hired-man" speaker="conway">А, я у него читал кое-что.</option>
+    <option goto="experimental" speaker="conway">Что значит &quot;экспериментальная&quot;?</option>
   </scene>
 
   <scene name="more-hired-man" nextScene="experimental">
-    <line speaker="joseph">Yeah, he's pretty OK. Not one of my favorites. But Carrington here has a knack for drama!</line>
+    <line speaker="joseph">Да, он ничего. Не самый мой любимый писатель. Но вот наш Каррингтон просто повёрнут на драме!</line>
   </scene>
 
   <scene name="experimental">
-    <line speaker="carrington">Well, drama is really my `second` love. My higher calling is Pseudoscience.</line>
-    <option goto="pseudoscience" speaker="conway">Yep. Pseudoscience.</option>
-    <option goto="performance-time" speaker="conway">So when is the performance?</option>
+    <line speaker="carrington">Ну, вообще-то, драма - это моя вторая любовь. Моё высшее призвание - Псевдонаука.</line> <!-- вторая курсивом -->
+    <option goto="pseudoscience" speaker="conway">Ага. Псевдонаука.</option>
+    <option goto="performance-time" speaker="conway">Так когда выступаете?</option>
   </scene>
 
   <scene name="pseudoscience" nextScene="performance-time">
-    <line speaker="carrington">Pseudoscience is the eternally fruitful marriage of whimsy and process that has yielded such poetic specimens as: astrology, phrenology, canals on mars, and homeopathic medicine.</line>
-    <line speaker="carrington">I hope I have the time to explain how my pseudoscientific theory-poetics find expression in this play, but now I am in a delirious rush ...</line>
+    <line speaker="carrington">Псевдонаука - это неиссякаемые совокупности фантастического и процесс, породивший такие поэтичные экземпляры, как: астрология, френология, вода на марсе, и гомеопатическая медицина.</line>
+    <line speaker="carrington">Надеюсь, у меня найдётся время объяснить вам, как мои псевдонаучные поэзийно-теоретические открытия находят выражение в спектакле, но сейчас я так спешу, что даже лихорадит ...</line>
   </scene>
 
   <scene name="performance-time">
-    <line speaker="carrington">The event is to be performed tomorrow morning, just before dawn. But, in the spirit of tragedy, our venue fell through at the last moment. I've been out all day driving the highways looking for a replacement, eyes fastened to the landscape, like a hawk scouring the field.</line>
-    <line speaker="carrington">So like a hawk, in fact, that I failed to keep an eye on my gas meter. I'm here waiting for the tow truck to bring my car so I can get back at the task.</line>
-    <option goto="good-spots" speaker="conway">Well, I don't mind keeping an eye out for a spot; I'm on a drive anyway.</option>
-    <option goto="what-kind-of-venue" speaker="conway">So what kind of venue are you looking for?</option>
+    <line speaker="carrington">Мы выступаем завтра утром, прямо на рассвете. Но, как и подобает духу трагедии, наш атриум развалился в самый последний момент. Я искал замену и весь день проездил по дорогам, устремив глаза вдаль, словно ястреб, выслеживающий добычу в чистом поле.</line>
+    <line speaker="carrington">И подобно ястребу, на самом деле, я не следил за своим бензобаком. И вот я сижу здесь и жду, пока буксир прикатит машину и я снова отправлюсь в путь.</line>
+    <option goto="good-spots" speaker="conway">Ну, мне не трудно поискать вам что-нибудь на дороге. Я всё равно за рулём.</option>
+    <option goto="what-kind-of-venue" speaker="conway">А какого рода аудиторию вы ищете?</option>
   </scene>
 
   <scene name="good-spots" nextScene="end">
-    <line speaker="carrington">If you have attention to spare, I'd be grateful. Somewhere outdoors. Somewhere intimate. Somewhere tragic.</line>
+    <line speaker="carrington">Буду очень признателен вам за вашу внимательность. Что-нибудь на открытом воздухе. Что-нибудь интимное. Что-нибудь трагичное.</line>
   </scene>
 
   <scene name="what-kind-of-venue" nextScene="end">
-    <line speaker="carrington">Somewhere outdoors. Somewhere intimate. Somewhere tragic. If you have attention to spare on your drive, I'd be grateful.</line>
+    <line speaker="carrington">Что-нибудь на открытом воздухе. Что-нибудь интимное. Что-нибудь трагичное. Буду очень признателен вам за вашу внимательность на дороге.</line>
   </scene>
 
 </conversation>

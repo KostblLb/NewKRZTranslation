@@ -4,7 +4,7 @@
     <setGameVar name="highway-airplane-looked-at-wheels" value="true"/>
     
     <line>
-      The rubber is almost worn away. Soon, these men will be dragging this airplane.
+      Резина почти износилась. Ещё чуть-чуть, и им придётся тащить этот аэроплан.
     </line>
   </scene>
 </conversation>

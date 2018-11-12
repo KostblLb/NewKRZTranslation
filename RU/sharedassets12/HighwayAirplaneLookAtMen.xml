@@ -3,7 +3,7 @@
   <scene name="intro" nextScene="end">
     <setGameVar name="highway-airplane-looked-at-men" value="true"/>
     <line>
-      The men are nearly broken.
+      Эти люди почти выбились из сил.
     </line>
   </scene>
 </conversation>

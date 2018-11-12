@@ -4,81 +4,81 @@
     <triggerEvent name="bait-shop-start"/>
     <setGameVar name="overworld-visited-bait-shop" value="true"/>
     
-    <line>Conway pulls into the bait shop parking lot.</line>
+    <line>Конуэй останавливается на парковке магазина рыболовных снастей.</line>
   </scene>
 
   <scene name="outside" nextScene="outside-options">
     <triggerEvent name="bait-shop-outside"/>
     
-    <line>Vaulted above the road on a thin steel bar, a handwritten sign reads &quot;LIVE BAIT. MINNOWS SMALL AND ALSO LARGE FOR STRIPERS. NIGHTCRAWLERS. CHIPS AND BEER.&quot; A green flyer hangs loosely from a bit of masking tape at eye-level.</line>
-    <line>To the shop's right, a dirt parking lot sprawls unevenly into grass and then eventually trees.</line>
-    <line pause="false">The bait shop is open.</line>
+    <line>Над дорогой на тонком стальном шесте поднимается вывеска, на которой от руки выведено: &quot;ЖИВАЯ НАЖИВКА. МАЛАЯ БЛЕСНА И БОЛЬШАЯ НА ОКУНЯ. ОПАРЫШ. ЧИПСЫ И ПИВО.&quot; На уровне глаз болтается зелёная листовка, приклеенная на малярный скотч.</line>
+    <line>Справа от магазина парковка смешивается с землёй, травой и в конечном итоге врастает в деревья.</line>
+    <line pause="false">Магазин открыт.</line>
   </scene>
 
   <scene name="outside-options">
-    <option goto="enter-shop" insertedText="Conway enters the bait shop.">Enter the bait shop.</option>
-    <option goto="read-flyer" insertedText="Conway reads the flyer.">Read the flyer.</option>
-    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+    <option goto="enter-shop" insertedText="Конуэй заходит в магазин.">Зайти в магазин снастей.</option>
+    <option goto="read-flyer" insertedText="Конуэй читает листовку.">Прочесть листовку.</option>
+    <option goto="end" insertedText="Конуэй уезжает.">Уехать.</option>
   </scene>
 
   <scene name="read-flyer" nextScene="outside-options">
-    <line>Computer-printed type in a bold font surrounds a clip art illustration of a TV set. The TV has eyes, arms, and legs. Its shoulders are slouched. On the screen is a cartoon expression of exhausted nausea. A hot water bottle rests against its wire antenna.</line>
-    <line pause="false">&quot;TV Repair, no model too old, inquire within. We do not sell digital converter boxes.&quot;</line>
+    <line>На листовке изображён телевизор, окружённый компьютерной надписью жирным шрифтом. У телевизора есть ноги, руки и глаза. Он стоит ссутулившись. Мультяшное лицо на его экране изображает тошнтоу. Рядом с его антенным проводом стоит бутылка с горячей водой.</line>
+    <line pause="false">&quot;Ремонт Телевизоров: не бывает слишком старых моделей; спрашивайте у нас. Мы не продаём цифровые телеприставки.&quot;</line>
   </scene>
 
   <scene name="enter-shop">
     <triggerEvent name="bait-shop-inside"/>
     
-    <line>Narrow aisles crowded with lures, reels, rods, and snacks divide the shop lengthwise from the entrance to the cashier's counter. The left wall is lined with churning tanks of water.</line>
+    <line>Узкие проходы в торговом зале наполнены приманками, лесками, удилами и закуской. Они делят магазин вдоль от входа до кассы. Левая стена уставлена бурлящими аквариумами.</line>
 
-    <option goto="look-at-tanks" insertedText="Conway approaches the tanks.">Look into the tanks.</option>
-    <option goto="counter" insertedText="Conway approaches the counter.">Approach the counter.</option>
-    <option goto="outside" insertedText="Conway leaves the shop.">Leave the shop.</option>
+    <option goto="look-at-tanks" insertedText="Конуэй приближается к аквариумам.">Посмотреть на аквариумы.</option>
+    <option goto="counter" insertedText="Конуэй приближается к кассе.">Подойти к кассе.</option>
+    <option goto="outside" insertedText="Конуэё покидает магазин.">Уйти.</option>
   </scene>
 
   <scene name="look-at-tanks" nextScene="tank-options">
     <triggerEvent name="bait-shop-approach-tanks"/>
     
-    <line pause="false">The three metal tanks aren't labeled, and the water is too agitated to get a clear view of what's inside each one. The contents of the first tank are vaguely gray. The second is a muddy pink. The third is clear, but shiny silver flecks occasionally flash along its surface.</line>
+    <line pause="false">На трёх аквариумах нет подписей, а вода в них слишком мутная, чтобы разобрать, что плавает внутри. Содержимое первого аквариума представлено в основном оттенками серого. Второго - грязно-розовыми цветами. Вода в третьем чистая, но на поверхности то и дело появляются серебристые частицы.</line>
   </scene>
 
   <scene name="tank-options">
-    <option goto="first-tank" insertedText="Conway reaches into the first tank.">Reach into the first tank.</option>
-    <option goto="second-tank" insertedText="Conway reaches into the second tank.">Reach into the second tank.</option>
-    <option condition="!conway-shocked-by-bait-tank" goto="third-tank" insertedText="Conway reaches into the third tank.">Reach into the third tank.</option>
-    <option goto="enter-shop" insertedText="Conway steps away from the tanks.">Leave the tanks.</option>
+    <option goto="first-tank" insertedText="Конуэй засовывает руку в первый аквариум.">Сунуться в первый аквариум.</option>
+    <option goto="second-tank" insertedText="Конуэй засовывает руку во второй аквариум.">Сунуться во второй аквариум.</option>
+    <option condition="!conway-shocked-by-bait-tank" goto="third-tank" insertedText="Конуэй засовывает руку в третий аквариум.">Сунуться в третий аквариум.</option>
+    <option goto="enter-shop" insertedText="Конуэй уходит прочь от аквариумов.">Отойти от аквариумов.</option>
   </scene>
 
   <scene name="first-tank">
-    <line>Conway's hand brushes against something roughly the size of his palm.</line>
-    <option goto="first-tank-deeper" insertedText="Conway reaches deeper into the tank.">Reach deeper into the tank.</option>
-    <option goto="tank-options" insertedText="Conway removes his hand from the tank.">Remove hand from the tank.</option>
+    <line>Конуэй нащупывает что-то шершавое размером примерно с его ладонь.</line>
+    <option goto="first-tank-deeper" insertedText="Конуэй глубже опускает руку в аквариум.">Сунуться глубже.</option>
+    <option goto="tank-options" insertedText="Конуэй достаёт руку из аквариума.">Вытащить руку из аквариума.</option>
   </scene>
 
   <scene name="first-tank-deeper" nextScene="tank-options">
-    <line pause="false">Conway's hand comes into contact with a scaly, uneven surface. As he runs his fingers along the bottom, a bead of sweat bridges the inches from his temple to the water's surface. Something bites at his forearm. He recoils.</line>
+    <line pause="false">Рука Конуэя соприкасается с чешуйчатой неровной поверхностью. Когда он проводит пальцами по дну, капля пота скатывается с его лица и пролетает несколько дюймов до поверхности. Что-то кусает его за предплечье. Он отпрыгивает.</line>
   </scene>
 
   <scene name="second-tank">
-    <line>Conway's fingers slip through something fleshy but inert. The sensation is nauseating.</line>
-    <option goto="second-tank-deeper" insertedText="Conway reaches deeper into the tank.">Reach deeper into the tank.</option>
-    <option goto="tank-options" insertedText="Conway removes his hand from the tank.">Remove hand from the tank.</option>
+    <line>Пальцы Конуэя скользят по чему-то мясистому и безжизненному. Ощущения омерзительные.</line>
+    <option goto="second-tank-deeper" insertedText="Конуэй глубже опускает руку в аквариум.">Сунуться глубже.</option>
+    <option goto="tank-options" insertedText="Конуэй достаёт руку из аквариума.">Вытащить руку из аквариума.</option>
   </scene>
 
   <scene name="second-tank-deeper" nextScene="tank-options">
-    <line>As his elbow passes into the pinkish mass, he realizes he's about to be sick from the smell, and pulls away.</line>
+    <line>Он опускает руку по локоть в розоватую массу, и пока он это делает, Конуэй понимает, что его сейчас стошнит.</line>
   </scene>
 
   <scene name="third-tank">
-    <line>The water seems to tremble with life. Conway can't tell if his hand is being nibbled by fish or massaged by the artificial current. As his eyes near the surface of the water, he can see something colorful glowing faintly at the bottom of the tank.</line>
-    <option goto="third-tank-deeper" insertedText="Conway reaches deeper into the tank.">Reach deeper into the tank.</option>
-    <option goto="tank-options" insertedText="Conway removes his hand from the tank.">Remove hand from the tank.</option>
+    <line>В воде шевелится живое. Конуэй не может разобрать, кусает его рыба или это струя из фильтра массирует ему ладонь. Его глаза приближаются к поверхности, и он видит, как мерцает цветное сияние на дне аквариума.</line>
+    <option goto="third-tank-deeper" insertedText="Конуэй глубже опускает руку в аквариум.">Сунуться глубже.</option>
+    <option goto="tank-options" insertedText="Конуэй достаёт руку из аквариума.">Вытащить руку из аквариума.</option>
   </scene>
 
   <scene name="third-tank-deeper" nextScene="electroshock-hallucination">
     <setGameVar name="conway-shocked-by-bait-tank" value="true"/>
     
-    <line>A tremor spreads from his elbow out to his fingertips, and up to the base of his shoulder. His vision flickers. The water is running warm, under his skin now, and he has the sensation that something is about to snap. His eyes close.</line>
+    <line>Дрожь распространяется от локтя до кончиков пальцев, и вверх до плеча. His vision flickers. The water is running warm, under his skin now, and he has the sensation that something is about to snap. His eyes close.</line>
   </scene>
 
   <scene name="electroshock-hallucination" nextScene="after-hallucination">

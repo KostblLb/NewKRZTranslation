@@ -4,213 +4,215 @@
     <setGameVar name="overworld-visited-museum" value="true"/>
 
     <line>
-      A sign in front of the building just reads &quot;Museum.&quot; The lights are off, but the front door is open.
+      Перед зданием стоит знак с надписью &quot;Музей&quot;. Свет не горит, но парадная дверь открыта.
     </line>
 
-    <option goto="enter-museum" insertedText="Conway steps through the museum's doors.">Enter the museum.</option>
-    <option goto="end">Drive away.</option>    
+    <option goto="enter-museum" insertedText="Конуэй заходит через парадную дверь.">Войти в музей.</option>
+    <option goto="end">Уехать.</option>    
   </scene>
 
   <scene name="enter-museum" nextScene="museum-entrance-hub">
     <triggerEvent name="play-museum-sound"/>
     
     <line>
-      A few feet inside the museum doors, the ambient sound of the highway drops sharply away. The room is cold, dark, and still.
+      Через несколько шагов от двери музея звуки шоссе резко обрываются. Конуэй находится в тёмном, холодном, застывшем месте.
     </line>
   </scene>
 
   <scene name="museum-entrance-hub" nextScene="museum-entrance-options">
     <line>
-      A book lies open on a table in the center of the room.
+      В центре помещения на пьедестале лежит открытая книга.
     </line>
     
     <line>
-      An open hallway extends to the left. {if}[overworld-museum-broke-glass]The path ahead is strewn with broken glass.{end}{if}[!overworld-museum-broke-glass]Large glass doors bar the path ahead.{end}
+      Слева находится широкий коридор. {if}[overworld-museum-broke-glass]Дальше весь пол усыпан осколками.{end}{if}[!overworld-museum-broke-glass]Путь вперёд закрывают большие стеклянные двери.{end}
     </line>
   </scene>
   
   <scene name="museum-entrance-options">
-    <option goto="hall-of-wounds" insertedText="Conway walks down the hallway to the left.">Walk to the hallway.</option>
-    <option condition="!overworld-museum-broke-glass" goto="hall-of-glass" insertedText="Conway walks to the glass doors.">Walk through the glass doors.</option>
-    <option condition="overworld-museum-broke-glass" goto="hall-of-glass-2" insertedText="Conway walks through the broken glass doors.">Walk through the glass doors.</option>
-    <option goto="read-entryway-book" insertedText="Conway looks at the book.">Look at the book.</option>    
-    <option goto="exit-museum" insertedText="Conway walks out of the museum.">Exit the museum.</option>
+    <option goto="hall-of-wounds" insertedText="Конуэй заходит в коридор слева.">Зайти в коридор.</option>
+    <option condition="!overworld-museum-broke-glass" goto="hall-of-glass" insertedText="Конуэй проходит через стеклянные двери.">Войти в стеклянные двери.</option>
+    <option condition="overworld-museum-broke-glass" goto="hall-of-glass-2" insertedText="Конуэй проходит через сломанные стеклянные двери.">Войти в стеклянные двери.</option>
+    <option goto="read-entryway-book" insertedText="Конуэй смотрит на книгу.">Посмотреть на книгу.</option>    
+    <option goto="exit-museum" insertedText="Конуэй уходит из музея.">Выйти из музея.</option>
   </scene>
 
   <scene name="read-entryway-book" nextScene="museum-entrance-options">
     <line>
-      There's no title on the book's spine or cover. A three-word phrase written in pencil on the first page is smudged and indecipherable.
+      Ни на обложке, ни на корешке книги нет названия. На первой странице видно смазанную, неразборчивую надпись из трёх слов, сделанную карандашом.
     </line>
     
     <line>
-      On the first page, someone has left an ink drawing of a horse. Several dozen blank pages later, at the end of the book, is an elaborate ink drawing of a one-legged man working an antique adding machine, surrounded by whiskey bottles.
+      На первой странице кто-то оставил чернильный рисунок лошади. Через пару десятков страниц, в конце книги, нарисован очень детальный портрет одноногого мужчины за древней счётной машиной, окружённого бутылками виски.
     </line>
   </scene>
 
   <!-- Hall of wounds -->
   <scene name="hall-of-wounds" nextScene="hall-of-wounds-options">
     <line>
-      Conway's steps echo against the hallway's marble floor and arched ceilings. Plexiglass boxes line the walls. The hallway dead-ends on a darkened display case.
+      Мраморный пол и арочные потолки отвечают эхом на шаги Конуэя. Вдоль стены стоят плексигласовые витрины. Коридор кончается тупиком, в полумраке которого стоит последний экспонат.
     </line>
   </scene>
 
   <scene name="hall-of-wounds-options">
-    <option goto="hall-of-wounds-boxes" insertedText="Conway examines the boxes on the walls.">Look at the boxes on the walls.</option>
-    <option goto="hall-of-wounds-display-case" insertedText="Conway examines the darkened display case.">Look at the darkened display case.</option>
-    <option goto="museum-entrance-hub" insertedText="Conway returns to the entrance.">Return to the entrance.</option>
+    <option goto="hall-of-wounds-boxes" insertedText="Конуэй изучает витрины у стен.">Посмотреть на витрины вдоль стен.</option>
+    <option goto="hall-of-wounds-display-case" insertedText="Конуэй смотрит на затенённый.">Посмотреть на затенённый экспонат.</option>
+    <option goto="museum-entrance-hub" insertedText="Конуэй возвращается ко входу.">Вернуться ко входу.</option>
   </scene>
 
   <scene name="hall-of-wounds-boxes" nextScene="hall-of-wounds-options">
     <line>
-      The first box, just a few feet into the hall, contains an assortment of bird wings. Some are missing feathers. One large, brightly-colored wing almost glows in the moonlight. Its feathers are intact, but a piece of bone pokes awkwardly out from the tip.
+      Первая витрина, в паре шагов от вхожа, содержит разнообразные образцы птичьих крыльев. У некоторых не хватает перьев. Одно большое, красочное крыло почти что светится в лунном свете. Его перья невридимы, но от кончика странным образом отходит кусочек кости.
     </line>
   </scene>
 
   <scene name="hall-of-wounds-display-case" nextScene="hall-of-wounds-options">
     <line>
-      The display case is several yards wide, but just a few feet off the ground. It's unlit, and back in this corner of the darkened museum very little moonlight creeps in. A gold-plated plaque on the surface of the case is a bit easier to read. It recounts a short history of fowl hunting in the region and then speculates, abruptly, about the nature of addiction.
+      Витрина занимает несколько ярдов в ширину и всего несколько футов в высоту. У неё нет подсветки, а в этот уголок музея вообще попадает довольно мало света. На витрине можно разобрать позолоченную табличку. Она пересказывает историю птичьей охоты в этой местности и затем внезапно переходит к вопросам природы зависимости.
     </line>
   </scene>
 
   <!-- Hall of glass -->
   <scene name="hall-of-glass">
     <line>
-      The glass doors won't budge. To apply any more force would likely break them.
+      Стеклянные двери не шолохнутся. Если приложить больше силы, они наверняка сломаются.
     </line>
 
-    <option goto="hall-of-glass-force" insertedText="Conway applies more force to the doors.">Force through the doors.</option>    
-    <option goto="museum-entrance-hub" insertedText="Conway returns to the entrance.">Return to the entrance.</option>
+    <option goto="hall-of-glass-force" insertedText="Конуэй прилагает больше силы к двери.">Налечь на дверь.</option>    
+    <option goto="museum-entrance-hub" insertedText="Конуэй возвращается к выходу.">Вернуться к выходу.</option>
   </scene>
 
   <scene name="hall-of-glass-force" nextScene="museum-entrance-options">
     <setGameVar name="overworld-museum-broke-glass" value="true"/>
     
     <line>
-      The glass shatters. Somewhere ahead, a light switches on. After a moment, it switches off. The room is dark again, and the floor is covered in broken glass.
+      Стекло разбивается. Где-то вдалеке зажигается свет. Через секунду он снова гаснет. В помещении снова темно, а пол теперь покрыт осколками разбитого стекла.
     </line>
   </scene>
 
   <scene name="hall-of-glass-2" nextScene="hall-of-glass-options">
     <line>
-      Broken glass grinds under Conway's boots as he walks down the hall. He has the feeling of being in a larger space. Very little light reaches the far end of the hallway.
+      Конуэй идёт по коридору, и стекло продолжает измельчаться под его ботинками. У него появляется чувство, будето он находится в большом пространстве. До дальнего конца коридора доходит очень мало света.
     </line>
 
   </scene>
 
   <scene name="hall-of-glass-options">
-    <option condition="!joseph-talked-about-museum" goto="hall-of-glass-feel-walls" insertedText="Conway runs his hands along the walls.">Feel the walls.</option>
-    <option condition="joseph-talked-about-museum" goto="hall-of-glass-feel-walls-archive" insertedText="Conway runs his hands along the walls.">Feel the walls.</option>    
-    <option goto="hall-of-glass-feel-floor" insertedText="Conway kneels and runs his hands along the floor.">Feel the floor.</option>
-    <option goto="museum-entrance-hub" insertedText="Conway returns to the entrance.">Return to the entrance.</option>    
+    <option condition="!joseph-talked-about-museum" goto="hall-of-glass-feel-walls" insertedText="Конуэй проходит пальцами по стене.">Потрогать стены.</option>
+    <option condition="joseph-talked-about-museum" goto="hall-of-glass-feel-walls-archive" insertedText="Конуэй проходит пальцами по стене.">Потрогать стены.</option>    
+    <option goto="hall-of-glass-feel-floor" insertedText="Конуэй встаёт на колени и проводит рукой по полу.">Потрогать пол.</option>
+    <option goto="museum-entrance-hub" insertedText="Конуэй возвращается ко входу.">Вернуться ко входу.</option>    
   </scene>
 
   <scene name="hall-of-glass-feel-walls" nextScene="hall-of-glass-options">
     <line>
-      The walls are completely smooth, and strangely warm. Conway can feel his breath and sweat condensing on the surface.
+      Стены абсолютно гладкие и по-странному тёплые. Конуэй чувствует, как пары его дыхания оседают на поверхности.
     </line>
   </scene>
 
   <scene name="hall-of-glass-feel-walls-archive" nextScene="archives">
     <line>
-      The walls are completely smooth, and strangely warm. Conway can feel his breath and sweat condensing on the surface.
+      Стены абсолютно гладкие и по-странному тёплые. Конуэй чувствует, как пары его дыхания оседают на поверхности.
     </line>
 
     <line>
-      No, they're not completely smooth. One wall is a bit more tacky, like it's bleeding a bit in the heat. Conway presses gently, and the door swings open.
+      Нет, они не совсем гладкие. Одна стена немного шероховатая, как будто она кровоточит. Конуэй слегка толкает, и дверь открывается.
     </line>
   </scene>
   
   <scene name="hall-of-glass-feel-floor" nextScene="hall-of-glass-options">
     <line>
-      The floor is completely smooth, and strangely warm. Conway can feel his breath and sweat condensing on the surface.
+      Пол абсолютно гладкий и по-странному тёплый. Конуэй чувствует, как пары его дыхания оседают на поверхности.
     </line>
   </scene>
 
   <!-- Archives -->
   <scene name="archives">
     <line>
-      Rows of filing cabinets line the walls. The room is lit intermittently by a quivering fluorescent bulb.
+      Вдоль стен располагаются ряды каталогов. Комната время от времени освещается дрожащей офисной лампой.
     </line>
 
-    <option goto="archives-cabinet-one" insertedText="Conway opens the first cabinet">Open the first cabinet.</option>
-    <option goto="hall-of-glass-2" insertedText="Conway leaves the archives.">Leave the room.</option>    
+    <option goto="archives-cabinet-one" insertedText="Конуэй открывает первый каталог.">Открыть первый каталог.</option>
+    <option goto="hall-of-glass-2" insertedText="Конуэй уходит из архива.">Покинуть комнату.</option>    
   </scene>
 
   <scene name="archives-cabinet-one">
     <line>
-      The label on the cabinet reads: *Artifice — Failure*.
+      Бирка на каталоге гласит: "Амбиции - Жадность". <!-- жирный -->
 
-      It contains several articles, CD-ROMs, prints, and punched cards. Each is stuffed in a large yellow envelope and labeled, for example:
+      В нём содержится несколько журнальных статей, компакт-дисков, распечаток и перфокарт. Всё упаковано в большие жёлтые конверты и снабжено подписью, например:
     </line>
     <line>
-      `Queue`. Lavelle, 2010.
-      `Portal`. Fregger, 1986.
-      `Mondo Medicals`. Soderstrom, 2007
-      `The Postman's Choice`. Vautier, 1967.
+    <!-- курсив -->
+      ОЧЕРЕДЬ. Лавелл, 2010.
+      ПОРТАЛ. Фреггер, 1986.
+      MONDO MEDICALS. Содерстром, 2007
+      ВЫБОР ПОЧТАЛЬОНА. Вотье, 1967.
     </line>
     
-    <option goto="archives-cabinet-two" insertedText="Conway opens the second cabinet">Open the next cabinet.</option>
-    <option goto="hall-of-glass-2" insertedText="Conway leaves the archives.">Leave the room.</option>    
+    <option goto="archives-cabinet-two" insertedText="Конуэй открывает соседний каталог">Открыть следующий каталог.</option>
+    <option goto="hall-of-glass-2" insertedText="Конуэй уходит из архива.">Покинуть комнату.</option>    
   </scene>
+
 
   <scene name="archives-cabinet-two">
     <line>
-      The label on the cabinet reads: *Generosity — Loneliness*.
+      Бирка на каталоге гласит: "Замкнутость - |Нулевая| сумма".
       
-      It contains several articles, CD-ROMs, prints, and punched cards. Each is stuffed in a large yellow envelope and labeled, for example:      
+      В нём содержится несколько журнальных статей, компакт-дисков, распечаток и перфокарт. Всё упаковано в большие жёлтые конверты и снабжено подписью, например:
     </line>
     <line>
-      `Calamity Annie`. Anthropy, 2008.
-      `Cart Life`. Hofmeier, 2011.
-      `Mainichi`. Brice, 2012
-      `The Sea Will Claim Everything`. Kyratzes, 2012.
+      ЭННИ-ПОГРОМ. Энтропи, 2008.
+      ЖИЗНЬ С КОРЗИНОЙ. Хофмайер, 2011.
+      МАИНИЧИ. Брайс, 2012
+      МОРЕ ПОГЛОТИТ ВСЁ. Киратцез, 2012.
     </line>
     
-    <option goto="archives-cabinet-one" insertedText="Conway opens the first cabinet">Open the previous cabinet.</option>
-    <option goto="archives-cabinet-three" insertedText="Conway opens the third cabinet">Open the next cabinet.</option>
-    <option goto="hall-of-glass-2" insertedText="Conway leaves the archives.">Leave the room.</option>    
+    <option goto="archives-cabinet-one" insertedText="Конуэй открывает первый каталог">Открыть предыдущий каталог.</option>
+    <option goto="archives-cabinet-three" insertedText="Конуэй открывает третий каталог">Открыть следующий каталог.</option>
+    <option goto="hall-of-glass-2" insertedText="Конуэй уходит из архива.">Покинуть помещение.</option>    
   </scene>
 
   <scene name="archives-cabinet-three">
     <line>
-      The label on the cabinet reads: *Memory — Regret*.
+      Бирка на каталоге гласит: *Оскорбление - Шлепок*.
       
-      It contains several articles, CD-ROMs, prints, and punched cards. Each is stuffed in a large yellow envelope and labeled, for example:
+      В нём содержится несколько журнальных статей, компакт-дисков, распечаток и перфокарт. Всё упаковано в большие жёлтые конверты и снабжено подписью, например:
     </line>
     <line>
-      `Everything I Do is Art, But Nothing I Do Makes Any Difference, Part II Or: How I Learned to Stop Worrying and Love the Gallery`. Reilly, 2006.
-      `Digital: A Love Story`. Love, 2010.      
-      `Radiator 1-1: Polaris`. Yang, 2009.
-      `Brace`. Kopas, 2012.
-      `The Cat and the Coup`. Brinson/ValaNejad, 2011.
+      ВСЁ, ЧТО Я ДЕЛАЮ - ИСКУССТВО, НО ЭТО НИЧЕГО НЕ ЗНАЧИТ, ЧАСТЬ II ИЛИ: КАК Я ПЕРЕСТАЛ БОЯТЬСЯ И ПОЛЮБИЛ ГАЛЕРЕЮ. Рейлли, 2006.
+      В ЦИФРЕ: ИСТОРИЯ ЛЮБВИ. Лав, 2010.      
+      РАДИАТОР 1-1: ПОЛЯРИС. Янг, 2009.
+      СКОБКИ. Копас, 2012.
+      КОТ И УДАЧНЫЙ ХОД. Бринсон/ВалаНежад, 2011.
     </line>
     
-    <option goto="archives-cabinet-two" insertedText="Conway opens the second cabinet">Open the previous cabinet.</option>
-    <option goto="archives-cabinet-four" insertedText="Conway opens the fourth cabinet">Open the next cabinet.</option>
-    <option goto="hall-of-glass-2" insertedText="Conway leaves the archives.">Leave the room.</option>    
+    <option goto="archives-cabinet-two" insertedText="Конуэй открывает второй каталог">Открыть предыдущий каталог.</option>
+    <option goto="archives-cabinet-four" insertedText="Конуэй открывает четвёртый каталог">Открыть следующий каталог.</option>
+    <option goto="hall-of-glass-2" insertedText="Конуэй уходит из архива.">Покинуть помещение.</option>    
   </scene>
 
   <scene name="archives-cabinet-four">
     <line>
-      The label on the cabinet reads: *Sorrow — *|Zero|*-Sum*.
-      It contains several articles, CD-ROMs, prints, and punched cards. Each is stuffed in a large yellow envelope and labeled, for example:
+      Бирка на каталоге гласит: *Щелочь — Язва*.
+      В нём содержится несколько журнальных статей, компакт-дисков, распечаток и перфокарт. Всё упаковано в большие жёлтые конверты и снабжено подписью, например:
     </line>
     <line>
-      `Syberia`. Sokal, 2002.
-      `Prisoner's Dilemma`. Serra, 1974.
-      `The Walking Dead`. TellTale, 2012.
-      `If I Had My Way, I'd Tear the Building Down`. Wheattree, 1985.
+      СИБИРЬ. Сокаль, 2002.
+      ДИЛЕММА ЗАКЛЮЧЁННОГО. Серра, 1974.
+      ХОДЯЧИЕ МЕРТВЕЦЫ. TellTale, 2012.
+      БУДЬ ПО-МОЕМУ, Я БЫ СНЁС ВЕСЬ ДОМ. Уиттри, 1985.
     </line>
     
-    <option goto="archives-cabinet-three" insertedText="Conway opens the third cabinet">Open the previous cabinet.</option>
-    <option goto="archives-examine-joseph-game" insertedText="Conway examines a manuscript.">Examine &quot;If I Had My Way, I'd Tear the Building Down.&quot;</option>
-    <option goto="hall-of-glass-2" insertedText="Conway leaves the archives.">Leave the room.</option>    
+    <option goto="archives-cabinet-three" insertedText="Конуэй открывает третий каталог">Открыть предыдущий каталог.</option>
+    <option goto="archives-examine-joseph-game" insertedText="Конуэй изучает рукопись.">Осмотреть &quot;Будь по-моему, я бы снёс весь дом.&quot;</option>
+    <option goto="hall-of-glass-2" insertedText="Конуэй уходит из архива.">Покинуть помещение.</option>    
   </scene>
 
   <scene name="archives-examine-joseph-game" nextScene="archives-cabinet-four">
     <setGameVar name="found-josephs-game-in-archive" value="true"/>
-    <line>A few hundred sheets of paper are roughly stitched together in this manuscript. It seems to be a videogame written in a sort of awkwardly English-like code.</line>
-    <line>Flipping through the pages, Conway is able to gather that it's a story about three characters: Joseph, Donald, and Lula. It's something like a tragic love triangle, but much more complex. Some kind of tangled, painfully concave love polygon.</line>
+    <line>Несколько сотен страниц бумаги скреплены меж собой в рукопись. Кажется, это код для видеоигры, написанный на каком-то странном языке, похожем на английский.</line>
+    <line>Листая страницы, Конуэй понимает, что игра рассказывает историю троих персонажей: Джозефа, Дональда и Лулы. Это что-то вроде трагичного любовного треугольника, но намного сложнее. Что-то вроде спутанного, мучительно вогнутого любовного многоугольника.</line>
   </scene>
   
   <scene name="exit-museum" nextScene="intro">

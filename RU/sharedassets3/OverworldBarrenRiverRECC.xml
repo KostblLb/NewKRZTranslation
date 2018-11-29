@@ -3,72 +3,72 @@
   <scene name="intro" nextScene="intro-options">
     <setGameVar name="overworld-visited-barren-river-recc" value="true"/>
     
-    <line pause="false">The exterior of the `Barren River Rural Electric Cooperative Corporation` is a dingy beige, sprinkled with fading graffiti. The front door hangs open from a broken hinge. The windows are dark.</line>
+    <line pause="false">Снаружи стены здания "Сельского электрического кооператива Баррен Ривер" тускло-бежевые, покрытые выцветшеми граффити. Передняя дверь качается на сломанной петле. Окна здания потемнели.</line>
   </scene>
 
   <scene name="intro-options">
-    <option goto="look-in-window" insertedText="Conway looks in a window.">Look in a window.</option>
-    <option goto="inside-front-door" insertedText="Conway steps through the front door.">Enter the front door.</option>
-    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+    <option goto="look-in-window" insertedText="Конуэй смотрит в окно.">Посмотреть в окно.</option>
+    <option goto="inside-front-door" insertedText="Конуэй заходит через переднюю дверь.">Войти в переднюю дверь.</option>
+    <option goto="end" insertedText="Конуэй уезжает.">Уехать.</option>
   </scene>
 
   <scene name="look-in-window" nextScene="intro-options">
-    <line pause="false">The windows are too dirty to see anything inside but a few dim shapes. Furniture, maybe, or livestock.</line>
+    <line pause="false">Окна слишком грязные, чтобы можно было разглядеть хоть что-то, кроме расплывчатых силуэтов. Может, мебель, а может и скотина.</line>
   </scene>
 
   <scene name="inside-front-door" nextScene="inside-front-door-options">
-    <line>The room feels empty with no furniture other than the built-in front desk, host to a disconnected telephone and a few empty beer cans. Meandering lines of color have been spray-painted along the walls.</line>
-    <line pause="false">Behind the desk, a hallway leads into darkness.</line>
+    <line>Комната кажется пустой. В ней только встроенный стол, служащий подставкой отключенному телефону и нескольким пустым банкам из-под пива. Вдоль стен виляют цветные линии из краски.</line>
+    <line pause="false">Коридор позади стола ведёт во тьму.</line>
   </scene>
 
   <scene name="inside-front-door-options">
-    <option condition="!barren-river-recc-checked-phone" goto="telephone" insertedText="Conway lifts the telephone receiver to his ear.">Pick up the telephone.</option>
-    <option goto="hallway" insertedText="Conway steps into the hallway.">Enter the hallway.</option>
-    <option goto="intro" insertedText="Conway steps out the front door.">Leave the building.</option>
+    <option condition="!barren-river-recc-checked-phone" goto="telephone" insertedText="Конуэй подставляет ухо к трубке.">Снять трубку.</option>
+    <option goto="hallway" insertedText="Конуэй заходит в коридор.">Зайти в коридор.</option>
+    <option goto="intro" insertedText="Конуэй выходит из здания.">Покинуть здание.</option>
   </scene>
 
   <scene name="telephone">
     <setGameVar name="barren-river-recc-checked-phone" value="true"/>
     
-    <line>There's no dial tone. The phone is disconnected.</line>
-    <option goto="telephone-listen-closer" insertedText="Conway closes his eyes.">Listen closer.</option>
-    <option goto="inside-front-door-options" insertedText="Conway sets the phone handset back down.">Put the phone down.</option>
+    <line>Гудков нет. Телефон выключен.</line>
+    <option goto="telephone-listen-closer" insertedText="Конуэй закрывает глаза.">Прислушаться.</option>
+    <option goto="inside-front-door-options" insertedText="Конуэй кладёт трубку на телефон.">Положить трубку.</option>
   </scene>
 
   <scene name="telephone-listen-closer" nextScene="inside-front-door-options">
-    <line pause="false">With the phone pressed close to his ear, Conway can hear a thin, quiet roar, like the ocean or the highway.</line>
+    <line pause="false">Прижав трубку к уху, Конуэй слышит тихое, слабое рычание, какое издаёт океан или шоссе.</line>
   </scene>
 
   <scene name="hallway">
-    <line>The hallway passes several smaller office doors. It quickly disappears into darkness. Something is glowing in the distance, barely.</line>
+    <line>В коридоре расположены несколько дверей в офисы поменьше. Он быстро растворяется во тьме. Что-то едва-едва светится в конце.</line>
     
-    <option goto="dark-end-of-hallway" insertedText="Conway walks to the dark end of the hall.">Walk to the dark end of the hall.</option>
-    <option condition="!barren-river-recc-checked-doors" goto="try-office-door" insertedText="Conway tries a few of the office doors.">Try an office door or two.</option>
-    <option goto="inside-front-door" insertedText="Conway steps back out of the hallway.">Return to the front desk.</option>
+    <option goto="dark-end-of-hallway" insertedText="Конуэй проходит к дальнему концу коридора.">Пройти к дальнему концу коридора.</option>
+    <option condition="!barren-river-recc-checked-doors" goto="try-office-door" insertedText="Конуэй пытается открывать офисные двери.">Попробовать открыть пару-тройку дверей.</option>
+    <option goto="inside-front-door" insertedText="Конуэй выходит из коридора.">Вернуться.</option>
   </scene>
 
   <scene name="try-office-door" nextScene="hallway">
     <setGameVar name="barren-river-recc-checked-doors" value="true"/>
     
-    <line>One of the office doors is still locked. Another has been broken open, the door handle bent awkwardly inwards and embedded in the wood, but it's jammed against a filing cabinet. On closer inspection through the crack in the door, the whole room is filled with filing cabinets and other disused furniture.</line>
+    <line>Одна дверь по-прежнему заперта. Другая выбита, а ручка странным образом ушла внутрь древесины, но дверь заклинило с другой стороны ящиком с документами. При внимательном рассмотрении сквозь щель становится ясно, что вся комната уставлена ящиками и другой ненужной мебелью.</line>
   </scene>
 
   <scene name="dark-end-of-hallway">
-    <line>The door at the far end of the hallway is tightly closed, but a warm glow bleeds in from its edges.</line>
+    <line>Дверь в дальнем конце закрыта, но из-под неё проникает тёплое сияние.</line>
     
-    <option goto="open-dark-door" insertedText="Conway opens the door at the end of the hallway.">Open the door.</option>
-    <option goto="inside-front-door" insertedText="Conway steps back out of the hallway.">Return to the front desk.</option>
+    <option goto="open-dark-door" insertedText="Конуэй открывает дверь в конце коридора.">Открыть дверь.</option>
+    <option goto="inside-front-door" insertedText="Конуэй уходит из коридора.">Вернуться к столу.</option>
   </scene>
 
   <scene name="open-dark-door" nextScene="campfire">
-    <line>The handle is loose, and the door swings open easily. The hallway fills with warmth, light, and the smells of smoke and coffee.</line>
+    <line>Ручка сломана, так что дверь открывается легко. Коридор наполняется теплом, светом, запахом сигарет и кофе.</line>
   </scene>
 
   <scene name="campfire" nextScene="end">
     <setGameVar name="overworld-completed-barren-river-recc" value="true"/>
     
-    <line>About a dozen men and women sit around a campfire in the middle of a large room. Cubicle walls have been cut into pieces: some leaning up against the walls, and some arranged into stacks of firewood.</line>
-    <line>One of the women waves to Conway, and offers him an empty chair. It's missing wheels, but it's comfortable and easily adjustable to his height. Someone takes a pot hung above the fire and pours coffee into a styrofoam cup. Conway accepts it, and they all return to watching the fire.</line>
+    <line>С десяток мужчин и женщин собрались вокруг костра в центре помещения. Стенки офисных ячеек распилены, какие-то на дрова, а какие-то на кровельный материал.</line>
+    <line>Одна женщина машет Конуэю и предлагает свободный стул. У него не хватает колёс, но он удобен и подстраивается под рост Конуэя. Кто-то снимает котелок с огня и наливает кофе в пластиковые стаканчик. Конуэй принимает его, и все возвращаются к созерцанию огня.</line>
   </scene>
 
 </conversation>

@@ -3,8 +3,8 @@
   <scene name="intro" nextScene="end">
     <setGameVar name="overworld-visited-dragonfly-house" value="true"/>
     
-    <line>The truck pulls up to a house with an intensely bright porch light. A cloud of dragonflies swells around the light: darting, hovering, turning at right angles.</line>
+    <line>Грузовик встаёт возле дома с ярко освещённой верандой. Вокруг лампы слетелась туча мотыльков: мечущихся, парящих, маневрирующих под прямыми углами.</line>
 
-    <line>There are no lights on in the house. A stencil on the mailbox reads: &quot;2880 Beaker Blvd.&quot; And below, written in marker: &quot;NO SOLICITORS. I WORK FOR LONG HOURS AND RETIRE EARLY.&quot;</line>
+    <line>В доме света нет. На почтовом ящике выведен трафарет: &quot;Бульвар Бикер, 2880.&quot; Внизу маркером дописано: &quot;ЮРИСТАМ НЕ БЕСПОКОИТЬ. Я МНОГО РАБОТАЮ И РАНО УЙДУ НА ПЕНСИЮ&quot.;</line>
   </scene>
 </conversation>

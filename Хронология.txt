@@ -1,4 +1,4 @@
-АКТ 1
+﻿АКТ 1
 
 СЦЕНА 1 (Equus Oils)
 
@@ -16,6 +16,12 @@ sharedassets10:
 - GasStationGrabD20	Взять 20гранник
 - GasStationEmptyGamersTableUse	Посмотреть на пустой стол
 - GasStationDogTalk	Поговорить с собакой
+
+СЦЕНА 1 (Equus Oils, Опциональная)
+
+sharedassets10
+- GasStationJosephAndCarringtonLook	Посмотреть на Джозефа и Каррингтона
+- GasStationJosephAndCarringtonTalk	Поговорить с Джозефом и Каррингтоном
 
 СЦЕНА 2 (Marquez Farm)
 

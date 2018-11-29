@@ -6,41 +6,41 @@
     <setGameVar name="overworld-visited-guitar-player" value="true"/>
 
     <line>
-      A young man in gray-stained clothes sits by the side of the road. He is playing a worn guitar. To his left is a blue mug, and to his right a weathered dog.
+      На обочине сидит мужчина в одежде, покрытой серыми пятнами. Он играет на старой гитаре. Слева от него - синяя кружка, справа - обветренная собака.
     </line>
 
-    <option goto="listen" insertedText="Conway stands and listens.">Listen.</option>
-    <option goto="pet-dog" insertedText="Conway pets the dog.">Pet the dog.</option>    
+    <option goto="listen" insertedText="Конуэй стоит и слушает.">Слушать.</option>
+    <option goto="pet-dog" insertedText="Конуэй гладит пса.">Погладить пса.</option>    
   </scene>
 
   <scene name="listen">
     <line>
-      The young man strums absently on the guitar, hums tunelessly, and occasionally mumbles a word.
+      Молодой человек бренчит на гитаре, напевает немелодичную музыку, время от времени бормоча слова про себя.
     </line>
 
-    <option goto="give-dollar" insertedText="Conway pulls a wrinkled dollar bill from his back pocket and puts it in the young man's cup.">Put a dollar in the cup.</option>
-    <option goto="listen-2" insertedText="Conway stands and listens.">Listen.</option>    
+    <option goto="give-dollar" insertedText="Конуэй достаёт мятый доллар из заднего кармана и кладёт человеку в кружку.">Положить доллар в кружку.</option>
+    <option goto="listen-2" insertedText="Конуэй стоит и слушает.">Слушать.</option>    
   </scene>
 
   <scene name="give-dollar" nextScene="end">
     <line>
-      The young man stops playing, pulls the wet dollar bill out of his whiskey, and hands it back to Conway.
+      Человек перестаёт играть, достаёт мокрый доллар из своего виски и возвращает Конуэю.
     </line>
   </scene>
 
   <scene name="listen-2" nextScene="end">
     <line>
-      The young man whistles hoarsely, stops playing the guitar, then looks up at Conway. He rambles for a few minutes about the weather, the dog, and his music, then returns to playing.
+      Человек присвистывает, перестаёт играть и смотрит на Конуэя. Он в течение нескольких минут непрерывно говорит о погоде, собаке о своей музыке, а потом снова начинает играть.
     </line>
 
     <line>
-      As he walks back to his truck, Conway finds that he can hardly remember a word the young man spoke.
+      По пути к грузовику Конуэй понимает, что не запомнил ни единого слова из всего сказанного человеком.
     </line>
   </scene>
 
   <scene name="pet-dog" nextScene="listen">
     <line>
-      The dog closes its eyes and pretends to be asleep.
+      Собака закрывает глаза и притворяется спящей.
     </line>
   </scene>
 </conversation>

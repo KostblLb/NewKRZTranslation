@@ -78,50 +78,50 @@
   <scene name="third-tank-deeper" nextScene="electroshock-hallucination">
     <setGameVar name="conway-shocked-by-bait-tank" value="true"/>
     
-    <line>Дрожь распространяется от локтя до кончиков пальцев, и вверх до плеча. His vision flickers. The water is running warm, under his skin now, and he has the sensation that something is about to snap. His eyes close.</line>
+    <line>Дрожь распространяется от локтя до кончиков пальцев, и вверх до плеча. В глазах темнеет. Тёплый поток воды протекает теперь уже под кожей, и он чувствует, что вот-вот что-то щёлкнет. Его глаза закрываются.</line>
   </scene>
 
   <scene name="electroshock-hallucination" nextScene="after-hallucination">
     <triggerEvent name="bait-shop-flashback"/>
     
-    <line>He lays on a rooftop, new shingles rough beneath his back, swelling in the noon sun. He is exhausted. They must have started before dawn. His legs are sore from holding stable on the uneven surface, his wrists from breaking old sealant, his fingers from carefully lifting shingles to hammer down new ones.</line>
-    <line>His boss, Ira, yells from the idling truck below. He shades his eyes with his hand. A beer would be good. It's barely past noon, but he's worked a full day already ... what could the harm be? Maybe a shot at the counter, just to get his eyes open. Then a beer. He could offer to drive into town for lunch, and stop at that place on Cumberland —</line>
+    <line>Он лежит на крыше, новая черепица шоркает ему спину, и он расползается на полуденном солнце. Он вымотан. Надо было начинать до рассвета. Его ноги ноют от долгого стояния на неровной поверхности, запястья - от обдирания старого герметика, и пальцы - от выдёргивания старой черепицы, на место которой клалась новая.</line>
+    <line>Его босс, Ира, кричит снизу из заведённого грузовика. Он прикрывает глаза ладонью. Пива бы сейчас. Ещё едва заполдень, но он уже отработал полную смену ... а что такого могло случиться? Пропустить рюмочку за барной стойкой, чтобы хотя бы глаза открылись. А потом пиво. Он бы предложил съездить в город и остановиться на обед в одном месте в Камберленде —</line>
   </scene>
 
   <scene name="after-hallucination" nextScene="enter-shop">
     <triggerEvent name="bait-shop-flashback-end"/>
     
-    <line>The cashier pushes Conway roughly on the shoulder. He's been talking, yelling maybe, but it's all an echo now.</line>
-    <line>Conway looks up, his neck stiff with pain, his right palm still tingling. The cashier points to the tank, then above it to a few holes torn in the wall: nail holes from which an electric sign has come dislodged and fallen into the water. He helps Conway to his feet, looks at him pitifully, and returns to the cash register.</line>
+    <line>Кассир потряхтвает Конуэя за плечо. Он говорит, может даже кричит, но всё сливается в эхо.</line>
+    <line>Конуэй смотрит наверх, его шею свело болью, в правой руке всё ещё ощущается покалывание. Кассир указывает на аквариум, а потом на несколько дыр над ним, проделанных в стене: дыр от крепежа, на котором раньше висела электрическая вывеска, а потом свалилась в воду. Он помогает Конуэю встать на ноги и, посмотрев на него сочувстующим взглядом, возвращается за кассу.</line>
   </scene>
 
   <scene name="counter" nextScene="counter-options">
-    <line pause="false">A wiry cashier stands behind the register, preoccupied with a sudoku puzzle.</line>
+    <line pause="false">За кассой стоит кудрявый продавец, очень занятый разгадыванием судоку.</line>
   </scene>
 
   <scene name="counter-options">
-    <option condition="!asked-cashier-about-workshop" goto="ask-cashier-about-workshop" insertedText="Conway asks about Shannon Márquez's workshop.">Ask about Shannon Márquez's workshop.</option>
-    <option condition="asked-cashier-about-workshop" goto="read-workshop-note" insertedText="Conway reads the note on the workshop door.">Read the note on the workshop door.</option>
-    <option condition="!asked-bait-shop-cashier-about-basketball" goto="ask-cashier-about-basketball" insertedText="Conway asks about the basketball game.">Ask about the basketball game.</option>
-    <option goto="enter-shop">Walk away.</option>
+    <option condition="!asked-cashier-about-workshop" goto="ask-cashier-about-workshop" insertedText="Конуэй спрашивает о мастерской Шэннон Маркез.">Узнать о мастерской Шэннон Маркез.</option>
+    <option condition="asked-cashier-about-workshop" goto="read-workshop-note" insertedText="Конуэй читает записку на двери.">Прочесть записку на двери мастерской.</option>
+    <option condition="!asked-bait-shop-cashier-about-basketball" goto="ask-cashier-about-basketball" insertedText="Конуэй спрашивает о баскетбольном матче.">Спросить о баскетбольном матче.</option>
+    <option goto="enter-shop">Уйти.</option>
   </scene>
 
   <scene name="ask-cashier-about-workshop" nextScene="counter-options">
     <setGameVar name="asked-cashier-about-workshop" value="true"/>
-    <line>A handwritten sign on the door behind the counter reads &quot;TV REPAIRS BY APPOINTMENT PLEASE CONSULT WITH CASHIER.&quot; The cashier knocks a few times on the door and waits, occasionally glancing at his puzzle.</line>
-    <line pause="false">After a few moments with no answer, he notices a smaller note written on the sign, reads it, then points it out to Conway.</line>
+    <line>На двери за кассой висит записка с надписью от руки: &quot;РЕМОНТ ТВ ПО ЗАПИСИ ОБРАЩАЙТЕСЬ К КАССИРУ&quot;. Кассир несколько раз стучит в дверь и ждёт, иногда поглядывая на головоломку.</line>
+    <line pause="false">Через несколько мгновений, не дождавшись ответа, он замечает надпись на двери, читает, а затем указывает на неё Конуэю.</line>
   </scene>
 
   <scene name="read-workshop-note" nextScene="counter-options">
     <setGameVar name="read-shannons-note-at-workshop" value="true"/>
-    <line pause="false">&quot;`Weaver. I got your message. Have left for the old mine. Don't know if I will see you there or what. Ready either way. -Shannon`&quot;</line>
+    <line pause="false">&quot;Уивер. Я получила твоё послание. Уехала в старую шахту. Не знаю, увижу я там тебя или ещё что. Я готова ко всему. -Шэннон&quot;</line> <!-- курсив -->
   </scene>
 
   <scene name="ask-cashier-about-basketball" nextScene="counter-options">
     <setGameVar name="asked-bait-shop-cashier-about-basketball" value="true"/>
     <triggerEvent name="bait-shop-radio-on"/>
     
-    <line pause="false">The cashier switches on the radio. An AM sports broadcast is playing, but Conway can't be sure if it's meant to answer or to drown out his questions.</line>
+    <line pause="false">Кассир включает радио. Идёт спортивная трансляция, но Конуэй не уверен, является ли это ответом на его вопрос или кассир просто увиливает от ответа.</line>
   </scene>
 
 </conversation>

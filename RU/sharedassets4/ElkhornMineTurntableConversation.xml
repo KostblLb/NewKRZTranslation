@@ -53,9 +53,9 @@
   </scene>
 
   <scene name="turntable-controls-route">
-    <option condition="!elkhorn-mine-rail-ab" goto="rail-ab" speaker="shannon">(Настраивает.) ~Скелеты животных и байдарка.~</option> <!--TODO letter gothic std italic, ~ -->
-    <option condition="!elkhorn-mine-rail-cd" goto="rail-cd" speaker="shannon">(Настраивает.) ~Маятник и гроб.~</option>
-    <option condition="!elkhorn-mine-rail-ef" goto="rail-ef" speaker="shannon">(Настраивает.) ~Кормушка для летучих мышей и пугало.~</option>
+    <option condition="!elkhorn-mine-rail-ab" goto="rail-ab" speaker="shannon">(Настраивает.) Скелеты животных и байдарка.</option> <!--TODO letter gothic std italic, ~ -->
+    <option condition="!elkhorn-mine-rail-cd" goto="rail-cd" speaker="shannon">(Настраивает.) Маятник и гроб.~</option>
+    <option condition="!elkhorn-mine-rail-ef" goto="rail-ef" speaker="shannon">(Настраивает.) Кормушка для летучих мышей и пугало.</option>
     <option goto="end" speaker="shannon">(ШЭННОН отключается от поворотного круга.)</option>
   </scene>
 

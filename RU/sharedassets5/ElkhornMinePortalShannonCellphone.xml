@@ -15,14 +15,14 @@
   </scene>
 
   <scene name="phone-three">
-    <line speaker="phone">(Неразборчиво)</line>
+    <line speaker="phone">(Неразборчиво.)</line>
     <option goto="phone-four" speaker="shannon">Да, и я ценю это, но —</option>
     <option goto="phone-four" speaker="shannon">ОК, хорошо.</option>
     <option goto="hang-up-phone" speaker="shannon">Просто ... не важно. Мне пора. Извини.</option>
   </scene>
 
   <scene name="phone-four">
-    <line speaker="phone">`(Inaudible.)`</line>
+    <line speaker="phone">(Неразборчиво.)</line>
     <option goto="hang-up-phone" speaker="shannon">ОК. Поговорим завтра. Люблю тебя.</option>
     <option goto="hang-up-phone" speaker="shannon">Забудь. Пока.</option>
   </scene>

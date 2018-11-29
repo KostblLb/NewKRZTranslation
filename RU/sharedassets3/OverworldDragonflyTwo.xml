@@ -4,9 +4,9 @@
     <setGameVar name="overworld-visited-dragonfly-two" value="true"/>
     
     <line>
-      The dragonflies vary their pace. As the truck approaches, they scatter.
+      Мотыльки перемещаются. Когда приближается грузовик, они разлетаются.
     
-      After a minute or two, Conway can hear a swelling whine to the southeast.
+      Через минуту или две Конуэй начинает слышать нарастающее жужжание на юго-западе.
     </line>
   </scene>
 </conversation>

@@ -3,44 +3,44 @@
   <scene name="intro" nextScene="intro-options">
     <setGameVar name="overworld-visited-buffalo-creek-recc" value="true"/>
     
-    <line pause="false">The office of the Buffalo Creek Rural Electric Cooperative Corporation is almost invisible from the road, its parking lot overgrown with weeds and its facade sheltered by ivy.</line>
+    <line pause="false">Офис "Сельской электрической корпорации Баффало Крик" с дороги почти не видно. Парковка его заросла сорной травой, а фасад закрыт плющом.</line>
   </scene>
 
   <scene name="intro-options">
-    <option goto="look-in-window" insertedText="Conway looks in through a window.">Look in a window.</option>
-    <option goto="inside-front-door" insertedText="Conway enters the front door.">Enter the front door.</option>
-    <option goto="end" insertedText="Conway drives away.">Drive away.</option>
+    <option goto="look-in-window" insertedText="Конуэй смотрит через окно.">Посмотреть в окно.</option>
+    <option goto="inside-front-door" insertedText="Конуэй входит через переднюю дверь.">Войти в переднюю дверь.</option>
+    <option goto="end" insertedText="Конуэй уезжает.">Уехать.</option>
   </scene>
 
   <scene name="look-in-window" nextScene="intro-options">
-    <line pause="false">A sinewy shadow obstructs the view through the window.</line>
+    <line pause="false">Жирная тень мешает разглядеть что-либо за окном.</line>
   </scene>
 
   <scene name="inside-front-door">
-    <line>The floor is loosely covered in dirt. Parts of the carpet have rotted with exposure to rain. Wild mushrooms grow in some corners of the room.</line>
-    <line condition="!overworld-buffalo-creek-recc-broke-wall">The wall behind the front desk has been mostly rotted away; it looks fragile.</line>
-    <line condition="overworld-buffalo-creek-recc-broke-wall">A large hole has been forced through the back wall.</line>
+    <line>Пол местами покрыт грязью. Часть ковра, не защищённая от дождя, сгнила. В некоторых углах растут дикие грибы.</line>
+    <line condition="!overworld-buffalo-creek-recc-broke-wall">Стена позади стола в приёмное выглядит очень хрупкой и почти что развалилась.</line>
+    <line condition="overworld-buffalo-creek-recc-broke-wall">Кто-то сделал большую дыру в задней стене.</line>
     
-    <option condition="!overworld-buffalo-creek-recc-broke-wall" goto="push-through-wall" insertedText="Conway pushes through the moldy back wall.">Push through the back wall.</option>
-    <option condition="overworld-buffalo-creek-recc-broke-wall" goto="push-through-wall" insertedText="Conway steps through the hole in the back wall.">Walk through the back wall.</option>    
-    <option goto="intro">Leave the building.</option>
+    <option condition="!overworld-buffalo-creek-recc-broke-wall" goto="push-through-wall" insertedText="Конуэй наваливается на покрытую грибком стену.">Надавить на заднюю стену.</option>
+    <option condition="overworld-buffalo-creek-recc-broke-wall" goto="push-through-wall" insertedText="Конуэй проходит через дыру в стене.">Пройти сквозь заднюю стену.</option>    
+    <option goto="intro">Покинуть здание.</option>
   </scene>
 
   <scene name="push-through-wall">
     <setGameVar name="overworld-buffalo-creek-recc-broke-wall" value="true"/>
     
-    <line>Conway finds himself in what may once have been a conference room. The floor has fallen away in places, and filled with a dark green mire. The walls of the conference room are decayed and damaged.</line>
+    <line>Конуэй оказывается в помещении, которое когда-то могло быть конференц-залом. Там, где пол обвалился, его заменила густая зелёная трясина. Стены конференц-зала рассохлись и потрескались.</line>
     
-    <option goto="push-through-another-wall" insertedText="Conway pushes through the wall.">Push through another wall.</option>
-    <option goto="intro" insertedText="Conway walks back out of the building.">Leave the building.</option>
+    <option goto="push-through-another-wall" insertedText="Конуэй наваливается на стену.">Надавить на другую стену.</option>
+    <option goto="intro" insertedText="Конуэй уходит из здания.">Покинуть здание.</option>
   </scene>
 
   <scene name="push-through-another-wall" nextScene="end">
     <setGameVar name="overworld-completed-buffalo-creek-recc" value="true"/>
     
-    <line>The drywall dissolves as Conway pushes through it, falling in damp clumps in the marsh. He breaks through into a long hallway.</line>
-    <line>The glow of a bioluminescent fungus casts a faint blush on the walls. Conway has the feeling he has interrupted something.</line>
-    <line>After a moment of silence, the frog chorus resumes.</line>
+    <line>Штукатурка рассыпается, стоит Конуэю прикоснуться к ней, и большими кусками падает в болото. Он врывается в длинный коридор.</line>
+    <line>Свет биолюминисцентных грибов создаёт едва видимое мягкое отражение на стенах. У Конуэя возникает чувство, что он перебил кого-то.</line>
+    <line>Спустя мгновение тишины хор лягушек снова заводит свою какафонию.</line>
   </scene>
 
 </conversation>
